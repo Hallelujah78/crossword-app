@@ -123,4 +123,11 @@ Remember, creating a crossword puzzle takes time and practice, so don't be disco
   - 45 in 16822
   - 51 in 16821
 - again we are back to the 'shape' of the puzzle
-- the NYT puzzle has an average of about 37 blocks (shaded cells) monday through thursday, but it is 15x15, 225 squares or about 33% more squares than our 169 square Guardian quick
+- the NYT puzzle has an average of about 37 voids monday through thursday, but it is 15x15, 225 squares or about 33% more squares than our 169 square Guardian quick
+- a common scheme in the a grid appears to be:
+  - one void on a single line
+  - followed by a line where every other square is a void
+  - followed by a single void
+  - and so on
+- we only need a valid grid for the first 7 lines (of a 13x13 grid)
+- we can rotate a grid 90 degrees to create a new puzzle (assuming it does not have rotational symmetry when rotated 90 degrees)
