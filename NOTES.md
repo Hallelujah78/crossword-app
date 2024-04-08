@@ -78,3 +78,49 @@ Remember, creating a crossword puzzle takes time and practice, so don't be disco
 - look at many Guardian quick crossword puzzles, identify broad patterns
   - is the top left square ever shaded?
     - yes
+  - it may be easier, at first, to take a number of grid patterns and select one at random
+    - let's say we take 3 patterns
+- our grid is 13x13 => 169 squares numbered 0 to 168
+  - if position 0 is shaded
+    - position 168-0 must be shaded
+  - if position 12 (top right) is shaded, then position 168-12, 156 is shaded
+- okay, this is complex
+
+## A deeper dive
+
+- how many possible valid grids are there with a 13x13 grid?
+  - the rules for a valid grid:
+    - rotationally symmetrical
+    - all words must be at least 3 letters long
+    - no islands of white squares that are not connected to the rest of the puzzle
+    - all letters must appear in a down word and an across word
+      - not sure exactly what is meant by this
+      - it may mean that if a letter appears somewhere in the grid then it must appear both across and down
+        - this is from examining a single puzzle where x and z are omitted completely
+        - also, xwordinfo notes omitted letters and so this may be correct
+- there are 40,575,832,476 possible valid puzzles in a 13x13 grid: https://fivethirtyeight.com/features/time-for-some-abstract-math-drink-up/
+- obviously an enormous number of these will be of little use to construct a usable crossword grid
+  - example, a grid with a single void is valid but to fit words into it may be impossible
+- this is an interesting website: https://www.xwordinfo.com/Crossword?date=4/8/2024
+  - unfortunately, the shape of these puzzles is not similar to the Guardian puzzle
+
+## Describing a grid
+
+- I will take a 13x13 grid that has been used in a crossword
+- lets say each cell is an object
+- each cell:
+
+  - isVoid: true/false
+  - index (from top left)
+  - isDown - it is the start of a down clue
+  - isAcross - it is the start of an across clue
+  - clue number
+    - if isDown is true and isAcross is true, then the clue number will be the same
+
+- the number of voids in the grid may be similar between Guardian quicks
+  - 49 in 16824
+  - 48 in 16823
+  - 45 in 16822
+  - 51 in 16821
+- again we are back to the 'shape' of the puzzle
+- the NYT puzzle has an average of about 37 blocks (shaded cells) monday through thursday, but it is 15x15, 225 squares or about 33% more squares than our 169 square Guardian quick
