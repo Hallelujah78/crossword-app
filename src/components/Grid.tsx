@@ -63,10 +63,8 @@ export default Grid;
 
 const Wrapper = styled.div`
   grid-template-columns: repeat(13, 1fr);
-  align-content: start;
   display: grid;
-  width: 85vh;
-  height: 85vh;
+  width: auto;
+  height: auto;
   border: red solid 1px;
-  gap: 0;
 `;
