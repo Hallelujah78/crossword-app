@@ -14,7 +14,7 @@ import Cell from "./Cell";
 import { grid } from "../data/grid";
 
 // utils
-import findRightEdge from "../utils/utils";
+import { findRightEdge, findLeftEdge } from "../utils/utils";
 
 const initializeGrid = (grid: CellType[]) => {
   return grid.map((item, index) => {
@@ -35,7 +35,7 @@ const Grid: React.FC = () => {
     // testing only
     console.log(targetIndex);
     // console.log((targetIndex + 1) % 13 === 0);
-    console.log(findRightEdge(gridState));
+    console.log(findLeftEdge(gridState));
     // testing only
     const symmetricalIndex = gridState.length - 1 - targetIndex;
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];

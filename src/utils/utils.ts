@@ -1,6 +1,6 @@
 import { CellType } from "../models/Cell.model";
 
-const findRightEdge = (grid: CellType[]) => {
+export const findRightEdge = (grid: CellType[]) => {
   const rightIndices: number[] = [];
   const gridLength: number = grid.length; // 169
   const sideLength = Math.sqrt(grid.length); // 13
@@ -14,4 +14,12 @@ const findRightEdge = (grid: CellType[]) => {
   return rightIndices;
 };
 
-export default findRightEdge;
+export const findLeftEdge = (grid: CellType[]) => {
+  const leftIndices: number[] = [];
+  const gridLength: number = grid.length; // 169
+  const sideLength = Math.sqrt(grid.length); // 13
+  for (let index = 0; index <= gridLength - sideLength; index += sideLength) {
+    leftIndices.push(index);
+  }
+  return leftIndices;
+};
