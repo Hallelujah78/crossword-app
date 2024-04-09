@@ -1,3 +1,4 @@
-export interface CellProps {
-  cell: { isVoid: boolean };
-}
+export type CellType = {
+  isVoid: boolean;
+  id?: number;
+};
