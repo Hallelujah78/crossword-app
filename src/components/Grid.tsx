@@ -13,8 +13,15 @@ import Cell from "./Cell";
 // data
 import { grid } from "../data/grid";
 
+const initializeGrid = (grid: CellType[]) => {
+  return grid.map((item, index) => {
+    item.id = index;
+    return item;
+  });
+};
+
 const Grid: React.FC = () => {
-  const [gridState, setGridState] = useState<CellType[]>(grid);
+  const [gridState, setGridState] = useState(() => initializeGrid(grid));
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
@@ -25,8 +32,11 @@ const Grid: React.FC = () => {
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
     tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
-    // need logic to handle if index is the center cell and if the index where we click is higher than the central cell (we need to add to 0) and change how we calculate the symmetrical index
-    tempGrid[symmetricalIndex].isVoid = !tempGrid[symmetricalIndex].isVoid;
+    // need logic to handle if index is the center cell
+
+    if (targetIndex !== (tempGrid.length - 1) / 2) {
+      tempGrid[symmetricalIndex].isVoid = !tempGrid[symmetricalIndex].isVoid;
+    }
 
     setGridState(tempGrid);
   };
