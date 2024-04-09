@@ -13,6 +13,9 @@ import Cell from "./Cell";
 // data
 import { grid } from "../data/grid";
 
+// utils
+import findRightEdge from "../utils/utils";
+
 const initializeGrid = (grid: CellType[]) => {
   return grid.map((item, index) => {
     item.id = index;
@@ -27,13 +30,20 @@ const Grid: React.FC = () => {
     if (!e.currentTarget.id) {
       return;
     }
+
     const targetIndex = +e.currentTarget.id;
+    // testing only
+    console.log(targetIndex);
+    // console.log((targetIndex + 1) % 13 === 0);
+    console.log(findRightEdge(gridState));
+    // testing only
     const symmetricalIndex = gridState.length - 1 - targetIndex;
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
+    // toggle the cell background
     tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
-    // need logic to handle if index is the center cell
 
+    //
     if (targetIndex !== (tempGrid.length - 1) / 2) {
       tempGrid[symmetricalIndex].isVoid = !tempGrid[symmetricalIndex].isVoid;
     }

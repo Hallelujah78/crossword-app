@@ -1,10 +1,15 @@
 ## Notes you make during development go here
 
+## Assumptions
+
+- the grid is a square - 13x13, 15x15, 17x17, etc
+  - grids with an even number of rows and columns are not uncommon but this saves me potentially having to add a bunch of logic
+
 ## Why This Project?
 
 - I was in the middle of creating a Wordle clone, and so a crossword seems like an obvious next project
 - It occurred to me that I can use AI to generate the clues
-- ChatGPT can generate decent clues
+  - ChatGPT can generate decent clues
 
 ## Expectations
 
@@ -131,3 +136,43 @@ Remember, creating a crossword puzzle takes time and practice, so don't be disco
   - and so on
 - we only need a valid grid for the first 7 lines (of a 13x13 grid)
 - we can rotate a grid 90 degrees to create a new puzzle (assuming it does not have rotational symmetry when rotated 90 degrees)
+
+## Automatically numbering our clues
+
+- we iterate over each cell
+- the first cell is the top left
+  - if next cell isVoid
+
+## Relative position of cells
+
+- to get the cell immediately below the current cell:
+  - cell index + sqrt(grid.length)
+- to get cell immediately above the current cell:
+  - cell index - sqrt(grid.length)
+- the center cell index
+  - (tempGrid.length - 1) / 2
+- corner cells
+  - top left: grid[0]
+  - bottom right: grid[grid.length - 1]
+  - top right: Math.sqrt(grid.length) - 1
+  - bottom left: grid.length - sqrt(grid.length) => 169 - 13
+- all cells along top: index <= Math.sqrt(grid.length) - 1
+- all cells along right: (targetIndex + 1) % 13 === 0
+- all cells along left: targetIndex % 13 === 0
+- all cells along bottom: index >= grid.length - sqrt(grid.length) => index >=156
+
+- note that finding the cells along the right using only the above method, requires us to check all squares, which seems inefficient
+- if we first find the top right square, which can be done without knowing the index of any particular cell, we can simple add a value to it
+- finding all the cells on the right edge efficiently:
+
+```js
+const findRightEdge = () =>{
+  const rightIndices = [];
+  const gridLength = grid.length; // 169
+  const sideLength = Math.sqrt(grid.length); // 13
+  for(let index = sideLength - 1; index < gridLength - 1, index += Math.sqrt.gridLength){
+    rightIndices.push(index);
+  }
+  return rightIndices;
+}
+```
