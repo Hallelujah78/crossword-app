@@ -177,3 +177,18 @@ const findRightEdge = () =>{
   return rightIndices;
 }
 ```
+
+- we do the same with the left - code added in project
+- we do the same with the top and bottom edges - code in the project
+
+## More precise rules for a valid grid
+
+- there are other rules not noted elsewhere, let's gather all rules here
+- rotational symmetry through 180 degrees
+- no islands of white cells
+  - for example, an unbroken diagonal of voids from one side of the grid to the other would make the grid invalid
+  - another way to say no islands of unconnected white cells is to say they must be orthogonally contiguous to form a single polyomino
+- no word can be less than 3 cells in length - this is an american rule but we may follow it (review Guardian quick puzzles)
+- all letters must appear in a down clue and an across clue - again, this is an American convention and does not apply to British, Australian, and Irish puzzles, which have a lattice like structure
+- approx 25% of the cells will be voids in a lattice like crossword
+- I'm sure there is a rule about no side being wholly comprised of voids, but will have to check this
