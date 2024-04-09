@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <Wrapper>
       <nav>
-        <h1>TypeScript, React, Vite, Cypress Starter</h1>
+        <h1>Crossword Generator</h1>
       </nav>
       <section>
         <Grid />

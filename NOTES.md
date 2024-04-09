@@ -140,9 +140,7 @@ Remember, creating a crossword puzzle takes time and practice, so don't be disco
 
 ## Automatically numbering our clues
 
-- we iterate over each cell
-- the first cell is the top left
-  - if next cell isVoid
+- we'll come back to this
 
 ## Relative position of cells
 
@@ -192,3 +190,17 @@ const findRightEdge = () =>{
 - all letters must appear in a down clue and an across clue - again, this is an American convention and does not apply to British, Australian, and Irish puzzles, which have a lattice like structure
 - approx 25% of the cells will be voids in a lattice like crossword
 - I'm sure there is a rule about no side being wholly comprised of voids, but will have to check this
+  - I'll take this as a given since if an entire side is composed of voids then the puzzle could effectively be 12x13, 13x12 etc
+  - there is no reason to include a column or row if it is entirely comprised of voids
+
+## Numbering our clues
+
+- We iterate through our array of cells until we find a cell that is not a void
+- we check if the cell to the right is a void
+  - if not, then it is an across clue
+    - construct the answer - length for now
+    - give it a label such as 1a or 1d
+  - if the cell to the right is void, check if there is a non void cell below
+    - if there is, it is a down clue
+      - construct the answer - length
+      - give it a label such as 1d
