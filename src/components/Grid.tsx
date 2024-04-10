@@ -22,23 +22,34 @@ import {
 } from "../utils/utils";
 
 const initializeGrid = (grid: CellType[]) => {
-  return grid.map((item, index) => {
+  const newGrid = grid.map((item, index) => {
     item.id = index;
 
     // is the square above a cell and not void?
     if (grid[index - Math.sqrt(grid.length)]?.isVoid) {
       item.top = false; // false indicates it is a void
     }
-    // is the square to the right a cell and not a void?
+    // if the square to the right of the current square is a void OR the current square is on the right side of the grid (thus it has nothing to its right), then set the "right" property to false.
     if (
-      findRightEdge(grid).includes(index + 1) ||
+      findRightEdge(grid).includes(index) ||
       (!findRightEdge(grid).includes(index + 1) && grid[index + 1]?.isVoid)
     ) {
       item.right = false;
     }
+    if (
+      findTopEdge(grid).includes(index) ||
+      (!findTopEdge(grid).includes(index) &&
+        grid[index - Math.sqrt(grid.length)]?.isVoid)
+    ) {
+      item.top = false;
+    }
 
     return item;
+  }); // end of map
+  newGrid.forEach((item, index) => {
+    console.log(`To the top of ${index} is a letter: ${item.top}`);
   });
+  return newGrid;
 };
 
 const Grid: React.FC = () => {
@@ -50,7 +61,7 @@ const Grid: React.FC = () => {
     }
     const targetIndex = +e.currentTarget.id;
     // testing only
-    console.log(grid[targetIndex].right);
+    console.log(grid[targetIndex + 1].isVoid);
     // testing only
     const symmetricalIndex = gridState.length - 1 - targetIndex;
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];

@@ -5,6 +5,13 @@
 - the grid is a square - 13x13, 15x15, 17x17, etc
   - grids with an even number of rows and columns are not uncommon but this saves me potentially having to add a bunch of logic
 
+## Terminology
+
+- cell: a square on a crossword grid
+- void: a dark square
+- lights: a series of light squares
+- darks: a series of light squares
+
 ## Why This Project?
 
 - I was in the middle of creating a Wordle clone, and so a crossword seems like an obvious next project
