@@ -15,90 +15,43 @@ import { grid } from "../data/grid";
 
 // utils
 import {
-  findRightEdge,
-  findLeftEdge,
-  findTopEdge,
-  findBottomEdge,
+  initializeGrid,
+  setClueNumbers,
+  updateSurroundingCells,
 } from "../utils/utils";
-
-const initializeGrid = (grid: CellType[]) => {
-  const newGrid = grid.map((item, index) => {
-    item.id = index;
-
-    // is the square above a cell and not void?
-    if (grid[index - Math.sqrt(grid.length)]?.isVoid) {
-      item.top = false; // false indicates it is a void
-    }
-    // if the square to the right of the current square is a void OR the current square is on the right side of the grid (thus it has nothing to its right), then set the "right" property to false.
-    if (
-      findRightEdge(grid).includes(index) ||
-      (!findRightEdge(grid).includes(index + 1) && grid[index + 1]?.isVoid)
-    ) {
-      item.right = false;
-    }
-    if (
-      findTopEdge(grid).includes(index) ||
-      (!findTopEdge(grid).includes(index) &&
-        grid[index - Math.sqrt(grid.length)]?.isVoid)
-    ) {
-      item.top = false;
-    }
-    if (
-      findBottomEdge(grid).includes(index) ||
-      (!findBottomEdge(grid).includes(index) &&
-        grid[index + Math.sqrt(grid.length)]?.isVoid)
-    ) {
-      item.bottom = false;
-    }
-    if (
-      findLeftEdge(grid).includes(index) ||
-      (!findLeftEdge(grid).includes(index) && grid[index - 1]?.isVoid)
-    ) {
-      item.left = false;
-    }
-
-    return item;
-  }); // end of map
-  newGrid.forEach((item, index) => {
-    console.log(`To the left of ${index} is a letter: ${item.left}`);
-  });
-  return newGrid;
-};
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
+  // const [left, setLeft] = useState(() => {
+  //   return findLeftEdge(gridState);
+  // });
+  // const [right, setRight] = useState(() => {
+  //   return findRightEdge(gridState);
+  // });
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
       return;
     }
     const targetIndex = +e.currentTarget.id;
-    // testing only
-    console.log(grid[targetIndex + 1].isVoid);
-    // testing only
+
     const symmetricalIndex = gridState.length - 1 - targetIndex;
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
     // toggle the cell background
     tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
+    // update the top, bottom, left and right props of surrounding cells
+    updateSurroundingCells(tempGrid, targetIndex);
 
     //
     if (targetIndex !== (tempGrid.length - 1) / 2) {
       tempGrid[symmetricalIndex].isVoid = !tempGrid[symmetricalIndex].isVoid;
+      // update the top, bottom, left and right props of surrounding cells
+      updateSurroundingCells(tempGrid, symmetricalIndex);
     }
+    setClueNumbers(tempGrid);
 
     setGridState(tempGrid);
-  };
-
-  const numberClues = () => {
-    for (const cell of grid) {
-      const index = cell.id;
-      if (!cell.isVoid) {
-        if (index && !grid[index + 1].isVoid) {
-          console.log(`${index} is not void and is an across clue!`);
-        }
-      }
-    }
   };
 
   return (
@@ -106,7 +59,7 @@ const Grid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return <Cell key={index} cell={cell} handleClick={handleClick} />;
       })}
-      <button onClick={numberClues}>Clue Nums</button>
+      <button>Clue Nums</button>
     </Wrapper>
   );
 };

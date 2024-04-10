@@ -1,7 +1,7 @@
 export type CellType = {
   isVoid: boolean;
   id?: number;
-  clueNumber?: number;
+  clueNumber?: string;
   top: boolean;
   right: boolean;
   bottom: boolean;

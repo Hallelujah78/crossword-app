@@ -152,9 +152,9 @@ Remember, creating a crossword puzzle takes time and practice, so don't be disco
 ## Relative position of cells
 
 - to get the cell immediately below the current cell:
-  - cell index + sqrt(grid.length)
+  - index + Math.sqrt(grid.length)
 - to get cell immediately above the current cell:
-  - cell index - sqrt(grid.length)
+  - index - Math.sqrt(grid.length)
 - the center cell index
   - (tempGrid.length - 1) / 2
 - corner cells
@@ -202,12 +202,25 @@ const findRightEdge = () =>{
 
 ## Numbering our clues
 
-- We iterate through our array of cells until we find a cell that is not a void
-- we check if the cell to the right is a void
-  - if not, then it is an across clue
-    - construct the answer - length for now
-    - give it a label such as 1a or 1d
-  - if the cell to the right is void, check if there is a non void cell below
-    - if there is, it is a down clue
-      - construct the answer - length
-      - give it a label such as 1d
+- We iterate through our array of cells until we find a cell that is not a void. A void cannot be the start of a clue
+- for any given cell at this point we know:
+
+  - if there is a light above it or below it
+  - if there is a light to the left or right
+
+- if a cell has no light above and no light to the left of it, it is the start of a clue
+
+  - this may be down or across
+  - if there is a light to the right, it is across
+    - create a new across clue using the next available number
+    - if cell to right
+  - if there is also a light below, it is down
+
+  is start of clue
+  (!cell.top && !cell.left) || (!cell.left && cell.right)
+
+## Refactor at this point
+
+- we need to determine if a cell is at the edges quite often
+- instead of calculating the indices of top, right, bottom and left sides of the grid each time we need to check, let's add to our Grid state and calculate it once
+- we can then use a function like isLeft, isRight to cleanly return true or false in an if statement instead of having more confusing code inside the if condition
