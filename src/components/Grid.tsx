@@ -50,11 +50,17 @@ const initializeGrid = (grid: CellType[]) => {
     ) {
       item.bottom = false;
     }
+    if (
+      findLeftEdge(grid).includes(index) ||
+      (!findLeftEdge(grid).includes(index) && grid[index - 1]?.isVoid)
+    ) {
+      item.left = false;
+    }
 
     return item;
   }); // end of map
   newGrid.forEach((item, index) => {
-    console.log(`To the bottom of ${index} is a letter: ${item.bottom}`);
+    console.log(`To the left of ${index} is a letter: ${item.left}`);
   });
   return newGrid;
 };
