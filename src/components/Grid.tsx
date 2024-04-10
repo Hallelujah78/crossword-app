@@ -43,11 +43,18 @@ const initializeGrid = (grid: CellType[]) => {
     ) {
       item.top = false;
     }
+    if (
+      findBottomEdge(grid).includes(index) ||
+      (!findBottomEdge(grid).includes(index) &&
+        grid[index + Math.sqrt(grid.length)]?.isVoid)
+    ) {
+      item.bottom = false;
+    }
 
     return item;
   }); // end of map
   newGrid.forEach((item, index) => {
-    console.log(`To the top of ${index} is a letter: ${item.top}`);
+    console.log(`To the bottom of ${index} is a letter: ${item.bottom}`);
   });
   return newGrid;
 };
