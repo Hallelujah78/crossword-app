@@ -21,10 +21,12 @@ export default App;
 const Wrapper = styled.div`
   height: 100vh;
   position: relative;
+  background-color: #1c1d1f;
   nav {
     border-bottom: 1px solid gray;
     text-align: center;
     height: 3rem;
+    color: white;
   }
   h1 {
     margin: auto;

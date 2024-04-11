@@ -1,4 +1,7 @@
+// models
 import { CellType } from "../models/Cell.model";
+import Clue from "../classes/Clue";
+import { Direction } from "../models/Direction.model";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
@@ -113,7 +116,7 @@ export const initializeGrid = (grid: CellType[]) => {
     item.id = index;
 
     // is the square above a cell and not void?
-    if (grid[index - Math.sqrt(grid.length)]?.isVoid) {
+    if (getCellAbove(grid, index)?.isVoid) {
       item.top = false; // false indicates it is a void
     }
     // if the square to the right of the current square is a void OR the current square is on the right side of the grid (thus it has nothing to its right), then set the "right" property to false.
@@ -133,7 +136,7 @@ export const initializeGrid = (grid: CellType[]) => {
     if (
       findBottomEdge(grid).includes(index) ||
       (!findBottomEdge(grid).includes(index) &&
-        grid[index + Math.sqrt(grid.length)]?.isVoid)
+        getCellBelow(grid, index)?.isVoid)
     ) {
       item.bottom = false;
     }
@@ -148,4 +151,32 @@ export const initializeGrid = (grid: CellType[]) => {
   }); // end of map
   setClueNumbers(newGrid);
   return newGrid;
+};
+
+export const createClues = (grid: CellType[]) => {
+  const clues: Clue[] = [];
+
+  const clueIndices = getClueIndices(grid);
+
+  clueIndices.forEach((item) => {
+    if (grid[item].right && !grid[item].left) {
+      //
+      const acrossClue = new Clue(0, Direction.ACROSS, [], "", "");
+      clues.push(acrossClue);
+    }
+    if (grid[item].bottom && !grid[item].top) {
+      //
+      const acrossClue = new Clue(0, Direction.DOWN, [], "", "");
+      clues.push(acrossClue);
+    }
+  });
+  return clues;
+};
+
+export const getClueIndices = (grid: CellType[]) => {
+  const clueIndices: number[] = [];
+  grid.forEach((item, index) => {
+    item.clueNumber && clueIndices.push(index);
+  });
+  return clueIndices;
 };

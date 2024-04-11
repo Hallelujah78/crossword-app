@@ -18,16 +18,11 @@ import {
   initializeGrid,
   setClueNumbers,
   updateSurroundingCells,
+  createClues,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
-  // const [left, setLeft] = useState(() => {
-  //   return findLeftEdge(gridState);
-  // });
-  // const [right, setRight] = useState(() => {
-  //   return findRightEdge(gridState);
-  // });
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
@@ -50,7 +45,7 @@ const Grid: React.FC = () => {
       updateSurroundingCells(tempGrid, symmetricalIndex);
     }
     setClueNumbers(tempGrid);
-
+    console.log(createClues(tempGrid));
     setGridState(tempGrid);
   };
 
@@ -59,7 +54,6 @@ const Grid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return <Cell key={index} cell={cell} handleClick={handleClick} />;
       })}
-      <button>Clue Nums</button>
     </Wrapper>
   );
 };
