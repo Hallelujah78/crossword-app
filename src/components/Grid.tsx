@@ -45,7 +45,7 @@ const Grid: React.FC = () => {
       updateSurroundingCells(tempGrid, symmetricalIndex);
     }
     setClueNumbers(tempGrid);
-    console.log(createClues(tempGrid));
+
     setGridState(tempGrid);
   };
 

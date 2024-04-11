@@ -76,7 +76,7 @@ export const setClueNumbers = (grid: CellType[]) => {
 
 export const updateSurroundingCells = (grid: CellType[], index: number) => {
   const cellAbove = getCellAbove(grid, index);
-  console.log(cellAbove);
+
   const cellBelow = getCellBelow(grid, index);
   // if there's a cell to the left, update right value
   if (grid[index - 1] && !isLeftEdge(grid, index)) {
@@ -88,7 +88,6 @@ export const updateSurroundingCells = (grid: CellType[], index: number) => {
   }
   // if there's a cell above, update bottom prop
   if (cellAbove) {
-    console.log("cell is above");
     cellAbove.bottom = !cellAbove.bottom;
   }
   // if there's a cell above, update bottom prop
@@ -150,26 +149,55 @@ export const initializeGrid = (grid: CellType[]) => {
     return item;
   }); // end of map
   setClueNumbers(newGrid);
+  createClues(newGrid);
   return newGrid;
 };
 
 export const createClues = (grid: CellType[]) => {
   const clues: Clue[] = [];
-
   const clueIndices = getClueIndices(grid);
 
-  clueIndices.forEach((item) => {
-    if (grid[item].right && !grid[item].left) {
-      //
-      const acrossClue = new Clue(0, Direction.ACROSS, [], "", "");
+  clueIndices.forEach((currIndex) => {
+    // across clue
+    if (grid[currIndex].right && !grid[currIndex].left) {
+      const acrossClue = new Clue(1, Direction.ACROSS, [currIndex], "", "");
+
+      let isCell = true;
+      let startIndex = currIndex;
+      while (isCell) {
+        if (grid[startIndex].right) {
+          acrossClue.length = acrossClue.length + 1;
+          acrossClue.indices.push(startIndex + 1);
+          startIndex++;
+        } else {
+          isCell = false;
+        }
+      }
       clues.push(acrossClue);
     }
-    if (grid[item].bottom && !grid[item].top) {
+    if (grid[currIndex].bottom && !grid[currIndex].top) {
       //
-      const acrossClue = new Clue(0, Direction.DOWN, [], "", "");
-      clues.push(acrossClue);
+      const downClue = new Clue(1, Direction.DOWN, [currIndex], "", "");
+
+      let isCell = true;
+      let startIndex = currIndex;
+      while (isCell) {
+        if (grid[startIndex].bottom) {
+          downClue.length = downClue.length + 1;
+          const cellBelow = getCellBelow(grid, startIndex);
+          if (cellBelow && cellBelow.id) {
+            downClue.indices.push(+cellBelow.id);
+            startIndex = +cellBelow.id;
+          }
+        } else {
+          isCell = false;
+        }
+      }
+
+      clues.push(downClue);
     }
   });
+  console.log(clues);
   return clues;
 };
 
