@@ -76,8 +76,8 @@ export const setClueNumbers = (grid: CellType[]) => {
 
 export const updateSurroundingCells = (grid: CellType[], index: number) => {
   const cellAbove = getCellAbove(grid, index);
-
   const cellBelow = getCellBelow(grid, index);
+
   // if there's a cell to the left, update right value
   if (grid[index - 1] && !isLeftEdge(grid, index)) {
     grid[index - 1].right = !grid[index - 1].right;
@@ -121,7 +121,7 @@ export const initializeGrid = (grid: CellType[]) => {
     // if the square to the right of the current square is a void OR the current square is on the right side of the grid (thus it has nothing to its right), then set the "right" property to false.
     if (
       findRightEdge(grid).includes(index) ||
-      (!findRightEdge(grid).includes(index + 1) && grid[index + 1]?.isVoid)
+      (!findRightEdge(grid).includes(index) && grid[index + 1]?.isVoid)
     ) {
       item.right = false;
     }
@@ -149,6 +149,7 @@ export const initializeGrid = (grid: CellType[]) => {
     return item;
   }); // end of map
   setClueNumbers(newGrid);
+
   createClues(newGrid);
   return newGrid;
 };
@@ -197,7 +198,7 @@ export const createClues = (grid: CellType[]) => {
       clues.push(downClue);
     }
   });
-  console.log(clues);
+
   return clues;
 };
 
