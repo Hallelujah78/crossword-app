@@ -242,6 +242,69 @@ const findRightEdge = () =>{
 - get a big list of words
 - iterate over the Clue objects and select a pseudorandom answer of an appropriate length from the list of words/phrases
   - it may be beneficial to fill in the larger words first and work around those
-    - it will be harder/impossible to find a large word/phrase that fits with a bunch of other 3-4 letter answers that we have already filled in
+    - it may be harder/impossible to find a large word/phrase that fits with a bunch of other 3-4 letter answers that we have already filled in
       - in our 'starter' Guardian grid, we have 2 12-letter answers that both share letters with 6 other shorter answers
-  - OR it may be benficial to pick the words that intersect with the greatest number of other clues (which intuitively may be the longer clues)
+  - OR it may be benficial to pick the words that intersect with the greatest number of other clues. Intuitively, these may be the longer clues - although not necessarily, and it is easy to think of a grid where a very long word only intersects with one other clue
+
+## Word difficulty
+
+- this seems like a deep subject with a lot of different approaches that could be combined
+- a few possibilities:
+
+  - word length
+  - number of syllables
+  - word frequency
+  - Scrabble score
+
+- possibilities that are beyond my ability (compute power, storage, RAM, access to enormous corpus of text):
+
+  - combine the above methods with readability analysis:
+    - Dale-Chall
+    - Flesh-Kincaid
+    - Fry readability
+    - Gunning Fog index
+    - Spache Readability Formula
+
+- Taking a deep dive into word difficulty would be a fun project all on its own, some resources:
+- https://datayze.com/word-analyzer?word=difficulty - input a word and get info on its difficulty
+- https://stackoverflow.com/questions/5141092/determine-the-difficulty-of-an-english-word
+- Porter Stemming Algorithm: http://tartarus.org/~martin/PorterStemmer/def.txt
+  - a more advanced idea of 'length' by defining words as being of the form [C](VC){m}[V]; C means a block of consonants and V a block of vowels and this definition says a word is an optional C followed by m VC blocks and finally an optional V. The m value is this advanced 'length'.
+- Google n-grams V3: http://storage.googleapis.com/books/ngrams/books/datasetsv3.html
+- https://simple.wikipedia.org/wiki/Readability
+- since the Google ngram dataset looks promising, here's a great article I mostly read! https://economicsfromthetopdown.com/2020/10/19/working-with-google-ngrams-a-data-wrangling-tale/
+  - this article mentions the grady_augmented word list
+
+## Word lists
+
+- picking the right list or combining lists seems important
+- https://www.spreadthewordlist.com/
+  - this list is large but there is a huge amount of garbage in here. The first 5 entries are:
+    aaa;50
+    aaaa;40
+    aaaaa;20
+    aaaaaaaaaaaaaaa;30
+    aaaaah;20
+  - the words are also not separated by spaces
+- https://www.reddit.com/r/crossword/comments/nqsuku/all_the_downloadable_word_lists_ive_been_able_to/
+
+### the CrossWord Nexus Word list
+
+- this is an Americancentric list
+- the words are not separated out and so you have an entry like `5440ORFIGHT` which to me looks like nonsense
+  - of course, it has meaning as a book and a was a slogan in the 1844 presidential election
+- interestingly, ChatGPT has no problems, for the most part, in providing information when you paste something like 5440ORFIGHT in, or LOMEIN (Lo Mein) and so on
+- from the perspetive of generating a clue automatically, ChatGPT gives me a good clue but tells me it is 6 letters, not 2,4 (LOMEIN)
+- in fact, it will tell you that it is 6 letters even if you type in 'Lo Mein'
+
+### World List Woes
+
+- most of the word lists I've found are US-centric in terms of culture
+  - ideally the list would be in British english
+- they have information stripped out, such as the spaces between the words, apostrophes, hyphens etc
+- an ideal list would:
+  - have the spaces left in, so that we could at least say how many words are in the answer!
+  - have a stripped version and an intact version of the same answer to make it clear what it is (phrase): `KITTITIANSANDNEVISIANS` initially looks like drivel
+- for the sake of simplicity, I'll use a 60,000 word list that has only single words or 1-grams and it retains hypens, and has a frequency rank
+  - a quick check shows that it contains British and American spellings :frowning:
+  - but let's crack on anyway
