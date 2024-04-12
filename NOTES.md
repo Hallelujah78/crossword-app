@@ -224,3 +224,24 @@ const findRightEdge = () =>{
 - we need to determine if a cell is at the edges quite often
 - instead of calculating the indices of top, right, bottom and left sides of the grid each time we need to check, let's add to our Grid state and calculate it once
 - we can then use a function like isLeft, isRight to cleanly return true or false in an if statement instead of having more confusing code inside the if condition
+
+## Populating our Clue objects with answers
+
+- at this point we have the Clue class, instances of which have the following props:
+  - answer: the answer that fits in the crossword grid for a given clue
+  - clue: the clue that will be shown to the crossword solver
+  - direction: whether the clue is across (0) or down (1)
+  - the indices for each cell that comprises a letter in the answer
+    - since we had to iterate across or down to get the clue length, it made some sense to store the index of each letter
+    - this will be useful when it comes to a few things
+    - cross referencing if an index in a clue is also part of another clue
+      - when constructing the crossword, if the letter of the ANSWER changes in the across clue, then that affects the answer that must fit in the down clue
+      - when solving, in the Guardian crossword when the user clicks a cell that belongs to an across and a down clue, the across clue is highlighted first. A subsequent click highlights the down clue.
+- it would probably be better if instead of an array of indices, we have an array of objects with the index as the key and the letter as the value, or an array of tuples with [0, 'A'], [1, 'P']
+- anyway, next steps:
+- get a big list of words
+- iterate over the Clue objects and select a pseudorandom answer of an appropriate length from the list of words/phrases
+  - it may be beneficial to fill in the larger words first and work around those
+    - it will be harder/impossible to find a large word/phrase that fits with a bunch of other 3-4 letter answers that we have already filled in
+      - in our 'starter' Guardian grid, we have 2 12-letter answers that both share letters with 6 other shorter answers
+  - OR it may be benficial to pick the words that intersect with the greatest number of other clues (which intuitively may be the longer clues)
