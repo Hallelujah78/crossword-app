@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // models
 import { CellType } from "../models/Cell.model";
+import Answer from "../models/Answer.model";
 
 // libs
 import styled from "styled-components";
@@ -12,6 +13,7 @@ import Cell from "./Cell";
 
 // data
 import { grid } from "../data/grid";
+import answers from "../data/answers";
 
 // utils
 import {
@@ -19,6 +21,7 @@ import {
   setClueNumbers,
   updateSurroundingCells,
   createClues,
+  populateClues,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
@@ -48,6 +51,7 @@ const Grid: React.FC = () => {
     console.log(tempGrid);
     const clues = createClues(tempGrid);
     console.log(clues);
+    console.log(answers[populateClues(clues, answers)].raw);
 
     setGridState(tempGrid);
   };

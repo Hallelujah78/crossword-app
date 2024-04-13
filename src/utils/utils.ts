@@ -2,6 +2,7 @@
 import { CellType } from "../models/Cell.model";
 import Clue from "../classes/Clue";
 import { Direction } from "../models/Direction.model";
+import Answer from "../models/Answer.model";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
@@ -208,4 +209,10 @@ export const getClueIndices = (grid: CellType[]) => {
     item.clueNumber && clueIndices.push(index);
   });
   return clueIndices;
+};
+
+export const populateClues = (clues: Clue[], answers: Answer[]) => {
+  // 59800 entries in our
+  const randomWord = Math.ceil(Math.random() * 59800);
+  return randomWord;
 };

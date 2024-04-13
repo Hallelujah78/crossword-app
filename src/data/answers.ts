@@ -1,6 +1,7 @@
 // @ts-nocheck
  /* eslint-ignore-file */
-type Answer = { freq: number; raw: string; length: number };
+import Answer from '../models/Answer.model.ts'
+
 
 const answers: Array<Answer> = [
   { freq: 1, raw: "THE", length: 3 },
@@ -44764,7 +44765,7 @@ const answers: Array<Answer> = [
   { freq: 44809, raw: "Y-SHAPED", length: 8 },
   { freq: 44810, raw: "PINK-AND-WHITE", length: 14 },
   { freq: 44811, raw: "DROPPING", length: 8 },
-  { freq: 44812, raw: "TAKE-IT-OR-LEAVE" - IT, length: 19 },
+  { freq: 44812, raw: "TAKE-IT-OR-LEAVE", length: 19 },
   { freq: 44813, raw: "EXOTICALLY", length: 10 },
   { freq: 44814, raw: "QUOTE-UNQUOTE", length: 13 },
   { freq: 44815, raw: "QUAINTNESS", length: 10 },
@@ -49748,13 +49749,11 @@ const answers: Array<Answer> = [
   { freq: 49820, raw: "RED-STRIPED", length: 11 },
   { freq: 49821, raw: "SELF-DESIGNATED", length: 15 },
   { freq: 49822, raw: "DESPATCH", length: 8 },
-  { freq: 49823, raw: "TWO-AND-A-HALF" - HOUR, length: 19 },
   { freq: 49824, raw: "SKILFUL", length: 7 },
   { freq: 49825, raw: "LOW-WATTAGE", length: 11 },
   { freq: 49826, raw: "C-SECTION", length: 9 },
   { freq: 49827, raw: "MONEY-HUNGRY", length: 12 },
   { freq: 49828, raw: "FIZZING", length: 7 },
-  { freq: 49829, raw: "TWO-AND-A-HALF" - YEAR - OLD, length: 23 },
   { freq: 49830, raw: "CONCEALING", length: 10 },
   { freq: 49831, raw: "TRANSMITTABLE", length: 13 },
   { freq: 49832, raw: "EXOTIC-LOOKING", length: 14 },
@@ -54000,7 +53999,7 @@ const answers: Array<Answer> = [
   { freq: 54088, raw: "REPACKAGED", length: 10 },
   { freq: 54089, raw: "NEAR-FUTURE", length: 11 },
   { freq: 54090, raw: "ADULATORY", length: 9 },
-  { freq: 54091, raw: "GET-OUT-OF-JAIL" - FREE, length: 20 },
+  { freq: 54091, raw: "GET-OUT-OF-JAIL-FREE", length: 20 },
   { freq: 54092, raw: "BRICK-PAVED", length: 11 },
   { freq: 54093, raw: "TWO-DAY-OLD", length: 11 },
   { freq: 54094, raw: "QUARANTINING", length: 12 },
@@ -54434,7 +54433,6 @@ const answers: Array<Answer> = [
   { freq: 54522, raw: "TANK-LIKE", length: 9 },
   { freq: 54523, raw: "BUNGLER", length: 7 },
   { freq: 54524, raw: "MONOLITHICALLY", length: 14 },
-  { freq: 54525, raw: "TWO-AND-A-HALF" - YEAR, length: 19 },
   { freq: 54526, raw: "ALCOHOL-FUELED", length: 14 },
   { freq: 54527, raw: "WHITE-SHOE", length: 10 },
   { freq: 54528, raw: "NEWLY-MINTED", length: 12 },
@@ -55943,7 +55941,6 @@ const answers: Array<Answer> = [
   { freq: 56041, raw: "CRUNCHED", length: 8 },
   { freq: 56042, raw: "MEASURELESS", length: 11 },
   { freq: 56043, raw: "CEILING-HIGH", length: 12 },
-  { freq: 56044, raw: "THREE-AND-A-HALF" - HOUR, length: 21 },
   { freq: 56045, raw: "WESTERING", length: 9 },
   { freq: 56046, raw: "CONDENSING", length: 10 },
   { freq: 56047, raw: "STIPPLE", length: 7 },
@@ -57076,7 +57073,7 @@ const answers: Array<Answer> = [
   { freq: 57182, raw: "SINK-OR-SWIM", length: 12 },
   { freq: 57183, raw: "KICK-START", length: 10 },
   { freq: 57184, raw: "WORDSWORTHIAN", length: 13 },
-  { freq: 57185, raw: "TOO-GOOD-TO-BE" - TRUE, length: 19 },
+  { freq: 57185, raw: "TOO-GOOD-TO-BE-TRUE", length: 19 },
   { freq: 57186, raw: "INDUSTRY-LEADING", length: 16 },
   { freq: 57187, raw: "SPEED-OF-LIGHT", length: 14 },
   { freq: 57188, raw: "ART-ROCK", length: 8 },
