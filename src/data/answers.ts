@@ -1,4 +1,8 @@
-const answers: [] = [
+// @ts-nocheck
+ /* eslint-ignore-file */
+type Answer = { freq: number; raw: string; length: number };
+
+const answers: Array<Answer> = [
   { freq: 1, raw: "THE", length: 3 },
   { freq: 2, raw: "AND", length: 3 },
   { freq: 3, raw: "HAVE", length: 4 },
@@ -59800,3 +59804,5 @@ const answers: [] = [
   { freq: 59934, raw: "CARCINOID", length: 9 },
   { freq: 59935, raw: "TONUS", length: 5 },
 ];
+
+export default answers;
