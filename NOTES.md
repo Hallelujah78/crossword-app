@@ -308,3 +308,18 @@ const findRightEdge = () =>{
 - for the sake of simplicity, I'll use a 60,000 word list that has only single words or 1-grams and it retains hypens, and has a frequency rank
   - a quick check shows that it contains British and American spellings :frowning:
   - but let's crack on anyway
+
+## To Do Tomorrow (14-4-24)
+
+- answers.ts needs the following to be done:
+  - add a field for the answer stripped of hyphens and apostrophes
+  - recalculate the length field
+  - pre-split the file based on answer length
+    - we don't want to have to filter 60,000 entries everytime we need an answer that is X chars in length
+    - the structure might be:
+
+[{len: 3, answers: [{Answer}, {Answer}, {Answer} ...]}, {len: 4, answers: [{Answer}, {Answer}, {Answer} ...]}, ...]
+
+- we also need to investigate calculating a word score before doing the above
+  - find out how the pros do it
+  - do the calc and add the field
