@@ -22,6 +22,7 @@ import {
   updateSurroundingCells,
   createClues,
   populateClues,
+  removeChars,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
@@ -51,7 +52,7 @@ const Grid: React.FC = () => {
     console.log(tempGrid);
     const clues = createClues(tempGrid);
     console.log(clues);
-    console.log(answers[populateClues(clues, answers)].raw);
+    removeChars(answers);
 
     setGridState(tempGrid);
   };

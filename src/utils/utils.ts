@@ -213,6 +213,16 @@ export const getClueIndices = (grid: CellType[]) => {
 
 export const populateClues = (clues: Clue[], answers: Answer[]) => {
   // 59800 entries in our
-  const randomWord = Math.ceil(Math.random() * 59800);
-  return randomWord;
+  // const randomWord = Math.ceil(Math.random() * 59800);
+  // return randomWord;
+};
+
+export const removeChars = (answers: Answer[]) => {
+  for (const answer of answers) {
+    if (answer.raw.includes("-") || answer.raw.includes("'")) {
+      answer.word = answer.raw.replace(new RegExp(/[-']/, "g"), "");
+      answer.length = answer.word.length;
+    }
+  }
+  console.log(answers);
 };
