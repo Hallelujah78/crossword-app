@@ -23,6 +23,7 @@ import {
   createClues,
   populateClues,
   removeChars,
+  separateByLength,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
@@ -52,7 +53,8 @@ const Grid: React.FC = () => {
     console.log(tempGrid);
     const clues = createClues(tempGrid);
     console.log(clues);
-    removeChars(answers);
+
+    console.log(separateByLength(answers, 23));
 
     setGridState(tempGrid);
   };

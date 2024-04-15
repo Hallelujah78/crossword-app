@@ -226,3 +226,10 @@ export const removeChars = (answers: Answer[]) => {
   }
   console.log(answers);
 };
+
+export const separateByLength = (answers: Answer[], wordLength: number) => {
+  const filteredAnswers = answers.filter((answer) => {
+    return answer.length === wordLength;
+  });
+  return filteredAnswers;
+};
