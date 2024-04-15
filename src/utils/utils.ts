@@ -162,7 +162,14 @@ export const createClues = (grid: CellType[]) => {
   clueIndices.forEach((currIndex) => {
     // across clue
     if (grid[currIndex].right && !grid[currIndex].left) {
-      const acrossClue = new Clue(1, Direction.ACROSS, [currIndex], [], "");
+      const acrossClue = new Clue(
+        `${currIndex}ACROSS`,
+        1,
+        Direction.ACROSS,
+        [currIndex],
+        [],
+        ""
+      );
 
       let isCell = true;
       let startIndex = currIndex;
@@ -179,7 +186,14 @@ export const createClues = (grid: CellType[]) => {
     }
     if (grid[currIndex].bottom && !grid[currIndex].top) {
       //
-      const downClue = new Clue(1, Direction.DOWN, [currIndex], [], "");
+      const downClue = new Clue(
+        `${currIndex}DOWN`,
+        1,
+        Direction.DOWN,
+        [currIndex],
+        [],
+        ""
+      );
 
       let isCell = true;
       let startIndex = currIndex;
