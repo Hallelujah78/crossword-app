@@ -418,3 +418,12 @@ getCluesThatIntersect(oneAcross, cluesDown);
 - yourIndex: this is the position of the index in the intersecting clue's indices array
 
 - why return the position of the index in the indices array instead of the actual value? The actual value gives us the index of the cell in the overall grid. In terms of clues, it's more useful to say that "my 3rd letter intersects with a clue with this id, and the position of the shared letter in that clue is 5th." If I, as a clue, update my letter in the 3rd position, I can say: get me the clue with id of such and such. Now set the 5th element of its answer array to be equal to the 3rd element of my answer array.
+
+## Todo
+
+- add id to the Clue class - first and last elements of the indices array as a string should be unique
+- add a new prop to Clue called 'intersection' which will be an array of objects as noted above:
+
+```js
+{id: "0156", myIndex: 0, yourIndex:0}
+```
