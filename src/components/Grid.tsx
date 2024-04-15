@@ -14,6 +14,7 @@ import Cell from "./Cell";
 // data
 import { grid } from "../data/grid";
 import answers from "../data/answers";
+import { thirteen, twelve, eleven, ten, nine, eight } from "../data/answers2";
 
 // utils
 import {
@@ -22,12 +23,13 @@ import {
   updateSurroundingCells,
   createClues,
   populateClues,
-  removeChars,
-  separateByLength,
+  getAcrossOrDown,
+  getCluesThatIntersect,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
+  const [clueList, setClueList] = useState(null);
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
@@ -50,12 +52,17 @@ const Grid: React.FC = () => {
       updateSurroundingCells(tempGrid, symmetricalIndex);
     }
     setClueNumbers(tempGrid);
-    console.log(tempGrid);
+
     const clues = createClues(tempGrid);
+    populateClues(clues, thirteen, eleven);
     console.log(clues);
+    const crossDirection = getAcrossOrDown(clues[0], clues);
 
-    console.log(separateByLength(answers, 23));
-
+    let cluesThatIntersect;
+    if (crossDirection !== undefined) {
+      cluesThatIntersect = getCluesThatIntersect(clues[0], crossDirection);
+    }
+    console.log(cluesThatIntersect);
     setGridState(tempGrid);
   };
 

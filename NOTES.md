@@ -323,3 +323,98 @@ const findRightEdge = () =>{
 - we also need to investigate calculating a word score before doing the above
   - find out how the pros do it
   - do the calc and add the field
+
+## Cells and Clues - Oh Boy
+
+### Cell
+
+- a cell has an id which is a number that tells us where on the grid it is
+- a cell has an optional clueNumber
+- a cell must also be capable of displaying a letter
+
+### Clue
+
+- a clue has an answer prop, which is a string of letters we can use to populate a cell
+- a clue has an array of indices
+
+- to populate a cell with its letter (this is for crossword construction, not solving)
+  - the cell id will match a value in the indices array
+  - the position of this index in the array will match the letter in the answer
+- to populate the cell with its letter
+  - what clues have a non-empty string answer?
+  - take the indices of these clues, if the id of the cell is in the clue, take the position of the index (yeah, it's hard) and pass the corresponding letter to the cell
+
+## Not worrying about displaying our answers on our grid
+
+- for the moment, I think I'll focus on iterating through adding a clue, and then filling in letters from that clue in clues that intersect with that clue
+- a Clue's answer may be better as an array of letters
+- our clue:
+
+```js
+{
+    "length": 13,
+    "direction": 1,
+    "indices": [
+        0,
+        13,
+        26,
+        39,
+        52,
+        65,
+        78,
+        91,
+        104,
+        117,
+        130,
+        143,
+        156
+    ],
+    "answer": "PREFIGURATION",
+    "clue": ""
+}
+```
+
+- steps:
+
+  - let's say our answer starts out as an empty array with length 0.
+  - We first check if the length is zero
+    - if the length is zero, then we know that no clues that intersect with it have had their answers set
+      - this means we are free to pick any random answer of an appropriate length
+      - if a clue that intersect with it has set a value, then this letter must be filled in in our answer array for this clue and its length will not be zero
+    - if the length is not zero, and, say, the length of the answer must be 13 letters, we filter our thirteen answer list for words that match our pattern AND ONLY THEN randomly select an answer from the filtered list
+      - for each letter that we fill in, we must update all other clues that intersect with our clue
+
+  clue 0 has a list of indices: [[0, Clue] [1, undefined], 2, 3, 4, 5, 6, 7, 8]
+  clue 1 has a list of indices: [0, 13, 26, 39]
+
+  Therefore, the cell with the id of 0 is common to clue 0 and clue 1.
+  When we set the value for the answer in clue 0, we must also set the value for the clues that have common indices. In this case, the letter in the 0th position of clue 1
+
+  - a down clue cannot intersect with another down clue
+  - an across clue cannot share a cell with another across clue
+
+## Getting there
+
+- Added getAcrossOrDown that takes a clue and if the clue is an across clue, it returns all down clues, and vice versa
+- since an across clue won't share cells or intersect with any other across clue, there is no point in checking all clues to see if they share cells
+
+- added getCluesThatIntersect, which apart from being one of the worst named functions in the history of programming, takes a clue and an array of clues derived from calling getAcrossOrDown. For every clue in our clue array, it iterates over our param clue's indices array. If they share an index, we return an object with the Clue, the value in our indices array, and the index of the value in the Clue's indices array.
+
+I think our clues will need an id prop. A unique prop might be, for example, a string composed of the first and last index of the indices array. In getCluesThatIntersect, we would then return the id, the index value in our param clue, and the index of this index in our matching Clue's indices array.
+For example, we have clue 1 across and 1 down. They both share the cell with index 0. We run our function, getCluesThatIntersect:
+
+```js
+getCluesThatIntersect(oneAcross, cluesDown);
+```
+
+- this returns an array of objects, and each object will look like:
+
+```js
+{id: "0156", myIndex: 0, yourIndex:0}
+```
+
+- 0156 is the id for the Clue 1 Down (assuming it is 13 chars in length with the last cell having index 156 on our grid)
+- myIndex: this is the position of the index in our indices array
+- yourIndex: this is the position of the index in the intersecting clue's indices array
+
+- why return the position of the index in the indices array instead of the actual value? The actual value gives us the index of the cell in the overall grid. In terms of clues, it's more useful to say that "my 3rd letter intersects with a clue with this id, and the position of the shared letter in that clue is 5th." If I, as a clue, update my letter in the 3rd position, I can say: get me the clue with id of such and such. Now set the 5th element of its answer array to be equal to the 3rd element of my answer array.

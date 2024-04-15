@@ -5,7 +5,7 @@ export default class Clue {
     public length: number,
     public direction: Direction,
     public indices: number[],
-    public answer: string,
+    public answer: string[],
     public clue: string
   ) {}
 }

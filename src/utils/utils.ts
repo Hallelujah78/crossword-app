@@ -162,7 +162,7 @@ export const createClues = (grid: CellType[]) => {
   clueIndices.forEach((currIndex) => {
     // across clue
     if (grid[currIndex].right && !grid[currIndex].left) {
-      const acrossClue = new Clue(1, Direction.ACROSS, [currIndex], "", "");
+      const acrossClue = new Clue(1, Direction.ACROSS, [currIndex], [], "");
 
       let isCell = true;
       let startIndex = currIndex;
@@ -179,7 +179,7 @@ export const createClues = (grid: CellType[]) => {
     }
     if (grid[currIndex].bottom && !grid[currIndex].top) {
       //
-      const downClue = new Clue(1, Direction.DOWN, [currIndex], "", "");
+      const downClue = new Clue(1, Direction.DOWN, [currIndex], [], "");
 
       let isCell = true;
       let startIndex = currIndex;
@@ -211,10 +211,36 @@ export const getClueIndices = (grid: CellType[]) => {
   return clueIndices;
 };
 
-export const populateClues = (clues: Clue[], answers: Answer[]) => {
-  // 59800 entries in our
-  // const randomWord = Math.ceil(Math.random() * 59800);
-  // return randomWord;
+export const populateClues = (
+  clues: Clue[],
+  thirteen: Answer[],
+  eleven: Answer[]
+) => {
+  clues.sort((a: Clue, b: Clue) => {
+    return b.length - a.length;
+  });
+  clues.forEach((clue) => {
+    const randVal = Math.random();
+    switch (clue.length) {
+      case 13:
+        clue.answer = [
+          ...(thirteen[Math.ceil(randVal * thirteen.length)].word !== undefined
+            ? thirteen[Math.ceil(randVal * thirteen.length)].word!
+            : thirteen[Math.ceil(randVal * thirteen.length)].raw),
+        ];
+
+        break;
+      case 11:
+        clue.answer = [
+          ...(eleven[Math.ceil(randVal * eleven.length)].word !== undefined
+            ? eleven[Math.ceil(randVal * eleven.length)].word!
+            : eleven[Math.ceil(randVal * eleven.length)].raw),
+        ];
+        break;
+      default:
+        break;
+    }
+  });
 };
 
 export const removeChars = (answers: Answer[]) => {
@@ -232,4 +258,35 @@ export const separateByLength = (answers: Answer[], wordLength: number) => {
     return answer.length === wordLength;
   });
   return filteredAnswers;
+};
+
+export const getAcrossOrDown = (clue: Clue, clues: Clue[]) => {
+  if (clue.direction === Direction.ACROSS) {
+    console.log("clue direction is across");
+    return clues.filter((clue) => {
+      return clue.direction === Direction.DOWN;
+    });
+  } else
+    return clues.filter((clue) => {
+      return clue.direction === Direction.ACROSS;
+    });
+};
+
+export const getCluesThatIntersect = (clue: Clue, clues: Clue[]) => {
+  const { indices } = clue;
+  const intersection = [];
+  for (const clue of clues) {
+    // iterate over every clue
+    for (const index of indices) {
+      // for each clue, iterate over the index
+      if (clue.indices.includes(index)) {
+        intersection.push({
+          clue,
+          myIndex: indices.indexOf(index),
+          yourIndex: clue.indices.indexOf(index),
+        });
+      }
+    }
+  }
+  return intersection;
 };

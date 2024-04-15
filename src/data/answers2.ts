@@ -1,4 +1,5 @@
-export const five = [
+import Answer from "../models/Answer.model";
+export const five: Answer[] = [
   {
     freq: 19,
     raw: "THEIR",
@@ -256942,2735 +256943,2535 @@ export const sixteen = [
   {
     freq: 5455,
     raw: "ENVIRONMENTALIST",
-    length: 16,
   },
   {
     freq: 8198,
     raw: "MISUNDERSTANDING",
-    length: 16,
   },
   {
     freq: 8410,
     raw: "CHARACTERIZATION",
-    length: 16,
   },
   {
     freq: 8555,
     raw: "UNCONSTITUTIONAL",
-    length: 16,
   },
   {
     freq: 8900,
     raw: "THREE-DIMENSIONAL",
-    length: 16,
+
     word: "THREEDIMENSIONAL",
   },
   {
     freq: 10277,
     raw: "ENTHUSIASTICALLY",
-    length: 16,
   },
   {
     freq: 10452,
     raw: "DISPROPORTIONATE",
-    length: 16,
   },
   {
     freq: 11009,
     raw: "TWENTIETH-CENTURY",
-    length: 16,
+
     word: "TWENTIETHCENTURY",
   },
   {
     freq: 11310,
     raw: "MULTICULTURALISM",
-    length: 16,
   },
   {
     freq: 11377,
     raw: "INSTITUTIONALIZE",
-    length: 16,
   },
   {
     freq: 11781,
     raw: "AUTOBIOGRAPHICAL",
-    length: 16,
   },
   {
     freq: 11896,
     raw: "SECRETARY-GENERAL",
-    length: 16,
+
     word: "SECRETARYGENERAL",
   },
   {
     freq: 11916,
     raw: "INCOMPREHENSIBLE",
-    length: 16,
   },
   {
     freq: 12436,
     raw: "COUNTERTERRORISM",
-    length: 16,
   },
   {
     freq: 12899,
     raw: "NONPROLIFERATION",
-    length: 16,
   },
   {
     freq: 13568,
     raw: "MULTIDIMENSIONAL",
-    length: 16,
   },
   {
     freq: 13672,
     raw: "CONSTITUTIONALLY",
-    length: 16,
   },
   {
     freq: 14557,
     raw: "GASTROINTESTINAL",
-    length: 16,
   },
   {
     freq: 14678,
     raw: "ENTREPRENEURSHIP",
-    length: 16,
   },
   {
     freq: 14890,
     raw: "REPRESENTATIONAL",
-    length: 16,
   },
   {
     freq: 15822,
     raw: "UNDERREPRESENTED",
-    length: 16,
   },
   {
     freq: 15826,
     raw: "TEACHER-LIBRARIAN",
-    length: 16,
+
     word: "TEACHERLIBRARIAN",
   },
   {
     freq: 16178,
     raw: "EXTRATERRESTRIAL",
-    length: 16,
   },
   {
     freq: 16315,
     raw: "GREAT-GRANDFATHER",
-    length: 16,
+
     word: "GREATGRANDFATHER",
   },
   {
     freq: 16334,
     raw: "DECENTRALIZATION",
-    length: 16,
   },
   {
     freq: 16455,
     raw: "ENVIRONMENTALISM",
-    length: 16,
   },
   {
     freq: 16462,
     raw: "AUTHORITARIANISM",
-    length: 16,
   },
   {
     freq: 16600,
     raw: "CROSS-EXAMINATION",
-    length: 16,
+
     word: "CROSSEXAMINATION",
   },
   {
     freq: 16990,
     raw: "ANTI-INFLAMMATORY",
-    length: 16,
+
     word: "ANTIINFLAMMATORY",
   },
   {
     freq: 17247,
     raw: "TURN-OF-THE-CENTURY",
-    length: 16,
+
     word: "TURNOFTHECENTURY",
   },
   {
     freq: 17422,
     raw: "INTERCONTINENTAL",
-    length: 16,
   },
   {
     freq: 17631,
     raw: "COMMANDER-IN-CHIEF",
-    length: 16,
+
     word: "COMMANDERINCHIEF",
   },
   {
     freq: 17819,
     raw: "SECOND-GENERATION",
-    length: 16,
+
     word: "SECONDGENERATION",
   },
   {
     freq: 18356,
     raw: "MULTIMILLIONAIRE",
-    length: 16,
   },
   {
     freq: 18466,
     raw: "GREAT-GRANDMOTHER",
-    length: 16,
+
     word: "GREATGRANDMOTHER",
   },
   {
     freq: 18516,
     raw: "NEUROTRANSMITTER",
-    length: 16,
   },
   {
     freq: 18590,
     raw: "UNPREDICTABILITY",
-    length: 16,
   },
   {
     freq: 18795,
     raw: "SIXTEENTH-CENTURY",
-    length: 16,
+
     word: "SIXTEENTHCENTURY",
   },
   {
     freq: 19079,
     raw: "INDISCRIMINATELY",
-    length: 16,
   },
   {
     freq: 19891,
     raw: "GENERALIZABILITY",
-    length: 16,
   },
   {
     freq: 19995,
     raw: "ANESTHESIOLOGIST",
-    length: 16,
   },
   {
     freq: 20056,
     raw: "UNCHARACTERISTIC",
-    length: 16,
   },
   {
     freq: 20372,
     raw: "PHENOMENOLOGICAL",
-    length: 16,
   },
   {
     freq: 20404,
     raw: "COUNTERINTUITIVE",
-    length: 16,
   },
   {
     freq: 20588,
     raw: "UNDIFFERENTIATED",
-    length: 16,
   },
   {
     freq: 20807,
     raw: "TRANSFORMATIONAL",
-    length: 16,
   },
   {
     freq: 20979,
     raw: "IRRESPONSIBILITY",
-    length: 16,
   },
   {
     freq: 21998,
     raw: "UPPER-MIDDLE-CLASS",
-    length: 16,
+
     word: "UPPERMIDDLECLASS",
   },
   {
     freq: 22311,
     raw: "INTERNATIONALISM",
-    length: 16,
   },
   {
     freq: 22408,
     raw: "TRANSCONTINENTAL",
-    length: 16,
   },
   {
     freq: 22506,
     raw: "UNDERACHIEVEMENT",
-    length: 16,
   },
   {
     freq: 22760,
     raw: "QUINTESSENTIALLY",
-    length: 16,
   },
   {
     freq: 22779,
     raw: "SELF-PRESERVATION",
-    length: 16,
+
     word: "SELFPRESERVATION",
   },
   {
     freq: 23092,
     raw: "SINGER-SONGWRITER",
-    length: 16,
+
     word: "SINGERSONGWRITER",
   },
   {
     freq: 23147,
     raw: "REINTERPRETATION",
-    length: 16,
   },
   {
     freq: 23246,
     raw: "SOCIODEMOGRAPHIC",
-    length: 16,
   },
   {
     freq: 23410,
     raw: "COMPUTER-ASSISTED",
-    length: 16,
+
     word: "COMPUTERASSISTED",
   },
   {
     freq: 23601,
     raw: "COUNTERCLOCKWISE",
-    length: 16,
   },
   {
     freq: 23983,
     raw: "PERFORMANCE-BASED",
-    length: 16,
+
     word: "PERFORMANCEBASED",
   },
   {
     freq: 23991,
     raw: "THOUGHT-PROVOKING",
-    length: 16,
+
     word: "THOUGHTPROVOKING",
   },
   {
     freq: 24042,
     raw: "UNDERAPPRECIATED",
-    length: 16,
   },
   {
     freq: 24163,
     raw: "COMPARTMENTALIZE",
-    length: 16,
   },
   {
     freq: 24511,
     raw: "INTERNATIONALIST",
-    length: 16,
   },
   {
     freq: 24804,
     raw: "SEVENTEEN-YEAR-OLD",
-    length: 16,
+
     word: "SEVENTEENYEAROLD",
   },
   {
     freq: 25244,
     raw: "INTERCORRELATION",
-    length: 16,
   },
   {
     freq: 25672,
     raw: "MISCOMMUNICATION",
-    length: 16,
   },
   {
     freq: 26254,
     raw: "INCONTROVERTIBLE",
-    length: 16,
   },
   {
     freq: 26288,
     raw: "JAPANESE-AMERICAN",
-    length: 16,
+
     word: "JAPANESEAMERICAN",
   },
   {
     freq: 26308,
     raw: "VICE-PRESIDENTIAL",
-    length: 16,
+
     word: "VICEPRESIDENTIAL",
   },
   {
     freq: 26489,
     raw: "UNDERDEVELOPMENT",
-    length: 16,
   },
   {
     freq: 26700,
     raw: "IMMUNODEFICIENCY",
-    length: 16,
   },
   {
     freq: 26758,
     raw: "NATIONAL-SECURITY",
-    length: 16,
+
     word: "NATIONALSECURITY",
   },
   {
     freq: 26835,
     raw: "GOVERNMENT-FUNDED",
-    length: 16,
+
     word: "GOVERNMENTFUNDED",
   },
   {
     freq: 26897,
     raw: "PRE-REVOLUTIONARY",
-    length: 16,
+
     word: "PREREVOLUTIONARY",
   },
   {
     freq: 26979,
     raw: "FIFTEENTH-CENTURY",
-    length: 16,
+
     word: "FIFTEENTHCENTURY",
   },
   {
     freq: 27949,
     raw: "MICROELECTRONICS",
-    length: 16,
   },
   {
     freq: 28202,
     raw: "JAPANESE-AMERICAN",
-    length: 16,
+
     word: "JAPANESEAMERICAN",
   },
   {
     freq: 28368,
     raw: "REMOTE-CONTROLLED",
-    length: 16,
+
     word: "REMOTECONTROLLED",
   },
   {
     freq: 28551,
     raw: "OTOLARYNGOLOGIST",
-    length: 16,
   },
   {
     freq: 28622,
     raw: "CAPITAL-INTENSIVE",
-    length: 16,
+
     word: "CAPITALINTENSIVE",
   },
   {
     freq: 28662,
     raw: "CHOCOLATE-COVERED",
-    length: 16,
+
     word: "CHOCOLATECOVERED",
   },
   {
     freq: 28762,
     raw: "SELF-ADMINISTERED",
-    length: 16,
+
     word: "SELFADMINISTERED",
   },
   {
     freq: 29007,
     raw: "MULTICULTURALIST",
-    length: 16,
   },
   {
     freq: 29078,
     raw: "ADMINISTRATIVELY",
-    length: 16,
   },
   {
     freq: 29122,
     raw: "GREAT-GRANDPARENT",
-    length: 16,
+
     word: "GREATGRANDPARENT",
   },
   {
     freq: 29220,
     raw: "METHODOLOGICALLY",
-    length: 16,
   },
   {
     freq: 29259,
     raw: "FOURTH-GENERATION",
-    length: 16,
+
     word: "FOURTHGENERATION",
   },
   {
     freq: 29361,
     raw: "INTERNATIONALIZE",
-    length: 16,
   },
   {
     freq: 29459,
     raw: "DISQUALIFICATION",
-    length: 16,
   },
   {
     freq: 29583,
     raw: "POST-INDEPENDENCE",
-    length: 16,
+
     word: "POSTINDEPENDENCE",
   },
   {
     freq: 29592,
     raw: "EXTRATERRITORIAL",
-    length: 16,
   },
   {
     freq: 30028,
     raw: "SELF-PERPETUATING",
-    length: 16,
+
     word: "SELFPERPETUATING",
   },
   {
     freq: 30266,
     raw: "PARAPROFESSIONAL",
-    length: 16,
   },
   {
     freq: 30485,
     raw: "SINGER-SONGWRITER",
-    length: 16,
+
     word: "SINGERSONGWRITER",
   },
   {
     freq: 30489,
     raw: "PARAPROFESSIONAL",
-    length: 16,
   },
   {
     freq: 30547,
     raw: "ELEMENTARY-SCHOOL",
-    length: 16,
+
     word: "ELEMENTARYSCHOOL",
   },
   {
     freq: 30706,
     raw: "SPECIAL-EDUCATION",
-    length: 16,
+
     word: "SPECIALEDUCATION",
   },
   {
     freq: 30736,
     raw: "UNAPOLOGETICALLY",
-    length: 16,
   },
   {
     freq: 30780,
     raw: "UNREPRESENTATIVE",
-    length: 16,
   },
   {
     freq: 30964,
     raw: "ASTROPHOTOGRAPHY",
-    length: 16,
   },
   {
     freq: 31033,
     raw: "ENERGY-EFFICIENCY",
-    length: 16,
+
     word: "ENERGYEFFICIENCY",
   },
   {
     freq: 31214,
     raw: "HYPERSENSITIVITY",
-    length: 16,
   },
   {
     freq: 31516,
     raw: "DEMILITARIZATION",
-    length: 16,
   },
   {
     freq: 31542,
     raw: "STANDING-ROOM-ONLY",
-    length: 16,
+
     word: "STANDINGROOMONLY",
   },
   {
     freq: 31767,
     raw: "SINGLE-MINDEDNESS",
-    length: 16,
+
     word: "SINGLEMINDEDNESS",
   },
   {
     freq: 31949,
     raw: "DEFICIT-REDUCTION",
-    length: 16,
+
     word: "DEFICITREDUCTION",
   },
   {
     freq: 31972,
     raw: "ORGANIZATIONALLY",
-    length: 16,
   },
   {
     freq: 32015,
     raw: "SELF-SATISFACTION",
-    length: 16,
+
     word: "SELFSATISFACTION",
   },
   {
     freq: 32506,
     raw: "CROSS-POLLINATION",
-    length: 16,
+
     word: "CROSSPOLLINATION",
   },
   {
     freq: 32869,
     raw: "SHORTSIGHTEDNESS",
-    length: 16,
   },
   {
     freq: 33068,
     raw: "ELECTROMAGNETISM",
-    length: 16,
   },
   {
     freq: 33131,
     raw: "PRESCRIPTION-DRUG",
-    length: 16,
+
     word: "PRESCRIPTIONDRUG",
   },
   {
     freq: 33327,
     raw: "LOWER-MIDDLE-CLASS",
-    length: 16,
+
     word: "LOWERMIDDLECLASS",
   },
   {
     freq: 33377,
     raw: "PHOTOGRAPHICALLY",
-    length: 16,
   },
   {
     freq: 33550,
     raw: "EQUAL-OPPORTUNITY",
-    length: 16,
+
     word: "EQUALOPPORTUNITY",
   },
   {
     freq: 33649,
     raw: "COUNTERCLOCKWISE",
-    length: 16,
   },
   {
     freq: 33677,
     raw: "CONSUMER-ORIENTED",
-    length: 16,
+
     word: "CONSUMERORIENTED",
   },
   {
     freq: 33925,
     raw: "EUROPEAN-AMERICAN",
-    length: 16,
+
     word: "EUROPEANAMERICAN",
   },
   {
     freq: 34012,
     raw: "GOVERNMENT-BACKED",
-    length: 16,
+
     word: "GOVERNMENTBACKED",
   },
   {
     freq: 34067,
     raw: "CRITICAL-THINKING",
-    length: 16,
+
     word: "CRITICALTHINKING",
   },
   {
     freq: 34071,
     raw: "COMPUTER-MEDIATED",
-    length: 16,
+
     word: "COMPUTERMEDIATED",
   },
   {
     freq: 34444,
     raw: "OVEREXPLOITATION",
-    length: 16,
   },
   {
     freq: 34449,
     raw: "PSEUDO-SCIENTIFIC",
-    length: 16,
+
     word: "PSEUDOSCIENTIFIC",
   },
   {
     freq: 34452,
     raw: "COLLECTIVIZATION",
-    length: 16,
   },
   {
     freq: 34453,
     raw: "RECLASSIFICATION",
-    length: 16,
   },
   {
     freq: 34824,
     raw: "STRENGTH-TRAINING",
-    length: 16,
+
     word: "STRENGTHTRAINING",
   },
   {
     freq: 34886,
     raw: "BUSINESS-ORIENTED",
-    length: 16,
+
     word: "BUSINESSORIENTED",
   },
   {
     freq: 34926,
     raw: "PRO-ENVIRONMENTAL",
-    length: 16,
+
     word: "PROENVIRONMENTAL",
   },
   {
     freq: 35050,
     raw: "CONTRAINDICATION",
-    length: 16,
   },
   {
     freq: 35125,
     raw: "PSYCHOMETRICALLY",
-    length: 16,
   },
   {
     freq: 35205,
     raw: "INTEROPERABILITY",
-    length: 16,
   },
   {
     freq: 35231,
     raw: "ANTI-INTELLECTUAL",
-    length: 16,
+
     word: "ANTIINTELLECTUAL",
   },
   {
     freq: 35272,
     raw: "TWENTY-ONE-YEAR-OLD",
-    length: 16,
+
     word: "TWENTYONEYEAROLD",
   },
   {
     freq: 35287,
     raw: "SEXUAL-HARASSMENT",
-    length: 16,
+
     word: "SEXUALHARASSMENT",
   },
   {
     freq: 35315,
     raw: "PARENT-ADOLESCENT",
-    length: 16,
+
     word: "PARENTADOLESCENT",
   },
   {
     freq: 35325,
     raw: "INTERRELATEDNESS",
-    length: 16,
   },
   {
     freq: 35364,
     raw: "PRECEDENT-SETTING",
-    length: 16,
+
     word: "PRECEDENTSETTING",
   },
   {
     freq: 35577,
     raw: "TELECONFERENCING",
-    length: 16,
   },
   {
     freq: 35837,
     raw: "CATASTROPHICALLY",
-    length: 16,
   },
   {
     freq: 35888,
     raw: "CREDITWORTHINESS",
-    length: 16,
   },
   {
     freq: 35948,
     raw: "TEACHING-LEARNING",
-    length: 16,
+
     word: "TEACHINGLEARNING",
   },
   {
     freq: 35968,
     raw: "MISAPPROPRIATION",
-    length: 16,
   },
   {
     freq: 36138,
     raw: "ANTHROPOMORPHISM",
-    length: 16,
   },
   {
     freq: 36279,
     raw: "CHROMOLITHOGRAPH",
-    length: 16,
   },
   {
     freq: 36525,
     raw: "NON-PARTICIPATION",
-    length: 16,
+
     word: "NONPARTICIPATION",
   },
   {
     freq: 36819,
     raw: "ATTENTION-GETTING",
-    length: 16,
+
     word: "ATTENTIONGETTING",
   },
   {
     freq: 36977,
     raw: "INTERMEDIATE-TERM",
-    length: 16,
+
     word: "INTERMEDIATETERM",
   },
   {
     freq: 37194,
     raw: "HYPERVENTILATION",
-    length: 16,
   },
   {
     freq: 37221,
     raw: "EMPLOYER-PROVIDED",
-    length: 16,
+
     word: "EMPLOYERPROVIDED",
   },
   {
     freq: 37294,
     raw: "CONVERSATIONALLY",
-    length: 16,
   },
   {
     freq: 37343,
     raw: "COLOR-COORDINATED",
-    length: 16,
+
     word: "COLORCOORDINATED",
   },
   {
     freq: 37396,
     raw: "POLLUTION-CONTROL",
-    length: 16,
+
     word: "POLLUTIONCONTROL",
   },
   {
     freq: 37510,
     raw: "SELF-AGGRANDIZING",
-    length: 16,
+
     word: "SELFAGGRANDIZING",
   },
   {
     freq: 37519,
     raw: "DISEASE-RESISTANT",
-    length: 16,
+
     word: "DISEASERESISTANT",
   },
   {
     freq: 37532,
     raw: "HONEST-TO-GOODNESS",
-    length: 16,
+
     word: "HONESTTOGOODNESS",
   },
   {
     freq: 37645,
     raw: "SUBSTANCE-RELATED",
-    length: 16,
+
     word: "SUBSTANCERELATED",
   },
   {
     freq: 37661,
     raw: "LEARNING-DISABLED",
-    length: 16,
+
     word: "LEARNINGDISABLED",
   },
   {
     freq: 37732,
     raw: "SOCIAL-NETWORKING",
-    length: 16,
+
     word: "SOCIALNETWORKING",
   },
   {
     freq: 37962,
     raw: "SENSATIONALISTIC",
-    length: 16,
   },
   {
     freq: 38207,
     raw: "TWENTY-SIX-YEAR-OLD",
-    length: 16,
+
     word: "TWENTYSIXYEAROLD",
   },
   {
     freq: 38246,
     raw: "NON-CONTROVERSIAL",
-    length: 16,
+
     word: "NONCONTROVERSIAL",
   },
   {
     freq: 38253,
     raw: "PSYCHOANALYTICAL",
-    length: 16,
   },
   {
     freq: 38262,
     raw: "INTERPENETRATION",
-    length: 16,
   },
   {
     freq: 38530,
     raw: "INCOMPREHENSIBLY",
-    length: 16,
   },
   {
     freq: 38691,
     raw: "SELF-CENTEREDNESS",
-    length: 16,
+
     word: "SELFCENTEREDNESS",
   },
   {
     freq: 38900,
     raw: "CHRISTIANIZATION",
-    length: 16,
   },
   {
     freq: 38909,
     raw: "ACCOMMODATIONIST",
-    length: 16,
   },
   {
     freq: 38963,
     raw: "SELF-ORGANIZATION",
-    length: 16,
+
     word: "SELFORGANIZATION",
   },
   {
     freq: 38989,
     raw: "INDUSTRY-SPECIFIC",
-    length: 16,
+
     word: "INDUSTRYSPECIFIC",
   },
   {
     freq: 38999,
     raw: "GREAT-GRANDFATHER",
-    length: 16,
+
     word: "GREATGRANDFATHER",
   },
   {
     freq: 39395,
     raw: "ARTERIOSCLEROSIS",
-    length: 16,
   },
   {
     freq: 39415,
     raw: "CIRCUMNAVIGATION",
-    length: 16,
   },
   {
     freq: 39458,
     raw: "ATTENTION-DEFICIT",
-    length: 16,
+
     word: "ATTENTIONDEFICIT",
   },
   {
     freq: 39498,
     raw: "INFORMATION-BASED",
-    length: 16,
+
     word: "INFORMATIONBASED",
   },
   {
     freq: 39563,
     raw: "COMPUTER-ANIMATED",
-    length: 16,
+
     word: "COMPUTERANIMATED",
   },
   {
     freq: 39570,
     raw: "SELF-PRESERVATION",
-    length: 16,
+
     word: "SELFPRESERVATION",
   },
   {
     freq: 39769,
     raw: "VOICE-RECOGNITION",
-    length: 16,
+
     word: "VOICERECOGNITION",
   },
   {
     freq: 39810,
     raw: "THIRTY-TWO-YEAR-OLD",
-    length: 16,
+
     word: "THIRTYTWOYEAROLD",
   },
   {
     freq: 39917,
     raw: "HEADLINE-GRABBING",
-    length: 16,
+
     word: "HEADLINEGRABBING",
   },
   {
     freq: 39953,
     raw: "PERSONAL-COMPUTER",
-    length: 16,
+
     word: "PERSONALCOMPUTER",
   },
   {
     freq: 40009,
     raw: "DENUCLEARIZATION",
-    length: 16,
   },
   {
     freq: 40011,
     raw: "UNCOMPROMISINGLY",
-    length: 16,
   },
   {
     freq: 40041,
     raw: "ARCHAEOLOGICALLY",
-    length: 16,
   },
   {
     freq: 40069,
     raw: "CONSUMER-FRIENDLY",
-    length: 16,
+
     word: "CONSUMERFRIENDLY",
   },
   {
     freq: 40176,
     raw: "SEMI-PROFESSIONAL",
-    length: 16,
+
     word: "SEMIPROFESSIONAL",
   },
   {
     freq: 40199,
     raw: "JOURNALISTICALLY",
-    length: 16,
   },
   {
     freq: 40318,
     raw: "HIGHER-RESOLUTION",
-    length: 16,
+
     word: "HIGHERRESOLUTION",
   },
   {
     freq: 40698,
     raw: "TECHNOLOGY-DRIVEN",
-    length: 16,
+
     word: "TECHNOLOGYDRIVEN",
   },
   {
     freq: 40734,
     raw: "SELF-FLAGELLATION",
-    length: 16,
+
     word: "SELFFLAGELLATION",
   },
   {
     freq: 40849,
     raw: "GASTROESOPHAGEAL",
-    length: 16,
   },
   {
     freq: 40857,
     raw: "BUREAUCRATICALLY",
-    length: 16,
   },
   {
     freq: 40887,
     raw: "COMMUNITY-SERVICE",
-    length: 16,
+
     word: "COMMUNITYSERVICE",
   },
   {
     freq: 40943,
     raw: "CONTEXT-SENSITIVE",
-    length: 16,
+
     word: "CONTEXTSENSITIVE",
   },
   {
     freq: 41126,
     raw: "PREGNANCY-RELATED",
-    length: 16,
+
     word: "PREGNANCYRELATED",
   },
   {
     freq: 41144,
     raw: "DECLASSIFICATION",
-    length: 16,
   },
   {
     freq: 41248,
     raw: "CROSS-EXAMINATION",
-    length: 16,
+
     word: "CROSSEXAMINATION",
   },
   {
     freq: 41303,
     raw: "TEACHER-EDUCATION",
-    length: 16,
+
     word: "TEACHEREDUCATION",
   },
   {
     freq: 41315,
     raw: "HIGH-CARBOHYDRATE",
-    length: 16,
+
     word: "HIGHCARBOHYDRATE",
   },
   {
     freq: 41412,
     raw: "ACQUAINTANCESHIP",
-    length: 16,
   },
   {
     freq: 41462,
     raw: "INDUSTRY-STANDARD",
-    length: 16,
+
     word: "INDUSTRYSTANDARD",
   },
   {
     freq: 41466,
     raw: "GASTROENTEROLOGY",
-    length: 16,
   },
   {
     freq: 41489,
     raw: "ANTHROPOMORPHIZE",
-    length: 16,
   },
   {
     freq: 41549,
     raw: "COMPUTER-LITERATE",
-    length: 16,
+
     word: "COMPUTERLITERATE",
   },
   {
     freq: 41760,
     raw: "INSIDE-THE-BELTWAY",
-    length: 16,
+
     word: "INSIDETHEBELTWAY",
   },
   {
     freq: 41888,
     raw: "ANTIHYPERTENSIVE",
-    length: 16,
   },
   {
     freq: 41943,
     raw: "DE-BAATHIFICATION",
-    length: 16,
+
     word: "DEBAATHIFICATION",
   },
   {
     freq: 41986,
     raw: "FASHION-CONSCIOUS",
-    length: 16,
+
     word: "FASHIONCONSCIOUS",
   },
   {
     freq: 41991,
     raw: "DROUGHT-RESISTANT",
-    length: 16,
+
     word: "DROUGHTRESISTANT",
   },
   {
     freq: 42056,
     raw: "ABSENT-MINDEDNESS",
-    length: 16,
+
     word: "ABSENTMINDEDNESS",
   },
   {
     freq: 42104,
     raw: "MULTIDIRECTIONAL",
-    length: 16,
   },
   {
     freq: 42113,
     raw: "BUSINESS-FRIENDLY",
-    length: 16,
+
     word: "BUSINESSFRIENDLY",
   },
   {
     freq: 42237,
     raw: "SURFACE-TO-SURFACE",
-    length: 16,
+
     word: "SURFACETOSURFACE",
   },
   {
     freq: 42339,
     raw: "RESEARCH-ORIENTED",
-    length: 16,
+
     word: "RESEARCHORIENTED",
   },
   {
     freq: 42360,
     raw: "COMPANY-SPONSORED",
-    length: 16,
+
     word: "COMPANYSPONSORED",
   },
   {
     freq: 42537,
     raw: "INSTANT-MESSAGING",
-    length: 16,
+
     word: "INSTANTMESSAGING",
   },
   {
     freq: 42722,
     raw: "GOVERNMENT-ISSUED",
-    length: 16,
+
     word: "GOVERNMENTISSUED",
   },
   {
     freq: 42759,
     raw: "HYDROELECTRICITY",
-    length: 16,
   },
   {
     freq: 42869,
     raw: "DIFFERENT-COLORED",
-    length: 16,
+
     word: "DIFFERENTCOLORED",
   },
   {
     freq: 42999,
     raw: "VASOCONSTRICTION",
-    length: 16,
   },
   {
     freq: 43249,
     raw: "MIDDLE-MANAGEMENT",
-    length: 16,
+
     word: "MIDDLEMANAGEMENT",
   },
   {
     freq: 43259,
     raw: "EXPENSIVE-LOOKING",
-    length: 16,
+
     word: "EXPENSIVELOOKING",
   },
   {
     freq: 43287,
     raw: "WELL-PROPORTIONED",
-    length: 16,
+
     word: "WELLPROPORTIONED",
   },
   {
     freq: 43421,
     raw: "CRITERION-RELATED",
-    length: 16,
+
     word: "CRITERIONRELATED",
   },
   {
     freq: 43429,
     raw: "ARCH-CONSERVATIVE",
-    length: 16,
+
     word: "ARCHCONSERVATIVE",
   },
   {
     freq: 43575,
     raw: "DOMESTIC-VIOLENCE",
-    length: 16,
+
     word: "DOMESTICVIOLENCE",
   },
   {
     freq: 43620,
     raw: "PROGRAMMATICALLY",
-    length: 16,
   },
   {
     freq: 43743,
     raw: "INDISPENSABILITY",
-    length: 16,
   },
   {
     freq: 43765,
     raw: "CHOCOLATE-COLORED",
-    length: 16,
+
     word: "CHOCOLATECOLORED",
   },
   {
     freq: 43768,
     raw: "TEACHER-LIBRARIAN",
-    length: 16,
+
     word: "TEACHERLIBRARIAN",
   },
   {
     freq: 43840,
     raw: "WEATHER-RESISTANT",
-    length: 16,
+
     word: "WEATHERRESISTANT",
   },
   {
     freq: 43937,
     raw: "NEUROPSYCHIATRIC",
-    length: 16,
   },
   {
     freq: 44045,
     raw: "PROSTATE-SPECIFIC",
-    length: 16,
+
     word: "PROSTATESPECIFIC",
   },
   {
     freq: 44356,
     raw: "WELL-ORCHESTRATED",
-    length: 16,
+
     word: "WELLORCHESTRATED",
   },
   {
     freq: 44364,
     raw: "DISTANCE-LEARNING",
-    length: 16,
+
     word: "DISTANCELEARNING",
   },
   {
     freq: 44403,
     raw: "INCOME-GENERATING",
-    length: 16,
+
     word: "INCOMEGENERATING",
   },
   {
     freq: 44411,
     raw: "SOCIAL-DEMOCRATIC",
-    length: 16,
+
     word: "SOCIALDEMOCRATIC",
   },
   {
     freq: 44433,
     raw: "RECAPITALIZATION",
-    length: 16,
   },
   {
     freq: 44540,
     raw: "CRYSTALLOGRAPHIC",
-    length: 16,
   },
   {
     freq: 44578,
     raw: "BALLISTIC-MISSILE",
-    length: 16,
+
     word: "BALLISTICMISSILE",
   },
   {
     freq: 44587,
     raw: "EDUCATION-RELATED",
-    length: 16,
+
     word: "EDUCATIONRELATED",
   },
   {
     freq: 44632,
     raw: "REVENUE-PRODUCING",
-    length: 16,
+
     word: "REVENUEPRODUCING",
   },
   {
     freq: 44686,
     raw: "MIDDLE-OF-THE-NIGHT",
-    length: 16,
+
     word: "MIDDLEOFTHENIGHT",
   },
   {
     freq: 44841,
     raw: "HORTICULTURALIST",
-    length: 16,
   },
   {
     freq: 44853,
     raw: "HAPPILY-EVER-AFTER",
-    length: 16,
+
     word: "HAPPILYEVERAFTER",
   },
   {
     freq: 44920,
     raw: "THIRTY-ONE-YEAR-OLD",
-    length: 16,
+
     word: "THIRTYONEYEAROLD",
   },
   {
     freq: 44938,
     raw: "CHEMOTHERAPEUTIC",
-    length: 16,
   },
   {
     freq: 44942,
     raw: "CHILD-DEVELOPMENT",
-    length: 16,
+
     word: "CHILDDEVELOPMENT",
   },
   {
     freq: 44949,
     raw: "CONVENIENCE-STORE",
-    length: 16,
+
     word: "CONVENIENCESTORE",
   },
   {
     freq: 45070,
     raw: "UNCONVENTIONALLY",
-    length: 16,
   },
   {
     freq: 45191,
     raw: "SEVENTEEN-YEAR-OLD",
-    length: 16,
+
     word: "SEVENTEENYEAROLD",
   },
   {
     freq: 45260,
     raw: "MISPRONUNCIATION",
-    length: 16,
   },
   {
     freq: 45269,
     raw: "BIOTECHNOLOGICAL",
-    length: 16,
   },
   {
     freq: 45290,
     raw: "RHABDOMYOSARCOMA",
-    length: 16,
   },
   {
     freq: 45347,
     raw: "NON-INSTITUTIONAL",
-    length: 16,
+
     word: "NONINSTITUTIONAL",
   },
   {
     freq: 45396,
     raw: "CANADIAN-AMERICAN",
-    length: 16,
+
     word: "CANADIANAMERICAN",
   },
   {
     freq: 45438,
     raw: "INCONTROVERTIBLY",
-    length: 16,
   },
   {
     freq: 45466,
     raw: "PHYSICIAN-PATIENT",
-    length: 16,
+
     word: "PHYSICIANPATIENT",
   },
   {
     freq: 45689,
     raw: "ANXIETY-PRODUCING",
-    length: 16,
+
     word: "ANXIETYPRODUCING",
   },
   {
     freq: 45861,
     raw: "ANXIETY-PROVOKING",
-    length: 16,
+
     word: "ANXIETYPROVOKING",
   },
   {
     freq: 45984,
     raw: "COUNTER-HEGEMONIC",
-    length: 16,
+
     word: "COUNTERHEGEMONIC",
   },
   {
     freq: 46112,
     raw: "SELF-PRESENTATION",
-    length: 16,
+
     word: "SELFPRESENTATION",
   },
   {
     freq: 46126,
     raw: "WHITE-SUPREMACIST",
-    length: 16,
+
     word: "WHITESUPREMACIST",
   },
   {
     freq: 46142,
     raw: "OVERENTHUSIASTIC",
-    length: 16,
   },
   {
     freq: 46187,
     raw: "STRESS-MANAGEMENT",
-    length: 16,
+
     word: "STRESSMANAGEMENT",
   },
   {
     freq: 46341,
     raw: "OUT-OF-THE-ORDINARY",
-    length: 16,
+
     word: "OUTOFTHEORDINARY",
   },
   {
     freq: 46355,
     raw: "FIRE-AND-BRIMSTONE",
-    length: 16,
+
     word: "FIREANDBRIMSTONE",
   },
   {
     freq: 46361,
     raw: "COMPUTER-ENHANCED",
-    length: 16,
+
     word: "COMPUTERENHANCED",
   },
   {
     freq: 46411,
     raw: "HYPERCOMPETITIVE",
-    length: 16,
   },
   {
     freq: 46498,
     raw: "POLITICO-ECONOMIC",
-    length: 16,
+
     word: "POLITICOECONOMIC",
   },
   {
     freq: 46501,
     raw: "DISINGENUOUSNESS",
-    length: 16,
   },
   {
     freq: 46616,
     raw: "GREAT-GRANDMOTHER",
-    length: 16,
+
     word: "GREATGRANDMOTHER",
   },
   {
     freq: 46694,
     raw: "CRYSTALLOGRAPHER",
-    length: 16,
   },
   {
     freq: 46717,
     raw: "SESQUICENTENNIAL",
-    length: 16,
   },
   {
     freq: 46779,
     raw: "MELODRAMATICALLY",
-    length: 16,
   },
   {
     freq: 46840,
     raw: "DISEASE-MODIFYING",
-    length: 16,
+
     word: "DISEASEMODIFYING",
   },
   {
     freq: 47017,
     raw: "ANTHROPOCENTRISM",
-    length: 16,
   },
   {
     freq: 47223,
     raw: "PROFESSIONALIZED",
-    length: 16,
   },
   {
     freq: 47241,
     raw: "UNDERUTILIZATION",
-    length: 16,
   },
   {
     freq: 47272,
     raw: "NARROW-MINDEDNESS",
-    length: 16,
+
     word: "NARROWMINDEDNESS",
   },
   {
     freq: 47304,
     raw: "FRIEND-OF-THE-COURT",
-    length: 16,
+
     word: "FRIENDOFTHECOURT",
   },
   {
     freq: 47452,
     raw: "MEAN-SPIRITEDNESS",
-    length: 16,
+
     word: "MEANSPIRITEDNESS",
   },
   {
     freq: 47453,
     raw: "EXTEMPORANEOUSLY",
-    length: 16,
   },
   {
     freq: 47490,
     raw: "SENSATION-SEEKING",
-    length: 16,
+
     word: "SENSATIONSEEKING",
   },
   {
     freq: 47591,
     raw: "UNIVERSALIZATION",
-    length: 16,
   },
   {
     freq: 47622,
     raw: "MATTER-OF-FACTNESS",
-    length: 16,
+
     word: "MATTEROFFACTNESS",
   },
   {
     freq: 47713,
     raw: "UNDERPERFORMANCE",
-    length: 16,
   },
   {
     freq: 47759,
     raw: "THIRTY-SIX-YEAR-OLD",
-    length: 16,
+
     word: "THIRTYSIXYEAROLD",
   },
   {
     freq: 47943,
     raw: "COUNTRY-BY-COUNTRY",
-    length: 16,
+
     word: "COUNTRYBYCOUNTRY",
   },
   {
     freq: 47982,
     raw: "TAXPAYER-FINANCED",
-    length: 16,
+
     word: "TAXPAYERFINANCED",
   },
   {
     freq: 48019,
     raw: "DEPOLITICIZATION",
-    length: 16,
   },
   {
     freq: 48044,
     raw: "DECONTEXTUALIZED",
-    length: 16,
   },
   {
     freq: 48101,
     raw: "DENSITY-DEPENDENT",
-    length: 16,
+
     word: "DENSITYDEPENDENT",
   },
   {
     freq: 48128,
     raw: "MAJORITY-MINORITY",
-    length: 16,
+
     word: "MAJORITYMINORITY",
   },
   {
     freq: 48158,
     raw: "OTHERWORLDLINESS",
-    length: 16,
   },
   {
     freq: 48343,
     raw: "POLITICO-MILITARY",
-    length: 16,
+
     word: "POLITICOMILITARY",
   },
   {
     freq: 48351,
     raw: "POLITICAL-SCIENCE",
-    length: 16,
+
     word: "POLITICALSCIENCE",
   },
   {
     freq: 48438,
     raw: "HISPANIC-AMERICAN",
-    length: 16,
+
     word: "HISPANICAMERICAN",
   },
   {
     freq: 48559,
     raw: "HOSPITAL-ACQUIRED",
-    length: 16,
+
     word: "HOSPITALACQUIRED",
   },
   {
     freq: 48619,
     raw: "PSYCHOLINGUISTIC",
-    length: 16,
   },
   {
     freq: 48827,
     raw: "NON-PARTICIPATING",
-    length: 16,
+
     word: "NONPARTICIPATING",
   },
   {
     freq: 48874,
     raw: "EXPRESSIONLESSLY",
-    length: 16,
   },
   {
     freq: 48923,
     raw: "FORTY-FIVE-YEAR-OLD",
-    length: 16,
+
     word: "FORTYFIVEYEAROLD",
   },
   {
     freq: 48946,
     raw: "LIGHTHEARTEDNESS",
-    length: 16,
   },
   {
     freq: 49164,
     raw: "FIRST-IN-THE-NATION",
-    length: 16,
+
     word: "FIRSTINTHENATION",
   },
   {
     freq: 49178,
     raw: "PROFIT-MAXIMIZING",
-    length: 16,
+
     word: "PROFITMAXIMIZING",
   },
   {
     freq: 49243,
     raw: "SOCIAL-SCIENTIFIC",
-    length: 16,
+
     word: "SOCIALSCIENTIFIC",
   },
   {
     freq: 49384,
     raw: "LITTLE-UNDERSTOOD",
-    length: 16,
+
     word: "LITTLEUNDERSTOOD",
   },
   {
     freq: 49664,
     raw: "INTERNATIONALIST",
-    length: 16,
   },
   {
     freq: 49750,
     raw: "DISCONNECTEDNESS",
-    length: 16,
   },
   {
     freq: 49884,
     raw: "CIVILIAN-MILITARY",
-    length: 16,
+
     word: "CIVILIANMILITARY",
   },
   {
     freq: 49888,
     raw: "SUBSTANCE-ABUSING",
-    length: 16,
+
     word: "SUBSTANCEABUSING",
   },
   {
     freq: 49923,
     raw: "INTRACYTOPLASMIC",
-    length: 16,
   },
   {
     freq: 49943,
     raw: "SOON-TO-BE-RELEASED",
-    length: 16,
+
     word: "SOONTOBERELEASED",
   },
   {
     freq: 50079,
     raw: "ULTRA-COMPETITIVE",
-    length: 16,
+
     word: "ULTRACOMPETITIVE",
   },
   {
     freq: 50084,
     raw: "COUNTER-TERRORIST",
-    length: 16,
+
     word: "COUNTERTERRORIST",
   },
   {
     freq: 50282,
     raw: "GASOLINE-ELECTRIC",
-    length: 16,
+
     word: "GASOLINEELECTRIC",
   },
   {
     freq: 50355,
     raw: "INTERPRETABILITY",
-    length: 16,
   },
   {
     freq: 50409,
     raw: "CIRCUMSTANTIALLY",
-    length: 16,
   },
   {
     freq: 50423,
     raw: "CONVENTIONALIZED",
-    length: 16,
   },
   {
     freq: 50455,
     raw: "PRODUCT-LIABILITY",
-    length: 16,
+
     word: "PRODUCTLIABILITY",
   },
   {
     freq: 50555,
     raw: "INSTITUTIONALISM",
-    length: 16,
   },
   {
     freq: 50640,
     raw: "REALISTIC-LOOKING",
-    length: 16,
+
     word: "REALISTICLOOKING",
   },
   {
     freq: 50716,
     raw: "UNRESPONSIVENESS",
-    length: 16,
   },
   {
     freq: 50723,
     raw: "EMPLOYER-EMPLOYEE",
-    length: 16,
+
     word: "EMPLOYEREMPLOYEE",
   },
   {
     freq: 50814,
     raw: "MICROENVIRONMENT",
-    length: 16,
   },
   {
     freq: 50905,
     raw: "FORTY-FOUR-YEAR-OLD",
-    length: 16,
+
     word: "FORTYFOURYEAROLD",
   },
   {
     freq: 51044,
     raw: "SOUTH-OF-THE-BORDER",
-    length: 16,
+
     word: "SOUTHOFTHEBORDER",
   },
   {
     freq: 51170,
     raw: "COMMUNITY-COLLEGE",
-    length: 16,
+
     word: "COMMUNITYCOLLEGE",
   },
   {
     freq: 51208,
     raw: "INDIAN-CONTROLLED",
-    length: 16,
+
     word: "INDIANCONTROLLED",
   },
   {
     freq: 51434,
     raw: "PHARMACOKINETICS",
-    length: 16,
   },
   {
     freq: 51445,
     raw: "AMERICAN-EDUCATED",
-    length: 16,
+
     word: "AMERICANEDUCATED",
   },
   {
     freq: 51550,
     raw: "ELECTROMYOGRAPHY",
-    length: 16,
   },
   {
     freq: 51587,
     raw: "INSULIN-PRODUCING",
-    length: 16,
+
     word: "INSULINPRODUCING",
   },
   {
     freq: 51614,
     raw: "DANGEROUS-LOOKING",
-    length: 16,
+
     word: "DANGEROUSLOOKING",
   },
   {
     freq: 51683,
     raw: "POST-INTERVENTION",
-    length: 16,
+
     word: "POSTINTERVENTION",
   },
   {
     freq: 51727,
     raw: "DARK-COMPLEXIONED",
-    length: 16,
+
     word: "DARKCOMPLEXIONED",
   },
   {
     freq: 51736,
     raw: "TEACHER-INITIATED",
-    length: 16,
+
     word: "TEACHERINITIATED",
   },
   {
     freq: 51774,
     raw: "INCORRUPTIBILITY",
-    length: 16,
   },
   {
     freq: 51797,
     raw: "INTENTION-TO-TREAT",
-    length: 16,
+
     word: "INTENTIONTOTREAT",
   },
   {
     freq: 51801,
     raw: "CARBOHYDRATE-RICH",
-    length: 16,
+
     word: "CARBOHYDRATERICH",
   },
   {
     freq: 51806,
     raw: "TRIANGULAR-SHAPED",
-    length: 16,
+
     word: "TRIANGULARSHAPED",
   },
   {
     freq: 51890,
     raw: "SIGNAL-PROCESSING",
-    length: 16,
+
     word: "SIGNALPROCESSING",
   },
   {
     freq: 51910,
     raw: "HIGHER-THAN-NORMAL",
-    length: 16,
+
     word: "HIGHERTHANNORMAL",
   },
   {
     freq: 51959,
     raw: "ANTI-CARCINOGENIC",
-    length: 16,
+
     word: "ANTICARCINOGENIC",
   },
   {
     freq: 51961,
     raw: "COMPUTER-SECURITY",
-    length: 16,
+
     word: "COMPUTERSECURITY",
   },
   {
     freq: 52015,
     raw: "GEOMORPHOLOGICAL",
-    length: 16,
   },
   {
     freq: 52030,
     raw: "QUASI-INDEPENDENT",
-    length: 16,
+
     word: "QUASIINDEPENDENT",
   },
   {
     freq: 52189,
     raw: "COLLABORATIONIST",
-    length: 16,
   },
   {
     freq: 52204,
     raw: "RADIOGRAPHICALLY",
-    length: 16,
   },
   {
     freq: 52207,
     raw: "DELEGITIMIZATION",
-    length: 16,
   },
   {
     freq: 52242,
     raw: "PHOTOLITHOGRAPHY",
-    length: 16,
   },
   {
     freq: 52245,
     raw: "PROBLEMATIZATION",
-    length: 16,
   },
   {
     freq: 52455,
     raw: "NATURALISTICALLY",
-    length: 16,
   },
   {
     freq: 52474,
     raw: "USER-FRIENDLINESS",
-    length: 16,
+
     word: "USERFRIENDLINESS",
   },
   {
     freq: 52534,
     raw: "HEIGHT-ADJUSTABLE",
-    length: 16,
+
     word: "HEIGHTADJUSTABLE",
   },
   {
     freq: 52542,
     raw: "UPPER-RESPIRATORY",
-    length: 16,
+
     word: "UPPERRESPIRATORY",
   },
   {
     freq: 52669,
     raw: "FORTY-NINE-YEAR-OLD",
-    length: 16,
+
     word: "FORTYNINEYEAROLD",
   },
   {
     freq: 52705,
     raw: "CRYOPRESERVATION",
-    length: 16,
   },
   {
     freq: 52713,
     raw: "SQUARE-SHOULDERED",
-    length: 16,
+
     word: "SQUARESHOULDERED",
   },
   {
     freq: 52782,
     raw: "SUBSTITUTABILITY",
-    length: 16,
   },
   {
     freq: 52839,
     raw: "CYCLOPHOSPHAMIDE",
-    length: 16,
   },
   {
     freq: 52887,
     raw: "UNDISCRIMINATING",
-    length: 16,
   },
   {
     freq: 52914,
     raw: "STUDENT-GENERATED",
-    length: 16,
+
     word: "STUDENTGENERATED",
   },
   {
     freq: 53054,
     raw: "NONDISCRETIONARY",
-    length: 16,
   },
   {
     freq: 53078,
     raw: "SHOULDER-LAUNCHED",
-    length: 16,
+
     word: "SHOULDERLAUNCHED",
   },
   {
     freq: 53238,
     raw: "DISESTABLISHMENT",
-    length: 16,
   },
   {
     freq: 53319,
     raw: "DYSFUNCTIONALITY",
-    length: 16,
   },
   {
     freq: 53349,
     raw: "FIELD-INDEPENDENT",
-    length: 16,
+
     word: "FIELDINDEPENDENT",
   },
   {
     freq: 53378,
     raw: "SMOKING-CESSATION",
-    length: 16,
+
     word: "SMOKINGCESSATION",
   },
   {
     freq: 53386,
     raw: "THROMBOCYTOPENIA",
-    length: 16,
   },
   {
     freq: 53393,
     raw: "PRODUCER-DIRECTOR",
-    length: 16,
+
     word: "PRODUCERDIRECTOR",
   },
   {
     freq: 53557,
     raw: "ANTI-INFLATIONARY",
-    length: 16,
+
     word: "ANTIINFLATIONARY",
   },
   {
     freq: 53559,
     raw: "COUNTER-DISCOURSE",
-    length: 16,
+
     word: "COUNTERDISCOURSE",
   },
   {
     freq: 53768,
     raw: "HOMELAND-SECURITY",
-    length: 16,
+
     word: "HOMELANDSECURITY",
   },
   {
     freq: 53783,
     raw: "TRANSCENDENTALLY",
-    length: 16,
   },
   {
     freq: 53834,
     raw: "TRANSMISSIBILITY",
-    length: 16,
   },
   {
     freq: 53865,
     raw: "SOCIAL-HISTORICAL",
-    length: 16,
+
     word: "SOCIALHISTORICAL",
   },
   {
     freq: 53945,
     raw: "CONTEXT-DEPENDENT",
-    length: 16,
+
     word: "CONTEXTDEPENDENT",
   },
   {
     freq: 54034,
     raw: "TERRORISM-RELATED",
-    length: 16,
+
     word: "TERRORISMRELATED",
   },
   {
     freq: 54076,
     raw: "DIAMOND-ENCRUSTED",
-    length: 16,
+
     word: "DIAMONDENCRUSTED",
   },
   {
     freq: 54091,
     raw: "GET-OUT-OF-JAIL-FREE",
-    length: 16,
+
     word: "GETOUTOFJAILFREE",
   },
   {
     freq: 54175,
     raw: "ELECTRON-POSITRON",
-    length: 16,
+
     word: "ELECTRONPOSITRON",
   },
   {
     freq: 54261,
     raw: "STRAIGHT-SHOOTING",
-    length: 16,
+
     word: "STRAIGHTSHOOTING",
   },
   {
     freq: 54325,
     raw: "MATTER-ANTIMATTER",
-    length: 16,
+
     word: "MATTERANTIMATTER",
   },
   {
     freq: 54333,
     raw: "POST-TOTALITARIAN",
-    length: 16,
+
     word: "POSTTOTALITARIAN",
   },
   {
     freq: 54334,
     raw: "POLITICO-CULTURAL",
-    length: 16,
+
     word: "POLITICOCULTURAL",
   },
   {
     freq: 54335,
     raw: "RELIGIO-POLITICAL",
-    length: 16,
+
     word: "RELIGIOPOLITICAL",
   },
   {
     freq: 54621,
     raw: "QUALITY-ASSURANCE",
-    length: 16,
+
     word: "QUALITYASSURANCE",
   },
   {
     freq: 54645,
     raw: "ATTITUDE-BEHAVIOR",
-    length: 16,
+
     word: "ATTITUDEBEHAVIOR",
   },
   {
     freq: 54886,
     raw: "PUBLIC-TELEVISION",
-    length: 16,
+
     word: "PUBLICTELEVISION",
   },
   {
     freq: 54917,
     raw: "INTERNAL-EXTERNAL",
-    length: 16,
+
     word: "INTERNALEXTERNAL",
   },
   {
     freq: 54926,
     raw: "CEREBELLOPONTINE",
-    length: 16,
   },
   {
     freq: 54998,
     raw: "STRENGTH-TO-WEIGHT",
-    length: 16,
+
     word: "STRENGTHTOWEIGHT",
   },
   {
     freq: 55100,
     raw: "PHANTASMAGORICAL",
-    length: 16,
   },
   {
     freq: 55101,
     raw: "SELF-ANNIHILATION",
-    length: 16,
+
     word: "SELFANNIHILATION",
   },
   {
     freq: 55159,
     raw: "CONCEALED-WEAPONS",
-    length: 16,
+
     word: "CONCEALEDWEAPONS",
   },
   {
     freq: 55162,
     raw: "THERMOREGULATION",
-    length: 16,
   },
   {
     freq: 55223,
     raw: "INTELLECTUALIZED",
-    length: 16,
   },
   {
     freq: 55252,
     raw: "MILITARY-CIVILIAN",
-    length: 16,
+
     word: "MILITARYCIVILIAN",
   },
   {
     freq: 55277,
     raw: "AESTHETICIZATION",
-    length: 16,
   },
   {
     freq: 55436,
     raw: "HUMAN-ENVIRONMENT",
-    length: 16,
+
     word: "HUMANENVIRONMENT",
   },
   {
     freq: 55473,
     raw: "FACTORY-INSTALLED",
-    length: 16,
+
     word: "FACTORYINSTALLED",
   },
   {
     freq: 55517,
     raw: "UNATTRACTIVENESS",
-    length: 16,
   },
   {
     freq: 55588,
     raw: "ARCHAEOASTRONOMY",
-    length: 16,
   },
   {
     freq: 55615,
     raw: "SEPARATE-BUT-EQUAL",
-    length: 16,
+
     word: "SEPARATEBUTEQUAL",
   },
   {
     freq: 55772,
     raw: "THROMBOPHLEBITIS",
-    length: 16,
   },
   {
     freq: 55788,
     raw: "THERMOMECHANICAL",
-    length: 16,
   },
   {
     freq: 55816,
     raw: "TREATMENT-RELATED",
-    length: 16,
+
     word: "TREATMENTRELATED",
   },
   {
     freq: 55919,
     raw: "EMISSIONS-TRADING",
-    length: 16,
+
     word: "EMISSIONSTRADING",
   },
   {
     freq: 55926,
     raw: "UNREASONABLENESS",
-    length: 16,
   },
   {
     freq: 56052,
     raw: "MOUNTAIN-CLIMBING",
-    length: 16,
+
     word: "MOUNTAINCLIMBING",
   },
   {
     freq: 56113,
     raw: "OVERCOMPENSATION",
-    length: 16,
   },
   {
     freq: 56131,
     raw: "WEIGHT-MANAGEMENT",
-    length: 16,
+
     word: "WEIGHTMANAGEMENT",
   },
   {
     freq: 56213,
     raw: "NON-BIODEGRADABLE",
-    length: 16,
+
     word: "NONBIODEGRADABLE",
   },
   {
     freq: 56281,
     raw: "CHILD-MOLESTATION",
-    length: 16,
+
     word: "CHILDMOLESTATION",
   },
   {
     freq: 56430,
     raw: "UNSUSTAINABILITY",
-    length: 16,
   },
   {
     freq: 56440,
     raw: "COUNTERBALANCING",
-    length: 16,
   },
   {
     freq: 56524,
     raw: "UNPROFESSIONALLY",
-    length: 16,
   },
   {
     freq: 56540,
     raw: "GETTING-TO-KNOW-YOU",
-    length: 16,
+
     word: "GETTINGTOKNOWYOU",
   },
   {
     freq: 56603,
     raw: "JUNIOR-HIGH-SCHOOL",
-    length: 16,
+
     word: "JUNIORHIGHSCHOOL",
   },
   {
     freq: 56611,
     raw: "INEXTINGUISHABLE",
-    length: 16,
   },
   {
     freq: 56620,
     raw: "CONSUMER-DIRECTED",
-    length: 16,
+
     word: "CONSUMERDIRECTED",
   },
   {
     freq: 56638,
     raw: "PRESCRIPTION-ONLY",
-    length: 16,
+
     word: "PRESCRIPTIONONLY",
   },
   {
     freq: 56684,
     raw: "ULTRA-NATIONALIST",
-    length: 16,
+
     word: "ULTRANATIONALIST",
   },
   {
     freq: 56856,
     raw: "PICTURE-IN-PICTURE",
-    length: 16,
+
     word: "PICTUREINPICTURE",
   },
   {
     freq: 56977,
     raw: "LOWER-THAN-AVERAGE",
-    length: 16,
+
     word: "LOWERTHANAVERAGE",
   },
   {
     freq: 56991,
     raw: "SIXTY-FIVE-YEAR-OLD",
-    length: 16,
+
     word: "SIXTYFIVEYEAROLD",
   },
   {
     freq: 57018,
     raw: "PROPHYLACTICALLY",
-    length: 16,
   },
   {
     freq: 57034,
     raw: "INARTICULATENESS",
-    length: 16,
   },
   {
     freq: 57046,
     raw: "INNOCUOUS-LOOKING",
-    length: 16,
+
     word: "INNOCUOUSLOOKING",
   },
   {
     freq: 57091,
     raw: "FICTIONALIZATION",
-    length: 16,
   },
   {
     freq: 57143,
     raw: "DOCUMENTARY-STYLE",
-    length: 16,
+
     word: "DOCUMENTARYSTYLE",
   },
   {
     freq: 57164,
     raw: "CUSTOMER-FRIENDLY",
-    length: 16,
+
     word: "CUSTOMERFRIENDLY",
   },
   {
     freq: 57196,
     raw: "PATIENT-PHYSICIAN",
-    length: 16,
+
     word: "PATIENTPHYSICIAN",
   },
   {
     freq: 57283,
     raw: "NATIONS-SPONSORED",
-    length: 16,
+
     word: "NATIONSSPONSORED",
   },
   {
     freq: 57290,
     raw: "CROSS-REFERENCING",
-    length: 16,
+
     word: "CROSSREFERENCING",
   },
   {
     freq: 57308,
     raw: "CHAMPAGNE-COLORED",
-    length: 16,
+
     word: "CHAMPAGNECOLORED",
   },
   {
     freq: 57390,
     raw: "ORGANIZATION-WIDE",
-    length: 16,
+
     word: "ORGANIZATIONWIDE",
   },
   {
     freq: 57454,
     raw: "TWICE-EXCEPTIONAL",
-    length: 16,
+
     word: "TWICEEXCEPTIONAL",
   },
   {
     freq: 57481,
     raw: "ATRIOVENTRICULAR",
-    length: 16,
   },
   {
     freq: 57566,
     raw: "LIMITED-LIABILITY",
-    length: 16,
+
     word: "LIMITEDLIABILITY",
   },
   {
     freq: 57655,
     raw: "DRILL-AND-PRACTICE",
-    length: 16,
+
     word: "DRILLANDPRACTICE",
   },
   {
     freq: 57663,
     raw: "GENERAL-EDUCATION",
-    length: 16,
+
     word: "GENERALEDUCATION",
   },
   {
     freq: 57803,
     raw: "ENERGY-EFFICIENCY",
-    length: 16,
+
     word: "ENERGYEFFICIENCY",
   },
   {
     freq: 57832,
     raw: "POST-PRESIDENTIAL",
-    length: 16,
+
     word: "POSTPRESIDENTIAL",
   },
   {
     freq: 57842,
     raw: "TERRORIST-RELATED",
-    length: 16,
+
     word: "TERRORISTRELATED",
   },
   {
     freq: 57889,
     raw: "COMMENSURABILITY",
-    length: 16,
   },
   {
     freq: 57907,
     raw: "REMILITARIZATION",
-    length: 16,
   },
   {
     freq: 57913,
     raw: "ISRAELI-JORDANIAN",
-    length: 16,
+
     word: "ISRAELIJORDANIAN",
   },
   {
     freq: 57995,
     raw: "INSURANCE-COMPANY",
-    length: 16,
+
     word: "INSURANCECOMPANY",
   },
   {
     freq: 58102,
     raw: "DEMINERALIZATION",
-    length: 16,
   },
   {
     freq: 58105,
     raw: "ELECTROMAGNETICS",
-    length: 16,
   },
   {
     freq: 58116,
     raw: "CONNECTIVE-TISSUE",
-    length: 16,
+
     word: "CONNECTIVETISSUE",
   },
   {
     freq: 58282,
     raw: "STIMULUS-RESPONSE",
-    length: 16,
+
     word: "STIMULUSRESPONSE",
   },
   {
     freq: 58374,
     raw: "DEEP-CONDITIONING",
-    length: 16,
+
     word: "DEEPCONDITIONING",
   },
   {
     freq: 58390,
     raw: "PASS-INTERFERENCE",
-    length: 16,
+
     word: "PASSINTERFERENCE",
   },
   {
     freq: 58425,
     raw: "HURRICANE-RAVAGED",
-    length: 16,
+
     word: "HURRICANERAVAGED",
   },
   {
     freq: 58460,
     raw: "ANTI-TOTALITARIAN",
-    length: 16,
+
     word: "ANTITOTALITARIAN",
   },
   {
     freq: 58490,
     raw: "PARAPSYCHOLOGIST",
-    length: 16,
   },
   {
     freq: 58516,
     raw: "COMPUTER-GRAPHICS",
-    length: 16,
+
     word: "COMPUTERGRAPHICS",
   },
   {
     freq: 58552,
     raw: "FAMILY-CONTROLLED",
-    length: 16,
+
     word: "FAMILYCONTROLLED",
   },
   {
     freq: 58616,
     raw: "MORTGAGE-INTEREST",
-    length: 16,
+
     word: "MORTGAGEINTEREST",
   },
   {
     freq: 58743,
     raw: "SERVICE-CONNECTED",
-    length: 16,
+
     word: "SERVICECONNECTED",
   },
   {
     freq: 58793,
     raw: "POLITICAL-ECONOMY",
-    length: 16,
+
     word: "POLITICALECONOMY",
   },
   {
     freq: 58877,
     raw: "LIGHT-HEAVYWEIGHT",
-    length: 16,
+
     word: "LIGHTHEAVYWEIGHT",
   },
   {
     freq: 58927,
     raw: "AGGRESSIVE-GROWTH",
-    length: 16,
+
     word: "AGGRESSIVEGROWTH",
   },
   {
     freq: 58947,
     raw: "COUNTERNARRATIVE",
-    length: 16,
   },
   {
     freq: 58981,
     raw: "PHYLOGENETICALLY",
-    length: 16,
   },
   {
     freq: 58985,
     raw: "TRANSTHEORETICAL",
-    length: 16,
   },
   {
     freq: 59031,
     raw: "SUPRAVENTRICULAR",
-    length: 16,
   },
   {
     freq: 59058,
     raw: "TRICHOTILLOMANIA",
-    length: 16,
   },
   {
     freq: 59143,
     raw: "CONTINENTAL-SCALE",
-    length: 16,
+
     word: "CONTINENTALSCALE",
   },
   {
     freq: 59186,
     raw: "INTERDIMENSIONAL",
-    length: 16,
   },
   {
     freq: 59201,
     raw: "REDISTRIBUTIONAL",
-    length: 16,
   },
   {
     freq: 59261,
     raw: "REVOLUTIONARY-ERA",
-    length: 16,
+
     word: "REVOLUTIONARYERA",
   },
   {
     freq: 59275,
     raw: "SELF-CONSTITUTION",
-    length: 16,
+
     word: "SELFCONSTITUTION",
   },
   {
     freq: 59407,
     raw: "AMERICAN-EUROPEAN",
-    length: 16,
+
     word: "AMERICANEUROPEAN",
   },
   {
     freq: 59557,
     raw: "MANDATORY-MINIMUM",
-    length: 16,
+
     word: "MANDATORYMINIMUM",
   },
   {
     freq: 59564,
     raw: "FOODBORNE-ILLNESS",
-    length: 16,
+
     word: "FOODBORNEILLNESS",
   },
   {
     freq: 59633,
     raw: "AMINOTRANSFERASE",
-    length: 16,
   },
   {
     freq: 59697,
     raw: "MICROFABRICATION",
-    length: 16,
   },
   {
     freq: 59703,
     raw: "SOCIAL-STRUCTURAL",
-    length: 16,
+
     word: "SOCIALSTRUCTURAL",
   },
   {
     freq: 59763,
     raw: "COUNTER-TRADITION",
-    length: 16,
+
     word: "COUNTERTRADITION",
   },
   {
     freq: 59765,
     raw: "INTERMEDIATE-MASS",
-    length: 16,
+
     word: "INTERMEDIATEMASS",
   },
   {
     freq: 59781,
     raw: "MOTHER-ADOLESCENT",
-    length: 16,
+
     word: "MOTHERADOLESCENT",
   },
   {
     freq: 59789,
     raw: "TRANSMISSION-LINE",
-    length: 16,
+
     word: "TRANSMISSIONLINE",
   },
   {
     freq: 59827,
     raw: "LANGUAGE-MINORITY",
-    length: 16,
+
     word: "LANGUAGEMINORITY",
   },
   {
     freq: 59883,
     raw: "REMINERALIZATION",
-    length: 16,
   },
   {
     freq: 59895,
     raw: "SOIL-CONSERVATION",
-    length: 16,
+
     word: "SOILCONSERVATION",
   },
 ];
@@ -259679,1547 +259480,1449 @@ export const seventeen = [
   {
     freq: 7689,
     raw: "NINETEENTH-CENTURY",
-    length: 17,
+
     word: "NINETEENTHCENTURY",
   },
   {
     freq: 9266,
     raw: "INTERDISCIPLINARY",
-    length: 17,
   },
   {
     freq: 9532,
     raw: "SELF-DETERMINATION",
-    length: 17,
+
     word: "SELFDETERMINATION",
   },
   {
     freq: 11777,
     raw: "COUNTERPRODUCTIVE",
-    length: 17,
   },
   {
     freq: 12654,
     raw: "INDISTINGUISHABLE",
-    length: 17,
   },
   {
     freq: 12702,
     raw: "EIGHTEENTH-CENTURY",
-    length: 17,
+
     word: "EIGHTEENTHCENTURY",
   },
   {
     freq: 12746,
     raw: "INDUSTRIALIZATION",
-    length: 17,
   },
   {
     freq: 13033,
     raw: "CONCEPTUALIZATION",
-    length: 17,
   },
   {
     freq: 15406,
     raw: "MULTIDISCIPLINARY",
-    length: 17,
   },
   {
     freq: 15952,
     raw: "INSTITUTIONALIZED",
-    length: 17,
   },
   {
     freq: 16279,
     raw: "COMPUTER-GENERATED",
-    length: 17,
+
     word: "COMPUTERGENERATED",
   },
   {
     freq: 16347,
     raw: "SELF-CONSCIOUSNESS",
-    length: 17,
+
     word: "SELFCONSCIOUSNESS",
   },
   {
     freq: 16511,
     raw: "COMMERCIALIZATION",
-    length: 17,
   },
   {
     freq: 16655,
     raw: "COUNTERINSURGENCY",
-    length: 17,
   },
   {
     freq: 17200,
     raw: "MISREPRESENTATION",
-    length: 17,
   },
   {
     freq: 17292,
     raw: "INTERGOVERNMENTAL",
-    length: 17,
   },
   {
     freq: 17557,
     raw: "INTERGENERATIONAL",
-    length: 17,
   },
   {
     freq: 17627,
     raw: "CONSTITUTIONALITY",
-    length: 17,
   },
   {
     freq: 18463,
     raw: "INTERRELATIONSHIP",
-    length: 17,
   },
   {
     freq: 21943,
     raw: "MISINTERPRETATION",
-    length: 17,
   },
   {
     freq: 23804,
     raw: "COST-EFFECTIVENESS",
-    length: 17,
+
     word: "COSTEFFECTIVENESS",
   },
   {
     freq: 24481,
     raw: "QUESTION-AND-ANSWER",
-    length: 17,
+
     word: "QUESTIONANDANSWER",
   },
   {
     freq: 25718,
     raw: "NONDENOMINATIONAL",
-    length: 17,
   },
   {
     freq: 25874,
     raw: "AFFIRMATIVE-ACTION",
-    length: 17,
+
     word: "AFFIRMATIVEACTION",
   },
   {
     freq: 26460,
     raw: "CONSTITUTIONALISM",
-    length: 17,
   },
   {
     freq: 27082,
     raw: "SELF-UNDERSTANDING",
-    length: 17,
+
     word: "SELFUNDERSTANDING",
   },
   {
     freq: 27633,
     raw: "VIDEOCONFERENCING",
-    length: 17,
   },
   {
     freq: 27932,
     raw: "INDEPENDENT-MINDED",
-    length: 17,
+
     word: "INDEPENDENTMINDED",
   },
   {
     freq: 28212,
     raw: "POST-REVOLUTIONARY",
-    length: 17,
+
     word: "POSTREVOLUTIONARY",
   },
   {
     freq: 28255,
     raw: "MULTIGENERATIONAL",
-    length: 17,
   },
   {
     freq: 28328,
     raw: "SELF-RIGHTEOUSNESS",
-    length: 17,
+
     word: "SELFRIGHTEOUSNESS",
   },
   {
     freq: 28591,
     raw: "COMPREHENSIVENESS",
-    length: 17,
   },
   {
     freq: 28664,
     raw: "COMMAND-AND-CONTROL",
-    length: 17,
+
     word: "COMMANDANDCONTROL",
   },
   {
     freq: 29069,
     raw: "NON-DISCRIMINATORY",
-    length: 17,
+
     word: "NONDISCRIMINATORY",
   },
   {
     freq: 29524,
     raw: "ELECTROMECHANICAL",
-    length: 17,
   },
   {
     freq: 29576,
     raw: "STRAIGHTFORWARDLY",
-    length: 17,
   },
   {
     freq: 29589,
     raw: "ULTRACONSERVATIVE",
-    length: 17,
   },
   {
     freq: 29697,
     raw: "PLACEBO-CONTROLLED",
-    length: 17,
+
     word: "PLACEBOCONTROLLED",
   },
   {
     freq: 29870,
     raw: "INFLATION-ADJUSTED",
-    length: 17,
+
     word: "INFLATIONADJUSTED",
   },
   {
     freq: 30210,
     raw: "ELECTROCARDIOGRAM",
-    length: 17,
   },
   {
     freq: 30237,
     raw: "SUPERCONDUCTIVITY",
-    length: 17,
   },
   {
     freq: 30301,
     raw: "THIRTEENTH-CENTURY",
-    length: 17,
+
     word: "THIRTEENTHCENTURY",
   },
   {
     freq: 30655,
     raw: "SELF-ACTUALIZATION",
-    length: 17,
+
     word: "SELFACTUALIZATION",
   },
   {
     freq: 31170,
     raw: "PASSIVE-AGGRESSIVE",
-    length: 17,
+
     word: "PASSIVEAGGRESSIVE",
   },
   {
     freq: 31212,
     raw: "CROSS-DISCIPLINARY",
-    length: 17,
+
     word: "CROSSDISCIPLINARY",
   },
   {
     freq: 31488,
     raw: "PSYCHOEDUCATIONAL",
-    length: 17,
   },
   {
     freq: 31503,
     raw: "CONVERSATIONALIST",
-    length: 17,
   },
   {
     freq: 31853,
     raw: "POLITICAL-ECONOMIC",
-    length: 17,
+
     word: "POLITICALECONOMIC",
   },
   {
     freq: 32057,
     raw: "DEPERSONALIZATION",
-    length: 17,
   },
   {
     freq: 32088,
     raw: "EMPLOYER-SPONSORED",
-    length: 17,
+
     word: "EMPLOYERSPONSORED",
   },
   {
     freq: 32401,
     raw: "MOST-FAVORED-NATION",
-    length: 17,
+
     word: "MOSTFAVOREDNATION",
   },
   {
     freq: 32668,
     raw: "COUNTERREVOLUTION",
-    length: 17,
   },
   {
     freq: 33459,
     raw: "FOURTEENTH-CENTURY",
-    length: 17,
+
     word: "FOURTEENTHCENTURY",
   },
   {
     freq: 34086,
     raw: "ANTI-ESTABLISHMENT",
-    length: 17,
+
     word: "ANTIESTABLISHMENT",
   },
   {
     freq: 34394,
     raw: "INAPPROPRIATENESS",
-    length: 17,
   },
   {
     freq: 34570,
     raw: "CONTEXTUALIZATION",
-    length: 17,
   },
   {
     freq: 34731,
     raw: "INDIVIDUALIZATION",
-    length: 17,
   },
   {
     freq: 34908,
     raw: "CLIMATE-CONTROLLED",
-    length: 17,
+
     word: "CLIMATECONTROLLED",
   },
   {
     freq: 35070,
     raw: "QUASI-EXPERIMENTAL",
-    length: 17,
+
     word: "QUASIEXPERIMENTAL",
   },
   {
     freq: 35226,
     raw: "ANTI-ENVIRONMENTAL",
-    length: 17,
+
     word: "ANTIENVIRONMENTAL",
   },
   {
     freq: 35297,
     raw: "CARDIORESPIRATORY",
-    length: 17,
   },
   {
     freq: 35408,
     raw: "CONSCIENTIOUSNESS",
-    length: 17,
   },
   {
     freq: 35971,
     raw: "PSYCHOTHERAPEUTIC",
-    length: 17,
   },
   {
     freq: 36266,
     raw: "HISTORIOGRAPHICAL",
-    length: 17,
   },
   {
     freq: 36410,
     raw: "SELF-CONTRADICTORY",
-    length: 17,
+
     word: "SELFCONTRADICTORY",
   },
   {
     freq: 36707,
     raw: "POLITICAL-MILITARY",
-    length: 17,
+
     word: "POLITICALMILITARY",
   },
   {
     freq: 36730,
     raw: "SELF-INCRIMINATION",
-    length: 17,
+
     word: "SELFINCRIMINATION",
   },
   {
     freq: 36896,
     raw: "BETTER-THAN-AVERAGE",
-    length: 17,
+
     word: "BETTERTHANAVERAGE",
   },
   {
     freq: 36947,
     raw: "ATTENTION-GRABBING",
-    length: 17,
+
     word: "ATTENTIONGRABBING",
   },
   {
     freq: 37001,
     raw: "SELF-TRANSCENDENCE",
-    length: 17,
+
     word: "SELFTRANSCENDENCE",
   },
   {
     freq: 37037,
     raw: "MISCLASSIFICATION",
-    length: 17,
   },
   {
     freq: 37157,
     raw: "IMMUNOSUPPRESSIVE",
-    length: 17,
   },
   {
     freq: 37429,
     raw: "HIGHER-THAN-AVERAGE",
-    length: 17,
+
     word: "HIGHERTHANAVERAGE",
   },
   {
     freq: 37695,
     raw: "POST-STRUCTURALIST",
-    length: 17,
+
     word: "POSTSTRUCTURALIST",
   },
   {
     freq: 37918,
     raw: "CONTRADISTINCTION",
-    length: 17,
   },
   {
     freq: 37994,
     raw: "DECRIMINALIZATION",
-    length: 17,
   },
   {
     freq: 38171,
     raw: "CONSTITUTIONALIST",
-    length: 17,
   },
   {
     freq: 38690,
     raw: "COMMUNITY-ORIENTED",
-    length: 17,
+
     word: "COMMUNITYORIENTED",
   },
   {
     freq: 38701,
     raw: "BUREAUCRATIZATION",
-    length: 17,
   },
   {
     freq: 39014,
     raw: "NEUROPSYCHOLOGIST",
-    length: 17,
   },
   {
     freq: 39254,
     raw: "CONSENSUS-BUILDING",
-    length: 17,
+
     word: "CONSENSUSBUILDING",
   },
   {
     freq: 39263,
     raw: "UNSELFCONSCIOUSLY",
-    length: 17,
   },
   {
     freq: 39375,
     raw: "COMPARTMENTALIZED",
-    length: 17,
   },
   {
     freq: 39569,
     raw: "THIRTY-FIVE-YEAR-OLD",
-    length: 17,
+
     word: "THIRTYFIVEYEAROLD",
   },
   {
     freq: 39627,
     raw: "SOCIOECONOMICALLY",
-    length: 17,
   },
   {
     freq: 39694,
     raw: "IMMUNOCOMPROMISED",
-    length: 17,
   },
   {
     freq: 39798,
     raw: "TRANSCENDENTALIST",
-    length: 17,
   },
   {
     freq: 39921,
     raw: "VOTER-REGISTRATION",
-    length: 17,
+
     word: "VOTERREGISTRATION",
   },
   {
     freq: 40124,
     raw: "ETHNOMUSICOLOGIST",
-    length: 17,
   },
   {
     freq: 40562,
     raw: "MISIDENTIFICATION",
-    length: 17,
   },
   {
     freq: 40583,
     raw: "INTERDEPARTMENTAL",
-    length: 17,
   },
   {
     freq: 40641,
     raw: "QUASI-GOVERNMENTAL",
-    length: 17,
+
     word: "QUASIGOVERNMENTAL",
   },
   {
     freq: 40712,
     raw: "IMMUNOSUPPRESSION",
-    length: 17,
   },
   {
     freq: 40715,
     raw: "TRANSCENDENTALISM",
-    length: 17,
   },
   {
     freq: 40764,
     raw: "OPPORTUNISTICALLY",
-    length: 17,
   },
   {
     freq: 40914,
     raw: "INTERMEDIATE-RANGE",
-    length: 17,
+
     word: "INTERMEDIATERANGE",
   },
   {
     freq: 41032,
     raw: "CONGREGATIONALIST",
-    length: 17,
   },
   {
     freq: 41070,
     raw: "POST-BACCALAUREATE",
-    length: 17,
+
     word: "POSTBACCALAUREATE",
   },
   {
     freq: 41097,
     raw: "COST-EFFECTIVENESS",
-    length: 17,
+
     word: "COSTEFFECTIVENESS",
   },
   {
     freq: 41104,
     raw: "GOVERNMENT-IMPOSED",
-    length: 17,
+
     word: "GOVERNMENTIMPOSED",
   },
   {
     freq: 41112,
     raw: "SELF-JUSTIFICATION",
-    length: 17,
+
     word: "SELFJUSTIFICATION",
   },
   {
     freq: 41984,
     raw: "INVESTMENT-BANKING",
-    length: 17,
+
     word: "INVESTMENTBANKING",
   },
   {
     freq: 42018,
     raw: "TEMPOROMANDIBULAR",
-    length: 17,
   },
   {
     freq: 42125,
     raw: "DOLLAR-DENOMINATED",
-    length: 17,
+
     word: "DOLLARDENOMINATED",
   },
   {
     freq: 42288,
     raw: "CHARACTER-BUILDING",
-    length: 17,
+
     word: "CHARACTERBUILDING",
   },
   {
     freq: 42299,
     raw: "MADE-FOR-TELEVISION",
-    length: 17,
+
     word: "MADEFORTELEVISION",
   },
   {
     freq: 42330,
     raw: "REVENUE-GENERATING",
-    length: 17,
+
     word: "REVENUEGENERATING",
   },
   {
     freq: 42426,
     raw: "ANTI-AUTHORITARIAN",
-    length: 17,
+
     word: "ANTIAUTHORITARIAN",
   },
   {
     freq: 42545,
     raw: "CONSENSUS-BUILDING",
-    length: 17,
+
     word: "CONSENSUSBUILDING",
   },
   {
     freq: 42881,
     raw: "PAY-FOR-PERFORMANCE",
-    length: 17,
+
     word: "PAYFORPERFORMANCE",
   },
   {
     freq: 42922,
     raw: "CONTEMPORANEOUSLY",
-    length: 17,
   },
   {
     freq: 42998,
     raw: "SITUATION-SPECIFIC",
-    length: 17,
+
     word: "SITUATIONSPECIFIC",
   },
   {
     freq: 43133,
     raw: "SELF-INSTRUCTIONAL",
-    length: 17,
+
     word: "SELFINSTRUCTIONAL",
   },
   {
     freq: 43471,
     raw: "ANTI-GLOBALIZATION",
-    length: 17,
+
     word: "ANTIGLOBALIZATION",
   },
   {
     freq: 43473,
     raw: "TECHNOLOGY-RELATED",
-    length: 17,
+
     word: "TECHNOLOGYRELATED",
   },
   {
     freq: 43516,
     raw: "ENDANGERED-SPECIES",
-    length: 17,
+
     word: "ENDANGEREDSPECIES",
   },
   {
     freq: 43609,
     raw: "COMMUNITY-DWELLING",
-    length: 17,
+
     word: "COMMUNITYDWELLING",
   },
   {
     freq: 43704,
     raw: "POST-ENLIGHTENMENT",
-    length: 17,
+
     word: "POSTENLIGHTENMENT",
   },
   {
     freq: 43721,
     raw: "TWENTY-NINE-YEAR-OLD",
-    length: 17,
+
     word: "TWENTYNINEYEAROLD",
   },
   {
     freq: 43969,
     raw: "GROUND-PENETRATING",
-    length: 17,
+
     word: "GROUNDPENETRATING",
   },
   {
     freq: 44044,
     raw: "INFECTIOUS-DISEASE",
-    length: 17,
+
     word: "INFECTIOUSDISEASE",
   },
   {
     freq: 44073,
     raw: "SUSPICIOUS-LOOKING",
-    length: 17,
+
     word: "SUSPICIOUSLOOKING",
   },
   {
     freq: 44370,
     raw: "AUSTRALOPITHECINE",
-    length: 17,
   },
   {
     freq: 44395,
     raw: "SELF-GRATIFICATION",
-    length: 17,
+
     word: "SELFGRATIFICATION",
   },
   {
     freq: 44487,
     raw: "UNCOMPREHENDINGLY",
-    length: 17,
   },
   {
     freq: 44515,
     raw: "DECONSTRUCTIONISM",
-    length: 17,
   },
   {
     freq: 44658,
     raw: "NEURODEGENERATIVE",
-    length: 17,
   },
   {
     freq: 44728,
     raw: "TRANSDISCIPLINARY",
-    length: 17,
   },
   {
     freq: 44923,
     raw: "THIRTY-FOUR-YEAR-OLD",
-    length: 17,
+
     word: "THIRTYFOURYEAROLD",
   },
   {
     freq: 45019,
     raw: "REPUBLICAN-LEANING",
-    length: 17,
+
     word: "REPUBLICANLEANING",
   },
   {
     freq: 45189,
     raw: "TRICHLOROETHYLENE",
-    length: 17,
   },
   {
     freq: 45204,
     raw: "PASSWORD-PROTECTED",
-    length: 17,
+
     word: "PASSWORDPROTECTED",
   },
   {
     freq: 45209,
     raw: "INTERSUBJECTIVITY",
-    length: 17,
   },
   {
     freq: 45430,
     raw: "SECURITY-CONSCIOUS",
-    length: 17,
+
     word: "SECURITYCONSCIOUS",
   },
   {
     freq: 46226,
     raw: "MODERATE-INTENSITY",
-    length: 17,
+
     word: "MODERATEINTENSITY",
   },
   {
     freq: 46325,
     raw: "UNCONVENTIONALITY",
-    length: 17,
   },
   {
     freq: 46526,
     raw: "EMPLOYMENT-RELATED",
-    length: 17,
+
     word: "EMPLOYMENTRELATED",
   },
   {
     freq: 46540,
     raw: "DEMATERIALIZATION",
-    length: 17,
   },
   {
     freq: 46550,
     raw: "INDUSTRY-SPONSORED",
-    length: 17,
+
     word: "INDUSTRYSPONSORED",
   },
   {
     freq: 46563,
     raw: "COMMUNITY-BUILDING",
-    length: 17,
+
     word: "COMMUNITYBUILDING",
   },
   {
     freq: 46597,
     raw: "COUNTRY-AND-WESTERN",
-    length: 17,
+
     word: "COUNTRYANDWESTERN",
   },
   {
     freq: 46844,
     raw: "ANTHROPOLOGICALLY",
-    length: 17,
   },
   {
     freq: 47140,
     raw: "CROSS-GENERATIONAL",
-    length: 17,
+
     word: "CROSSGENERATIONAL",
   },
   {
     freq: 47145,
     raw: "TRANSGENERATIONAL",
-    length: 17,
   },
   {
     freq: 47168,
     raw: "NON-REPRESENTATIVE",
-    length: 17,
+
     word: "NONREPRESENTATIVE",
   },
   {
     freq: 47259,
     raw: "AMBASSADOR-AT-LARGE",
-    length: 17,
+
     word: "AMBASSADORATLARGE",
   },
   {
     freq: 47388,
     raw: "ARTIST-IN-RESIDENCE",
-    length: 17,
+
     word: "ARTISTINRESIDENCE",
   },
   {
     freq: 47497,
     raw: "PRESSURE-SENSITIVE",
-    length: 17,
+
     word: "PRESSURESENSITIVE",
   },
   {
     freq: 47585,
     raw: "GRAVITATIONAL-WAVE",
-    length: 17,
+
     word: "GRAVITATIONALWAVE",
   },
   {
     freq: 47658,
     raw: "ALTERNATIVE-ENERGY",
-    length: 17,
+
     word: "ALTERNATIVEENERGY",
   },
   {
     freq: 47661,
     raw: "URANIUM-ENRICHMENT",
-    length: 17,
+
     word: "URANIUMENRICHMENT",
   },
   {
     freq: 47840,
     raw: "LIBERAL-DEMOCRATIC",
-    length: 17,
+
     word: "LIBERALDEMOCRATIC",
   },
   {
     freq: 47930,
     raw: "CAREER-THREATENING",
-    length: 17,
+
     word: "CAREERTHREATENING",
   },
   {
     freq: 48174,
     raw: "WATER-PURIFICATION",
-    length: 17,
+
     word: "WATERPURIFICATION",
   },
   {
     freq: 48249,
     raw: "TAXPAYER-SUPPORTED",
-    length: 17,
+
     word: "TAXPAYERSUPPORTED",
   },
   {
     freq: 48533,
     raw: "GOVERNMENT-IN-EXILE",
-    length: 17,
+
     word: "GOVERNMENTINEXILE",
   },
   {
     freq: 48570,
     raw: "DISINTERESTEDNESS",
-    length: 17,
   },
   {
     freq: 48571,
     raw: "BACK-OF-THE-ENVELOPE",
-    length: 17,
+
     word: "BACKOFTHEENVELOPE",
   },
   {
     freq: 48689,
     raw: "HALF-MILLION-DOLLAR",
-    length: 17,
+
     word: "HALFMILLIONDOLLAR",
   },
   {
     freq: 48691,
     raw: "LOWER-THAN-EXPECTED",
-    length: 17,
+
     word: "LOWERTHANEXPECTED",
   },
   {
     freq: 49146,
     raw: "NEUROFIBROMATOSIS",
-    length: 17,
   },
   {
     freq: 49314,
     raw: "QUANTUM-MECHANICAL",
-    length: 17,
+
     word: "QUANTUMMECHANICAL",
   },
   {
     freq: 49455,
     raw: "INTERMEDIATE-LEVEL",
-    length: 17,
+
     word: "INTERMEDIATELEVEL",
   },
   {
     freq: 49459,
     raw: "MORE-SOPHISTICATED",
-    length: 17,
+
     word: "MORESOPHISTICATED",
   },
   {
     freq: 49595,
     raw: "POST-IMPRESSIONIST",
-    length: 17,
+
     word: "POSTIMPRESSIONIST",
   },
   {
     freq: 49599,
     raw: "GLOBAL-POSITIONING",
-    length: 17,
+
     word: "GLOBALPOSITIONING",
   },
   {
     freq: 49656,
     raw: "ANACHRONISTICALLY",
-    length: 17,
   },
   {
     freq: 49765,
     raw: "ADVANCED-PLACEMENT",
-    length: 17,
+
     word: "ADVANCEDPLACEMENT",
   },
   {
     freq: 50009,
     raw: "SPEECH-RECOGNITION",
-    length: 17,
+
     word: "SPEECHRECOGNITION",
   },
   {
     freq: 50039,
     raw: "DEMOCRATIC-LEANING",
-    length: 17,
+
     word: "DEMOCRATICLEANING",
   },
   {
     freq: 50231,
     raw: "AGE-DISCRIMINATION",
-    length: 17,
+
     word: "AGEDISCRIMINATION",
   },
   {
     freq: 50352,
     raw: "IMMUNOSUPPRESSANT",
-    length: 17,
   },
   {
     freq: 50687,
     raw: "NEIGHBORHOOD-BASED",
-    length: 17,
+
     word: "NEIGHBORHOODBASED",
   },
   {
     freq: 50851,
     raw: "LIEUTENANT-COLONEL",
-    length: 17,
+
     word: "LIEUTENANTCOLONEL",
   },
   {
     freq: 50882,
     raw: "PERSON-ENVIRONMENT",
-    length: 17,
+
     word: "PERSONENVIRONMENT",
   },
   {
     freq: 50911,
     raw: "SUBSCRIPTION-BASED",
-    length: 17,
+
     word: "SUBSCRIPTIONBASED",
   },
   {
     freq: 51089,
     raw: "DEVELOPING-COUNTRY",
-    length: 17,
+
     word: "DEVELOPINGCOUNTRY",
   },
   {
     freq: 51109,
     raw: "INTERCONNECTIVITY",
-    length: 17,
   },
   {
     freq: 51160,
     raw: "CRYPTOSPORIDIOSIS",
-    length: 17,
   },
   {
     freq: 51558,
     raw: "CONSTRUCTION-PAPER",
-    length: 17,
+
     word: "CONSTRUCTIONPAPER",
   },
   {
     freq: 51611,
     raw: "INFLUENCE-PEDDLING",
-    length: 17,
+
     word: "INFLUENCEPEDDLING",
   },
   {
     freq: 51691,
     raw: "TWO-HUNDRED-YEAR-OLD",
-    length: 17,
+
     word: "TWOHUNDREDYEAROLD",
   },
   {
     freq: 51698,
     raw: "FINANCIAL-PLANNING",
-    length: 17,
+
     word: "FINANCIALPLANNING",
   },
   {
     freq: 51717,
     raw: "SPECIAL-OPERATIONS",
-    length: 17,
+
     word: "SPECIALOPERATIONS",
   },
   {
     freq: 52159,
     raw: "CELLOPHANE-WRAPPED",
-    length: 17,
+
     word: "CELLOPHANEWRAPPED",
   },
   {
     freq: 52210,
     raw: "POPULATION-CONTROL",
-    length: 17,
+
     word: "POPULATIONCONTROL",
   },
   {
     freq: 52215,
     raw: "LIMITED-PRODUCTION",
-    length: 17,
+
     word: "LIMITEDPRODUCTION",
   },
   {
     freq: 52283,
     raw: "PHYSICAL-EDUCATION",
-    length: 17,
+
     word: "PHYSICALEDUCATION",
   },
   {
     freq: 52284,
     raw: "RECONSTRUCTIONIST",
-    length: 17,
   },
   {
     freq: 52351,
     raw: "RESOURCE-INTENSIVE",
-    length: 17,
+
     word: "RESOURCEINTENSIVE",
   },
   {
     freq: 52451,
     raw: "LACTOSE-INTOLERANT",
-    length: 17,
+
     word: "LACTOSEINTOLERANT",
   },
   {
     freq: 52619,
     raw: "IDIOSYNCRATICALLY",
-    length: 17,
   },
   {
     freq: 52624,
     raw: "HEALTH-MAINTENANCE",
-    length: 17,
+
     word: "HEALTHMAINTENANCE",
   },
   {
     freq: 52654,
     raw: "IMMUNOSUPPRESSANT",
-    length: 17,
   },
   {
     freq: 52774,
     raw: "INFECTION-FIGHTING",
-    length: 17,
+
     word: "INFECTIONFIGHTING",
   },
   {
     freq: 52832,
     raw: "BODILY-KINESTHETIC",
-    length: 17,
+
     word: "BODILYKINESTHETIC",
   },
   {
     freq: 52942,
     raw: "ELECTROPHYSIOLOGY",
-    length: 17,
   },
   {
     freq: 53574,
     raw: "FIFTY-THREE-YEAR-OLD",
-    length: 17,
+
     word: "FIFTYTHREEYEAROLD",
   },
   {
     freq: 53623,
     raw: "THIRTY-NINE-YEAR-OLD",
-    length: 17,
+
     word: "THIRTYNINEYEAROLD",
   },
   {
     freq: 53652,
     raw: "WITNESS-PROTECTION",
-    length: 17,
+
     word: "WITNESSPROTECTION",
   },
   {
     freq: 53678,
     raw: "HYPERPIGMENTATION",
-    length: 17,
   },
   {
     freq: 53785,
     raw: "RHINESTONE-STUDDED",
-    length: 17,
+
     word: "RHINESTONESTUDDED",
   },
   {
     freq: 53799,
     raw: "SOON-TO-BE-PUBLISHED",
-    length: 17,
+
     word: "SOONTOBEPUBLISHED",
   },
   {
     freq: 53800,
     raw: "ARTIST-IN-RESIDENCE",
-    length: 17,
+
     word: "ARTISTINRESIDENCE",
   },
   {
     freq: 53965,
     raw: "AFFORDABLE-HOUSING",
-    length: 17,
+
     word: "AFFORDABLEHOUSING",
   },
   {
     freq: 53995,
     raw: "ELECTROSTATICALLY",
-    length: 17,
   },
   {
     freq: 54543,
     raw: "SPECTROPHOTOMETER",
-    length: 17,
   },
   {
     freq: 54559,
     raw: "EMERGENCY-RESPONSE",
-    length: 17,
+
     word: "EMERGENCYRESPONSE",
   },
   {
     freq: 54569,
     raw: "PARAPSYCHOLOGICAL",
-    length: 17,
   },
   {
     freq: 54791,
     raw: "COMPREHENSIBILITY",
-    length: 17,
   },
   {
     freq: 54930,
     raw: "HISTOPATHOLOGICAL",
-    length: 17,
   },
   {
     freq: 54971,
     raw: "DEFAMILIARIZATION",
-    length: 17,
   },
   {
     freq: 54979,
     raw: "NEUROPHYSIOLOGIST",
-    length: 17,
   },
   {
     freq: 55051,
     raw: "PROFESSIONAL-LEVEL",
-    length: 17,
+
     word: "PROFESSIONALLEVEL",
   },
   {
     freq: 55084,
     raw: "RECONSTRUCTIONIST",
-    length: 17,
   },
   {
     freq: 55117,
     raw: "MILITARY-POLITICAL",
-    length: 17,
+
     word: "MILITARYPOLITICAL",
   },
   {
     freq: 55339,
     raw: "SELF-COMMUNICATION",
-    length: 17,
+
     word: "SELFCOMMUNICATION",
   },
   {
     freq: 55373,
     raw: "FORTY-THREE-YEAR-OLD",
-    length: 17,
+
     word: "FORTYTHREEYEAROLD",
   },
   {
     freq: 55407,
     raw: "SOUTHWESTERN-STYLE",
-    length: 17,
+
     word: "SOUTHWESTERNSTYLE",
   },
   {
     freq: 55420,
     raw: "THREE-HUNDRED-POUND",
-    length: 17,
+
     word: "THREEHUNDREDPOUND",
   },
   {
     freq: 55570,
     raw: "NO-STRINGS-ATTACHED",
-    length: 17,
+
     word: "NOSTRINGSATTACHED",
   },
   {
     freq: 55673,
     raw: "COMPUTER-SIMULATED",
-    length: 17,
+
     word: "COMPUTERSIMULATED",
   },
   {
     freq: 55706,
     raw: "ONCE-IN-A-GENERATION",
-    length: 17,
+
     word: "ONCEINAGENERATION",
   },
   {
     freq: 55724,
     raw: "PREFERRED-PROVIDER",
-    length: 17,
+
     word: "PREFERREDPROVIDER",
   },
   {
     freq: 55736,
     raw: "SELF-INCRIMINATING",
-    length: 17,
+
     word: "SELFINCRIMINATING",
   },
   {
     freq: 55786,
     raw: "SOCIODEMOGRAPHICS",
-    length: 17,
   },
   {
     freq: 55923,
     raw: "DISABILITY-RELATED",
-    length: 17,
+
     word: "DISABILITYRELATED",
   },
   {
     freq: 56053,
     raw: "PROSPEROUS-LOOKING",
-    length: 17,
+
     word: "PROSPEROUSLOOKING",
   },
   {
     freq: 56090,
     raw: "POST-AUTHORITARIAN",
-    length: 17,
+
     word: "POSTAUTHORITARIAN",
   },
   {
     freq: 56100,
     raw: "PERSPECTIVE-TAKING",
-    length: 17,
+
     word: "PERSPECTIVETAKING",
   },
   {
     freq: 56194,
     raw: "SEVENTY-TWO-YEAR-OLD",
-    length: 17,
+
     word: "SEVENTYTWOYEAROLD",
   },
   {
     freq: 56276,
     raw: "AIR-TRAFFIC-CONTROL",
-    length: 17,
+
     word: "AIRTRAFFICCONTROL",
   },
   {
     freq: 56291,
     raw: "DISPUTE-RESOLUTION",
-    length: 17,
+
     word: "DISPUTERESOLUTION",
   },
   {
     freq: 56321,
     raw: "IMPRESSIVE-LOOKING",
-    length: 17,
+
     word: "IMPRESSIVELOOKING",
   },
   {
     freq: 56351,
     raw: "LESS-THAN-DESIRABLE",
-    length: 17,
+
     word: "LESSTHANDESIRABLE",
   },
   {
     freq: 56515,
     raw: "CONGREGATIONALIST",
-    length: 17,
   },
   {
     freq: 56631,
     raw: "HIGHER-DIMENSIONAL",
-    length: 17,
+
     word: "HIGHERDIMENSIONAL",
   },
   {
     freq: 56717,
     raw: "SELF-ACTUALIZATION",
-    length: 17,
+
     word: "SELFACTUALIZATION",
   },
   {
     freq: 56861,
     raw: "DISEASE-PREVENTION",
-    length: 17,
+
     word: "DISEASEPREVENTION",
   },
   {
     freq: 56909,
     raw: "MILITARY-DOMINATED",
-    length: 17,
+
     word: "MILITARYDOMINATED",
   },
   {
     freq: 57032,
     raw: "WELL-CHARACTERIZED",
-    length: 17,
+
     word: "WELLCHARACTERIZED",
   },
   {
     freq: 57035,
     raw: "WRITER-IN-RESIDENCE",
-    length: 17,
+
     word: "WRITERINRESIDENCE",
   },
   {
     freq: 57201,
     raw: "ISRAELI-CONTROLLED",
-    length: 17,
+
     word: "ISRAELICONTROLLED",
   },
   {
     freq: 57467,
     raw: "NON-DISCRIMINATION",
-    length: 17,
+
     word: "NONDISCRIMINATION",
   },
   {
     freq: 57502,
     raw: "ANTI-INSTITUTIONAL",
-    length: 17,
+
     word: "ANTIINSTITUTIONAL",
   },
   {
     freq: 57549,
     raw: "COMMUNITY-BUILDING",
-    length: 17,
+
     word: "COMMUNITYBUILDING",
   },
   {
     freq: 57608,
     raw: "OVERDETERMINATION",
-    length: 17,
   },
   {
     freq: 57702,
     raw: "UNINTELLIGIBILITY",
-    length: 17,
   },
   {
     freq: 57745,
     raw: "ABRASION-RESISTANT",
-    length: 17,
+
     word: "ABRASIONRESISTANT",
   },
   {
     freq: 57916,
     raw: "HYPERINFLATIONARY",
-    length: 17,
   },
   {
     freq: 57932,
     raw: "KURDISH-CONTROLLED",
-    length: 17,
+
     word: "KURDISHCONTROLLED",
   },
   {
     freq: 58077,
     raw: "CHARACTEROLOGICAL",
-    length: 17,
   },
   {
     freq: 58127,
     raw: "PROFESSIONAL-GRADE",
-    length: 17,
+
     word: "PROFESSIONALGRADE",
   },
   {
     freq: 58281,
     raw: "INTERNET-CONNECTED",
-    length: 17,
+
     word: "INTERNETCONNECTED",
   },
   {
     freq: 58309,
     raw: "UNIVERSITY-TRAINED",
-    length: 17,
+
     word: "UNIVERSITYTRAINED",
   },
   {
     freq: 58456,
     raw: "DENATIONALIZATION",
-    length: 17,
   },
   {
     freq: 58511,
     raw: "NETWORK-AFFILIATED",
-    length: 17,
+
     word: "NETWORKAFFILIATED",
   },
   {
     freq: 58514,
     raw: "RESOURCE-EFFICIENT",
-    length: 17,
+
     word: "RESOURCEEFFICIENT",
   },
   {
     freq: 58521,
     raw: "SELF-PREOCCUPATION",
-    length: 17,
+
     word: "SELFPREOCCUPATION",
   },
   {
     freq: 58636,
     raw: "BIOPHARMACEUTICAL",
-    length: 17,
   },
   {
     freq: 58713,
     raw: "AGRO-ENVIRONMENTAL",
-    length: 17,
+
     word: "AGROENVIRONMENTAL",
   },
   {
     freq: 58762,
     raw: "UPPER-MIDDLE-INCOME",
-    length: 17,
+
     word: "UPPERMIDDLEINCOME",
   },
   {
     freq: 58763,
     raw: "CULTURAL-POLITICAL",
-    length: 17,
+
     word: "CULTURALPOLITICAL",
   },
   {
     freq: 58768,
     raw: "INTRAGENERATIONAL",
-    length: 17,
   },
   {
     freq: 58801,
     raw: "EPIDEMIOLOGICALLY",
-    length: 17,
   },
   {
     freq: 58899,
     raw: "ULTRACONSERVATIVE",
-    length: 17,
   },
   {
     freq: 58973,
     raw: "BASKETBALL-RELATED",
-    length: 17,
+
     word: "BASKETBALLRELATED",
   },
   {
     freq: 59171,
     raw: "ANTI-MISCEGENATION",
-    length: 17,
+
     word: "ANTIMISCEGENATION",
   },
   {
     freq: 59256,
     raw: "FACIAL-RECOGNITION",
-    length: 17,
+
     word: "FACIALRECOGNITION",
   },
   {
     freq: 59364,
     raw: "GENDER-APPROPRIATE",
-    length: 17,
+
     word: "GENDERAPPROPRIATE",
   },
   {
     freq: 59410,
     raw: "WELL-CIRCUMSCRIBED",
-    length: 17,
+
     word: "WELLCIRCUMSCRIBED",
   },
   {
     freq: 59475,
     raw: "PATIENT-CONTROLLED",
-    length: 17,
+
     word: "PATIENTCONTROLLED",
   },
   {
     freq: 59744,
     raw: "FREQUENCY-SPECIFIC",
-    length: 17,
+
     word: "FREQUENCYSPECIFIC",
   },
   {
     freq: 59748,
     raw: "PLAY-WITHIN-THE-PLAY",
-    length: 17,
+
     word: "PLAYWITHINTHEPLAY",
   },
 ];
@@ -261228,820 +260931,787 @@ export const eighteen = [
   {
     freq: 6068,
     raw: "TELECOMMUNICATIONS",
-    length: 18,
   },
   {
     freq: 12563,
     raw: "DISPROPORTIONATELY",
-    length: 18,
   },
   {
     freq: 13044,
     raw: "MULTIMILLION-DOLLAR",
-    length: 18,
+
     word: "MULTIMILLIONDOLLAR",
   },
   {
     freq: 14996,
     raw: "CHARACTERISTICALLY",
-    length: 18,
   },
   {
     freq: 16337,
     raw: "ISRAELI-PALESTINIAN",
-    length: 18,
+
     word: "ISRAELIPALESTINIAN",
   },
   {
     freq: 17343,
     raw: "SEVENTEENTH-CENTURY",
-    length: 18,
+
     word: "SEVENTEENTHCENTURY",
   },
   {
     freq: 23073,
     raw: "DISPROPORTIONATELY",
-    length: 18,
   },
   {
     freq: 23542,
     raw: "MULTIBILLION-DOLLAR",
-    length: 18,
+
     word: "MULTIBILLIONDOLLAR",
   },
   {
     freq: 24384,
     raw: "MILITARY-INDUSTRIAL",
-    length: 18,
+
     word: "MILITARYINDUSTRIAL",
   },
   {
     freq: 25620,
     raw: "OVERSIMPLIFICATION",
-    length: 18,
   },
   {
     freq: 26125,
     raw: "COMPUTER-CONTROLLED",
-    length: 18,
+
     word: "COMPUTERCONTROLLED",
   },
   {
     freq: 26180,
     raw: "INTERCONNECTEDNESS",
-    length: 18,
   },
   {
     freq: 28100,
     raw: "CONFIDENCE-BUILDING",
-    length: 18,
+
     word: "CONFIDENCEBUILDING",
   },
   {
     freq: 28677,
     raw: "ANTI-DISCRIMINATION",
-    length: 18,
+
     word: "ANTIDISCRIMINATION",
   },
   {
     freq: 29368,
     raw: "NEUROPSYCHOLOGICAL",
-    length: 18,
   },
   {
     freq: 29466,
     raw: "TWENTY-FIRST-CENTURY",
-    length: 18,
+
     word: "TWENTYFIRSTCENTURY",
   },
   {
     freq: 29698,
     raw: "GASTROENTEROLOGIST",
-    length: 18,
   },
   {
     freq: 29846,
     raw: "REPRESENTATIVENESS",
-    length: 18,
   },
   {
     freq: 29913,
     raw: "SELF-REPRESENTATION",
-    length: 18,
+
     word: "SELFREPRESENTATION",
   },
   {
     freq: 30178,
     raw: "DISENFRANCHISEMENT",
-    length: 18,
   },
   {
     freq: 31672,
     raw: "INDUSTRIAL-STRENGTH",
-    length: 18,
+
     word: "INDUSTRIALSTRENGTH",
   },
   {
     freq: 32236,
     raw: "OVERREPRESENTATION",
-    length: 18,
   },
   {
     freq: 32301,
     raw: "SELF-CONGRATULATORY",
-    length: 18,
+
     word: "SELFCONGRATULATORY",
   },
   {
     freq: 32763,
     raw: "NON-CONFRONTATIONAL",
-    length: 18,
+
     word: "NONCONFRONTATIONAL",
   },
   {
     freq: 32790,
     raw: "PALESTINIAN-ISRAELI",
-    length: 18,
+
     word: "PALESTINIANISRAELI",
   },
   {
     freq: 33430,
     raw: "BUSINESS-TO-BUSINESS",
-    length: 18,
+
     word: "BUSINESSTOBUSINESS",
   },
   {
     freq: 33728,
     raw: "UNCONSTITUTIONALLY",
-    length: 18,
   },
   {
     freq: 35218,
     raw: "CONFLICT-OF-INTEREST",
-    length: 18,
+
     word: "CONFLICTOFINTEREST",
   },
   {
     freq: 35285,
     raw: "GREAT-GRANDDAUGHTER",
-    length: 18,
+
     word: "GREATGRANDDAUGHTER",
   },
   {
     freq: 35418,
     raw: "TWENTY-THREE-YEAR-OLD",
-    length: 18,
+
     word: "TWENTYTHREEYEAROLD",
   },
   {
     freq: 35520,
     raw: "SELF-CONGRATULATION",
-    length: 18,
+
     word: "SELFCONGRATULATION",
   },
   {
     freq: 35809,
     raw: "CORROSION-RESISTANT",
-    length: 18,
+
     word: "CORROSIONRESISTANT",
   },
   {
     freq: 35863,
     raw: "OPERATIONALIZATION",
-    length: 18,
   },
   {
     freq: 36560,
     raw: "NON-ENGLISH-SPEAKING",
-    length: 18,
+
     word: "NONENGLISHSPEAKING",
   },
   {
     freq: 36857,
     raw: "INTERNAL-COMBUSTION",
-    length: 18,
+
     word: "INTERNALCOMBUSTION",
   },
   {
     freq: 37055,
     raw: "SELF-AGGRANDIZEMENT",
-    length: 18,
+
     word: "SELFAGGRANDIZEMENT",
   },
   {
     freq: 37735,
     raw: "COUNTER-REFORMATION",
-    length: 18,
+
     word: "COUNTERREFORMATION",
   },
   {
     freq: 37739,
     raw: "TWENTY-EIGHT-YEAR-OLD",
-    length: 18,
+
     word: "TWENTYEIGHTYEAROLD",
   },
   {
     freq: 37793,
     raw: "CROSS-FERTILIZATION",
-    length: 18,
+
     word: "CROSSFERTILIZATION",
   },
   {
     freq: 37816,
     raw: "MEDITERRANEAN-STYLE",
-    length: 18,
+
     word: "MEDITERRANEANSTYLE",
   },
   {
     freq: 38891,
     raw: "PEDESTRIAN-FRIENDLY",
-    length: 18,
+
     word: "PEDESTRIANFRIENDLY",
   },
   {
     freq: 39068,
     raw: "INCOMMENSURABILITY",
-    length: 18,
   },
   {
     freq: 39190,
     raw: "MILITARY-TO-MILITARY",
-    length: 18,
+
     word: "MILITARYTOMILITARY",
   },
   {
     freq: 39230,
     raw: "SECRETARY-TREASURER",
-    length: 18,
+
     word: "SECRETARYTREASURER",
   },
   {
     freq: 39388,
     raw: "MULTI-MILLION-DOLLAR",
-    length: 18,
+
     word: "MULTIMILLIONDOLLAR",
   },
   {
     freq: 39835,
     raw: "TWENTY-SEVEN-YEAR-OLD",
-    length: 18,
+
     word: "TWENTYSEVENYEAROLD",
   },
   {
     freq: 40032,
     raw: "TRANSUBSTANTIATION",
-    length: 18,
   },
   {
     freq: 40096,
     raw: "BETTER-THAN-EXPECTED",
-    length: 18,
+
     word: "BETTERTHANEXPECTED",
   },
   {
     freq: 40799,
     raw: "DEMOCRAT-CONTROLLED",
-    length: 18,
+
     word: "DEMOCRATCONTROLLED",
   },
   {
     freq: 41081,
     raw: "PERFORMANCE-RELATED",
-    length: 18,
+
     word: "PERFORMANCERELATED",
   },
   {
     freq: 41360,
     raw: "PSYCHOPHARMACOLOGY",
-    length: 18,
   },
   {
     freq: 41731,
     raw: "HISTORICAL-CRITICAL",
-    length: 18,
+
     word: "HISTORICALCRITICAL",
   },
   {
     freq: 41930,
     raw: "PRODUCT-DEVELOPMENT",
-    length: 18,
+
     word: "PRODUCTDEVELOPMENT",
   },
   {
     freq: 42016,
     raw: "PSYCHOPATHOLOGICAL",
-    length: 18,
   },
   {
     freq: 42033,
     raw: "DISCIPLINE-SPECIFIC",
-    length: 18,
+
     word: "DISCIPLINESPECIFIC",
   },
   {
     freq: 42706,
     raw: "VIETNAMESE-AMERICAN",
-    length: 18,
+
     word: "VIETNAMESEAMERICAN",
   },
   {
     freq: 42794,
     raw: "IMPORT-SUBSTITUTION",
-    length: 18,
+
     word: "IMPORTSUBSTITUTION",
   },
   {
     freq: 42956,
     raw: "INTERCHANGEABILITY",
-    length: 18,
   },
   {
     freq: 43080,
     raw: "GOVERNMENT-APPROVED",
-    length: 18,
+
     word: "GOVERNMENTAPPROVED",
   },
   {
     freq: 43254,
     raw: "NEUROPHYSIOLOGICAL",
-    length: 18,
   },
   {
     freq: 43384,
     raw: "THIRTY-EIGHT-YEAR-OLD",
-    length: 18,
+
     word: "THIRTYEIGHTYEAROLD",
   },
   {
     freq: 43632,
     raw: "MULTI-BILLION-DOLLAR",
-    length: 18,
+
     word: "MULTIBILLIONDOLLAR",
   },
   {
     freq: 43838,
     raw: "OVERGENERALIZATION",
-    length: 18,
   },
   {
     freq: 44219,
     raw: "GOVERNMENT-MANDATED",
-    length: 18,
+
     word: "GOVERNMENTMANDATED",
   },
   {
     freq: 44388,
     raw: "CONFLICT-RESOLUTION",
-    length: 18,
+
     word: "CONFLICTRESOLUTION",
   },
   {
     freq: 44499,
     raw: "SOCIO-PSYCHOLOGICAL",
-    length: 18,
+
     word: "SOCIOPSYCHOLOGICAL",
   },
   {
     freq: 44903,
     raw: "SHOULDER-TO-SHOULDER",
-    length: 18,
+
     word: "SHOULDERTOSHOULDER",
   },
   {
     freq: 45605,
     raw: "GOVERNMENT-FINANCED",
-    length: 18,
+
     word: "GOVERNMENTFINANCED",
   },
   {
     freq: 45707,
     raw: "CORPORATE-SPONSORED",
-    length: 18,
+
     word: "CORPORATESPONSORED",
   },
   {
     freq: 45789,
     raw: "ACHIEVEMENT-RELATED",
-    length: 18,
+
     word: "ACHIEVEMENTRELATED",
   },
   {
     freq: 45797,
     raw: "THREE-QUARTER-LENGTH",
-    length: 18,
+
     word: "THREEQUARTERLENGTH",
   },
   {
     freq: 46149,
     raw: "INTERINSTITUTIONAL",
-    length: 18,
   },
   {
     freq: 46212,
     raw: "THIRTY-SEVEN-YEAR-OLD",
-    length: 18,
+
     word: "THIRTYSEVENYEAROLD",
   },
   {
     freq: 46292,
     raw: "EVAPOTRANSPIRATION",
-    length: 18,
   },
   {
     freq: 46392,
     raw: "DISPROPORTIONALITY",
-    length: 18,
   },
   {
     freq: 47102,
     raw: "IMMUNOFLUORESCENCE",
-    length: 18,
   },
   {
     freq: 47398,
     raw: "SELF-PRESENTATIONAL",
-    length: 18,
+
     word: "SELFPRESENTATIONAL",
   },
   {
     freq: 47869,
     raw: "THIRTY-THREE-YEAR-OLD",
-    length: 18,
+
     word: "THIRTYTHREEYEAROLD",
   },
   {
     freq: 48189,
     raw: "CULTURAL-LINGUISTIC",
-    length: 18,
+
     word: "CULTURALLINGUISTIC",
   },
   {
     freq: 48420,
     raw: "COMMUNITY-SUPPORTED",
-    length: 18,
+
     word: "COMMUNITYSUPPORTED",
   },
   {
     freq: 48815,
     raw: "SEVENTEENTH-CENTURY",
-    length: 18,
+
     word: "SEVENTEENTHCENTURY",
   },
   {
     freq: 48892,
     raw: "CHLOROFLUOROCARBON",
-    length: 18,
   },
   {
     freq: 49335,
     raw: "CONSUMER-PROTECTION",
-    length: 18,
+
     word: "CONSUMERPROTECTION",
   },
   {
     freq: 49480,
     raw: "PROLETARIANIZATION",
-    length: 18,
   },
   {
     freq: 50142,
     raw: "HERBICIDE-RESISTANT",
-    length: 18,
+
     word: "HERBICIDERESISTANT",
   },
   {
     freq: 50213,
     raw: "GREAT-GREAT-GRANDSON",
-    length: 18,
+
     word: "GREATGREATGRANDSON",
   },
   {
     freq: 50221,
     raw: "NEURODEVELOPMENTAL",
-    length: 18,
   },
   {
     freq: 50381,
     raw: "UP-CLOSE-AND-PERSONAL",
-    length: 18,
+
     word: "UPCLOSEANDPERSONAL",
   },
   {
     freq: 50553,
     raw: "WELL-DIFFERENTIATED",
-    length: 18,
+
     word: "WELLDIFFERENTIATED",
   },
   {
     freq: 50686,
     raw: "TEACHER-PREPARATION",
-    length: 18,
+
     word: "TEACHERPREPARATION",
   },
   {
     freq: 50832,
     raw: "HIGHER-THAN-EXPECTED",
-    length: 18,
+
     word: "HIGHERTHANEXPECTED",
   },
   {
     freq: 51042,
     raw: "UNENTHUSIASTICALLY",
-    length: 18,
   },
   {
     freq: 51185,
     raw: "CONSERVATION-MINDED",
-    length: 18,
+
     word: "CONSERVATIONMINDED",
   },
   {
     freq: 51343,
     raw: "ENERGY-CONSERVATION",
-    length: 18,
+
     word: "ENERGYCONSERVATION",
   },
   {
     freq: 51585,
     raw: "INDEPENDENCE-MINDED",
-    length: 18,
+
     word: "INDEPENDENCEMINDED",
   },
   {
     freq: 51849,
     raw: "MULTIDRUG-RESISTANT",
-    length: 18,
+
     word: "MULTIDRUGRESISTANT",
   },
   {
     freq: 52080,
     raw: "CULTURAL-HISTORICAL",
-    length: 18,
+
     word: "CULTURALHISTORICAL",
   },
   {
     freq: 52427,
     raw: "RED-AND-WHITE-STRIPED",
-    length: 18,
+
     word: "REDANDWHITESTRIPED",
   },
   {
     freq: 52677,
     raw: "GOVERNMENT-PROVIDED",
-    length: 18,
+
     word: "GOVERNMENTPROVIDED",
   },
   {
     freq: 52811,
     raw: "SKULL-AND-CROSSBONES",
-    length: 18,
+
     word: "SKULLANDCROSSBONES",
   },
   {
     freq: 52826,
     raw: "ANTI-COUNTERFEITING",
-    length: 18,
+
     word: "ANTICOUNTERFEITING",
   },
   {
     freq: 53198,
     raw: "COUNTERINTUITIVELY",
-    length: 18,
   },
   {
     freq: 53311,
     raw: "INFORMATION-SHARING",
-    length: 18,
+
     word: "INFORMATIONSHARING",
   },
   {
     freq: 53460,
     raw: "IMPORT-SUBSTITUTING",
-    length: 18,
+
     word: "IMPORTSUBSTITUTING",
   },
   {
     freq: 53649,
     raw: "TECHNOLOGY-ORIENTED",
-    length: 18,
+
     word: "TECHNOLOGYORIENTED",
   },
   {
     freq: 53804,
     raw: "NATURALLY-OCCURRING",
-    length: 18,
+
     word: "NATURALLYOCCURRING",
   },
   {
     freq: 53930,
     raw: "GOVERNMENT-INDUSTRY",
-    length: 18,
+
     word: "GOVERNMENTINDUSTRY",
   },
   {
     freq: 53984,
     raw: "KNOWLEDGE-INTENSIVE",
-    length: 18,
+
     word: "KNOWLEDGEINTENSIVE",
   },
   {
     freq: 54151,
     raw: "RELAPSING-REMITTING",
-    length: 18,
+
     word: "RELAPSINGREMITTING",
   },
   {
     freq: 54174,
     raw: "EXTRA-PARLIAMENTARY",
-    length: 18,
+
     word: "EXTRAPARLIAMENTARY",
   },
   {
     freq: 54367,
     raw: "PORTUGUESE-SPEAKING",
-    length: 18,
+
     word: "PORTUGUESESPEAKING",
   },
   {
     freq: 54544,
     raw: "MULTIPLE-REGRESSION",
-    length: 18,
+
     word: "MULTIPLEREGRESSION",
   },
   {
     freq: 54965,
     raw: "RECESSION-RESISTANT",
-    length: 18,
+
     word: "RECESSIONRESISTANT",
   },
   {
     freq: 55109,
     raw: "ASBESTOS-CONTAINING",
-    length: 18,
+
     word: "ASBESTOSCONTAINING",
   },
   {
     freq: 55547,
     raw: "PATENT-INFRINGEMENT",
-    length: 18,
+
     word: "PATENTINFRINGEMENT",
   },
   {
     freq: 55918,
     raw: "STANDARD-DEFINITION",
-    length: 18,
+
     word: "STANDARDDEFINITION",
   },
   {
     freq: 56551,
     raw: "SEVENTY-FIVE-YEAR-OLD",
-    length: 18,
+
     word: "SEVENTYFIVEYEAROLD",
   },
   {
     freq: 56660,
     raw: "INDEPENDENT-COUNSEL",
-    length: 18,
+
     word: "INDEPENDENTCOUNSEL",
   },
   {
     freq: 57072,
     raw: "THERMOLUMINESCENCE",
-    length: 18,
   },
   {
     freq: 57165,
     raw: "INTERESTING-LOOKING",
-    length: 18,
+
     word: "INTERESTINGLOOKING",
   },
   {
     freq: 57168,
     raw: "COMPUTER-CONTROLLED",
-    length: 18,
+
     word: "COMPUTERCONTROLLED",
   },
   {
     freq: 57348,
     raw: "AUTOBIOGRAPHICALLY",
-    length: 18,
   },
   {
     freq: 57389,
     raw: "VARIANCE-COVARIANCE",
-    length: 18,
+
     word: "VARIANCECOVARIANCE",
   },
   {
     freq: 57507,
     raw: "EIGHTY-THREE-YEAR-OLD",
-    length: 18,
+
     word: "EIGHTYTHREEYEAROLD",
   },
   {
     freq: 57539,
     raw: "UNIVERSITY-EDUCATED",
-    length: 18,
+
     word: "UNIVERSITYEDUCATED",
   },
   {
     freq: 57558,
     raw: "BILLION-DOLLAR-A-YEAR",
-    length: 18,
+
     word: "BILLIONDOLLARAYEAR",
   },
   {
     freq: 57667,
     raw: "BUSINESS-GOVERNMENT",
-    length: 18,
+
     word: "BUSINESSGOVERNMENT",
   },
   {
     freq: 57829,
     raw: "SELF-REFERENTIALITY",
-    length: 18,
+
     word: "SELFREFERENTIALITY",
   },
   {
     freq: 57860,
     raw: "DISABILITY-SPECIFIC",
-    length: 18,
+
     word: "DISABILITYSPECIFIC",
   },
   {
     freq: 57904,
     raw: "ANTI-CONSTITUTIONAL",
-    length: 18,
+
     word: "ANTICONSTITUTIONAL",
   },
   {
     freq: 58202,
     raw: "NON-LIFE-THREATENING",
-    length: 18,
+
     word: "NONLIFETHREATENING",
   },
   {
     freq: 58230,
     raw: "COMFORTABLE-LOOKING",
-    length: 18,
+
     word: "COMFORTABLELOOKING",
   },
   {
     freq: 58415,
     raw: "COLLEGE-PREPARATORY",
-    length: 18,
+
     word: "COLLEGEPREPARATORY",
   },
   {
     freq: 58527,
     raw: "DIFFRACTION-LIMITED",
-    length: 18,
+
     word: "DIFFRACTIONLIMITED",
   },
   {
     freq: 58631,
     raw: "POLITICAL-RELIGIOUS",
-    length: 18,
+
     word: "POLITICALRELIGIOUS",
   },
   {
     freq: 58691,
     raw: "LOW-MOLECULAR-WEIGHT",
-    length: 18,
+
     word: "LOWMOLECULARWEIGHT",
   },
   {
     freq: 58910,
     raw: "PUBLIC-SPIRITEDNESS",
-    length: 18,
+
     word: "PUBLICSPIRITEDNESS",
   },
   {
     freq: 58954,
     raw: "REVERSE-ENGINEERING",
-    length: 18,
+
     word: "REVERSEENGINEERING",
   },
   {
     freq: 59147,
     raw: "GLOMERULONEPHRITIS",
-    length: 18,
   },
   {
     freq: 59244,
     raw: "ELECTROPHYSIOLOGIC",
-    length: 18,
   },
   {
     freq: 59699,
     raw: "FREQUENCY-DEPENDENT",
-    length: 18,
+
     word: "FREQUENCYDEPENDENT",
   },
   {
     freq: 59791,
     raw: "PROGRESS-MONITORING",
-    length: 18,
+
     word: "PROGRESSMONITORING",
   },
 ];
@@ -262049,407 +261719,381 @@ export const nineteen = [
   {
     freq: 20648,
     raw: "GOVERNMENT-SPONSORED",
-    length: 19,
+
     word: "GOVERNMENTSPONSORED",
   },
   {
     freq: 23398,
     raw: "COUNTERINTELLIGENCE",
-    length: 19,
   },
   {
     freq: 24106,
     raw: "OBSESSIVE-COMPULSIVE",
-    length: 19,
+
     word: "OBSESSIVECOMPULSIVE",
   },
   {
     freq: 26315,
     raw: "PROFESSIONALIZATION",
-    length: 19,
   },
   {
     freq: 27205,
     raw: "CHOLESTEROL-LOWERING",
-    length: 19,
+
     word: "CHOLESTEROLLOWERING",
   },
   {
     freq: 28108,
     raw: "UNDERREPRESENTATION",
-    length: 19,
   },
   {
     freq: 34072,
     raw: "CRITERION-REFERENCED",
-    length: 19,
+
     word: "CRITERIONREFERENCED",
   },
   {
     freq: 34798,
     raw: "COGNITIVE-BEHAVIORAL",
-    length: 19,
+
     word: "COGNITIVEBEHAVIORAL",
   },
   {
     freq: 35134,
     raw: "RECONCEPTUALIZATION",
-    length: 19,
   },
   {
     freq: 35591,
     raw: "INTERDENOMINATIONAL",
-    length: 19,
   },
   {
     freq: 36043,
     raw: "ANTI-INTELLECTUALISM",
-    length: 19,
+
     word: "ANTIINTELLECTUALISM",
   },
   {
     freq: 36600,
     raw: "IMMUNOHISTOCHEMICAL",
-    length: 19,
   },
   {
     freq: 37747,
     raw: "DEFINED-CONTRIBUTION",
-    length: 19,
+
     word: "DEFINEDCONTRIBUTION",
   },
   {
     freq: 38959,
     raw: "DEINDUSTRIALIZATION",
-    length: 19,
   },
   {
     freq: 40254,
     raw: "SOCIAL-PSYCHOLOGICAL",
-    length: 19,
+
     word: "SOCIALPSYCHOLOGICAL",
   },
   {
     freq: 40401,
     raw: "GOVERNMENT-SUPPORTED",
-    length: 19,
+
     word: "GOVERNMENTSUPPORTED",
   },
   {
     freq: 40486,
     raw: "PERFORMANCE-ORIENTED",
-    length: 19,
+
     word: "PERFORMANCEORIENTED",
   },
   {
     freq: 41084,
     raw: "PSYCHOPHYSIOLOGICAL",
-    length: 19,
   },
   {
     freq: 41128,
     raw: "INCOMPREHENSIBILITY",
-    length: 19,
   },
   {
     freq: 41190,
     raw: "ECONOMIC-DEVELOPMENT",
-    length: 19,
+
     word: "ECONOMICDEVELOPMENT",
   },
   {
     freq: 41324,
     raw: "PALEOANTHROPOLOGIST",
-    length: 19,
   },
   {
     freq: 41684,
     raw: "STRAIGHTFORWARDNESS",
-    length: 19,
   },
   {
     freq: 42242,
     raw: "THREE-DIMENSIONALITY",
-    length: 19,
+
     word: "THREEDIMENSIONALITY",
   },
   {
     freq: 42284,
     raw: "INTERORGANIZATIONAL",
-    length: 19,
   },
   {
     freq: 42594,
     raw: "MISCHARACTERIZATION",
-    length: 19,
   },
   {
     freq: 42940,
     raw: "EXTRA-CONSTITUTIONAL",
-    length: 19,
+
     word: "EXTRACONSTITUTIONAL",
   },
   {
     freq: 43356,
     raw: "PROFESSIONAL-QUALITY",
-    length: 19,
+
     word: "PROFESSIONALQUALITY",
   },
   {
     freq: 44208,
     raw: "REPUBLICAN-DOMINATED",
-    length: 19,
+
     word: "REPUBLICANDOMINATED",
   },
   {
     freq: 44348,
     raw: "GOVERNMENT-APPOINTED",
-    length: 19,
+
     word: "GOVERNMENTAPPOINTED",
   },
   {
     freq: 44526,
     raw: "CONSUMER-ELECTRONICS",
-    length: 19,
+
     word: "CONSUMERELECTRONICS",
   },
   {
     freq: 44847,
     raw: "MICROPROCESSOR-BASED",
-    length: 19,
+
     word: "MICROPROCESSORBASED",
   },
   {
     freq: 45153,
     raw: "PROFESSIONAL-LOOKING",
-    length: 19,
+
     word: "PROFESSIONALLOOKING",
   },
   {
     freq: 45390,
     raw: "MULTI-JURISDICTIONAL",
-    length: 19,
+
     word: "MULTIJURISDICTIONAL",
   },
   {
     freq: 47157,
     raw: "NONREPRESENTATIONAL",
-    length: 19,
   },
   {
     freq: 47302,
     raw: "STERNOCLEIDOMASTOID",
-    length: 19,
   },
   {
     freq: 47313,
     raw: "MULTIDIMENSIONALITY",
-    length: 19,
   },
   {
     freq: 48242,
     raw: "UNCONSTITUTIONALITY",
-    length: 19,
   },
   {
     freq: 49367,
     raw: "EXTRATERRITORIALITY",
-    length: 19,
   },
   {
     freq: 50136,
     raw: "HYPERPARATHYROIDISM",
-    length: 19,
   },
   {
     freq: 50225,
     raw: "INTELLECTUALIZATION",
-    length: 19,
   },
   {
     freq: 50389,
     raw: "RECONTEXTUALIZATION",
-    length: 19,
   },
   {
     freq: 50623,
     raw: "ENVIRONMENT-FRIENDLY",
-    length: 19,
+
     word: "ENVIRONMENTFRIENDLY",
   },
   {
     freq: 51395,
     raw: "ENVIRONMENTAL-IMPACT",
-    length: 19,
+
     word: "ENVIRONMENTALIMPACT",
   },
   {
     freq: 51415,
     raw: "SELF-DESTRUCTIVENESS",
-    length: 19,
+
     word: "SELFDESTRUCTIVENESS",
   },
   {
     freq: 52269,
     raw: "SEXUALLY-TRANSMITTED",
-    length: 19,
+
     word: "SEXUALLYTRANSMITTED",
   },
   {
     freq: 52604,
     raw: "DECONTEXTUALIZATION",
-    length: 19,
   },
   {
     freq: 52838,
     raw: "PENICILLIN-RESISTANT",
-    length: 19,
+
     word: "PENICILLINRESISTANT",
   },
   {
     freq: 52882,
     raw: "MID-TWENTIETH-CENTURY",
-    length: 19,
+
     word: "MIDTWENTIETHCENTURY",
   },
   {
     freq: 52924,
     raw: "LIBERAL-CONSERVATIVE",
-    length: 19,
+
     word: "LIBERALCONSERVATIVE",
   },
   {
     freq: 53076,
     raw: "CONTINUING-EDUCATION",
-    length: 19,
+
     word: "CONTINUINGEDUCATION",
   },
   {
     freq: 53845,
     raw: "VOCATIONAL-TECHNICAL",
-    length: 19,
+
     word: "VOCATIONALTECHNICAL",
   },
   {
     freq: 54315,
     raw: "CHAMPIONSHIP-CALIBER",
-    length: 19,
+
     word: "CHAMPIONSHIPCALIBER",
   },
   {
     freq: 55043,
     raw: "REPUBLICAN-SPONSORED",
-    length: 19,
+
     word: "REPUBLICANSPONSORED",
   },
   {
     freq: 55758,
     raw: "CONFIDENCE-INSPIRING",
-    length: 19,
+
     word: "CONFIDENCEINSPIRING",
   },
   {
     freq: 56809,
     raw: "SEVENTY-EIGHT-YEAR-OLD",
-    length: 19,
+
     word: "SEVENTYEIGHTYEAROLD",
   },
   {
     freq: 57044,
     raw: "SEVENTY-THREE-YEAR-OLD",
-    length: 19,
+
     word: "SEVENTYTHREEYEAROLD",
   },
   {
     freq: 57447,
     raw: "CONSTRUCTED-RESPONSE",
-    length: 19,
+
     word: "CONSTRUCTEDRESPONSE",
   },
   {
     freq: 57684,
     raw: "INSTRUMENTALIZATION",
-    length: 19,
   },
   {
     freq: 58002,
     raw: "ACHIEVEMENT-ORIENTED",
-    length: 19,
+
     word: "ACHIEVEMENTORIENTED",
   },
   {
     freq: 58199,
     raw: "EARTHQUAKE-RESISTANT",
-    length: 19,
+
     word: "EARTHQUAKERESISTANT",
   },
   {
     freq: 58237,
     raw: "COOPERATIVE-LEARNING",
-    length: 19,
+
     word: "COOPERATIVELEARNING",
   },
   {
     freq: 58446,
     raw: "DIHYDROTESTOSTERONE",
-    length: 19,
   },
   {
     freq: 58568,
     raw: "PARTICIPANT-OBSERVER",
-    length: 19,
+
     word: "PARTICIPANTOBSERVER",
   },
   {
     freq: 58586,
     raw: "PHENYLPROPANOLAMINE",
-    length: 19,
   },
   {
     freq: 58688,
     raw: "INTER-JURISDICTIONAL",
-    length: 19,
+
     word: "INTERJURISDICTIONAL",
   },
   {
     freq: 58690,
     raw: "ELECTROPHYSIOLOGIST",
-    length: 19,
   },
   {
     freq: 58735,
     raw: "APPLICATION-SPECIFIC",
-    length: 19,
+
     word: "APPLICATIONSPECIFIC",
   },
   {
     freq: 58968,
     raw: "PERSON-IN-ENVIRONMENT",
-    length: 19,
+
     word: "PERSONINENVIRONMENT",
   },
   {
     freq: 59221,
     raw: "SINGLE-ROOM-OCCUPANCY",
-    length: 19,
+
     word: "SINGLEROOMOCCUPANCY",
   },
   {
     freq: 59239,
     raw: "POLLUTION-PREVENTION",
-    length: 19,
+
     word: "POLLUTIONPREVENTION",
   },
   {
     freq: 59300,
     raw: "CONSERVATIVE-LIBERAL",
-    length: 19,
+
     word: "CONSERVATIVELIBERAL",
   },
   {
     freq: 59505,
     raw: "SOCIAL-ENVIRONMENTAL",
-    length: 19,
+
     word: "SOCIALENVIRONMENTAL",
   },
 ];
@@ -262457,361 +262101,347 @@ export const twenty = [
   {
     freq: 17670,
     raw: "INSTITUTIONALIZATION",
-    length: 20,
   },
   {
     freq: 18716,
     raw: "UNCHARACTERISTICALLY",
-    length: 20,
   },
   {
     freq: 20576,
     raw: "PERFORMANCE-ENHANCING",
-    length: 20,
+
     word: "PERFORMANCEENHANCING",
   },
   {
     freq: 24552,
     raw: "INTERNATIONALIZATION",
-    length: 20,
   },
   {
     freq: 26350,
     raw: "REPUBLICAN-CONTROLLED",
-    length: 20,
+
     word: "REPUBLICANCONTROLLED",
   },
   {
     freq: 28874,
     raw: "COUNTER-REVOLUTIONARY",
-    length: 20,
+
     word: "COUNTERREVOLUTIONARY",
   },
   {
     freq: 30127,
     raw: "GOVERNMENT-CONTROLLED",
-    length: 20,
+
     word: "GOVERNMENTCONTROLLED",
   },
   {
     freq: 33992,
     raw: "GOVERNMENT-SUBSIDIZED",
-    length: 20,
+
     word: "GOVERNMENTSUBSIDIZED",
   },
   {
     freq: 35060,
     raw: "DEMOCRATIC-CONTROLLED",
-    length: 20,
+
     word: "DEMOCRATICCONTROLLED",
   },
   {
     freq: 35162,
     raw: "CONSCIOUSNESS-RAISING",
-    length: 20,
+
     word: "CONSCIOUSNESSRAISING",
   },
   {
     freq: 35931,
     raw: "COMPARTMENTALIZATION",
-    length: 20,
   },
   {
     freq: 36310,
     raw: "MID-NINETEENTH-CENTURY",
-    length: 20,
+
     word: "MIDNINETEENTHCENTURY",
   },
   {
     freq: 38369,
     raw: "LATE-TWENTIETH-CENTURY",
-    length: 20,
+
     word: "LATETWENTIETHCENTURY",
   },
   {
     freq: 38386,
     raw: "SEMI-AUTOBIOGRAPHICAL",
-    length: 20,
+
     word: "SEMIAUTOBIOGRAPHICAL",
   },
   {
     freq: 38841,
     raw: "DISTINGUISHED-LOOKING",
-    length: 20,
+
     word: "DISTINGUISHEDLOOKING",
   },
   {
     freq: 39026,
     raw: "GOVERNMENT-SANCTIONED",
-    length: 20,
+
     word: "GOVERNMENTSANCTIONED",
   },
   {
     freq: 42070,
     raw: "WHEELCHAIR-ACCESSIBLE",
-    length: 20,
+
     word: "WHEELCHAIRACCESSIBLE",
   },
   {
     freq: 42587,
     raw: "INFORMATION-GATHERING",
-    length: 20,
+
     word: "INFORMATIONGATHERING",
   },
   {
     freq: 43553,
     raw: "COLLECTIVE-BARGAINING",
-    length: 20,
+
     word: "COLLECTIVEBARGAINING",
   },
   {
     freq: 43725,
     raw: "INTELLECTUAL-PROPERTY",
-    length: 20,
+
     word: "INTELLECTUALPROPERTY",
   },
   {
     freq: 44867,
     raw: "ELECTROENCEPHALOGRAM",
-    length: 20,
   },
   {
     freq: 46348,
     raw: "GOVERNMENT-GUARANTEED",
-    length: 20,
+
     word: "GOVERNMENTGUARANTEED",
   },
   {
     freq: 46991,
     raw: "TRANSNATIONALIZATION",
-    length: 20,
   },
   {
     freq: 48933,
     raw: "NONINSTITUTIONALIZED",
-    length: 20,
   },
   {
     freq: 48973,
     raw: "WATERPROOF-BREATHABLE",
-    length: 20,
+
     word: "WATERPROOFBREATHABLE",
   },
   {
     freq: 49999,
     raw: "JORDANIAN-PALESTINIAN",
-    length: 20,
+
     word: "JORDANIANPALESTINIAN",
   },
   {
     freq: 51351,
     raw: "COMMUNITY-DEVELOPMENT",
-    length: 20,
+
     word: "COMMUNITYDEVELOPMENT",
   },
   {
     freq: 51728,
     raw: "ELECTROPHYSIOLOGICAL",
-    length: 20,
   },
   {
     freq: 53244,
     raw: "MID-EIGHTEENTH-CENTURY",
-    length: 20,
+
     word: "MIDEIGHTEENTHCENTURY",
   },
   {
     freq: 54204,
     raw: "TEMPERATURE-SENSITIVE",
-    length: 20,
+
     word: "TEMPERATURESENSITIVE",
   },
   {
     freq: 54362,
     raw: "AFRICAN-AMERICAN-OWNED",
-    length: 20,
+
     word: "AFRICANAMERICANOWNED",
   },
   {
     freq: 55032,
     raw: "STRONGER-THAN-EXPECTED",
-    length: 20,
+
     word: "STRONGERTHANEXPECTED",
   },
   {
     freq: 56036,
     raw: "POLITICALLY-MOTIVATED",
-    length: 20,
+
     word: "POLITICALLYMOTIVATED",
   },
   {
     freq: 56139,
     raw: "RELATIONSHIP-BUILDING",
-    length: 20,
+
     word: "RELATIONSHIPBUILDING",
   },
   {
     freq: 56589,
     raw: "MANAGEMENT-CONSULTING",
-    length: 20,
+
     word: "MANAGEMENTCONSULTING",
   },
   {
     freq: 56605,
     raw: "TEMPERATURE-DEPENDENT",
-    length: 20,
+
     word: "TEMPERATUREDEPENDENT",
   },
   {
     freq: 56761,
     raw: "UNIVERSITY-AFFILIATED",
-    length: 20,
+
     word: "UNIVERSITYAFFILIATED",
   },
   {
     freq: 57440,
     raw: "NATIONAL-CHAMPIONSHIP",
-    length: 20,
+
     word: "NATIONALCHAMPIONSHIP",
   },
   {
     freq: 58508,
     raw: "HYPERCHOLESTEROLEMIA",
-    length: 20,
   },
   {
     freq: 59484,
     raw: "ENDOTHELIUM-DEPENDENT",
-    length: 20,
+
     word: "ENDOTHELIUMDEPENDENT",
   },
   {
     freq: 59618,
     raw: "ELECTROCARDIOGRAPHIC",
-    length: 20,
   },
 ];
 export const twentyone = [
   {
     freq: 32877,
     raw: "LATE-NINETEENTH-CENTURY",
-    length: 21,
+
     word: "LATENINETEENTHCENTURY",
   },
   {
     freq: 32996,
     raw: "EARLY-TWENTIETH-CENTURY",
-    length: 21,
+
     word: "EARLYTWENTIETHCENTURY",
   },
   {
     freq: 34443,
     raw: "INFORMATION-PROCESSING",
-    length: 21,
+
     word: "INFORMATIONPROCESSING",
   },
   {
     freq: 35483,
     raw: "INTELLIGENCE-GATHERING",
-    length: 21,
+
     word: "INTELLIGENCEGATHERING",
   },
   {
     freq: 35555,
     raw: "INFORMATION-TECHNOLOGY",
-    length: 21,
+
     word: "INFORMATIONTECHNOLOGY",
   },
   {
     freq: 39689,
     raw: "STREAM-OF-CONSCIOUSNESS",
-    length: 21,
+
     word: "STREAMOFCONSCIOUSNESS",
   },
   {
     freq: 44694,
     raw: "TEMPERATURE-CONTROLLED",
-    length: 21,
+
     word: "TEMPERATURECONTROLLED",
   },
   {
     freq: 45999,
     raw: "GREAT-GREAT-GRANDMOTHER",
-    length: 21,
+
     word: "GREATGREATGRANDMOTHER",
   },
   {
     freq: 46688,
     raw: "DEMOCRATICALLY-ELECTED",
-    length: 21,
+
     word: "DEMOCRATICALLYELECTED",
   },
   {
     freq: 52225,
     raw: "ELECTRICITY-GENERATING",
-    length: 21,
+
     word: "ELECTRICITYGENERATING",
   },
   {
     freq: 53558,
     raw: "PALESTINIAN-CONTROLLED",
-    length: 21,
+
     word: "PALESTINIANCONTROLLED",
   },
   {
     freq: 54826,
     raw: "PRODUCTIVITY-ENHANCING",
-    length: 21,
+
     word: "PRODUCTIVITYENHANCING",
   },
   {
     freq: 54900,
     raw: "PSYCHOPHARMACOLOGICAL",
-    length: 21,
   },
   {
     freq: 56405,
     raw: "LATE-EIGHTEENTH-CENTURY",
-    length: 21,
+
     word: "LATEEIGHTEENTHCENTURY",
   },
   {
     freq: 56823,
     raw: "GREAT-GREAT-GRANDFATHER",
-    length: 21,
+
     word: "GREATGREATGRANDFATHER",
   },
   {
     freq: 57567,
     raw: "PSYCHONEUROIMMUNOLOGY",
-    length: 21,
   },
   {
     freq: 57947,
     raw: "HANDICAPPED-ACCESSIBLE",
-    length: 21,
+
     word: "HANDICAPPEDACCESSIBLE",
   },
   {
     freq: 58970,
     raw: "ELECTRONYSTAGMOGRAPHY",
-    length: 21,
   },
   {
     freq: 59574,
     raw: "HYPERCHOLESTEROLAEMIC",
-    length: 21,
   },
   {
     freq: 59807,
     raw: "TRANSACTION-PROCESSING",
-    length: 21,
+
     word: "TRANSACTIONPROCESSING",
   },
   {
     freq: 59849,
     raw: "BLOOD-PRESSURE-LOWERING",
-    length: 21,
+
     word: "BLOODPRESSURELOWERING",
   },
 ];
@@ -262820,36 +262450,35 @@ export const twentytwo = [
   {
     freq: 35881,
     raw: "GOVERNMENT-TO-GOVERNMENT",
-    length: 22,
+
     word: "GOVERNMENTTOGOVERNMENT",
   },
   {
     freq: 41157,
     raw: "RESEARCH-AND-DEVELOPMENT",
-    length: 22,
+
     word: "RESEARCHANDDEVELOPMENT",
   },
   {
     freq: 48423,
     raw: "ARTIFICIAL-INTELLIGENCE",
-    length: 22,
+
     word: "ARTIFICIALINTELLIGENCE",
   },
   {
     freq: 49267,
     raw: "EARLY-NINETEENTH-CENTURY",
-    length: 22,
+
     word: "EARLYNINETEENTHCENTURY",
   },
   {
     freq: 56211,
     raw: "MERGERS-AND-ACQUISITIONS",
-    length: 22,
+
     word: "MERGERSANDACQUISITIONS",
   },
   {
     freq: 58275,
     raw: "DEHYDROEPIANDROSTERONE",
-    length: 22,
   },
 ];
