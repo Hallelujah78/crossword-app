@@ -167,7 +167,7 @@ export const createClues = (grid: CellType[]) => {
         1,
         Direction.ACROSS,
         [currIndex],
-        [],
+        [""],
         ""
       );
 
@@ -177,6 +177,7 @@ export const createClues = (grid: CellType[]) => {
         if (grid[startIndex].right) {
           acrossClue.length = acrossClue.length + 1;
           acrossClue.indices.push(startIndex + 1);
+          acrossClue.answer.push("");
           startIndex++;
         } else {
           isCell = false;
@@ -203,6 +204,7 @@ export const createClues = (grid: CellType[]) => {
           const cellBelow = getCellBelow(grid, startIndex);
           if (cellBelow && cellBelow.id) {
             downClue.indices.push(+cellBelow.id);
+            downClue.answer.push("");
             startIndex = +cellBelow.id;
           }
         } else {
@@ -213,7 +215,7 @@ export const createClues = (grid: CellType[]) => {
       clues.push(downClue);
     }
   });
-
+  // console.log("these are clues: ", clues);
   return clues;
 };
 
@@ -230,19 +232,44 @@ export const populateClues = (
   thirteen: Answer[],
   eleven: Answer[]
 ) => {
-  clues.sort((a: Clue, b: Clue) => {
-    return b.length - a.length;
-  });
   clues.forEach((clue) => {
+    let answer: string;
+    let possibleAnswers: Answer[] = [];
+    let regExp: RegExp;
     const randVal = Math.random();
+    regExp = arrayToRegularExp(clue.answer)!;
+
     switch (clue.length) {
       case 13:
-        clue.answer = [
-          ...(thirteen[Math.ceil(randVal * thirteen.length)].word !== undefined
-            ? thirteen[Math.ceil(randVal * thirteen.length)].word!
-            : thirteen[Math.ceil(randVal * thirteen.length)].raw),
-        ];
-
+        possibleAnswers = thirteen;
+        if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
+          regExp = arrayToRegularExp(clue.answer)!;
+          possibleAnswers = thirteen.filter((answer) => {
+            if (answer.word) {
+              return answer.word.match(regExp);
+            } else {
+              return answer.raw.match(regExp);
+            }
+          });
+        }
+        // at this point possibleAnswers is thirteen, a filtered array, or possibly empty
+        if (possibleAnswers.length !== 0) {
+          clue.answer = [
+            ...(possibleAnswers[Math.ceil(randVal * possibleAnswers.length)]
+              .word !== undefined
+              ? possibleAnswers[Math.ceil(randVal * possibleAnswers.length)]
+                  .word!
+              : possibleAnswers[Math.ceil(randVal * possibleAnswers.length)]
+                  .raw),
+          ];
+          clue.intersection?.forEach((item) => {
+            const clueToUpdate = clues.find((clue) => {
+              return clue.id === item.id;
+            })!;
+            // console.log(clueToUpdate);
+            clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+          });
+        }
         break;
       case 11:
         clue.answer = [
@@ -257,6 +284,12 @@ export const populateClues = (
   });
 };
 
+export const sortCluesDescendingLength = (clues: Clue[]) => {
+  return clues.sort((a: Clue, b: Clue) => {
+    return b.length - a.length;
+  });
+};
+
 export const removeChars = (answers: Answer[]) => {
   for (const answer of answers) {
     if (answer.raw.includes("-") || answer.raw.includes("'")) {
@@ -264,7 +297,7 @@ export const removeChars = (answers: Answer[]) => {
       answer.length = answer.word.length;
     }
   }
-  console.log(answers);
+  // console.log(answers);
 };
 
 export const separateByLength = (answers: Answer[], wordLength: number) => {
@@ -303,4 +336,20 @@ export const setCluesThatIntersect = (clue: Clue, clues: Clue[]) => {
     }
   }
   clue.intersection = intersection;
+};
+
+export const arrayToRegularExp = (answer: string[]) => {
+  if (!answer.includes("")) {
+    return;
+  }
+  // construct a regular expression
+  const regExp = answer.map((char) => {
+    if (char === "") {
+      return "[A-Z]";
+    } else {
+      return char;
+    }
+  });
+  // console.log(array);
+  return new RegExp(regExp.join(""));
 };

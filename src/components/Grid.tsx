@@ -26,6 +26,7 @@ import {
   getAcrossClues,
   getDownClues,
   setCluesThatIntersect,
+  sortCluesDescendingLength,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -56,7 +57,7 @@ const Grid: React.FC = () => {
     setClueNumbers(tempGrid);
 
     const clues = createClues(tempGrid);
-    // populateClues(clues, thirteen, eleven);
+    console.log(clues);
     const acrossClues = getAcrossClues(clues);
     const downClues = getDownClues(clues);
     for (const clue of clues) {
@@ -64,7 +65,9 @@ const Grid: React.FC = () => {
         setCluesThatIntersect(clue, acrossClues);
       } else setCluesThatIntersect(clue, downClues);
     }
-    console.log(clues);
+    sortCluesDescendingLength(clues);
+    populateClues(clues, thirteen, eleven);
+
     setGridState(tempGrid);
   };
 
