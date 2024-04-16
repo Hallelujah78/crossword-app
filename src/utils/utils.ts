@@ -274,19 +274,19 @@ export const separateByLength = (answers: Answer[], wordLength: number) => {
   return filteredAnswers;
 };
 
-export const getAcrossOrDown = (clue: Clue, clues: Clue[]) => {
-  if (clue.direction === Direction.ACROSS) {
-    console.log("clue direction is across");
-    return clues.filter((clue) => {
-      return clue.direction === Direction.DOWN;
-    });
-  } else
-    return clues.filter((clue) => {
-      return clue.direction === Direction.ACROSS;
-    });
+export const getAcrossClues = (clues: Clue[]) => {
+  return clues.filter((clue) => {
+    return clue.direction === Direction.ACROSS;
+  });
 };
 
-export const getCluesThatIntersect = (clue: Clue, clues: Clue[]) => {
+export const getDownClues = (clues: Clue[]) => {
+  return clues.filter((clue) => {
+    return clue.direction === Direction.DOWN;
+  });
+};
+
+export const setCluesThatIntersect = (clue: Clue, clues: Clue[]) => {
   const { indices } = clue;
   const intersection = [];
   for (const clue of clues) {
@@ -295,12 +295,12 @@ export const getCluesThatIntersect = (clue: Clue, clues: Clue[]) => {
       // for each clue, iterate over the index
       if (clue.indices.includes(index)) {
         intersection.push({
-          clue,
+          id: clue.id,
           myIndex: indices.indexOf(index),
           yourIndex: clue.indices.indexOf(index),
         });
       }
     }
   }
-  return intersection;
+  clue.intersection = intersection;
 };

@@ -7,6 +7,7 @@ export default class Clue {
     public direction: Direction,
     public indices: number[],
     public answer: string[],
-    public clue: string
+    public clue: string,
+    public intersection?: { id: string; myIndex: number; yourIndex: number }[]
   ) {}
 }

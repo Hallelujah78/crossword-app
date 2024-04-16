@@ -23,9 +23,11 @@ import {
   updateSurroundingCells,
   createClues,
   populateClues,
-  getAcrossOrDown,
-  getCluesThatIntersect,
+  getAcrossClues,
+  getDownClues,
+  setCluesThatIntersect,
 } from "../utils/utils";
+import { Direction } from "../models/Direction.model";
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
@@ -54,15 +56,15 @@ const Grid: React.FC = () => {
     setClueNumbers(tempGrid);
 
     const clues = createClues(tempGrid);
-    populateClues(clues, thirteen, eleven);
-    console.log(clues);
-    const crossDirection = getAcrossOrDown(clues[0], clues);
-
-    let cluesThatIntersect;
-    if (crossDirection !== undefined) {
-      cluesThatIntersect = getCluesThatIntersect(clues[0], crossDirection);
+    // populateClues(clues, thirteen, eleven);
+    const acrossClues = getAcrossClues(clues);
+    const downClues = getDownClues(clues);
+    for (const clue of clues) {
+      if (clue.direction === Direction.DOWN) {
+        setCluesThatIntersect(clue, acrossClues);
+      } else setCluesThatIntersect(clue, downClues);
     }
-    console.log(cluesThatIntersect);
+    console.log(clues);
     setGridState(tempGrid);
   };
 
