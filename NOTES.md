@@ -427,3 +427,28 @@ getCluesThatIntersect(oneAcross, cluesDown);
 ```js
 {id: "0156", myIndex: 0, yourIndex:0}
 ```
+
+## Excited!
+
+- have got the app to the point where it can fill in answers to construct a crossword!
+- there is no "backtracking" implemented yet
+  - in other words, if it runs into a situation where there are no candidate answers for a particular clue (due to the combination of letters already in the clue from intersecting clues), it can't undo a step or choose a new word for one of the preceding clues
+- another point to note is that it is not taking word scores into account at all
+  - as a result, the difficulty of the crossword generated will be all over the place
+- steps that you can take to ensure there are less clues that have no candidate answers:
+
+  - increase the word list - it's a mere 60,000-ish words with no movie titles, place names, books, plays, people's names, acronyms etc, etc.
+  - certain letters are problematic: Y, Z, X
+
+- possible strategy for backtracking:
+
+  - the current clue has no candidate answers and it intersects with, say, two other clues, X and Y
+  - remove one of the letters from X clue and search for candidate answers again
+  - if you find one, then remove the letters from X clue that are not shared with other clues, and repick the word for X clue such that it will fit with the new candidate answer for our current clue
+
+- we may need to keep track of rejected candidate answers
+- the above strategy sounds like it could lead to an infinite loop?
+  - could it?
+- for a given answer candidate that already contains some letters, we are pattern matching against the set of all words that are of N length
+  - let's say we get a list of 30 words, and we pick one randomly
+  - it may be worth retaining that list of 30 or 250 words (for each clue), so that we can match against it again, or so that we can swap out words more easily
