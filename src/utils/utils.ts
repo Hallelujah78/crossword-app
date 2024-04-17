@@ -288,37 +288,7 @@ export const populateClues = (
         break;
       case 12:
         possibleAnswers = AllAnswers.twelve;
-        if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
-          regExp = arrayToRegularExp(clue.answer)!;
-          possibleAnswers = possibleAnswers.filter((answer) => {
-            if (answer.word) {
-              return answer.word.match(regExp);
-            } else {
-              return answer.raw.match(regExp);
-            }
-          });
-        }
-        // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
-        if (possibleAnswers.length !== 0) {
-          clue.answer = [
-            ...(possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
-              .word !== undefined
-              ? possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
-                  .word!
-              : possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
-                  .raw),
-          ];
-          clue.intersection?.forEach((item) => {
-            const clueToUpdate = clues.find((clue) => {
-              return clue.id === item.id;
-            })!;
-            // console.log(clueToUpdate);
-            clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
-          });
-        } else {
-          alert(`There are no possible answers for clue ${clue.id}`);
-          // do something else useful here
-        }
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
         break;
       case 11:
         possibleAnswers = AllAnswers.eleven;
@@ -360,6 +330,7 @@ export const populateClues = (
         break;
     }
   });
+  console.log(clues);
 };
 
 export const sortCluesDescendingLength = (clues: Clue[]) => {

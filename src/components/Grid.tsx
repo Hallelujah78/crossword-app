@@ -4,6 +4,7 @@ import { useState } from "react";
 // models
 import { CellType } from "../models/Cell.model";
 import Answer from "../models/Answer.model";
+import Clue from "../classes/Clue";
 
 // libs
 import styled from "styled-components";
@@ -32,7 +33,7 @@ import { Direction } from "../models/Direction.model";
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
-  const [clueList, setClueList] = useState(null);
+  const [clueList, setClueList] = useState<Clue[]>([]);
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
@@ -57,7 +58,7 @@ const Grid: React.FC = () => {
     setClueNumbers(tempGrid);
 
     const clues = createClues(tempGrid);
-    console.log(clues);
+
     const acrossClues = getAcrossClues(clues);
     const downClues = getDownClues(clues);
     for (const clue of clues) {
@@ -66,7 +67,7 @@ const Grid: React.FC = () => {
       } else setCluesThatIntersect(clue, downClues);
     }
     sortCluesDescendingLength(clues);
-    populateClues(clues, AllAnswers);
+    setClueList(clues);
 
     setGridState(tempGrid);
   };
@@ -76,6 +77,9 @@ const Grid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return <Cell key={index} cell={cell} handleClick={handleClick} />;
       })}
+      <button onClick={() => populateClues(clueList, AllAnswers)}>
+        Generate Clues
+      </button>
     </Wrapper>
   );
 };

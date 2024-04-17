@@ -452,3 +452,43 @@ getCluesThatIntersect(oneAcross, cluesDown);
 - for a given answer candidate that already contains some letters, we are pattern matching against the set of all words that are of N length
   - let's say we get a list of 30 words, and we pick one randomly
   - it may be worth retaining that list of 30 or 250 words (for each clue), so that we can match against it again, or so that we can swap out words more easily
+
+## Adding Words Woes
+
+- finding quality words lists is difficult
+- examples of what Crossword Compiler uses in terms of additional word lists:
+  390 000 less common words
+  270 000 compounds and phrases
+  173 000 Scrabble word list
+  UK Advanced Cryptics Dictionary (List of 240 000+ words)
+  8 million+ Wikipedia head words
+  25 000 medical words, 16 000 legal words
+  9500 movies, 5000 literature-related
+  20 000 people's names, 59 000 plant names
+  4000 world cities, 10 000 world towns
+  230 000 words and 70 000 expressions from Webster's 2nd.
+  25 000 ethnic words
+  19 000 Scottish words
+- adding words is going to require some web scraping
+- alternatively, it will involve wading through tens of thousands of words and deciding on a word-by-word basis whether I should include it or not
+- this might be useful later: https://ucrel.lancs.ac.uk/bncfreq/flists.html
+
+## Forget Adding Words For Now, Next Steps
+
+- What else needs to be done now?
+
+### Storing Words
+
+- How I'm storing the existing words is not workable
+  - the current list of 60k-ish words is uneditable due to sluggishness in the IDE
+  - they need to be divided up into smaller files
+
+### Separate Out Setting the grid and generating the answers
+
+- add a button to generate clues
+  - at the moment creating and regenerating the answers/clues each time we toggle a cell from light to dark or viceversa.
+
+### add grid validation
+
+- inform user if the grid is not in a valid configuration
+  - see above for what a valid grid is
