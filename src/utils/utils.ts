@@ -3,6 +3,7 @@ import { CellType } from "../models/Cell.model";
 import Clue from "../classes/Clue";
 import { Direction } from "../models/Direction.model";
 import Answer from "../models/Answer.model";
+import * as AllAnswers from "../data/answers2";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
@@ -229,11 +230,22 @@ export const getClueIndices = (grid: CellType[]) => {
 
 export const populateClues = (
   clues: Clue[],
-  thirteen: Answer[],
-  eleven: Answer[]
+  AllAnswers: {
+    three: Answer[];
+    four: Answer[];
+    five: Answer[];
+    six: Answer[];
+    seven: Answer[];
+    eight: Answer[];
+    nine: Answer[];
+    ten: Answer[];
+    eleven: Answer[];
+    twelve: Answer[];
+    thirteen: Answer[];
+  }
 ) => {
   clues.forEach((clue) => {
-    let answer: string;
+    // let answer: string;
     let possibleAnswers: Answer[] = [];
     let regExp: RegExp;
     const randVal = Math.random();
@@ -241,10 +253,10 @@ export const populateClues = (
 
     switch (clue.length) {
       case 13:
-        possibleAnswers = thirteen;
+        possibleAnswers = AllAnswers.thirteen;
         if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
           regExp = arrayToRegularExp(clue.answer)!;
-          possibleAnswers = thirteen.filter((answer) => {
+          possibleAnswers = possibleAnswers.filter((answer) => {
             if (answer.word) {
               return answer.word.match(regExp);
             } else {
@@ -252,14 +264,14 @@ export const populateClues = (
             }
           });
         }
-        // at this point possibleAnswers is thirteen, a filtered array, or possibly empty
+        // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
         if (possibleAnswers.length !== 0) {
           clue.answer = [
-            ...(possibleAnswers[Math.ceil(randVal * possibleAnswers.length)]
+            ...(possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
               .word !== undefined
-              ? possibleAnswers[Math.ceil(randVal * possibleAnswers.length)]
+              ? possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
                   .word!
-              : possibleAnswers[Math.ceil(randVal * possibleAnswers.length)]
+              : possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
                   .raw),
           ];
           clue.intersection?.forEach((item) => {
@@ -269,14 +281,80 @@ export const populateClues = (
             // console.log(clueToUpdate);
             clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
           });
+        } else {
+          alert(`There are no possible answers for clue ${clue.id}`);
+          // do something else useful here
+        }
+        break;
+      case 12:
+        possibleAnswers = AllAnswers.twelve;
+        if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
+          regExp = arrayToRegularExp(clue.answer)!;
+          possibleAnswers = possibleAnswers.filter((answer) => {
+            if (answer.word) {
+              return answer.word.match(regExp);
+            } else {
+              return answer.raw.match(regExp);
+            }
+          });
+        }
+        // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
+        if (possibleAnswers.length !== 0) {
+          clue.answer = [
+            ...(possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
+              .word !== undefined
+              ? possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
+                  .word!
+              : possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
+                  .raw),
+          ];
+          clue.intersection?.forEach((item) => {
+            const clueToUpdate = clues.find((clue) => {
+              return clue.id === item.id;
+            })!;
+            // console.log(clueToUpdate);
+            clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+          });
+        } else {
+          alert(`There are no possible answers for clue ${clue.id}`);
+          // do something else useful here
         }
         break;
       case 11:
-        clue.answer = [
-          ...(eleven[Math.ceil(randVal * eleven.length)].word !== undefined
-            ? eleven[Math.ceil(randVal * eleven.length)].word!
-            : eleven[Math.ceil(randVal * eleven.length)].raw),
-        ];
+        possibleAnswers = AllAnswers.eleven;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 10:
+        possibleAnswers = AllAnswers.ten;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 9:
+        possibleAnswers = AllAnswers.nine;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 8:
+        possibleAnswers = AllAnswers.eight;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 7:
+        possibleAnswers = AllAnswers.seven;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 6:
+        possibleAnswers = AllAnswers.six;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 5:
+        possibleAnswers = AllAnswers.five;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 4:
+        possibleAnswers = AllAnswers.four;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        break;
+      case 3:
+        possibleAnswers = AllAnswers.three;
+        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
         break;
       default:
         break;
@@ -352,4 +430,43 @@ export const arrayToRegularExp = (answer: string[]) => {
   });
   // console.log(array);
   return new RegExp(regExp.join(""));
+};
+
+const setClueAnswers = (
+  clues: Clue[],
+  clue: Clue,
+  possibleAnswers: Answer[],
+  regExp: RegExp,
+  randVal: number
+) => {
+  // if an answer has some letters but is not complete, create a regexp, and get all words that match that pattern
+  if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
+    regExp = arrayToRegularExp(clue.answer)!;
+    possibleAnswers = possibleAnswers.filter((answer) => {
+      if (answer.word) {
+        return answer.word.match(regExp);
+      } else {
+        return answer.raw.match(regExp);
+      }
+    });
+  }
+  // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
+  if (possibleAnswers.length !== 0) {
+    clue.answer = [
+      ...(possibleAnswers[Math.floor(randVal * possibleAnswers.length)].word !==
+      undefined
+        ? possibleAnswers[Math.floor(randVal * possibleAnswers.length)].word!
+        : possibleAnswers[Math.floor(randVal * possibleAnswers.length)].raw),
+    ];
+    clue.intersection?.forEach((item) => {
+      const clueToUpdate = clues.find((clue) => {
+        return clue.id === item.id;
+      })!;
+
+      clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+    });
+  } else {
+    alert(`There are no possible answers for clue ${clue.id}`);
+    // do something else useful here
+  }
 };

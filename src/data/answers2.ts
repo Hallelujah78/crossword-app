@@ -1,5 +1,5 @@
 import Answer from "../models/Answer.model";
-export const five: Answer[] = [
+const five: Answer[] = [
   {
     freq: 19,
     raw: "THEIR",
@@ -17788,7 +17788,7 @@ export const five: Answer[] = [
   },
 ];
 
-export const four = [
+const four = [
   {
     freq: 3,
     raw: "HAVE",
@@ -30103,7 +30103,7 @@ export const four = [
   },
 ];
 
-export const three = [
+const three = [
   {
     freq: 1,
     raw: "THE",
@@ -33978,7 +33978,7 @@ export const three = [
   },
 ];
 
-export const six = [
+const six = [
   {
     freq: 39,
     raw: "PEOPLE",
@@ -59225,7 +59225,7 @@ export const six = [
   },
 ];
 
-export const seven = [
+const seven = [
   {
     freq: 66,
     raw: "BECAUSE",
@@ -90458,7 +90458,7 @@ export const seven = [
   },
 ];
 
-export const eight = [
+const eight = [
   {
     freq: 148,
     raw: "AMERICAN",
@@ -125712,7 +125712,7 @@ export const eight = [
   },
 ];
 
-export const nine = [
+const nine = [
   {
     freq: 115,
     raw: "SOMETHING",
@@ -160397,7 +160397,7 @@ export const nine = [
   },
 ];
 
-export const ten = [
+const ten = [
   {
     freq: 172,
     raw: "GOVERNMENT",
@@ -191184,7 +191184,7 @@ export const ten = [
   },
 ];
 
-export const eleven = [
+const eleven = [
   {
     freq: 285,
     raw: "INFORMATION",
@@ -215206,7 +215206,7 @@ export const eleven = [
     raw: "CRYSTALLITE",
   },
 ];
-export const twelve = [
+const twelve = [
   {
     freq: 455,
     raw: "RELATIONSHIP",
@@ -232893,7 +232893,7 @@ export const twelve = [
   },
 ];
 
-export const thirteen = [
+const thirteen = [
   {
     freq: 469,
     raw: "INTERNATIONAL",
@@ -244964,7 +244964,7 @@ export const thirteen = [
   },
 ];
 
-export const fourteen = [
+const fourteen = [
   {
     freq: 604,
     raw: "ADMINISTRATION",
@@ -252273,7 +252273,7 @@ export const fourteen = [
   },
 ];
 
-export const fifteen = [
+const fifteen = [
   {
     freq: 3288,
     raw: "AFRICAN-AMERICAN",
@@ -256939,7 +256939,7 @@ export const fifteen = [
   },
 ];
 
-export const sixteen = [
+const sixteen = [
   {
     freq: 5455,
     raw: "ENVIRONMENTALIST",
@@ -259476,7 +259476,7 @@ export const sixteen = [
   },
 ];
 
-export const seventeen = [
+const seventeen = [
   {
     freq: 7689,
     raw: "NINETEENTH-CENTURY",
@@ -260927,7 +260927,7 @@ export const seventeen = [
   },
 ];
 
-export const eighteen = [
+const eighteen = [
   {
     freq: 6068,
     raw: "TELECOMMUNICATIONS",
@@ -261715,7 +261715,7 @@ export const eighteen = [
     word: "PROGRESSMONITORING",
   },
 ];
-export const nineteen = [
+const nineteen = [
   {
     freq: 20648,
     raw: "GOVERNMENT-SPONSORED",
@@ -262097,7 +262097,7 @@ export const nineteen = [
     word: "SOCIALENVIRONMENTAL",
   },
 ];
-export const twenty = [
+const twenty = [
   {
     freq: 17670,
     raw: "INSTITUTIONALIZATION",
@@ -262325,7 +262325,7 @@ export const twenty = [
     raw: "ELECTROCARDIOGRAPHIC",
   },
 ];
-export const twentyone = [
+const twentyone = [
   {
     freq: 32877,
     raw: "LATE-NINETEENTH-CENTURY",
@@ -262446,7 +262446,7 @@ export const twentyone = [
   },
 ];
 
-export const twentytwo = [
+const twentytwo = [
   {
     freq: 35881,
     raw: "GOVERNMENT-TO-GOVERNMENT",
@@ -262482,3 +262482,19 @@ export const twentytwo = [
     raw: "DEHYDROEPIANDROSTERONE",
   },
 ];
+
+export {
+  three,
+  four,
+  five,
+  six,
+  seven,
+  eight,
+  nine,
+  ten,
+  eleven,
+  twelve,
+  thirteen,
+  fourteen,
+  fifteen,
+};

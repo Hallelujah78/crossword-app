@@ -14,7 +14,7 @@ import Cell from "./Cell";
 // data
 import { grid } from "../data/grid";
 import answers from "../data/answers";
-import { thirteen, twelve, eleven, ten, nine, eight } from "../data/answers2";
+import * as AllAnswers from "../data/answers2";
 
 // utils
 import {
@@ -66,7 +66,7 @@ const Grid: React.FC = () => {
       } else setCluesThatIntersect(clue, downClues);
     }
     sortCluesDescendingLength(clues);
-    populateClues(clues, thirteen, eleven);
+    populateClues(clues, AllAnswers);
 
     setGridState(tempGrid);
   };
