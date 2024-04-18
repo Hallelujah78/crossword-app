@@ -7,3 +7,4 @@ yarn.lock
 package.json
 coverage
 src/data/answers.ts
+*.md

@@ -497,3 +497,58 @@ getCluesThatIntersect(oneAcross, cluesDown);
 
 - some of our clues are overwriting the letters already placed in the grid that they share with other clues
 - the intersection prop appears fine, so there is some logic wrong in populateClues
+- this is fixed
+
+## Backtracking
+
+- we hit the if branch where there are no available options for our answer
+- example: 6DOWN (which is the clue 3 down) - 6 is the index of the cell at the start of the clue
+  - L _ O _ O _
+  - intersection 3across (length 10), 32across (length 7), 52across (length 8)
+  - how do we choose which answer to replace in the hopes of finding an answer to fit in 6down?
+  - we might use something like:
+    - the shortest answer
+    - the answer that intersects with the fewest other clues
+    - the answer that has the most "awkward" letter that is shared by 6down (Z, X, Y)
+      imagine that one of our clues had an I in it and that "I" was the last letter in 6down - that would be a great candidate
+      - how do you do that programmatically without a ton of logic and statistics about letter patterns in words?
+- another possibility - assess the statistical likelihood of finding a good answer given the pattern
+
+  - we know that L _ O _ O _ has 0 matches in our limited list of words that are 6 characters long
+  - if we drop the L, so we have _ _ O _ O _, and count the matches
+  - add the L back and drop the first O and count the matches
+  - add the first O back and drop the second O and count the matches
+    - the pattern with the highest number of potential matches will most likely yield a "good" answer
+
+- at this point, we've determined the best intersecting answer to replace
+- we need to take the answer for that intersecting clue and remove the unshared letters AND remove the letter shared with 6down, in this case
+- then we find what matches we have excluding the letter we dropped
+
+- in our example of 6down, we are best to replace the middle O, this gives us 52 possible results on crosswordsolver.org
+- 32across is the clue with the O we are removing: OBVERSE
+  - removing unshared letters AND the O: _ _ V _ R _ E
+  - there are many options, let's try ADVERSE
+- this means 6down is: L _ A _ O _
+  - that yields no candidates in our lists (obscure ones on crosswordsolver.org)
+  - ADVERSE is no good
+    - we need to retain this list to iterate down it
+    - we only need 1 word with each letter in it!
+  - DIVERGE, Inverse, reverse
+- DIVERGE gives L _ D _ O _
+- yields nothing in our list (LUDLOW on crossword solver)
+- INVERSE gies L _ I _ O _
+- yields nothing (LEIPOA, v obscure)
+- REVERSE gives L _ R _ O _
+- yields nothing
+- and so, in terms of our list, we've hit a deadend with replacing the middle O
+
+- removing the last O gives L _ O _ _ _
+- but now we are replacing 52Across: RESISTOR, dropping the O and the non-shared letters we get: R _ S _ S _ _ _ 
+- the possibilities are: RESISTED, RESISTOR, or RESISTER
+- the shared letter is the second last, so RESISTED and RESISTER are effectively the same, we used RESISTOR already, so let's try RESISTED
+- so:
+L_O_E_ 
+
+and we get 15 results! LOOKER, LOOPER, LOOKED
+
+now we just have to implement this in code! Yay! 
