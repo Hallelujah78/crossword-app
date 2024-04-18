@@ -295,11 +295,10 @@ export const populateClues = (
         setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       default:
-        console.log("we should never see this!");
         break;
     }
   });
-  console.log(clues);
+  // console.log(clues);
 };
 
 export const sortCluesDescendingLength = (clues: Clue[]) => {
@@ -380,7 +379,7 @@ const setClueAnswers = (
   let regExp: RegExp;
   if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
     regExp = arrayToRegularExp(clue.answer)!;
-    console.log(`${clue.id}: `, regExp);
+    // console.log(`${clue.id}: `, regExp);
     possibleAnswers = possibleAnswers.filter((answer) => {
       if (answer.word !== undefined) {
         return answer.word.match(regExp);
@@ -389,7 +388,7 @@ const setClueAnswers = (
       }
     });
   }
-  console.log(`${clue.id}:`, possibleAnswers);
+  // console.log(`${clue.id}:`, possibleAnswers);
   // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
   if (possibleAnswers.length !== 0) {
     clue.answer = [
@@ -408,7 +407,32 @@ const setClueAnswers = (
       // clueToUpdate[]
     });
   } else {
-    alert(`There are no possible answers for clue ${clue.id}`);
+    console.log(`There are no possible answers for clue ${clue.id}`);
+    console.log(clue.intersection);
     // do something else useful here
+    const letterIndex = [];
+    const patterns = [];
+    const tempAnswer = [...clue.answer];
+    let cluesToSwap = [];
+    for (const letter of tempAnswer) {
+      if (letter) {
+        letterIndex.push(tempAnswer.indexOf(letter));
+        tempAnswer[clue.answer.indexOf(letter)] = "";
+      }
+    }
+
+    for (const index of letterIndex) {
+      const tempAnswer = [...clue.answer];
+      tempAnswer[index] = "";
+      cluesToSwap.push(
+        clue.intersection!.filter((item) => {
+          return item.myIndex === index;
+        })
+      );
+      patterns.push(tempAnswer);
+    }
+    console.log("clues to swap", cluesToSwap);
+    // identify clues to swap, each pattern represents a different clue to swap
+    // the position of a
   }
 };
