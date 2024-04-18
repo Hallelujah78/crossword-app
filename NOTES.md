@@ -492,3 +492,8 @@ getCluesThatIntersect(oneAcross, cluesDown);
 
 - inform user if the grid is not in a valid configuration
   - see above for what a valid grid is
+
+## Bug
+
+- some of our clues are overwriting the letters already placed in the grid that they share with other clues
+- the intersection prop appears fine, so there is some logic wrong in populateClues

@@ -193,7 +193,7 @@ export const createClues = (grid: CellType[]) => {
         1,
         Direction.DOWN,
         [currIndex],
-        [],
+        [""],
         ""
       );
 
@@ -247,86 +247,55 @@ export const populateClues = (
   clues.forEach((clue) => {
     // let answer: string;
     let possibleAnswers: Answer[] = [];
-    let regExp: RegExp;
     const randVal = Math.random();
-    regExp = arrayToRegularExp(clue.answer)!;
 
     switch (clue.length) {
       case 13:
         possibleAnswers = AllAnswers.thirteen;
-        if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
-          regExp = arrayToRegularExp(clue.answer)!;
-          possibleAnswers = possibleAnswers.filter((answer) => {
-            if (answer.word) {
-              return answer.word.match(regExp);
-            } else {
-              return answer.raw.match(regExp);
-            }
-          });
-        }
-        // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
-        if (possibleAnswers.length !== 0) {
-          clue.answer = [
-            ...(possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
-              .word !== undefined
-              ? possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
-                  .word!
-              : possibleAnswers[Math.floor(randVal * possibleAnswers.length)]
-                  .raw),
-          ];
-          clue.intersection?.forEach((item) => {
-            const clueToUpdate = clues.find((clue) => {
-              return clue.id === item.id;
-            })!;
-            // console.log(clueToUpdate);
-            clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
-          });
-        } else {
-          alert(`There are no possible answers for clue ${clue.id}`);
-          // do something else useful here
-        }
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 12:
         possibleAnswers = AllAnswers.twelve;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 11:
         possibleAnswers = AllAnswers.eleven;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 10:
         possibleAnswers = AllAnswers.ten;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 9:
         possibleAnswers = AllAnswers.nine;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 8:
         possibleAnswers = AllAnswers.eight;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 7:
         possibleAnswers = AllAnswers.seven;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 6:
         possibleAnswers = AllAnswers.six;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 5:
         possibleAnswers = AllAnswers.five;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 4:
         possibleAnswers = AllAnswers.four;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 3:
         possibleAnswers = AllAnswers.three;
-        setClueAnswers(clues, clue, possibleAnswers, regExp, randVal);
+        setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       default:
+        console.log("we should never see this!");
         break;
     }
   });
@@ -346,7 +315,6 @@ export const removeChars = (answers: Answer[]) => {
       answer.length = answer.word.length;
     }
   }
-  // console.log(answers);
 };
 
 export const separateByLength = (answers: Answer[], wordLength: number) => {
@@ -368,8 +336,8 @@ export const getDownClues = (clues: Clue[]) => {
   });
 };
 
-export const setCluesThatIntersect = (clue: Clue, clues: Clue[]) => {
-  const { indices } = clue;
+export const setCluesThatIntersect = (currClue: Clue, clues: Clue[]) => {
+  const { indices } = currClue;
   const intersection = [];
   for (const clue of clues) {
     // iterate over every clue
@@ -384,7 +352,7 @@ export const setCluesThatIntersect = (clue: Clue, clues: Clue[]) => {
       }
     }
   }
-  clue.intersection = intersection;
+  currClue.intersection = intersection;
 };
 
 export const arrayToRegularExp = (answer: string[]) => {
@@ -399,7 +367,6 @@ export const arrayToRegularExp = (answer: string[]) => {
       return char;
     }
   });
-  // console.log(array);
   return new RegExp(regExp.join(""));
 };
 
@@ -407,20 +374,22 @@ const setClueAnswers = (
   clues: Clue[],
   clue: Clue,
   possibleAnswers: Answer[],
-  regExp: RegExp,
   randVal: number
 ) => {
   // if an answer has some letters but is not complete, create a regexp, and get all words that match that pattern
+  let regExp: RegExp;
   if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
     regExp = arrayToRegularExp(clue.answer)!;
+    console.log(`${clue.id}: `, regExp);
     possibleAnswers = possibleAnswers.filter((answer) => {
-      if (answer.word) {
+      if (answer.word !== undefined) {
         return answer.word.match(regExp);
       } else {
         return answer.raw.match(regExp);
       }
     });
   }
+  console.log(`${clue.id}:`, possibleAnswers);
   // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
   if (possibleAnswers.length !== 0) {
     clue.answer = [
@@ -435,6 +404,8 @@ const setClueAnswers = (
       })!;
 
       clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+      // my index 4 is yourindex 0
+      // clueToUpdate[]
     });
   } else {
     alert(`There are no possible answers for clue ${clue.id}`);
