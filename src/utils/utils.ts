@@ -413,7 +413,8 @@ const setClueAnswers = (
     const letterIndex = [];
     const patterns = [];
     const tempAnswer = [...clue.answer];
-    let cluesToSwap = [];
+    const cluesToSwap = [];
+    const replaceClues = [];
     for (const letter of tempAnswer) {
       if (letter) {
         letterIndex.push(tempAnswer.indexOf(letter));
@@ -425,14 +426,49 @@ const setClueAnswers = (
       const tempAnswer = [...clue.answer];
       tempAnswer[index] = "";
       cluesToSwap.push(
-        clue.intersection!.filter((item) => {
+        ...clue.intersection!.filter((item) => {
           return item.myIndex === index;
         })
       );
       patterns.push(tempAnswer);
     }
-    console.log("clues to swap", cluesToSwap);
-    // identify clues to swap, each pattern represents a different clue to swap
-    // the position of a
+    // console.log("clues to swap", cluesToSwap);
+    // console.log("patterns: ", patterns);
+    for (const clue of cluesToSwap) {
+      replaceClues.push(
+        clues.find((item) => {
+          return item.id === clue.id;
+        })
+      );
+      // console.log("replaceClues: ", replaceClues);
+    }
+    // we need to remove letters from the intersecting clues
+    // then we create a regex and match again
+
+    // removing letters
+    // intersection: we want myIndex
+    // we iterate over the answer, if index === myIndex, do nothing,
+    // else, set it to ""
+
+    const replaceCluePattern = [];
+    // wrap this, forEach replaceClues item
+    replaceClues.forEach((rClue) => {
+      const myIndices: number[] = [];
+      rClue?.intersection?.forEach((item) => {
+        myIndices.push(item.myIndex);
+      });
+      console.log("my indices", myIndices);
+      const myTempAnswer = [...rClue!.answer];
+      console.log("my temp ans: ", myTempAnswer);
+      for (let i = 0; i < myTempAnswer.length; i++) {
+        if (!myIndices.includes(i)) {
+          myTempAnswer[i] = "";
+        }
+      }
+      replaceCluePattern.push(arrayToRegularExp(myTempAnswer));
+    });
+
+    // end of wrap
+    console.log("replace clue pattern: ", replaceCluePattern);
   }
 };

@@ -553,19 +553,3 @@ and we get 15 results! LOOKER, LOOPER, LOOKED
 
 now we just have to implement this in code! Yay! 
 
-```js
-// clue.answer is ['L', '','O','','O','']
-const letterIndex = [];
-const patterns = [];
-for(const letter in clue.answer){
-if(letter){
-letterIndex.push(clue.answer.indexOf(letter))
-}
-}
-for(const index in letterIndex){
-  const tempAnswer = [...clue.answer];
-  patterns.push(tempAnswer[index] = "");
-}
-
-
-```
