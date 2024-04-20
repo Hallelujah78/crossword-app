@@ -421,14 +421,21 @@ const setClueAnswers = (
       // clueToUpdate[]
     });
   } else {
+    // from this point - we are dealing with substituting intersecting clues
     console.log(`There are no possible answers for clue ${clue.id}`);
     console.log(`intersection of clue ${clue.id}: `, clue.intersection);
     // do something else useful here
     const letterIndex = [];
     const patterns = [];
     const tempAnswer = [...clue.answer];
-    const cluesToSwap = [];
+    const cluesToSwap = []; // holds the id and yourIndex
     const replaceClues = [];
+    console.log("clue ans: ", clue.answer);
+
+    // this for loop does two things
+    // 1) it resets each element of tempAnswer to be an empty string
+    // eg ['', '', '', '', '']
+    // 2) it populates letterIndex with the index at which a letter occurred in tempAnswer before it is reset
     for (const letter of tempAnswer) {
       if (letter) {
         letterIndex.push(tempAnswer.indexOf(letter));
@@ -436,22 +443,39 @@ const setClueAnswers = (
       }
     }
 
+    // this for loop does a number of things
+    // its main purpose is to construct patterns which represent dropping a letter from an intersecting clue, but retaining letters from other intersecting clues
+    // example: our clue answer is ['B', '', 'Z']
+    // the B and the Z intersect with two other clues
+    // our patterns will be: ['B', '', ''] and ['', '', 'Z']
+    // these patterns end up in the patterns variable
+    // the other thing it does is finds the clue that intersects with the current clue's index
     for (const index of letterIndex) {
       const tempAnswer = [...clue.answer];
+      console.log("index", index);
       tempAnswer[index] = "";
       cluesToSwap.push(
         ...clue.intersection!.filter((item) => {
           return item.myIndex === index;
         })
       );
+
       patterns.push(tempAnswer);
     }
+
     // console.log("clues to swap", cluesToSwap);
     // console.log("patterns: ", patterns);
-    for (const clue of cluesToSwap) {
+    let intersectIndex;
+    for (const intersectClue of cluesToSwap) {
+      const clueId = intersectClue.id!;
+      intersectIndex = clue.intersection!.find((item) => {
+        return clueId === item.id;
+      });
+
+      intersectClue.letter = clue.answer[intersectIndex.myIndex];
       replaceClues.push(
         clues.find((item) => {
-          return item.id === clue.id;
+          return item.id === intersectClue.id;
         })
       );
       // console.log("replaceClues: ", replaceClues);
@@ -471,9 +495,9 @@ const setClueAnswers = (
       rClue?.intersection?.forEach((item) => {
         myIndices.push(item.myIndex);
       });
-      console.log("my indices", myIndices);
+
       const myTempAnswer = [...rClue!.answer];
-      console.log("my temp ans: ", myTempAnswer);
+
       for (let i = 0; i < myTempAnswer.length; i++) {
         if (!myIndices.includes(i)) {
           myTempAnswer[i] = "";
@@ -483,17 +507,17 @@ const setClueAnswers = (
     });
 
     // end of wrap
-    console.log("replace clue pattern: ", replaceCluePattern);
+    // console.log("replace clue pattern: ", replaceCluePattern);
     if (replaceClues[0]) {
       const length = replaceClues[0].length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
-      console.log(wordList);
+      // console.log(wordList);
       const candidateAnswers = getMatches(
         wordList,
         replaceCluePattern[0],
         replaceClues[0].answer.join("")
       );
-      console.log(candidateAnswers);
+      // console.log(candidateAnswers);
     }
   }
 };
@@ -528,10 +552,10 @@ const getMatches = (
   regExp: RegExp,
   currentAnswer: string
 ) => {
-  console.log("curr ans: ", currentAnswer);
+  // console.log("curr ans: ", currentAnswer);
 
   const candidateAnswers = possibleAnswers.filter((answer) => {
-    console.log(answer.raw === currentAnswer);
+    // console.log(answer.raw === currentAnswer);
     if (answer.word !== undefined && answer.word !== currentAnswer) {
       return answer.word.match(regExp);
     } else if (answer.raw !== currentAnswer) {

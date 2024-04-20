@@ -553,3 +553,11 @@ and we get 15 results! LOOKER, LOOPER, LOOKED
 
 now we just have to implement this in code! Yay! 
 
+## Where are we Now? 
+- At the moment, we have:
+  - `replaceCluePattern` which is an array of regular expression instances that can be used to match against our answer2.ts words. The purpose of this is to find alternative answers for intersecting clue answers.
+  - `replaceClues` which is an array of Clue instances that intersect (or share a cell) with our current clue answer.
+  - `candidateAnswers` is an array of objects of type Answer `{freq: 121, raw: "GRAPE"}`
+    - the candidateAnswers needs a further filter
+    - we need a ref to the shared letter + its position in our candidate answer that caused the inability to find an answer that would fit
+      - answers that have this same letter in the same position are of no use and should also be discarded

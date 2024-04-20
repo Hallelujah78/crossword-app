@@ -8,6 +8,11 @@ export default class Clue {
     public indices: number[],
     public answer: string[],
     public clue: string,
-    public intersection?: { id: string; myIndex: number; yourIndex: number }[]
+    public intersection?: {
+      id: string;
+      myIndex: number;
+      yourIndex: number;
+      letter?: string;
+    }[]
   ) {}
 }
