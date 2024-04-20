@@ -5,6 +5,20 @@ import { Direction } from "../models/Direction.model";
 import Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 
+type AllAnswers = {
+  three: Answer[];
+  four: Answer[];
+  five: Answer[];
+  six: Answer[];
+  seven: Answer[];
+  eight: Answer[];
+  nine: Answer[];
+  ten: Answer[];
+  eleven: Answer[];
+  twelve: Answer[];
+  thirteen: Answer[];
+};
+
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
     return grid[index - Math.sqrt(grid.length)];
@@ -408,7 +422,7 @@ const setClueAnswers = (
     });
   } else {
     console.log(`There are no possible answers for clue ${clue.id}`);
-    console.log(clue.intersection);
+    console.log(`intersection of clue ${clue.id}: `, clue.intersection);
     // do something else useful here
     const letterIndex = [];
     const patterns = [];
@@ -450,7 +464,7 @@ const setClueAnswers = (
     // we iterate over the answer, if index === myIndex, do nothing,
     // else, set it to ""
 
-    const replaceCluePattern = [];
+    const replaceCluePattern: RegExp[] = [];
     // wrap this, forEach replaceClues item
     replaceClues.forEach((rClue) => {
       const myIndices: number[] = [];
@@ -465,10 +479,64 @@ const setClueAnswers = (
           myTempAnswer[i] = "";
         }
       }
-      replaceCluePattern.push(arrayToRegularExp(myTempAnswer));
+      replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
     });
 
     // end of wrap
     console.log("replace clue pattern: ", replaceCluePattern);
+    if (replaceClues[0]) {
+      const length = replaceClues[0].length as AnswerLength;
+      const wordList = getWordList(length, AllAnswers);
+      console.log(wordList);
+      const candidateAnswers = getMatches(
+        wordList,
+        replaceCluePattern[0],
+        replaceClues[0].answer.join("")
+      );
+      console.log(candidateAnswers);
+    }
   }
+};
+
+const AnswerMapping = {
+  3: "three",
+  4: "four",
+  5: "five",
+  6: "six",
+  7: "seven",
+  8: "eight",
+  9: "nine",
+  10: "ten",
+  11: "eleven",
+  12: "twelve",
+  13: "thirteen",
+} as const;
+
+type AnswerLength = keyof typeof AnswerMapping;
+type AllAnswerKey = keyof typeof AllAnswers;
+
+const getWordList: (
+  answerLength: AnswerLength,
+  AllAnswers: AllAnswers
+) => Answer[] = (answerLength, AllAnswers) => {
+  const allAnswerKey: AllAnswerKey = AnswerMapping[answerLength];
+  return AllAnswers[allAnswerKey];
+};
+
+const getMatches = (
+  possibleAnswers: Answer[],
+  regExp: RegExp,
+  currentAnswer: string
+) => {
+  console.log("curr ans: ", currentAnswer);
+
+  const candidateAnswers = possibleAnswers.filter((answer) => {
+    console.log(answer.raw === currentAnswer);
+    if (answer.word !== undefined && answer.word !== currentAnswer) {
+      return answer.word.match(regExp);
+    } else if (answer.raw !== currentAnswer) {
+      return answer.raw.match(regExp);
+    }
+  });
+  return candidateAnswers;
 };
