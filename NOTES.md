@@ -561,3 +561,9 @@ now we just have to implement this in code! Yay!
     - the candidateAnswers needs a further filter
     - we need a ref to the shared letter + its position in our candidate answer that caused the inability to find an answer that would fit
       - answers that have this same letter in the same position are of no use and should also be discarded
+
+## 21/4/24 update
+- current example:
+  - clue ans is ['I', '', 'A', 'N']
+  - the regexp for the first clue is: /[A-Z]I[A-Z]G[A-Z]E[A-Z]A[A-Z]E[A-Z]T/
+  - note the I in the second position of the regex is the letter shared with our current clue's answer, but should be discarded

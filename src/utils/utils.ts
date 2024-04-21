@@ -449,10 +449,9 @@ const setClueAnswers = (
     // the B and the Z intersect with two other clues
     // our patterns will be: ['B', '', ''] and ['', '', 'Z']
     // these patterns end up in the patterns variable
-    // the other thing it does is finds the clue that intersects with the current clue's index
+    // the other thing it does is finds the clues that intersects with the current clue's index and pushes them to an array, cluesToSwap
     for (const index of letterIndex) {
       const tempAnswer = [...clue.answer];
-      console.log("index", index);
       tempAnswer[index] = "";
       cluesToSwap.push(
         ...clue.intersection!.filter((item) => {
@@ -463,33 +462,40 @@ const setClueAnswers = (
       patterns.push(tempAnswer);
     }
 
-    // console.log("clues to swap", cluesToSwap);
-    // console.log("patterns: ", patterns);
-    let intersectIndex;
+    // we iterate over cluesToSwap
+    // for each Clue in cluesToSwap, (these are the clues that intersect with the current clue's index), we look in the current clue's  intersection prop and return the object in there that matches the ID of our Clue. This object is of the form:
+    // {id: '4DOWN', myIndex: 4, yourIndex: 2, letter: ''}
+    // then we set the letter prop of our Clue to equal the letter that occurs in our current clue at the myIndex prop of the intersection object with the matching ID (this is not good code)
+    // lastly, for each intersection object, we take the id and find the Clue in clues that matches that ID and push it into a replaceClues array.
+    let intersectingClueIndex;
     for (const intersectClue of cluesToSwap) {
-      const clueId = intersectClue.id!;
-      intersectIndex = clue.intersection!.find((item) => {
+      const clueId = intersectClue.id;
+      intersectingClueIndex = clue.intersection!.find((item) => {
         return clueId === item.id;
-      });
+      })!.myIndex!;
 
-      intersectClue.letter = clue.answer[intersectIndex.myIndex];
+      intersectClue.letter = clue.answer[intersectingClueIndex];
+
       replaceClues.push(
         clues.find((item) => {
-          return item.id === intersectClue.id;
+          return intersectClue.id === item.id;
         })
       );
-      // console.log("replaceClues: ", replaceClues);
     }
+
     // we need to remove letters from the intersecting clues
     // then we create a regex and match again
 
     // removing letters
     // intersection: we want myIndex
-    // we iterate over the answer, if index === myIndex, do nothing,
-    // else, set it to ""
 
+    // we need to create RegExps for the answer to each clue that intersects with our current clue, this will allow us to search for alternative answers to these clues
+    // 1) we push the myIndex value to a myIndices array - for each Clue this represents the index within the Clue's answer that intersects with another clue
+    // 2) we copy the answer for each Clue to a tempAnswer var
+    // 3) we iterate over this tempAnswer and set non-shared values (positions in the answer that don't intersect with other clues) to an empty string
+    // we convert the tempAnswer to a regular expression and push it to a replaceCluePattern array
     const replaceCluePattern: RegExp[] = [];
-    // wrap this, forEach replaceClues item
+
     replaceClues.forEach((rClue) => {
       const myIndices: number[] = [];
       rClue?.intersection?.forEach((item) => {
@@ -499,14 +505,21 @@ const setClueAnswers = (
       const myTempAnswer = [...rClue!.answer];
 
       for (let i = 0; i < myTempAnswer.length; i++) {
+        const clueItem = clue.intersection!.find((item) => {
+          return i === item.yourIndex;
+        });
+
+        if (clueItem) {
+          myTempAnswer[clueItem.yourIndex] = "";
+        }
         if (!myIndices.includes(i)) {
           myTempAnswer[i] = "";
         }
       }
+
       replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
     });
 
-    // end of wrap
     // console.log("replace clue pattern: ", replaceCluePattern);
     if (replaceClues[0]) {
       const length = replaceClues[0].length as AnswerLength;
@@ -517,7 +530,7 @@ const setClueAnswers = (
         replaceCluePattern[0],
         replaceClues[0].answer.join("")
       );
-      // console.log(candidateAnswers);
+      console.log(candidateAnswers);
     }
   }
 };
@@ -552,10 +565,7 @@ const getMatches = (
   regExp: RegExp,
   currentAnswer: string
 ) => {
-  // console.log("curr ans: ", currentAnswer);
-
   const candidateAnswers = possibleAnswers.filter((answer) => {
-    // console.log(answer.raw === currentAnswer);
     if (answer.word !== undefined && answer.word !== currentAnswer) {
       return answer.word.match(regExp);
     } else if (answer.raw !== currentAnswer) {
