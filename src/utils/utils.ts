@@ -423,14 +423,17 @@ const setClueAnswers = (
   } else {
     // from this point - we are dealing with substituting intersecting clues
     console.log(`There are no possible answers for clue ${clue.id}`);
-    console.log(`intersection of clue ${clue.id}: `, clue.intersection);
+
+    // *** testing only
+    // logIntersectClueAnswers(clue.intersection, clues);
+    // *** testing only
+
     // do something else useful here
     const letterIndex = [];
     const patterns = [];
     const tempAnswer = [...clue.answer];
     const cluesToSwap = []; // holds the id and yourIndex
-    const replaceClues = [];
-    console.log("clue ans: ", clue.answer);
+    const replaceClues: Clue[] = [];
 
     // this for loop does two things
     // 1) it resets each element of tempAnswer to be an empty string
@@ -496,29 +499,52 @@ const setClueAnswers = (
     // we convert the tempAnswer to a regular expression and push it to a replaceCluePattern array
     const replaceCluePattern: RegExp[] = [];
 
-    replaceClues.forEach((rClue) => {
+    replaceClues.forEach((rClue: Clue) => {
+      //   console.log("rClue: ", rClue);
+      const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
-      rClue?.intersection?.forEach((item) => {
-        myIndices.push(item.myIndex);
-      });
+      const myTempAnswer = [...rClue.answer];
 
-      const myTempAnswer = [...rClue!.answer];
-
-      for (let i = 0; i < myTempAnswer.length; i++) {
-        const clueItem = clue.intersection!.find((item) => {
-          return i === item.yourIndex;
+      for (const intersectObj of rClue.intersection!) {
+        myIndices.push(intersectObj.myIndex);
+        const irClue = clues.find((item) => {
+          return item.id === intersectObj.id;
         });
+        intersectingClues.push(irClue!);
+      }
 
-        if (clueItem) {
-          myTempAnswer[clueItem.yourIndex] = "";
+      console.log(
+        "clue: ",
+        clue.id,
+        "\nreplace clues: ",
+        replaceClues,
+        "\nintersect replace clues: ",
+        intersectingClues
+      );
+
+      // check each intersecting clue answer
+      // if it contains "", then
+      intersectingClues.forEach((item) => {
+        let irClue;
+        if (item.answer.includes("")) {
+          irClue = rClue.intersection!.find((intersectObj) => {
+            return intersectObj.id === item.id;
+          });
         }
+        if (irClue) {
+          myTempAnswer[irClue.yourIndex] = "";
+        }
+      });
+      for (let i = 0; i < myTempAnswer.length; ++i) {
         if (!myIndices.includes(i)) {
           myTempAnswer[i] = "";
         }
       }
-
-      replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
+      console.log("myanswer: ", myTempAnswer);
+      //   replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
     });
+
+    //------------------------------------------------
 
     // console.log("replace clue pattern: ", replaceCluePattern);
     if (replaceClues[0]) {
@@ -530,7 +556,7 @@ const setClueAnswers = (
         replaceCluePattern[0],
         replaceClues[0].answer.join("")
       );
-      console.log(candidateAnswers);
+      // console.log(candidateAnswers);
     }
   }
 };
@@ -573,4 +599,28 @@ const getMatches = (
     }
   });
   return candidateAnswers;
+};
+// ** testing only
+const logIntersectClueAnswers = (
+  intersection:
+    | {
+        id: string;
+        myIndex: number;
+        yourIndex: number;
+        letter?: string | undefined;
+      }[]
+    | undefined,
+  clues: Clue[]
+) => {
+  const intersectClues: Clue[] = [];
+  intersection!.forEach((item) => {
+    clues.find((intersectingClue) => {
+      if (item.id === intersectingClue.id) {
+        intersectClues.push(intersectingClue);
+      }
+    });
+  });
+  for (const intersectClue of intersectClues) {
+    console.log(`answer of ${intersectClue.id}: `, intersectClue.answer);
+  }
 };

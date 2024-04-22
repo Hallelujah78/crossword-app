@@ -567,3 +567,21 @@ now we just have to implement this in code! Yay!
   - clue ans is ['I', '', 'A', 'N']
   - the regexp for the first clue is: /[A-Z]I[A-Z]G[A-Z]E[A-Z]A[A-Z]E[A-Z]T/
   - note the I in the second position of the regex is the letter shared with our current clue's answer, but should be discarded
+
+## 22/4/24 update
+- current example with better logging:
+  - 6Down is: ['A', '', 'H', '', 'E', '']
+- first clue that intersect is: 
+4across: ['N', 'E', 'A', 'R', 'E', 'A', 'R', 'T', 'H']
+cleaning up 4Across (which is what we are testing), we get:
+['', '', '', '', 'E', '', '', '', 'H']
+
+- the goal is to remove all  unshared letters AND the letter that 4across shares with 6Down, did we succeed?
+- The issue with determining this is we are in an else branch of a bunch of loops!
+- The letters that 6Down contains are a snapshot of 6Down in that moment
+- the clues get processed based on the answer length,  with those with a longer answer getting processed first
+  - therefore, it is possible  that the 'N' of Near Death hasn't been filled in yet
+  - however, 6down has a length of 6, 4across is 9, 4down is 8
+  - this means that the order of processing is: 4across, 4down, 6down
+  - this means 4down has been filled in when we arrive at the else branch for 6down, and so ['', '', '', '', 'E', '', '', '', 'H'] is wrong, since the N should be retained
+  the answer for 4down is ["N", "E", "C", "R", "O", "T", "I", "C"]
