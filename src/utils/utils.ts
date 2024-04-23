@@ -433,6 +433,7 @@ const setClueAnswers = (
     const patterns = [];
     const tempAnswer = [...clue.answer];
     const cluesToSwap = []; // holds the id and yourIndex
+    const replaceClues: Clue[] | undefined = [];
     const replaceClues: (Clue | undefined)[] = [];
 
     // this for loop does two things
@@ -524,8 +525,11 @@ const setClueAnswers = (
 
       // check each intersecting clue answer
       // if it contains "", then
+      // this specific forEach doesn't appear to be working as I intend
+      // the
       intersectingClues.forEach((item) => {
         let irClue;
+        // not working
         if (item.answer.includes("")) {
           irClue = rClue!.intersection!.find((intersectObj) => {
             return intersectObj.id === item.id;
@@ -535,6 +539,8 @@ const setClueAnswers = (
           myTempAnswer[irClue.yourIndex] = "";
         }
       });
+      // not working above here
+      // this for loop is working
       for (let i = 0; i < myTempAnswer.length; ++i) {
         if (!myIndices.includes(i)) {
           myTempAnswer[i] = "";
