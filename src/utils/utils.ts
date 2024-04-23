@@ -433,7 +433,7 @@ const setClueAnswers = (
     const patterns = [];
     const tempAnswer = [...clue.answer];
     const cluesToSwap = []; // holds the id and yourIndex
-    const replaceClues: Clue[] = [];
+    const replaceClues: (Clue | undefined)[] = [];
 
     // this for loop does two things
     // 1) it resets each element of tempAnswer to be an empty string
@@ -499,13 +499,13 @@ const setClueAnswers = (
     // we convert the tempAnswer to a regular expression and push it to a replaceCluePattern array
     const replaceCluePattern: RegExp[] = [];
 
-    replaceClues.forEach((rClue: Clue) => {
+    replaceClues.forEach((rClue: Clue | undefined) => {
       //   console.log("rClue: ", rClue);
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
-      const myTempAnswer = [...rClue.answer];
+      const myTempAnswer = [...rClue!.answer];
 
-      for (const intersectObj of rClue.intersection!) {
+      for (const intersectObj of rClue!.intersection!) {
         myIndices.push(intersectObj.myIndex);
         const irClue = clues.find((item) => {
           return item.id === intersectObj.id;
@@ -527,7 +527,7 @@ const setClueAnswers = (
       intersectingClues.forEach((item) => {
         let irClue;
         if (item.answer.includes("")) {
-          irClue = rClue.intersection!.find((intersectObj) => {
+          irClue = rClue!.intersection!.find((intersectObj) => {
             return intersectObj.id === item.id;
           });
         }
