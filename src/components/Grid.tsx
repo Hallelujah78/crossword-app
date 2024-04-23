@@ -3,7 +3,7 @@ import { useState } from "react";
 
 // models
 import { CellType } from "../models/Cell.model";
-import Answer from "../models/Answer.model";
+
 import Clue from "../classes/Clue";
 
 // libs
@@ -14,7 +14,7 @@ import Cell from "./Cell";
 
 // data
 import { grid } from "../data/grid";
-import answers from "../data/answers";
+
 import * as AllAnswers from "../data/answers2";
 
 // utils

@@ -258,60 +258,64 @@ export const populateClues = (
     thirteen: Answer[];
   }
 ) => {
-  clues.forEach((clue) => {
+  for (const clue of clues) {
     // let answer: string;
     let possibleAnswers: Answer[] = [];
     const randVal = Math.random();
+    let endLoop: boolean = false;
 
     switch (clue.length) {
       case 13:
         possibleAnswers = AllAnswers.thirteen;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 12:
         possibleAnswers = AllAnswers.twelve;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 11:
         possibleAnswers = AllAnswers.eleven;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 10:
         possibleAnswers = AllAnswers.ten;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 9:
         possibleAnswers = AllAnswers.nine;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 8:
         possibleAnswers = AllAnswers.eight;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 7:
         possibleAnswers = AllAnswers.seven;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 6:
         possibleAnswers = AllAnswers.six;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 5:
         possibleAnswers = AllAnswers.five;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 4:
         possibleAnswers = AllAnswers.four;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       case 3:
         possibleAnswers = AllAnswers.three;
-        setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
         break;
       default:
         break;
     }
-  });
+    if (endLoop) {
+      break;
+    }
+  }
   // console.log(clues);
 };
 
@@ -420,9 +424,16 @@ const setClueAnswers = (
       // my index 4 is yourindex 0
       // clueToUpdate[]
     });
+    console.log(
+      `setting answer for ${clue.id}, length: ${clue.length}: `,
+      clue.answer
+    );
   } else {
     // from this point - we are dealing with substituting intersecting clues
-    console.log(`There are no possible answers for clue ${clue.id}`);
+    console.log(
+      `There are no possible answers for clue ${clue.id}`,
+      clue.answer
+    );
 
     // *** testing only
     // logIntersectClueAnswers(clue.intersection, clues);
@@ -433,7 +444,6 @@ const setClueAnswers = (
     const patterns = [];
     const tempAnswer = [...clue.answer];
     const cluesToSwap = []; // holds the id and yourIndex
-    const replaceClues: Clue[] | undefined = [];
     const replaceClues: (Clue | undefined)[] = [];
 
     // this for loop does two things
@@ -530,6 +540,7 @@ const setClueAnswers = (
       intersectingClues.forEach((item) => {
         let irClue;
         // not working
+        console.log(item.answer.includes(""));
         if (item.answer.includes("")) {
           irClue = rClue!.intersection!.find((intersectObj) => {
             return intersectObj.id === item.id;
@@ -564,7 +575,9 @@ const setClueAnswers = (
       );
       // console.log(candidateAnswers);
     }
+    return true;
   }
+  return false;
 };
 
 const AnswerMapping = {
