@@ -6,4 +6,5 @@ export type CellType = {
   right: boolean;
   bottom: boolean;
   left: boolean;
+  letter?: string;
 };

@@ -77,7 +77,11 @@ const Grid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return <Cell key={index} cell={cell} handleClick={handleClick} />;
       })}
-      <button onClick={() => populateClues(clueList, AllAnswers)}>
+      <button
+        onClick={() =>
+          populateClues(clueList, AllAnswers, gridState, setGridState)
+        }
+      >
         Generate Clues
       </button>
     </Wrapper>

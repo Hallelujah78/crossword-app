@@ -4,6 +4,7 @@ import Clue from "../classes/Clue";
 import { Direction } from "../models/Direction.model";
 import Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
+import { Dispatch, SetStateAction } from "react";
 
 type AllAnswers = {
   three: Answer[];
@@ -256,7 +257,9 @@ export const populateClues = (
     eleven: Answer[];
     twelve: Answer[];
     thirteen: Answer[];
-  }
+  },
+  gridState: CellType[],
+  setGridState: Dispatch<SetStateAction<CellType[]>>
 ) => {
   for (const clue of clues) {
     // let answer: string;
@@ -267,52 +270,119 @@ export const populateClues = (
     switch (clue.length) {
       case 13:
         possibleAnswers = AllAnswers.thirteen;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 12:
         possibleAnswers = AllAnswers.twelve;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 11:
         possibleAnswers = AllAnswers.eleven;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 10:
         possibleAnswers = AllAnswers.ten;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 9:
         possibleAnswers = AllAnswers.nine;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 8:
         possibleAnswers = AllAnswers.eight;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 7:
         possibleAnswers = AllAnswers.seven;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 6:
         possibleAnswers = AllAnswers.six;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 5:
         possibleAnswers = AllAnswers.five;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 4:
         possibleAnswers = AllAnswers.four;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       case 3:
         possibleAnswers = AllAnswers.three;
-        endLoop = setClueAnswers(clues, clue, possibleAnswers, randVal);
+        endLoop = setClueAnswers(
+          clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          gridState
+        );
         break;
       default:
         break;
     }
     if (endLoop) {
+      setGridState(gridState);
       break;
     }
   }
@@ -391,7 +461,8 @@ const setClueAnswers = (
   clues: Clue[],
   clue: Clue,
   possibleAnswers: Answer[],
-  randVal: number
+  randVal: number,
+  gridState: CellType[]
 ) => {
   // if an answer has some letters but is not complete, create a regexp, and get all words that match that pattern
   let regExp: RegExp;
@@ -428,6 +499,9 @@ const setClueAnswers = (
       `setting answer for ${clue.id}, length: ${clue.length}: `,
       clue.answer
     );
+    for (let i = 0; i < clue.length; i++) {
+      gridState[clue.indices[i]].letter = clue.answer[i];
+    }
   } else {
     // from this point - we are dealing with substituting intersecting clues
     console.log(
@@ -539,7 +613,7 @@ const setClueAnswers = (
       // the
       intersectingClues.forEach((item) => {
         let irClue;
-        // not working
+
         console.log(item.answer.includes(""));
         if (item.answer.includes("")) {
           irClue = rClue!.intersection!.find((intersectObj) => {
@@ -547,11 +621,10 @@ const setClueAnswers = (
           });
         }
         if (irClue) {
-          myTempAnswer[irClue.yourIndex] = "";
+          myTempAnswer[irClue.myIndex] = "";
         }
       });
-      // not working above here
-      // this for loop is working
+
       for (let i = 0; i < myTempAnswer.length; ++i) {
         if (!myIndices.includes(i)) {
           myTempAnswer[i] = "";
