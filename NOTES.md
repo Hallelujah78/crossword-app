@@ -615,3 +615,15 @@ for(const rClue of replaceClues){
 }
 ```
 - it's actually not that much different, but it's more obvious (to me) that we don't have to use a for of or forEach every time we need to check for something.
+
+## Update 25/4/24 00:23 - To Do
+- we need a list of letters to ignore as we test for each rClue
+- we only need to test one word for each letter in a given position
+- example, our clue is _ _ _ _ _ _ U _ U
+- 10down is UNPARALLELED - it has no completed intersecting clues, so we can swap for anything
+  - no point swapping for another word starting with U, we filter that out,
+  - we get a list of 3549 words but we only need a list of 25 at most:
+    - a word that begins with A
+    - a word that begins with B
+    - a word that begins with C
+    - ...

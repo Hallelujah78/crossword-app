@@ -638,30 +638,36 @@ const setClueAnswers = (
       const length = replaceClues[0].length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
       console.log(`rClue ${replaceClues[0].id}: `, replaceClues[0]);
-      const candidateAnswers = getMatches(
+
+      let candidateAnswers = getMatches(
         wordList,
         replaceCluePattern[0],
         replaceClues[0].answer.join("")
       );
+
+      const sharedLetter = getLetter(replaceClues[0], clue);
+
+      if (sharedLetter && sharedLetter.index !== undefined) {
+        candidateAnswers = candidateAnswers.filter((answer) => {
+          if (answer.word) {
+            return (
+              answer.word.charAt(sharedLetter.index as number) !==
+              sharedLetter.letter
+            );
+          } else {
+            return (
+              answer.raw.charAt(sharedLetter.index as number) !==
+              sharedLetter.letter
+            );
+          }
+        });
+      }
+
       console.log(candidateAnswers);
-      // we need to exclude matches that contain the letter that was rejected previously
-      // let sharedLetter;
-      console.log("clueid: ", clue.id);
-      const sharedLetterIndex = replaceClues[0].intersection!.find((item) => {
-        return item.id === clue.id;
-      })?.myIndex;
-      console.log(sharedLetterIndex);
-      const sharedLetter = replaceClues[0].answer[sharedLetterIndex];
+      // regex to reject this letter: (?![A])[A-Z], assuming it is A we want to omit
 
-      // shared letter can be undefined if there are no shared letters!
-      console.log(sharedLetter);
-      // sharedLetter here represents the letter we want to exclude from our matches
+      console.log("letter var: ", sharedLetter);
 
-      // for (const index of replaceClues[0].indices){
-      // if()
-      //}
-
-      //
       // when a new answer is chosen, we also need to update the list of 'used' letters
     }
     return true;
@@ -730,5 +736,25 @@ const logIntersectClueAnswers = (
   });
   for (const intersectClue of intersectClues) {
     console.log(`answer of ${intersectClue.id}: `, intersectClue.answer);
+  }
+};
+
+export const getLetter = (rClue: Clue, currentClue: Clue) => {
+  interface SharedLetter {
+    index: number | undefined;
+    letter: string | undefined;
+  }
+  const sharedLetter: SharedLetter = { index: undefined, letter: undefined };
+
+  sharedLetter.index = rClue.intersection!.find((item) => {
+    return item.id === currentClue.id;
+  })!.myIndex;
+
+  if (sharedLetter.index !== undefined) {
+    sharedLetter.letter = rClue.answer[sharedLetter.index];
+  }
+
+  if (sharedLetter.letter) {
+    return sharedLetter;
   }
 };
