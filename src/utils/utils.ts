@@ -607,10 +607,6 @@ const setClueAnswers = (
         intersectingClues
       );
 
-      // check each intersecting clue answer
-      // if it contains "", then
-      // this specific forEach doesn't appear to be working as I intend
-      // the
       intersectingClues.forEach((item) => {
         let irClue;
 
@@ -631,22 +627,42 @@ const setClueAnswers = (
         }
       }
       console.log("myanswer: ", myTempAnswer);
-      //   replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
+      replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
     });
 
     //------------------------------------------------
 
     // console.log("replace clue pattern: ", replaceCluePattern);
     if (replaceClues[0]) {
+      console.log(replaceCluePattern[0]);
       const length = replaceClues[0].length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
-      // console.log(wordList);
+      console.log(`rClue ${replaceClues[0].id}: `, replaceClues[0]);
       const candidateAnswers = getMatches(
         wordList,
         replaceCluePattern[0],
         replaceClues[0].answer.join("")
       );
-      // console.log(candidateAnswers);
+      console.log(candidateAnswers);
+      // we need to exclude matches that contain the letter that was rejected previously
+      // let sharedLetter;
+      console.log("clueid: ", clue.id);
+      const sharedLetterIndex = replaceClues[0].intersection!.find((item) => {
+        return item.id === clue.id;
+      })?.myIndex;
+      console.log(sharedLetterIndex);
+      const sharedLetter = replaceClues[0].answer[sharedLetterIndex];
+
+      // shared letter can be undefined if there are no shared letters!
+      console.log(sharedLetter);
+      // sharedLetter here represents the letter we want to exclude from our matches
+
+      // for (const index of replaceClues[0].indices){
+      // if()
+      //}
+
+      //
+      // when a new answer is chosen, we also need to update the list of 'used' letters
     }
     return true;
   }

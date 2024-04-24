@@ -585,3 +585,33 @@ cleaning up 4Across (which is what we are testing), we get:
   - this means that the order of processing is: 4across, 4down, 6down
   - this means 4down has been filled in when we arrive at the else branch for 6down, and so ['', '', '', '', 'E', '', '', '', 'H'] is wrong, since the N should be retained
   the answer for 4down is ["N", "E", "C", "R", "O", "T", "I", "C"]
+
+## Update 24/4/24 Why is this so hard?
+- I think it's hard because of how I have set up the data structures. The intersection prop on Clue is vital to working out things like what clues are blank or what letters are shared between clues' answers. The fact I've made it an array, means I have to iterate over it each time I want to match an ID. If each id was the prop of an object it would be a lot easier:
+
+```js
+Clue {
+  intersection: {
+    10DOWN: { myIndex: 0, yourIndex: 6}
+  },
+  answer: ['B', 'O', 'B'],
+}
+```
+- assume we need to get myIndex and we have a group of clues we are iterating over:
+```js
+for(const rClue of replaceClues){
+const sharedLetter = rClue.answer[rClue.intersection[clue.id].myIndex]
+}
+```
+- compare that to:
+```js
+for(const rClue of replaceClues){
+ const sharedLetter =
+        rClue.answer[
+          rClue.intersection.find((item) => {
+            return item.id === clue.id;
+          })?.myIndex
+        ];
+}
+```
+- it's actually not that much different, but it's more obvious (to me) that we don't have to use a for of or forEach every time we need to check for something.
