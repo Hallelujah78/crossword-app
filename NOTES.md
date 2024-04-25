@@ -649,3 +649,8 @@ setClueAnsewrs(){
 
   }
 }
+
+
+## Update 25/4/24 23:45 - To Do
+- iterate over uniqueAnswers and plug each answer in to the relevant rClue (the clue that intersects with our current clue)
+- for each answer we plug in, we must check to see if we can find a candidate answer for our current clue
