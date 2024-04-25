@@ -669,13 +669,19 @@ const setClueAnswers = (
       console.log("letter var: ", sharedLetter);
       const usedLetters = [sharedLetter.letter];
       const uniqueAnswers = [];
+
       for (const answer of candidateAnswers) {
+        let candidateAnswer: string;
+        if (answer.word) {
+          candidateAnswer = answer.word;
+        } else candidateAnswer = answer.raw;
         if (
+          sharedLetter &&
           sharedLetter.index !== undefined &&
-          !usedLetters.includes(answer[sharedLetter.index as number])
+          !usedLetters.includes(candidateAnswer[sharedLetter.index as number])
         ) {
-          usedLetters.push(answer[sharedLetter.index as number]);
-          uniqueAnswers.push(answer);
+          usedLetters.push(candidateAnswer[sharedLetter.index as number]);
+          uniqueAnswers.push(candidateAnswer);
         }
       }
       console.log("usedLetters: ", usedLetters);
