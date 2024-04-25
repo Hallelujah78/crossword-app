@@ -663,11 +663,23 @@ const setClueAnswers = (
         });
       }
 
-      console.log(candidateAnswers);
+      console.log("candidates: ", candidateAnswers);
       // regex to reject this letter: (?![A])[A-Z], assuming it is A we want to omit
 
       console.log("letter var: ", sharedLetter);
-
+      const usedLetters = [sharedLetter.letter];
+      const uniqueAnswers = [];
+      for (const answer of candidateAnswers) {
+        if (
+          sharedLetter.index !== undefined &&
+          !usedLetters.includes(answer[sharedLetter.index as number])
+        ) {
+          usedLetters.push(answer[sharedLetter.index as number]);
+          uniqueAnswers.push(answer);
+        }
+      }
+      console.log("usedLetters: ", usedLetters);
+      console.log("uniqueAnswers: ", uniqueAnswers);
       // when a new answer is chosen, we also need to update the list of 'used' letters
     }
     return true;

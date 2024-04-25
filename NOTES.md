@@ -620,10 +620,32 @@ for(const rClue of replaceClues){
 - we need a list of letters to ignore as we test for each rClue
 - we only need to test one word for each letter in a given position
 - example, our clue is _ _ _ _ _ _ U _ U
-- 10down is UNPARALLELED - it has no completed intersecting clues, so we can swap for anything
+- 10down is UNPARALLELED - it has no completed intersecting clues, so we can swap the answer for anything
   - no point swapping for another word starting with U, we filter that out,
   - we get a list of 3549 words but we only need a list of 25 at most:
     - a word that begins with A
     - a word that begins with B
     - a word that begins with C
     - ...
+
+## 25/4/24 
+- the structure of our setClueAnswers function:
+
+setClueAnsewrs(){
+  if(clue contains letters but is not complete){
+    create regexp;
+    filter word list and add words that match the regexp as a candidate answer;
+  }
+
+  if(candidate answers has answers in it){
+    pick a random word from the candidate answers and set the clue.answer;
+    for(each clue that intersects with our clue.answer){
+      get the Clue instance that matches the ID of the object in clue.intersection;
+      update the shared letter in the answers of each intersecting clue; 
+    }
+  } 
+  else {
+    there is no candidate answer for our clue
+
+  }
+}
