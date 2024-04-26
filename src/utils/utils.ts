@@ -5,6 +5,7 @@ import { Direction } from "../models/Direction.model";
 import Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import { Dispatch, SetStateAction } from "react";
+import { CgLayoutGrid } from "react-icons/cg";
 
 type AllAnswers = {
   three: Answer[];
@@ -632,20 +633,20 @@ const setClueAnswers = (
 
     //------------------------------------------------
 
-    // console.log("replace clue pattern: ", replaceCluePattern);
-    if (replaceClues[0]) {
-      console.log(replaceCluePattern[0]);
-      const length = replaceClues[0].length as AnswerLength;
+   
+    for(const [index, rClue] of replaceClues.entries()) {
+      
+      const length = rClue.length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
-      console.log(`rClue ${replaceClues[0].id}: `, replaceClues[0]);
+      console.log(`rClue ${rClue.id}: `, rClue);
 
       let candidateAnswers = getMatches(
         wordList,
-        replaceCluePattern[0],
-        replaceClues[0].answer.join("")
+        replaceCluePattern[index],
+        rClue.answer.join("")
       );
 
-      const sharedLetter = getLetter(replaceClues[0], clue);
+      const sharedLetter = getLetter(rClue, clue);
 
       if (sharedLetter && sharedLetter.index !== undefined) {
         candidateAnswers = candidateAnswers.filter((answer) => {
@@ -664,9 +665,8 @@ const setClueAnswers = (
       }
 
       console.log("candidates: ", candidateAnswers);
-      // regex to reject this letter: (?![A])[A-Z], assuming it is A we want to omit
 
-      console.log("letter var: ", sharedLetter);
+     
       const usedLetters = [sharedLetter.letter];
       const uniqueAnswers = [];
 
@@ -684,6 +684,10 @@ const setClueAnswers = (
           uniqueAnswers.push(candidateAnswer);
         }
       }
+      for(const answer of uniqueAnswers){
+        //
+      }
+      console.log("rClue: ", rClue);
       console.log("usedLetters: ", usedLetters);
       console.log("uniqueAnswers: ", uniqueAnswers);
       // when a new answer is chosen, we also need to update the list of 'used' letters
