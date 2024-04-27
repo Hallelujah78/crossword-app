@@ -648,16 +648,16 @@ const setClueAnswers = (
 
       const sharedLetter = getLetter(rClue, clue);
 
-      if (sharedLetter && sharedLetter.index !== undefined) {
+      if (sharedLetter && sharedLetter.rClueIndexndex !== undefined) {
         candidateAnswers = candidateAnswers.filter((answer) => {
           if (answer.word) {
             return (
-              answer.word.charAt(sharedLetter.index as number) !==
+              answer.word.charAt(sharedLetter.rClueIndex as number) !==
               sharedLetter.letter
             );
           } else {
             return (
-              answer.raw.charAt(sharedLetter.index as number) !==
+              answer.raw.charAt(sharedLetter.rClueIndex as number) !==
               sharedLetter.letter
             );
           }
@@ -677,15 +677,17 @@ const setClueAnswers = (
         } else candidateAnswer = answer.raw;
         if (
           sharedLetter &&
-          sharedLetter.index !== undefined &&
-          !usedLetters.includes(candidateAnswer[sharedLetter.index as number])
+          sharedLetter.rClueIndex !== undefined &&
+          !usedLetters.includes(candidateAnswer[sharedLetter.rClueIndex as number])
         ) {
-          usedLetters.push(candidateAnswer[sharedLetter.index as number]);
+          usedLetters.push(candidateAnswer[sharedLetter.rClueIndex as number]);
           uniqueAnswers.push(candidateAnswer);
         }
       }
       for(const answer of uniqueAnswers){
-        //
+        // example, the answer we are replacing is meteoric, the first alt is historic
+        clue.answer[sharedLetter?.clueIndex] = answer[sharedLetter?.rClueIndex];
+        console.log(clue.answer);
       }
       console.log("rClue: ", rClue);
       console.log("usedLetters: ", usedLetters);
@@ -763,17 +765,24 @@ const logIntersectClueAnswers = (
 
 export const getLetter = (rClue: Clue, currentClue: Clue) => {
   interface SharedLetter {
-    index: number | undefined;
+    rClueIndex: number | undefined;
+    clueIndex: number | undefined;
     letter: string | undefined;
   }
-  const sharedLetter: SharedLetter = { index: undefined, letter: undefined };
+  const sharedLetter: SharedLetter = { rClueIndex: undefined, letter: undefined, clueIndex: undefined };
 
-  sharedLetter.index = rClue.intersection!.find((item) => {
+  const intersection = rClue.intersection!.find((item) => {
     return item.id === currentClue.id;
-  })!.myIndex;
+  });
 
-  if (sharedLetter.index !== undefined) {
-    sharedLetter.letter = rClue.answer[sharedLetter.index];
+  if(intersection){
+    sharedLetter.rClueIndex = intersection.myIndex;
+    sharedLetter.clueIndex = intersection.yourIndex;
+  }
+
+
+  if (sharedLetter.rClueIndex !== undefined) {
+    sharedLetter.letter = rClue.answer[sharedLetter.rClueIndex];
   }
 
   if (sharedLetter.letter) {
