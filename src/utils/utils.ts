@@ -688,6 +688,29 @@ const setClueAnswers = (
         // example, the answer we are replacing is meteoric, the first alt is historic
         clue.answer[sharedLetter?.clueIndex] = answer[sharedLetter?.rClueIndex];
         console.log(clue.answer);
+        const regExp = arrayToRegularExp(clue.answer);
+        const wordList = getWordList(clue.answer.length  as AnswerLength, AllAnswers);
+        const candidateAnswers = getMatches(
+          wordList,
+          regExp,
+          clue.answer.join("")
+        );
+        console.log("candidate answer: ",candidateAnswers);
+        if (candidateAnswers.length > 0){
+          if(candidateAnswers[0].word){
+            clue.answer = [...candidateAnswers[0].word];
+          }
+            else 
+            {
+              clue.answer = [...candidateAnswers[0].raw];
+
+            }
+            
+          
+          rClue.answer = [...answer];         
+          console.log("clue answer: ", clue.answer);
+          console.log("rclue answer: ", rClue.answer);
+        }
       }
       console.log("rClue: ", rClue);
       console.log("usedLetters: ", usedLetters);
@@ -789,3 +812,22 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
     return sharedLetter;
   }
 };
+
+
+// code to update gridState letters and intersecting clues state
+// clue.intersection?.forEach((item) => {
+//   const clueToUpdate = clues.find((clue) => {
+//     return clue.id === item.id;
+//   })!;
+
+//   clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+//   // my index 4 is yourindex 0
+//   // clueToUpdate[]
+// });
+// console.log(
+//   `setting answer for ${clue.id}, length: ${clue.length}: `,
+//   clue.answer
+// );
+// for (let i = 0; i < clue.length; i++) {
+//   gridState[clue.indices[i]].letter = clue.answer[i];
+// }
