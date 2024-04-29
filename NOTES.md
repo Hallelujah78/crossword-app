@@ -654,3 +654,75 @@ setClueAnsewrs(){
 ## Update 25/4/24 23:45 - To Do
 - iterate over uniqueAnswers and plug each answer in to the relevant rClue (the clue that intersects with our current clue)
 - for each answer we plug in, we must check to see if we can find a candidate answer for our current clue
+
+
+## Our Functions
+- since we have a large utils file, I've reached the point where I'm writing code and I'm not sure if I already have a function that does what I'm looking for
+- here's a list of what we have in utils:
+
+### Cell and Grid Related Functions
+
+### getCellAbove
+- takes 2 params, an array of CellType objects, and an index
+- returns a reference to the cell above the current cell
+
+### getCellBelow
+- as above but returns a reference to the cell below the current cell
+
+### findRightEdge
+- takes 1 param, an array of type CellType objects
+- returns an array which consists of the indices of all cells on the rightmost side of the crossword grid
+
+### findLeftEdge
+- as findRightEdge above but returns an array of cells on the leftmost side
+
+### findTopEdge
+- as findRightEdge above but returns an array of cells on the topmost edge
+
+### findBottomEdge
+- as findRightEdge above but returns an array of cells on the bottommost side
+
+### setGridNumbers
+- takes an array of type CellType objects
+- iterates over the array and sets a clue number or sets the clue number to an empty string as appropriate
+- does not set React state
+- return void
+
+### updateSurroundingCells
+- takes 2 params: a grid array of type CellType objects and the index of the current cell
+- as we toggle a cell from being a dark or light square, we must tell the surrounding cells whether the cell below, above, to the right or to the left is a void or a light square
+- this function gets the cells above, below, to the right, and left and toggles the `bottom`, `top`, `left`, and `right` props. These are booleans, where true indicates that there is a light cell in the given direction, and false indicates that there is a void or nothing (it's on an edge) in the given direction.
+- does not update React state
+- return void
+
+### isLeftEdge
+- takes a grid of CellType objects and the index of the current cell
+- returns a boolean value which is true if the current cell is on the leftmost edge of the grid, false if it is not
+
+### isRightEdge
+- takes a grid of CellType objects and the index of the current cell
+- returns a boolean value which is true if the current cell is on the rightmost edge of the grid, false if it is not
+
+### isTopEdge
+- takes a grid of CellType objects and the index of the current cell
+- returns a boolean value which is true if the current cell is on the topmost edge of the grid, false if it is not
+
+### isBottomEdge
+- takes a grid of CellType objects and the index of the current cell
+- returns a boolean value which is true if the current cell is on the bottommost edge of the grid, false if it is not
+
+### initializeGrid
+- takes a grid of type CellType objects
+- maps over each cell and sets the id, right, left, top, and bottom props
+- then calls `setClueNumbers` on the updated array
+- then calls `createClues` on the updated array 
+- returns the updated and initialized grid, an array of type CellType objects
+
+### Clue Related Functions
+
+### createClues
+- takes a grid, an array of type CellType objects
+- creates an array of clues, which are instances of the Clue class
+- returns an array of newly created Clue instances
+
+### 

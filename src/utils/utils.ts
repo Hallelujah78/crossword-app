@@ -711,6 +711,23 @@ const setClueAnswers = (
           console.log("clue answer: ", clue.answer);
           console.log("rclue answer: ", rClue.answer);
         }
+        clue.intersection?.forEach((item) => {
+  const clueToUpdate = clues.find((clue) => {
+    return clue.id === item.id;
+  })!;
+
+  clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+  // my index 4 is yourindex 0
+  // clueToUpdate[]
+});
+console.log(
+  `setting answer for ${clue.id}, length: ${clue.length}: `,
+  clue.answer
+);
+for (let i = 0; i < clue.length; i++) {
+  gridState[clue.indices[i]].letter = clue.answer[i];
+}
+
       }
       console.log("rClue: ", rClue);
       console.log("usedLetters: ", usedLetters);
