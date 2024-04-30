@@ -813,6 +813,7 @@ setClueAnsewrs(){
 - the next rClue is SPIGOT or _ P _ G _ _, which has one candidate of APOGEE
   - now for 6down we are looking at E _ V _ T, and we have 0 candidates
   - again, the E and the V should have been reset to T and S respectively
+- this is fixd now
 
 ### Weakness of this Approach
 - we have 3 clues that intersect our current clue
@@ -829,3 +830,8 @@ setClueAnsewrs(){
 - SAGUARO had 12 unique candidates - V, B, T, A, O, S, L, C, Y, P, F, G
 - SPIGOT had 1 unique candidate - T or E
 - we can come back to this - important as we are not maximizing our chances of filling in all answers when constructing the crossword
+
+## Current Issue
+- The clue.intersection prop needs to be updated - it is showing old letters
+before our swap. 
+- Even though we are setting React state, our UI is not being redrawn and we have to click save in vscode to get it to update! Obviously not ideal!
