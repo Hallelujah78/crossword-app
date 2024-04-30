@@ -662,56 +662,56 @@ setClueAnsewrs(){
 
 ### Cell and Grid Related Functions
 
-### getCellAbove
+#### getCellAbove
 - takes 2 params, an array of CellType objects, and an index
 - returns a reference to the cell above the current cell
 
-### getCellBelow
+#### getCellBelow
 - as above but returns a reference to the cell below the current cell
 
-### findRightEdge
+#### findRightEdge
 - takes 1 param, an array of type CellType objects
 - returns an array which consists of the indices of all cells on the rightmost side of the crossword grid
 
-### findLeftEdge
+#### findLeftEdge
 - as findRightEdge above but returns an array of cells on the leftmost side
 
-### findTopEdge
+#### findTopEdge
 - as findRightEdge above but returns an array of cells on the topmost edge
 
-### findBottomEdge
+#### findBottomEdge
 - as findRightEdge above but returns an array of cells on the bottommost side
 
-### setGridNumbers
+#### setGridNumbers
 - takes an array of type CellType objects
 - iterates over the array and sets a clue number or sets the clue number to an empty string as appropriate
 - does not set React state
 - return void
 
-### updateSurroundingCells
+#### updateSurroundingCells
 - takes 2 params: a grid array of type CellType objects and the index of the current cell
 - as we toggle a cell from being a dark or light square, we must tell the surrounding cells whether the cell below, above, to the right or to the left is a void or a light square
 - this function gets the cells above, below, to the right, and left and toggles the `bottom`, `top`, `left`, and `right` props. These are booleans, where true indicates that there is a light cell in the given direction, and false indicates that there is a void or nothing (it's on an edge) in the given direction.
 - does not update React state
 - return void
 
-### isLeftEdge
+#### isLeftEdge
 - takes a grid of CellType objects and the index of the current cell
 - returns a boolean value which is true if the current cell is on the leftmost edge of the grid, false if it is not
 
-### isRightEdge
+#### isRightEdge
 - takes a grid of CellType objects and the index of the current cell
 - returns a boolean value which is true if the current cell is on the rightmost edge of the grid, false if it is not
 
-### isTopEdge
+#### isTopEdge
 - takes a grid of CellType objects and the index of the current cell
 - returns a boolean value which is true if the current cell is on the topmost edge of the grid, false if it is not
 
-### isBottomEdge
+#### isBottomEdge
 - takes a grid of CellType objects and the index of the current cell
 - returns a boolean value which is true if the current cell is on the bottommost edge of the grid, false if it is not
 
-### initializeGrid
+#### initializeGrid
 - takes a grid of type CellType objects
 - maps over each cell and sets the id, right, left, top, and bottom props
 - then calls `setClueNumbers` on the updated array
@@ -720,32 +720,41 @@ setClueAnsewrs(){
 
 ### Clue Related Functions
 
-### createClues
+#### createClues
 - takes a grid, an array of type CellType objects
 - creates an array of clues, which are instances of the Clue class
 - returns an array of newly created Clue instances
 
-### getClueIndices
+#### getClueIndices
 - takes an array of type CellType objects
+- the start of each clue, down and/or across, has an index from 0 to 169 in a 13x13 grid
+- for each CelType object that is the start of a clue, we push the index to an array and return it
 - returns an array of indices for each CellType object that has a clueNumber prop that is not falsy (not an empty string)
 
-### populateClues
+#### populateClues
 - takes an array of Clue class instances, AllAnswers, which is the object exported from data/answers2.ts, gridState - an array of CellType objects, and a React state setter - setGridState
-- finish details for this
+- iterates over all clues in our array of Clue instances
+  - sets up an endLoop variable that is used to break out of our iteration over all clues
+    - note: this is/was temporary just so we could stop execution at a given point for bug fixing
+    - we would break execution when we encountered the first clue answer for which there was no possible answers to select from
+- we use a switch statement to:
+  - use the clue length to set the word list we'll use to find potential clue answers
+  - call setClueAnswers which updates the grid and clues and returns true or false
+    - returning true sets endLoop to be true, and so we set the React gridState state and break, which causes execution of populateClues to end
 
-### sortCluesDescendingLength
+#### sortCluesDescendingLength
 - takes an array of Clue instances
 - returns the array sorted by the answer length in descending order
 
-### getAcrossClues
+#### getAcrossClues
 - takes an array of Clue instances
 - returns a filtered array of clues that have a `direction` of across
 
-### getDownClues
+#### getDownClues
 - takes an array of Clue instances
 - returns a filtered array of clues that have a `direction` of down
 
-### setCluesThatIntersect
+#### setCluesThatIntersect
 - takes 2 params: the current Clue and an array of Clue instances
 - the function sets the `intersection` prop on the current clue
 - the intersection prop is an array of objects with the following props:
@@ -754,22 +763,69 @@ setClueAnsewrs(){
   - yourIndex - the index of the letter in the intersecting clue that intersects with the current clue
 - returns void
 
-### arrayToRegularExp
+#### arrayToRegularExp
 - takes an answer, which is a array of strings
 - if the answer array is incomplete (does contain empty strings), then we create a RegExp
 - returns undefined or an instance of RegExp
 
-## Word List Cleaning Functions
+#### setClueAnswers
+- takes 5 params: 
+  - an array of Clue instances
+  - the current clue
+  - an array of type Answer that match the length of the current clue
+  - a Math.random value that is used to pick the answer we will use from the array of Answer objects
+  - a grid which is an array of CellType objects
+- the functon attempts to find an answer that fits the current clue length given the letters the clue already contains
+- if matches are available, one is selected and intersecting clues are updated and the grid state is updated
+- if no matches are available, the function has an else branch that starts to look at replacing the clues that intersect with the current clue, I call them rClues, in order to find a combination of letters in the current clue such that we can find an answer that fits
+- this function updates the current clue answer, the grid state and the array of Clues but does not directly update React state
+- returns void
 
-### removeChars
+### Word List Cleaning Functions
+
+#### removeChars
 - this is a utility function used to clean up our word lists, but not used in the actual application when deployed
 - takes an array of type Answer objects
 - each answer has a `raw` prop that contains the word but may contain hyphens or apostrophes
 - for each answer, we take the raw prop and if it contains a hypen or apostrophe we strip those out and replace them with an empty string, then we set the `word` prop to this cleaned up value
 - we calculate and set the length prop of each answer to the length of the word prop (if it exists) or to the length of the raw prop otherwise
 
-### separateByLength
+#### separateByLength
 - takes an array that contains objects of type Answer, and a second argument which is a word length
 - we filter the answers by word length and return the filtered list
 - again, used to clean up word lists and not deployed with application
 
+
+## Broad Structure of Setting Clue Answers logic
+- we click a button to generate clues
+- this calls the populateClues function
+
+
+## Issue 30/4/24
+- example (to make it somewhat understandable)
+- we have 6down which is: T _ S _T
+- 32across intersects and is: _ _ _ _ A _ O (currently set to SAGUARO - a type of cactus)
+- we try VOLCANO, and so 6down we are told is: E _ V _ T
+  - we've already attempted to swap OUTERMOST with OVERSHOOT and so this is where the E is coming from 
+    - NOTE: when an rClue doesn't yield candidates, we set it back to what it was and move to the next rClue - we've moved to the next rClue here but we haven't set 4across back to OUTERMOST, and now we are looking for E_V_T when it should be T_V_T
+- we have a list of 18 candidates with 32across, including CHICANO, which would give us TACIT for 6down
+  - however, once we try VOLCANO for 32across, we immediately skip to the next rClue and ignore the other 17 possible candidate answers for 32across
+- the next rClue is SPIGOT or _ P _ G _ _, which has one candidate of APOGEE
+  - now for 6down we are looking at E _ V _ T, and we have 0 candidates
+  - again, the E and the V should have been reset to T and S respectively
+
+### Weakness of this Approach
+- we have 3 clues that intersect our current clue
+- we are seeing if we can find a replacement for each of them individually
+- OUTERMOST had 1 other candidate, T or E
+  - T _ S _ T fails
+  - E _ S _ T fails
+  - E _ S _ E fails
+  - T _ S _ E fails
+  - we have all the combinations provided by E or T _ V,B,T,A,O,S,L etc _ E or T
+    - however, we will only test the T _ V-L _ T options using the current set up
+    - we are missing a lot of potential matches
+
+- SAGUARO had 12 unique candidates - V, B, T, A, O, S, L, C, Y, P, F, G
+- SPIGOT had 1 unique candidate - T or E
+- we can come back to this - important as we are not maximizing our chances of filling in all answers when constructing the crossword

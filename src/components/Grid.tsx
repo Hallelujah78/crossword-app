@@ -79,7 +79,7 @@ const Grid: React.FC = () => {
       })}
       <button
         onClick={() =>
-          populateClues(clueList, AllAnswers, gridState, setGridState)
+          populateClues(clueList, AllAnswers, gridState, setGridState, setClueList)
         }
       >
         Generate Clues
