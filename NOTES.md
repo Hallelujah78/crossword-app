@@ -725,4 +725,51 @@ setClueAnsewrs(){
 - creates an array of clues, which are instances of the Clue class
 - returns an array of newly created Clue instances
 
-### 
+### getClueIndices
+- takes an array of type CellType objects
+- returns an array of indices for each CellType object that has a clueNumber prop that is not falsy (not an empty string)
+
+### populateClues
+- takes an array of Clue class instances, AllAnswers, which is the object exported from data/answers2.ts, gridState - an array of CellType objects, and a React state setter - setGridState
+- finish details for this
+
+### sortCluesDescendingLength
+- takes an array of Clue instances
+- returns the array sorted by the answer length in descending order
+
+### getAcrossClues
+- takes an array of Clue instances
+- returns a filtered array of clues that have a `direction` of across
+
+### getDownClues
+- takes an array of Clue instances
+- returns a filtered array of clues that have a `direction` of down
+
+### setCluesThatIntersect
+- takes 2 params: the current Clue and an array of Clue instances
+- the function sets the `intersection` prop on the current clue
+- the intersection prop is an array of objects with the following props:
+  - id - the id of a clue that intersects with the current clue
+  - myIndex - the index of the letter in the current clue that intersects with the intersecting clue
+  - yourIndex - the index of the letter in the intersecting clue that intersects with the current clue
+- returns void
+
+### arrayToRegularExp
+- takes an answer, which is a array of strings
+- if the answer array is incomplete (does contain empty strings), then we create a RegExp
+- returns undefined or an instance of RegExp
+
+## Word List Cleaning Functions
+
+### removeChars
+- this is a utility function used to clean up our word lists, but not used in the actual application when deployed
+- takes an array of type Answer objects
+- each answer has a `raw` prop that contains the word but may contain hyphens or apostrophes
+- for each answer, we take the raw prop and if it contains a hypen or apostrophe we strip those out and replace them with an empty string, then we set the `word` prop to this cleaned up value
+- we calculate and set the length prop of each answer to the length of the word prop (if it exists) or to the length of the raw prop otherwise
+
+### separateByLength
+- takes an array that contains objects of type Answer, and a second argument which is a word length
+- we filter the answers by word length and return the filtered list
+- again, used to clean up word lists and not deployed with application
+
