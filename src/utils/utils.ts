@@ -644,19 +644,19 @@ const setClueAnswers = (
    
     for(const [index, rClue] of replaceClues.entries()) {
       
-      const length = rClue.length as AnswerLength;
+      const length = rClue?.length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
-      console.log(`rClue ${rClue.id}: `, rClue);
+      console.log(`rClue ${rClue?.id}: `, rClue);
 
       let candidateAnswers = getMatches(
         wordList,
         replaceCluePattern[index],
-        rClue.answer.join("")
+        rClue!.answer.join("")
       );
 
-      const sharedLetter = getLetter(rClue, clue);
+      const sharedLetter = getLetter(rClue as Clue, clue);
 
-      if (sharedLetter && sharedLetter.rClueIndexndex !== undefined) {
+      if (sharedLetter && sharedLetter.rClueIndex !== undefined) {
         candidateAnswers = candidateAnswers.filter((answer) => {
           if (answer.word) {
             return (
@@ -675,7 +675,7 @@ const setClueAnswers = (
       console.log("candidates: ", candidateAnswers);
 
      
-      const usedLetters = [sharedLetter.letter];
+      const usedLetters = [sharedLetter?.letter];
       const uniqueAnswers = [];
 
       for (const answer of candidateAnswers) {
@@ -694,19 +694,30 @@ const setClueAnswers = (
       }
       // we need to break out of this once we set clue answer, rclue answer and update the intersecting clues
       for(const answer of uniqueAnswers){
-        // example, the answer we are replacing is meteoric, the first alt is historic
-        const oldLetter = clue.answer[sharedLetter?.clueIndex];
-        const candidateAnswer = [...clue.answer]; 
-        candidateAnswer[sharedLetter?.clueIndex] = answer[sharedLetter?.rClueIndex];
+        let oldLetter;
+        let candidateAnswer: string[] = [];
+        let regExp: RegExp | undefined;
+       
+        if(sharedLetter && sharedLetter.clueIndex && sharedLetter.rClueIndex){
+        oldLetter = sharedLetter.clueIndex !== undefined ? clue.answer[sharedLetter.clueIndex] : undefined;
+        candidateAnswer = [...clue.answer]; 
+        candidateAnswer[sharedLetter.clueIndex] = answer[sharedLetter.rClueIndex];
+        regExp = arrayToRegularExp(candidateAnswer);
+        }
+
+        // logs
         console.log("clue answer: ", clue.answer);
         console.log("candidate answer: ", candidateAnswer);
-        const regExp = arrayToRegularExp(candidateAnswer);
+        // logs
+
         const wordList = getWordList(clue.answer.length  as AnswerLength, AllAnswers);
+       
         const candidateAnswers = getMatches(
           wordList,
           regExp,
           candidateAnswer.join("")
         );
+      
         console.log("candidate answers : ",candidateAnswers);
         if (candidateAnswers.length > 0){
           if(candidateAnswers[0].word){
@@ -718,11 +729,14 @@ const setClueAnswers = (
 
             }
             
-          
+          if(rClue){
           rClue.answer = [...answer];         
-          console.log("clue answer: ", clue.answer);
-          console.log("rclue answer: ", rClue.answer);
 
+          }
+          // logs
+          console.log("clue answer: ", clue.answer);
+          console.log("rclue answer: ", rClue?.answer);
+          // logs
            // copied and pasted from the start of setClueAnswers
 
         // ****************** update intersecting clues below this
@@ -736,6 +750,7 @@ const setClueAnswers = (
         });
         // ****************** update intersecting clues above this 
         // updating rclue intersection?
+        if(rClue){
         rClue.intersection?.forEach((item) => {
           const clueToUpdate = clues.find((clue) => {
             return clue.id === item.id;
@@ -744,15 +759,17 @@ const setClueAnswers = (
           clueToUpdate.answer[item.yourIndex] = rClue.answer[item.myIndex];
          
         });
+      }
         
         // update the grid state with the letters
         for (let i = 0; i < clue.length; i++) {
           gridState[clue.indices[i]].letter = clue.answer[i];
         }
-
+if(rClue){
         for (let i = 0; i < rClue.length; i++) {
           gridState[rClue.indices[i]].letter = rClue.answer[i];
         }
+      }
         // update the grid state with the letters
         // we can break here?
           // we have found an answer and updated clue and rClue
@@ -799,9 +816,12 @@ const getWordList: (
 
 const getMatches = (
   possibleAnswers: Answer[],
-  regExp: RegExp,
+  regExp: RegExp | undefined,
   currentAnswer: string
 ) => {
+  if(!regExp){
+    return [];
+  }
   const candidateAnswers = possibleAnswers.filter((answer) => {
     if (answer.word !== undefined && answer.word !== currentAnswer) {
       return answer.word.match(regExp);
