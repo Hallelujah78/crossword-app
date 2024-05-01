@@ -872,6 +872,8 @@ before our swap.
 
 
 ## To Do
-- fix clue.intersection.letter not being updated correctly
+- ~~fix clue.intersection.letter not being updated correctly~~ DONE
 - add logic and check box to 'remove empty squares'
 - ensure answers are unique
+- we can't currently click 'generate clues' until we have toggled a square to dark or light on the board - clues and grid should be initialized on load
+  - also needs to be updated each time we toggle a square from dark to light

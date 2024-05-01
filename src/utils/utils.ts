@@ -884,20 +884,26 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
 };
 
 
-// code to update gridState letters and intersecting clues state
-// clue.intersection?.forEach((item) => {
-//   const clueToUpdate = clues.find((clue) => {
-//     return clue.id === item.id;
-//   })!;
 
-//   clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
-//   // my index 4 is yourindex 0
-//   // clueToUpdate[]
-// });
-// console.log(
-//   `setting answer for ${clue.id}, length: ${clue.length}: `,
-//   clue.answer
-// );
-// for (let i = 0; i < clue.length; i++) {
-//   gridState[clue.indices[i]].letter = clue.answer[i];
-// }
+export const initializeApp = (gridState: CellType[], setClueList: Dispatch<SetStateAction<Clue[]>>, setGridState: Dispatch<SetStateAction<CellType[]>>  ) =>{
+
+
+  const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
+
+  setClueNumbers(tempGrid);
+
+  const clues = createClues(tempGrid);
+
+  const acrossClues = getAcrossClues(clues);
+  const downClues = getDownClues(clues);
+  for (const clue of clues) {
+    if (clue.direction === Direction.DOWN) {
+      setCluesThatIntersect(clue, acrossClues);
+    } else setCluesThatIntersect(clue, downClues);
+  }
+  sortCluesDescendingLength(clues);
+  setClueList(clues);
+
+  setGridState(tempGrid);
+
+}
