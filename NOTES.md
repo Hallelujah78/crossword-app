@@ -872,6 +872,6 @@ before our swap.
 
 
 ## To Do
-- fix clue.intersection not being updated correctly
+- fix clue.intersection.letter not being updated correctly
 - add logic and check box to 'remove empty squares'
 - ensure answers are unique

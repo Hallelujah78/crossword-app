@@ -390,7 +390,7 @@ const gridState = [...grid];
         break;
     }
     if (endLoop) {
-      console.log("*** end loop is false! ***")
+      // console.log("*** end loop is false! ***")
       setClueList(clues);
       setGridState(gridState);
       
@@ -508,19 +508,19 @@ const setClueAnswers = (
       // my index 4 is yourindex 0
       // clueToUpdate[]
     });
-    console.log(
-      `setting answer for ${clue.id}, length: ${clue.length}: `,
-      clue.answer
-    );
+    // console.log(
+    //   `setting answer for ${clue.id}, length: ${clue.length}: `,
+    //   clue.answer
+    // );
     for (let i = 0; i < clue.length; i++) {
       gridState[clue.indices[i]].letter = clue.answer[i];
     }
   } else {
     // from this point - we are dealing with substituting intersecting clues
-    console.log(
-      `There are no possible answers for clue ${clue.id}`,
-      clue.answer
-    );
+    // console.log(
+    //   `There are no possible answers for clue ${clue.id}`,
+    //   clue.answer
+    // );
 
     
     const letterIndex = [];
@@ -594,7 +594,7 @@ const setClueAnswers = (
     const replaceCluePattern: RegExp[] = [];
 
     replaceClues.forEach((rClue: Clue | undefined) => {
-      //   console.log("rClue: ", rClue);
+      // console.log("rClue: ", rClue);
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
       const myTempAnswer = [...rClue!.answer];
@@ -607,19 +607,20 @@ const setClueAnswers = (
         intersectingClues.push(irClue!);
       }
 
-      console.log(
-        "clue: ",
-        clue.id,
-        "\nreplace clues: ",
-        replaceClues,
-        "\nintersect replace clues: ",
-        intersectingClues
-      );
+      // console.log(
+      //   "clue: ",
+      //   clue.id,
+      //   "\nreplace clues: ",
+      //   replaceClues,
+      //   "\nintersect replace clues: ",
+      //   intersectingClues
+      // );
 
       intersectingClues.forEach((item) => {
         let irClue;
 
-        console.log(item.answer.includes(""));
+        // console.log(item.answer.includes(""));
+
         if (item.answer.includes("")) {
           irClue = rClue!.intersection!.find((intersectObj) => {
             return intersectObj.id === item.id;
@@ -635,7 +636,8 @@ const setClueAnswers = (
           myTempAnswer[i] = "";
         }
       }
-      console.log("myanswer: ", myTempAnswer);
+      // console.log("myanswer: ", myTempAnswer);
+
       replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
     });
 
@@ -646,7 +648,8 @@ const setClueAnswers = (
       
       const length = rClue?.length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
-      console.log(`rClue ${rClue?.id}: `, rClue);
+
+      // console.log(`rClue ${rClue?.id}: `, rClue);
 
       let candidateAnswers = getMatches(
         wordList,
@@ -672,7 +675,7 @@ const setClueAnswers = (
         });
       }
 
-      console.log("candidates: ", candidateAnswers);
+      // console.log("candidates: ", candidateAnswers);
 
      
       const usedLetters = [sharedLetter?.letter];
@@ -706,8 +709,8 @@ const setClueAnswers = (
         }
 
         // logs
-        console.log("clue answer: ", clue.answer);
-        console.log("candidate answer: ", candidateAnswer);
+        // console.log("clue answer: ", clue.answer);
+        // console.log("candidate answer: ", candidateAnswer);
         // logs
 
         const wordList = getWordList(clue.answer.length  as AnswerLength, AllAnswers);
@@ -718,7 +721,8 @@ const setClueAnswers = (
           candidateAnswer.join("")
         );
       
-        console.log("candidate answers : ",candidateAnswers);
+        // console.log("candidate answers : ",candidateAnswers);
+
         if (candidateAnswers.length > 0){
           if(candidateAnswers[0].word){
             clue.answer = [...candidateAnswers[0].word];
@@ -734,30 +738,31 @@ const setClueAnswers = (
 
           }
           // logs
-          console.log("clue answer: ", clue.answer);
-          console.log("rclue answer: ", rClue?.answer);
+          // console.log("clue answer: ", clue.answer);
+          // console.log("rclue answer: ", rClue?.answer);
           // logs
            // copied and pasted from the start of setClueAnswers
 
         // ****************** update intersecting clues below this
         clue.intersection?.forEach((item) => {
+         
+        item.letter = clue.answer[item.myIndex];
           const clueToUpdate = clues.find((clue) => {
             return clue.id === item.id;
           })!;
-        
-          clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
          
+         
+          clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
         });
         // ****************** update intersecting clues above this 
         // updating rclue intersection?
         if(rClue){
         rClue.intersection?.forEach((item) => {
+          item.letter = rClue.answer[item.myIndex];
           const clueToUpdate = clues.find((clue) => {
             return clue.id === item.id;
           })!;
-        
           clueToUpdate.answer[item.yourIndex] = rClue.answer[item.myIndex];
-         
         });
       }
         
@@ -770,20 +775,15 @@ if(rClue){
           gridState[rClue.indices[i]].letter = rClue.answer[i];
         }
       }
-        // update the grid state with the letters
-        // we can break here?
-          // we have found an answer and updated clue and rClue
-        // return true;
         }
         // we need an else here if there are no candidate answers
        
 
-// return true here when we finish what we need to do
+
 
       }
    
     }
-    // return true;
   }
   return false;
 };
@@ -852,7 +852,7 @@ const logIntersectClueAnswers = (
     });
   });
   for (const intersectClue of intersectClues) {
-    console.log(`answer of ${intersectClue.id}: `, intersectClue.answer);
+    // console.log(`answer of ${intersectClue.id}: `, intersectClue.answer);
   }
 };
 

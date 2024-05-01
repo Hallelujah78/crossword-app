@@ -17167,12 +17167,7 @@ const five: Answer[] = [
     freq: 55617,
     raw: "SUCKY",
   },
-  {
-    freq: 55622,
-    raw: "MMM-HM",
-
-    word: "MMMHM",
-  },
+ 
   {
     freq: 55623,
     raw: "CLOZE",
@@ -29878,12 +29873,7 @@ const four = [
     freq: 56118,
     raw: "BUNG",
   },
-  {
-    freq: 56185,
-    raw: "Y-YES",
-
-    word: "YYES",
-  },
+  
   {
     freq: 56253,
     raw: "EBON",
