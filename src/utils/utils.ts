@@ -698,7 +698,7 @@ const setClueAnswers = (
         let candidateAnswer: string[] = [];
         let regExp: RegExp | undefined;
        
-        if(sharedLetter && sharedLetter.clueIndex && sharedLetter.rClueIndex){
+        if(sharedLetter && sharedLetter.clueIndex !== undefined && sharedLetter.rClueIndex !== undefined){
         oldLetter = sharedLetter.clueIndex !== undefined ? clue.answer[sharedLetter.clueIndex] : undefined;
         candidateAnswer = [...clue.answer]; 
         candidateAnswer[sharedLetter.clueIndex] = answer[sharedLetter.rClueIndex];
@@ -773,7 +773,7 @@ if(rClue){
         // update the grid state with the letters
         // we can break here?
           // we have found an answer and updated clue and rClue
-        return true;
+        // return true;
         }
         // we need an else here if there are no candidate answers
        
@@ -783,7 +783,7 @@ if(rClue){
       }
    
     }
-    return true;
+    // return true;
   }
   return false;
 };
