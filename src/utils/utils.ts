@@ -176,6 +176,8 @@ export const createClues = (grid: CellType[]) => {
   const clues: Clue[] = [];
   const clueIndices = getClueIndices(grid);
 
+  
+
   clueIndices.forEach((currIndex) => {
     // across clue
     if (grid[currIndex].right && !grid[currIndex].left) {
@@ -245,7 +247,7 @@ export const getClueIndices = (grid: CellType[]) => {
 };
 
 export const populateClues = (
-  clues: Clue[],
+  cluesState: Clue[],
   AllAnswers: {
     three: Answer[];
     four: Answer[];
@@ -259,10 +261,14 @@ export const populateClues = (
     twelve: Answer[];
     thirteen: Answer[];
   },
-  gridState: CellType[],
+  grid: CellType[],
   setGridState: Dispatch<SetStateAction<CellType[]>>,
   setClueList: Dispatch<SetStateAction<Clue[]>>,
 ) => {
+// copy the React state values
+const clues = [...cluesState];
+const gridState = [...grid];
+
   for (const clue of clues) {
     // let answer: string;
     let possibleAnswers: Answer[] = [];
@@ -385,11 +391,14 @@ export const populateClues = (
     }
     if (endLoop) {
       console.log("*** end loop is false! ***")
+      setClueList(clues);
       setGridState(gridState);
-      setClueList(clues)
+      
       break;
     }
   }
+  setClueList(clues);
+  setGridState(gridState);
   // console.log(clues);
 };
 
