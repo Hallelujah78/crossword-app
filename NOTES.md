@@ -813,7 +813,7 @@ setClueAnsewrs(){
 - the next rClue is SPIGOT or _ P _ G _ _, which has one candidate of APOGEE
   - now for 6down we are looking at E _ V _ T, and we have 0 candidates
   - again, the E and the V should have been reset to T and S respectively
-- this is fixd now
+- this is fixed now
 
 ### Weakness of this Approach
 - we have 3 clues that intersect our current clue
@@ -831,7 +831,46 @@ setClueAnsewrs(){
 - SPIGOT had 1 unique candidate - T or E
 - we can come back to this - important as we are not maximizing our chances of filling in all answers when constructing the crossword
 
-## Current Issue
+## Current Issues
 - The clue.intersection prop needs to be updated - it is showing old letters
 before our swap. 
-- Even though we are setting React state, our UI is not being redrawn and we have to click save in vscode to get it to update! Obviously not ideal!
+- ~~Even though we are setting React state, our UI is not being redrawn and we have to click save in vscode to get it to update! Obviously not ideal!~~ FIXED
+- we are not guaranteeing that our answers are unique - we don't want two clues to have the exact same answer!
+
+## How Deep is Your Love ... of Replacing Clues?
+- at the moment:
+  - we have a 'current clue' for which we can't find an answer
+  - we get the intersecting clues and try swapping those out to see if we can find an answer for our current clue
+    - to do this, we look at their intersecting clues
+- an example of a crossword we generated:
+  - we have a 'current clue': _ A _ G _ I
+  - the intersecting clues: MAGNOLIA, VOICING, DONOTHING (DO NOTHING)
+- as a human, we can see that our current clue ends with an I, making it probably harder to find an answer that fits
+  - we look at DONOTHING which is giving us our problem 'I'
+  - DONOTHING intersects with MIST
+  - reset DONOTHING: D _ N _ _ _ _ _ G
+  - if MIST is removed, its pattern is: _ I _ _
+  - a match for D _ N _ _ _ _ _ G is DINGDONG
+  - a match for _ I _ D (MIST) is BIRD
+  - a match for our current clue is DAYGLO - the pattern is _ A _ G _ O when we swap DINGDONG
+
+- in this case we are going one level deeper from the current clue
+- a possibility to achieve this is to provide buttons for each clue to find alternatives
+  - the user clicks the button for DONOTHING which will attempt to find alternatives for this answer by swapping out the intersecting clues
+    - this is basically the logic that we've already set up here
+
+- another option that can be included is a checkbox to remove empty squares
+  - we could simply remove the empty squares in our current clue: _ A _ G _ I
+  - this removes the clue 14 down (ID is 97DOWN)
+
+- another option, at some point we find a clue for which we cannot find an answer
+  - we try replacing all the intersecting clues
+  - this still yields no answer
+  - we skip to the next clue, leaving our answer blank
+- instead of skipping to the next clue, we might "do something useful"
+  - this has to involve going one level deeper, or pushing these answers to an array to be looked at later or something else
+
+
+## To Do
+- fix clue.intersection not being updated correctly
+- add logic and check box to 'remove empty squares'
