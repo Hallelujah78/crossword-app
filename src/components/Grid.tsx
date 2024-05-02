@@ -35,6 +35,7 @@ import { Direction } from "../models/Direction.model";
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
   const [clueList, setClueList] = useState<Clue[]>([]);
+  const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
 
   useEffect(()=>{
     initializeApp(gridState, setClueList, setGridState)
@@ -82,6 +83,7 @@ const Grid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return <Cell key={index} cell={cell} handleClick={handleClick} />;
       })}
+      <div className="control-container">
       <button
         onClick={() =>
           populateClues(clueList, AllAnswers, gridState, setGridState, setClueList)
@@ -89,6 +91,11 @@ const Grid: React.FC = () => {
       >
         Generate Clues
       </button>
+      <br/>
+      <label htmlFor="remove_blank">Remove Empty Clues</label>
+        <input checked={removeEmpty} onChange={()=>setRemoveEmpty(prev => !prev)} type="checkbox" name="remove_blank" id="remove_blank" />
+      </div>
+      
     </Wrapper>
   );
 };
@@ -99,9 +106,12 @@ const Wrapper = styled.div`
   display: grid;
   width: auto;
   height: auto;
-  button {
+  .control-container {
     position: absolute;
     top: 3rem;
     left: 3rem;
+    label{
+      color: white;
+    }
   }
 `;

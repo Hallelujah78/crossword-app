@@ -877,3 +877,10 @@ before our swap.
 - ensure answers are unique
 - ~~we can't currently click 'generate clues' until we have toggled a square to dark or light on the board - clues and grid should be initialized on load~~
   - ~~also needs to be updated each time we toggle a square from dark to light~~ DONE
+
+## Removing Empty Squares
+- empty squares - these are clues where there was no potential answer given the sequence of letters in the answer
+- updating the UI, gridState
+  - find all Cells where the letter is an empty string or undefined
+  - set isVoid to true
+  - update surrounding cells
