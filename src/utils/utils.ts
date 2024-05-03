@@ -5,7 +5,7 @@ import { Direction } from "../models/Direction.model";
 import Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import { Dispatch, SetStateAction } from "react";
-import { CgLayoutGrid } from "react-icons/cg";
+
 
 type AllAnswers = {
   three: Answer[];
@@ -407,14 +407,15 @@ let gridState = [...grid];
   
     emptyCells.forEach((cell)=>{
       cell.isVoid = true;
+      console.log(`**settting ${cell.id} to void**`)
       updateSurroundingCells(gridState, cell.id!);
       gridState[gridState.length - 1 - cell.id!].isVoid = true;
       updateSurroundingCells(gridState, gridState.length - 1 - cell.id!);
-     
+      console.log(`**settting ${gridState[gridState.length - 1 - cell.id!].id} to void**`)
     })
 
   }
- 
+  setClueNumbers(gridState);
   setClueList(clues);
   setGridState(gridState);
   
@@ -925,3 +926,30 @@ export const initializeApp = (gridState: CellType[], setClueList: Dispatch<SetSt
   setGridState(tempGrid);
 
 }
+
+
+const removeClue = (clues: Clue[], index: number): Clue[] =>{
+  
+  const cluesToRemove = clues.filter((clue)=>{
+    return clue.indices.includes(index)
+  })
+  if(!cluesToRemove || cluesToRemove.length === 0){
+    return clues;
+  }
+
+  let indicesToRemove: number[] = [];
+  if(cluesToRemove !== undefined){
+    for(const clue of cluesToRemove){
+      indicesToRemove.push(clues.indexOf(clue))
+    }
+
+  }
+  if(indicesToRemove.length > 0){
+    for(const index of indicesToRemove){
+      clues.splice(index, 1)
+    }
+  }
+  return clues;
+
+}
+

@@ -30104,6 +30104,10 @@ const four = [
     freq: 99999,
     raw: "OSLO",
   },
+  {
+    freq: 99999,
+    raw: "ISIS",
+  },
 ];
 
 const three = [

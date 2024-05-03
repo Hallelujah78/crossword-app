@@ -888,3 +888,21 @@ before our swap.
 
 ## To Do For 3/5/24
 - Clue instances in React state need to be updated when removing blank cells - this will involve the destruction of a clue that has blank cells set to void
+- walking through an example where we have blanks to remove and how that will affect our clues in React state:
+- we have the clue with the ID 26ACROSS, which is 9 Across. It has the indices: 26, 27, 28, 29, 30.
+- blank squares will always occur in non-intersecting cells? 
+  - I'm not sure this is true, it's probably possible to have two clues that intersect where neither clue has its answer filled in and so there is a blank intersection
+  - in either case, both clues can be removed if neither can have their answer set
+- what needs to be updated?
+  - the clue is removed from the array of Clue instances in React state
+  - gridState
+    - clueNumber must be unset if set
+      - when manually toggling a light to a void, this happens
+      - just call setClueNumbers(gridState)
+  - clueList
+    - example, index 19 is set to void in gridState
+    - this is part of Clue 6DOWN that has answer CASBAH
+      - clearly this was only removed to maintain rotational symmetry
+      - we get the index of this clue in clueList and splice
+        - we can get the clue by finding clues where the indices prop contains our index
+      - 6DOWN must be removed from the intersection prop of all other clues
