@@ -873,7 +873,7 @@ before our swap.
 
 ## To Do
 - ~~fix clue.intersection.letter not being updated correctly~~ DONE
-- add logic and check box to 'remove empty squares'
+- ~~add logic and check box to 'remove empty squares'~~ DONE
 - ensure answers are unique
 - ~~we can't currently click 'generate clues' until we have toggled a square to dark or light on the board - clues and grid should be initialized on load~~
   - ~~also needs to be updated each time we toggle a square from dark to light~~ DONE
@@ -884,3 +884,7 @@ before our swap.
   - find all Cells where the letter is an empty string or undefined
   - set isVoid to true
   - update surrounding cells
+  - ~~to preserve symmetry, also set symmetrical cells to void~~ DONE 
+
+## To Do For 3/5/24
+- Clue instances in React state need to be updated when removing blank cells - this will involve the destruction of a clue that has blank cells set to void

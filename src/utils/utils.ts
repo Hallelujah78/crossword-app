@@ -264,10 +264,12 @@ export const populateClues = (
   grid: CellType[],
   setGridState: Dispatch<SetStateAction<CellType[]>>,
   setClueList: Dispatch<SetStateAction<Clue[]>>,
+  removeEmpty: boolean,
+
 ) => {
 // copy the React state values
-const clues = [...cluesState];
-const gridState = [...grid];
+let clues = [...cluesState];
+let gridState = [...grid];
 
   for (const clue of clues) {
     // let answer: string;
@@ -390,16 +392,32 @@ const gridState = [...grid];
         break;
     }
     if (endLoop) {
-      // console.log("*** end loop is false! ***")
       setClueList(clues);
       setGridState(gridState);
-      
       break;
     }
   }
+  // gridState
+  if(removeEmpty){
+    const emptyCells = gridState.filter((cell)=>{
+      if(cell.isVoid !== true){
+        return cell.letter === undefined || cell.letter === "";
+      }
+    })
+  
+    emptyCells.forEach((cell)=>{
+      cell.isVoid = true;
+      updateSurroundingCells(gridState, cell.id!);
+      gridState[gridState.length - 1 - cell.id!].isVoid = true;
+      updateSurroundingCells(gridState, gridState.length - 1 - cell.id!);
+     
+    })
+
+  }
+ 
   setClueList(clues);
   setGridState(gridState);
-  // console.log(clues);
+  
 };
 
 export const sortCluesDescendingLength = (clues: Clue[]) => {
