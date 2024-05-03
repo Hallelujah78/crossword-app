@@ -45,6 +45,7 @@ const Grid: React.FC = () => {
     if (!e.currentTarget.id) {
       return;
     }
+    console.log(e.currentTarget.id)
     const targetIndex = +e.currentTarget.id;
 
     const symmetricalIndex = gridState.length - 1 - targetIndex;
@@ -89,10 +90,10 @@ const Grid: React.FC = () => {
           populateClues(clueList, AllAnswers, gridState, setGridState, setClueList, removeEmpty)
         }
       >
-        Generate Clues
+        Generate Answers
       </button>
       <br/>
-      <label htmlFor="remove_blank">Remove Empty Clues</label>
+      <label htmlFor="remove_blank">Remove Empty Cells</label>
         <input checked={removeEmpty} onChange={()=>setRemoveEmpty(prev => !prev)} type="checkbox" name="remove_blank" id="remove_blank" />
       </div>
       

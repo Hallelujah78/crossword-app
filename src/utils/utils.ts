@@ -78,6 +78,7 @@ export const findBottomEdge = (grid: CellType[]) => {
 export const setClueNumbers = (grid: CellType[]) => {
   let currentClueNum = 0;
   for (const item of grid) {
+    item.clueNumber = "";
     if (
       ((!item.top && !item.left) ||
         (item.top && !item.left && item.right) ||
@@ -86,9 +87,7 @@ export const setClueNumbers = (grid: CellType[]) => {
     ) {
       item.clueNumber = (currentClueNum + 1).toString();
       currentClueNum++;
-    } else {
-      item.clueNumber = "";
-    }
+    } 
   }
 };
 
@@ -407,9 +406,12 @@ let gridState = [...grid];
   
     emptyCells.forEach((cell)=>{
       cell.isVoid = true;
-      console.log(`**settting ${cell.id} to void**`)
+      removeClue(clues, cell.id!)
+      console.log(`**setting ${cell.id} to void**`)
       updateSurroundingCells(gridState, cell.id!);
       gridState[gridState.length - 1 - cell.id!].isVoid = true;
+      gridState[gridState.length - 1 - cell.id!].letter = "";
+      removeClue(clues, gridState.length - 1 - cell.id!)
       updateSurroundingCells(gridState, gridState.length - 1 - cell.id!);
       console.log(`**settting ${gridState[gridState.length - 1 - cell.id!].id} to void**`)
     })
@@ -936,11 +938,13 @@ const removeClue = (clues: Clue[], index: number): Clue[] =>{
   if(!cluesToRemove || cluesToRemove.length === 0){
     return clues;
   }
+  console.log(cluesToRemove);
 
   let indicesToRemove: number[] = [];
   if(cluesToRemove !== undefined){
     for(const clue of cluesToRemove){
       indicesToRemove.push(clues.indexOf(clue))
+      
     }
 
   }

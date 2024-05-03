@@ -884,7 +884,8 @@ before our swap.
   - find all Cells where the letter is an empty string or undefined
   - set isVoid to true
   - update surrounding cells
-  - ~~to preserve symmetry, also set symmetrical cells to void~~ DONE 
+  - ~~to preserve symmetry, also set symmetrical cells to void~~ DONE
+    - ~~these cells may have a letter, set this to an empty string!~~ DONE 
 
 ## To Do For 3/5/24
 - Clue instances in React state need to be updated when removing blank cells - this will involve the destruction of a clue that has blank cells set to void
