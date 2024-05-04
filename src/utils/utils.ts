@@ -5,6 +5,7 @@ import { Direction } from "../models/Direction.model";
 import Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import { Dispatch, SetStateAction } from "react";
+import { CgLayoutGrid } from "react-icons/cg";
 
 
 type AllAnswers = {
@@ -938,13 +939,35 @@ const removeClue = (clues: Clue[], index: number): Clue[] =>{
   if(!cluesToRemove || cluesToRemove.length === 0){
     return clues;
   }
-  console.log(cluesToRemove);
+
 
   let indicesToRemove: number[] = [];
   if(cluesToRemove !== undefined){
-    for(const clue of cluesToRemove){
-      indicesToRemove.push(clues.indexOf(clue))
+
+    for(const clueToRemove of cluesToRemove){
+      const removeId = clueToRemove.id;
+      indicesToRemove.push(clues.indexOf(clueToRemove))
+     
+      // console.log("clueToRemove intersection: ", clueToRemove.intersection);
+      // console.log("clueToRemove: ", clueToRemove)
+
       
+      for(const intersectObj of clueToRemove.intersection!){
+       
+        let index: number;
+        // get the intersectingClue
+        // get the index in the intersectingClue.intersection of: item.id === removeId
+        const intersectingClue = clues.find((clueItem)=>{
+          return clueItem.id === intersectObj.id;
+        })
+        index = intersectingClue?.intersection.findIndex((intersectingItem)=>{
+          return intersectingItem.id === removeId;
+        })
+        // console.log("index: ", index)
+        
+        // console.log("spliced intersection: ", intersectingClue?.intersection?.splice(index, 1));
+        // console.log("intersecting clue intersection: ", intersectingClue.intersection)
+      }
     }
 
   }
