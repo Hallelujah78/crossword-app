@@ -482,6 +482,7 @@ getCluesThatIntersect(oneAcross, cluesDown);
 - How I'm storing the existing words is not workable
   - the current list of 60k-ish words is uneditable due to sluggishness in the IDE
   - they need to be divided up into smaller files
+  - solved this buy getting a new computer! Probably should split the words to separate files if anyone else wants to use the repo
 
 ### Separate Out Setting the grid and generating the answers
 
@@ -579,7 +580,7 @@ cleaning up 4Across (which is what we are testing), we get:
 - the goal is to remove all  unshared letters AND the letter that 4across shares with 6Down, did we succeed?
 - The issue with determining this is we are in an else branch of a bunch of loops!
 - The letters that 6Down contains are a snapshot of 6Down in that moment
-- the clues get processed based on the answer length,  with those with a longer answer getting processed first
+- the clues get processed based on the answer length, with those with a longer answer getting processed first
   - therefore, it is possible  that the 'N' of Near Death hasn't been filled in yet
   - however, 6down has a length of 6, 4across is 9, 4down is 8
   - this means that the order of processing is: 4across, 4down, 6down
@@ -870,16 +871,8 @@ before our swap.
 - instead of skipping to the next clue, we might "do something useful"
   - this has to involve going one level deeper, or pushing these answers to an array to be looked at later or something else
 
-
-## To Do
-- ~~fix clue.intersection.letter not being updated correctly~~ DONE
-- ~~add logic and check box to 'remove empty squares'~~ DONE
-- ensure answers are unique
-- ~~we can't currently click 'generate clues' until we have toggled a square to dark or light on the board - clues and grid should be initialized on load~~
-  - ~~also needs to be updated each time we toggle a square from dark to light~~ DONE
-
 ## Removing Empty Squares
-- empty squares - these are clues where there was no potential answer given the sequence of letters in the answer
+- empty squares - these are clues where there was no potential answer given the sequence of letters already in the answer
 - updating the UI, gridState
   - find all Cells where the letter is an empty string or undefined
   - set isVoid to true
@@ -907,3 +900,47 @@ before our swap.
       - we get the index of this clue in clueList and splice
         - we can get the clue by finding clues where the indices prop contains our index
       - 6DOWN must be removed from the intersection prop of all other clues
+
+
+
+## To Do - gathered from reviewing the notes
+- make sure answers are unique
+- grid validation
+  - inform the user if the grid is a valid layout
+  - highlight the parts that are not valid or the reason it is not valid
+- in the intersection, the letter prop is not set on all objects
+  - what are we using the letter prop for again? :grinning:
+  - this is a good question, not sure its function was realized!
+  - it appears here:
+
+```js
+
+let intersectingClueIndex;
+    for (const intersectClue of cluesToSwap) {
+      const clueId = intersectClue.id;
+      intersectingClueIndex = clue.intersection!.find((item) => {
+        return clueId === item.id;
+      })!.myIndex!;
+
+      intersectClue.letter = clue.answer[intersectingClueIndex];
+
+      replaceClues.push(
+        clues.find((item) => {
+          return intersectClue.id === item.id;
+        })
+      );
+    }
+```
+
+- and here:
+```js
+  clue.intersection?.forEach((item) => {
+            item.letter = clue.answer[item.myIndex];
+            const clueToUpdate = clues.find((clue) => {
+              return clue.id === item.id;
+            })!;
+
+            clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+          });
+```
+- I've searched through notes and utils file and we don't appear to be using the letter prop for anything! We set it and update it in a couple of places, but we aren't reading it or making use of it.
