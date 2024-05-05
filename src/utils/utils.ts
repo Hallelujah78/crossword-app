@@ -499,14 +499,8 @@ const setClueAnswers = (
   let regExp: RegExp;
   if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
     regExp = arrayToRegularExp(clue.answer)!;
-    // console.log(`${clue.id}: `, regExp);
-    possibleAnswers = possibleAnswers.filter((answer) => {
-      if (answer.word !== undefined) {
-        return answer.word.match(regExp);
-      } else {
-        return answer.raw.match(regExp);
-      }
-    });
+   
+    possibleAnswers = getMatches(possibleAnswers, regExp, clue.answer.join(""));
   }
 
   // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
@@ -948,16 +942,19 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
       // console.log("clueToRemove: ", clueToRemove)
 
       for (const intersectObj of clueToRemove.intersection!) {
-        let index: number;
+        let index;
         // get the intersectingClue
         // get the index in the intersectingClue.intersection of: item.id === removeId
         const intersectingClue = clues.find((clueItem) => {
           return clueItem.id === intersectObj.id;
         });
-        index = intersectingClue?.intersection.findIndex((intersectingItem) => {
+        index = intersectingClue?.intersection!.findIndex((intersectingItem) => {
           return intersectingItem.id === removeId;
         });
+        if(index !== undefined){
         intersectingClue?.intersection?.splice(index, 1);
+
+        }
         // console.log("index: ", index)
 
         // console.log("spliced intersection: ", intersectingClue?.intersection?.splice(index, 1));

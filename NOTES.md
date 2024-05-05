@@ -944,3 +944,38 @@ let intersectingClueIndex;
           });
 ```
 - I've searched through notes and utils file and we don't appear to be using the letter prop for anything! We set it and update it in a couple of places, but we aren't reading it or making use of it.
+- we also have an oldLetter variable that is declared and set but never read/used
+### comprehensive swapping approach
+- we need a more comprehensive approach to swapping clues out, such that we construct all possible patterns
+  - example: we have a clue (A) with 2 intersecting clues (X and Y) that can be swapped out
+  - we drop the letter that intersects with A from X 
+  - we now have a sequence of letters in X that we can find matches for alternatives
+    - we use unique letters
+    - let's say that X has 3 possible replacements that have the letters C, D, E
+  - we do the same for Y and we find it has 3 possible replacements that have the letters L, M, N
+  - the clue A now has a bunch of patterns to match against. Assume X intersects with A at index 0 of A and Y intersects with A at index 3 and A is 4 letters long
+  - A looks like: _ _ _ _
+  - the patterns for A: 
+  C _ _ L 
+  C _ _ M 
+  C _ _ N
+  D _ _ L
+  D _ _ M
+  D _ _ N
+  E _ _ L
+  E _ _ M
+  E _ _ N
+  - we've also omitted the original letters that were in A and common to X and Y, let's say they were B and K respectively
+  - originally the pattern for A looked like: B _ _ K but there were no matches in our word list (who reads books anymore?)
+  - we should not try to match that pattern again BUT we also have the patterns:
+  B _ _ L
+  B _ _ M
+  B _ _ N
+  C _ _ K
+  D _ _ K
+  E _ _ K
+
+
+## Make Sure Answers are Unique
+- we have a getMatches function that takes an array of all possible answers, a RegExp to match against, and the current clue answer
+- this function is called in two locations
