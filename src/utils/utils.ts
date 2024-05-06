@@ -500,7 +500,7 @@ const setClueAnswers = (
   if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
     regExp = arrayToRegularExp(clue.answer)!;
    
-    possibleAnswers = getMatches(possibleAnswers, regExp, clue.answer.join(""));
+    possibleAnswers = getMatches(possibleAnswers, regExp, clue.answer.join(""), clues);
   }
 
   // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
@@ -517,8 +517,7 @@ const setClueAnswers = (
       })!;
 
       clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
-      // my index 4 is yourindex 0
-      // clueToUpdate[]
+      
     });
     // console.log(
     //   `setting answer for ${clue.id}, length: ${clue.length}: `,
@@ -667,7 +666,8 @@ const setClueAnswers = (
       let candidateAnswers = getMatches(
         wordList,
         replaceCluePattern[index],
-        rClue!.answer.join("")
+        rClue!.answer.join(""),
+        clues
       );
 
       const sharedLetter = getLetter(rClue as Clue, clue);
@@ -743,7 +743,8 @@ const setClueAnswers = (
         const candidateAnswers = getMatches(
           wordList,
           regExp,
-          candidateAnswer.join("")
+          candidateAnswer.join(""),
+          clues
         );
 
         // console.log("candidate answers : ",candidateAnswers);
@@ -831,15 +832,25 @@ const getWordList: (
 const getMatches = (
   possibleAnswers: Answer[],
   regExp: RegExp | undefined,
-  currentAnswer: string
+  currentAnswer: string,
+  clues: Clue[]
 ) => {
   if (!regExp) {
     return [];
   }
+  const currentAnswers: string[] = []; 
+  
+  for(const clue of clues){
+    const currentAnswer = clue.answer;
+    if(!currentAnswer.includes("")){
+      currentAnswers.push(currentAnswer.join("")); 
+    }
+  }
+  
   const candidateAnswers = possibleAnswers.filter((answer) => {
-    if (answer.word !== undefined && answer.word !== currentAnswer) {
+    if (answer.word !== undefined && answer.word !== currentAnswer && !currentAnswers.includes(answer.word)) {
       return answer.word.match(regExp);
-    } else if (answer.raw !== currentAnswer) {
+    } else if (answer.raw !== currentAnswer && !currentAnswers.includes(answer.raw)) {
       return answer.raw.match(regExp);
     }
   });
