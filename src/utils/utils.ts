@@ -982,8 +982,26 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
 };
 
 
-const resetIntersectClues = (clue: Clue) =>{
-  const clueId = clue.id;
+export const getIntersectingClues = (clue: Clue, clues: Clue[]) =>{
+  
   const intersection = clue.intersection;
+  const intersectingClues: Clue[] = [];
+  for(const intersectObject of intersection){
+      const intersectingClue = clues.find((clue)=>{
+        return clue.id === intersectObject.id;
+      })
+      if(intersectingClue){
+        intersectingClues.push(intersectingClue)
+      }
+  }
+  console.log("intersecting clues: ", intersectingClues)
+  return intersectingClues;
+}
 
+export const getIncompleteAnswers = (clues: Clue[]) =>{
+  const incomplete = clues.filter((clue)=>{
+    return clue.answer.includes("");
+  })
+  console.log(incomplete)
+  return incomplete;
 }

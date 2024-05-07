@@ -29,6 +29,8 @@ import {
   setCluesThatIntersect,
   sortCluesDescendingLength,
   initializeApp,
+  getIncompleteAnswers,
+  getIntersectingClues,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -95,6 +97,22 @@ const Grid: React.FC = () => {
       <br/>
       <label htmlFor="remove_blank">Remove Empty Cells</label>
         <input checked={removeEmpty} onChange={()=>setRemoveEmpty(prev => !prev)} type="checkbox" name="remove_blank" id="remove_blank" />
+        <br/>
+        <button
+        onClick={() =>
+          getIncompleteAnswers(clueList)
+        }
+      >
+        Get Incomplete Answers
+      </button>
+      <br/>
+        <button
+        onClick={() =>
+          getIntersectingClues(getIncompleteAnswers(clueList)[0], clueList)
+        }
+      >
+        Get Intersecting Clues
+      </button>
       </div>
       
     </Wrapper>
