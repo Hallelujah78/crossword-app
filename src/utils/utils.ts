@@ -980,3 +980,10 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
   }
   return clues;
 };
+
+
+const resetIntersectClues = (clue: Clue) =>{
+  const clueId = clue.id;
+  const intersection = clue.intersection;
+
+}

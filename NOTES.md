@@ -904,7 +904,7 @@ before our swap.
 
 
 ## To Do - gathered from reviewing the notes
-- make sure answers are unique
+- ~~make sure answers are unique~~ DONE
 - grid validation
   - inform the user if the grid is a valid layout
   - highlight the parts that are not valid or the reason it is not valid
@@ -979,3 +979,93 @@ let intersectingClueIndex;
 ## Make Sure Answers are Unique
 - we have a getMatches function that takes an array of all possible answers, a RegExp to match against, and the current clue answer
 - this function is called in two locations
+- this is done
+
+## Swapping Approach Example
+- we have 26ACROSS: E _ I _ N 
+- intersects with:
+13DOWN: _ _ _ A _ I _ N _ H _ P - RELATIONSHIP, the E intersects with 26ACROSS
+
+15DOWN: _ _ _ T _ A _ T _ D _ Y - DISTRACTEDLY, the I intersects with 26ACROSS
+
+4DOWN: P _ _ _ T _ I _ - PONYTAIL, the N intersects with 26ACROSS
+
+- find all words that fit in each intersecting answer, one per letter
+  - we have code that does this
+  - do this for each intersecting answer
+- we end up with three arrays: 
+letters for 13DOWN [A, B, C]
+letters for 15DOWN [D, E, F]
+letters for 4DOWN [G, H, I]
+- for 26ACROSS, we have to come up with all the permutations for matching patterns
+- see if we can find a matching word for any of the permutations, then find a match for each of our intersecting clues based on the answer we input to our current clue
+
+```js
+ const cluesToSwap.push(
+        ...clue.intersection!.filter((item) => {
+          return item.myIndex === index;
+        })
+      );
+
+let intersectingClueIndex;
+    for (const intersectClue of cluesToSwap) {
+      const clueId = intersectClue.id;
+      intersectingClueIndex = clue.intersection!.find((item) => {
+        return clueId === item.id;
+      })!.myIndex!;
+
+      intersectClue.letter = clue.answer[intersectingClueIndex];
+
+      replaceClues.push(
+        clues.find((item) => {
+          return intersectClue.id === item.id;
+        })
+      );
+    }
+
+```
+- cluesToSwap are the intersection objects in our clue.intersection.
+  - they hold the id and yourIndex
+- replaceClues is an array of Clues to be swapped
+- do some logging on the below code and see what we can reuse or tweak
+- this just creates the patterns for the replacement clues,  whereas we still just want to come up with comprehensive patterns for our current clue
+```js
+ const replaceCluePattern: RegExp[] = [];
+
+    replaceClues.forEach((rClue: Clue | undefined) => {
+      const intersectingClues: Clue[] = [];
+      const myIndices: number[] = [];
+      const myTempAnswer = [...rClue!.answer];
+
+      for (const intersectObj of rClue!.intersection!) {
+        myIndices.push(intersectObj.myIndex);
+        const irClue = clues.find((item) => {
+          return item.id === intersectObj.id;
+        });
+        intersectingClues.push(irClue!);
+      }
+      intersectingClues.forEach((item) => {
+        let irClue;
+
+        // console.log(item.answer.includes(""));
+
+        if (item.answer.includes("")) {
+          irClue = rClue!.intersection!.find((intersectObj) => {
+            return intersectObj.id === item.id;
+          });
+        }
+        if (irClue) {
+          myTempAnswer[irClue.myIndex] = "";
+        }
+      });
+
+      for (let i = 0; i < myTempAnswer.length; ++i) {
+        if (!myIndices.includes(i)) {
+          myTempAnswer[i] = "";
+        }
+      }
+      // console.log("myanswer: ", myTempAnswer);
+
+      replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
+    });
+```
