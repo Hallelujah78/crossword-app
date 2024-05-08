@@ -31,6 +31,7 @@ import {
   initializeApp,
   getIncompleteAnswers,
   getIntersectingClues,
+  resetClue,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -112,6 +113,14 @@ const Grid: React.FC = () => {
         }
       >
         Get Intersecting Clues
+      </button>
+      <br/>
+        <button
+        onClick={() =>
+          resetClue( getIntersectingClues(getIncompleteAnswers(clueList)[0], clueList)[0])
+        }
+      >
+        Reset Clue
       </button>
       </div>
       

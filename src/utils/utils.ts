@@ -1005,3 +1005,14 @@ export const getIncompleteAnswers = (clues: Clue[]) =>{
   console.log(incomplete)
   return incomplete;
 }
+
+export const resetClue = (clue: Clue)=>{
+  const tempAnswer = [...clue.answer];
+  // answer: ['I', 'C', 'E', 'M', 'A', 'K', 'E', 'R']
+  for(const [index, letter] of clue.answer.entries()){
+    if(clue.intersection?.find((item)=>{return index === item.myIndex})){
+
+    }
+
+  }
+}
