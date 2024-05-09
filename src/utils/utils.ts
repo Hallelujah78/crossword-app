@@ -994,7 +994,6 @@ export const getIntersectingClues = (clue: Clue, clues: Clue[]) =>{
         intersectingClues.push(intersectingClue)
       }
   }
-  console.log("intersecting clues: ", intersectingClues)
   return intersectingClues;
 }
 
@@ -1002,7 +1001,6 @@ export const getIncompleteAnswers = (clues: Clue[]) =>{
   const incomplete = clues.filter((clue)=>{
     return clue.answer.includes("");
   })
-  console.log(incomplete)
   return incomplete;
 }
 
@@ -1010,8 +1008,12 @@ export const resetClue = (clue: Clue)=>{
   const tempAnswer = [...clue.answer];
   // answer: ['I', 'C', 'E', 'M', 'A', 'K', 'E', 'R']
   for(const [index, letter] of clue.answer.entries()){
-    if(clue.intersection?.find((item)=>{return index === item.myIndex})){
 
+    if(clue.intersection?.find((item)=>{
+      console.log(item)
+      return index === item.myIndex;
+      
+    })){
     }
 
   }
