@@ -994,6 +994,7 @@ export const getIntersectingClues = (clue: Clue, clues: Clue[]) =>{
         intersectingClues.push(intersectingClue)
       }
   }
+  console.log("intersecting clue: ", intersectingClues)
   return intersectingClues;
 }
 
@@ -1004,17 +1005,22 @@ export const getIncompleteAnswers = (clues: Clue[]) =>{
   return incomplete;
 }
 
-export const resetClue = (clue: Clue)=>{
-  const tempAnswer = [...clue.answer];
+export const resetIntersectClue = (iClue: Clue, currClueId: string)=>{
+  const tempAnswer = [...iClue.answer];
   // answer: ['I', 'C', 'E', 'M', 'A', 'K', 'E', 'R']
-  for(const [index, letter] of clue.answer.entries()){
 
-    if(clue.intersection?.find((item)=>{
-      console.log(item)
-      return index === item.myIndex;
-      
-    })){
+  const sharedIndices: number[] = [];
+  iClue.intersection?.every((item)=>{
+    if(item.id !== currClueId){
+    sharedIndices.push(item.myIndex);
+    }
+  })
+  for(const [index, letter] of iClue.answer.entries()){
+
+    if(!sharedIndices.includes(index)){
+      tempAnswer[index] = "";
     }
 
   }
+  console.log(tempAnswer)
 }
