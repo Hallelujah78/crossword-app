@@ -32,6 +32,10 @@ import {
   getIncompleteAnswers,
   getIntersectingClues,
   resetIntersectClue,
+  arrayToRegularExp,
+  getWordList,
+  AnswerLength,
+  getMatches,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -43,6 +47,24 @@ const Grid: React.FC = () => {
   useEffect(()=>{
     initializeApp(gridState, setClueList, setGridState)
   },[])
+
+  const handleResetClue = ()=>{
+    const incomplete = getIncompleteAnswers(clueList);
+    const intersecting = getIntersectingClues(incomplete[0], clueList);
+    const resetAnswer = resetIntersectClue(intersecting[0], incomplete[0].id);
+    const pattern = arrayToRegularExp(resetAnswer);
+    const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
+    const matches = getMatches(wordList, pattern, resetAnswer.join(""), clueList);
+    console.log(matches);
+
+    // resetAnswer can be converted to a pattern we match against
+    // then we want a unique letter in the position we intersect with the clue that has missing answers
+    // for each matching answer we push the intersecting letter to an array if it is not already in the array
+    // this array represents the group of letters that might appear at the shared position in our current incomplete answer
+    // we repeat this for all intersecting clues
+    // if an incomplete answer intersects with, say, 3 other clues, we will have 3 arrays of letters
+    // we use combinations of these letters to create patterns that we can use to find a potential answer for our current incomplete answer
+  }
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
@@ -117,7 +139,7 @@ const Grid: React.FC = () => {
       <br/>
         <button
         onClick={() =>
-          resetIntersectClue( getIntersectingClues(getIncompleteAnswers(clueList)[0], clueList)[1], "26ACROSS")
+          handleResetClue()
         }
       >
         Reset Clue

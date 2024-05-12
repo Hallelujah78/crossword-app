@@ -818,10 +818,10 @@ const AnswerMapping = {
   13: "thirteen",
 } as const;
 
-type AnswerLength = keyof typeof AnswerMapping;
-type AllAnswerKey = keyof typeof AllAnswers;
+export type AnswerLength = keyof typeof AnswerMapping;
+export type AllAnswerKey = keyof typeof AllAnswers;
 
-const getWordList: (
+export const getWordList: (
   answerLength: AnswerLength,
   AllAnswers: AllAnswers
 ) => Answer[] = (answerLength, AllAnswers) => {
@@ -829,7 +829,7 @@ const getWordList: (
   return AllAnswers[allAnswerKey];
 };
 
-const getMatches = (
+export const getMatches = (
   possibleAnswers: Answer[],
   regExp: RegExp | undefined,
   currentAnswer: string,
@@ -1007,20 +1007,24 @@ export const getIncompleteAnswers = (clues: Clue[]) =>{
 
 export const resetIntersectClue = (iClue: Clue, currClueId: string)=>{
   const tempAnswer = [...iClue.answer];
-  // answer: ['I', 'C', 'E', 'M', 'A', 'K', 'E', 'R']
+ 
 
   const sharedIndices: number[] = [];
-  iClue.intersection?.every((item)=>{
+  iClue.intersection?.forEach((item)=>{
+  
     if(item.id !== currClueId){
     sharedIndices.push(item.myIndex);
     }
+    
   })
+ 
   for(const [index, letter] of iClue.answer.entries()){
 
     if(!sharedIndices.includes(index)){
       tempAnswer[index] = "";
     }
+   
 
   }
-  console.log(tempAnswer)
+  return tempAnswer;
 }
