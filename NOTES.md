@@ -782,6 +782,17 @@ setClueAnsewrs(){
 - this function updates the current clue answer, the grid state and the array of Clues but does not directly update React state
 - returns void
 
+#### getMatches
+- takes 4 params 
+  - possibleAnswers, an array of Answer types
+  - a RegExp, a pattern to match against our possibleAnswers
+  - the current answer, a string
+  - an array of all Clue instances
+- the function uses the regexp to find all possible matches in possibleAnswers but EXCLUDES matches where:
+  - the word has already appeared as an answer in our crossword
+  - the answer matches the existing answer
+- it returns a filtered array of Answer types
+
 ### Word List Cleaning Functions
 
 #### removeChars

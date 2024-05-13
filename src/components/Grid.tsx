@@ -36,8 +36,13 @@ import {
   getWordList,
   AnswerLength,
   getMatches,
+  getLetter,
+  SharedLetter,
+  getAllMatches,
+  createUniqueLetterList,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
+import Answer from "../models/Answer.model";
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
@@ -50,12 +55,24 @@ const Grid: React.FC = () => {
 
   const handleResetClue = ()=>{
     const incomplete = getIncompleteAnswers(clueList);
+    console.log("first incomplete clue: ", incomplete[0])
     const intersecting = getIntersectingClues(incomplete[0], clueList);
+    console.log("first clue that intersects the first incomplete clue: ", intersecting[0])
+
     const resetAnswer = resetIntersectClue(intersecting[0], incomplete[0].id);
+    console.log("the reset answer: ", resetAnswer);
     const pattern = arrayToRegularExp(resetAnswer);
+    console.log("the regexp pattern: ", pattern)
     const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
-    const matches = getMatches(wordList, pattern, resetAnswer.join(""), clueList);
-    console.log(matches);
+    console.log("word list: ", wordList)
+    const matches = getAllMatches(wordList, pattern, intersecting[0].answer.join(""), clueList);
+    console.log("the matches: ", matches);
+    // stick the letter at the intersection position into an array if it is not aleady in there
+    const sharedLetter = getLetter(intersecting[0], incomplete[0]);
+
+    
+    const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
+    console.log("unique letters: ", uniqueLetters)
 
     // resetAnswer can be converted to a pattern we match against
     // then we want a unique letter in the position we intersect with the clue that has missing answers

@@ -829,6 +829,7 @@ export const getWordList: (
   return AllAnswers[allAnswerKey];
 };
 
+// getMatches exludes the current answer
 export const getMatches = (
   possibleAnswers: Answer[],
   regExp: RegExp | undefined,
@@ -856,6 +857,42 @@ export const getMatches = (
   });
   return candidateAnswers;
 };
+
+
+export const getAllMatches = (
+  possibleAnswers: Answer[],
+  regExp: RegExp | undefined,
+  currentAnswer: string,
+  clues: Clue[]
+) => {
+  if (!regExp) {
+    return [];
+  }
+  const currentAnswers: string[] = []; 
+  
+  for(const clue of clues){
+    const clueAnswer = clue.answer;
+    console.log("current ans param: ", currentAnswer);
+    console.log("clue answer in for loop: ", clueAnswer.join(""));
+    if(!clueAnswer.includes("") && clueAnswer.join("") !== currentAnswer){
+      currentAnswers.push(clueAnswer.join("")); 
+    }
+  }
+
+  console.log("***curr answers***: ", currentAnswers)
+
+
+  
+  const candidateAnswers = possibleAnswers.filter((answer) => {
+    if (answer.word !== undefined  && !currentAnswers.includes(answer.word)) {
+      return answer.word.match(regExp);
+    } else if ( !currentAnswers.includes(answer.raw)) {
+      return answer.raw.match(regExp);
+    }
+  });
+  return candidateAnswers;
+};
+
 // ** testing only
 const logIntersectClueAnswers = (
   intersection:
@@ -881,12 +918,14 @@ const logIntersectClueAnswers = (
   }
 };
 
-export const getLetter = (rClue: Clue, currentClue: Clue) => {
-  interface SharedLetter {
+ export interface SharedLetter {
     rClueIndex: number | undefined;
     clueIndex: number | undefined;
     letter: string | undefined;
   }
+
+export const getLetter = (rClue: Clue, currentClue: Clue) => {
+ 
   const sharedLetter: SharedLetter = {
     rClueIndex: undefined,
     letter: undefined,
@@ -984,8 +1023,9 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
 
 export const getIntersectingClues = (clue: Clue, clues: Clue[]) =>{
   
-  const intersection = clue.intersection;
+  const intersection = clue?.intersection;
   const intersectingClues: Clue[] = [];
+  if(intersection){
   for(const intersectObject of intersection){
       const intersectingClue = clues.find((clue)=>{
         return clue.id === intersectObject.id;
@@ -994,6 +1034,7 @@ export const getIntersectingClues = (clue: Clue, clues: Clue[]) =>{
         intersectingClues.push(intersectingClue)
       }
   }
+}
   console.log("intersecting clue: ", intersectingClues)
   return intersectingClues;
 }
@@ -1028,3 +1069,15 @@ export const resetIntersectClue = (iClue: Clue, currClueId: string)=>{
   }
   return tempAnswer;
 }
+
+export const createUniqueLetterList = (sharedLetter: SharedLetter, matches: Answer[]) =>{
+      const uniqueLetters: string[] = [];
+      console.log("shared letter: ", sharedLetter);
+      for(const match of matches){
+        const word = match.word ? match.word : match.raw; 
+       if(!uniqueLetters.includes(word[sharedLetter.rClueIndex])){
+        uniqueLetters.push(word[sharedLetter.rClueIndex])
+       }
+      }
+      return uniqueLetters;
+    }
