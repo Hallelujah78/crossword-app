@@ -872,17 +872,11 @@ export const getAllMatches = (
   
   for(const clue of clues){
     const clueAnswer = clue.answer;
-    console.log("current ans param: ", currentAnswer);
-    console.log("clue answer in for loop: ", clueAnswer.join(""));
     if(!clueAnswer.includes("") && clueAnswer.join("") !== currentAnswer){
       currentAnswers.push(clueAnswer.join("")); 
     }
   }
 
-  console.log("***curr answers***: ", currentAnswers)
-
-
-  
   const candidateAnswers = possibleAnswers.filter((answer) => {
     if (answer.word !== undefined  && !currentAnswers.includes(answer.word)) {
       return answer.word.match(regExp);
@@ -1071,13 +1065,40 @@ export const resetIntersectClue = (iClue: Clue, currClueId: string)=>{
 }
 
 export const createUniqueLetterList = (sharedLetter: SharedLetter, matches: Answer[]) =>{
-      const uniqueLetters: string[] = [];
+      
+      const uniqueLetters: {index: number | undefined, letters: string[]} = {index: sharedLetter.clueIndex, letters: []}
       console.log("shared letter: ", sharedLetter);
       for(const match of matches){
         const word = match.word ? match.word : match.raw; 
-       if(!uniqueLetters.includes(word[sharedLetter.rClueIndex])){
-        uniqueLetters.push(word[sharedLetter.rClueIndex])
+       if(!uniqueLetters.letters.includes(word[sharedLetter.rClueIndex])){
+        uniqueLetters.letters.push(word[sharedLetter.rClueIndex])
        }
       }
       return uniqueLetters;
     }
+
+  export function generateCombinations(options, currentIndex = 0, currentCombination = []) {
+    // Base case: if we have reached the last index, add the current combination to the result
+    if (currentIndex === options.length) {
+        return [currentCombination];
+    }
+
+    const currentOptions = options[currentIndex].letters;
+    const combinations = [];
+
+    // Iterate over each option for the current index
+    for (const option of currentOptions) {
+        // Create a copy of the current combination
+        const newCombination = [...currentCombination];
+        // Set the current option at the current index
+        newCombination[currentIndex] = option;
+        // Recursively generate combinations for the next index
+        const nextCombinations = generateCombinations(options, currentIndex + 1, newCombination);
+        // Add the combinations generated for the next index to the result
+        combinations.push(...nextCombinations);
+    }
+
+    return combinations;
+}
+
+

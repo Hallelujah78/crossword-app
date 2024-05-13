@@ -40,6 +40,7 @@ import {
   SharedLetter,
   getAllMatches,
   createUniqueLetterList,
+  generateCombinations,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 import Answer from "../models/Answer.model";
@@ -54,25 +55,47 @@ const Grid: React.FC = () => {
   },[])
 
   const handleResetClue = ()=>{
+    const allUniqueLetters = [];
     const incomplete = getIncompleteAnswers(clueList);
     console.log("first incomplete clue: ", incomplete[0])
     const intersecting = getIntersectingClues(incomplete[0], clueList);
     console.log("first clue that intersects the first incomplete clue: ", intersecting[0])
 
-    const resetAnswer = resetIntersectClue(intersecting[0], incomplete[0].id);
+
+    for(const clue of intersecting){
+      const resetAnswer = resetIntersectClue(clue, incomplete[0].id);
     console.log("the reset answer: ", resetAnswer);
-    const pattern = arrayToRegularExp(resetAnswer);
+      const pattern = arrayToRegularExp(resetAnswer);
     console.log("the regexp pattern: ", pattern)
     const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
     console.log("word list: ", wordList)
-    const matches = getAllMatches(wordList, pattern, intersecting[0].answer.join(""), clueList);
+    const matches = getAllMatches(wordList, pattern, clue.answer.join(""), clueList);
     console.log("the matches: ", matches);
-    // stick the letter at the intersection position into an array if it is not aleady in there
-    const sharedLetter = getLetter(intersecting[0], incomplete[0]);
-
-    
+    const sharedLetter = getLetter(clue, incomplete[0]);
     const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
     console.log("unique letters: ", uniqueLetters)
+    allUniqueLetters.push(uniqueLetters)
+    }
+    console.log(allUniqueLetters)
+    const allCombos = generateCombinations(allUniqueLetters)
+    console.log("allCombos: ", allCombos)
+    //  const resetAnswer = resetIntersectClue(intersecting[0], incomplete[0].id);
+    // console.log("the reset answer: ", resetAnswer);
+
+    // const pattern = arrayToRegularExp(resetAnswer);
+    // console.log("the regexp pattern: ", pattern)
+
+    // const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
+    // console.log("word list: ", wordList)
+
+    // const matches = getAllMatches(wordList, pattern, intersecting[0].answer.join(""), clueList);
+    // console.log("the matches: ", matches);
+    // stick the letter at the intersection position into an array if it is not aleady in there
+    // const sharedLetter = getLetter(intersecting[0], incomplete[0]);
+
+    
+    // const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
+    // console.log("unique letters: ", uniqueLetters)
 
     // resetAnswer can be converted to a pattern we match against
     // then we want a unique letter in the position we intersect with the clue that has missing answers
