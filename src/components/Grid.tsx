@@ -35,15 +35,13 @@ import {
   arrayToRegularExp,
   getWordList,
   AnswerLength,
-  getMatches,
   getLetter,
-  SharedLetter,
   getAllMatches,
   createUniqueLetterList,
   generateCombinations,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
-import Answer from "../models/Answer.model";
+
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
@@ -76,34 +74,31 @@ const Grid: React.FC = () => {
     console.log("unique letters: ", uniqueLetters)
     allUniqueLetters.push(uniqueLetters)
     }
-    console.log(allUniqueLetters)
+    allUniqueLetters.sort((a, b)=>{
+      if(a && a.index !== undefined && typeof a.index === 'number' && b && b.index !== undefined){
+      return a.index - b.index
+      }
+    })
+    console.log("all uniques: ", allUniqueLetters)
     const allCombos = generateCombinations(allUniqueLetters)
+    // const allCombos = generateCombinationsWithEmptySpace(allUniqueLetters)
     console.log("allCombos: ", allCombos)
-    //  const resetAnswer = resetIntersectClue(intersecting[0], incomplete[0].id);
-    // console.log("the reset answer: ", resetAnswer);
+   // at this point we've generated all letter combinations that might be used to find an answer for the clue at incomplete[0]
 
-    // const pattern = arrayToRegularExp(resetAnswer);
-    // console.log("the regexp pattern: ", pattern)
-
-    // const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
-    // console.log("word list: ", wordList)
-
-    // const matches = getAllMatches(wordList, pattern, intersecting[0].answer.join(""), clueList);
-    // console.log("the matches: ", matches);
-    // stick the letter at the intersection position into an array if it is not aleady in there
-    // const sharedLetter = getLetter(intersecting[0], incomplete[0]);
-
+   // create the patterns
+   for(const combo of allCombos){
+    let patternHolder = new Array(incomplete[0].answer.length).fill("");
     
-    // const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
-    // console.log("unique letters: ", uniqueLetters)
+    // console.log("the patt holder: ", patternHolder);
+    const indices = Array.from(allUniqueLetters, (unique)=> unique.index)
+    // console.log("the indices", indices)
 
-    // resetAnswer can be converted to a pattern we match against
-    // then we want a unique letter in the position we intersect with the clue that has missing answers
-    // for each matching answer we push the intersecting letter to an array if it is not already in the array
-    // this array represents the group of letters that might appear at the shared position in our current incomplete answer
-    // we repeat this for all intersecting clues
-    // if an incomplete answer intersects with, say, 3 other clues, we will have 3 arrays of letters
-    // we use combinations of these letters to create patterns that we can use to find a potential answer for our current incomplete answer
+    // now iterate over each item in combo, and chuck it into patternHolder at the position?
+    for(const [index, letter] of combo.entries()){
+      patternHolder[indices[index]] = letter;
+    }
+   // at this point patternHolder can be converted to a regexp and pushed to an array of patterns for matching
+  }
   }
 
   const handleClick = (e: React.MouseEvent) => {
