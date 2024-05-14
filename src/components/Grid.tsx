@@ -39,6 +39,7 @@ import {
   getAllMatches,
   createUniqueLetterList,
   generateCombinations,
+  setClueAnswer,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -55,6 +56,10 @@ const Grid: React.FC = () => {
   const handleResetClue = ()=>{
     const allUniqueLetters = [];
     const incomplete = getIncompleteAnswers(clueList);
+    if(incomplete.length === 0){
+      alert("there are no incomplete answers!");
+      return;
+    }
     console.log("first incomplete clue: ", incomplete[0])
     const intersecting = getIntersectingClues(incomplete[0], clueList);
     console.log("first clue that intersects the first incomplete clue: ", intersecting[0])
@@ -75,7 +80,7 @@ const Grid: React.FC = () => {
     allUniqueLetters.push(uniqueLetters)
     }
     allUniqueLetters.sort((a, b)=>{
-      if(a && a.index !== undefined && typeof a.index === 'number' && b && b.index !== undefined){
+      if(a && a.index !== undefined && b && b.index !== undefined){
       return a.index - b.index
       }
     })
@@ -86,6 +91,7 @@ const Grid: React.FC = () => {
    // at this point we've generated all letter combinations that might be used to find an answer for the clue at incomplete[0]
 
    // create the patterns
+   const patterns: RegExp[] = [];
    for(const combo of allCombos){
     let patternHolder = new Array(incomplete[0].answer.length).fill("");
     
@@ -98,6 +104,25 @@ const Grid: React.FC = () => {
       patternHolder[indices[index]] = letter;
     }
    // at this point patternHolder can be converted to a regexp and pushed to an array of patterns for matching
+    patterns.push(arrayToRegularExp(patternHolder))
+  }
+  const wordList = getWordList(incomplete[0].length as AnswerLength, AllAnswers);
+  const matches: Answer[] = [];
+  for(const pattern of patterns){
+    console.log("pattern: ", pattern)
+    const matchingWords = getAllMatches(wordList, pattern, incomplete[0].answer.join(""), clueList);
+    console.log("the matching words: ", matchingWords);
+    if(matchingWords.length > 0){
+      // set the answer and break
+      console.log("the match: ", matchingWords[0])
+      setClueAnswer(matchingWords, incomplete[0])
+      // update intersecting clues
+      // we will have to replace intersecting clue answers where the intersecting letter has been updated
+      // update the grid state
+    }
+    else {
+      console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
+    }
   }
   }
 

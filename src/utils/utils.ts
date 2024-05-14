@@ -1102,3 +1102,12 @@ export const createUniqueLetterList = (sharedLetter: SharedLetter, matches: Answ
 }
 
 
+export const setClueAnswer = (candidateAnswers: Answer[], clue: Clue ) =>{
+   if (candidateAnswers.length > 0) {
+          if (candidateAnswers[0].word) {
+            clue.answer = [...candidateAnswers[0].word];
+          } else {
+            clue.answer = [...candidateAnswers[0].raw];
+        }
+}
+}
