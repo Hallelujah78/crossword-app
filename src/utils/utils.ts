@@ -6,6 +6,8 @@ import Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import { Dispatch, SetStateAction } from "react";
 
+import { grid } from "../data/grid";
+
 
 type AllAnswers = {
   three: Answer[];
@@ -263,6 +265,7 @@ export const populateClues = (
   setClueList: Dispatch<SetStateAction<Clue[]>>,
   removeEmpty: boolean
 ) => {
+  
   // copy the React state values
   let clues = [...cluesState];
   let gridState = [...grid];
@@ -1137,9 +1140,8 @@ export const updateIntersectingClues = (clue: Clue, clues: Clue[]) =>{
 // reset a clue's non-intersecting letters to empty strings
 export const resetClue = (clue: Clue)=>{
   const tempAnswer = [...clue.answer];
- 
-
   const sharedIndices: number[] = [];
+
   clue.intersection?.forEach((item)=>{
     sharedIndices.push(item.myIndex);
   })
@@ -1153,4 +1155,12 @@ export const resetClue = (clue: Clue)=>{
 
   }
   return tempAnswer;
+}
+
+
+// update the grid state with the clue answer we just set
+export const updateGridState = (clue: Clue, gridState: CellType[]) =>{
+  for (let i = 0; i < clue.length; i++) {
+            gridState[clue.indices[i]].letter = clue.answer[i];
+          }
 }

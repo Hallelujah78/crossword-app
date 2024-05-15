@@ -43,6 +43,7 @@ import {
   updateIntersectingClues,
   getMatches,
   resetClue,
+  updateGridState,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -59,6 +60,7 @@ const Grid: React.FC = () => {
   const handleResetClue = ()=>{
     const allUniqueLetters = [];
     const clueListCopy = [...clueList];
+    const gridStateCopy = [...gridState];
     const incomplete = getIncompleteAnswers(clueListCopy);
     if(incomplete.length === 0){
       alert("there are no incomplete answers!");
@@ -98,7 +100,7 @@ const Grid: React.FC = () => {
    const patterns: RegExp[] = [];
    for(const combo of allCombos){
     let patternHolder = new Array(incomplete[0].answer.length).fill("");
-    
+ 
     // console.log("the patt holder: ", patternHolder);
     const indices = Array.from(allUniqueLetters, (unique)=> unique.index)
     // console.log("the indices", indices)
@@ -120,23 +122,25 @@ const Grid: React.FC = () => {
       // set the answer and break
       console.log("the match: ", matchingWords[0])
       setClueAnswer(matchingWords, incomplete[0])
+      updateGridState(incomplete[0], gridStateCopy)
       
       // update intersecting clues
       const cluesToUpdate = updateIntersectingClues(incomplete[0], clueListCopy)
       // we will have to replace intersecting clue answers where the intersecting letter has been updated
       console.log("****** CLUES TO UPDATE ****** ", cluesToUpdate)
       for(const clue of cluesToUpdate){
-        resetClue(clue);
-        const pattern = arrayToRegularExp(clue.answer);
+        const resetAnswer = resetClue(clue);
+        console.log("reset clue: ", resetAnswer)
+        const pattern = arrayToRegularExp(resetAnswer);
         const wordList = getWordList(clue.length as AnswerLength, AllAnswers);
         const matches = getMatches(wordList, pattern, clue.answer.join(""), clueListCopy)
          if(matches.length > 0){
       // set the answer and break
       console.log("intersecting match: ", matches[0])
       setClueAnswer(matches, clue)
+      updateGridState(clue, gridStateCopy)
          }
          else {
-          // we're hitting this else, which should be impossible, something is up above
           console.log("****** NO MATCHES - WIHCH IS ACTUALLY NOT POSSIBLE, SO ... *******")
          }
       }
