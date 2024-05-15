@@ -40,6 +40,9 @@ import {
   createUniqueLetterList,
   generateCombinations,
   setClueAnswer,
+  updateIntersectingClues,
+  getMatches,
+  resetClue,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -55,13 +58,14 @@ const Grid: React.FC = () => {
 
   const handleResetClue = ()=>{
     const allUniqueLetters = [];
-    const incomplete = getIncompleteAnswers(clueList);
+    const clueListCopy = [...clueList];
+    const incomplete = getIncompleteAnswers(clueListCopy);
     if(incomplete.length === 0){
       alert("there are no incomplete answers!");
       return;
     }
     console.log("first incomplete clue: ", incomplete[0])
-    const intersecting = getIntersectingClues(incomplete[0], clueList);
+    const intersecting = getIntersectingClues(incomplete[0], clueListCopy);
     console.log("first clue that intersects the first incomplete clue: ", intersecting[0])
 
 
@@ -72,7 +76,7 @@ const Grid: React.FC = () => {
     console.log("the regexp pattern: ", pattern)
     const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
     console.log("word list: ", wordList)
-    const matches = getAllMatches(wordList, pattern, clue.answer.join(""), clueList);
+    const matches = getAllMatches(wordList, pattern, clue.answer.join(""), clueListCopy);
     console.log("the matches: ", matches);
     const sharedLetter = getLetter(clue, incomplete[0]);
     const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
@@ -110,18 +114,39 @@ const Grid: React.FC = () => {
   const matches: Answer[] = [];
   for(const pattern of patterns){
     console.log("pattern: ", pattern)
-    const matchingWords = getAllMatches(wordList, pattern, incomplete[0].answer.join(""), clueList);
+    const matchingWords = getAllMatches(wordList, pattern, incomplete[0].answer.join(""), clueListCopy);
     console.log("the matching words: ", matchingWords);
     if(matchingWords.length > 0){
       // set the answer and break
       console.log("the match: ", matchingWords[0])
       setClueAnswer(matchingWords, incomplete[0])
+      
       // update intersecting clues
+      const cluesToUpdate = updateIntersectingClues(incomplete[0], clueListCopy)
       // we will have to replace intersecting clue answers where the intersecting letter has been updated
+      console.log("****** CLUES TO UPDATE ****** ", cluesToUpdate)
+      for(const clue of cluesToUpdate){
+        resetClue(clue);
+        const pattern = arrayToRegularExp(clue.answer);
+        const wordList = getWordList(clue.length as AnswerLength, AllAnswers);
+        const matches = getMatches(wordList, pattern, clue.answer.join(""), clueListCopy)
+         if(matches.length > 0){
+      // set the answer and break
+      console.log("intersecting match: ", matches[0])
+      setClueAnswer(matches, clue)
+         }
+         else {
+          // we're hitting this else, which should be impossible, something is up above
+          console.log("****** NO MATCHES - WIHCH IS ACTUALLY NOT POSSIBLE, SO ... *******")
+         }
+      }
+      // update the clueList React state
+      setClueList(clueListCopy);
+      
       // update the grid state
     }
     else {
-      console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
+      // console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
     }
   }
   }

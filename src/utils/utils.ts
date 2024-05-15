@@ -1111,3 +1111,46 @@ export const setClueAnswer = (candidateAnswers: Answer[], clue: Clue ) =>{
         }
 }
 }
+
+export const updateIntersectingClues = (clue: Clue, clues: Clue[]) =>{
+  // we'll return clues that have been updated, maybe
+  const cluesToUpdate: Clue[] = [];
+  clue.intersection?.forEach((item) => {
+            item.letter = clue.answer[item.myIndex];
+            const clueToUpdate = clues.find((clue) => {
+              return clue.id === item.id;
+            })!;
+            const oldLetter = clueToUpdate.answer[item.yourIndex];
+            const newLetter = clue.answer[item.myIndex];
+            clueToUpdate.answer[item.yourIndex] = newLetter;
+           
+            // if the shared letter has updated, then we need to replace the answer for the updated clue
+            if(oldLetter !== newLetter){
+              // we don't need the index? just reset all unshared letters, pattern, match and set
+            cluesToUpdate.push(clueToUpdate)
+            }
+          });
+          return cluesToUpdate;
+}
+
+
+// reset a clue's non-intersecting letters to empty strings
+export const resetClue = (clue: Clue)=>{
+  const tempAnswer = [...clue.answer];
+ 
+
+  const sharedIndices: number[] = [];
+  clue.intersection?.forEach((item)=>{
+    sharedIndices.push(item.myIndex);
+  })
+ 
+  for(const [index, _letter] of clue.answer.entries()){
+
+    if(!sharedIndices.includes(index)){
+      tempAnswer[index] = "";
+    }
+   
+
+  }
+  return tempAnswer;
+}
