@@ -58,31 +58,39 @@ const Grid: React.FC = () => {
   },[])
 
   const handleResetClue = ()=>{
-    const allUniqueLetters = [];
+    
     const clueListCopy = [...clueList];
     const gridStateCopy = [...gridState];
-    const incomplete = getIncompleteAnswers(clueListCopy);
-    if(incomplete.length === 0){
+    const incompletes = getIncompleteAnswers(clueListCopy);
+    if(incompletes.length === 0){
       alert("there are no incomplete answers!");
       return;
     }
-    console.log("first incomplete clue: ", incomplete[0])
-    const intersecting = getIntersectingClues(incomplete[0], clueListCopy);
-    console.log("first clue that intersects the first incomplete clue: ", intersecting[0])
+    
+
+// start of incompletes iteration
+    for(const incomplete of incompletes){
+      console.log("***************************")
+    console.log("incomplete clue: ", incomplete)
+    const allUniqueLetters = [];
+    
+
+    const intersecting = getIntersectingClues(incomplete, clueListCopy);
+    
 
 
     for(const clue of intersecting){
-      const resetAnswer = resetIntersectClue(clue, incomplete[0].id);
-    console.log("the reset answer: ", resetAnswer);
+      const resetAnswer = resetIntersectClue(clue, incomplete.id);
+    // console.log("the reset answer: ", resetAnswer);
       const pattern = arrayToRegularExp(resetAnswer);
-    console.log("the regexp pattern: ", pattern)
+    // console.log("the regexp pattern: ", pattern)
     const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
-    console.log("word list: ", wordList)
+    // console.log("word list: ", wordList)
     const matches = getAllMatches(wordList, pattern, clue.answer.join(""), clueListCopy);
-    console.log("the matches: ", matches);
-    const sharedLetter = getLetter(clue, incomplete[0]);
+    // console.log("the matches: ", matches);
+    const sharedLetter = getLetter(clue, incomplete);
     const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
-    console.log("unique letters: ", uniqueLetters)
+    // console.log("unique letters: ", uniqueLetters)
     allUniqueLetters.push(uniqueLetters)
     }
     allUniqueLetters.sort((a, b)=>{
@@ -90,16 +98,16 @@ const Grid: React.FC = () => {
       return a.index - b.index
       }
     })
-    console.log("all uniques: ", allUniqueLetters)
+    // console.log("all uniques: ", allUniqueLetters)
     const allCombos = generateCombinations(allUniqueLetters)
     // const allCombos = generateCombinationsWithEmptySpace(allUniqueLetters)
-    console.log("allCombos: ", allCombos)
-   // at this point we've generated all letter combinations that might be used to find an answer for the clue at incomplete[0]
+    // console.log("allCombos: ", allCombos)
+   // at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue
 
    // create the patterns
    const patterns: RegExp[] = [];
    for(const combo of allCombos){
-    let patternHolder = new Array(incomplete[0].answer.length).fill("");
+    let patternHolder = new Array(incomplete.answer.length).fill("");
  
     // console.log("the patt holder: ", patternHolder);
     const indices = Array.from(allUniqueLetters, (unique)=> unique.index)
@@ -112,20 +120,25 @@ const Grid: React.FC = () => {
    // at this point patternHolder can be converted to a regexp and pushed to an array of patterns for matching
     patterns.push(arrayToRegularExp(patternHolder))
   }
-  const wordList = getWordList(incomplete[0].length as AnswerLength, AllAnswers);
+  const wordList = getWordList(incomplete.length as AnswerLength, AllAnswers);
   const matches: Answer[] = [];
   for(const pattern of patterns){
+    let finishLoop = false;
+    // once we set a clue answer and update the intersecting clues, we need to berak out of this loop
     console.log("pattern: ", pattern)
-    const matchingWords = getAllMatches(wordList, pattern, incomplete[0].answer.join(""), clueListCopy);
+    const matchingWords = getAllMatches(wordList, pattern, incomplete.answer.join(""), clueListCopy);
     console.log("the matching words: ", matchingWords);
     if(matchingWords.length > 0){
+      finishLoop = true;
       // set the answer and break
       console.log("the match: ", matchingWords[0])
-      setClueAnswer(matchingWords, incomplete[0])
-      updateGridState(incomplete[0], gridStateCopy)
+      console.log("old clue answer: ", incomplete.answer);
+      console.log("*** UPDATED CLUE ANSWER **** ", matchingWords[0])
+      setClueAnswer(matchingWords, incomplete)
+      updateGridState(incomplete, gridStateCopy)
       
       // update intersecting clues
-      const cluesToUpdate = updateIntersectingClues(incomplete[0], clueListCopy)
+      const cluesToUpdate = updateIntersectingClues(incomplete, clueListCopy)
       // we will have to replace intersecting clue answers where the intersecting letter has been updated
       console.log("****** CLUES TO UPDATE ****** ", cluesToUpdate)
       for(const clue of cluesToUpdate){
@@ -137,6 +150,7 @@ const Grid: React.FC = () => {
          if(matches.length > 0){
       // set the answer and break
       console.log("intersecting match: ", matches[0])
+      console.log(`*** SETTING CLUE ANSWER ${clue.id} **** `, matches[0])
       setClueAnswer(matches, clue)
       updateGridState(clue, gridStateCopy)
          }
@@ -152,7 +166,14 @@ const Grid: React.FC = () => {
     else {
       // console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
     }
+    if(finishLoop){
+      break;
+    }
   }
+
+  // this is the end of the incomplete iteration?
+    console.log("***************************")
+}
   }
 
   const handleClick = (e: React.MouseEvent) => {
