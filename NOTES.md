@@ -1080,3 +1080,29 @@ let intersectingClueIndex;
       replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
     });
 ```
+
+## Update 16/5/24: Where We're At
+
+- The misnamed Reset Clue button code is complete. Once we've generated all of our clue answers, we click this button and it attempts to find answers for any incomplete answers. It does this by resetting the intersecting clues (removing unshared letters) and finding other words that might fit in these positions. From there, we generate a comprehensive list of patterns for our incomplete clue and try to find a match using these patterns. The vast majority of the time no match is found. In cases where a match is found, it is quite likely that the symmetrical clue is also incomplete and so we will end up removing both clues to keep the grid's rotational symmetry.
+
+The best solution to this is increasing the word/phrase list with quality words, and this is something I can look into, perhaps. I avoided this initially, because it is less about programming and more about cleaning up data and painstakingly poring over lists of words, which is not sexy.
+
+At this point, our generation code is complete. Now, we decide what options we give to the user when generating the crossword. I think we can proceed as follows:
+
+- we add more starting grids and let the user choose a grid 'shape'
+- we retain the 'remove empty cells' option
+  - the 'handleResetClue' code will run automatically after we generate our clues and there will be no button to run it
+- we add another option, mutually exclusive to 'remove empty cells,' which will essentially force regenerating the grid until there are no incomplete answers. It probably takes less than 5-8 attempts on average to generate a crossword where there are no empty clue answers. If this option is true, then there will be no need to run our handleResetClue code.
+- we might try to use our handleResetClue code as we initially generate our grid and encounter a clue for which there are no candidate answers
+
+
+## To Do
+### Core Stuff
+- add force regenerating crossword until there are no incomplete answers
+  - selecting this option will disable the 'remove empty cells' option (and vice-versa)
+- once the crossword is complete, generate the clues themselves (hopefully via GPT3.5/4)
+- display the grid to the user so they can fill in answers and solve the crossword
+### Nice to Have
+- add starting grids and let user choose
+- use our comprehensive clue answer replacement code when generating the grid, rather than running at the end
+  - I suspect this may have no real impact on whether we end up with clues that have incomplete answers
