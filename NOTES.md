@@ -1134,3 +1134,4 @@ At this point, our generation code is complete. Now, we decide what options we g
   - it sets the gridState React state by calling setGridState(tempGrid);
     - as far as I can tell, the gridState is not mutated here, so this call should be unnecessary
     - ~~remove setGridState call from initializeApp~~ DONE
+    - ~~remove 'setGridState' from list of args/params that initializeApp is called with~~ DONE 

@@ -54,7 +54,7 @@ const Grid: React.FC = () => {
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
 
   useEffect(()=>{
-    initializeApp(gridState, setClueList, setGridState)
+    initializeApp(gridState, setClueList)
   },[])
 
   const handleResetClue = ()=>{

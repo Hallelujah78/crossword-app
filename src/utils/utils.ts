@@ -949,7 +949,6 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
 export const initializeApp = (
   gridState: CellType[],
   setClueList: Dispatch<SetStateAction<Clue[]>>,
-  setGridState: Dispatch<SetStateAction<CellType[]>>
 ) => {
   const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
@@ -964,8 +963,6 @@ export const initializeApp = (
   }
   sortCluesDescendingLength(clues);
   setClueList(clues);
-
- 
 };
 
 const removeClue = (clues: Clue[], index: number): Clue[] => {
