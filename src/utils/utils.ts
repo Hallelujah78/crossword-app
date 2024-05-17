@@ -953,8 +953,6 @@ export const initializeApp = (
 ) => {
   const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
-  
-
   const clues = createClues(tempGrid);
 
   const acrossClues = getAcrossClues(clues);
@@ -967,7 +965,7 @@ export const initializeApp = (
   sortCluesDescendingLength(clues);
   setClueList(clues);
 
-  setGridState(tempGrid);
+ 
 };
 
 const removeClue = (clues: Clue[], index: number): Clue[] => {

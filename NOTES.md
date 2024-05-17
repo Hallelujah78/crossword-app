@@ -1120,8 +1120,17 @@ At this point, our generation code is complete. Now, we decide what options we g
           - ~~remove createClues call~~ DONE
       - it returns the newGrid
 - after the first render, a useEffect calls `initializeApp(gridState, setClueList, setGridState)` which does the following:
+  - it makes a deep copy of the gridState React state variable
   - it calls setClueNumbers
     - this has already been called in initializeGrid
     - this is probably not doing anything and is duplicaton
       - we built the app iteratively, so at some point these duplicate calls may have made sense
-    - ~~remove setClueNumbers call from initializeApp~~
+    - ~~remove setClueNumbers call from initializeApp~~ DONE
+  - it calls createClues(grid) which returns an array of Clue objects
+  - it calls getAcrossClues and getDownClues, which gets a ref to clues with a direction prop set to across and down respectively
+  - it uses these down and across clue vars to set the intersection prop on each clue by calling setCluesThatIntersect
+  - it sorts the clues in descending length by calling sortCluesDescendingLength
+  - it sets the clueList React state by calling setClueList(clues)
+  - it sets the gridState React state by calling setGridState(tempGrid);
+    - as far as I can tell, the gridState is not mutated here, so this call should be unnecessary
+    - ~~remove setGridState call from initializeApp~~ DONE
