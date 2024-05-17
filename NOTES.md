@@ -1139,5 +1139,11 @@ At this point, our generation code is complete. Now, we decide what options we g
   - the clue.answer prop is an array of empty strings ['', '', '', '']
   - the objects in the clue.intersection prop array do not have a letter prop (optional)
     - need to look at how we are using this as it is not set on all clues
+    - think it relates to replacing intersecting clues
   - we still have an endLoop variable but it is not being used/was temporary when coding populateClues
   - ~~remove code around endLoop variable from populateClues and setClueAnswers~~ DONE
+  - each Cell in gridState does not have a letter prop (optional). This is set when we populate clues.
+  - to reset our grid and clue state we can try:
+    - reset the letter prop in grid (set it to ""?)
+    - reset the answer in Clue
+    - set the letter prop in clue.intersection to "" if it exists

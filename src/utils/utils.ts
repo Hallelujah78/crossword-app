@@ -8,7 +8,6 @@ import { Dispatch, SetStateAction } from "react";
 
 import { grid } from "../data/grid";
 
-
 type AllAnswers = {
   three: Answer[];
   four: Answer[];
@@ -264,7 +263,6 @@ export const populateClues = (
   setClueList: Dispatch<SetStateAction<Clue[]>>,
   removeEmpty: boolean
 ) => {
-  
   // copy the React state values
   let clues = [...cluesState];
   let gridState = [...grid];
@@ -273,123 +271,55 @@ export const populateClues = (
     // let answer: string;
     let possibleAnswers: Answer[] = [];
     const randVal = Math.random();
-    
 
     switch (clue.length) {
       case 13:
         possibleAnswers = AllAnswers.thirteen;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 12:
         possibleAnswers = AllAnswers.twelve;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 11:
         possibleAnswers = AllAnswers.eleven;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 10:
         possibleAnswers = AllAnswers.ten;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 9:
         possibleAnswers = AllAnswers.nine;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 8:
         possibleAnswers = AllAnswers.eight;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 7:
         possibleAnswers = AllAnswers.seven;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 6:
         possibleAnswers = AllAnswers.six;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 5:
         possibleAnswers = AllAnswers.five;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 4:
         possibleAnswers = AllAnswers.four;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       case 3:
         possibleAnswers = AllAnswers.three;
-        setClueAnswers(
-          clues,
-          clue,
-          possibleAnswers,
-          randVal,
-          gridState
-        );
+        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
         break;
       default:
         break;
     }
-   
   }
   // gridState
   if (removeEmpty) {
@@ -497,8 +427,13 @@ const setClueAnswers = (
   let regExp: RegExp;
   if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
     regExp = arrayToRegularExp(clue.answer)!;
-   
-    possibleAnswers = getMatches(possibleAnswers, regExp, clue.answer.join(""), clues);
+
+    possibleAnswers = getMatches(
+      possibleAnswers,
+      regExp,
+      clue.answer.join(""),
+      clues
+    );
   }
 
   // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
@@ -515,7 +450,6 @@ const setClueAnswers = (
       })!;
 
       clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
-      
     });
     // console.log(
     //   `setting answer for ${clue.id}, length: ${clue.length}: `,
@@ -798,7 +732,6 @@ const setClueAnswers = (
       }
     }
   }
-  
 };
 // end of setClueAnswers
 
@@ -837,25 +770,31 @@ export const getMatches = (
   if (!regExp) {
     return [];
   }
-  const currentAnswers: string[] = []; 
-  
-  for(const clue of clues){
+  const currentAnswers: string[] = [];
+
+  for (const clue of clues) {
     const currentAnswer = clue.answer;
-    if(!currentAnswer.includes("")){
-      currentAnswers.push(currentAnswer.join("")); 
+    if (!currentAnswer.includes("")) {
+      currentAnswers.push(currentAnswer.join(""));
     }
   }
-  
+
   const candidateAnswers = possibleAnswers.filter((answer) => {
-    if (answer.word !== undefined && answer.word !== currentAnswer && !currentAnswers.includes(answer.word)) {
+    if (
+      answer.word !== undefined &&
+      answer.word !== currentAnswer &&
+      !currentAnswers.includes(answer.word)
+    ) {
       return answer.word.match(regExp);
-    } else if (answer.raw !== currentAnswer && !currentAnswers.includes(answer.raw)) {
+    } else if (
+      answer.raw !== currentAnswer &&
+      !currentAnswers.includes(answer.raw)
+    ) {
       return answer.raw.match(regExp);
     }
   });
   return candidateAnswers;
 };
-
 
 export const getAllMatches = (
   possibleAnswers: Answer[],
@@ -866,19 +805,19 @@ export const getAllMatches = (
   if (!regExp) {
     return [];
   }
-  const currentAnswers: string[] = []; 
-  
-  for(const clue of clues){
+  const currentAnswers: string[] = [];
+
+  for (const clue of clues) {
     const clueAnswer = clue.answer;
-    if(!clueAnswer.includes("") && clueAnswer.join("") !== currentAnswer){
-      currentAnswers.push(clueAnswer.join("")); 
+    if (!clueAnswer.includes("") && clueAnswer.join("") !== currentAnswer) {
+      currentAnswers.push(clueAnswer.join(""));
     }
   }
 
   const candidateAnswers = possibleAnswers.filter((answer) => {
-    if (answer.word !== undefined  && !currentAnswers.includes(answer.word)) {
+    if (answer.word !== undefined && !currentAnswers.includes(answer.word)) {
       return answer.word.match(regExp);
-    } else if ( !currentAnswers.includes(answer.raw)) {
+    } else if (!currentAnswers.includes(answer.raw)) {
       return answer.raw.match(regExp);
     }
   });
@@ -910,14 +849,13 @@ const logIntersectClueAnswers = (
   }
 };
 
- export interface SharedLetter {
-    rClueIndex: number | undefined;
-    clueIndex: number | undefined;
-    letter: string | undefined;
-  }
+export interface SharedLetter {
+  rClueIndex: number | undefined;
+  clueIndex: number | undefined;
+  letter: string | undefined;
+}
 
 export const getLetter = (rClue: Clue, currentClue: Clue) => {
- 
   const sharedLetter: SharedLetter = {
     rClueIndex: undefined,
     letter: undefined,
@@ -944,7 +882,7 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
 
 export const initializeApp = (
   gridState: CellType[],
-  setClueList: Dispatch<SetStateAction<Clue[]>>,
+  setClueList: Dispatch<SetStateAction<Clue[]>>
 ) => {
   const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
@@ -985,12 +923,13 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
         const intersectingClue = clues.find((clueItem) => {
           return clueItem.id === intersectObj.id;
         });
-        index = intersectingClue?.intersection!.findIndex((intersectingItem) => {
-          return intersectingItem.id === removeId;
-        });
-        if(index !== undefined){
-        intersectingClue?.intersection?.splice(index, 1);
-
+        index = intersectingClue?.intersection!.findIndex(
+          (intersectingItem) => {
+            return intersectingItem.id === removeId;
+          }
+        );
+        if (index !== undefined) {
+          intersectingClue?.intersection?.splice(index, 1);
         }
         // console.log("index: ", index)
 
@@ -1007,150 +946,179 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
   return clues;
 };
 
-
-export const getIntersectingClues = (clue: Clue, clues: Clue[]) =>{
-  
+export const getIntersectingClues = (clue: Clue, clues: Clue[]) => {
   const intersection = clue?.intersection;
   const intersectingClues: Clue[] = [];
-  if(intersection){
-  for(const intersectObject of intersection){
-      const intersectingClue = clues.find((clue)=>{
+  if (intersection) {
+    for (const intersectObject of intersection) {
+      const intersectingClue = clues.find((clue) => {
         return clue.id === intersectObject.id;
-      })
-      if(intersectingClue){
-        intersectingClues.push(intersectingClue)
+      });
+      if (intersectingClue) {
+        intersectingClues.push(intersectingClue);
       }
+    }
   }
-}
-  console.log("intersecting clue: ", intersectingClues)
+  console.log("intersecting clue: ", intersectingClues);
   return intersectingClues;
-}
+};
 
-export const getIncompleteAnswers = (clues: Clue[]) =>{
-  const incomplete = clues.filter((clue)=>{
+export const getIncompleteAnswers = (clues: Clue[]) => {
+  const incomplete = clues.filter((clue) => {
     return clue.answer.includes("");
-  })
+  });
   return incomplete;
-}
+};
 
-export const resetIntersectClue = (iClue: Clue, currClueId: string)=>{
+export const resetIntersectClue = (iClue: Clue, currClueId: string) => {
   const tempAnswer = [...iClue.answer];
- 
 
   const sharedIndices: number[] = [];
-  iClue.intersection?.forEach((item)=>{
-  
-    if(item.id !== currClueId){
-    sharedIndices.push(item.myIndex);
+  iClue.intersection?.forEach((item) => {
+    if (item.id !== currClueId) {
+      sharedIndices.push(item.myIndex);
     }
-    
-  })
- 
-  for(const [index, letter] of iClue.answer.entries()){
+  });
 
-    if(!sharedIndices.includes(index)){
+  for (const [index, letter] of iClue.answer.entries()) {
+    if (!sharedIndices.includes(index)) {
       tempAnswer[index] = "";
     }
-   
-
   }
   return tempAnswer;
-}
+};
 
-export const createUniqueLetterList = (sharedLetter: SharedLetter, matches: Answer[]) =>{
-      
-      const uniqueLetters: {index: number | undefined, letters: string[]} = {index: sharedLetter.clueIndex, letters: []}
-      console.log("shared letter: ", sharedLetter);
-      for(const match of matches){
-        const word = match.word ? match.word : match.raw; 
-       if(!uniqueLetters.letters.includes(word[sharedLetter.rClueIndex])){
-        uniqueLetters.letters.push(word[sharedLetter.rClueIndex])
-       }
-      }
-      return uniqueLetters;
+export const createUniqueLetterList = (
+  sharedLetter: SharedLetter,
+  matches: Answer[]
+) => {
+  const uniqueLetters: { index: number | undefined; letters: string[] } = {
+    index: sharedLetter.clueIndex,
+    letters: [],
+  };
+  console.log("shared letter: ", sharedLetter);
+  for (const match of matches) {
+    const word = match.word ? match.word : match.raw;
+    if (!uniqueLetters.letters.includes(word[sharedLetter.rClueIndex])) {
+      uniqueLetters.letters.push(word[sharedLetter.rClueIndex]);
     }
+  }
+  return uniqueLetters;
+};
 
-  export function generateCombinations(options, currentIndex = 0, currentCombination = []) {
-    // Base case: if we have reached the last index, add the current combination to the result
-    if (currentIndex === options.length) {
-        return [currentCombination];
+export function generateCombinations(
+  options,
+  currentIndex = 0,
+  currentCombination = []
+) {
+  // Base case: if we have reached the last index, add the current combination to the result
+  if (currentIndex === options.length) {
+    return [currentCombination];
+  }
+
+  const currentOptions = options[currentIndex].letters;
+  const combinations = [];
+
+  // Iterate over each option for the current index
+  for (const option of currentOptions) {
+    // Create a copy of the current combination
+    const newCombination = [...currentCombination];
+    // Set the current option at the current index
+    newCombination[currentIndex] = option;
+    // Recursively generate combinations for the next index
+    const nextCombinations = generateCombinations(
+      options,
+      currentIndex + 1,
+      newCombination
+    );
+    // Add the combinations generated for the next index to the result
+    combinations.push(...nextCombinations);
+  }
+
+  return combinations;
+}
+
+export const setClueAnswer = (candidateAnswers: Answer[], clue: Clue) => {
+  if (candidateAnswers.length > 0) {
+    if (candidateAnswers[0].word) {
+      clue.answer = [...candidateAnswers[0].word];
+    } else {
+      clue.answer = [...candidateAnswers[0].raw];
     }
+  }
+};
 
-    const currentOptions = options[currentIndex].letters;
-    const combinations = [];
-
-    // Iterate over each option for the current index
-    for (const option of currentOptions) {
-        // Create a copy of the current combination
-        const newCombination = [...currentCombination];
-        // Set the current option at the current index
-        newCombination[currentIndex] = option;
-        // Recursively generate combinations for the next index
-        const nextCombinations = generateCombinations(options, currentIndex + 1, newCombination);
-        // Add the combinations generated for the next index to the result
-        combinations.push(...nextCombinations);
-    }
-
-    return combinations;
-}
-
-
-export const setClueAnswer = (candidateAnswers: Answer[], clue: Clue ) =>{
-   if (candidateAnswers.length > 0) {
-          if (candidateAnswers[0].word) {
-            clue.answer = [...candidateAnswers[0].word];
-          } else {
-            clue.answer = [...candidateAnswers[0].raw];
-        }
-}
-}
-
-export const updateIntersectingClues = (clue: Clue, clues: Clue[]) =>{
+export const updateIntersectingClues = (clue: Clue, clues: Clue[]) => {
   // we'll return clues that have been updated, maybe
   const cluesToUpdate: Clue[] = [];
   clue.intersection?.forEach((item) => {
-            item.letter = clue.answer[item.myIndex];
-            const clueToUpdate = clues.find((clue) => {
-              return clue.id === item.id;
-            })!;
-            const oldLetter = clueToUpdate.answer[item.yourIndex];
-            const newLetter = clue.answer[item.myIndex];
-            clueToUpdate.answer[item.yourIndex] = newLetter;
-           
-            // if the shared letter has updated, then we need to replace the answer for the updated clue
-            if(oldLetter !== newLetter){
-              // we don't need the index? just reset all unshared letters, pattern, match and set
-            cluesToUpdate.push(clueToUpdate)
-            }
-          });
-          return cluesToUpdate;
-}
+    item.letter = clue.answer[item.myIndex];
+    const clueToUpdate = clues.find((clue) => {
+      return clue.id === item.id;
+    })!;
+    const oldLetter = clueToUpdate.answer[item.yourIndex];
+    const newLetter = clue.answer[item.myIndex];
+    clueToUpdate.answer[item.yourIndex] = newLetter;
 
+    // if the shared letter has updated, then we need to replace the answer for the updated clue
+    if (oldLetter !== newLetter) {
+      // we don't need the index? just reset all unshared letters, pattern, match and set
+      cluesToUpdate.push(clueToUpdate);
+    }
+  });
+  return cluesToUpdate;
+};
 
 // reset a clue's non-intersecting letters to empty strings
-export const resetClue = (clue: Clue)=>{
+export const resetClue = (clue: Clue) => {
   const tempAnswer = [...clue.answer];
   const sharedIndices: number[] = [];
 
-  clue.intersection?.forEach((item)=>{
+  clue.intersection?.forEach((item) => {
     sharedIndices.push(item.myIndex);
-  })
- 
-  for(const [index, _letter] of clue.answer.entries()){
+  });
 
-    if(!sharedIndices.includes(index)){
+  for (const [index, _letter] of clue.answer.entries()) {
+    if (!sharedIndices.includes(index)) {
       tempAnswer[index] = "";
     }
-   
-
   }
   return tempAnswer;
-}
-
+};
 
 // update the grid state with the clue answer we just set
-export const updateGridState = (clue: Clue, gridState: CellType[]) =>{
+export const updateGridState = (clue: Clue, gridState: CellType[]) => {
   for (let i = 0; i < clue.length; i++) {
-            gridState[clue.indices[i]].letter = clue.answer[i];
-          }
-}
+    gridState[clue.indices[i]].letter = clue.answer[i];
+  }
+};
+
+// retains the grid structure but resets letters and clue answers
+export const resetAllAnswers = (
+  clueList: Clue[],
+  gridState: CellType[],
+  setGridState: Dispatch<SetStateAction<CellType[]>>,
+  setClueList: Dispatch<SetStateAction<Clue[]>>
+) => {
+  const clues = [...clueList];
+  const grid = [...gridState];
+
+  for (const clue of clues) {
+    // reset the answer and intersection
+    const emptyAnswer = new Array(clue.answer.length).fill("");
+    clue.answer = emptyAnswer;
+
+    for (const intersectObj of clue.intersection) {
+      if (intersectObj.letter) {
+        delete intersectObj.letter;
+      }
+    }
+  }
+  for (const cell of grid) {
+    if (cell.letter) {
+      delete cell.letter;
+    }
+  }
+  setGridState(grid);
+  setClueList(clues);
+};

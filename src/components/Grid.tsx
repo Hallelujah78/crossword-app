@@ -44,143 +44,169 @@ import {
   getMatches,
   resetClue,
   updateGridState,
+  resetAllAnswers,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
-
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
   const [clueList, setClueList] = useState<Clue[]>([]);
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
+  const [fillGrid, setFillGrid] = useState<boolean>(true);
 
-  useEffect(()=>{
-    initializeApp(gridState, setClueList)
-  },[])
+  useEffect(() => {
+    initializeApp(gridState, setClueList);
+  }, []);
 
-  const handleResetClue = ()=>{
-    
+  const handleResetClue = () => {
     const clueListCopy = [...clueList];
     const gridStateCopy = [...gridState];
     const incompletes = getIncompleteAnswers(clueListCopy);
-    if(incompletes.length === 0){
+    if (incompletes.length === 0) {
       alert("there are no incomplete answers!");
       return;
     }
-    
 
-// start of incompletes iteration
-    for(const incomplete of incompletes){
-      console.log("***************************")
-    console.log("incomplete clue: ", incomplete)
-    const allUniqueLetters = [];
-    
+    // start of incompletes iteration
+    for (const incomplete of incompletes) {
+      console.log("***************************");
+      console.log("incomplete clue: ", incomplete);
+      const allUniqueLetters = [];
 
-    const intersecting = getIntersectingClues(incomplete, clueListCopy);
-    
+      const intersecting = getIntersectingClues(incomplete, clueListCopy);
 
-
-    for(const clue of intersecting){
-      const resetAnswer = resetIntersectClue(clue, incomplete.id);
-    // console.log("the reset answer: ", resetAnswer);
-      const pattern = arrayToRegularExp(resetAnswer);
-    // console.log("the regexp pattern: ", pattern)
-    const wordList = getWordList(resetAnswer.length as AnswerLength, AllAnswers);
-    // console.log("word list: ", wordList)
-    const matches = getAllMatches(wordList, pattern, clue.answer.join(""), clueListCopy);
-    // console.log("the matches: ", matches);
-    const sharedLetter = getLetter(clue, incomplete);
-    const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
-    // console.log("unique letters: ", uniqueLetters)
-    allUniqueLetters.push(uniqueLetters)
-    }
-    allUniqueLetters.sort((a, b)=>{
-      if(a && a.index !== undefined && b && b.index !== undefined){
-      return a.index - b.index
-      }
-    })
-    // console.log("all uniques: ", allUniqueLetters)
-    const allCombos = generateCombinations(allUniqueLetters)
-    // const allCombos = generateCombinationsWithEmptySpace(allUniqueLetters)
-    // console.log("allCombos: ", allCombos)
-   // at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue
-
-   // create the patterns
-   const patterns: RegExp[] = [];
-   for(const combo of allCombos){
-    let patternHolder = new Array(incomplete.answer.length).fill("");
- 
-    // console.log("the patt holder: ", patternHolder);
-    const indices = Array.from(allUniqueLetters, (unique)=> unique.index)
-    // console.log("the indices", indices)
-
-    // now iterate over each item in combo, and chuck it into patternHolder at the position?
-    for(const [index, letter] of combo.entries()){
-      patternHolder[indices[index]] = letter;
-    }
-   // at this point patternHolder can be converted to a regexp and pushed to an array of patterns for matching
-    patterns.push(arrayToRegularExp(patternHolder))
-  }
-  const wordList = getWordList(incomplete.length as AnswerLength, AllAnswers);
-  const matches: Answer[] = [];
-  for(const pattern of patterns){
-    let finishLoop = false;
-    // once we set a clue answer and update the intersecting clues, we need to berak out of this loop
-    console.log("pattern: ", pattern)
-    const matchingWords = getAllMatches(wordList, pattern, incomplete.answer.join(""), clueListCopy);
-    console.log("the matching words: ", matchingWords);
-    if(matchingWords.length > 0){
-      finishLoop = true;
-      // set the answer and break
-      console.log("the match: ", matchingWords[0])
-      console.log("old clue answer: ", incomplete.answer);
-      console.log("*** UPDATED CLUE ANSWER **** ", matchingWords[0])
-      setClueAnswer(matchingWords, incomplete)
-      updateGridState(incomplete, gridStateCopy)
-      
-      // update intersecting clues
-      const cluesToUpdate = updateIntersectingClues(incomplete, clueListCopy)
-      // we will have to replace intersecting clue answers where the intersecting letter has been updated
-      console.log("****** CLUES TO UPDATE ****** ", cluesToUpdate)
-      for(const clue of cluesToUpdate){
-        const resetAnswer = resetClue(clue);
-        console.log("reset clue: ", resetAnswer)
+      for (const clue of intersecting) {
+        const resetAnswer = resetIntersectClue(clue, incomplete.id);
+        // console.log("the reset answer: ", resetAnswer);
         const pattern = arrayToRegularExp(resetAnswer);
-        const wordList = getWordList(clue.length as AnswerLength, AllAnswers);
-        const matches = getMatches(wordList, pattern, clue.answer.join(""), clueListCopy)
-         if(matches.length > 0){
-      // set the answer and break
-      console.log("intersecting match: ", matches[0])
-      console.log(`*** SETTING CLUE ANSWER ${clue.id} **** `, matches[0])
-      setClueAnswer(matches, clue)
-      updateGridState(clue, gridStateCopy)
-         }
-         else {
-          console.log("****** NO MATCHES - WIHCH IS ACTUALLY NOT POSSIBLE, SO ... *******")
-         }
+        // console.log("the regexp pattern: ", pattern)
+        const wordList = getWordList(
+          resetAnswer.length as AnswerLength,
+          AllAnswers
+        );
+        // console.log("word list: ", wordList)
+        const matches = getAllMatches(
+          wordList,
+          pattern,
+          clue.answer.join(""),
+          clueListCopy
+        );
+        // console.log("the matches: ", matches);
+        const sharedLetter = getLetter(clue, incomplete);
+        const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
+        // console.log("unique letters: ", uniqueLetters)
+        allUniqueLetters.push(uniqueLetters);
       }
-      // update the clueList React state
-      setClueList(clueListCopy);
-      
-      // update the grid state
-    }
-    else {
-      // console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
-    }
-    if(finishLoop){
-      break;
-    }
-  }
+      allUniqueLetters.sort((a, b) => {
+        if (a && a.index !== undefined && b && b.index !== undefined) {
+          return a.index - b.index;
+        }
+      });
+      // console.log("all uniques: ", allUniqueLetters)
+      const allCombos = generateCombinations(allUniqueLetters);
+      // const allCombos = generateCombinationsWithEmptySpace(allUniqueLetters)
+      // console.log("allCombos: ", allCombos)
+      // at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue
 
-  // this is the end of the incomplete iteration?
-    console.log("***************************")
-}
-  }
+      // create the patterns
+      const patterns: RegExp[] = [];
+      for (const combo of allCombos) {
+        let patternHolder = new Array(incomplete.answer.length).fill("");
+
+        // console.log("the patt holder: ", patternHolder);
+        const indices = Array.from(allUniqueLetters, (unique) => unique.index);
+        // console.log("the indices", indices)
+
+        // now iterate over each item in combo, and chuck it into patternHolder at the position?
+        for (const [index, letter] of combo.entries()) {
+          patternHolder[indices[index]] = letter;
+        }
+        // at this point patternHolder can be converted to a regexp and pushed to an array of patterns for matching
+        patterns.push(arrayToRegularExp(patternHolder));
+      }
+      const wordList = getWordList(
+        incomplete.length as AnswerLength,
+        AllAnswers
+      );
+      const matches: Answer[] = [];
+      for (const pattern of patterns) {
+        let finishLoop = false;
+        // once we set a clue answer and update the intersecting clues, we need to berak out of this loop
+        console.log("pattern: ", pattern);
+        const matchingWords = getAllMatches(
+          wordList,
+          pattern,
+          incomplete.answer.join(""),
+          clueListCopy
+        );
+        console.log("the matching words: ", matchingWords);
+        if (matchingWords.length > 0) {
+          finishLoop = true;
+          // set the answer and break
+          console.log("the match: ", matchingWords[0]);
+          console.log("old clue answer: ", incomplete.answer);
+          console.log("*** UPDATED CLUE ANSWER **** ", matchingWords[0]);
+          setClueAnswer(matchingWords, incomplete);
+          updateGridState(incomplete, gridStateCopy);
+
+          // update intersecting clues
+          const cluesToUpdate = updateIntersectingClues(
+            incomplete,
+            clueListCopy
+          );
+          // we will have to replace intersecting clue answers where the intersecting letter has been updated
+          console.log("****** CLUES TO UPDATE ****** ", cluesToUpdate);
+          for (const clue of cluesToUpdate) {
+            const resetAnswer = resetClue(clue);
+            console.log("reset clue: ", resetAnswer);
+            const pattern = arrayToRegularExp(resetAnswer);
+            const wordList = getWordList(
+              clue.length as AnswerLength,
+              AllAnswers
+            );
+            const matches = getMatches(
+              wordList,
+              pattern,
+              clue.answer.join(""),
+              clueListCopy
+            );
+            if (matches.length > 0) {
+              // set the answer and break
+              console.log("intersecting match: ", matches[0]);
+              console.log(
+                `*** SETTING CLUE ANSWER ${clue.id} **** `,
+                matches[0]
+              );
+              setClueAnswer(matches, clue);
+              updateGridState(clue, gridStateCopy);
+            } else {
+              console.log(
+                "****** NO MATCHES - WIHCH IS ACTUALLY NOT POSSIBLE, SO ... *******"
+              );
+            }
+          }
+          // update the clueList React state
+          setClueList(clueListCopy);
+
+          // update the grid state
+        } else {
+          // console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
+        }
+        if (finishLoop) {
+          break;
+        }
+      }
+
+      // this is the end of the incomplete iteration?
+      console.log("***************************");
+    }
+  };
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
       return;
     }
-    console.log(e.currentTarget.id)
+    console.log(e.currentTarget.id);
     const targetIndex = +e.currentTarget.id;
 
     const symmetricalIndex = gridState.length - 1 - targetIndex;
@@ -220,42 +246,59 @@ const Grid: React.FC = () => {
         return <Cell key={index} cell={cell} handleClick={handleClick} />;
       })}
       <div className="control-container">
-      <button
-        onClick={() =>
-          populateClues(clueList, AllAnswers, gridState, setGridState, setClueList, removeEmpty)
-        }
-      >
-        Generate Answers
-      </button>
-      <br/>
-      <label htmlFor="remove_blank">Remove Empty Cells</label>
-        <input checked={removeEmpty} onChange={()=>setRemoveEmpty(prev => !prev)} type="checkbox" name="remove_blank" id="remove_blank" />
-        <br/>
         <button
-        onClick={() =>
-          getIncompleteAnswers(clueList)
-        }
-      >
-        Get Incomplete Answers
-      </button>
-      <br/>
+          onClick={() =>
+            populateClues(
+              clueList,
+              AllAnswers,
+              gridState,
+              setGridState,
+              setClueList,
+              removeEmpty
+            )
+          }
+        >
+          Generate Answers
+        </button>
+        <br />
+        <label htmlFor="remove_blank">Remove Empty Cells</label>
+        <input
+          checked={removeEmpty}
+          onChange={() => {
+            setRemoveEmpty((prev) => !prev);
+            setFillGrid((prev) => !prev);
+          }}
+          type="checkbox"
+          name="remove_blank"
+          id="remove_blank"
+        />
+        <br />
+        <label htmlFor="fill_grid">Force Fill Grid</label>
+        <input
+          checked={fillGrid}
+          onChange={() => {
+            setRemoveEmpty((prev) => !prev);
+            setFillGrid((prev) => !prev);
+          }}
+          type="checkbox"
+          name="remove_blank"
+          id="remove_blank"
+        />
+        <br />
+        <button onClick={() => getIncompleteAnswers(clueList)}>
+          Get Incomplete Answers
+        </button>
+        <br />
         <button
-        onClick={() =>
-          getIntersectingClues(getIncompleteAnswers(clueList)[0], clueList)
-        }
-      >
-        Get Intersecting Clues
-      </button>
-      <br/>
-        <button
-        onClick={() =>
-          handleResetClue()
-        }
-      >
-        Reset Clue
-      </button>
+          onClick={() =>
+            resetAllAnswers(clueList, gridState, setGridState, setClueList)
+          }
+        >
+          Reset State
+        </button>
+        <br />
+        <button onClick={() => handleResetClue()}>Reset Clue</button>
       </div>
-      
     </Wrapper>
   );
 };
@@ -270,7 +313,7 @@ const Wrapper = styled.div`
     position: absolute;
     top: 3rem;
     left: 3rem;
-    label{
+    label {
       color: white;
     }
   }
