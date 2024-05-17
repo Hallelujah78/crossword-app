@@ -321,14 +321,14 @@ export const populateClues = (
         break;
     }
   }
+
+  const emptyCells = gridState.filter((cell) => {
+    if (cell.isVoid !== true) {
+      return cell.letter === undefined || cell.letter === "";
+    }
+  });
   // gridState
   if (removeEmpty) {
-    const emptyCells = gridState.filter((cell) => {
-      if (cell.isVoid !== true) {
-        return cell.letter === undefined || cell.letter === "";
-      }
-    });
-
     emptyCells.forEach((cell) => {
       cell.isVoid = true;
       removeClue(clues, cell.id!);
@@ -345,6 +345,10 @@ export const populateClues = (
   } else {
     // removeEmpty is false, and so fillGrid is true
   }
+  if (emptyCells) {
+    fillEmptyAnswers(clues, gridState, setGridState, setClueList);
+  }
+
   setClueNumbers(gridState);
   setClueList(clues);
   setGridState(gridState);
