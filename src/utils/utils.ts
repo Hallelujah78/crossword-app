@@ -953,7 +953,7 @@ export const initializeApp = (
 ) => {
   const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
-  setClueNumbers(tempGrid);
+  
 
   const clues = createClues(tempGrid);
 

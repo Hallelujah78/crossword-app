@@ -1117,5 +1117,11 @@ At this point, our generation code is complete. Now, we decide what options we g
         - it initializes props of each Clue
         - it returns the clues array
           - note: initializeGrid does nothing with the clues array and state is not set, so it does nothing?
-          
+          - ~~remove createClues call~~ DONE
       - it returns the newGrid
+- after the first render, a useEffect calls `initializeApp(gridState, setClueList, setGridState)` which does the following:
+  - it calls setClueNumbers
+    - this has already been called in initializeGrid
+    - this is probably not doing anything and is duplicaton
+      - we built the app iteratively, so at some point these duplicate calls may have made sense
+    - ~~remove setClueNumbers call from initializeApp~~
