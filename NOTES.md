@@ -1134,4 +1134,10 @@ At this point, our generation code is complete. Now, we decide what options we g
   - it sets the gridState React state by calling setGridState(tempGrid);
     - as far as I can tell, the gridState is not mutated here, so this call should be unnecessary
     - ~~remove setGridState call from initializeApp~~ DONE
-    - ~~remove 'setGridState' from list of args/params that initializeApp is called with~~ DONE 
+    - ~~remove 'setGridState' from list of args/params that initializeApp is called with~~ DONE
+- once initializeGrid and initializeApp are called:
+  - the clue.answer prop is an array of empty strings ['', '', '', '']
+  - the objects in the clue.intersection prop array do not have a letter prop (optional)
+    - need to look at how we are using this as it is not set on all clues
+  - we still have an endLoop variable but it is not being used/was temporary when coding populateClues
+  - ~~remove code around endLoop variable from populateClues and setClueAnswers~~ DONE

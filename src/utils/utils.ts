@@ -273,12 +273,12 @@ export const populateClues = (
     // let answer: string;
     let possibleAnswers: Answer[] = [];
     const randVal = Math.random();
-    let endLoop: boolean = false;
+    
 
     switch (clue.length) {
       case 13:
         possibleAnswers = AllAnswers.thirteen;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -288,7 +288,7 @@ export const populateClues = (
         break;
       case 12:
         possibleAnswers = AllAnswers.twelve;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -298,7 +298,7 @@ export const populateClues = (
         break;
       case 11:
         possibleAnswers = AllAnswers.eleven;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -308,7 +308,7 @@ export const populateClues = (
         break;
       case 10:
         possibleAnswers = AllAnswers.ten;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -318,7 +318,7 @@ export const populateClues = (
         break;
       case 9:
         possibleAnswers = AllAnswers.nine;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -328,7 +328,7 @@ export const populateClues = (
         break;
       case 8:
         possibleAnswers = AllAnswers.eight;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -338,7 +338,7 @@ export const populateClues = (
         break;
       case 7:
         possibleAnswers = AllAnswers.seven;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -348,7 +348,7 @@ export const populateClues = (
         break;
       case 6:
         possibleAnswers = AllAnswers.six;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -358,7 +358,7 @@ export const populateClues = (
         break;
       case 5:
         possibleAnswers = AllAnswers.five;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -368,7 +368,7 @@ export const populateClues = (
         break;
       case 4:
         possibleAnswers = AllAnswers.four;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -378,7 +378,7 @@ export const populateClues = (
         break;
       case 3:
         possibleAnswers = AllAnswers.three;
-        endLoop = setClueAnswers(
+        setClueAnswers(
           clues,
           clue,
           possibleAnswers,
@@ -389,11 +389,7 @@ export const populateClues = (
       default:
         break;
     }
-    if (endLoop) {
-      setClueList(clues);
-      setGridState(gridState);
-      break;
-    }
+   
   }
   // gridState
   if (removeEmpty) {
@@ -802,7 +798,7 @@ const setClueAnswers = (
       }
     }
   }
-  return false;
+  
 };
 // end of setClueAnswers
 
