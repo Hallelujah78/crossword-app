@@ -169,7 +169,6 @@ export const initializeGrid = (grid: CellType[]) => {
   }); // end of map
   setClueNumbers(newGrid);
 
-  createClues(newGrid);
   return newGrid;
 };
 

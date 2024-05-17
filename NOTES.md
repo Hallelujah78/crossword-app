@@ -1106,3 +1106,16 @@ At this point, our generation code is complete. Now, we decide what options we g
 - add starting grids and let user choose
 - use our comprehensive clue answer replacement code when generating the grid, rather than running at the end
   - I suspect this may have no real impact on whether we end up with clues that have incomplete answers
+
+  ## Task - force crossword to regenerate clues until there are no incomplete answers
+  - we'll have to set React state back to the initial state
+    - initially we call initializeGrid(grid)
+      - this sets the top, bottom, left and right props by mapping over grid and creating a new array, newGrid
+      - it calls setClueNumbers(newGrid)
+      - it calls createClues(newGrid)
+        - this creates a new clues array that contains objects of the type Clue
+        - it initializes props of each Clue
+        - it returns the clues array
+          - note: initializeGrid does nothing with the clues array and state is not set, so it does nothing?
+          
+      - it returns the newGrid
