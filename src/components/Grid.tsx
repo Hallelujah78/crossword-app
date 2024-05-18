@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // models
 import { CellType } from "../models/Cell.model";
@@ -37,13 +37,11 @@ import { Direction } from "../models/Direction.model";
 
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
-  const [clueList, setClueList] = useState<Clue[]>([]);
+  const [clueList, setClueList] = useState<Clue[]>(() =>
+    initializeApp(gridState)
+  );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
-
-  useEffect(() => {
-    initializeApp(gridState, setClueList);
-  }, []);
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {

@@ -1147,3 +1147,6 @@ At this point, our generation code is complete. Now, we decide what options we g
     - reset the letter prop in grid (set it to ""?)
     - reset the answer in Clue
     - set the letter prop in clue.intersection to "" if it exists
+
+## To Do
+- using populateClues and resetAllAnswers, write some logic to repeatedly call populateClues until there are no incomplete answers

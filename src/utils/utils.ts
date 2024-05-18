@@ -887,8 +887,8 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
 };
 
 export const initializeApp = (
-  gridState: CellType[],
-  setClueList: Dispatch<SetStateAction<Clue[]>>
+  gridState: CellType[]
+  // setClueList: Dispatch<SetStateAction<Clue[]>>
 ) => {
   const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
@@ -902,7 +902,8 @@ export const initializeApp = (
     } else setCluesThatIntersect(clue, downClues);
   }
   sortCluesDescendingLength(clues);
-  setClueList(clues);
+  // setClueList(clues);
+  return clues;
 };
 
 const removeClue = (clues: Clue[], index: number): Clue[] => {
