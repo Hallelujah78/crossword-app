@@ -6,8 +6,6 @@ import Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import { Dispatch, SetStateAction } from "react";
 
-import { grid } from "../data/grid";
-
 type AllAnswers = {
   three: Answer[];
   four: Answer[];
@@ -649,7 +647,7 @@ const setClueAnswers = (
       }
       // we need to break out of this once we set clue answer, rclue answer and update the intersecting clues
       for (const answer of uniqueAnswers) {
-        let oldLetter;
+        // let oldLetter: string | undefined;
         let candidateAnswer: string[] = [];
         let regExp: RegExp | undefined;
 
@@ -658,10 +656,10 @@ const setClueAnswers = (
           sharedLetter.clueIndex !== undefined &&
           sharedLetter.rClueIndex !== undefined
         ) {
-          oldLetter =
-            sharedLetter.clueIndex !== undefined
-              ? clue.answer[sharedLetter.clueIndex]
-              : undefined;
+          // oldLetter =
+          //   sharedLetter.clueIndex !== undefined
+          //     ? clue.answer[sharedLetter.clueIndex]
+          //     : undefined;
           candidateAnswer = [...clue.answer];
           candidateAnswer[sharedLetter.clueIndex] =
             answer[sharedLetter.rClueIndex];
@@ -831,29 +829,27 @@ export const getAllMatches = (
 };
 
 // ** testing only
-const logIntersectClueAnswers = (
-  intersection:
-    | {
-        id: string;
-        myIndex: number;
-        yourIndex: number;
-        letter?: string | undefined;
-      }[]
-    | undefined,
-  clues: Clue[]
-) => {
-  const intersectClues: Clue[] = [];
-  intersection!.forEach((item) => {
-    clues.find((intersectingClue) => {
-      if (item.id === intersectingClue.id) {
-        intersectClues.push(intersectingClue);
-      }
-    });
-  });
-  for (const intersectClue of intersectClues) {
-    // console.log(`answer of ${intersectClue.id}: `, intersectClue.answer);
-  }
-};
+
+// const logIntersectClueAnswers = (
+//   intersection:
+//     | {
+//         id: string;
+//         myIndex: number;
+//         yourIndex: number;
+//         letter?: string | undefined;
+//       }[]
+//     | undefined,
+//   clues: Clue[]
+// ) => {
+//   const intersectClues: Clue[] = [];
+//   intersection!.forEach((item) => {
+//     clues.find((intersectingClue) => {
+//       if (item.id === intersectingClue.id) {
+//         intersectClues.push(intersectingClue);
+//       }
+//     });
+//   });
+// };
 
 export interface SharedLetter {
   rClueIndex: number | undefined;
@@ -886,10 +882,7 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
   }
 };
 
-export const initializeApp = (
-  gridState: CellType[]
-  // setClueList: Dispatch<SetStateAction<Clue[]>>
-) => {
+export const initializeApp = (gridState: CellType[]) => {
   const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
   const clues = createClues(tempGrid);
@@ -987,7 +980,7 @@ export const resetIntersectClue = (iClue: Clue, currClueId: string) => {
     }
   });
 
-  for (const [index, letter] of iClue.answer.entries()) {
+  for (const [index, _letter] of iClue.answer.entries()) {
     if (!sharedIndices.includes(index)) {
       tempAnswer[index] = "";
     }
@@ -1006,18 +999,20 @@ export const createUniqueLetterList = (
   console.log("shared letter: ", sharedLetter);
   for (const match of matches) {
     const word = match.word ? match.word : match.raw;
-    if (!uniqueLetters.letters.includes(word[sharedLetter.rClueIndex])) {
-      uniqueLetters.letters.push(word[sharedLetter.rClueIndex]);
+    if (
+      !uniqueLetters.letters.includes(word[sharedLetter.rClueIndex as number])
+    ) {
+      uniqueLetters.letters.push(word[sharedLetter.rClueIndex as number]);
     }
   }
   return uniqueLetters;
 };
 
 export function generateCombinations(
-  options,
+  options: { index: number | undefined; letters: string[] }[],
   currentIndex = 0,
-  currentCombination = []
-) {
+  currentCombination: string[] = []
+): string[][] {
   // Base case: if we have reached the last index, add the current combination to the result
   if (currentIndex === options.length) {
     return [currentCombination];
@@ -1029,7 +1024,7 @@ export function generateCombinations(
   // Iterate over each option for the current index
   for (const option of currentOptions) {
     // Create a copy of the current combination
-    const newCombination = [...currentCombination];
+    const newCombination: string[] = [...currentCombination];
     // Set the current option at the current index
     newCombination[currentIndex] = option;
     // Recursively generate combinations for the next index
@@ -1041,7 +1036,7 @@ export function generateCombinations(
     // Add the combinations generated for the next index to the result
     combinations.push(...nextCombinations);
   }
-
+  console.log("combos: ", combinations);
   return combinations;
 }
 
@@ -1115,9 +1110,11 @@ export const resetAllAnswers = (
     const emptyAnswer = new Array(clue.answer.length).fill("");
     clue.answer = emptyAnswer;
 
-    for (const intersectObj of clue.intersection) {
-      if (intersectObj.letter) {
-        delete intersectObj.letter;
+    if (clue.intersection) {
+      for (const intersectObj of clue.intersection) {
+        if (intersectObj.letter) {
+          delete intersectObj.letter;
+        }
       }
     }
   }
@@ -1170,12 +1167,15 @@ export const fillEmptyAnswers = (
       );
       // console.log("the matches: ", matches);
       const sharedLetter = getLetter(clue, incomplete);
-      const uniqueLetters = createUniqueLetterList(sharedLetter, matches);
+      const uniqueLetters = createUniqueLetterList(
+        sharedLetter as SharedLetter,
+        matches
+      );
       // console.log("unique letters: ", uniqueLetters)
       allUniqueLetters.push(uniqueLetters);
     }
     allUniqueLetters.sort((a, b) => {
-      if (a && a.index !== undefined && b && b.index !== undefined) {
+      if (a.index !== undefined && b.index !== undefined) {
         return a.index - b.index;
       }
     });
@@ -1191,7 +1191,10 @@ export const fillEmptyAnswers = (
       let patternHolder = new Array(incomplete.answer.length).fill("");
 
       // console.log("the patt holder: ", patternHolder);
-      const indices = Array.from(allUniqueLetters, (unique) => unique.index);
+      const indices = Array.from(
+        allUniqueLetters,
+        (unique) => unique.index as number
+      );
       // console.log("the indices", indices)
 
       // now iterate over each item in combo, and chuck it into patternHolder at the position?
@@ -1199,10 +1202,10 @@ export const fillEmptyAnswers = (
         patternHolder[indices[index]] = letter;
       }
       // at this point patternHolder can be converted to a regexp and pushed to an array of patterns for matching
-      patterns.push(arrayToRegularExp(patternHolder));
+      patterns.push(arrayToRegularExp(patternHolder) as RegExp);
     }
     const wordList = getWordList(incomplete.length as AnswerLength, AllAnswers);
-    const matches: Answer[] = [];
+
     for (const pattern of patterns) {
       let finishLoop = false;
       // once we set a clue answer and update the intersecting clues, we need to berak out of this loop
@@ -1252,7 +1255,7 @@ export const fillEmptyAnswers = (
         }
         // update the clueList React state
         setClueList(clueListCopy);
-
+        setGridState(gridStateCopy);
         // update the grid state
       } else {
         // console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
