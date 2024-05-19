@@ -1136,10 +1136,6 @@ export const fillEmptyAnswers = (
   const clueListCopy = [...clueList];
   const gridStateCopy = [...gridState];
   const incompletes = getIncompleteAnswers(clueListCopy);
-  if (incompletes.length === 0) {
-    alert("there are no incomplete answers!");
-    return;
-  }
 
   // start of incompletes iteration
   for (const incomplete of incompletes) {

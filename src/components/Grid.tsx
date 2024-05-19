@@ -29,9 +29,7 @@ import {
   setCluesThatIntersect,
   sortCluesDescendingLength,
   initializeApp,
-  getIncompleteAnswers,
   resetAllAnswers,
-  fillEmptyAnswers,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -42,6 +40,46 @@ const Grid: React.FC = () => {
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
+
+  const generateClues = () => {
+    const grid = [...gridState];
+    const clues = [...clueList];
+
+    let hasEmpty = grid.filter((cell) => {
+      if (!cell.isVoid && !cell.letter) {
+        return cell;
+      }
+    });
+    console.log("has empty: ", hasEmpty);
+    if (!removeEmpty && hasEmpty.length > 0) {
+      while (hasEmpty.length > 0) {
+        resetAllAnswers(clueList, gridState, setGridState, setClueList);
+        populateClues(
+          clues,
+          AllAnswers,
+          grid,
+          setGridState,
+          setClueList,
+          removeEmpty
+        );
+        const newGrid = [...gridState];
+        hasEmpty = newGrid.filter((cell) => {
+          if (!cell.isVoid && !cell.letter) {
+            return cell;
+          }
+        });
+      }
+      return;
+    }
+    populateClues(
+      clues,
+      AllAnswers,
+      grid,
+      setGridState,
+      setClueList,
+      removeEmpty
+    );
+  };
 
   const handleClick = (e: React.MouseEvent) => {
     if (!e.currentTarget.id) {
@@ -87,20 +125,7 @@ const Grid: React.FC = () => {
         return <Cell key={index} cell={cell} handleClick={handleClick} />;
       })}
       <div className="control-container">
-        <button
-          onClick={() =>
-            populateClues(
-              clueList,
-              AllAnswers,
-              gridState,
-              setGridState,
-              setClueList,
-              removeEmpty
-            )
-          }
-        >
-          Generate Answers
-        </button>
+        <button onClick={() => generateClues()}>Generate Answers</button>
         <br />
         <label htmlFor="remove_blank">Remove Empty Cells</label>
         <input
@@ -126,24 +151,12 @@ const Grid: React.FC = () => {
           id="remove_blank"
         />
         <br />
-        <button onClick={() => getIncompleteAnswers(clueList)}>
-          Get Incomplete Answers
-        </button>
-        <br />
         <button
           onClick={() =>
             resetAllAnswers(clueList, gridState, setGridState, setClueList)
           }
         >
-          Reset State
-        </button>
-        <br />
-        <button
-          onClick={() =>
-            fillEmptyAnswers(clueList, gridState, setGridState, setClueList)
-          }
-        >
-          Fill Empty Clues
+          Reset Answers
         </button>
       </div>
     </Wrapper>
