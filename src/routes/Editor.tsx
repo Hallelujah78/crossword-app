@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 // components
-import Grid from "./components/Grid";
+import Grid from "../components/Grid";
 
-const App: React.FC = () => {
+const Editor: React.FC = () => {
   return (
     <Wrapper>
       <nav>
@@ -16,7 +16,7 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default Editor;
 
 const Wrapper = styled.div`
   height: 100vh;

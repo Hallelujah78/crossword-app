@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 const Root = () => {
   return (
     <Wrapper>
       <nav>
+        <NavLink to={"editor"}>Create/Edit</NavLink>
+        <NavLink to={"solver"}>Solve</NavLink>
         <h1 className="bg-teal-400">Crossword Generator</h1>
       </nav>
       <section></section>

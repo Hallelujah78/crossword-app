@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+
 import GlobalStyle from "./styles/GlobalStyles.ts";
+import Editor from "./routes/Editor.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.tsx";
@@ -10,6 +11,16 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/editor",
+    element: <Editor />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/solve",
+    element: <Editor />,
     errorElement: <ErrorPage />,
   },
 ]);
