@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
+import GlobalStyle from "./styles/GlobalStyles.ts";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage.tsx";
 
@@ -12,7 +14,6 @@ const router = createBrowserRouter([
   },
 ]);
 
-import GlobalStyle from "./styles/GlobalStyles.ts";
 import Root from "./routes/Root.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
