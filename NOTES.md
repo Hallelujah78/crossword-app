@@ -1098,13 +1098,13 @@ At this point, our generation code is complete. Now, we decide what options we g
 
 ## To Do
 ### Core Stuff
-- add force regenerating crossword until there are no incomplete answers
+- ~~add force regenerating crossword until there are no incomplete answers~~ DONE
   - selecting this option will disable the 'remove empty cells' option (and vice-versa)
 - once the crossword is complete, generate the clues themselves (hopefully via GPT3.5/4)
 - display the grid to the user so they can fill in answers and solve the crossword
 ### Nice to Have
 - add starting grids and let user choose
-- use our comprehensive clue answer replacement code when generating the grid, rather than running at the end
+- use our comprehensive clue answer replacement code when generating the grid, rather than running it at the end
   - I suspect this may have no real impact on whether we end up with clues that have incomplete answers
 
   ## Task - force crossword to regenerate clues until there are no incomplete answers
@@ -1149,4 +1149,4 @@ At this point, our generation code is complete. Now, we decide what options we g
     - set the letter prop in clue.intersection to "" if it exists
 
 ## To Do
-- using populateClues and resetAllAnswers, write some logic to repeatedly call populateClues until there are no incomplete answers
+- ~~using populateClues and resetAllAnswers, write some logic to repeatedly call populateClues until there are no incomplete answers~~ DONE

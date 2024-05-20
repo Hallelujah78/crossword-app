@@ -50,7 +50,6 @@ const Grid: React.FC = () => {
         return cell;
       }
     });
-    console.log("has empty: ", hasEmpty);
     if (!removeEmpty && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
         resetAllAnswers(clueList, gridState, setGridState, setClueList);
