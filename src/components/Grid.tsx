@@ -170,8 +170,13 @@ const Wrapper = styled.div`
   height: auto;
   .control-container {
     position: absolute;
-    top: 3rem;
-    left: 3rem;
+    top: 2rem;
+    left: -25vw;
+    button,
+    input,
+    label {
+      margin: 0.5rem;
+    }
     label {
       color: white;
     }
