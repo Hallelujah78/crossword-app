@@ -25,4 +25,4 @@ exports.handler = async (event, context) => {
   }
 };
 
-// https://pixabay.com/api/?key=44004584-d16e30b5f73a4337dbdf20d5c&q=yellow+flowers&image_type=photo
+// https://pixabay.com/api/?key=&q=yellow+flowers&image_type=photo
