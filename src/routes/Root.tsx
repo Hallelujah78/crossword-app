@@ -2,6 +2,21 @@ import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Root: React.FC = () => {
+  async function getPhoto(keyword) {
+    let apiURL = `/.netlify/functions/getPhotos?keyword=${keyword}`;
+
+    try {
+      const response = await fetch(apiURL, {
+        method: "GET",
+        headers: { accept: "application/json" },
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      alert(error);
+    }
+  }
+
   return (
     <Wrapper>
       <nav>
