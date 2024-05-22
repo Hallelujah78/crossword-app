@@ -1,10 +1,10 @@
-import axios from "axios";
+const axios = require("axios");
+const dotenv = require("dotenv").config();
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
   try {
-    const { keyword } = event.queryStringParameters;
     let response = await axios.get(
-      `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=${keyword}&image_type=photo&safesearch=true&per_page=3`,
+      `https://pixabay.com/api/?key=${process.env.PIXABAY_API_KEY}&q=yellow+flowers&image_type=photo&safesearch=true&per_page=3`,
       {
         headers: { Accept: "application/json", "Accept-Encoding": "identity" },
         params: { trophies: true },
@@ -24,5 +24,3 @@ exports.handler = async (event, context) => {
     };
   }
 };
-
-// https://pixabay.com/api/?key=&q=yellow+flowers&image_type=photo
