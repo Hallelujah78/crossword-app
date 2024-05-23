@@ -46,21 +46,23 @@ const Grid: React.FC = () => {
     type ReqClue = {
       id: string;
       word: string;
+      clue: string;
     };
     const requestArray: ReqClue[] = [];
 
     clues.forEach((clue) => {
-      const reqClue = { id: clue.id, word: clue.answer.join("") };
+      const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
       requestArray.push(reqClue);
     });
     console.log(requestArray);
 
-    let apiURL = `/.netlify/functions/getCluesxxx`; // so we don't spam API
+    let apiURL = `/.netlify/functions/getClues`; // so we don't spam API
 
     try {
       const response = await fetch(apiURL, {
-        method: "GET",
+        method: "POST",
         headers: { accept: "application/json" },
+        body: JSON.stringify(requestArray),
       });
       const data = await response.json();
       console.log(data);
