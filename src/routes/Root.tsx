@@ -2,21 +2,6 @@ import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Root: React.FC = () => {
-  async function getClues() {
-    let apiURL = `/.netlify/functions/getClues`;
-
-    try {
-      const response = await fetch(apiURL, {
-        method: "GET",
-        headers: { accept: "application/json" },
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      alert(error);
-    }
-  }
-
   return (
     <Wrapper>
       <nav>
@@ -24,7 +9,6 @@ const Root: React.FC = () => {
         <div className="link-container">
           <NavLink to={"editor"}>Create/Edit</NavLink>
           <NavLink to={"solver"}>Solve</NavLink>
-          <button onClick={getClues}>get photos</button>
         </div>
       </nav>
       <section>

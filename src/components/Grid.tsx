@@ -41,6 +41,34 @@ const Grid: React.FC = () => {
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
 
+  async function getClues() {
+    const clues = [...clueList];
+    type ReqClue = {
+      id: string;
+      word: string;
+    };
+    const requestArray: ReqClue[] = [];
+
+    clues.forEach((clue) => {
+      const reqClue = { id: clue.id, word: clue.answer.join("") };
+      requestArray.push(reqClue);
+    });
+    console.log(requestArray);
+
+    let apiURL = `/.netlify/functions/getCluesxxx`; // so we don't spam API
+
+    try {
+      const response = await fetch(apiURL, {
+        method: "GET",
+        headers: { accept: "application/json" },
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      alert(error);
+    }
+  }
+
   const generateClues = () => {
     const grid = [...gridState];
     const clues = [...clueList];
@@ -157,6 +185,8 @@ const Grid: React.FC = () => {
         >
           Reset Answers
         </button>
+        <br />
+        <button onClick={getClues}>AI Generate Clues!</button>
       </div>
     </Wrapper>
   );
