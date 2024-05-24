@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import SolveGrid from "../components/SolveGrid";
 
 const Solve: React.FC = () => {
   return (
     <Wrapper>
-      <h2>This is the Solver Content</h2>
+      <SolveGrid />
     </Wrapper>
   );
 };
