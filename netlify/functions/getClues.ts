@@ -1,5 +1,6 @@
 const dotenv = require("dotenv").config();
 import Anthropic from "@anthropic-ai/sdk";
+import stringResp from "../../src/data/example_ai_response";
 
 exports.handler = async (event) => {
   // const anthropic = new Anthropic({
@@ -8,7 +9,7 @@ exports.handler = async (event) => {
 
   try {
     const prompt = event.body;
-    console.log(prompt);
+
     // const msg = await anthropic.messages.create({
     //   model: "claude-3-haiku-20240307",
     //   max_tokens: 4000,
@@ -30,7 +31,8 @@ exports.handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ prompt }),
+      // body: JSON.stringify({ msg }),
+      body: stringResp,
     };
   } catch (error) {
     // do something

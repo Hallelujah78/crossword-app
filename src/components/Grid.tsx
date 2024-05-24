@@ -54,7 +54,7 @@ const Grid: React.FC = () => {
       const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
       requestArray.push(reqClue);
     });
-    console.log(requestArray);
+    // console.log(requestArray);
 
     let apiURL = `/.netlify/functions/getClues`; // so we don't spam API
 
@@ -64,8 +64,29 @@ const Grid: React.FC = () => {
         headers: { accept: "application/json" },
         body: JSON.stringify(requestArray),
       });
-      const data = await response.json();
-      console.log(data);
+      const data = (await response.json()) as ReqClue;
+
+      // verify the data is as expected
+      if (Array.isArray(data)) {
+        clues.forEach((item) => {
+          const id = item.id;
+          const clueResp = data.find((clueObj) => {
+            return clueObj?.id === id;
+          });
+          if (clueResp.clue && clueResp.clue !== "") {
+            item.clue = clueResp.clue;
+          } else {
+            throw new Error(
+              "The clues received from the AI are not in the correct format. Try generating the clues again!"
+            );
+          }
+        });
+        setClueList(clues);
+      } else {
+        throw new Error(
+          "The clues received from the AI are not in the correct format. Try generating the clues again!"
+        );
+      }
     } catch (error) {
       alert(error);
     }
