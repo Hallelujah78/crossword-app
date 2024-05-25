@@ -1356,3 +1356,15 @@ At this point, our generation code is complete. Now, we decide what options we g
     - hyphens
     - number of letters: 4-2, 9, 4,2 etc
 - when a cell is clicked, all cells in the answer are highlighted
+
+## Translating Clicking on a Cell to Highlighting a Clue
+- we have some state which indicates the direction, down or across
+- with the current set up/state, if we want to highlight a clue by clicking a cell we might:
+  - click on the cell, a cell has an id which is the index of the cell in the grid
+    - note the containing div has an id, the input does not
+  - using the id, we filter the clues array returning any clue where the indices property of the clue contains the id
+  - the clues have a direction prop and an id
+- using our direction React state, if we returned 2 clues, then we know there is a down and an across
+  - we set direction state to across and highlight the across indices
+  - on the second click, we set state to down and highlight the down indices
+  - use some logic here if the cell we click is only part of a down or only part of an across clue
