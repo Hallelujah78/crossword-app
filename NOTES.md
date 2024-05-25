@@ -1150,3 +1150,209 @@ At this point, our generation code is complete. Now, we decide what options we g
 
 ## To Do
 - ~~using populateClues and resetAllAnswers, write some logic to repeatedly call populateClues until there are no incomplete answers~~ DONE
+
+
+## The Solve/Solving Grid
+- ie, the grid the user can fill their answers in 
+- Guardian quick functionality to mimic:
+  - clicking on a cell where that is part of an across and a down answer first causes all elements of the across clue to have a background color of yellow
+    - a second click highlights all of the down cells
+    - the clue is also highlighted
+- when entering a value, the cursor automatically tabs to the next empty cell of the answer
+  - upon reaching the last letter, the cursor doesn't move, it does not tab to the first letter of the next clue
+- the tab key
+  - if an across answer/clue is selected, will move to the next across clue
+  - the cursor is placed in the first cell of the selected clue
+  - tab shift goes the other way
+  - same for down clues, we cycle through those with tab
+- arrow keys
+  - we can navigate through the crossword grid like a maze/pacman using the arrow keys
+  - appropriate clues are highlighted depending on where the focus is
+- clicking a cell that contains a letter and pressing delete will remove the letter
+  - our grid has this behaviour by default
+- the gridstate (partial):
+  ```js
+  [
+  {
+    "isVoid": true,
+    "id": 0,
+    "top": false,
+    "right": false,
+    "bottom": true,
+    "left": false,
+    "clueNumber": ""
+  },
+  {
+    "isVoid": true,
+    "id": 1,
+    "top": false,
+    "right": false,
+    "bottom": false,
+    "left": false,
+    "clueNumber": ""
+  },
+  {
+    "isVoid": true,
+    "id": 2,
+    "top": false,
+    "right": false,
+    "bottom": true,
+    "left": false,
+    "clueNumber": ""
+  },
+  {
+    "isVoid": true,
+    "id": 3,
+    "top": false,
+    "right": true,
+    "bottom": false,
+    "left": false,
+    "clueNumber": ""
+  },
+  {
+    "isVoid": false,
+    "id": 4,
+    "top": false,
+    "right": true,
+    "bottom": true,
+    "left": false,
+    "clueNumber": "1",
+    "letter": "I"
+  },
+  {
+    "isVoid": false,
+    "id": 5,
+    "top": false,
+    "right": true,
+    "bottom": false,
+    "left": true,
+    "clueNumber": "",
+    "letter": "N"
+  },
+  {
+    "isVoid": false,
+    "id": 6,
+    "top": false,
+    "right": true,
+    "bottom": true,
+    "left": true,
+    "clueNumber": "2",
+    "letter": "T"
+  },
+  {
+    "isVoid": false,
+    "id": 7,
+    "top": false,
+    "right": true,
+    "bottom": false,
+    "left": true,
+    "clueNumber": "",
+    "letter": "E"
+  },
+  {
+    "isVoid": false,
+    "id": 8,
+    "top": false,
+    "right": true,
+    "bottom": true,
+    "left": true,
+    "clueNumber": "3",
+    "letter": "R"
+  },
+  {
+    "isVoid": false,
+    "id": 9,
+    "top": false,
+    "right": true,
+    "bottom": false,
+    "left": true,
+    "clueNumber": "",
+    "letter": "A"
+  }
+ ]
+```
+
+- the clue state:
+```js
+
+{
+  "id": "10DOWN",
+  "length": 12,
+  "direction": 1,
+  "indices": [
+    10,
+    23,
+    36,
+    49,
+    62,
+    75,
+    88,
+    101,
+    114,
+    127,
+    140,
+    153
+  ],
+  "answer": [
+    "R",
+    "E",
+    "F",
+    "R",
+    "I",
+    "G",
+    "E",
+    "R",
+    "A",
+    "T",
+    "O",
+    "R"
+  ],
+  "clue": "Depicting a concept visually",
+  "intersection": [
+    {
+      "id": "4ACROSS",
+      "myIndex": 0,
+      "yourIndex": 6,
+      "letter": "R"
+    },
+    {
+      "id": "32ACROSS",
+      "myIndex": 2,
+      "yourIndex": 4,
+      "letter": "F"
+    },
+    {
+      "id": "61ACROSS",
+      "myIndex": 4,
+      "yourIndex": 1,
+      "letter": "I"
+    },
+    {
+      "id": "85ACROSS",
+      "myIndex": 6,
+      "yourIndex": 3,
+      "letter": "E"
+    },
+    {
+      "id": "109ACROSS",
+      "myIndex": 8,
+      "yourIndex": 5,
+      "letter": "A"
+    },
+    {
+      "id": "138ACROSS",
+      "myIndex": 10,
+      "yourIndex": 2,
+      "letter": "O"
+    }
+  ]
+}
+
+```
+
+## Solving Todo
+- render the clues on the screen 
+  - worry about formatting later
+    - hyphens
+    - number of letters: 4-2, 9, 4,2 etc
+- when a cell is clicked, all cells in the answer are highlighted
