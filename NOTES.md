@@ -1379,3 +1379,9 @@ At this point, our generation code is complete. Now, we decide what options we g
       - keep a ref to the across clue
     - if the cell is selected and clues are 2, pick the clue that isn't in the ref and set the ref to the this other clue
     - otherwise, there is only one clue - if not selected - select
+
+## Actual Behaviour of Guardian Quick
+- if cell is the start of a down and across clue, select the across clue on the first click
+- if the cell is the start of a down clue and occurs in a position other than the start of an across clue
+  - select the down clue
+- if the cell only occurs in one clue (down or across) select the appropriate answer cells

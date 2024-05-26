@@ -25,6 +25,7 @@ import {
   initializeApp,
   resetAllAnswers,
   resetSelectedCells,
+  setSelection,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
@@ -35,6 +36,9 @@ const SolveGrid: React.FC = () => {
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>("");
+  const [previousSelection, setPreviousSelection] = useState<CellType | null>(
+    null
+  );
 
   async function getClues() {
     const clues = [...clueList];
@@ -130,59 +134,77 @@ const SolveGrid: React.FC = () => {
     let id: number;
     let clues = [...clueList];
     let grid = [...gridState];
-
+    let currentClueSelection: Clue;
     let containingClues: Clue[];
     let cellItem: CellType | undefined;
+    const prevClueSelection = clues.find((clue) => {
+      if (selectedClue) {
+        return clue.id === selectedClue;
+      }
+    });
 
     if (target && target.id) {
       id = +target.id;
       cellItem = grid.find((item) => {
         return id === item.id;
-      });
+      })!;
+      // **** testing only
+      if (prevClueSelection && previousSelection) {
+        console.log("prev selection cell: ", previousSelection.id);
+        console.log("current cell id: ", cellItem.id);
+      }
+      // **** testing only
       console.log(cellItem);
       containingClues = clues.filter((clue) => {
         return clue.indices.includes(id);
       });
       console.log(containingClues);
 
+      if (containingClues.length === 1) {
+        resetSelectedCells(grid);
+
+        currentClueSelection = containingClues[0];
+        setPreviousSelection(cellItem);
+        setSelection(grid, currentClueSelection);
+        setSelectedClue(currentClueSelection.id);
+        setGridState(grid);
+      }
+
       if (containingClues.length === 2) {
         if (!selectedClue) {
-          // get the clue with the across direction
+          // there is no selection, so default to across
           resetSelectedCells(grid);
-          const acrossClue = containingClues.find(
+          const currentClueSelection = containingClues.find(
             (clue) => clue.direction === Direction.ACROSS
           );
-          acrossClue.indices.forEach((index) => {
-            grid.find((gridItem) => {
-              return gridItem.id === index;
-            }).selected = true;
-          });
-
-          // take the indices prop
-          // iterate over that prop and set each corresponding item in grid to be selected true
-          cellItem.selected = true;
-
-          setSelectedClue(acrossClue.id);
+          if (currentClueSelection) {
+            setPreviousSelection(cellItem);
+            setSelection(grid, currentClueSelection);
+            setSelectedClue(currentClueSelection.id);
+            setGridState(grid);
+          }
+        } else if (
+          prevClueSelection &&
+          previousSelection &&
+          prevClueSelection?.indices.includes(cellItem.id) &&
+          previousSelection.id !== cellItem.id
+        ) {
+          currentClueSelection = clues.find((clue) => {
+            return clue.id === selectedClue;
+          })!;
+          resetSelectedCells(grid);
+          setPreviousSelection(cellItem);
+          setSelection(grid, currentClueSelection);
+          setSelectedClue(currentClueSelection.id);
           setGridState(grid);
         } else {
           resetSelectedCells(grid);
-          // cell is selected but how do we know the direction
-          const newSelectedClue: Clue | undefined = containingClues.find(
-            (clue) => {
-              return selectedClue !== clue.id;
-            }
-          );
-          console.log("selected clue: ", newSelectedClue);
-          newSelectedClue.indices.forEach((index) => {
-            grid.find((gridItem) => {
-              return gridItem.id === index;
-            }).selected = true;
-          });
-
-          // take the indices prop
-          // iterate over that prop and set each corresponding item in grid to be selected true
-          cellItem.selected = true;
-          setSelectedClue(newSelectedClue.id);
+          currentClueSelection = containingClues.find((clue) => {
+            return selectedClue !== clue.id;
+          })!;
+          setPreviousSelection(cellItem);
+          setSelection(grid, currentClueSelection);
+          setSelectedClue(currentClueSelection.id);
           setGridState(grid);
         }
       }

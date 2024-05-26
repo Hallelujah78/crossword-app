@@ -1271,3 +1271,11 @@ export const resetSelectedCells = (grid: CellType[]) => {
     gridItem.selected = false;
   }
 };
+
+export const setSelection = (grid: CellType[], clue: Clue) => {
+  clue.indices.forEach((index) => {
+    grid.find((gridItem) => {
+      return gridItem.id === index;
+    })!.selected = true;
+  });
+};
