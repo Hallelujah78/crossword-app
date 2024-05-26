@@ -2,9 +2,10 @@
 import { useState } from "react";
 
 // models
-import { CellType } from "../models/Cell.model";
 
 import Clue from "../classes/Clue";
+import { Direction } from "../models/Direction.model";
+import { CellType } from "../models/Cell.model";
 
 // libs
 import styled from "styled-components";
@@ -20,18 +21,10 @@ import * as AllAnswers from "../data/answers2";
 // utils
 import {
   initializeGrid,
-  setClueNumbers,
-  updateSurroundingCells,
-  createClues,
   populateClues,
-  getAcrossClues,
-  getDownClues,
-  setCluesThatIntersect,
-  sortCluesDescendingLength,
   initializeApp,
   resetAllAnswers,
 } from "../utils/utils";
-import { Direction } from "../models/Direction.model";
 
 const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
@@ -40,6 +33,7 @@ const SolveGrid: React.FC = () => {
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
+  const [direction, setDirection] = useState<Direction>(Direction.ACROSS);
 
   async function getClues() {
     const clues = [...clueList];
@@ -54,7 +48,6 @@ const SolveGrid: React.FC = () => {
       const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
       requestArray.push(reqClue);
     });
-    // console.log(requestArray);
 
     let apiURL = `/.netlify/functions/getClues`; // so we don't spam API
 
@@ -131,48 +124,61 @@ const SolveGrid: React.FC = () => {
     );
   };
 
-  //   const handleClick = (e: React.MouseEvent) => {
-  //     if (!e.currentTarget.id) {
-  //       return;
-  //     }
-  //     console.log(e.currentTarget.id);
-  //     const targetIndex = +e.currentTarget.id;
+  const handleCellClick = (event: React.MouseEvent) => {
+    const target = event.target as HTMLInputElement;
+    let id: number;
+    let clues = [...clueList];
+    let grid = [...gridState];
+    let currDirection = direction;
+    let containingClues: Clue[];
+    let cellItem: CellType | undefined;
 
-  //     const symmetricalIndex = gridState.length - 1 - targetIndex;
-  //     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
-
-  //     // toggle the cell background
-  //     tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
-  //     // update the top, bottom, left and right props of surrounding cells
-  //     updateSurroundingCells(tempGrid, targetIndex);
-
-  //     //
-  //     if (targetIndex !== (tempGrid.length - 1) / 2) {
-  //       tempGrid[symmetricalIndex].isVoid = !tempGrid[symmetricalIndex].isVoid;
-  //       // update the top, bottom, left and right props of surrounding cells
-  //       updateSurroundingCells(tempGrid, symmetricalIndex);
-  //     }
-  //     setClueNumbers(tempGrid);
-
-  //     const clues = createClues(tempGrid);
-
-  //     const acrossClues = getAcrossClues(clues);
-  //     const downClues = getDownClues(clues);
-  //     for (const clue of clues) {
-  //       if (clue.direction === Direction.DOWN) {
-  //         setCluesThatIntersect(clue, acrossClues);
-  //       } else setCluesThatIntersect(clue, downClues);
-  //     }
-  //     sortCluesDescendingLength(clues);
-  //     setClueList(clues);
-
-  //     setGridState(tempGrid);
-  //   };
+    if (target && target.id) {
+      id = +target.id;
+      cellItem = grid.find((item) => {
+        return id === item.id;
+      });
+      console.log(cellItem);
+      containingClues = clues.filter((clue) => {
+        return clue.indices.includes(id);
+      });
+      console.log(containingClues);
+      if (currDirection === Direction.ACROSS && containingClues.length > 1) {
+        setDirection(Direction.DOWN);
+        // select the across clue
+        cellItem!.selected = !cellItem!.selected;
+      } else if (
+        currDirection === Direction.DOWN &&
+        containingClues.length > 1
+      ) {
+        setDirection(Direction.ACROSS);
+        // select the down clue
+        cellItem!.selected = !cellItem!.selected;
+      } else {
+        // this is not a cell that intersects with anything else
+        if (currDirection === Direction.ACROSS) {
+          setDirection(Direction.DOWN);
+          cellItem!.selected = !cellItem!.selected;
+        } else {
+          setDirection(Direction.ACROSS);
+          cellItem!.selected = !cellItem!.selected;
+        }
+      }
+    } else {
+      return;
+    }
+  };
 
   return (
     <Wrapper>
       {gridState?.map((cell, index) => {
-        return <SolveCell key={index} cell={cell} />;
+        return (
+          <SolveCell
+            key={index}
+            cell={cell}
+            handleCellClick={handleCellClick}
+          />
+        );
       })}
       <div className="control-container">
         <button onClick={() => generateClues()}>Generate Answers</button>

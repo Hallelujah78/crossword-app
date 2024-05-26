@@ -1,10 +1,11 @@
 export type CellType = {
   isVoid: boolean;
-  id?: number;
+  id: number;
   clueNumber?: string;
   top: boolean;
   right: boolean;
   bottom: boolean;
   left: boolean;
   letter?: string;
+  selected: boolean;
 };

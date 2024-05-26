@@ -4,29 +4,24 @@ import styled from "styled-components";
 import { CellProps } from "../models/CellProps.model";
 import React from "react";
 
-const SolveCell: React.FC<CellProps> = ({ cell }) => {
-  const { isVoid, id, clueNumber, letter } = cell;
+const SolveCell: React.FC<CellProps> = ({ cell, handleCellClick }) => {
+  const { isVoid, id, clueNumber, selected } = cell;
 
   return (
-    <Wrapper
-      id={id}
-      //   onClick={(e: React.MouseEvent) => handleClick(e)}
-      style={{ background: isVoid ? "black" : "white" }}
-    >
+    <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
       <div className="letter-container">
         {isVoid ? null : (
           <input
-            onChange={() => {
-              window.dispatchEvent(
-                new KeyboardEvent("keydown", { key: "Tab" })
-              );
+            autoComplete="off"
+            id={id.toString()}
+            onClick={(event) => {
+              handleCellClick!(event);
             }}
             maxLength={1}
             type="text"
-            style={{ background: isVoid ? "black" : "white" }}
+            style={{ background: selected ? "lightyellow" : "white" }}
           />
         )}
-        {/* <input type="text" style={{ background: isVoid ? "black" : "white" }} /> */}
       </div>
       <div className="clue-number">{clueNumber}</div>
     </Wrapper>

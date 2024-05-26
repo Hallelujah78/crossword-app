@@ -9,6 +9,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -18,6 +19,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -27,6 +29,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -36,6 +39,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -45,6 +49,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -54,6 +59,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -63,6 +69,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -72,6 +79,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -81,6 +89,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -90,6 +99,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -99,6 +109,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -108,6 +119,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -117,6 +129,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // 2nd row, every other square
   {
@@ -127,6 +140,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -136,6 +150,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -145,6 +160,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -154,6 +170,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -163,6 +180,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -172,6 +190,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -181,6 +200,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -190,6 +210,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -199,6 +220,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -208,6 +230,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -217,6 +240,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -226,6 +250,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -235,6 +260,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end of row 2
   // row 3
@@ -246,6 +272,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -255,6 +282,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -264,6 +292,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -273,6 +302,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -282,6 +312,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -291,6 +322,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -300,6 +332,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -309,6 +342,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -318,6 +352,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -327,6 +362,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -336,6 +372,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -345,6 +382,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -354,6 +392,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end of row 3
   // row 4
@@ -365,6 +404,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -374,6 +414,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -383,6 +424,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -392,6 +434,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -401,6 +444,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -410,6 +454,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -419,6 +464,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -428,6 +474,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -437,6 +484,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -446,6 +494,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -455,6 +504,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -464,6 +514,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -473,6 +524,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end of row
   // row 5
@@ -484,6 +536,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -493,6 +546,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -502,6 +556,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -511,6 +566,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -520,6 +576,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -529,6 +586,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -538,6 +596,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -547,6 +606,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -556,6 +616,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -565,6 +626,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -574,6 +636,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -583,6 +646,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -592,6 +656,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end of row 5
   // row 6
@@ -603,6 +668,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -612,6 +678,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -621,6 +688,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -630,6 +698,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -639,6 +708,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -648,6 +718,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -657,6 +728,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -666,6 +738,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -675,6 +748,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -684,6 +758,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -693,6 +768,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -702,6 +778,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -711,6 +788,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end of row 6
   // row 7
@@ -722,6 +800,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -731,6 +810,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -740,6 +820,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -749,6 +830,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -758,6 +840,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -767,6 +850,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -776,6 +860,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -785,6 +870,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -794,6 +880,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -803,6 +890,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -812,6 +900,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -821,6 +910,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -830,6 +920,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end 7
   // row 8
@@ -841,6 +932,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -850,6 +942,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -859,6 +952,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -868,6 +962,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -877,6 +972,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -886,6 +982,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -895,6 +992,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -904,6 +1002,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -913,6 +1012,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -922,6 +1022,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -931,6 +1032,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -940,6 +1042,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -949,6 +1052,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end 8
   // row 9
@@ -960,6 +1064,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -969,6 +1074,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -978,6 +1084,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -987,6 +1094,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -996,6 +1104,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1005,6 +1114,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1014,6 +1124,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1023,6 +1134,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1032,6 +1144,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1041,6 +1154,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1050,6 +1164,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1059,6 +1174,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1068,6 +1184,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end 9
   // row 10
@@ -1079,6 +1196,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1088,6 +1206,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1097,6 +1216,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1106,6 +1226,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1115,6 +1236,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1124,6 +1246,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1133,6 +1256,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1142,6 +1266,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1151,6 +1276,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1160,6 +1286,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1169,6 +1296,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1178,6 +1306,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1187,6 +1316,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end 10
   // row 11
@@ -1198,6 +1328,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1207,6 +1338,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1216,6 +1348,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1225,6 +1358,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1234,6 +1368,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1243,6 +1378,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1252,6 +1388,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1261,6 +1398,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1270,6 +1408,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1279,6 +1418,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1288,6 +1428,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1297,6 +1438,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1306,6 +1448,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end 11
   // row 12
@@ -1317,6 +1460,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1326,6 +1470,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1335,6 +1480,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1344,6 +1490,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1353,6 +1500,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1362,6 +1510,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1371,6 +1520,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1380,6 +1530,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1389,6 +1540,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1398,6 +1550,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1407,6 +1560,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1416,6 +1570,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1425,6 +1580,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   // end 12
   // row 13
@@ -1436,6 +1592,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1445,6 +1602,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1454,6 +1612,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1463,6 +1622,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1472,6 +1632,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1481,6 +1642,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1490,6 +1652,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1499,6 +1662,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: false,
@@ -1508,6 +1672,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1517,6 +1682,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1526,6 +1692,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1535,6 +1702,7 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
   {
     isVoid: true,
@@ -1544,5 +1712,6 @@ export const grid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    selected: false,
   },
 ];
