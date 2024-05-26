@@ -24,6 +24,7 @@ import {
   populateClues,
   initializeApp,
   resetAllAnswers,
+  resetSelectedCells,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
@@ -33,7 +34,7 @@ const SolveGrid: React.FC = () => {
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
-  const [direction, setDirection] = useState<Direction>(Direction.ACROSS);
+  const [selectedClue, setSelectedClue] = useState<string>("");
 
   async function getClues() {
     const clues = [...clueList];
@@ -129,7 +130,7 @@ const SolveGrid: React.FC = () => {
     let id: number;
     let clues = [...clueList];
     let grid = [...gridState];
-    let currDirection = direction;
+
     let containingClues: Clue[];
     let cellItem: CellType | undefined;
 
@@ -143,25 +144,46 @@ const SolveGrid: React.FC = () => {
         return clue.indices.includes(id);
       });
       console.log(containingClues);
-      if (currDirection === Direction.ACROSS && containingClues.length > 1) {
-        setDirection(Direction.DOWN);
-        // select the across clue
-        cellItem!.selected = !cellItem!.selected;
-      } else if (
-        currDirection === Direction.DOWN &&
-        containingClues.length > 1
-      ) {
-        setDirection(Direction.ACROSS);
-        // select the down clue
-        cellItem!.selected = !cellItem!.selected;
-      } else {
-        // this is not a cell that intersects with anything else
-        if (currDirection === Direction.ACROSS) {
-          setDirection(Direction.DOWN);
-          cellItem!.selected = !cellItem!.selected;
+
+      if (containingClues.length === 2) {
+        if (!selectedClue) {
+          // get the clue with the across direction
+          resetSelectedCells(grid);
+          const acrossClue = containingClues.find(
+            (clue) => clue.direction === Direction.ACROSS
+          );
+          acrossClue.indices.forEach((index) => {
+            grid.find((gridItem) => {
+              return gridItem.id === index;
+            }).selected = true;
+          });
+
+          // take the indices prop
+          // iterate over that prop and set each corresponding item in grid to be selected true
+          cellItem.selected = true;
+
+          setSelectedClue(acrossClue.id);
+          setGridState(grid);
         } else {
-          setDirection(Direction.ACROSS);
-          cellItem!.selected = !cellItem!.selected;
+          resetSelectedCells(grid);
+          // cell is selected but how do we know the direction
+          const newSelectedClue: Clue | undefined = containingClues.find(
+            (clue) => {
+              return selectedClue !== clue.id;
+            }
+          );
+          console.log("selected clue: ", newSelectedClue);
+          newSelectedClue.indices.forEach((index) => {
+            grid.find((gridItem) => {
+              return gridItem.id === index;
+            }).selected = true;
+          });
+
+          // take the indices prop
+          // iterate over that prop and set each corresponding item in grid to be selected true
+          cellItem.selected = true;
+          setSelectedClue(newSelectedClue.id);
+          setGridState(grid);
         }
       }
     } else {

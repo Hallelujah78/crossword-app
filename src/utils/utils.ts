@@ -1265,3 +1265,9 @@ export const fillEmptyAnswers = (
     console.log("***************************");
   }
 };
+
+export const resetSelectedCells = (grid: CellType[]) => {
+  for (const gridItem of grid) {
+    gridItem.selected = false;
+  }
+};
