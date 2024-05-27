@@ -45,7 +45,14 @@ const SolveGrid: React.FC = () => {
       return clue.direction === direction;
     });
     return cluesToRender.map((clue) => {
-      return <li key={clue.id}>{clue.clue}</li>;
+      return (
+        <li key={clue.id}>
+          <span>1</span>{" "}
+          <div>
+            {clue.clue} <span>(4,2)</span>
+          </div>
+        </li>
+      );
     });
   };
 
@@ -311,18 +318,24 @@ const Wrapper = styled.div`
     }
   }
   .clue-container {
+    margin-top: -4rem;
     h2 {
+      border-bottom: 1px rgba(80, 80, 80, 0.8) solid;
       font-size: 1.25rem;
       font-weight: 700;
       color: #a9dfff;
+      height: 1.75rem;
+      margin-top: 2.5rem;
     }
     left: 42vw;
     position: absolute;
     width: 25vw;
-    /* color: white; */
-    color: white;
+    color: #d1d0ce;
     li {
       margin: 0.5rem 0 0.5rem 0;
+      color: darkgray;
+      display: flex;
+      justify-content: space-between;
     }
   }
 `;
