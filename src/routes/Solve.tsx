@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import SolveGrid from "../components/SolveGrid";
+import ClueContainer from "../components/ClueContainer";
 
 const Solve: React.FC = () => {
   return (
     <Wrapper>
       <SolveGrid />
+      <ClueContainer />
     </Wrapper>
   );
 };
@@ -18,11 +20,4 @@ const Wrapper = styled.div`
   max-width: 100%;
   position: relative;
   background-color: #1c1d1f;
-
-  h2 {
-    margin: auto;
-    color: white;
-    height: 100%;
-    font-size: 2rem;
-  }
 `;

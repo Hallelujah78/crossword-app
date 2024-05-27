@@ -40,6 +40,15 @@ const SolveGrid: React.FC = () => {
     null
   );
 
+  const renderClues = (clues: Clue[], direction: Direction) => {
+    const cluesToRender = clues.filter((clue) => {
+      return clue.direction === direction;
+    });
+    return cluesToRender.map((clue) => {
+      return <li key={clue.id}>{clue.clue}</li>;
+    });
+  };
+
   async function getClues() {
     const clues = [...clueList];
     type ReqClue = {
@@ -212,7 +221,12 @@ const SolveGrid: React.FC = () => {
       return;
     }
   };
-
+  // *******************************
+  // *******************************
+  // JSX below here
+  // *******************************
+  // *******************************
+  // *******************************
   return (
     <Wrapper>
       {gridState?.map((cell, index) => {
@@ -224,6 +238,17 @@ const SolveGrid: React.FC = () => {
           />
         );
       })}
+      <div className="clue-container">
+        <div className="across">
+          <h2>Across</h2>
+          <ul>{renderClues(clueList, Direction.ACROSS)}</ul>
+        </div>
+        <div className="down"></div>
+        <h2>Down</h2>
+        <ul>
+          <ul>{renderClues(clueList, Direction.DOWN)}</ul>
+        </ul>
+      </div>
       <div className="control-container">
         <button onClick={() => generateClues()}>Generate Answers</button>
         <br />
@@ -267,6 +292,7 @@ const SolveGrid: React.FC = () => {
 export default SolveGrid;
 
 const Wrapper = styled.div`
+  position: relative;
   grid-template-columns: repeat(13, 1fr);
   display: grid;
   width: auto;
@@ -282,6 +308,21 @@ const Wrapper = styled.div`
     }
     label {
       color: white;
+    }
+  }
+  .clue-container {
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #a9dfff;
+    }
+    left: 42vw;
+    position: absolute;
+    width: 25vw;
+    /* color: white; */
+    color: white;
+    li {
+      margin: 0.5rem 0 0.5rem 0;
     }
   }
 `;
