@@ -1385,3 +1385,26 @@ At this point, our generation code is complete. Now, we decide what options we g
 - if the cell is the start of a down clue and occurs in a position other than the start of an across clue
   - select the down clue
 - if the cell only occurs in one clue (down or across) select the appropriate answer cells
+
+## Issue 28-5-2024
+- we need access to the raw version of each answer
+  - this is required so we can accurately display how many words an answer has:
+    - (4,2) - 2 words, one is 4 letters long, the other is 2 letters long
+    - (4-2) - a hypenated word with one 4 letters long, the second is 2
+    - (4-2,4) - a hyphenated word that is six letters long (4-2) and a separate word that is 4 letters long
+- to achieve this we will:
+  - add a raw property to each clue which is an array of strings
+  - update all code that sets the answer prop on a clue
+    - we will also have to set the raw prop every time we set the answer prop
+- this is partially done but:
+  - we have a uniqueAnswers array of strings which are answers
+- later in the code, we iterate over the uniqueAnswers array and we set the rClue answer;
+
+```js
+for (const answer of uniqueAnswers) {
+/// a bunch of code
+rclue.answer = [...answer];
+// some more code here
+}
+```
+- we need to set the `raw` prop on rClue, and so we'll have to refactor our code so that instead of pushing a string to uniqueAnswers, we push an object like so `{word: "fullon", raw: "full-on"}`

@@ -8,6 +8,7 @@ export default class Clue {
     public direction: Direction,
     public indices: number[],
     public answer: string[],
+    public raw: string[],
     public clue: string,
     public intersection?: {
       id: string;

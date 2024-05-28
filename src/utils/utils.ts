@@ -183,6 +183,7 @@ export const createClues = (grid: CellType[]) => {
         Direction.ACROSS,
         [currIndex],
         [""],
+        [""],
         ""
       );
 
@@ -208,6 +209,7 @@ export const createClues = (grid: CellType[]) => {
         1,
         Direction.DOWN,
         [currIndex],
+        [""],
         [""],
         ""
       );
@@ -444,11 +446,10 @@ const setClueAnswers = (
 
   // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
   if (possibleAnswers.length !== 0) {
+    const clueAnswer =
+      possibleAnswers[Math.floor(randVal * possibleAnswers.length)];
     clue.answer = [
-      ...(possibleAnswers[Math.floor(randVal * possibleAnswers.length)].word !==
-      undefined
-        ? possibleAnswers[Math.floor(randVal * possibleAnswers.length)].word!
-        : possibleAnswers[Math.floor(randVal * possibleAnswers.length)].raw),
+      ...(clueAnswer.word !== undefined ? clueAnswer.word! : clueAnswer.raw),
     ];
     clue.intersection?.forEach((item) => {
       const clueToUpdate = clues.find((clue) => {
@@ -630,6 +631,7 @@ const setClueAnswers = (
 
       const usedLetters = [sharedLetter?.letter];
       const uniqueAnswers = [];
+    
 
       for (const answer of candidateAnswers) {
         let candidateAnswer: string;
@@ -693,9 +695,12 @@ const setClueAnswers = (
           } else {
             clue.answer = [...candidateAnswers[0].raw];
           }
+          clue.raw = [...candidateAnswers[0].raw];
 
           if (rClue) {
             rClue.answer = [...answer];
+
+            rClue.raw = [...]
           }
           // logs
           // console.log("clue answer: ", clue.answer);
