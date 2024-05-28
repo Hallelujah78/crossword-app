@@ -40,14 +40,18 @@ const SolveGrid: React.FC = () => {
     null
   );
 
-  const renderClues = (clues: Clue[], direction: Direction) => {
+  const renderClues = (clueList: Clue[], direction: Direction) => {
+    const clues = [...clueList];
+    clues.sort((a, b) => {
+      return a.clueNumber - b.clueNumber;
+    });
     const cluesToRender = clues.filter((clue) => {
       return clue.direction === direction;
     });
     return cluesToRender.map((clue) => {
       return (
         <li key={clue.id}>
-          <span>1</span>{" "}
+          <span>{clue.clueNumber}</span>{" "}
           <div>
             {clue.clue} <span>(4,2)</span>
           </div>

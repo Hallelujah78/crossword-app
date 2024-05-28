@@ -177,6 +177,7 @@ export const createClues = (grid: CellType[]) => {
     // across clue
     if (grid[currIndex].right && !grid[currIndex].left) {
       const acrossClue = new Clue(
+        0,
         `${currIndex}ACROSS`,
         1,
         Direction.ACROSS,
@@ -202,6 +203,7 @@ export const createClues = (grid: CellType[]) => {
     if (grid[currIndex].bottom && !grid[currIndex].top) {
       //
       const downClue = new Clue(
+        0,
         `${currIndex}DOWN`,
         1,
         Direction.DOWN,
@@ -346,7 +348,7 @@ export const populateClues = (
   if (emptyCells) {
     fillEmptyAnswers(clues, gridState, setGridState, setClueList);
   }
-
+  setClueNumbersOnClues(clues, gridState);
   setClueNumbers(gridState);
   setClueList(clues);
   setGridState(gridState);
@@ -1278,4 +1280,18 @@ export const setSelection = (grid: CellType[], clue: Clue) => {
       return gridItem.id === index;
     })!.selected = true;
   });
+};
+
+export const setClueNumbersOnClues = (
+  clueList: Clue[],
+  gridState: CellType[]
+) => {
+  for (const clue of clueList) {
+    console.log("********clue**********", clue);
+    const indexOfStartAnswer = clue.indices[0];
+    console.log(indexOfStartAnswer);
+    if (gridState[indexOfStartAnswer].clueNumber) {
+    }
+    clue.clueNumber = +gridState[indexOfStartAnswer].clueNumber!;
+  }
 };
