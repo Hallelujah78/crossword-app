@@ -448,9 +448,11 @@ const setClueAnswers = (
   if (possibleAnswers.length !== 0) {
     const clueAnswer =
       possibleAnswers[Math.floor(randVal * possibleAnswers.length)];
+
     clue.answer = [
       ...(clueAnswer.word !== undefined ? clueAnswer.word! : clueAnswer.raw),
     ];
+    clue.raw = [...clueAnswer.raw];
     clue.intersection?.forEach((item) => {
       const clueToUpdate = clues.find((clue) => {
         return clue.id === item.id;
@@ -631,13 +633,13 @@ const setClueAnswers = (
 
       const usedLetters = [sharedLetter?.letter];
       const uniqueAnswers = [];
-    
 
       for (const answer of candidateAnswers) {
         let candidateAnswer: string;
         if (answer.word) {
           candidateAnswer = answer.word;
         } else candidateAnswer = answer.raw;
+
         if (
           sharedLetter &&
           sharedLetter.rClueIndex !== undefined &&
@@ -646,13 +648,14 @@ const setClueAnswers = (
           )
         ) {
           usedLetters.push(candidateAnswer[sharedLetter.rClueIndex as number]);
-          uniqueAnswers.push(candidateAnswer);
+          uniqueAnswers.push(answer); // *******
         }
       }
       // we need to break out of this once we set clue answer, rclue answer and update the intersecting clues
       for (const answer of uniqueAnswers) {
-        // let oldLetter: string | undefined;
+        const word = answer.word ? answer.word : answer.raw;
         let candidateAnswer: string[] = [];
+
         let regExp: RegExp | undefined;
 
         if (
@@ -660,20 +663,11 @@ const setClueAnswers = (
           sharedLetter.clueIndex !== undefined &&
           sharedLetter.rClueIndex !== undefined
         ) {
-          // oldLetter =
-          //   sharedLetter.clueIndex !== undefined
-          //     ? clue.answer[sharedLetter.clueIndex]
-          //     : undefined;
           candidateAnswer = [...clue.answer];
           candidateAnswer[sharedLetter.clueIndex] =
-            answer[sharedLetter.rClueIndex];
+            word[sharedLetter.rClueIndex];
           regExp = arrayToRegularExp(candidateAnswer);
         }
-
-        // logs
-        // console.log("clue answer: ", clue.answer);
-        // console.log("candidate answer: ", candidateAnswer);
-        // logs
 
         const wordList = getWordList(
           clue.answer.length as AnswerLength,
@@ -698,15 +692,11 @@ const setClueAnswers = (
           clue.raw = [...candidateAnswers[0].raw];
 
           if (rClue) {
-            rClue.answer = [...answer];
+            // if word exists on answer, then word refers to the word prop (including hyphens etc), else it refers to raw
+            rClue.answer = [...word];
 
-            rClue.raw = [...]
+            rClue.raw = [...answer.raw];
           }
-          // logs
-          // console.log("clue answer: ", clue.answer);
-          // console.log("rclue answer: ", rClue?.answer);
-          // logs
-          // copied and pasted from the start of setClueAnswers
 
           // ****************** update intersecting clues below this
           clue.intersection?.forEach((item) => {
@@ -1054,6 +1044,7 @@ export const setClueAnswer = (candidateAnswers: Answer[], clue: Clue) => {
     } else {
       clue.answer = [...candidateAnswers[0].raw];
     }
+    clue.raw = [...candidateAnswers[0].raw];
   }
 };
 
@@ -1116,6 +1107,7 @@ export const resetAllAnswers = (
     // reset the answer and intersection
     const emptyAnswer = new Array(clue.answer.length).fill("");
     clue.answer = emptyAnswer;
+    clue.raw = [""];
 
     if (clue.intersection) {
       for (const intersectObj of clue.intersection) {

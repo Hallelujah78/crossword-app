@@ -15091,7 +15091,6 @@ const five: Answer[] = [
   {
     freq: 41751,
     raw: "PUT-ON",
-
     word: "PUTON",
   },
   {
@@ -59229,7 +59228,7 @@ const six = [
   },
 ];
 
-const seven = [
+const seven: Answer[] = [
   {
     freq: 66,
     raw: "BECAUSE",
@@ -89177,7 +89176,6 @@ const seven = [
   {
     freq: 56714,
     raw: "LOW-LOAD",
-
     word: "LOWLOAD",
   },
   {
@@ -89199,13 +89197,11 @@ const seven = [
   {
     freq: 56758,
     raw: "RED-FLAG",
-
     word: "REDFLAG",
   },
   {
     freq: 56766,
     raw: "GRAB-BAG",
-
     word: "GRABBAG",
   },
   {
@@ -89235,7 +89231,6 @@ const seven = [
   {
     freq: 56811,
     raw: "BLOW-OFF",
-
     word: "BLOWOFF",
   },
   {
@@ -90462,7 +90457,7 @@ const seven = [
   },
 ];
 
-const eight = [
+const eight: Answer[] = [
   {
     freq: 148,
     raw: "AMERICAN",
@@ -156511,12 +156506,7 @@ const nine = [
 
     word: "ANTIFRAUD",
   },
-  {
-    freq: 53982,
-    raw: "PAPIER-MCH",
 
-    word: "PAPIERMCH",
-  },
   {
     freq: 53987,
     raw: "PAST-TENSE",
