@@ -1408,3 +1408,19 @@ rclue.answer = [...answer];
 }
 ```
 - we need to set the `raw` prop on rClue, and so we'll have to refactor our code so that instead of pushing a string to uniqueAnswers, we push an object like so `{word: "fullon", raw: "full-on"}`
+
+## Todo/ideas for Solver Route
+- a new grid/crossword is generated and AI clues are retrieved when the page is visited
+  - may need a timer for this to prevent spamming the anthropic API
+    - a 10 minute timer with a button to 'generate new' with the timer/expiry saved to local storage
+- remove the generate answers, remove empty cells, force fill grid, reset answers and AI generate clues only when the app is being deployed
+
+- implement this next:
+  - tab cycles between highlighting clues with the same direction
+  - pressing tab when the last across or down clue has been reached causes the first down or across clue to be highlighted respectively
+- display the hyphen on the grid for hyphenated words
+- display a heavy border on the grid for spaces between words
+  - perhaps even use a different color
+- arrow keys are used to move between cells
+  - pressing right when there is a void to the right does nothing
+
