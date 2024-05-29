@@ -1416,8 +1416,10 @@ rclue.answer = [...answer];
 - remove the generate answers, remove empty cells, force fill grid, reset answers and AI generate clues only when the app is being deployed
 
 - implement this next:
+  - when an answer on the grid is selected, the corresponding clue should be highlighted 
   - tab cycles between highlighting clues with the same direction
   - pressing tab when the last across or down clue has been reached causes the first down or across clue to be highlighted respectively
+  - if no clue/cell is selected, tab acts in the normal way
 - display the hyphen on the grid for hyphenated words
 - display a heavy border on the grid for spaces between words
   - perhaps even use a different color

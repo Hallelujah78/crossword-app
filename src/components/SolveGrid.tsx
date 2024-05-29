@@ -1,5 +1,5 @@
 // react
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // models
 
@@ -27,6 +27,8 @@ import {
   resetSelectedCells,
   setSelection,
   getWordLength,
+  getAcrossClues,
+  getDownClues,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
@@ -40,6 +42,38 @@ const SolveGrid: React.FC = () => {
   const [previousSelection, setPreviousSelection] = useState<CellType | null>(
     null
   );
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleTabPress);
+    return () => {
+      document.removeEventListener("keydown", handleTabPress);
+    };
+  });
+
+  const handleTabPress = (event: KeyboardEvent) => {
+    if (selectedClue !== "" && event.key === "Tab") {
+      event.preventDefault();
+      const currentSelectedClue = selectedClue;
+      const clues = [...clueList];
+      clues.sort((a, b) => {
+        return a.clueNumber - b.clueNumber;
+      });
+      clues.sort((a, b) => {
+        return a.direction - b.direction;
+      });
+      console.log(clues);
+      let index = clues.findIndex(
+        (clue: Clue) => clue.id === currentSelectedClue
+      );
+
+      if (index === clues.length - 1) {
+        index = 0;
+      } else {
+        index = index + 1;
+      }
+      setSelectedClue(clues[index].id);
+    }
+  };
 
   const renderClues = (clueList: Clue[], direction: Direction) => {
     const clues = [...clueList];
