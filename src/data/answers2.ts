@@ -21542,7 +21542,6 @@ const four = [
   {
     freq: 5838,
     raw: "MA'AM",
-
     word: "MAAM",
   },
   {
@@ -215199,6 +215198,11 @@ const eleven = [
     freq: 59916,
     raw: "CRYSTALLITE",
   },
+  {
+    freq: 99999,
+    raw: "PIECE OF CAKE",
+    word: "PIECEOFCAKE",
+  },
 ];
 const twelve = [
   {
@@ -232884,6 +232888,11 @@ const twelve = [
   {
     freq: 59907,
     raw: "BRONCHOSCOPE",
+  },
+  {
+    freq: 99999,
+    raw: "BIRDS-EYE VIEW",
+    word: "BIRDSEYEVIEW",
   },
 ];
 

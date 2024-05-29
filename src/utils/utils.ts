@@ -1292,3 +1292,46 @@ export const setClueNumbersOnClues = (
     clue.clueNumber = +gridState[indexOfStartAnswer].clueNumber!;
   }
 };
+
+export const getWordLength = (clue: Clue) => {
+  const { answer, raw } = clue;
+  // what are the possiblities?
+  // word can include ' (QU'RAN) - ignore the apostrophe
+  // word can include multiple hyphens/a single hyphen, we need to indicate this on the grid
+  // word can include a ' and a hyphen (BIRD'S-EYE)
+  // currently our word list doesn't include phrases (answers containing two or more unhyphenated words)
+
+  if (raw.length === answer.length) {
+    return `(${raw.length})`;
+  }
+  // strip apostrophes
+  let strippedWord: string[] = raw;
+  if (raw.includes("'")) {
+    strippedWord = raw.filter((character) => {
+      return character !== "'";
+    });
+  }
+
+  let wordLengths = [];
+  let position = 0;
+  let length = 1;
+  while (position <= strippedWord.length) {
+    position = position + 1;
+    const char = strippedWord[position];
+
+    if (char === " " || char === "-") {
+      wordLengths.push(length);
+      char === "-"
+        ? wordLengths.push(strippedWord[position])
+        : wordLengths.push(",");
+      length = 0;
+      continue;
+    }
+    if (position === strippedWord.length) {
+      wordLengths.push(length);
+    }
+    length = length + 1;
+  }
+  console.log("the word length:");
+  return `(${wordLengths.join("")})`;
+};

@@ -26,6 +26,7 @@ import {
   resetAllAnswers,
   resetSelectedCells,
   setSelection,
+  getWordLength,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
@@ -53,7 +54,7 @@ const SolveGrid: React.FC = () => {
         <li key={clue.id}>
           <span>{clue.clueNumber}</span>{" "}
           <div>
-            {clue.clue} <span>(4,2)</span>
+            {clue.clue} <span>{getWordLength(clue)}</span>
           </div>
         </li>
       );
