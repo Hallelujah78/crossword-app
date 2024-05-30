@@ -71,6 +71,7 @@ const SolveGrid: React.FC = () => {
       } else {
         index = index + 1;
       }
+      resetSelectedCells(grid);
       setSelectedClue(clues[index].id);
     }
   };

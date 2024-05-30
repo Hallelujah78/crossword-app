@@ -1419,6 +1419,7 @@ rclue.answer = [...answer];
   - when an answer on the grid is selected, the corresponding clue should be highlighted 
   - tab cycles between highlighting clues with the same direction
   - pressing tab when the last across or down clue has been reached causes the first down or across clue to be highlighted respectively
+    - the cycling is occuring in state now, but needs to show in UI
   - if no clue/cell is selected, tab acts in the normal way
 - display the hyphen on the grid for hyphenated words
 - display a heavy border on the grid for spaces between words
