@@ -1427,3 +1427,15 @@ rclue.answer = [...answer];
 - arrow keys are used to move between cells
   - pressing right when there is a void to the right does nothing
 
+## Setting focus on an input when we tab between clues
+- we should be able to do as follows:
+  - we already have a state value called selectedCell that references a CellType
+    - this has an id prop which is a number
+  - we can pass this to each SolveCell
+  - when we are setting selectedCell, we take this value and if selectedCell.id equals the id on SolveCell then autoFocus is true
+  - does this work?
+    - NO - DOESN'T WORK! autofocus only works on first render.
+### Another solution:
+- one solution is to create a ref for every single input and hold this in an array using a ref
+- <a href="https://stackoverflow.com/questions/65350114/useref-for-element-in-loop-in-react/65350394#65350394">Multiple Refs</a>
+- every time selectedCell state changes, we call ref.current.focus() on the appropriate element in our array of refs

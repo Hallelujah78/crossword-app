@@ -27,8 +27,6 @@ import {
   resetSelectedCells,
   setSelection,
   getWordLength,
-  getAcrossClues,
-  getDownClues,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
@@ -39,9 +37,7 @@ const SolveGrid: React.FC = () => {
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>("");
-  const [previousSelection, setPreviousSelection] = useState<CellType | null>(
-    null
-  );
+  const [selectedCell, setSelectedCell] = useState<CellType | null>(null);
 
   useEffect(() => {
     document.addEventListener("keydown", handleTabPress);
@@ -51,29 +47,40 @@ const SolveGrid: React.FC = () => {
   });
 
   const handleTabPress = (event: KeyboardEvent) => {
-    if (selectedClue !== "" && event.key === "Tab") {
-      event.preventDefault();
-      const currentSelectedClue = selectedClue;
-      const clues = [...clueList];
-      clues.sort((a, b) => {
-        return a.clueNumber - b.clueNumber;
-      });
-      clues.sort((a, b) => {
-        return a.direction - b.direction;
-      });
-      console.log(clues);
-      let index = clues.findIndex(
-        (clue: Clue) => clue.id === currentSelectedClue
-      );
-
+    if (selectedClue === "") {
+      return;
+    }
+    event.preventDefault();
+    const currentSelectedClue = selectedClue;
+    const clues = [...clueList];
+    const grid = [...gridState];
+    clues.sort((a, b) => {
+      return a.clueNumber - b.clueNumber;
+    });
+    clues.sort((a, b) => {
+      return a.direction - b.direction;
+    });
+    console.log(clues);
+    let index = clues.findIndex(
+      (clue: Clue) => clue.id === currentSelectedClue
+    );
+    if (selectedClue !== "" && event.key === "Tab" && !event.shiftKey) {
       if (index === clues.length - 1) {
         index = 0;
       } else {
         index = index + 1;
       }
-      resetSelectedCells(grid);
-      setSelectedClue(clues[index].id);
     }
+    if (selectedClue !== "" && event.key === "Tab" && event.shiftKey) {
+      if (index === 0) {
+        index = clues.length - 1;
+      } else {
+        index = index - 1;
+      }
+    }
+    resetSelectedCells(grid);
+    setSelection(grid, clues[index]);
+    setSelectedClue(clues[index].id);
   };
 
   const renderClues = (clueList: Clue[], direction: Direction) => {
@@ -205,8 +212,8 @@ const SolveGrid: React.FC = () => {
         return id === item.id;
       })!;
       // **** testing only
-      if (prevClueSelection && previousSelection) {
-        console.log("prev selection cell: ", previousSelection.id);
+      if (prevClueSelection && selectedCell) {
+        console.log("prev selection cell: ", selectedCell.id);
         console.log("current cell id: ", cellItem.id);
       }
       // **** testing only
@@ -220,7 +227,7 @@ const SolveGrid: React.FC = () => {
         resetSelectedCells(grid);
 
         currentClueSelection = containingClues[0];
-        setPreviousSelection(cellItem);
+        setSelectedCell(cellItem);
         setSelection(grid, currentClueSelection);
         setSelectedClue(currentClueSelection.id);
         setGridState(grid);
@@ -234,22 +241,22 @@ const SolveGrid: React.FC = () => {
             (clue) => clue.direction === Direction.ACROSS
           );
           if (currentClueSelection) {
-            setPreviousSelection(cellItem);
+            setSelectedCell(cellItem);
             setSelection(grid, currentClueSelection);
             setSelectedClue(currentClueSelection.id);
             setGridState(grid);
           }
         } else if (
           prevClueSelection &&
-          previousSelection &&
+          selectedCell &&
           prevClueSelection?.indices.includes(cellItem.id) &&
-          previousSelection.id !== cellItem.id
+          selectedCell.id !== cellItem.id
         ) {
           currentClueSelection = clues.find((clue) => {
             return clue.id === selectedClue;
           })!;
           resetSelectedCells(grid);
-          setPreviousSelection(cellItem);
+          setSelectedCell(cellItem);
           setSelection(grid, currentClueSelection);
           setSelectedClue(currentClueSelection.id);
           setGridState(grid);
@@ -258,7 +265,7 @@ const SolveGrid: React.FC = () => {
           currentClueSelection = containingClues.find((clue) => {
             return selectedClue !== clue.id;
           })!;
-          setPreviousSelection(cellItem);
+          setSelectedCell(cellItem);
           setSelection(grid, currentClueSelection);
           setSelectedClue(currentClueSelection.id);
           setGridState(grid);
