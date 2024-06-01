@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 // models
 import { CellProps } from "../models/CellProps.model";
-import React from "react";
 
 const SolveCell: React.FC<CellProps> = ({ cell, handleCellClick }) => {
   const { isVoid, id, clueNumber, selected } = cell;

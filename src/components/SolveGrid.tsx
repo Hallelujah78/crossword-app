@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, createRef } from "react";
 
 // models
 
@@ -38,6 +38,11 @@ const SolveGrid: React.FC = () => {
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>("");
   const [selectedCell, setSelectedCell] = useState<CellType | null>(null);
+  const cellRefs = useRef([]);
+
+  cellRefs.current = gridState.map(
+    (_, index) => cellRefs.current[index] ?? createRef()
+  );
 
   useEffect(() => {
     document.addEventListener("keydown", handleTabPress);
@@ -286,6 +291,7 @@ const SolveGrid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return (
           <SolveCell
+            ref={cellRefs.current[index]}
             key={index}
             cell={cell}
             handleCellClick={handleCellClick}
