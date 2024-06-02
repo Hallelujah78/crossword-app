@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useRef, createRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // models
 
@@ -38,11 +38,7 @@ const SolveGrid: React.FC = () => {
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>("");
   const [selectedCell, setSelectedCell] = useState<CellType | null>(null);
-  const cellRefs = useRef([]);
-
-  cellRefs.current = gridState.map(
-    (_, index) => cellRefs.current[index] ?? createRef()
-  );
+  const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     document.addEventListener("keydown", handleTabPress);
@@ -83,6 +79,9 @@ const SolveGrid: React.FC = () => {
         index = index - 1;
       }
     }
+    const focusCell = clues[index].indices[0];
+    // get the first element of the indices prop of the selected clue
+    cellRefs!.current[focusCell]!.focus(); // this works
     resetSelectedCells(grid);
     setSelection(grid, clues[index]);
     setSelectedClue(clues[index].id);
@@ -291,10 +290,12 @@ const SolveGrid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return (
           <SolveCell
-            ref={cellRefs.current[index]}
             key={index}
             cell={cell}
             handleCellClick={handleCellClick}
+            ref={(el) => {
+              cellRefs.current[index] = el;
+            }}
           />
         );
       })}

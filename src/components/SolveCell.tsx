@@ -1,31 +1,35 @@
+import React from "react";
 import styled from "styled-components";
 
 // models
 import { CellProps } from "../models/CellProps.model";
 
-const SolveCell: React.FC<CellProps> = ({ cell, handleCellClick }) => {
-  const { isVoid, id, clueNumber, selected } = cell;
+const SolveCell = React.forwardRef<CellProps, HTMLInputElement>(
+  ({ cell, handleCellClick }, ref) => {
+    const { isVoid, id, clueNumber, selected } = cell;
 
-  return (
-    <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
-      <div className="letter-container">
-        {isVoid ? null : (
-          <input
-            autoComplete="off"
-            id={id.toString()}
-            onClick={(event) => {
-              handleCellClick!(event);
-            }}
-            maxLength={1}
-            type="text"
-            style={{ background: selected ? "lightyellow" : "white" }}
-          />
-        )}
-      </div>
-      <div className="clue-number">{clueNumber}</div>
-    </Wrapper>
-  );
-};
+    return (
+      <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
+        <div className="letter-container">
+          {isVoid ? null : (
+            <input
+              ref={ref}
+              autoComplete="off"
+              id={id.toString()}
+              onClick={(event) => {
+                handleCellClick!(event);
+              }}
+              maxLength={1}
+              type="text"
+              style={{ background: selected ? "lightyellow" : "white" }}
+            />
+          )}
+        </div>
+        <div className="clue-number">{clueNumber}</div>
+      </Wrapper>
+    );
+  }
+);
 export default SolveCell;
 
 const Wrapper = styled.div<{ id: number | undefined }>`
