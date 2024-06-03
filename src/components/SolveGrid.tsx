@@ -96,8 +96,15 @@ const SolveGrid: React.FC = () => {
       return clue.direction === direction;
     });
     return cluesToRender.map((clue) => {
+      const isSelected = clue.id === selectedClue;
       return (
-        <li key={clue.id}>
+        <li
+          style={{
+            background: isSelected ? "#fff7b2" : "#1c1d1f",
+            color: isSelected ? "black" : "darkgray",
+          }}
+          key={clue.id}
+        >
           <span>{clue.clueNumber}</span>{" "}
           <div>
             {clue.clue} <span>{getWordLength(clue)}</span>
@@ -386,7 +393,9 @@ const Wrapper = styled.div`
     width: 25vw;
     color: #d1d0ce;
     li {
+      border-radius: 0.2rem;
       margin: 0.5rem 0 0.5rem 0;
+      padding: 0 0.9rem 0 0.9rem;
       color: darkgray;
       display: flex;
       justify-content: space-between;
