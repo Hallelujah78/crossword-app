@@ -1351,11 +1351,11 @@ At this point, our generation code is complete. Now, we decide what options we g
 ```
 
 ## Solving Todo
-- render the clues on the screen 
+- ~~render the clues on the screen~~ DONE 
   - worry about formatting later
     - hyphens
-    - number of letters: 4-2, 9, 4,2 etc
-- when a cell is clicked, all cells in the answer are highlighted
+    - ~~number of letters: 4-2, 9, 4,2 etc~~ DONE
+- ~~when a cell is clicked, all cells in the answer are highlighted~~ DONE
 
 ## Translating Clicking on a Cell to Highlighting a Clue
 - we have some state which indicates the direction, down or across
@@ -1368,17 +1368,6 @@ At this point, our generation code is complete. Now, we decide what options we g
   - we set direction state to across and highlight the across indices
   - on the second click, we set state to down and highlight the down indices
   - use some logic here if the cell we click is only part of a down or only part of an across clue
-
-## Todo
-- regarding current code for handleCellClick
-  - not sure we need the direction state is required
-  - when we click a cell, we get an array of clues that the cell belongs in  
-    - this array contains 1 or 2 clues
-    - if the cell is not selected and clues are 2
-      - pick the across clue
-      - keep a ref to the across clue
-    - if the cell is selected and clues are 2, pick the clue that isn't in the ref and set the ref to the this other clue
-    - otherwise, there is only one clue - if not selected - select
 
 ## Actual Behaviour of Guardian Quick
 - if cell is the start of a down and across clue, select the across clue on the first click

@@ -4,7 +4,7 @@ import styled from "styled-components";
 // models
 import { CellProps } from "../models/CellProps.model";
 
-const SolveCell = React.forwardRef<CellProps, HTMLInputElement>(
+const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
   ({ cell, handleCellClick }, ref) => {
     const { isVoid, id, clueNumber, selected } = cell;
 

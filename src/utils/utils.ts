@@ -1166,7 +1166,7 @@ export const fillEmptyAnswers = (
         sharedLetter as SharedLetter,
         matches
       );
-      // console.log("unique letters: ", uniqueLetters)
+
       allUniqueLetters.push(uniqueLetters);
     }
     allUniqueLetters.sort((a, b) => {
