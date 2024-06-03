@@ -1405,10 +1405,10 @@ rclue.answer = [...answer];
 - remove the generate answers, remove empty cells, force fill grid, reset answers and AI generate clues only when the app is being deployed
 
 - implement this next:
-  - when an answer on the grid is selected, the corresponding clue should be highlighted 
-  - tab cycles between highlighting clues with the same direction
-  - pressing tab when the last across or down clue has been reached causes the first down or across clue to be highlighted respectively
-    - the cycling is occuring in state now, but needs to show in UI
+  - ~~when an answer on the grid is selected, the corresponding clue should be highlighted~~ DONE
+  - ~~tab cycles between highlighting clues with the same direction~~ DONE
+  - ~~pressing tab when the last across or down clue has been reached causes the first down or across clue to be highlighted respectively~~
+    - ~~the cycling is occuring in state now, but needs to show in UI~~ DONE
   - if no clue/cell is selected, tab acts in the normal way
 - display the hyphen on the grid for hyphenated words
 - display a heavy border on the grid for spaces between words
@@ -1428,3 +1428,4 @@ rclue.answer = [...answer];
 - one solution is to create a ref for every single input and hold this in an array using a ref
 - <a href="https://stackoverflow.com/questions/65350114/useref-for-element-in-loop-in-react/65350394#65350394">Multiple Refs</a>
 - every time selectedCell state changes, we call ref.current.focus() on the appropriate element in our array of refs
+- ***THIS IS DONE***

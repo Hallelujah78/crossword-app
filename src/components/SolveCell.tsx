@@ -21,7 +21,7 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
               }}
               maxLength={1}
               type="text"
-              style={{ background: selected ? "lightyellow" : "white" }}
+              style={{ background: selected ? "#fff7b2  " : "white" }}
             />
           )}
         </div>

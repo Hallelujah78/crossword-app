@@ -27,6 +27,7 @@ import {
   resetSelectedCells,
   setSelection,
   getWordLength,
+  getCellBelow,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
@@ -42,13 +43,15 @@ const SolveGrid: React.FC = () => {
 
   useEffect(() => {
     document.addEventListener("keydown", handleTabPress);
+    document.addEventListener("keydown", handleArrowKeyPress);
     return () => {
       document.removeEventListener("keydown", handleTabPress);
+      document.removeEventListener("keydown", handleArrowKeyPress);
     };
   });
 
   const handleTabPress = (event: KeyboardEvent) => {
-    if (selectedClue === "") {
+    if (selectedClue === "" || event.key !== "Tab") {
       return;
     }
     event.preventDefault();
@@ -80,11 +83,39 @@ const SolveGrid: React.FC = () => {
       }
     }
     const focusCell = clues[index].indices[0];
+    const newSelectedCell = grid[focusCell];
     // get the first element of the indices prop of the selected clue
     cellRefs!.current[focusCell]!.focus(); // this works
     resetSelectedCells(grid);
     setSelection(grid, clues[index]);
     setSelectedClue(clues[index].id);
+    setSelectedCell(newSelectedCell);
+  };
+
+  const handleArrowKeyPress = (event: KeyboardEvent) => {
+    if (
+      !selectedCell ||
+      (event.key !== "ArrowDown" &&
+        event.key !== "ArrowUp" &&
+        event.key !== "ArrowLeft" &&
+        event.key !== "ArrowRight")
+    ) {
+      return;
+    }
+    const grid = [...gridState];
+    const cellId = selectedCell.id; // number
+    let targetCell: CellType;
+
+    if (event.key === "ArrowDown") {
+      targetCell = getCellBelow(grid, cellId)!;
+      console.log("current cell: ", cellId);
+      console.log("target: ", targetCell.id);
+      if (!targetCell.isVoid) {
+        cellRefs!.current[targetCell.id]!.focus();
+        setSelectedCell(targetCell);
+      }
+      console.log("you pressed down!");
+    }
   };
 
   const renderClues = (clueList: Clue[], direction: Direction) => {

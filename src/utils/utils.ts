@@ -1169,6 +1169,7 @@ export const fillEmptyAnswers = (
 
       allUniqueLetters.push(uniqueLetters);
     }
+
     allUniqueLetters.sort((a, b) => {
       if (a.index !== undefined && b.index !== undefined) {
         return a.index - b.index;
