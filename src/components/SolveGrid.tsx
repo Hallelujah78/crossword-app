@@ -28,6 +28,10 @@ import {
   setSelection,
   getWordLength,
   getCellBelow,
+  getCellAbove,
+  isLeftEdge,
+  isRightEdge,
+  getCluesFromCell,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
@@ -102,19 +106,37 @@ const SolveGrid: React.FC = () => {
     ) {
       return;
     }
+    const clues = [...clueList];
     const grid = [...gridState];
+    const currentSelectedClue = clues.find((clue) => {
+      return clue.id === selectedClue;
+    });
     const cellId = selectedCell.id; // number
-    let targetCell: CellType;
+    let targetCell: CellType | null = null;
 
     if (event.key === "ArrowDown") {
       targetCell = getCellBelow(grid, cellId)!;
-      console.log("current cell: ", cellId);
-      console.log("target: ", targetCell.id);
-      if (!targetCell.isVoid) {
-        cellRefs!.current[targetCell.id]!.focus();
-        setSelectedCell(targetCell);
+    }
+    if (event.key === "ArrowUp") {
+      targetCell = getCellAbove(grid, cellId)!;
+    }
+    if (event.key === "ArrowLeft" && !isLeftEdge(grid, cellId)) {
+      targetCell = grid[cellId - 1];
+    }
+    if (event.key === "ArrowRight" && !isRightEdge(grid, cellId)) {
+      targetCell = grid[cellId + 1];
+    }
+    if (targetCell && !targetCell.isVoid) {
+      cellRefs!.current[targetCell.id]!.focus();
+
+      if (!currentSelectedClue?.indices.includes(targetCell.id)) {
+        const myClues = getCluesFromCell(targetCell, clues);
+        let index = clues.findIndex((clue: Clue) => clue.id === myClues[0].id);
+        resetSelectedCells(grid);
+        setSelectedClue(clues[index].id);
+        setSelection(grid, clues[index]);
       }
-      console.log("you pressed down!");
+      setSelectedCell(targetCell);
     }
   };
 

@@ -1336,3 +1336,11 @@ export const getWordLength = (clue: Clue) => {
   console.log("the word length:");
   return `(${wordLengths.join("")})`;
 };
+
+export const getCluesFromCell = (cell: CellType, clues: Clue[]) => {
+  const cellId = cell.id; // index of the cell
+  const containingClues = clues.filter((clue) => {
+    return clue.indices.includes(cellId);
+  });
+  return containingClues;
+};
