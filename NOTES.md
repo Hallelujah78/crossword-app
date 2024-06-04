@@ -1409,12 +1409,8 @@ rclue.answer = [...answer];
   - ~~tab cycles between highlighting clues with the same direction~~ DONE
   - ~~pressing tab when the last across or down clue has been reached causes the first down or across clue to be highlighted respectively~~
     - ~~the cycling is occuring in state now, but needs to show in UI~~ DONE
-  - if no clue/cell is selected, tab acts in the normal way
-- display the hyphen on the grid for hyphenated words
-- display a heavy border on the grid for spaces between words
-  - perhaps even use a different color
-- arrow keys are used to move between cells
-  - pressing right when there is a void to the right does nothing
+- ~~arrow keys are used to move between cells~~ DONE
+  - ~~pressing right when there is a void to the right does nothing~~ DONE
 
 ## Setting focus on an input when we tab between clues
 - we should be able to do as follows:
@@ -1429,3 +1425,22 @@ rclue.answer = [...answer];
 - <a href="https://stackoverflow.com/questions/65350114/useref-for-element-in-loop-in-react/65350394#65350394">Multiple Refs</a>
 - every time selectedCell state changes, we call ref.current.focus() on the appropriate element in our array of refs
 - ***THIS IS DONE***
+
+## Todo 4/6/2024
+- pressing delete removes the letter from the currently focused cell
+  - if there is no letter, it causes the previous cell to be focused
+  - if there is a letter, it removes the letter but the focus remains on that cell
+  - continuing to press delete when the first cell of an answer contains no letter has no effect
+- entering a letter into a cell, causes the focus to switch to the next cell in the clue (if there is one)
+- if no clue/cell is selected, tab acts in the normal way
+- display the hyphen on the grid for hyphenated words
+- display a heavy border on the grid for spaces between words
+  - perhaps even use a different color
+
+## Issue 4/6/24
+- when the user enters a letter into a cell (input), the focus switches but the letter is entered into the newly focussed cell instead of the old cell
+  - inputs need to be linked with state
+  - the letter is set in state and the input should then reflect the state
+- update if checks for handleAlphaKey
+  - if the cell to the right or below is void, then do not switch focus, 
+    - you want to update the state of the current input, but not switch focus since we're at the end of the clue
