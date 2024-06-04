@@ -10,7 +10,7 @@ const Cell: React.FC<CellProps> = ({ cell, handleClick }) => {
   return (
     <Wrapper
       id={id}
-      onClick={(e: React.MouseEvent) => handleClick(e)}
+      onClick={(e: React.MouseEvent) => handleClick!(e)}
       style={{ background: isVoid ? "black" : "white" }}
     >
       <div className="letter-container">{letter}</div>

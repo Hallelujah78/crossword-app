@@ -8,4 +8,5 @@ export type CellType = {
   left: boolean;
   letter?: string;
   selected: boolean;
+  answer?: string;
 };

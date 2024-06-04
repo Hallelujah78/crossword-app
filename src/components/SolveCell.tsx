@@ -5,14 +5,18 @@ import styled from "styled-components";
 import { CellProps } from "../models/CellProps.model";
 
 const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
-  ({ cell, handleCellClick }, ref) => {
-    const { isVoid, id, clueNumber, selected } = cell;
+  ({ cell, handleCellClick, handleInputChange }, ref) => {
+    const { isVoid, id, clueNumber, selected, answer } = cell;
 
     return (
       <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
         <div className="letter-container">
           {isVoid ? null : (
             <input
+              onChange={(e) => {
+                handleInputChange!(e);
+              }}
+              value={answer}
               ref={ref}
               autoComplete="off"
               id={id.toString()}
