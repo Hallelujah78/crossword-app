@@ -55,6 +55,21 @@ const SolveGrid: React.FC = () => {
     };
   });
 
+  const handleClueClick = (e: React.MouseEvent<HTMLLIElement>) => {
+    const grid = [...gridState];
+    const clues = [...clueList];
+    const target = e.currentTarget;
+    const currSelectedClue = clues.find((clue) => clue.id === target.id)!;
+    if (target) {
+      console.log(target.id);
+      resetSelectedCells([...gridState]);
+      setSelection([...grid], currSelectedClue);
+      setSelectedCell(grid[currSelectedClue.clueNumber]);
+      cellRefs.current[currSelectedClue.indices[0]]!.focus();
+      setSelectedClue(target.id);
+    }
+  };
+
   const handleKeyDown = (e: KeyboardEvent) => {
     // e.preventDefault();
     if (e.key === "Backspace") {
@@ -241,6 +256,8 @@ const SolveGrid: React.FC = () => {
       const isSelected = clue.id === selectedClue;
       return (
         <li
+          id={clue.id}
+          onClick={(e) => handleClueClick(e)}
           style={{
             background: isSelected ? "#fff7b2" : "#1c1d1f",
             color: isSelected ? "black" : "darkgray",
@@ -543,6 +560,10 @@ const Wrapper = styled.div`
       color: darkgray;
       display: flex;
       justify-content: space-between;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 `;
