@@ -93,6 +93,13 @@ const SolveGrid: React.FC = () => {
           cellRefs!.current[targetCell.id]!.focus();
         }
       }
+      if (currSelectedClue!.direction === 0 && selectedCell) {
+        if (!isLeftEdge(grid, selectedCell.id) && selectedCell.left) {
+          targetCell = grid[selectedCell.id - 1];
+          setSelectedCell(targetCell);
+          cellRefs!.current[targetCell.id]!.focus();
+        }
+      }
     }
     console.log("delete key pessed");
   };
