@@ -1427,11 +1427,11 @@ rclue.answer = [...answer];
 - ***THIS IS DONE***
 
 ## Todo 4/6/2024
-- pressing delete removes the letter from the currently focused cell
-  - if there is no letter, it causes the previous cell to be focused
-  - if there is a letter, it removes the letter but the focus remains on that cell
-  - continuing to press delete when the first cell of an answer contains no letter has no effect
-- entering a letter into a cell, causes the focus to switch to the next cell in the clue (if there is one)
+~~- pressing delete removes the letter from the currently focused cell~~ DONE
+  - ~~if there is no letter, it causes the previous cell to be focused~~
+  - ~~if there is a letter, it removes the letter but the focus remains on that cell~~
+  - ~~continuing to press delete when the first cell of an answer contains no letter has no effect~~
+- ~~entering a letter into a cell, causes the focus to switch to the next cell in the clue (if there is one)~~ DONE
 - if no clue/cell is selected, tab acts in the normal way
 - display the hyphen on the grid for hyphenated words
 - display a heavy border on the grid for spaces between words
@@ -1444,3 +1444,45 @@ rclue.answer = [...answer];
 - update if checks for handleAlphaKey
   - if the cell to the right or below is void, then do not switch focus, 
     - you want to update the state of the current input, but not switch focus since we're at the end of the clue
+***THIS IS FIXD***
+
+## Functionality from Guardian Quick Crossword for A-Z keys
+- if an input already has a value, and the user presses an alpha key, the existing value should be replaced
+- one way to do this (ChatGPT), is to use a no-op for the onchange and to use onKeyDown
+  - my existing code needs to be refactored so that my logic is moved from `handleInputChange` (the onChange handler) to `handleAlpha`
+- the ChatGPT example:
+
+```js
+import React, { useState } from 'react';
+
+const SingleLetterInput = () => {
+  // Step 1: Initialize state
+  const [inputValue, setInputValue] = useState('A');
+
+  // Step 2: Create onKeyDown handler
+  const handleKeyDown = (event) => {
+    // Only consider alphabetic keys
+    if (event.key.length === 1 && event.key.match(/[a-z]/i)) {
+      setInputValue(event.key.toUpperCase());
+      // Prevent the default behavior to avoid adding the character to the input value
+      event.preventDefault();
+    }
+  };
+
+  return (
+    <div>
+      {/* Step 3: Bind state to input */}
+      <input 
+        type="text" 
+        value={inputValue} 
+        onKeyDown={handleKeyDown} 
+        onChange={() => {}} // no-op to prevent React warning for controlled component
+        maxLength={1} // Optional: limit the input to a single character
+      />
+    </div>
+  );
+};
+
+export default SingleLetterInput;
+
+```

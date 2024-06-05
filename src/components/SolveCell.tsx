@@ -14,9 +14,10 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
           {isVoid ? null : (
             <input
               onKeyDown={(e) => handleKeyDown!(e)}
-              onChange={(e) => {
-                handleInputChange!(e);
-              }}
+              // onChange={(e) => {
+              //   handleInputChange!(e);
+              // }}
+              onChange={() => {}}
               value={answer}
               ref={ref}
               autoComplete="off"

@@ -48,12 +48,24 @@ const SolveGrid: React.FC = () => {
   useEffect(() => {
     document.addEventListener("keydown", handleTabPress);
     document.addEventListener("keydown", handleArrowKeyPress);
+    // document.addEventListener("keydown", handleAlpha);
 
     return () => {
       document.removeEventListener("keydown", handleTabPress);
       document.removeEventListener("keydown", handleArrowKeyPress);
+      // document.removeEventListener("keydown", handleAlpha);
     };
   });
+
+  const handleAlpha = (e: KeyboardEvent) => {
+    const grid = [...gridState];
+    const updatedGrid = grid.map((gridItem) =>
+      gridItem.id === selectedCell!.id
+        ? { ...gridItem, answer: e.key.toUpperCase() }
+        : gridItem
+    );
+    setGridState(updatedGrid);
+  };
 
   const handleClueClick = (e: React.MouseEvent<HTMLLIElement>) => {
     const grid = [...gridState];
@@ -74,6 +86,9 @@ const SolveGrid: React.FC = () => {
     // e.preventDefault();
     if (e.key === "Backspace") {
       handleDelete(e);
+    }
+    if (e.key.toUpperCase() === "A") {
+      handleAlpha(e);
     }
   };
 
