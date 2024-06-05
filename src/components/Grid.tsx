@@ -54,7 +54,6 @@ const Grid: React.FC = () => {
       const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
       requestArray.push(reqClue);
     });
-    // console.log(requestArray);
 
     let apiURL = `/.netlify/functions/getClues`; // so we don't spam API
 
@@ -135,7 +134,7 @@ const Grid: React.FC = () => {
     if (!e.currentTarget.id) {
       return;
     }
-    console.log(e.currentTarget.id);
+
     const targetIndex = +e.currentTarget.id;
 
     const symmetricalIndex = gridState.length - 1 - targetIndex;
@@ -197,8 +196,8 @@ const Grid: React.FC = () => {
             setFillGrid((prev) => !prev);
           }}
           type="checkbox"
-          name="remove_blank"
-          id="remove_blank"
+          name="fill_grid"
+          id="fill_grid"
         />
         <br />
         <button

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { CellProps } from "../models/CellProps.model";
 
 const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
-  ({ cell, handleCellClick, handleInputChange, handleKeyDown }, ref) => {
+  ({ cell, handleCellClick, handleKeyDown }, ref) => {
     const { isVoid, id, clueNumber, selected, answer } = cell;
 
     return (
@@ -14,9 +14,6 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
           {isVoid ? null : (
             <input
               onKeyDown={(e) => handleKeyDown!(e)}
-              // onChange={(e) => {
-              //   handleInputChange!(e);
-              // }}
               onChange={() => {}}
               value={answer}
               ref={ref}

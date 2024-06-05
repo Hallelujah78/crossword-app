@@ -233,7 +233,7 @@ export const createClues = (grid: CellType[]) => {
       clues.push(downClue);
     }
   });
-  // console.log("these are clues: ", clues);
+
   return clues;
 };
 
@@ -334,15 +334,12 @@ export const populateClues = (
     emptyCells.forEach((cell) => {
       cell.isVoid = true;
       removeClue(clues, cell.id!);
-      console.log(`**setting ${cell.id} to void**`);
+
       updateSurroundingCells(gridState, cell.id!);
       gridState[gridState.length - 1 - cell.id!].isVoid = true;
       gridState[gridState.length - 1 - cell.id!].letter = "";
       removeClue(clues, gridState.length - 1 - cell.id!);
       updateSurroundingCells(gridState, gridState.length - 1 - cell.id!);
-      console.log(
-        `**settting ${gridState[gridState.length - 1 - cell.id!].id} to void**`
-      );
     });
   } else {
     // removeEmpty is false, and so fillGrid is true
@@ -460,19 +457,12 @@ const setClueAnswers = (
 
       clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
     });
-    // console.log(
-    //   `setting answer for ${clue.id}, length: ${clue.length}: `,
-    //   clue.answer
-    // );
+
     for (let i = 0; i < clue.length; i++) {
       gridState[clue.indices[i]].letter = clue.answer[i];
     }
   } else {
     // from this point - we are dealing with substituting intersecting clues
-    // console.log(
-    //   `There are no possible answers for clue ${clue.id}`,
-    //   clue.answer
-    // );
 
     const letterIndex = [];
     const patterns = [];
@@ -549,7 +539,6 @@ const setClueAnswers = (
     const replaceCluePattern: RegExp[] = [];
 
     replaceClues.forEach((rClue: Clue | undefined) => {
-      // console.log("rClue: ", rClue);
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
       const myTempAnswer = [...rClue!.answer];
@@ -562,19 +551,8 @@ const setClueAnswers = (
         intersectingClues.push(irClue!);
       }
 
-      // console.log(
-      //   "clue: ",
-      //   clue.id,
-      //   "\nreplace clues: ",
-      //   replaceClues,
-      //   "\nintersect replace clues: ",
-      //   intersectingClues
-      // );
-
       intersectingClues.forEach((item) => {
         let irClue;
-
-        // console.log(item.answer.includes(""));
 
         if (item.answer.includes("")) {
           irClue = rClue!.intersection!.find((intersectObj) => {
@@ -591,7 +569,6 @@ const setClueAnswers = (
           myTempAnswer[i] = "";
         }
       }
-      // console.log("myanswer: ", myTempAnswer);
 
       replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
     });
@@ -601,8 +578,6 @@ const setClueAnswers = (
     for (const [index, rClue] of replaceClues.entries()) {
       const length = rClue?.length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
-
-      // console.log(`rClue ${rClue?.id}: `, rClue);
 
       let candidateAnswers = getMatches(
         wordList,
@@ -628,8 +603,6 @@ const setClueAnswers = (
           }
         });
       }
-
-      // console.log("candidates: ", candidateAnswers);
 
       const usedLetters = [sharedLetter?.letter];
       const uniqueAnswers = [];
@@ -680,8 +653,6 @@ const setClueAnswers = (
           candidateAnswer.join(""),
           clues
         );
-
-        // console.log("candidate answers : ",candidateAnswers);
 
         if (candidateAnswers.length > 0) {
           if (candidateAnswers[0].word) {
@@ -910,9 +881,6 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
       const removeId = clueToRemove.id;
       indicesToRemove.push(clues.indexOf(clueToRemove));
 
-      // console.log("clueToRemove intersection: ", clueToRemove.intersection);
-      // console.log("clueToRemove: ", clueToRemove)
-
       for (const intersectObj of clueToRemove.intersection!) {
         let index;
         // get the intersectingClue
@@ -928,10 +896,6 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
         if (index !== undefined) {
           intersectingClue?.intersection?.splice(index, 1);
         }
-        // console.log("index: ", index)
-
-        // console.log("spliced intersection: ", intersectingClue?.intersection?.splice(index, 1));
-        // console.log("intersecting clue intersection: ", intersectingClue.intersection)
       }
     }
   }
@@ -956,7 +920,6 @@ export const getIntersectingClues = (clue: Clue, clues: Clue[]) => {
       }
     }
   }
-  console.log("intersecting clue: ", intersectingClues);
   return intersectingClues;
 };
 
@@ -993,7 +956,6 @@ export const createUniqueLetterList = (
     index: sharedLetter.clueIndex,
     letters: [],
   };
-  console.log("shared letter: ", sharedLetter);
   for (const match of matches) {
     const word = match.word ? match.word : match.raw;
     if (
@@ -1033,7 +995,6 @@ export function generateCombinations(
     // Add the combinations generated for the next index to the result
     combinations.push(...nextCombinations);
   }
-  console.log("combos: ", combinations);
   return combinations;
 }
 
@@ -1138,29 +1099,23 @@ export const fillEmptyAnswers = (
 
   // start of incompletes iteration
   for (const incomplete of incompletes) {
-    console.log("***************************");
-    console.log("incomplete clue: ", incomplete);
     const allUniqueLetters = [];
 
     const intersecting = getIntersectingClues(incomplete, clueListCopy);
 
     for (const clue of intersecting) {
       const resetAnswer = resetIntersectClue(clue, incomplete.id);
-      // console.log("the reset answer: ", resetAnswer);
       const pattern = arrayToRegularExp(resetAnswer);
-      // console.log("the regexp pattern: ", pattern)
       const wordList = getWordList(
         resetAnswer.length as AnswerLength,
         AllAnswers
       );
-      // console.log("word list: ", wordList)
       const matches = getAllMatches(
         wordList,
         pattern,
         clue.answer.join(""),
         clueListCopy
       );
-      // console.log("the matches: ", matches);
       const sharedLetter = getLetter(clue, incomplete);
       const uniqueLetters = createUniqueLetterList(
         sharedLetter as SharedLetter,
@@ -1175,10 +1130,7 @@ export const fillEmptyAnswers = (
         return a.index - b.index;
       }
     });
-    // console.log("all uniques: ", allUniqueLetters)
     const allCombos = generateCombinations(allUniqueLetters);
-    // const allCombos = generateCombinationsWithEmptySpace(allUniqueLetters)
-    // console.log("allCombos: ", allCombos)
     // at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue
 
     // create the patterns
@@ -1186,12 +1138,10 @@ export const fillEmptyAnswers = (
     for (const combo of allCombos) {
       let patternHolder = new Array(incomplete.answer.length).fill("");
 
-      // console.log("the patt holder: ", patternHolder);
       const indices = Array.from(
         allUniqueLetters,
         (unique) => unique.index as number
       );
-      // console.log("the indices", indices)
 
       // now iterate over each item in combo, and chuck it into patternHolder at the position?
       for (const [index, letter] of combo.entries()) {
@@ -1205,30 +1155,23 @@ export const fillEmptyAnswers = (
     for (const pattern of patterns) {
       let finishLoop = false;
       // once we set a clue answer and update the intersecting clues, we need to berak out of this loop
-      console.log("pattern: ", pattern);
       const matchingWords = getAllMatches(
         wordList,
         pattern,
         incomplete.answer.join(""),
         clueListCopy
       );
-      console.log("the matching words: ", matchingWords);
       if (matchingWords.length > 0) {
         finishLoop = true;
         // set the answer and break
-        console.log("the match: ", matchingWords[0]);
-        console.log("old clue answer: ", incomplete.answer);
-        console.log("*** UPDATED CLUE ANSWER **** ", matchingWords[0]);
         setClueAnswer(matchingWords, incomplete);
         updateGridState(incomplete, gridStateCopy);
 
         // update intersecting clues
         const cluesToUpdate = updateIntersectingClues(incomplete, clueListCopy);
         // we will have to replace intersecting clue answers where the intersecting letter has been updated
-        console.log("****** CLUES TO UPDATE ****** ", cluesToUpdate);
         for (const clue of cluesToUpdate) {
           const resetAnswer = resetClue(clue);
-          console.log("reset clue: ", resetAnswer);
           const pattern = arrayToRegularExp(resetAnswer);
           const wordList = getWordList(clue.length as AnswerLength, AllAnswers);
           const matches = getMatches(
@@ -1239,14 +1182,9 @@ export const fillEmptyAnswers = (
           );
           if (matches.length > 0) {
             // set the answer and break
-            console.log("intersecting match: ", matches[0]);
-            console.log(`*** SETTING CLUE ANSWER ${clue.id} **** `, matches[0]);
             setClueAnswer(matches, clue);
             updateGridState(clue, gridStateCopy);
           } else {
-            console.log(
-              "****** NO MATCHES - WIHCH IS ACTUALLY NOT POSSIBLE, SO ... *******"
-            );
           }
         }
         // update the clueList React state
@@ -1254,15 +1192,11 @@ export const fillEmptyAnswers = (
         setGridState(gridStateCopy);
         // update the grid state
       } else {
-        // console.log("*** THERE WERE NO MATCHING WORDS FOR THIS CLUE ANSWER ***")
       }
       if (finishLoop) {
         break;
       }
     }
-
-    // this is the end of the incomplete iteration?
-    console.log("***************************");
   }
 };
 
@@ -1285,9 +1219,7 @@ export const setClueNumbersOnClues = (
   gridState: CellType[]
 ) => {
   for (const clue of clueList) {
-    console.log("********clue**********", clue);
     const indexOfStartAnswer = clue.indices[0];
-    console.log(indexOfStartAnswer);
     if (gridState[indexOfStartAnswer].clueNumber) {
     }
     clue.clueNumber = +gridState[indexOfStartAnswer].clueNumber!;
@@ -1296,11 +1228,6 @@ export const setClueNumbersOnClues = (
 
 export const getWordLength = (clue: Clue) => {
   const { answer, raw } = clue;
-  // what are the possiblities?
-  // word can include ' (QU'RAN) - ignore the apostrophe
-  // word can include multiple hyphens/a single hyphen, we need to indicate this on the grid
-  // word can include a ' and a hyphen (BIRD'S-EYE)
-  // currently our word list doesn't include phrases (answers containing two or more unhyphenated words)
 
   if (raw.length === answer.length) {
     return `(${raw.length})`;
@@ -1333,7 +1260,6 @@ export const getWordLength = (clue: Clue) => {
     }
     length = length + 1;
   }
-  console.log("the word length:");
   return `(${wordLengths.join("")})`;
 };
 
