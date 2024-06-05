@@ -6,4 +6,5 @@ export interface CellProps {
   handleClick?: (e: React.MouseEvent) => void;
   handleCellClick?: (e: React.MouseEvent) => void;
   handleInputChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleKeyDown?: (e: React.KeyboardEvent) => void;
 }

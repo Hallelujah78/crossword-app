@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useRef, ChangeEvent } from "react";
+import { useState, useEffect, useRef, ChangeEvent, KeyboardEvent } from "react";
 
 // models
 
@@ -55,39 +55,83 @@ const SolveGrid: React.FC = () => {
     };
   });
 
+  const handleKeyDown = (e: KeyboardEvent) => {
+    // e.preventDefault();
+    if (e.key === "Backspace") {
+      handleDelete(e);
+    }
+  };
+
+  const handleDelete = (e: KeyboardEvent) => {
+    if (!selectedCell) {
+      return;
+    }
+    e.preventDefault();
+    const grid = [...gridState];
+    const clues = [...clueList];
+
+    // if cell has answer, set answer to ""
+    if (selectedCell.answer) {
+      selectedCell.answer = "";
+      setSelectedCell((prev) => prev);
+      const updatedGrid = grid.map((gridItem) =>
+        gridItem.id === selectedCell!.id
+          ? { ...gridItem, answer: "" }
+          : gridItem
+      );
+      setGridState(updatedGrid);
+    } else {
+      // if cell has no answer, set focus to previous cell (if there is one)
+      const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
+
+      // 0 is across and 1 is down
+      let targetCell: CellType;
+      if (currSelectedClue!.direction === 1 && selectedCell) {
+        if (selectedCell.top) {
+          targetCell = getCellAbove(grid, selectedCell.id)!;
+          setSelectedCell(targetCell);
+          cellRefs!.current[targetCell.id]!.focus();
+        }
+      }
+    }
+    console.log("delete key pessed");
+  };
+
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
+    let newVal: string;
     if (/^[A-Za-z]$/.test(val)) {
-      e.target.value = val.toUpperCase(); // Optional: Convert to uppercase
+      newVal = val.toUpperCase(); // Optional: Convert to uppercase
     } else {
-      e.target.value = "";
+      newVal = "";
     }
+    e.target.value = newVal;
+
     const clues = [...clueList];
     const grid = [...gridState];
     const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
+    let targetCell: CellType | null = selectedCell
+      ? { ...selectedCell, answer: newVal }
+      : null;
 
-    // 0 is across and 1 is down
-    let targetCell: CellType;
     if (currSelectedClue!.direction === 1 && selectedCell) {
       if (selectedCell.bottom) {
         targetCell = getCellBelow(grid, selectedCell.id)!;
-        setSelectedCell(targetCell);
         cellRefs!.current[targetCell.id]!.focus();
       }
     }
     if (currSelectedClue!.direction === 0 && selectedCell) {
       if (!isRightEdge(grid, selectedCell.id) && selectedCell.right) {
         targetCell = grid[selectedCell.id + 1];
-        console.log("targetCell: ", targetCell);
-        setSelectedCell(targetCell);
         cellRefs!.current[targetCell.id]!.focus();
       }
     }
     const updatedGrid = grid.map((gridItem) =>
       gridItem.id === selectedCell!.id
-        ? { ...gridItem, answer: val.toUpperCase() }
+        ? { ...gridItem, answer: newVal.toUpperCase() }
         : gridItem
     );
+    setSelectedCell(targetCell);
     setGridState(updatedGrid);
   };
 
@@ -388,6 +432,7 @@ const SolveGrid: React.FC = () => {
       {gridState?.map((cell, index) => {
         return (
           <SolveCell
+            handleKeyDown={handleKeyDown}
             handleInputChange={handleInputChange}
             key={index}
             cell={cell}
