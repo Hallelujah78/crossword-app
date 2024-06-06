@@ -1486,3 +1486,14 @@ const SingleLetterInput = () => {
 export default SingleLetterInput;
 
 ```
+
+## Todo 6/6/24
+- there are a number of buttons on the Guardian Quick
+  - check all, reveal all, clear all
+  - check all
+    - when first clicked, the text changes to 'confirm check all'
+      - when the user clicks again, it appears to remove letters that are incorrect
+      - if the user fails to click after a time, the text reverts to 'check all'
+      - the reveal all and clear all buttons behave in an identical way
+- when there is nothing selected on the grid, the buttons 'check this,' 'reveal this,' and 'clear this' are not visible
+  - when the user selects a clue, these buttons become visible/usable

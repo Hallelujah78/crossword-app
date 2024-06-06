@@ -45,6 +45,24 @@ const SolveGrid: React.FC = () => {
   const [selectedCell, setSelectedCell] = useState<CellType | null>(null);
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const checkSingleClue = () => {
+    if (!selectedClue) {
+      return;
+    }
+    const grid = [...gridState];
+    const clues = [...clueList];
+    const currSelectedClue = clues.find((clue) => clue.id === selectedClue)!;
+    for (const index of currSelectedClue.indices) {
+      const cell = grid[index];
+      if (cell.answer !== cell.letter) {
+        cell.answer = "";
+      }
+    }
+    setGridState(grid);
+    // each cell has a letter and an answer prop, if letter === answer, then do nothing
+    // else, set the answer value to ""
+  };
+
   const handleAlpha = (e: KeyboardEvent) => {
     const clues = [...clueList];
     const grid = [...gridState];
@@ -439,19 +457,29 @@ const SolveGrid: React.FC = () => {
   // *******************************
   return (
     <Wrapper>
-      {gridState?.map((cell, index) => {
-        return (
-          <SolveCell
-            handleKeyDown={handleKeyDown}
-            key={index}
-            cell={cell}
-            handleCellClick={handleCellClick}
-            ref={(el) => {
-              cellRefs.current[index] = el;
-            }}
-          />
-        );
-      })}
+      <div className="grid-container">
+        {gridState?.map((cell, index) => {
+          return (
+            <SolveCell
+              handleKeyDown={handleKeyDown}
+              key={index}
+              cell={cell}
+              handleCellClick={handleCellClick}
+              ref={(el) => {
+                cellRefs.current[index] = el;
+              }}
+            />
+          );
+        })}
+      </div>
+
+      <div className="button-container">
+        <div className="single-clue">
+          <button disabled={!selectedClue} onClick={checkSingleClue}>
+            Check This
+          </button>
+        </div>
+      </div>
       <div className="clue-container">
         <div className="across">
           <h2>Across</h2>
@@ -507,10 +535,12 @@ export default SolveGrid;
 
 const Wrapper = styled.div`
   position: relative;
-  grid-template-columns: repeat(13, 1fr);
-  display: grid;
-  width: auto;
-  height: auto;
+  .grid-container {
+    grid-template-columns: repeat(13, 1fr);
+    display: grid;
+    width: auto;
+    height: auto;
+  }
   .control-container {
     position: absolute;
     top: 2rem;
@@ -525,7 +555,11 @@ const Wrapper = styled.div`
     }
   }
   .clue-container {
-    margin-top: -4rem;
+    left: 42vw;
+    position: absolute;
+    width: 25vw;
+    color: #d1d0ce;
+    margin-top: -40rem;
     h2 {
       border-bottom: 1px rgba(80, 80, 80, 0.8) solid;
       font-size: 1.25rem;
@@ -534,10 +568,7 @@ const Wrapper = styled.div`
       height: 1.75rem;
       margin-top: 2.5rem;
     }
-    left: 42vw;
-    position: absolute;
-    width: 25vw;
-    color: #d1d0ce;
+
     li {
       border-radius: 0.2rem;
       margin: 0.5rem 0 0.5rem 0;
