@@ -45,20 +45,43 @@ const SolveGrid: React.FC = () => {
   const [selectedCell, setSelectedCell] = useState<CellType | null>(null);
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const checkSingleClue = () => {
-    if (!selectedClue) {
-      return;
-    }
+  const checkAnswers = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const id = e.currentTarget.id;
     const grid = [...gridState];
     const clues = [...clueList];
     const currSelectedClue = clues.find((clue) => clue.id === selectedClue)!;
-    for (const index of currSelectedClue.indices) {
-      const cell = grid[index];
-      if (cell.answer !== cell.letter) {
+    if (id === "check-single") {
+      if (!selectedClue) {
+        return;
+      }
+      for (const index of currSelectedClue.indices) {
+        const cell = grid[index];
+        if (cell.answer !== cell.letter) {
+          cell.answer = "";
+        }
+      }
+      setGridState(grid);
+    }
+    if (id === "reveal-single") {
+      if (!selectedClue) {
+        return;
+      }
+      for (const index of currSelectedClue.indices) {
+        const cell = grid[index];
+        cell.answer = cell.letter;
+      }
+      setGridState(grid);
+    }
+    if (id === "clear-single") {
+      if (!selectedClue) {
+        return;
+      }
+      for (const index of currSelectedClue.indices) {
+        const cell = grid[index];
         cell.answer = "";
       }
+      setGridState(grid);
     }
-    setGridState(grid);
     // each cell has a letter and an answer prop, if letter === answer, then do nothing
     // else, set the answer value to ""
   };
@@ -475,8 +498,32 @@ const SolveGrid: React.FC = () => {
 
       <div className="button-container">
         <div className="single-clue">
-          <button disabled={!selectedClue} onClick={checkSingleClue}>
+          <button
+            id="check-single"
+            disabled={!selectedClue}
+            onClick={(e) => {
+              checkAnswers(e);
+            }}
+          >
             Check This
+          </button>
+          <button
+            id="reveal-single"
+            disabled={!selectedClue}
+            onClick={(e) => {
+              checkAnswers(e);
+            }}
+          >
+            Reveal This
+          </button>
+          <button
+            id="clear-single"
+            disabled={!selectedClue}
+            onClick={(e) => {
+              checkAnswers(e);
+            }}
+          >
+            Clear This
           </button>
         </div>
       </div>
