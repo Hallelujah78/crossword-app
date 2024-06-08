@@ -82,6 +82,20 @@ const SolveGrid: React.FC = () => {
       }
       setGridState(grid);
     }
+    if (id === "check-all") {
+      if (!selectedClue) {
+        return;
+      }
+      for (const clue of clues) {
+        for (const index of clue.indices) {
+          const cell = grid[index];
+          if (cell.answer !== cell.letter) {
+            cell.answer = "";
+          }
+        }
+      }
+      setGridState(grid);
+    }
     // each cell has a letter and an answer prop, if letter === answer, then do nothing
     // else, set the answer value to ""
   };
@@ -524,6 +538,17 @@ const SolveGrid: React.FC = () => {
             }}
           >
             Clear This
+          </button>
+        </div>
+        <div className="all-clues">
+          <button
+            id="check-all"
+            disabled={!selectedClue}
+            onClick={(e) => {
+              checkAnswers(e);
+            }}
+          >
+            Check All
           </button>
         </div>
       </div>
