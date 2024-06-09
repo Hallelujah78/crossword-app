@@ -120,8 +120,6 @@ const SolveGrid: React.FC = () => {
       }
       setGridState(grid);
     }
-    // each cell has a letter and an answer prop, if letter === answer, then do nothing
-    // else, set the answer value to ""
   };
 
   const handleAlpha = (e: KeyboardEvent) => {
@@ -691,6 +689,22 @@ const Wrapper = styled.div`
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+  .button-container {
+    button {
+      background-color: var(--primary-400);
+      width: 8vw;
+      border: none;
+      padding: 0.25rem 1rem;
+      margin: 0.3rem;
+      border-radius: 5rem;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--primary-100);
+      }
+      transition: 0.3s linear all;
     }
   }
 `;

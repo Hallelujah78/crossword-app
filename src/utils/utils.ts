@@ -1121,7 +1121,6 @@ export const fillEmptyAnswers = (
         sharedLetter as SharedLetter,
         matches
       );
-
       allUniqueLetters.push(uniqueLetters);
     }
 
