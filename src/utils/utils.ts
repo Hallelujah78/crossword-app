@@ -1267,3 +1267,20 @@ export const getCluesFromCell = (cell: CellType, clues: Clue[]) => {
   });
   return containingClues;
 };
+
+export const setLocalStorage = (
+  gridState: CellType[],
+  clueList: Clue[],
+  selectedClue: string,
+  selectedCell: CellType | null
+) => {
+  localStorage.setItem(
+    "solver",
+    JSON.stringify({
+      grid: [...gridState],
+      clues: [...clueList],
+      clueSelection: selectedClue,
+      cellSelection: selectedCell,
+    })
+  );
+};

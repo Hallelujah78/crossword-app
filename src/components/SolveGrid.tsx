@@ -45,6 +45,10 @@ const SolveGrid: React.FC = () => {
   const [selectedCell, setSelectedCell] = useState<CellType | null>(null);
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const getLocalStorage = () => {
+    //
+  };
+
   const checkAnswers = (e: React.MouseEvent<HTMLButtonElement>) => {
     const id = e.currentTarget.id;
     const grid = [...gridState];

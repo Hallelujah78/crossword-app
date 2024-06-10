@@ -1503,3 +1503,20 @@ export default SingleLetterInput;
 ## Todo 10/6/24
 - navigating away from the `solver` route resets the data
   - use local storage to initialize and save state
+    - every time a change is made, state gets saved to a local storage
+    - what state do we have?
+      - gridState
+      - clueList
+      - selectedClue
+      - selectedCell
+      - cellRefs - this is a ref so let's implement our local storage logic and I think it should still work fine
+    - let's place our state into an object like so:
+
+  ```js  
+  solver: {
+  grid: gridState,
+  clues: clueList,
+  clueSelection: selectedClue,
+  cellSelection: selectedCell
+    }
+```
