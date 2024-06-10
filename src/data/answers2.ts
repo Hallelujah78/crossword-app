@@ -40434,10 +40434,6 @@ const six = [
     raw: "QUAINT",
   },
   {
-    freq: 10494,
-    raw: "NIGGER",
-  },
-  {
     freq: 10500,
     raw: "OUTLAW",
   },
@@ -55595,10 +55591,7 @@ const six = [
     freq: 45903,
     raw: "BROODY",
   },
-  {
-    freq: 45919,
-    raw: "NIGGAH",
-  },
+
   {
     freq: 45934,
     raw: "GRAMMA",
@@ -87599,10 +87592,6 @@ const seven: Answer[] = [
   {
     freq: 53025,
     raw: "UNLACED",
-  },
-  {
-    freq: 53029,
-    raw: "NEGROID",
   },
   {
     freq: 53033,

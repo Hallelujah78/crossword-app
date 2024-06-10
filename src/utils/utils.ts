@@ -952,8 +952,8 @@ export const createUniqueLetterList = (
   sharedLetter: SharedLetter,
   matches: Answer[]
 ) => {
-  const uniqueLetters: { index: number | undefined; letters: string[] } = {
-    index: sharedLetter.clueIndex,
+  const uniqueLetters: { index: number; letters: string[] } = {
+    index: sharedLetter.clueIndex!,
     letters: [],
   };
   for (const match of matches) {
@@ -1125,9 +1125,7 @@ export const fillEmptyAnswers = (
     }
 
     allUniqueLetters.sort((a, b) => {
-      if (a.index !== undefined && b.index !== undefined) {
-        return a.index - b.index;
-      }
+      return a.index - b.index;
     });
     const allCombos = generateCombinations(allUniqueLetters);
     // at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue

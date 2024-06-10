@@ -1497,3 +1497,9 @@ export default SingleLetterInput;
       - the reveal all and clear all buttons behave in an identical way
 - when there is nothing selected on the grid, the buttons 'check this,' 'reveal this,' and 'clear this' are not visible
   - when the user selects a clue, these buttons become visible/usable
+***MOSTLY DONE***
+- clicking reveal all, clear all and check all simply performs the action without presenting a further button to confirm the action
+
+## Todo 10/6/24
+- navigating away from the `solver` route resets the data
+  - use local storage to initialize and save state

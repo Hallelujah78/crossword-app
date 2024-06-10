@@ -673,7 +673,7 @@ const Wrapper = styled.div`
       border-bottom: 1px rgba(80, 80, 80, 0.8) solid;
       font-size: 1.25rem;
       font-weight: 700;
-      color: #a9dfff;
+      color: var(--primary-100);
       height: 1.75rem;
       margin-top: 2.5rem;
     }
@@ -703,6 +703,9 @@ const Wrapper = styled.div`
       cursor: pointer;
       &:hover {
         background-color: var(--primary-100);
+        &:disabled {
+          cursor: not-allowed;
+        }
       }
       transition: 0.3s linear all;
     }
