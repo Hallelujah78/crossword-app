@@ -32,22 +32,25 @@ import {
   isLeftEdge,
   isRightEdge,
   getCluesFromCell,
+  getLocalStorage,
 } from "../utils/utils";
 
 const SolveGrid: React.FC = () => {
-  const [gridState, setGridState] = useState(() => initializeGrid(grid));
+  const [gridState, setGridState] = useState(() =>
+    localStorage.getItem("store")
+      ? getLocalStorage("grid")
+      : initializeGrid(grid)
+  );
   const [clueList, setClueList] = useState<Clue[]>(() =>
-    initializeApp(gridState)
+    localStorage.getItem("store")
+      ? getLocalStorage("clues")
+      : initializeApp(gridState)
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>("");
   const [selectedCell, setSelectedCell] = useState<CellType | null>(null);
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  const getLocalStorage = () => {
-    //
-  };
 
   const checkAnswers = (e: React.MouseEvent<HTMLButtonElement>) => {
     const id = e.currentTarget.id;
