@@ -1512,7 +1512,7 @@ export default SingleLetterInput;
       - cellRefs - this is a ref so let's implement our local storage logic and I think it should still work fine
     - let's place our state into an object like so:
 
-  ```js  
+```js  
   solver: {
   grid: gridState,
   clues: clueList,
@@ -1522,3 +1522,15 @@ export default SingleLetterInput;
 ```
 
 ***THIS IS DONE***
+
+## User Interaction with Solver Page - regarding initialization
+- user vists the page for the first time
+  - there is no local storage
+  - the grid must be initialized
+  - the clues must be created
+  - the state gets initialized
+  - when the state changes, we update local storage
+- this automatic initialization of the crossword requires a request to the Claude Haiku API which will incur a financial cost to me
+- there should be a disabled button with a timer to indicate when a new crossword can be generated
+  - this solution will only work on users who don't program BUT
+  - it should be sufficient since it is a portfolio project and is someone going to be a troll and spam the API? 

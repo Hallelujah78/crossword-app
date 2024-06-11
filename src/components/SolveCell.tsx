@@ -2,36 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 // models
-import { CellProps } from "../models/CellProps.model";
+import type { CellProps } from "../models/CellProps.model";
 
 const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
-	({ cell, handleCellClick, handleKeyDown }, ref) => {
-		const { isVoid, id, clueNumber, selected, answer } = cell;
+  ({ cell, handleCellClick, handleKeyDown }, ref) => {
+    const { isVoid, id, clueNumber, selected, answer } = cell;
 
-		return (
-			<Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
-				<div className="letter-container">
-					{isVoid ? null : (
-						<input
-							onKeyDown={(e) => handleKeyDown!(e)}
-							onChange={() => {}}
-							value={answer}
-							ref={ref}
-							autoComplete="off"
-							id={id.toString()}
-							onClick={(event) => {
-								handleCellClick!(event);
-							}}
-							maxLength={1}
-							type="text"
-							style={{ background: selected ? "#fff7b2  " : "white" }}
-						/>
-					)}
-				</div>
-				<div className="clue-number">{clueNumber}</div>
-			</Wrapper>
-		);
-	},
+    return (
+      <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
+        <div className="letter-container">
+          {isVoid ? null : (
+            <input
+              onKeyDown={(e) => (handleKeyDown ? handleKeyDown(e) : () => {})}
+              onChange={() => {}}
+              value={answer}
+              ref={ref}
+              autoComplete="off"
+              id={id.toString()}
+              onClick={(event) => {
+                handleCellClick ? handleCellClick(event) : () => {};
+              }}
+              maxLength={1}
+              type="text"
+              style={{ background: selected ? "#fff7b2  " : "white" }}
+            />
+          )}
+        </div>
+        <div className="clue-number">{clueNumber}</div>
+      </Wrapper>
+    );
+  }
 );
 export default SolveCell;
 
