@@ -90,9 +90,6 @@ const SolveGrid: React.FC = () => {
       setGridState(grid);
     }
     if (id === "check-all") {
-      if (!selectedClue) {
-        return;
-      }
       for (const clue of clues) {
         for (const index of clue.indices) {
           const cell = grid[index];
@@ -104,9 +101,6 @@ const SolveGrid: React.FC = () => {
       setGridState(grid);
     }
     if (id === "reveal-all") {
-      if (!selectedClue) {
-        return;
-      }
       for (const clue of clues) {
         for (const index of clue.indices) {
           const cell = grid[index];
@@ -116,9 +110,6 @@ const SolveGrid: React.FC = () => {
       setGridState(grid);
     }
     if (id === "clear-all") {
-      if (!selectedClue) {
-        return;
-      }
       for (const clue of clues) {
         for (const index of clue.indices) {
           const cell = grid[index];
