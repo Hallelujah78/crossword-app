@@ -4,11 +4,11 @@ import styled from "styled-components";
 import Grid from "../components/Grid";
 
 const Editor: React.FC = () => {
-  return (
-    <Wrapper>
-      <Grid />
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<Grid />
+		</Wrapper>
+	);
 };
 
 export default Editor;

@@ -3,12 +3,12 @@ import SolveGrid from "../components/SolveGrid";
 import ClueContainer from "../components/ClueContainer";
 
 const Solve: React.FC = () => {
-  return (
-    <Wrapper>
-      <SolveGrid />
-      <ClueContainer />
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<SolveGrid />
+			<ClueContainer />
+		</Wrapper>
+	);
 };
 
 export default Solve;

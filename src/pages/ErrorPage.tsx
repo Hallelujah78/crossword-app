@@ -3,34 +3,34 @@ import React from "react";
 import styled from "styled-components";
 
 const ErrorPage: React.FC = () => {
-  const error = useRouteError();
-  console.error(error);
-  if (isRouteErrorResponse(error)) {
-    return (
-      <Wrapper id="error-page">
-        <div className="center-content">
-          <h1>Oops!</h1>
-          <p>Sorry, an unexpected error has occurred.</p>
-          <p>
-            <i>
-              {error.status} {error.statusText}
-            </i>
-          </p>
-        </div>
-      </Wrapper>
-    );
-  }
-  return (
-    <Wrapper id="error-page">
-      <div className="center-content">
-        <h1>Oops!</h1>
-        <p>Sorry, an unexpected error has occurred.</p>
-        <p>
-          <i>{error.message || "Unknown Error"}</i>
-        </p>
-      </div>
-    </Wrapper>
-  );
+	const error = useRouteError();
+	console.error(error);
+	if (isRouteErrorResponse(error)) {
+		return (
+			<Wrapper id="error-page">
+				<div className="center-content">
+					<h1>Oops!</h1>
+					<p>Sorry, an unexpected error has occurred.</p>
+					<p>
+						<i>
+							{error.status} {error.statusText}
+						</i>
+					</p>
+				</div>
+			</Wrapper>
+		);
+	}
+	return (
+		<Wrapper id="error-page">
+			<div className="center-content">
+				<h1>Oops!</h1>
+				<p>Sorry, an unexpected error has occurred.</p>
+				<p>
+					<i>{error.message || "Unknown Error"}</i>
+				</p>
+			</div>
+		</Wrapper>
+	);
 };
 
 const Wrapper = styled.div`

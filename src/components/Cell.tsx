@@ -5,18 +5,18 @@ import { CellProps } from "../models/CellProps.model";
 import React from "react";
 
 const Cell: React.FC<CellProps> = ({ cell, handleClick }) => {
-  const { isVoid, id, clueNumber, letter } = cell;
+	const { isVoid, id, clueNumber, letter } = cell;
 
-  return (
-    <Wrapper
-      id={id}
-      onClick={(e: React.MouseEvent) => handleClick!(e)}
-      style={{ background: isVoid ? "black" : "white" }}
-    >
-      <div className="letter-container">{letter}</div>
-      <div className="clue-number">{clueNumber}</div>
-    </Wrapper>
-  );
+	return (
+		<Wrapper
+			id={id}
+			onClick={(e: React.MouseEvent) => handleClick!(e)}
+			style={{ background: isVoid ? "black" : "white" }}
+		>
+			<div className="letter-container">{letter}</div>
+			<div className="clue-number">{clueNumber}</div>
+		</Wrapper>
+	);
 };
 export default Cell;
 

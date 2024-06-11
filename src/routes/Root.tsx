@@ -2,20 +2,20 @@ import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Root: React.FC = () => {
-  return (
-    <Wrapper>
-      <nav>
-        <h1 className="title">Crossword Generator</h1>
-        <div className="link-container">
-          <NavLink to={"editor"}>Create/Edit</NavLink>
-          <NavLink to={"solver"}>Solve</NavLink>
-        </div>
-      </nav>
-      <section>
-        <Outlet />
-      </section>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<nav>
+				<h1 className="title">Crossword Generator</h1>
+				<div className="link-container">
+					<NavLink to={"editor"}>Create/Edit</NavLink>
+					<NavLink to={"solver"}>Solve</NavLink>
+				</div>
+			</nav>
+			<section>
+				<Outlet />
+			</section>
+		</Wrapper>
+	);
 };
 
 export default Root;
