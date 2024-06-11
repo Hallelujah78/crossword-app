@@ -1534,4 +1534,22 @@ export default SingleLetterInput;
 - there should be a disabled button with a timer to indicate when a new crossword can be generated
   - this solution will only work on users who don't program BUT
   - it should be sufficient since it is a portfolio project and is someone going to be a troll and spam the API?
-- the user might want to select a crossword to solve, eg one that has been created in the editor? 
+- the user might want to select a crossword to solve, eg one that has been created in the editor?
+
+- when the solver route first loads (no local storage)
+  - the user is presented with a dropdown and a button and a blank crossword grid
+    - we can hide the clue container as well or display an overlay to hide it
+  - the button is to generate a new random crossword
+    - this will be associated with a timer
+  - the dropdown is to select an existing crossword from local storage
+    - these will be stored crosswords created in the editor
+    - selecting a crossword and hitting the 'load' button will set the state to this crossword
+      - once a crossword is loaded, any progress on existing crosswords is lost in local storage
+      - we may use a notifcation to warn the user and allow confirmation
+
+## User interaction with the editor
+- upon first visit
+  - user is presented with the default empty grid
+  - they can edit the grid by toggling cells
+  - once 'Generate Answers' has been clicked, it should not be possible to toggle cells
+    - we can disable toggling cells based on: `clueList[0].answer.includes("")`

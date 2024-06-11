@@ -1,26 +1,30 @@
 import styled from "styled-components";
 
 // models
-import { CellProps } from "../models/CellProps.model";
-import React from "react";
+import type { CellProps } from "../models/CellProps.model";
 
 const Cell: React.FC<CellProps> = ({ cell, handleClick }) => {
-	const { isVoid, id, clueNumber, letter } = cell;
+  const { isVoid, id, clueNumber, letter } = cell;
 
-	return (
-		<Wrapper
-			id={id}
-			onClick={(e: React.MouseEvent) => handleClick!(e)}
-			style={{ background: isVoid ? "black" : "white" }}
-		>
-			<div className="letter-container">{letter}</div>
-			<div className="clue-number">{clueNumber}</div>
-		</Wrapper>
-	);
+  return (
+    <Wrapper
+      id={id}
+      onClick={(e: React.MouseEvent) =>
+        handleClick ? handleClick(e) : () => {}
+      }
+      style={{
+        background: isVoid ? "black" : "white",
+      }}
+    >
+      <div className="letter-container">{letter}</div>
+      <div className="clue-number">{clueNumber}</div>
+    </Wrapper>
+  );
 };
 export default Cell;
 
 const Wrapper = styled.div<{ id: number | undefined }>`
+  cursor: pointer;
   position: relative;
   box-sizing: border-box;
   display: inline-block;
