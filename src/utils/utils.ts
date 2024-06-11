@@ -6,20 +6,6 @@ import type Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import type { Dispatch, SetStateAction } from "react";
 
-// type AllAnswers = {
-//   three: Answer[];
-//   four: Answer[];
-//   five: Answer[];
-//   six: Answer[];
-//   seven: Answer[];
-//   eight: Answer[];
-//   nine: Answer[];
-//   ten: Answer[];
-//   eleven: Answer[];
-//   twelve: Answer[];
-//   thirteen: Answer[];
-// };
-
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
     return grid[index - Math.sqrt(grid.length)];
@@ -1272,7 +1258,7 @@ export const setLocalStorage = (
   gridState: CellType[],
   clueList: Clue[],
   selectedClue: string,
-  selectedCell: CellType | null
+  selectedCell: CellType | undefined
 ) => {
   localStorage.setItem(
     "solver",

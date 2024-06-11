@@ -52,8 +52,10 @@ const SolveGrid: React.FC = () => {
   const [selectedClue, setSelectedClue] = useState<string>(() =>
     localStorage.getItem("solver") ? getLocalStorage("clueSelection") : ""
   );
-  const [selectedCell, setSelectedCell] = useState<CellType | null>(() =>
-    localStorage.getItem("solver") ? getLocalStorage("cellSelection") : null
+  const [selectedCell, setSelectedCell] = useState<CellType | undefined>(() =>
+    localStorage.getItem("solver")
+      ? getLocalStorage("cellSelection")
+      : undefined
   );
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -67,7 +69,7 @@ const SolveGrid: React.FC = () => {
     const clues = [...clueList];
     const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
     if (id === "check-single") {
-      if (!selectedClue) {
+      if (!currSelectedClue) {
         return;
       }
       for (const index of currSelectedClue.indices) {
@@ -79,7 +81,7 @@ const SolveGrid: React.FC = () => {
       setGridState(grid);
     }
     if (id === "reveal-single") {
-      if (!selectedClue) {
+      if (!currSelectedClue) {
         return;
       }
       for (const index of currSelectedClue.indices) {
@@ -89,7 +91,7 @@ const SolveGrid: React.FC = () => {
       setGridState(grid);
     }
     if (id === "clear-single") {
-      if (!selectedClue) {
+      if (!currSelectedClue) {
         return;
       }
       for (const index of currSelectedClue.indices) {
@@ -133,24 +135,28 @@ const SolveGrid: React.FC = () => {
     const clues = [...clueList];
     const grid = [...gridState];
     const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
-    let targetCell: CellType | null = selectedCell
+    let targetCell: CellType | undefined = selectedCell
       ? { ...selectedCell, answer: e.key }
-      : null;
+      : undefined;
 
-    if (currSelectedClue!.direction === 1 && selectedCell) {
+    if (currSelectedClue && currSelectedClue.direction === 1 && selectedCell) {
       if (selectedCell.bottom) {
-        targetCell = getCellBelow(grid, selectedCell.id)!;
-        cellRefs!.current[targetCell.id]!.focus();
+        targetCell = getCellBelow(grid, selectedCell.id);
+        if (targetCell) {
+          cellRefs.current[targetCell?.id]?.focus();
+        }
       }
     }
-    if (currSelectedClue!.direction === 0 && selectedCell) {
+    if (currSelectedClue && currSelectedClue.direction === 0 && selectedCell) {
       if (!isRightEdge(grid, selectedCell.id) && selectedCell.right) {
         targetCell = grid[selectedCell.id + 1];
-        cellRefs!.current[targetCell.id]!.focus();
+        if (targetCell) {
+          cellRefs.current[targetCell.id]?.focus();
+        }
       }
     }
     const updatedGrid = grid.map((gridItem) =>
-      gridItem.id === selectedCell!.id
+      gridItem.id === selectedCell?.id
         ? { ...gridItem, answer: e.key.toUpperCase() }
         : gridItem
     );
@@ -162,18 +168,17 @@ const SolveGrid: React.FC = () => {
     const grid = [...gridState];
     const clues = [...clueList];
     const target = e.currentTarget;
-    const currSelectedClue = clues.find((clue) => clue.id === target.id)!;
-    if (target) {
+    const currSelectedClue = clues.find((clue) => clue.id === target.id);
+    if (target && currSelectedClue) {
       resetSelectedCells([...gridState]);
       setSelection([...grid], currSelectedClue);
       setSelectedCell(grid[currSelectedClue.clueNumber]);
-      cellRefs.current[currSelectedClue.indices[0]]!.focus();
+      cellRefs.current[currSelectedClue.indices[0]]?.focus();
       setSelectedClue(target.id);
     }
   };
 
   const handleKeyDown = (e: KeyboardEvent) => {
-    // e.preventDefault();
     if (e.key === "Backspace") {
       handleDelete(e);
     }
@@ -206,9 +211,7 @@ const SolveGrid: React.FC = () => {
       selectedCell.answer = "";
       setSelectedCell((prev) => prev);
       const updatedGrid = grid.map((gridItem) =>
-        gridItem.id === selectedCell!.id
-          ? { ...gridItem, answer: "" }
-          : gridItem
+        gridItem.id === selectedCell.id ? { ...gridItem, answer: "" } : gridItem
       );
       setGridState(updatedGrid);
     } else {
@@ -216,19 +219,23 @@ const SolveGrid: React.FC = () => {
       const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
 
       // 0 is across and 1 is down
-      let targetCell: CellType;
-      if (currSelectedClue!.direction === 1 && selectedCell) {
+      let targetCell: CellType | undefined;
+      if (currSelectedClue?.direction === 1 && selectedCell) {
         if (selectedCell.top) {
-          targetCell = getCellAbove(grid, selectedCell.id)!;
+          targetCell = getCellAbove(grid, selectedCell.id);
           setSelectedCell(targetCell);
-          cellRefs!.current[targetCell.id]!.focus();
+          if (targetCell) {
+            cellRefs.current[targetCell.id]?.focus();
+          }
         }
       }
-      if (currSelectedClue!.direction === 0 && selectedCell) {
+      if (currSelectedClue?.direction === 0 && selectedCell) {
         if (!isLeftEdge(grid, selectedCell.id) && selectedCell.left) {
           targetCell = grid[selectedCell.id - 1];
           setSelectedCell(targetCell);
-          cellRefs!.current[targetCell.id]!.focus();
+          if (targetCell) {
+            cellRefs.current[targetCell.id]?.focus();
+          }
         }
       }
     }
@@ -269,7 +276,7 @@ const SolveGrid: React.FC = () => {
     const focusCell = clues[index].indices[0];
     const newSelectedCell = grid[focusCell];
     // get the first element of the indices prop of the selected clue
-    cellRefs!.current[focusCell]!.focus(); // this works
+    cellRefs.current[focusCell]?.focus(); // this works
     resetSelectedCells(grid);
     setSelection(grid, clues[index]);
     setSelectedClue(clues[index].id);
@@ -292,13 +299,13 @@ const SolveGrid: React.FC = () => {
       return clue.id === selectedClue;
     });
     const cellId = selectedCell.id; // number
-    let targetCell: CellType | null = null;
+    let targetCell: CellType | undefined = undefined;
 
     if (event.key === "ArrowDown") {
-      targetCell = getCellBelow(grid, cellId)!;
+      targetCell = getCellBelow(grid, cellId);
     }
     if (event.key === "ArrowUp") {
-      targetCell = getCellAbove(grid, cellId)!;
+      targetCell = getCellAbove(grid, cellId);
     }
     if (event.key === "ArrowLeft" && !isLeftEdge(grid, cellId)) {
       targetCell = grid[cellId - 1];
@@ -307,11 +314,13 @@ const SolveGrid: React.FC = () => {
       targetCell = grid[cellId + 1];
     }
     if (targetCell && !targetCell.isVoid) {
-      cellRefs!.current[targetCell.id]!.focus();
+      cellRefs.current[targetCell.id]?.focus();
 
       if (!currentSelectedClue?.indices.includes(targetCell.id)) {
         const myClues = getCluesFromCell(targetCell, clues);
-        let index = clues.findIndex((clue: Clue) => clue.id === myClues[0].id);
+        const index = clues.findIndex(
+          (clue: Clue) => clue.id === myClues[0].id
+        );
         resetSelectedCells(grid);
         setSelectedClue(clues[index].id);
         setSelection(grid, clues[index]);
@@ -335,6 +344,7 @@ const SolveGrid: React.FC = () => {
         <li
           id={clue.id}
           onClick={(e) => handleClueClick(e)}
+          onKeyDown={() => {}}
           style={{
             background: isSelected ? "#fff7b2" : "#1c1d1f",
             color: isSelected ? "black" : "darkgray",
@@ -359,12 +369,17 @@ const SolveGrid: React.FC = () => {
     };
     const requestArray: ReqClue[] = [];
 
-    clues.forEach((clue) => {
+    for (const clue of clues) {
       const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
       requestArray.push(reqClue);
-    });
+    }
 
-    let apiURL = `/.netlify/functions/getClues`; // so we don't spam API
+    // clues.forEach((clue) => {
+    //   const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
+    //   requestArray.push(reqClue);
+    // });
+
+    const apiURL = "/.netlify/functions/getClues"; // so we don't spam API
 
     try {
       const response = await fetch(apiURL, {
@@ -376,19 +391,20 @@ const SolveGrid: React.FC = () => {
 
       // verify the data is as expected
       if (Array.isArray(data)) {
-        clues.forEach((item) => {
-          const id = item.id;
+        for (const clue of clues) {
+          const id = clue.id;
           const clueResp = data.find((clueObj) => {
             return clueObj?.id === id;
           });
           if (clueResp.clue && clueResp.clue !== "") {
-            item.clue = clueResp.clue;
+            clue.clue = clueResp.clue;
           } else {
             throw new Error(
               "The clues received from the AI are not in the correct format. Try generating the clues again!"
             );
           }
-        });
+        }
+
         setClueList(clues);
       } else {
         throw new Error(
@@ -442,8 +458,8 @@ const SolveGrid: React.FC = () => {
   const handleCellClick = (event: React.MouseEvent) => {
     const target = event.target as HTMLInputElement;
     let id: number;
-    let clues = [...clueList];
-    let grid = [...gridState];
+    const clues = [...clueList];
+    const grid = [...gridState];
     let currentClueSelection: Clue;
     let containingClues: Clue[];
     let cellItem: CellType | undefined;
@@ -453,11 +469,11 @@ const SolveGrid: React.FC = () => {
       }
     });
 
-    if (target && target.id) {
+    if (target?.id) {
       id = +target.id;
       cellItem = grid.find((item) => {
         return id === item.id;
-      })!;
+      });
 
       containingClues = clues.filter((clue) => {
         return clue.indices.includes(id);
@@ -474,10 +490,11 @@ const SolveGrid: React.FC = () => {
       }
 
       if (containingClues.length === 2) {
+        let currentClueSelection: Clue | undefined;
         if (!selectedClue) {
           // there is no selection, so default to across
           resetSelectedCells(grid);
-          const currentClueSelection = containingClues.find(
+          currentClueSelection = containingClues.find(
             (clue) => clue.direction === Direction.ACROSS
           );
           if (currentClueSelection) {
@@ -487,27 +504,33 @@ const SolveGrid: React.FC = () => {
             setGridState(grid);
           }
         } else if (
+          typeof cellItem?.id === "number" &&
           prevClueSelection &&
           selectedCell &&
           prevClueSelection?.indices.includes(cellItem.id) &&
-          selectedCell.id !== cellItem.id
+          selectedCell.id !== cellItem?.id
         ) {
           currentClueSelection = clues.find((clue) => {
             return clue.id === selectedClue;
-          })!;
+          });
           resetSelectedCells(grid);
           setSelectedCell(cellItem);
-          setSelection(grid, currentClueSelection);
-          setSelectedClue(currentClueSelection.id);
+          if (currentClueSelection) {
+            setSelection(grid, currentClueSelection);
+            setSelectedClue(currentClueSelection.id);
+          }
+
           setGridState(grid);
         } else {
           resetSelectedCells(grid);
           currentClueSelection = containingClues.find((clue) => {
             return selectedClue !== clue.id;
-          })!;
+          });
           setSelectedCell(cellItem);
-          setSelection(grid, currentClueSelection);
-          setSelectedClue(currentClueSelection.id);
+          if (currentClueSelection) {
+            setSelection(grid, currentClueSelection);
+            setSelectedClue(currentClueSelection.id);
+          }
           setGridState(grid);
         }
       }
@@ -524,11 +547,11 @@ const SolveGrid: React.FC = () => {
   return (
     <Wrapper>
       <div className="grid-container">
-        {gridState?.map((cell, index) => {
+        {gridState?.map((cell: CellType, index: number) => {
           return (
             <SolveCell
               handleKeyDown={handleKeyDown}
-              key={index}
+              key={cell.id}
               cell={cell}
               handleCellClick={handleCellClick}
               ref={(el) => {

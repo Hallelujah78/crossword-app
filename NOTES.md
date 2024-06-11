@@ -1521,16 +1521,17 @@ export default SingleLetterInput;
     }
 ```
 
-***THIS IS DONE***
+***^^^ THIS IS DONE***
 
 ## User Interaction with Solver Page - regarding initialization
 - user vists the page for the first time
   - there is no local storage
   - the grid must be initialized
   - the clues must be created
-  - the state gets initialized
+  - all the state gets initialized
   - when the state changes, we update local storage
 - this automatic initialization of the crossword requires a request to the Claude Haiku API which will incur a financial cost to me
 - there should be a disabled button with a timer to indicate when a new crossword can be generated
   - this solution will only work on users who don't program BUT
-  - it should be sufficient since it is a portfolio project and is someone going to be a troll and spam the API? 
+  - it should be sufficient since it is a portfolio project and is someone going to be a troll and spam the API?
+- the user might want to select a crossword to solve, eg one that has been created in the editor? 
