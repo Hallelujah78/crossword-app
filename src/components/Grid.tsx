@@ -1,5 +1,5 @@
 // react
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model";
@@ -188,7 +188,16 @@ const Grid: React.FC = () => {
         )}
       </div>
       <div className="control-container">
-        <button type="button" onClick={() => generateClues()}>
+        <button
+          style={{
+            backgroundColor: clueList[0].answer.includes("")
+              ? "var(--primary-400)"
+              : "var(--primary-100)",
+          }}
+          type="button"
+          disabled={!clueList[0].answer.includes("")}
+          onClick={() => generateClues()}
+        >
           Generate Answers
         </button>
         <br />
@@ -264,5 +273,23 @@ const Wrapper = styled.div`
     position: absolute;
     z-index: 9999;
     cursor: not-allowed;
+  }
+  button {
+    background-color: var(--primary-400);
+    width: 8vw;
+    border: none;
+    padding: 0.25rem 1rem;
+    margin: 0.3rem;
+    border-radius: 5rem;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--primary-100);
+      &:disabled {
+        cursor: not-allowed;
+      }
+    }
+    transition: 0.3s linear all;
   }
 `;

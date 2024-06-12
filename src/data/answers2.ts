@@ -26496,10 +26496,6 @@ const four = [
     raw: "POCK",
   },
   {
-    freq: 24329,
-    raw: "CUNT",
-  },
-  {
     freq: 24337,
     raw: "IOTA",
   },

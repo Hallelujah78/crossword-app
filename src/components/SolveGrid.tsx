@@ -743,6 +743,9 @@ const Wrapper = styled.div`
       border-radius: 5rem;
       color: white;
       cursor: pointer;
+      &:disabled {
+        background-color: var(--primary-900);
+      }
       &:hover {
         background-color: var(--primary-100);
         &:disabled {

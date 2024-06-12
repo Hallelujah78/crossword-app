@@ -1549,12 +1549,17 @@ export default SingleLetterInput;
 
 ## User interaction with the editor
 - upon first visit
-  - user is presented with the default empty grid
+  - user is presented with the default empty grid 
   - they can edit the grid by toggling cells
   - ~~once 'Generate Answers' has been clicked, it should not be possible to toggle cells~~ DONE
     - ~~we can disable toggling cells based on: `clueList[0].answer.includes("")`~~ DONE
+- ~~generate answers becomes grayed out/disabled once answers have been generated~~ DONE
+- 
+- use something like reacttour to add tips/hints to the user on how to interact with the app
 
 ## Issue 12/6/24
 - navigating away from create/edit resets the clueList, but the answers remain on the screen
   - the onscreen letters come from gridState (which is not reset by navigating away and back)
 - investigate later today!
+***Fixed***
+
