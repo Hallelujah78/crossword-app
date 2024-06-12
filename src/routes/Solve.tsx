@@ -1,14 +1,12 @@
 import styled from "styled-components";
 import SolveGrid from "../components/SolveGrid";
-import ClueContainer from "../components/ClueContainer";
 
 const Solve: React.FC = () => {
-	return (
-		<Wrapper>
-			<SolveGrid />
-			<ClueContainer />
-		</Wrapper>
-	);
+  return (
+    <Wrapper>
+      <SolveGrid />
+    </Wrapper>
+  );
 };
 
 export default Solve;

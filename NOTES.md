@@ -1551,5 +1551,10 @@ export default SingleLetterInput;
 - upon first visit
   - user is presented with the default empty grid
   - they can edit the grid by toggling cells
-  - once 'Generate Answers' has been clicked, it should not be possible to toggle cells
-    - we can disable toggling cells based on: `clueList[0].answer.includes("")`
+  - ~~once 'Generate Answers' has been clicked, it should not be possible to toggle cells~~ DONE
+    - ~~we can disable toggling cells based on: `clueList[0].answer.includes("")`~~ DONE
+
+## Issue 12/6/24
+- navigating away from create/edit resets the clueList, but the answers remain on the screen
+  - the onscreen letters come from gridState (which is not reset by navigating away and back)
+- investigate later today!

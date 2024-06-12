@@ -1,5 +1,5 @@
 // react
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model";
@@ -36,10 +36,18 @@ import { Direction } from "../models/Direction.model";
 const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
   const [clueList, setClueList] = useState<Clue[]>(() =>
-    initializeApp(gridState)
+    initializeApp([...gridState])
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
+
+  // useEffect(() => {
+  //   console.log("Grid component mounted!");
+  //   console.log(clueList[0].answer.includes(""));
+  //   return () => {
+  //     console.log("Grid component unmounted!");
+  //   };
+  // }, [gridState, clueList]);
 
   async function getClues() {
     const clues = [...clueList];
@@ -171,7 +179,7 @@ const Grid: React.FC = () => {
   return (
     <Wrapper>
       <div className="grid-container">
-        {gridState?.map((cell) => {
+        {gridState.map((cell) => {
           return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
         })}
 

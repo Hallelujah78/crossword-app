@@ -116,6 +116,7 @@ export const initializeGrid = (grid: CellType[]) => {
   const newGrid = grid.map((item, index) => {
     item.id = index;
     item.answer = "";
+    item.letter = "";
     // is the square above a cell and not void?
     if (getCellAbove(grid, index)?.isVoid) {
       item.top = false; // false indicates it is a void
