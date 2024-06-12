@@ -939,10 +939,15 @@ export const createUniqueLetterList = (
   sharedLetter: SharedLetter,
   matches: Answer[]
 ) => {
-  const uniqueLetters: { index: number; letters: string[] } = {
-    index: sharedLetter.clueIndex!,
+  console.log(sharedLetter);
+  if (sharedLetter.clueIndex === undefined) {
+    throw new Error("error in utils at line 943, index is undefined");
+  }
+  const uniqueLetters: { index: number | undefined; letters: string[] } = {
+    index: sharedLetter.clueIndex,
     letters: [],
   };
+
   for (const match of matches) {
     const word = match.word ? match.word : match.raw;
     if (

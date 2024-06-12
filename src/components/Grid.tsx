@@ -34,6 +34,7 @@ import {
 import { Direction } from "../models/Direction.model";
 
 const Grid: React.FC = () => {
+  const [isModified, setIsModified] = useState<boolean>(false);
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
   const [clueList, setClueList] = useState<Clue[]>(() =>
     initializeApp([...gridState])
@@ -172,8 +173,8 @@ const Grid: React.FC = () => {
     }
     sortCluesDescendingLength(clues);
     setClueList(clues);
-
     setGridState(tempGrid);
+    setIsModified(true);
   };
 
   return (
@@ -201,37 +202,65 @@ const Grid: React.FC = () => {
           Generate Answers
         </button>
         <br />
-        <label htmlFor="remove_blank">Remove Empty Cells</label>
-        <input
-          checked={removeEmpty}
-          onChange={() => {
-            setRemoveEmpty((prev) => !prev);
-            setFillGrid((prev) => !prev);
-          }}
-          type="checkbox"
-          name="remove_blank"
-          id="remove_blank"
-        />
+        <div className="checkbox-group">
+          <label htmlFor="remove_blank">Remove Empty Cells</label>
+          <input
+            checked={removeEmpty}
+            onChange={() => {
+              setRemoveEmpty((prev) => !prev);
+              setFillGrid((prev) => !prev);
+            }}
+            type="checkbox"
+            name="remove_blank"
+            id="remove_blank"
+          />
+        </div>
+
         <br />
-        <label htmlFor="fill_grid">Force Fill Grid</label>
-        <input
-          checked={fillGrid}
-          onChange={() => {
-            setRemoveEmpty((prev) => !prev);
-            setFillGrid((prev) => !prev);
-          }}
-          type="checkbox"
-          name="fill_grid"
-          id="fill_grid"
-        />
+        <div className="checkbox-group">
+          <label htmlFor="fill_grid">Force Fill Grid</label>
+          <input
+            checked={fillGrid}
+            onChange={() => {
+              setRemoveEmpty((prev) => !prev);
+              setFillGrid((prev) => !prev);
+            }}
+            type="checkbox"
+            name="fill_grid"
+            id="fill_grid"
+          />
+        </div>
+
         <br />
         <button
+          style={{
+            backgroundColor: !clueList[0].answer.includes("")
+              ? "var(--primary-400)"
+              : "var(--primary-100)",
+          }}
+          disabled={clueList[0].answer.includes("")}
           type="button"
           onClick={() =>
             resetAllAnswers(clueList, gridState, setGridState, setClueList)
           }
         >
           Reset Answers
+        </button>
+        <button
+          style={{
+            backgroundColor: !isModified
+              ? "var(--primary-100)"
+              : "var(--primary-400)",
+          }}
+          disabled={!isModified}
+          type="button"
+          onClick={() => {
+            setGridState(initializeGrid(grid));
+            setClueList(initializeApp([...grid]));
+            setIsModified(false);
+          }}
+        >
+          Reset Grid & Answers
         </button>
         <br />
         <button type="button" onClick={getClues}>
@@ -254,9 +283,11 @@ const Wrapper = styled.div`
   }
 
   .control-container {
+    display: grid;
     position: absolute;
     top: 2rem;
     left: -25vw;
+    width: 15vw;
     button,
     input,
     label {
@@ -277,6 +308,7 @@ const Wrapper = styled.div`
   button {
     background-color: var(--primary-400);
     width: 8vw;
+    height: fit-content;
     border: none;
     padding: 0.25rem 1rem;
     margin: 0.3rem;
@@ -291,5 +323,9 @@ const Wrapper = styled.div`
       }
     }
     transition: 0.3s linear all;
+  }
+  .checkbox-group {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
   }
 `;
