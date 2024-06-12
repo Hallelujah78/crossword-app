@@ -34,6 +34,7 @@ import {
 import { Direction } from "../models/Direction.model";
 
 const Grid: React.FC = () => {
+  const [puzzleName, setPuzzleName] = useState<string>("");
   const [isModified, setIsModified] = useState<boolean>(false);
   const [gridState, setGridState] = useState(() => initializeGrid(grid));
   const [clueList, setClueList] = useState<Clue[]>(() =>
@@ -42,13 +43,7 @@ const Grid: React.FC = () => {
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
 
-  // useEffect(() => {
-  //   console.log("Grid component mounted!");
-  //   console.log(clueList[0].answer.includes(""));
-  //   return () => {
-  //     console.log("Grid component unmounted!");
-  //   };
-  // }, [gridState, clueList]);
+  const saveHandler = () => {};
 
   async function getClues() {
     const clues = [...clueList];
@@ -266,6 +261,37 @@ const Grid: React.FC = () => {
         <button type="button" onClick={getClues}>
           AI Generate Clues!
         </button>
+        <br />
+
+        <form className="save-container">
+          <input
+            required
+            type="text"
+            value={puzzleName}
+            onChange={(e) => {
+              setPuzzleName(e.target.value.toUpperCase());
+            }}
+            minLength={3}
+            maxLength={6}
+            placeholder="puzzleName"
+          />
+          <button
+            style={{
+              backgroundColor: !isModified
+                ? "var(--primary-100)"
+                : "var(--primary-400)",
+            }}
+            disabled={!isModified}
+            type="button"
+            onClick={() => {
+              setGridState(initializeGrid(grid));
+              setClueList(initializeApp([...grid]));
+              setIsModified(false);
+            }}
+          >
+            Save Crossword
+          </button>
+        </form>
       </div>
     </Wrapper>
   );
@@ -287,7 +313,7 @@ const Wrapper = styled.div`
     position: absolute;
     top: 2rem;
     left: -25vw;
-    width: 15vw;
+    width: 22vw;
     button,
     input,
     label {
@@ -327,5 +353,16 @@ const Wrapper = styled.div`
   .checkbox-group {
     display: grid;
     grid-template-columns: 4fr 1fr;
+  }
+  .save-container {
+    display: flex;
+
+    input {
+      font-size: 1rem;
+      padding-left: 1rem;
+      width: 9rem;
+      text-transform: capitalize;
+      border-radius: 3px;
+    }
   }
 `;

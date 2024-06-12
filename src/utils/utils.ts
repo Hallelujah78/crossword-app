@@ -1278,28 +1278,30 @@ export const setLocalStorage = (
 };
 
 export const getLocalStorage = (
-  prop: "grid" | "clues" | "clueSelection" | "cellSelection"
+  prop: "grid" | "clues" | "clueSelection" | "cellSelection" | "edit",
+  type: "solver" | "puzzles"
 ) => {
-  try {
-    let store;
+  if (type === "solver") {
+    try {
+      let store;
+      store = JSON.parse(localStorage.getItem("solver") as string);
 
-    store = JSON.parse(localStorage.getItem("solver") as string);
-
-    if (store) {
-      if (prop === "grid") {
-        return store.grid as CellType[];
+      if (store) {
+        if (prop === "grid") {
+          return store.grid as CellType[];
+        }
+        if (prop === "clues") {
+          return store.clues;
+        }
+        if (prop === "clueSelection") {
+          return store.clueSelection as string;
+        }
+        if (prop === "cellSelection") {
+          return store.cellSelection as CellType;
+        }
       }
-      if (prop === "clues") {
-        return store.clues;
-      }
-      if (prop === "clueSelection") {
-        return store.clueSelection as string;
-      }
-      if (prop === "cellSelection") {
-        return store.cellSelection as CellType;
-      }
+    } catch (error) {
+      console.log(error);
     }
-  } catch (error) {
-    console.log(error);
   }
 };

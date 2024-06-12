@@ -1554,8 +1554,15 @@ export default SingleLetterInput;
   - ~~once 'Generate Answers' has been clicked, it should not be possible to toggle cells~~ DONE
     - ~~we can disable toggling cells based on: `clueList[0].answer.includes("")`~~ DONE
 - ~~generate answers becomes grayed out/disabled once answers have been generated~~ DONE
-- 
+- create a timer for the AI generate clues button
+- add a save button that saves the grid, answers, and generated clues in local storage
+  - when saved, the state should be reset
+  - we use a local storage key called `edit` to hold work in progress
+    - when saved, the `edit` local storage is emptied
+  - when saved, the user provides a name for their puzzle and it gets stroed in local storage in a `puzzles` object under the name the user provides
+- when the app initializes, we retrieve the puzzles from local storage and provide them in a select input so they can load them up in the solver
 - use something like reacttour to add tips/hints to the user on how to interact with the app
+
 
 ## Issue 12/6/24
 - navigating away from create/edit resets the clueList, but the answers remain on the screen

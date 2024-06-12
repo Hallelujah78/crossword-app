@@ -39,22 +39,24 @@ import {
 const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState(() =>
     localStorage.getItem("solver")
-      ? getLocalStorage("grid")
+      ? getLocalStorage("grid", "solver")
       : initializeGrid(grid)
   );
   const [clueList, setClueList] = useState<Clue[]>(() =>
     localStorage.getItem("solver")
-      ? getLocalStorage("clues")
+      ? getLocalStorage("clues", "solver")
       : initializeApp(gridState)
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>(() =>
-    localStorage.getItem("solver") ? getLocalStorage("clueSelection") : ""
+    localStorage.getItem("solver")
+      ? getLocalStorage("clueSelection", "solver")
+      : ""
   );
   const [selectedCell, setSelectedCell] = useState<CellType | undefined>(() =>
     localStorage.getItem("solver")
-      ? getLocalStorage("cellSelection")
+      ? getLocalStorage("cellSelection", "solver")
       : undefined
   );
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
