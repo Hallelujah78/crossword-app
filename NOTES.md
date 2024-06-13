@@ -1559,9 +1559,10 @@ export default SingleLetterInput;
   - when saved, the state should be reset
   - we use a local storage key called `edit` to hold work in progress
     - when saved, the `edit` local storage is emptied
-  - when saved, the user provides a name for their puzzle and it gets stroed in local storage in a `puzzles` object under the name the user provides
+  - when saved, the user provides a name for their puzzle and it gets stored in local storage in a `puzzles` object under the name the user provides
 - when the app initializes, we retrieve the puzzles from local storage and provide them in a select input so they can load them up in the solver
 - use something like reacttour to add tips/hints to the user on how to interact with the app
+- in the editor - we currently get an alert error if we edit the grid, generate clues and then hit the AI Generate Clues! button. This is because we are returning dummy data from our serverless function and this response is based on an unedited grid. This means clue lengths may be different or the number of clues may be different and so we get an error: nothing to worry about!
 
 
 ## Issue 12/6/24
@@ -1570,3 +1571,32 @@ export default SingleLetterInput;
 - investigate later today!
 ***Fixed***
 
+## Local storage Structure
+- this is currently a bit messy and disorganized
+- let's try:
+
+```js
+solver: {
+  grid,
+  clues,
+  cellSelection,
+  clueSelection,
+},
+editor: {
+  grid,
+  clues,
+  isModified
+  // really we need the other state too but it's not wholly necessary
+  // example, user might input name but not click save and then navigate away, navigate back and the name field is blank
+},
+puzzles: [{
+    name,
+    grid,
+    clues,
+  },
+  {
+    name,
+    grid,
+    clues,
+  }] // saved puzzles
+```

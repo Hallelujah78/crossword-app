@@ -1,4 +1,5 @@
 // models
+import type { Storage } from "../models/LocalStorage.model";
 import type { CellType } from "../models/Cell.model";
 import Clue from "../classes/Clue";
 import { Direction } from "../models/Direction.model";
@@ -1278,30 +1279,17 @@ export const setLocalStorage = (
 };
 
 export const getLocalStorage = (
-  prop: "grid" | "clues" | "clueSelection" | "cellSelection" | "edit",
-  type: "solver" | "puzzles"
-) => {
-  if (type === "solver") {
-    try {
-      let store;
-      store = JSON.parse(localStorage.getItem("solver") as string);
-
-      if (store) {
-        if (prop === "grid") {
-          return store.grid as CellType[];
-        }
-        if (prop === "clues") {
-          return store.clues;
-        }
-        if (prop === "clueSelection") {
-          return store.clueSelection as string;
-        }
-        if (prop === "cellSelection") {
-          return store.cellSelection as CellType;
-        }
-      }
-    } catch (error) {
-      console.log(error);
-    }
+  key: "solver" | "editor" | "puzzles"
+): Storage => {
+  let store: Storage;
+  if (key === "solver") {
+    store = JSON.parse(localStorage.getItem("solver") as string);
   }
+  if (key === "editor") {
+    store = JSON.parse(localStorage.getItem("editor") as string);
+  }
+  if (key === "puzzles") {
+    store = JSON.parse(localStorage.getItem("puzzles") as string);
+  }
+  return store;
 };

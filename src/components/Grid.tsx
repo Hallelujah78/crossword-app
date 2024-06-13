@@ -68,6 +68,7 @@ const Grid: React.FC = () => {
         body: JSON.stringify(requestArray),
       });
       const data = (await response.json()) as ReqClue;
+      console.log("the respn data: ", data);
 
       // verify the data is as expected
       if (Array.isArray(data)) {
