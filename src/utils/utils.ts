@@ -161,7 +161,7 @@ export const createClues = (grid: CellType[]) => {
   const clues: Clue[] = [];
   const clueIndices = getClueIndices(grid);
 
-  clueIndices.forEach((currIndex) => {
+  for (const currIndex of clueIndices) {
     // across clue
     if (grid[currIndex].right && !grid[currIndex].left) {
       const acrossClue = new Clue(
@@ -208,7 +208,7 @@ export const createClues = (grid: CellType[]) => {
         if (grid[startIndex].bottom) {
           downClue.length = downClue.length + 1;
           const cellBelow = getCellBelow(grid, startIndex);
-          if (cellBelow && cellBelow.id) {
+          if (cellBelow) {
             downClue.indices.push(+cellBelow.id);
             downClue.answer.push("");
             startIndex = +cellBelow.id;
@@ -220,7 +220,7 @@ export const createClues = (grid: CellType[]) => {
 
       clues.push(downClue);
     }
-  });
+  }
 
   return clues;
 };
@@ -254,8 +254,8 @@ export const populateClues = (
   removeEmpty: boolean
 ) => {
   // copy the React state values
-  let clues = [...cluesState];
-  let gridState = [...grid];
+  const clues = [...cluesState];
+  const gridState = [...grid];
 
   for (const clue of clues) {
     // let answer: string;
@@ -1261,34 +1261,39 @@ export const getCluesFromCell = (cell: CellType, clues: Clue[]) => {
 };
 
 export const setLocalStorage = (
-  gridState: CellType[],
-  clueList: Clue[],
-  selectedClue: string,
-  selectedCell: CellType | undefined
+  key: "solver" | "editor" | "puzzles",
+  data: {
+    gridState: CellType[];
+    clueList: Clue[];
+    selectedClue?: string;
+    selectedCell?: CellType | undefined;
+    isModified?: boolean;
+  }
 ) => {
-  localStorage.setItem(
-    "solver",
-    JSON.stringify({
-      grid: [...gridState],
-      clues: [...clueList],
-      clueSelection: selectedClue,
+  const { gridState, clueList, selectedClue, selectedCell, isModified } = data;
+  let dataStore;
+  if (key === "solver") {
+    dataStore = {
+      grid: gridState,
+      clues: clueList,
+      clueSelection: selectedClue ? selectedClue : "",
       cellSelection: selectedCell,
-    })
-  );
+    };
+  } else if (key === "editor") {
+    dataStore = {
+      grid: gridState,
+      clues: clueList,
+      isModified: isModified,
+    };
+  } else {
+    // is puzzles
+    // retrieve the puzzles local storage, add this to it and set it back to the modified value
+  }
+  localStorage.setItem(key, JSON.stringify(dataStore));
 };
 
 export const getLocalStorage = (
   key: "solver" | "editor" | "puzzles"
 ): Storage => {
-  let store: Storage;
-  if (key === "solver") {
-    store = JSON.parse(localStorage.getItem("solver") as string);
-  } else if (key === "editor") {
-    store = JSON.parse(localStorage.getItem("editor") as string);
-  } else {
-    // key is "puzzles"
-    store = JSON.parse(localStorage.getItem("puzzles") as string);
-  }
-
-  return store;
+  return JSON.parse(localStorage.getItem(key) as string);
 };

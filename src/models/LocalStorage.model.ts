@@ -4,7 +4,7 @@ import type Clue from "../classes/Clue";
 export interface Storage {
   grid: CellType[];
   clues: Clue[];
-  clueSelection: string;
-  cellSelection: CellType;
   isModified: boolean;
+  clueSelection: string;
+  cellSelection: CellType | undefined;
 }

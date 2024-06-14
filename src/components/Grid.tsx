@@ -1,5 +1,5 @@
 // react
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model";
@@ -31,6 +31,7 @@ import {
   initializeApp,
   resetAllAnswers,
   getLocalStorage,
+  setLocalStorage,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
@@ -47,10 +48,16 @@ const Grid: React.FC = () => {
       : initializeGrid(grid)
   );
   const [clueList, setClueList] = useState<Clue[]>(() =>
-    initializeApp([...gridState])
+    localStorage.getItem("editor")
+      ? getLocalStorage("editor").clues
+      : initializeApp(gridState)
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
+
+  useEffect(() => {
+    setLocalStorage("editor", { gridState, clueList, isModified });
+  }, [gridState, clueList, isModified]);
 
   const saveHandler = () => {};
 

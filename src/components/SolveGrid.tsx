@@ -62,7 +62,12 @@ const SolveGrid: React.FC = () => {
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    setLocalStorage(gridState, clueList, selectedClue, selectedCell);
+    setLocalStorage("solver", {
+      gridState,
+      clueList,
+      selectedClue,
+      selectedCell,
+    });
   }, [gridState, clueList, selectedClue, selectedCell]);
 
   const checkAnswers = (e: React.MouseEvent<HTMLButtonElement>) => {
