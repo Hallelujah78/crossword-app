@@ -30,13 +30,22 @@ import {
   sortCluesDescendingLength,
   initializeApp,
   resetAllAnswers,
+  getLocalStorage,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
-  const [isModified, setIsModified] = useState<boolean>(false);
-  const [gridState, setGridState] = useState(() => initializeGrid(grid));
+  const [isModified, setIsModified] = useState<boolean>(() =>
+    localStorage.getItem("editor")
+      ? getLocalStorage("editor").isModified
+      : false
+  );
+  const [gridState, setGridState] = useState(() =>
+    localStorage.getItem("editor")
+      ? getLocalStorage("editor").grid
+      : initializeGrid(grid)
+  );
   const [clueList, setClueList] = useState<Clue[]>(() =>
     initializeApp([...gridState])
   );
@@ -68,7 +77,7 @@ const Grid: React.FC = () => {
         body: JSON.stringify(requestArray),
       });
       const data = (await response.json()) as ReqClue;
-      console.log("the respn data: ", data);
+      // console.log("the respn data: ", data);
 
       // verify the data is as expected
       if (Array.isArray(data)) {

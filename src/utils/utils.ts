@@ -940,7 +940,6 @@ export const createUniqueLetterList = (
   sharedLetter: SharedLetter,
   matches: Answer[]
 ) => {
-  console.log(sharedLetter);
   if (sharedLetter.clueIndex === undefined) {
     throw new Error("error in utils at line 943, index is undefined");
   }
@@ -1284,12 +1283,12 @@ export const getLocalStorage = (
   let store: Storage;
   if (key === "solver") {
     store = JSON.parse(localStorage.getItem("solver") as string);
-  }
-  if (key === "editor") {
+  } else if (key === "editor") {
     store = JSON.parse(localStorage.getItem("editor") as string);
-  }
-  if (key === "puzzles") {
+  } else {
+    // key is "puzzles"
     store = JSON.parse(localStorage.getItem("puzzles") as string);
   }
+
   return store;
 };

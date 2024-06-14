@@ -38,9 +38,9 @@ import {
 
 const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() =>
-    !localStorage.getItem("solver")
-      ? initializeGrid(grid)
-      : getLocalStorage("solver").grid
+    localStorage.getItem("solver")
+      ? getLocalStorage("solver")?.grid
+      : initializeGrid(grid)
   );
   const [clueList, setClueList] = useState<Clue[]>(() =>
     localStorage.getItem("solver")
@@ -51,12 +51,12 @@ const SolveGrid: React.FC = () => {
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>(() =>
     localStorage.getItem("solver")
-      ? getLocalStorage("solver").clueSelection
+      ? getLocalStorage("solver")?.clueSelection
       : ""
   );
   const [selectedCell, setSelectedCell] = useState<CellType | undefined>(() =>
     localStorage.getItem("solver")
-      ? getLocalStorage("solver").cellSelection
+      ? getLocalStorage("solver")?.cellSelection
       : undefined
   );
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -334,6 +334,7 @@ const SolveGrid: React.FC = () => {
 
   const renderClues = (clueList: Clue[], direction: Direction) => {
     const clues = [...clueList];
+
     clues.sort((a, b) => {
       return a.clueNumber - b.clueNumber;
     });
