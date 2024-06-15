@@ -6,6 +6,7 @@ import { Direction } from "../models/Direction.model";
 import type Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import type { Dispatch, SetStateAction } from "react";
+import type { Puzzles } from "../models/Puzzles.model";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
@@ -1229,7 +1230,7 @@ export const getWordLength = (clue: Clue) => {
     });
   }
 
-  let wordLengths = [];
+  const wordLengths = [];
   let position = 0;
   let length = 1;
   while (position <= strippedWord.length) {
@@ -1268,10 +1269,18 @@ export const setLocalStorage = (
     selectedClue?: string;
     selectedCell?: CellType | undefined;
     isModified?: boolean;
+    puzzles: Puzzles;
   }
 ) => {
-  const { gridState, clueList, selectedClue, selectedCell, isModified } = data;
-  let dataStore;
+  const {
+    gridState,
+    clueList,
+    selectedClue,
+    selectedCell,
+    isModified,
+    puzzles,
+  } = data;
+  let dataStore: Puzzles | Storage;
   if (key === "solver") {
     dataStore = {
       grid: gridState,
@@ -1286,14 +1295,15 @@ export const setLocalStorage = (
       isModified: isModified,
     };
   } else {
-    // is puzzles
-    // retrieve the puzzles local storage, add this to it and set it back to the modified value
+    if (puzzles && puzzles.length > 0) {
+      dataStore = puzzles;
+    }
   }
   localStorage.setItem(key, JSON.stringify(dataStore));
 };
 
 export const getLocalStorage = (
   key: "solver" | "editor" | "puzzles"
-): Storage => {
+): Storage | Puzzles => {
   return JSON.parse(localStorage.getItem(key) as string);
 };

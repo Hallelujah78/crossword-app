@@ -34,6 +34,7 @@ import {
   setLocalStorage,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
+import type { Puzzles } from "../models/Puzzles.model";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
@@ -59,7 +60,15 @@ const Grid: React.FC = () => {
     setLocalStorage("editor", { gridState, clueList, isModified });
   }, [gridState, clueList, isModified]);
 
-  const saveHandler = () => {};
+  const saveHandler = () => {
+    let puzzles: Puzzles = [];
+    if (localStorage.getItem("puzzles")) {
+      puzzles = getLocalStorage("puzzles") as Puzzles;
+    }
+    puzzles.push({ name: puzzleName, grid: gridState, clues: clueList });
+    localStorage.removeItem("editor");
+    setLocalStorage("puzzles", { puzzles });
+  };
 
   async function getClues() {
     const clues = [...clueList];
@@ -246,11 +255,12 @@ const Grid: React.FC = () => {
         <br />
         <button
           style={{
-            backgroundColor: !clueList[0].answer.includes("")
-              ? "var(--primary-400)"
-              : "var(--primary-100)",
+            backgroundColor:
+              clueList[0].answer.includes("") || clueList[0].clue !== ""
+                ? "var(--primary-100)"
+                : "var(--primary-400)",
           }}
-          disabled={clueList[0].answer.includes("")}
+          disabled={clueList[0].answer.includes("") || clueList[0].clue !== ""}
           type="button"
           onClick={() =>
             resetAllAnswers(clueList, gridState, setGridState, setClueList)
@@ -268,14 +278,24 @@ const Grid: React.FC = () => {
           type="button"
           onClick={() => {
             setGridState(initializeGrid(grid));
-            setClueList(initializeApp([...grid]));
+            setClueList(initializeApp([...gridState]));
             setIsModified(false);
           }}
         >
           Reset Grid & Answers
         </button>
         <br />
-        <button type="button" onClick={getClues}>
+        <button
+          style={{
+            backgroundColor:
+              clueList[0].clue !== "" || clueList[0].answer.includes("")
+                ? "var(--primary-100)"
+                : "var(--primary-400)",
+          }}
+          disabled={clueList[0].clue !== "" || clueList[0].answer.includes("")}
+          type="button"
+          onClick={getClues}
+        >
           AI Generate Clues!
         </button>
         <br />
@@ -289,21 +309,28 @@ const Grid: React.FC = () => {
               setPuzzleName(e.target.value.toUpperCase());
             }}
             minLength={3}
-            maxLength={6}
+            maxLength={9}
             placeholder="puzzleName"
           />
           <button
             style={{
-              backgroundColor: !isModified
-                ? "var(--primary-100)"
-                : "var(--primary-400)",
+              backgroundColor:
+                clueList[0].answer.includes("") || puzzleName.length < 3
+                  ? "var(--primary-100)"
+                  : "var(--primary-400)",
             }}
-            disabled={!isModified}
+            disabled={
+              clueList[0].answer.includes("") ||
+              puzzleName.length < 3 ||
+              clueList[0].clue === ""
+            }
             type="button"
             onClick={() => {
+              saveHandler();
               setGridState(initializeGrid(grid));
               setClueList(initializeApp([...grid]));
               setIsModified(false);
+              setPuzzleName("");
             }}
           >
             Save Crossword
