@@ -35,6 +35,7 @@ import {
   getLocalStorage,
   setLocalStorage,
 } from "../utils/utils";
+import type { Puzzle, Puzzles } from "../models/Puzzles.model";
 
 const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() =>
@@ -54,6 +55,14 @@ const SolveGrid: React.FC = () => {
       ? getLocalStorage("solver")?.clueSelection
       : ""
   );
+  const [puzzles, setPuzzles] = useState<Storage | Puzzles | undefined>(() =>
+    localStorage.getItem("puzzles")
+      ? (getLocalStorage("puzzles") as Puzzles)
+      : undefined
+  );
+  const [selectedPuzzle, setSelectedPuzzle] = useState<string>(() =>
+    puzzles && puzzles.length > 0 ? puzzles[0].name : ""
+  );
   const [selectedCell, setSelectedCell] = useState<CellType | undefined>(() =>
     localStorage.getItem("solver")
       ? getLocalStorage("solver")?.cellSelection
@@ -69,6 +78,8 @@ const SolveGrid: React.FC = () => {
       selectedCell,
     });
   }, [gridState, clueList, selectedClue, selectedCell]);
+
+  console.log("puzzles in solver: ", puzzles);
 
   const checkAnswers = (e: React.MouseEvent<HTMLButtonElement>) => {
     const id = e.currentTarget.id;
@@ -641,6 +652,29 @@ const SolveGrid: React.FC = () => {
         </div>
       </div>
       <div className="control-container">
+        <label htmlFor="puzzles">Select Puzzle</label>
+        <select
+          onChange={(e) => {
+            setSelectedPuzzle(e.target.value);
+            setGridState(
+              puzzles?.find((puzzle) => puzzle.name === selectedPuzzle).grid
+            );
+            setClueList(
+              puzzles?.find((puzzle) => puzzle.name === selectedPuzzle).clues
+            );
+          }}
+          name="puzzles"
+          id="puzzles"
+        >
+          {puzzles?.map((puzzle: Puzzle, index: number) => {
+            return (
+              <option key={index} value={puzzle.name}>
+                {puzzle.name}
+              </option>
+            );
+          })}
+        </select>
+        <br />
         <button type="button" onClick={() => generateClues()}>
           Generate Answers
         </button>
