@@ -1602,3 +1602,11 @@ puzzles: [{
   }] // saved puzzles
 ```
 ***DONE***
+
+## Issue 15/6/24 - solver not behaving as expected
+- select a puzzle from the dropdown and reveal all
+- now reset the answers
+- now generate answers
+- now cycle through
+### editor styling is off
+- ~~if you enter letters in the input prior to clicking 'AI Generate Clues!' the save crossword button has the wrong color (it is disabled however)~~ FIXED

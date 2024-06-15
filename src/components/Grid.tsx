@@ -315,7 +315,9 @@ const Grid: React.FC = () => {
           <button
             style={{
               backgroundColor:
-                clueList[0].answer.includes("") || puzzleName.length < 3
+                clueList[0].answer.includes("") ||
+                puzzleName.length < 3 ||
+                clueList[0].clue === ""
                   ? "var(--primary-100)"
                   : "var(--primary-400)",
             }}
