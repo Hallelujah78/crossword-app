@@ -1560,8 +1560,8 @@ export default SingleLetterInput;
   - ~~we use a local storage key called `editor` to hold work in progress~~ DONE
     - ~~when saved, the `editor` local storage is emptied~~ DONE
   - ~~when saved, the user provides a name for their puzzle and it gets stored in local storage in a `puzzles` object under the name the user provides~~ DONE
-- when the app initializes, we retrieve the puzzles from local storage and provide them in a select input so they can load them up in the solver
-  - use a dropdown
+- ~~when the app initializes, we retrieve the puzzles from local storage and provide them in a select input so they can load them up in the solver~~ DONE
+  - ~~use a dropdown~~ DONE
 - use something like reacttour to add tips/hints to the user on how to interact with the app
 - in the editor - we currently get an alert error if we edit the grid, generate clues and then hit the AI Generate Clues! button. This is because we are returning dummy data from our serverless function and this response is based on an unedited grid. This means clue lengths may be different or the number of clues may be different and so we get an error: nothing to worry about!
 
