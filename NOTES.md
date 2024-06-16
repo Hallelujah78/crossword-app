@@ -1607,6 +1607,92 @@ puzzles: [{
 - select a puzzle from the dropdown and reveal all
 - now reset the answers
 - now generate answers
-- now cycle through
+- now cycle through the puzzles from the drop down
+- example: 
+  - puzzle DFDFDFDFDFDF  1 across is THREEDRUG
+  - puzzle PUZ3 1 across is ECCENTRIC
+  - puzzle PUZ4 1 across is INTERARAB
+  - i generate a new crossword, 1 across is SARGASSUM
+  - cycling through without resetting anything:
+  - puzzle DFDFDFDFDFDF  1 across is THREEDRUG
+  - puzzle PUZ3 1 across is ECCENTRIC
+  - puzzle PUZ4 1 across is SARGASSUM - here is the issue
+  - cycle again but in a different order
+    - puzzle PUZ3 1 across is THREEDRUG
+    - puzzle DFDFDFDFDFDF  1 across is SARGASSUM
+    - puzzle PUZ4 1 across is ECCENTRIC
+    - and we see the order is totally off!
+- selecting a name of an existing puzzle should
+  - load that and only that puzzle
+  - generating a random puzzle should not associate that puzzle with the puzzleName in state
+- this has to be an issue with getting old values because of how I am updating state
+- it's possible I'm confusing the displayed letter with the answer
+  - examine resetAllAnswers
+    - in the solver - for each cell we have an answer prop and a letter prop
+      - when generating a new random puzzle in solver, we must start from scratch
+        - intialize the grid, initialize the app, then generate
+
 ### editor styling is off
 - ~~if you enter letters in the input prior to clicking 'AI Generate Clues!' the save crossword button has the wrong color (it is disabled however)~~ FIXED
+
+## Addressing incorrect state when selecting puzzles in SolveGrid.tsx
+- this has to do with stale state (not making a deep copy) but also probably something to do with setting state multiple times in the onChange handler for the select element:
+- the onChange:
+
+```js
+onChange={(e) => {
+
+            setSelectedPuzzle(e.target.value);
+            setGridState(()=>{
+              return puzzles?.find((puzzle) => puzzle.name === e.target.value).grid
+            }
+              
+            );
+            setClueList(()=>{
+              return puzzles?.find((puzzle) => puzzle.name === e.target.value).clues
+
+            }
+            );
+          }}
+```
+- okay, so we're not setting state multiple times - I thought I was calling resetAllAnswers in here which does set state
+- refactored the code in the onChange to use variables to store e.target.value and the selected puzzle
+- I don't think this was the issue
+
+- next problem, and this is probably it: the handler for the Reset Answers button:
+
+```js
+ onClick={() =>
+            resetAllAnswers(clueList, gridState, setGridState, setClueList)
+          }
+```
+- what does reset answers do?
+  - it takes a copy of the gridState and clueList React state
+  - for every clue, it sets every element in the answer prop (array) to an empty string `""`
+  - it deletes the letter prop from the objects in the intersection prop of each Clue
+  - for every cell in gridState, it deletes the letter property
+  - then, instead of returning these values, it sets the gridState and clueList state props to these modified grid and clues variables
+
+- this is useful for the editor where we are displaying the letter prop of each cell in gridState, the letter prop represents the letter that the user must input when solving the puzzle
+  - in the solver, we display the answer property - the value that the user has input
+
+### What Do We Want to Happen in Solver?
+- the user visits the page for the first time
+- they should see an emtpy grid, a dropdown, and a button that says generate puzzle (or something similar)
+- they select a puzzle from the dropdown
+  - they get notified that the puzzle is loaded (todo)
+  - there are no letters filled in on the puzzle because they have just started working on it 
+  - they fill in some answers
+  - they navigate away from the page and come back
+    - their progress, saved in local storage (`solver` key), is loaded for them so they can continue where they left off
+- the user gets bored with this puzzle and presses the "Generate Puzzle" button
+- now we don't care about the app state as it will be recreated from scratch
+  - we get the starting grid (from `/data.grid.ts`) and call `initializeGrid(grid)`
+  - we take the return value from that and call `initializeApp(gridState)`
+  - selectedPuzzle is set to ""
+  - selectedCell is undefined
+  - selectedClue is ""
+  - our useEffect updates our local storage `solver` key
+- that's it for now, other stuff:
+  - generating a puzzle or choosing a differnt puzzle from the dropdown should open a modal to warn user that progress on current quiz will be lost
+    - they can cancel or continue

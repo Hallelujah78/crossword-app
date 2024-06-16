@@ -655,13 +655,13 @@ const SolveGrid: React.FC = () => {
         <label htmlFor="puzzles">Select Puzzle</label>
         <select
           onChange={(e) => {
-            setSelectedPuzzle(e.target.value);
-            setGridState(
-              puzzles?.find((puzzle) => puzzle.name === selectedPuzzle).grid
+            const selectedVal = e.target.value;
+            const selectedPuzzle = puzzles?.find(
+              (puzzle: Puzzle) => puzzle.name === selectedVal
             );
-            setClueList(
-              puzzles?.find((puzzle) => puzzle.name === selectedPuzzle).clues
-            );
+            setSelectedPuzzle(selectedVal);
+            setGridState(selectedPuzzle?.grid);
+            setClueList(selectedPuzzle?.clues);
           }}
           name="puzzles"
           id="puzzles"
@@ -675,7 +675,14 @@ const SolveGrid: React.FC = () => {
           })}
         </select>
         <br />
-        <button type="button" onClick={() => generateClues()}>
+        <button
+          type="button"
+          onClick={() => {
+            setSelectedPuzzle(undefined);
+            resetAllAnswers(clueList, gridState, setGridState, setClueList);
+            generateClues();
+          }}
+        >
           Generate Answers
         </button>
         <br />
