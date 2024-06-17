@@ -1700,3 +1700,13 @@ onChange={(e) => {
 - resetting the answers is causing the selected clue to have no answers
   - but when selecting a puzzle I'm copying the puzzles state
   - I think if I deep copy puzzles then
+
+## Todo 17-6-24
+- I think we need to refactor any function that takes state setters (setClueList and setGridState) and tries to set the state
+  - these functions should instead return an object {clues, grid}
+- prime example for why this should be the case is:
+  - the generateClues function in SolveGrid
+    - calls resetAllAnswers, which calls setClueList and setGridState
+    - calls populateClues, which calls setClueList and setGridState
+    - we can't update the state multiple times in the same function call
+ 

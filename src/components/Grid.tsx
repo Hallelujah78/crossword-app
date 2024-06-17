@@ -132,11 +132,14 @@ const Grid: React.FC = () => {
     });
     if (!removeEmpty && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
-        resetAllAnswers(clueList, gridState, setGridState, setClueList);
+        const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
+          clueList,
+          gridState
+        );
         populateClues(
-          clues,
+          resetClues,
           AllAnswers,
-          grid,
+          resetGrid,
           setGridState,
           setClueList,
           removeEmpty
@@ -251,9 +254,14 @@ const Grid: React.FC = () => {
         <button
           disabled={clueList[0].answer.includes("") || clueList[0].clue !== ""}
           type="button"
-          onClick={() =>
-            resetAllAnswers(clueList, gridState, setGridState, setClueList)
-          }
+          onClick={() => {
+            const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
+              clueList,
+              gridState
+            );
+            setGridState(resetGrid);
+            setClueList(resetClues);
+          }}
         >
           Reset Answers
         </button>
@@ -261,8 +269,10 @@ const Grid: React.FC = () => {
           disabled={!isModified}
           type="button"
           onClick={() => {
-            setGridState(initializeGrid(grid));
-            setClueList(initializeApp([...gridState]));
+            const newGrid = initializeGrid(grid);
+            const newClues = initializeApp(newGrid);
+            setGridState(newGrid);
+            setClueList(newClues);
             setIsModified(false);
           }}
         >

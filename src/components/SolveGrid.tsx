@@ -451,10 +451,7 @@ const SolveGrid: React.FC = () => {
     }
   }
 
-  const generateClues = () => {
-    const grid = [...gridState];
-    const clues = [...clueList];
-
+  const generateAnswers = (grid: CellType[], clues: Clue[]) => {
     let hasEmpty = grid.filter((cell) => {
       if (!cell.isVoid && !cell.letter) {
         return cell;
@@ -462,11 +459,14 @@ const SolveGrid: React.FC = () => {
     });
     if (!removeEmpty && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
-        resetAllAnswers(clueList, gridState, setGridState, setClueList);
-        populateClues(
+        const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
           clues,
+          grid
+        );
+        populateClues(
+          resetClues,
           AllAnswers,
-          grid,
+          resetGrid,
           setGridState,
           setClueList,
           removeEmpty
@@ -697,8 +697,11 @@ const SolveGrid: React.FC = () => {
           type="button"
           onClick={() => {
             setSelectedPuzzle("-");
-            resetAllAnswers(clueList, gridState, setGridState, setClueList);
-            generateClues();
+            const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
+              clueList,
+              gridState
+            );
+            generateAnswers(resetGrid, resetClues);
           }}
         >
           New Random Puzzle

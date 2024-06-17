@@ -1050,9 +1050,9 @@ export const updateGridState = (clue: Clue, gridState: CellType[]) => {
 // retains the grid structure but resets letters and clue answers
 export const resetAllAnswers = (
   clueList: Clue[],
-  gridState: CellType[],
-  setGridState: Dispatch<SetStateAction<CellType[]>>,
-  setClueList: Dispatch<SetStateAction<Clue[]>>
+  gridState: CellType[]
+  // setGridState: Dispatch<SetStateAction<CellType[]>>,
+  // setClueList: Dispatch<SetStateAction<Clue[]>>
 ) => {
   const clues = [...clueList];
   const grid = [...gridState];
@@ -1073,11 +1073,13 @@ export const resetAllAnswers = (
   }
   for (const cell of grid) {
     if (cell.letter) {
-      delete cell.letter;
+      cell.letter = ""; // this was deleting cell.letter
+      cell.answer = "";
     }
   }
-  setGridState(grid);
-  setClueList(clues);
+  return { grid, clues };
+  // setGridState(grid);
+  // setClueList(clues);
 };
 
 export const fillEmptyAnswers = (
