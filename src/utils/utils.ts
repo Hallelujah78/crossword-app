@@ -1302,8 +1302,9 @@ export const setLocalStorage = (
   localStorage.setItem(key, JSON.stringify(dataStore));
 };
 
-export const getLocalStorage = (
-  key: "solver" | "editor" | "puzzles"
-): Storage | Puzzles => {
+export const getLocalStorage = (key: "solver" | "editor" | "puzzles") => {
+  if (key === "solver" || key === "editor") {
+    return JSON.parse(localStorage.getItem(key) as string);
+  }
   return JSON.parse(localStorage.getItem(key) as string);
 };

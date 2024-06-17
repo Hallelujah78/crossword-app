@@ -1696,3 +1696,7 @@ onChange={(e) => {
 - that's it for now, other stuff:
   - generating a puzzle or choosing a differnt puzzle from the dropdown should open a modal to warn user that progress on current quiz will be lost
     - they can cancel or continue
+
+- resetting the answers is causing the selected clue to have no answers
+  - but when selecting a puzzle I'm copying the puzzles state
+  - I think if I deep copy puzzles then

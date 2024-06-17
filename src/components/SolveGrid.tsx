@@ -52,22 +52,21 @@ const SolveGrid: React.FC = () => {
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [selectedClue, setSelectedClue] = useState<string>(() =>
     localStorage.getItem("solver")
-      ? getLocalStorage("solver")?.clueSelection
+      ? getLocalStorage("solver").clueSelection
       : ""
   );
-  const [puzzles, setPuzzles] = useState<Storage | Puzzles | undefined>(() =>
+  const [puzzles, setPuzzles] = useState<Storage | Puzzles>(() =>
     localStorage.getItem("puzzles")
       ? (getLocalStorage("puzzles") as Puzzles)
-      : undefined
+      : []
   );
-  const [selectedPuzzle, setSelectedPuzzle] = useState<string>(() =>
-    puzzles && puzzles.length > 0 ? puzzles[0].name : ""
-  );
+  const [selectedPuzzle, setSelectedPuzzle] = useState<string>("PUZ3");
   const [selectedCell, setSelectedCell] = useState<CellType | undefined>(() =>
     localStorage.getItem("solver")
       ? getLocalStorage("solver")?.cellSelection
       : undefined
   );
+
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -80,6 +79,30 @@ const SolveGrid: React.FC = () => {
   }, [gridState, clueList, selectedClue, selectedCell]);
 
   console.log("puzzles in solver: ", puzzles);
+
+  const handleSelectChange = (e) => {
+    const tempPuzzles = JSON.parse(JSON.stringify(puzzles));
+    const selectedVal = e.target.value;
+    if (e.target?.value === "-" || e.target.id === "reset-all") {
+      // reset the state
+      const resetGrid = initializeGrid(grid);
+      const clues = initializeApp(resetGrid);
+      setGridState(resetGrid);
+      setClueList(clues);
+      setSelectedPuzzle("");
+      return;
+    }
+    console.log("selected val: ", e.target.value);
+    let puzzleSelection: Puzzle;
+    if (tempPuzzles.length > 0) {
+      puzzleSelection = tempPuzzles.find(
+        (puzzle: Puzzle) => puzzle.name === selectedVal
+      );
+      setSelectedPuzzle(selectedVal);
+      setGridState(puzzleSelection?.grid);
+      setClueList(puzzleSelection?.clues);
+    }
+  };
 
   const checkAnswers = (e: React.MouseEvent<HTMLButtonElement>) => {
     const id = e.currentTarget.id;
@@ -654,21 +677,15 @@ const SolveGrid: React.FC = () => {
       <div className="control-container">
         <label htmlFor="puzzles">Select Puzzle</label>
         <select
-          onChange={(e) => {
-            const selectedVal = e.target.value;
-            const selectedPuzzle = puzzles?.find(
-              (puzzle: Puzzle) => puzzle.name === selectedVal
-            );
-            setSelectedPuzzle(selectedVal);
-            setGridState(selectedPuzzle?.grid);
-            setClueList(selectedPuzzle?.clues);
-          }}
+          onChange={(e) => handleSelectChange(e)}
           name="puzzles"
           id="puzzles"
+          value={selectedPuzzle}
         >
+          <option value="-">-</option>
           {puzzles?.map((puzzle: Puzzle, index: number) => {
             return (
-              <option key={index} value={puzzle.name}>
+              <option key={`${puzzle.name}${index}`} value={puzzle.name}>
                 {puzzle.name}
               </option>
             );
@@ -678,7 +695,7 @@ const SolveGrid: React.FC = () => {
         <button
           type="button"
           onClick={() => {
-            setSelectedPuzzle(undefined);
+            setSelectedPuzzle("-");
             resetAllAnswers(clueList, gridState, setGridState, setClueList);
             generateClues();
           }}
@@ -686,7 +703,7 @@ const SolveGrid: React.FC = () => {
           Generate Answers
         </button>
         <br />
-        <label htmlFor="remove_blank">Remove Empty Cells</label>
+        {/* <label htmlFor="remove_blank">Remove Empty Cells</label>
         <input
           checked={removeEmpty}
           onChange={() => {
@@ -696,8 +713,8 @@ const SolveGrid: React.FC = () => {
           type="checkbox"
           name="remove_blank"
           id="remove_blank"
-        />
-        <br />
+        /> */}
+        {/* <br />
         <label htmlFor="fill_grid">Force Fill Grid</label>
         <input
           checked={fillGrid}
@@ -708,13 +725,12 @@ const SolveGrid: React.FC = () => {
           type="checkbox"
           name="fill_grid"
           id="fill_grid"
-        />
-        <br />
+        /> */}
+        {/* <br /> */}
         <button
+          id="reset-all"
           type="button"
-          onClick={() =>
-            resetAllAnswers(clueList, gridState, setGridState, setClueList)
-          }
+          onClick={(e) => handleSelectChange(e)}
         >
           Reset Answers
         </button>
