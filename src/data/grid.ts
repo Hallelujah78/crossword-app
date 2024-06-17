@@ -1,6 +1,6 @@
 import type { CellType } from "../models/Cell.model";
 // quick crossword 16824
-export const grid: CellType[] = [
+export const initialGrid: CellType[] = [
   {
     isVoid: true,
     id: 2,

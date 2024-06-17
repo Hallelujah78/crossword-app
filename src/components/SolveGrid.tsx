@@ -14,7 +14,7 @@ import styled from "styled-components";
 import SolveCell from "./SolveCell";
 
 // data
-import { grid } from "../data/grid";
+import { initialGrid } from "../data/grid";
 
 import * as AllAnswers from "../data/answers2";
 
@@ -41,7 +41,7 @@ const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() =>
     localStorage.getItem("solver")
       ? getLocalStorage("solver")?.grid
-      : initializeGrid(grid)
+      : initializeGrid(JSON.parse(JSON.stringify(initialGrid)))
   );
   const [clueList, setClueList] = useState<Clue[]>(() =>
     localStorage.getItem("solver")
@@ -82,19 +82,26 @@ const SolveGrid: React.FC = () => {
     const selectedVal = e.target.value;
     if (e.target?.value === "-" || e.target.id === "reset-all") {
       // reset the state
-      const resetGrid = initializeGrid(grid);
+      setSelectedCell(undefined);
+      setSelectedClue("");
+      console.log("the grid when - selected: ", initialGrid);
+      const resetGrid = initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
+      console.log("initialized grid: ", resetGrid);
+
       const clues = initializeApp(resetGrid);
       setGridState(resetGrid);
       setClueList(clues);
-      setSelectedPuzzle("");
+      setSelectedPuzzle("-");
       return;
     }
-    console.log("selected val: ", e.target.value);
+
     let puzzleSelection: Puzzle;
     if (tempPuzzles.length > 0) {
       puzzleSelection = tempPuzzles.find(
         (puzzle: Puzzle) => puzzle.name === selectedVal
       );
+      setSelectedCell(undefined);
+      setSelectedClue("");
       setSelectedPuzzle(selectedVal);
       setGridState(puzzleSelection?.grid);
       setClueList(puzzleSelection?.clues);
@@ -701,19 +708,13 @@ const SolveGrid: React.FC = () => {
               gridState
             );
             generateAnswers(resetGrid, resetClues);
+            setSelectedCell(undefined);
+            setSelectedClue("");
           }}
         >
           New Random Puzzle
         </button>
         <br />
-        {/* <button
-          id="reset-all"
-          type="button"
-          onClick={(e) => handleSelectChange(e)}
-        >
-          Reset Answers
-        </button> */}
-        {/* <br /> */}
         <button type="button" onClick={getClues}>
           AI Generate Clues!
         </button>

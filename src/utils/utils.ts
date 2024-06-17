@@ -154,7 +154,6 @@ export const initializeGrid = (grid: CellType[]) => {
     return item;
   }); // end of map
   setClueNumbers(newGrid);
-
   return newGrid;
 };
 
@@ -839,8 +838,8 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
   }
 };
 
-export const initializeApp = (gridState: CellType[]) => {
-  const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
+export const initializeApp = (grid: CellType[]) => {
+  const tempGrid = JSON.parse(JSON.stringify(grid)) as CellType[];
 
   const clues = createClues(tempGrid);
 
@@ -852,7 +851,7 @@ export const initializeApp = (gridState: CellType[]) => {
     } else setCluesThatIntersect(clue, downClues);
   }
   sortCluesDescendingLength(clues);
-  // setClueList(clues);
+
   return clues;
 };
 
@@ -1072,9 +1071,10 @@ export const resetAllAnswers = (
     }
   }
   for (const cell of grid) {
+    cell.answer = "";
+    cell.selected = false;
     if (cell.letter) {
       cell.letter = ""; // this was deleting cell.letter
-      cell.answer = "";
     }
   }
   return { grid, clues };

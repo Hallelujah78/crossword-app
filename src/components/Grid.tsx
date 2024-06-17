@@ -13,7 +13,7 @@ import styled from "styled-components";
 import Cell from "./Cell";
 
 // data
-import { grid } from "../data/grid";
+import { initialGrid } from "../data/grid";
 
 import * as AllAnswers from "../data/answers2";
 
@@ -46,7 +46,7 @@ const Grid: React.FC = () => {
   const [gridState, setGridState] = useState(() =>
     localStorage.getItem("editor")
       ? getLocalStorage("editor").grid
-      : initializeGrid(grid)
+      : initializeGrid(JSON.parse(JSON.stringify(initialGrid)))
   );
   const [clueList, setClueList] = useState<Clue[]>(() =>
     localStorage.getItem("editor")
@@ -122,7 +122,7 @@ const Grid: React.FC = () => {
   }
 
   const generateClues = () => {
-    const grid = [...gridState];
+    const grid: CellType[] = [...gridState];
     const clues = [...clueList];
 
     let hasEmpty = grid.filter((cell) => {
@@ -306,11 +306,16 @@ const Grid: React.FC = () => {
               puzzleName.length < 3 ||
               clueList[0].clue === ""
             }
-            type="button"
-            onClick={() => {
+            type="submit"
+            onClick={(e) => {
+              e.preventDefault();
               saveHandler();
-              setGridState(initializeGrid(grid));
-              setClueList(initializeApp([...grid]));
+              const resetGrid = initializeGrid(
+                JSON.parse(JSON.stringify(initialGrid))
+              );
+              const resetClues = initializeApp(resetGrid);
+              setGridState(resetGrid);
+              setClueList(resetClues);
               setIsModified(false);
               setPuzzleName("");
             }}
