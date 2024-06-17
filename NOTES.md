@@ -1699,7 +1699,7 @@ onChange={(e) => {
 
 - resetting the answers is causing the selected clue to have no answers
   - but when selecting a puzzle I'm copying the puzzles state
-  - I think if I deep copy puzzles then
+  - I think if I deep copy puzzles then it's a fix
 
 ## Todo 17-6-24
 - I think we need to refactor any function that takes state setters (setClueList and setGridState) and tries to set the state
@@ -1709,4 +1709,10 @@ onChange={(e) => {
     - calls resetAllAnswers, which calls setClueList and setGridState
     - calls populateClues, which calls setClueList and setGridState
     - we can't update the state multiple times in the same function call
+    - well, we can, but it is not necessary
+***Fixed***
+
+## Todo 18/6/24
+- 
+
  

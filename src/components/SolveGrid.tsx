@@ -406,8 +406,7 @@ const SolveGrid: React.FC = () => {
     });
   };
 
-  async function getClues() {
-    const clues = [...clueList];
+  async function getClues(clues: Clue[]) {
     type ReqClue = {
       id: string;
       word: string;
@@ -710,14 +709,15 @@ const SolveGrid: React.FC = () => {
             generateAnswers(resetGrid, resetClues);
             setSelectedCell(undefined);
             setSelectedClue("");
+            getClues(resetClues);
           }}
         >
           New Random Puzzle
         </button>
         <br />
-        <button type="button" onClick={getClues}>
+        {/* <button type="button" onClick={getClues}>
           AI Generate Clues!
-        </button>
+        </button> */}
       </div>
     </Wrapper>
   );
