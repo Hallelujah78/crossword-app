@@ -60,7 +60,7 @@ const SolveGrid: React.FC = () => {
       ? (getLocalStorage("puzzles") as Puzzles)
       : []
   );
-  const [selectedPuzzle, setSelectedPuzzle] = useState<string>("PUZ3");
+  const [selectedPuzzle, setSelectedPuzzle] = useState<string>("-");
   const [selectedCell, setSelectedCell] = useState<CellType | undefined>(() =>
     localStorage.getItem("solver")
       ? getLocalStorage("solver")?.cellSelection
@@ -77,8 +77,6 @@ const SolveGrid: React.FC = () => {
       selectedCell,
     });
   }, [gridState, clueList, selectedClue, selectedCell]);
-
-  console.log("puzzles in solver: ", puzzles);
 
   const handleSelectChange = (e) => {
     const tempPuzzles = JSON.parse(JSON.stringify(puzzles));
@@ -634,6 +632,7 @@ const SolveGrid: React.FC = () => {
         </div>
         <div className="all-clues">
           <button
+            disabled={clueList[0].answer.includes("")}
             type="button"
             id="check-all"
             onClick={(e) => {
@@ -643,6 +642,7 @@ const SolveGrid: React.FC = () => {
             Check All
           </button>
           <button
+            disabled={clueList[0].answer.includes("")}
             type="button"
             id="reveal-all"
             onClick={(e) => {
@@ -652,6 +652,7 @@ const SolveGrid: React.FC = () => {
             Reveal All
           </button>
           <button
+            disabled={clueList[0].answer.includes("")}
             type="button"
             id="clear-all"
             onClick={(e) => {
@@ -700,41 +701,17 @@ const SolveGrid: React.FC = () => {
             generateClues();
           }}
         >
-          Generate Answers
+          New Random Puzzle
         </button>
         <br />
-        {/* <label htmlFor="remove_blank">Remove Empty Cells</label>
-        <input
-          checked={removeEmpty}
-          onChange={() => {
-            setRemoveEmpty((prev) => !prev);
-            setFillGrid((prev) => !prev);
-          }}
-          type="checkbox"
-          name="remove_blank"
-          id="remove_blank"
-        /> */}
-        {/* <br />
-        <label htmlFor="fill_grid">Force Fill Grid</label>
-        <input
-          checked={fillGrid}
-          onChange={() => {
-            setRemoveEmpty((prev) => !prev);
-            setFillGrid((prev) => !prev);
-          }}
-          type="checkbox"
-          name="fill_grid"
-          id="fill_grid"
-        /> */}
-        {/* <br /> */}
-        <button
+        {/* <button
           id="reset-all"
           type="button"
           onClick={(e) => handleSelectChange(e)}
         >
           Reset Answers
-        </button>
-        <br />
+        </button> */}
+        {/* <br /> */}
         <button type="button" onClick={getClues}>
           AI Generate Clues!
         </button>
@@ -797,21 +774,19 @@ const Wrapper = styled.div`
     button {
       background-color: var(--primary-400);
       width: 8vw;
+      height: fit-content;
       border: none;
       padding: 0.25rem 1rem;
       margin: 0.3rem;
       border-radius: 5rem;
       color: white;
       cursor: pointer;
+
       &:disabled {
-        background-color: var(--primary-900);
-      }
-      &:hover {
         background-color: var(--primary-100);
-        &:disabled {
-          cursor: not-allowed;
-        }
+        cursor: not-allowed;
       }
+
       transition: 0.3s linear all;
     }
   }

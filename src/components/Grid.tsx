@@ -211,11 +211,6 @@ const Grid: React.FC = () => {
       </div>
       <div className="control-container">
         <button
-          style={{
-            backgroundColor: clueList[0].answer.includes("")
-              ? "var(--primary-400)"
-              : "var(--primary-100)",
-          }}
           type="button"
           disabled={!clueList[0].answer.includes("")}
           onClick={() => generateClues()}
@@ -254,12 +249,6 @@ const Grid: React.FC = () => {
 
         <br />
         <button
-          style={{
-            backgroundColor:
-              clueList[0].answer.includes("") || clueList[0].clue !== ""
-                ? "var(--primary-100)"
-                : "var(--primary-400)",
-          }}
           disabled={clueList[0].answer.includes("") || clueList[0].clue !== ""}
           type="button"
           onClick={() =>
@@ -269,11 +258,6 @@ const Grid: React.FC = () => {
           Reset Answers
         </button>
         <button
-          style={{
-            backgroundColor: !isModified
-              ? "var(--primary-100)"
-              : "var(--primary-400)",
-          }}
           disabled={!isModified}
           type="button"
           onClick={() => {
@@ -286,12 +270,6 @@ const Grid: React.FC = () => {
         </button>
         <br />
         <button
-          style={{
-            backgroundColor:
-              clueList[0].clue !== "" || clueList[0].answer.includes("")
-                ? "var(--primary-100)"
-                : "var(--primary-400)",
-          }}
           disabled={clueList[0].clue !== "" || clueList[0].answer.includes("")}
           type="button"
           onClick={getClues}
@@ -313,14 +291,6 @@ const Grid: React.FC = () => {
             placeholder="puzzleName"
           />
           <button
-            style={{
-              backgroundColor:
-                clueList[0].answer.includes("") ||
-                puzzleName.length < 3 ||
-                clueList[0].clue === ""
-                  ? "var(--primary-100)"
-                  : "var(--primary-400)",
-            }}
             disabled={
               clueList[0].answer.includes("") ||
               puzzleName.length < 3 ||
@@ -388,11 +358,9 @@ const Wrapper = styled.div`
     color: white;
     cursor: pointer;
 
-    &:hover {
+    &:disabled {
       background-color: var(--primary-100);
-      &:disabled {
-        cursor: not-allowed;
-      }
+      cursor: not-allowed;
     }
     transition: 0.3s linear all;
   }
