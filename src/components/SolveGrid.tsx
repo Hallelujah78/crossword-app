@@ -418,6 +418,7 @@ const SolveGrid: React.FC = () => {
       const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
       requestArray.push(reqClue);
     }
+    console.log("****************: ", requestArray);
 
     const apiURL = "/.netlify/functions/getClues"; // so we don't spam API
 
@@ -452,7 +453,7 @@ const SolveGrid: React.FC = () => {
         );
       }
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 
