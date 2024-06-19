@@ -49,13 +49,13 @@ exports.handler = async (event) => {
       console.log("********ERROR MESSAGE*********: ", error.error.message);
       return {
         statusCode: error.status,
-        body: JSON.stringify(error),
+        body: JSON.stringify({ error }),
       };
     }
     console.log("an unknown error, call it 500");
     return {
       statusCode: 500,
-      body: JSON.stringify("An unknown error occurred."),
+      body: JSON.stringify({ message: "An unknown error occurred." }),
     };
   }
 };

@@ -37,6 +37,7 @@ import {
   setLocalStorage,
 } from "../utils/utils";
 import type { Puzzle, Puzzles } from "../models/Puzzles.model";
+import Loading from "./Loading";
 
 const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() =>
@@ -431,7 +432,7 @@ const SolveGrid: React.FC = () => {
         headers: { accept: "application/json" },
         body: JSON.stringify(requestArray),
       });
-      const resp = (await response.json()) as ReqClue;
+      const resp = await response.json();
       if (resp.status === 200) {
         setClueList(clues);
       }
@@ -571,7 +572,7 @@ const SolveGrid: React.FC = () => {
   // *******************************
   // *******************************
   if (isLoading) {
-    <div>Loading...</div>;
+    return <Loading />;
   }
   if (error) {
     return <ErrorPage error={error} />;

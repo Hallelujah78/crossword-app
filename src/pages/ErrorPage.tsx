@@ -11,7 +11,7 @@ const ErrorPage: React.FC = ({ error }) => {
           <i>
             {error ? (
               <i>
-                {error.message} {error.status}
+                {error.error.message} {error.status}
               </i>
             ) : (
               "Unknown Error"
