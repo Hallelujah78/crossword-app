@@ -1,42 +1,32 @@
-import { useRouteError, isRouteErrorResponse } from "react-router-dom";
-import React from "react";
+import type React from "react";
 import styled from "styled-components";
 
-const ErrorPage: React.FC = () => {
-	const error = useRouteError();
-	console.error(error);
-	if (isRouteErrorResponse(error)) {
-		return (
-			<Wrapper id="error-page">
-				<div className="center-content">
-					<h1>Oops!</h1>
-					<p>Sorry, an unexpected error has occurred.</p>
-					<p>
-						<i>
-							{error.status} {error.statusText}
-						</i>
-					</p>
-				</div>
-			</Wrapper>
-		);
-	}
-	return (
-		<Wrapper id="error-page">
-			<div className="center-content">
-				<h1>Oops!</h1>
-				<p>Sorry, an unexpected error has occurred.</p>
-				<p>
-					<i>{error.message || "Unknown Error"}</i>
-				</p>
-			</div>
-		</Wrapper>
-	);
+const ErrorPage: React.FC = ({ error }) => {
+  return (
+    <Wrapper id="error-page">
+      <div className="center-content">
+        <h1>Oops!</h1>
+        <p>Sorry, an unexpected error has occurred.</p>
+        <p>
+          <i>
+            {error ? (
+              <i>
+                {error.message} {error.status}
+              </i>
+            ) : (
+              "Unknown Error"
+            )}
+          </i>
+        </p>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.div`
   background-color: #1c1d1f;
   color: white;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   display: grid;
   place-content: center;

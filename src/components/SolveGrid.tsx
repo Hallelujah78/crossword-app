@@ -1,8 +1,8 @@
 // react
 import { useState, useRef, useEffect } from "react";
 import type { KeyboardEvent } from "react";
-// models
 
+// models
 import type Clue from "../classes/Clue";
 import { Direction } from "../models/Direction.model";
 import type { CellType } from "../models/Cell.model";
@@ -12,6 +12,7 @@ import styled from "styled-components";
 
 // components
 import SolveCell from "./SolveCell";
+import ErrorPage from "../pages/ErrorPage";
 
 // data
 import { initialGrid } from "../data/grid";
@@ -65,6 +66,8 @@ const SolveGrid: React.FC = () => {
       ? getLocalStorage("solver")?.cellSelection
       : undefined
   );
+  const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -412,15 +415,15 @@ const SolveGrid: React.FC = () => {
       word: string;
       clue: string;
     };
+    setIsLoading(true);
     const requestArray: ReqClue[] = [];
 
     for (const clue of clues) {
       const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
       requestArray.push(reqClue);
     }
-    console.log("****************: ", requestArray);
 
-    const apiURL = "/.netlify/functions/getClues"; // so we don't spam API
+    const apiURL = "/.netlify/functions/getClues";
 
     try {
       const response = await fetch(apiURL, {
@@ -428,33 +431,15 @@ const SolveGrid: React.FC = () => {
         headers: { accept: "application/json" },
         body: JSON.stringify(requestArray),
       });
-      const data = (await response.json()) as ReqClue;
-
-      // verify the data is as expected
-      if (Array.isArray(data)) {
-        for (const clue of clues) {
-          const id = clue.id;
-          const clueResp = data.find((clueObj) => {
-            return clueObj?.id === id;
-          });
-          if (clueResp.clue && clueResp.clue !== "") {
-            clue.clue = clueResp.clue;
-          } else {
-            throw new Error(
-              "The clues received from the AI are not in the correct format. Try generating the clues again!"
-            );
-          }
-        }
-
+      const resp = (await response.json()) as ReqClue;
+      if (resp.status === 200) {
         setClueList(clues);
-      } else {
-        throw new Error(
-          "The clues received from the AI are not in the correct format. Try generating the clues again!"
-        );
       }
+      setError(resp.error);
     } catch (error) {
-      console.log(error);
+      setError(error);
     }
+    setIsLoading(false);
   }
 
   const generateAnswers = (grid: CellType[], clues: Clue[]) => {
@@ -585,6 +570,12 @@ const SolveGrid: React.FC = () => {
   // *******************************
   // *******************************
   // *******************************
+  if (isLoading) {
+    <div>Loading...</div>;
+  }
+  if (error) {
+    return <ErrorPage error={error} />;
+  }
   return (
     <Wrapper>
       <div className="grid-container">

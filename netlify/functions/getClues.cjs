@@ -8,9 +8,9 @@ exports.handler = async (event) => {
 
   try {
     const prompt = event.body;
-
+    // throw new Error("whoops!");
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo-0125",
+      model: "gpt-3.5-turbo-0125x", // cause error
       messages: [
         {
           role: "system",
@@ -38,14 +38,24 @@ exports.handler = async (event) => {
       presence_penalty: 0,
     });
     const { content } = response.choices[0].message;
-    console.log("content: ", content);
+
     return {
       statusCode: 200,
       body: content,
-      // body: JSON.stringify({ content }),
-      // body: stringResp,
     };
   } catch (error) {
-    console.log("****ERROR*****: ", error.msg);
+    if (error.status && error.error.message) {
+      console.log("********an ERROR occurred!*********: ", error.status);
+      console.log("********ERROR MESSAGE*********: ", error.error.message);
+      return {
+        statusCode: error.status,
+        body: JSON.stringify(error),
+      };
+    }
+    console.log("an unknown error, call it 500");
+    return {
+      statusCode: 500,
+      body: JSON.stringify("An unknown error occurred."),
+    };
   }
 };

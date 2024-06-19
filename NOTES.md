@@ -1715,12 +1715,13 @@ onChange={(e) => {
 ## Todo 18/6/24
 - in no particular order (although responsive UI will be last)
   - set up layouts for different screen sizes
-  - timer for the piece of code that interacts with the gen AI API to prevent spamming
-  - integrate with one of OpenAI's APIs since Anthropic won't let you buy credits without a Euro VAT number (doh)
+  - ~~timer for the piece of code that interacts with the gen AI API to prevent spamming~~ **NO NEED - COST IS CHEAP**
+  - ~~integrate with one of OpenAI's APIs since Anthropic won't let you buy credits without a Euro VAT number (doh)~~ **DONE**
   - we still need some kind of onboarding or introduction modals to guide the user through using the app - i.e. "in create mode, you can click the cells on the grid to toggle a cell from light to dark"
   - grid validation - we need to highlight to the user if the grid is not in a valid config. Examples:
     - any words less than 3 letters long
     - islands of cells not connected to the rest of the puzzle
     - an entire edge of the puzzle consisting of voids
+  - Error Handling - React Router's errorElement won't handle thrown errors, try using react-error-boundary instead
 
  
