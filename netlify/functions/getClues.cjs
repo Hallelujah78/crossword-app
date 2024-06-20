@@ -8,7 +8,6 @@ exports.handler = async (event) => {
 
   try {
     const prompt = event.body;
-    // throw new Error("whoops!");
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo-0125", // cause error
       messages: [
@@ -37,26 +36,19 @@ exports.handler = async (event) => {
       frequency_penalty: 0,
       presence_penalty: 0,
     });
+
     const { content } = response.choices[0].message;
+
+    console.log(typeof content); // this is a string, which makes sense since we haven't parsed the response from openai => we don't have to stringify to send it back to our app
 
     return {
       statusCode: 200,
       body: content,
     };
   } catch (error) {
-    if (error.status && error.error.message) {
-      console.log(error);
-      console.log("********an ERROR occurred!*********: ", error.status);
-      console.log("********ERROR MESSAGE*********: ", error.error.message);
-      return {
-        statusCode: error.status,
-        body: JSON.stringify({ error }),
-      };
-    }
-    console.log(error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: "An unknown error occurred." }),
+      body: typeof error === "string" ? error : JSON.stringify({ error }),
     };
   }
 };

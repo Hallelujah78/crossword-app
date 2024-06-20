@@ -67,7 +67,7 @@ const SolveGrid: React.FC = () => {
       ? getLocalStorage("solver")?.cellSelection
       : undefined
   );
-  const [error, setError] = useState<Error | undefined>();
+  const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -432,13 +432,33 @@ const SolveGrid: React.FC = () => {
         headers: { accept: "application/json" },
         body: JSON.stringify(requestArray),
       });
-      const resp = await response.json();
-      if (resp.status === 200) {
+      const data = await response.json();
+      console.log("the data after response.json(): ", data);
+      console.log("the raw response: ", response);
+      if (response.status === 200 && data.content) {
+        const { content } = JSON.parse(data);
+        for (const clue of clues) {
+          const id = clue.id;
+          const clueResp = content.find((clueObj) => {
+            return clueObj?.id === id;
+          });
+          if (clueResp.clue && clueResp.clue !== "") {
+            clue.clue = clueResp.clue;
+          } else {
+            throw new Error(
+              "The clues received from the AI are not in the correct format. Try generating the clues again!"
+            );
+          }
+        }
+        console.log("**cluelist being set here!: ", clues);
         setClueList(clues);
+      } else {
+        console.log("the data if status is not 200: ", data);
+        // setError(response.error);
       }
-      setError(resp.error);
     } catch (error) {
-      setError(error);
+      console.log("the caught error: ", error);
+      // setError(error);
     }
     setIsLoading(false);
   }
