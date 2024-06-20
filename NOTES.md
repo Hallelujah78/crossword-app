@@ -1722,6 +1722,12 @@ onChange={(e) => {
     - any words less than 3 letters long
     - islands of cells not connected to the rest of the puzzle
     - an entire edge of the puzzle consisting of voids
-  - Error Handling - React Router's errorElement won't handle thrown errors, try using react-error-boundary instead
+  - Error Handling - React Router's errorElement won't handle thrown errors, try using react-error-boundary instead - nope - just use error state and loading state
+  - there seems to be an issue relating to focus
+    - example:
+      - in SolveGrid, select a clue from the 'clue box,' the element that list the across and down clues
+      - the appropriae answer in the grid will be selected and the first cell of that answer will be focussed
+      - try to type you answer into the clue
+        - the focus will switch elsewhere - although the answer you selected remains selected onscreen and the cell that you focussed will still have the cursor blinking in it
 
  

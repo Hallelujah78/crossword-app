@@ -10,7 +10,7 @@ exports.handler = async (event) => {
     const prompt = event.body;
     // throw new Error("whoops!");
     const response = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo-0125x", // cause error
+      model: "gpt-3.5-turbo-0125", // cause error
       messages: [
         {
           role: "system",
@@ -45,6 +45,7 @@ exports.handler = async (event) => {
     };
   } catch (error) {
     if (error.status && error.error.message) {
+      console.log(error);
       console.log("********an ERROR occurred!*********: ", error.status);
       console.log("********ERROR MESSAGE*********: ", error.error.message);
       return {
@@ -52,7 +53,7 @@ exports.handler = async (event) => {
         body: JSON.stringify({ error }),
       };
     }
-    console.log("an unknown error, call it 500");
+    console.log(error);
     return {
       statusCode: 500,
       body: JSON.stringify({ message: "An unknown error occurred." }),

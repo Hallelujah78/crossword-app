@@ -10,13 +10,21 @@ const ErrorPage: React.FC = ({ error }) => {
         <p>
           <i>
             {error ? (
-              <i>
-                {error.error.message} {error.status}
-              </i>
+              <>
+                <i>{error?.error?.message}</i>
+                <br />
+                <i>
+                  {error?.error?.statusText} {error.status}
+                </i>
+              </>
             ) : (
               "Unknown Error"
             )}
           </i>
+          <br />
+          <button type="button" onClick={() => window.location.reload()}>
+            Reload Page
+          </button>
         </p>
       </div>
     </Wrapper>
@@ -45,10 +53,14 @@ const Wrapper = styled.div`
     }
     i {
       margin: 0.9rem;
-
-      font-size: 3rem;
+      font-size: 2.25rem;
       color: rgb(185, 69, 79);
     }
+  }
+  button {
+    margin-top: 2rem !important;
+    padding: 0.75rem 1.25rem !important;
+    width: fit-content !important;
   }
 `;
 

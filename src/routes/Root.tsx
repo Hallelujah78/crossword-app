@@ -1,10 +1,16 @@
+// libs
 import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
+import { RiOpenaiFill } from "react-icons/ri";
 
 const Root: React.FC = () => {
   return (
     <Wrapper>
       <nav>
+        <div className="powered-by">
+          <h1>Powered by OpenAI</h1>
+          <RiOpenaiFill className="ai-icon" />
+        </div>
         <h1 className="title">CrossWord</h1>
         <div className="link-container">
           <NavLink to={"/"}>Create/Edit</NavLink>
@@ -29,13 +35,28 @@ const Wrapper = styled.div`
     border-bottom: 1px solid gray;
     height: 3rem;
     color: white;
+    .powered-by {
+      position: absolute;
+      height: 3rem;
+      line-height: 3rem;
+      margin-left: 2rem;
+      display: flex;
+    }
+    .ai-icon {
+      line-height: 3rem;
+      font-size: 2rem;
+      padding: 0.5rem 0;
+      margin-left: 0.5rem;
+    }
   }
+
   .title {
     margin: auto;
     height: 100%;
     font-size: 2.5rem;
     line-height: 3rem;
   }
+
   section {
     height: calc(100vh - 3rem - 1px);
     display: grid;

@@ -1,9 +1,14 @@
+import { RiOpenaiFill } from "react-icons/ri";
 import styled, { keyframes } from "styled-components";
 const Loading: React.FC = () => {
   return (
     <Wrapper>
       <div className="loading-container">
-        <div className="loading"></div>
+        <div className="loading" />
+        <div className="powered-by">
+          <h1>Powered by OpenAI</h1>
+          <RiOpenaiFill className="ai-icon" />
+        </div>
       </div>
     </Wrapper>
   );

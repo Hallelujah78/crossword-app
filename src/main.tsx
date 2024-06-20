@@ -31,7 +31,7 @@ const router = createBrowserRouter([
 
 import Root from "./routes/Root.tsx";
 import Solve from "./routes/Solve.tsx";
-import ErrorPage from "./pages/ErrorPage.tsx";
+import ErrorPage from "./components/ErrorPage.tsx";
 const docRoot = document.getElementById("root");
 if (docRoot) {
   ReactDOM.createRoot(docRoot).render(
