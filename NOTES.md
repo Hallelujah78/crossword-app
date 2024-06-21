@@ -1762,4 +1762,5 @@ onChange={(e) => {
 ```js
 grid[currSelectedClue.indices[0]]
 ```
+***FIXED***
  
