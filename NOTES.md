@@ -1730,4 +1730,36 @@ onChange={(e) => {
       - try to type you answer into the clue
         - the focus will switch elsewhere - although the answer you selected remains selected onscreen and the cell that you focussed will still have the cursor blinking in it
 
+
+## 21/6/24 - fix issue with handleClueClick
+- the function handles the onClick when the user clicks on a clue (rather than clicking on a cell on the grid)
+- What Should happen
+  - a user clicks on a clue and the corresponding answer on the grid is highlighted
+  - the focus is switched to the first cell of the highlighted answer
+    - other functionality should work now, entering letters, deleting etc
+- What is currently happening
+  - the answer on the grid is highlighted and the first cell gains focus (as expected)
+  - if you start to type, the focus switches
+  - example, clicking on clue 8 Across will highlight 8 Across on the grid BUT if you start to type the focus switches to the 8th cell on the grid
+- what state do we have in SolveGrid?
+- state number:
+1 gridState
+2 clueList
+3 removeEmpty
+4 selectedClue (string, loaded from localStorage) ("" after fetching)
+5 puzzles
+6 selectedPuzzle
+7 selectedCell (CellType, loaded from localStorage) (undefined after fetching)
+8 error (null after fetch)
+9 isLoading (false after fetch)
+10 the refs
+- this is wrong or not working in handleClueClick: setSelectedCell(grid[currSelectedClue.clueNumber]);
+- how does it work elsewhere, handleTabPress should work in a similar fashion
+- currSelectedClue.clueNumber will be 8 if we click on 8 across
+  - we are setting our selectedCell to be 8 which is completely wrong
+  - we want to set it to be the first index value of the currSelectedClue
+
+```js
+grid[currSelectedClue.indices[0]]
+```
  
