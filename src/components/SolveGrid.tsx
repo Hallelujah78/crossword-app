@@ -432,10 +432,19 @@ const SolveGrid: React.FC = () => {
         headers: { accept: "application/json" },
         body: JSON.stringify(requestArray),
       });
+
+      if (!response.ok && response.status === 500 && !response.bodyUsed) {
+        throw new Error(
+          `${response.status}: ${response.statusText}. This may indicate that the request took longer than 10 seconds and timed out. This is not uncommon with OpenAI API requests. Please try again!`
+        );
+      }
+
       const data = await response.json();
-      console.log("the data after response.json(): ", data);
-      console.log("the raw response: ", response);
-      if (response.status === 200 && data.content) {
+
+      // console.log("the data after response.json(): ", data);
+      // console.log("the raw response: ", response);
+
+      if (response.ok && data.content) {
         const { content } = JSON.parse(data);
         for (const clue of clues) {
           const id = clue.id;
@@ -450,15 +459,12 @@ const SolveGrid: React.FC = () => {
             );
           }
         }
-        console.log("**cluelist being set here!: ", clues);
         setClueList(clues);
       } else {
-        console.log("the data if status is not 200: ", data);
-        // setError(response.error);
+        setError(data.error);
       }
     } catch (error) {
-      console.log("the caught error: ", error);
-      // setError(error);
+      setError(error);
     }
     setIsLoading(false);
   }

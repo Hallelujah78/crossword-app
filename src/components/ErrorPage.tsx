@@ -11,10 +11,14 @@ const ErrorPage: React.FC = ({ error }) => {
           <i>
             {error ? (
               <>
-                <i>{error?.error?.message}</i>
+                <i>
+                  {error?.error?.message
+                    ? error?.error?.message
+                    : error?.message}
+                </i>
                 <br />
                 <i>
-                  {error?.error?.statusText} {error.status}
+                  {error?.error?.type} {error?.status}
                 </i>
               </>
             ) : (
