@@ -18,6 +18,10 @@ ${reset}
 --primary-800: #03245f;
 --primary-900: #022055;
 
+html, #root, body, * {
+box-sizing: border-box !important;
+
+}
 
 button {
     background-color: var(--primary-400);

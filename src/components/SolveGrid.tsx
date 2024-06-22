@@ -612,100 +612,6 @@ const SolveGrid: React.FC = () => {
   }
   return (
     <Wrapper>
-      <div className="grid-container">
-        {gridState?.map((cell: CellType, index: number) => {
-          return (
-            <SolveCell
-              handleKeyDown={handleKeyDown}
-              key={cell.id}
-              cell={cell}
-              handleCellClick={handleCellClick}
-              ref={(el) => {
-                cellRefs.current[index] = el;
-              }}
-            />
-          );
-        })}
-      </div>
-
-      <div className="button-container">
-        <div className="single-clue">
-          <button
-            type="button"
-            id="check-single"
-            disabled={!selectedClue}
-            onClick={(e) => {
-              checkAnswers(e);
-            }}
-          >
-            Check This
-          </button>
-          <button
-            type="button"
-            id="reveal-single"
-            disabled={!selectedClue}
-            onClick={(e) => {
-              checkAnswers(e);
-            }}
-          >
-            Reveal This
-          </button>
-          <button
-            type="button"
-            id="clear-single"
-            disabled={!selectedClue}
-            onClick={(e) => {
-              checkAnswers(e);
-            }}
-          >
-            Clear This
-          </button>
-        </div>
-        <div className="all-clues">
-          <button
-            disabled={clueList[0].answer.includes("")}
-            type="button"
-            id="check-all"
-            onClick={(e) => {
-              checkAnswers(e);
-            }}
-          >
-            Check All
-          </button>
-          <button
-            disabled={clueList[0].answer.includes("")}
-            type="button"
-            id="reveal-all"
-            onClick={(e) => {
-              checkAnswers(e);
-            }}
-          >
-            Reveal All
-          </button>
-          <button
-            disabled={clueList[0].answer.includes("")}
-            type="button"
-            id="clear-all"
-            onClick={(e) => {
-              checkAnswers(e);
-            }}
-          >
-            Clear All
-          </button>
-        </div>
-      </div>
-      <div className="clue-container">
-        <div className="across">
-          <h2>Across</h2>
-          <ul>{renderClues(clueList, Direction.ACROSS)}</ul>
-        </div>
-        <div className="down">
-          <h2>Down</h2>
-          <ul>
-            <ul>{renderClues(clueList, Direction.DOWN)}</ul>
-          </ul>
-        </div>
-      </div>
       <div className="control-container">
         <label htmlFor="puzzles">Select Puzzle</label>
         <select
@@ -741,27 +647,140 @@ const SolveGrid: React.FC = () => {
           New Random Puzzle
         </button>
         <br />
-        {/* <button type="button" onClick={getClues}>
-          AI Generate Clues!
-        </button> */}
+      </div>
+      <div className="grid-button-container">
+        <div className="grid-container">
+          {gridState?.map((cell: CellType, index: number) => {
+            return (
+              <SolveCell
+                handleKeyDown={handleKeyDown}
+                key={cell.id}
+                cell={cell}
+                handleCellClick={handleCellClick}
+                ref={(el) => {
+                  cellRefs.current[index] = el;
+                }}
+              />
+            );
+          })}
+        </div>
+
+        <div className="button-container">
+          <div className="single-clue">
+            <button
+              type="button"
+              id="check-single"
+              disabled={!selectedClue}
+              onClick={(e) => {
+                checkAnswers(e);
+              }}
+            >
+              Check This
+            </button>
+            <button
+              type="button"
+              id="reveal-single"
+              disabled={!selectedClue}
+              onClick={(e) => {
+                checkAnswers(e);
+              }}
+            >
+              Reveal This
+            </button>
+            <button
+              type="button"
+              id="clear-single"
+              disabled={!selectedClue}
+              onClick={(e) => {
+                checkAnswers(e);
+              }}
+            >
+              Clear This
+            </button>
+          </div>
+          <div className="all-clues">
+            <button
+              disabled={clueList[0].answer.includes("")}
+              type="button"
+              id="check-all"
+              onClick={(e) => {
+                checkAnswers(e);
+              }}
+            >
+              Check All
+            </button>
+            <button
+              disabled={clueList[0].answer.includes("")}
+              type="button"
+              id="reveal-all"
+              onClick={(e) => {
+                checkAnswers(e);
+              }}
+            >
+              Reveal All
+            </button>
+            <button
+              disabled={clueList[0].answer.includes("")}
+              type="button"
+              id="clear-all"
+              onClick={(e) => {
+                checkAnswers(e);
+              }}
+            >
+              Clear All
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="clue-container">
+        <div className="across">
+          <h2>Across</h2>
+          <ul>{renderClues(clueList, Direction.ACROSS)}</ul>
+        </div>
+        <div className="down">
+          <h2>Down</h2>
+          <ul>
+            <ul>{renderClues(clueList, Direction.DOWN)}</ul>
+          </ul>
+        </div>
       </div>
     </Wrapper>
   );
 };
 export default SolveGrid;
 
+// *******************************
+// *******************************
+// STYLED COMPONENT below here
+// *******************************
+// *******************************
+// *******************************
+
 const Wrapper = styled.div`
-  position: relative;
-  .grid-container {
-    grid-template-columns: repeat(13, 1fr);
-    display: grid;
-    width: auto;
-    height: auto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: calc(100vh - 3rem);
+  display: grid;
+  grid-template-columns: 0.8fr 2fr 2fr;
+  .grid-button-container {
+    place-content: center;
+    .grid-container {
+      grid-template-columns: repeat(13, 1fr);
+      display: grid;
+      width: auto;
+      margin-top: 1rem;
+    }
+    .button-container {
+      margin-top: 0.75rem;
+    }
   }
+
   .control-container {
-    position: absolute;
-    top: 2rem;
-    left: -25vw;
+    height: 25%;
+    place-content: center;
     button,
     input,
     label {
@@ -774,25 +793,28 @@ const Wrapper = styled.div`
       border-radius: 3px;
       min-width: 6vw;
     }
+    button {
+      margin-top: 2rem !important;
+    }
   }
+  // clues
   .clue-container {
-    left: 42vw;
-    position: absolute;
-    width: 25vw;
+    place-content: center;
+    margin: auto;
+    width: 30vw;
     color: #d1d0ce;
-    margin-top: -40rem;
     h2 {
       border-bottom: 1px rgba(80, 80, 80, 0.8) solid;
-      font-size: 1.25rem;
+      font-size: clamp(1.25rem, 1.7vw, 1.5rem);
       font-weight: 700;
       color: var(--primary-100);
       height: 1.75rem;
-      margin-top: 2.5rem;
     }
 
     li {
+      font-size: clamp(1rem, 1vw, 1.25rem);
       border-radius: 0.2rem;
-      margin: 0.5rem 0 0.5rem 0;
+      margin: 0.55rem 0 0.55rem 0;
       padding: 0 0.9rem 0 0.9rem;
       color: darkgray;
       display: flex;
@@ -801,6 +823,9 @@ const Wrapper = styled.div`
       &:hover {
         cursor: pointer;
       }
+    }
+    .down {
+      margin-top: 1.25rem;
     }
   }
 `;

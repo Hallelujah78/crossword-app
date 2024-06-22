@@ -166,10 +166,24 @@
 
 ### Vid 4: The Terminology of AI
 - **AI Terminology Overview**: Understanding key terms in AI helps in discussing and applying them in business.
+- Machine learning versus data science
+  - back to our housing data again:
+
+<image src="./src/assets/housing.png"/>
+- first four columns are input A 
+- price is the output B
+- say you want to create a mobile app to help people price homes
+- this would be a Machine learning system
+  - specifically one that learns A to be mappings (input to output)
+- data science on the other hand might involve a team analyzing data to gain insights
+  - eg a conclusion might be houses of a similar size that have 3 bedrooms are more valuable than houses with 2 bedrooms
+  - or let's say a newly renovated home has a premium of 15%
+  - well, to maximize profit, should you add a bedroom or renovate?
+
 - **Machine Learning (ML)**:
   - **Definition**: Field where computers learn from data without explicit programming (Arthur Samuel's definition).
   - **Example**: Housing dataset to predict prices (input A: house features; output B: price).
-  - **Use**: Creates software for continuous use, e.g., online ad systems predicting clicks.
+  - **Use**: Creates software for continuous use, e.g., online ad systems predicting clicks. Input is info about you and the ad. Output - will you click or not. Run 24/7, ML systems that drive ad revenue.
 - **Data Science**:
   - **Definition**: Extracts knowledge and insights from data.
   - **Example**: Analyzing housing data to determine if more bedrooms increase value or if renovations justify a higher price.
@@ -177,12 +191,24 @@
   - **Example in Advertising**: Analyzing data to decide where to focus sales efforts based on industry ad spending.
 - **Fuzzy Boundaries**: Terms like ML and data science are not consistently used, but ML often results in operational software, while data science provides actionable insights.
 - **Deep Learning and Neural Networks**:
+
+
+<image src="./src/assets/deeplearning.png" />
+
   - **Neural Network**: A powerful ML technique for input (A) to output (B) mappings, originally inspired by the brain.
   - **Deep Learning**: Modern term for neural networks, emphasizing extensive, layered learning.
   - **Example**: Predicting house prices using inputs like size and renovation status.
 - **Relation to the Brain**: Neural networks are loosely inspired by the brain but function very differently.
 - **Other AI Terms**: Includes generative AI, unsupervised learning, reinforcement learning, graphical models, planning, and knowledge graphs.
 - **Hierarchy of AI Concepts**:
+- a Venn diagram of AI
+
+<image src="./src/assets/AI venn diagram.png"/>
+
+- data science is a cross-cutting subset of all of these tools
+  - uses tools from AI, ML, and DL/NN
+  - has its own separate tools
+
   - **AI**: Broad set of tools for intelligent behavior.
   - **Machine Learning**: Largest subset of AI tools, includes deep learning.
   - **Deep Learning/Neural Networks**: Key subset of ML for supervised learning and more.
@@ -190,3 +216,36 @@
 - **Application in Business**: Understanding these terms helps in thinking about their application in a company.
 - **Future Videos**: Will cover what it means for a company to excel at AI.
 
+### Vid 5: What makes an AI company?
+### What Makes a Company Good at AI?
+
+Becoming great at AI involves more than just using a few neural networks; it requires leveraging AI's capabilities effectively. Here's what differentiates great AI companies:
+
+1. **Strategic Data Acquisition**: Leading AI companies, like large consumer tech firms, often launch non-monetizing products to gather valuable data that can be monetized elsewhere. This strategic approach to data collection is a hallmark of top AI firms.
+
+2. **Unified Data Warehouses**: Successful AI companies centralize their data, ensuring all relevant information is accessible and can be analyzed cohesively. This practice facilitates pattern recognition and insights, which are critical for AI-driven decisions.
+
+3. **Automation Opportunities**: AI companies excel at identifying tasks that can be automated using supervised learning algorithms. This reduces the need for human intervention in repetitive tasks, increasing efficiency.
+
+4. **New Roles and Structures**: The emergence of roles like Machine Learning Engineers (MLEs) and specialized team structures enables AI companies to effectively manage and implement AI projects.
+
+### Learning from the Internet Era
+
+The transition from traditional businesses to internet companies offers valuable lessons for the AI era. A website alone doesn’t make a company an internet business; similarly, using AI superficially doesn't make a company an AI leader. Internet companies thrived by:
+
+- **Rapid Iteration**: Internet companies frequently deploy updates and test changes through A/B testing, allowing them to quickly learn and improve.
+- **Decentralized Decision-Making**: Empowering engineers and product managers, who are closest to the technology and user needs, to make key decisions rather than relying solely on top executives.
+
+### AI Transformation Playbook
+
+To transform into an AI-driven company, follow this five-step process:
+
+1. **Execute Pilot Projects**: Start with small AI projects to build momentum and understand AI’s potential and limitations.
+2. **Build an In-House AI Team**: Develop internal AI expertise and provide comprehensive AI training to both technical and non-technical staff.
+3. **Develop an AI Strategy**: Formulate a clear AI strategy aligned with the company’s goals and capabilities.
+4. **Align Communications**: Ensure all stakeholders, including employees, customers, and investors, are informed about the company’s AI journey and strategy.
+5. **Scale and Optimize**: As the company gains proficiency in AI, scale up projects and continually optimize processes and strategies.
+
+### Conclusion
+
+By following these principles and steps, any company can evolve into a successful AI enterprise, creating substantial value across industries. The forthcoming detailed guide on the AI transformation playbook will further aid in navigating this journey.

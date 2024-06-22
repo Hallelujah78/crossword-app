@@ -26,7 +26,7 @@ export default Cell;
 const Wrapper = styled.div<{ id: number | undefined }>`
   cursor: pointer;
   position: relative;
-  box-sizing: border-box;
+
   display: inline-block;
   height: calc(85vh / 13);
   width: calc(85vh / 13);

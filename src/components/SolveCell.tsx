@@ -37,7 +37,6 @@ export default SolveCell;
 
 const Wrapper = styled.div<{ id: number | undefined }>`
   position: relative;
-  box-sizing: border-box;
   display: inline-block;
   height: calc(39vw / 13);
   width: calc(39vw / 13);
@@ -60,7 +59,6 @@ const Wrapper = styled.div<{ id: number | undefined }>`
     display: grid;
 
     input {
-      box-sizing: border-box;
       text-transform: uppercase;
       text-align: center;
       z-index: 99;

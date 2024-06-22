@@ -58,6 +58,9 @@ const Wrapper = styled.div`
   }
 
   section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
     height: calc(100vh - 3rem - 1px);
     display: grid;
     place-content: center;

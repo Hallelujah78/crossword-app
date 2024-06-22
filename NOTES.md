@@ -1722,14 +1722,7 @@ onChange={(e) => {
     - any words less than 3 letters long
     - islands of cells not connected to the rest of the puzzle
     - an entire edge of the puzzle consisting of voids
-  - Error Handling - React Router's errorElement won't handle thrown errors, try using react-error-boundary instead - nope - just use error state and loading state
-  - there seems to be an issue relating to focus
-    - example:
-      - in SolveGrid, select a clue from the 'clue box,' the element that list the across and down clues
-      - the appropriae answer in the grid will be selected and the first cell of that answer will be focussed
-      - try to type you answer into the clue
-        - the focus will switch elsewhere - although the answer you selected remains selected onscreen and the cell that you focussed will still have the cursor blinking in it
-
+  - ~~Error Handling - React Router's errorElement won't handle thrown errors, try using react-error-boundary instead - nope - just use error state and loading state~~ **DONE**
 
 ## 21/6/24 - fix issue with handleClueClick
 - the function handles the onClick when the user clicks on a clue (rather than clicking on a cell on the grid)
@@ -1763,4 +1756,24 @@ onChange={(e) => {
 grid[currSelectedClue.indices[0]]
 ```
 ***FIXED***
- 
+
+
+## 22/6/24
+- changing the layout of SolveGrid
+- we could try 3 cols on a desktop/laptop screen
+- clues are disappearing off the screen requiring the user to scroll
+- there isn't that much on the left, so reduce the screen real-estate that that gets
+- what is the current layout?
+  - Wrapper - relative
+    - grid-container
+    - button-container - absolute
+      - the buttons under the grid, both of these should be placed in a container and be their own column in Wrapper
+    - clue-container - absolute
+      - this can be its own column in wrapper
+    - control-container
+      - this can be its own column BUT there isn't a lot of content here
+
+### Todo
+- ~~wrap grid-container and button-container in their own grid~~ DONE
+- ~~Wrapper should be 3 col grid~~ DONE
+- ~~we shouldn't need relative and absolute positioning for our col contents and Wrapper~~ DONE
