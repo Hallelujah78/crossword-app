@@ -1717,11 +1717,7 @@ onChange={(e) => {
   - set up layouts for different screen sizes
   - ~~timer for the piece of code that interacts with the gen AI API to prevent spamming~~ **NO NEED - COST IS CHEAP**
   - ~~integrate with one of OpenAI's APIs since Anthropic won't let you buy credits without a Euro VAT number (doh)~~ **DONE**
-  - we still need some kind of onboarding or introduction modals to guide the user through using the app - i.e. "in create mode, you can click the cells on the grid to toggle a cell from light to dark"
-  - grid validation - we need to highlight to the user if the grid is not in a valid config. Examples:
-    - any words less than 3 letters long
-    - islands of cells not connected to the rest of the puzzle
-    - an entire edge of the puzzle consisting of voids
+  
   - ~~Error Handling - React Router's errorElement won't handle thrown errors, try using react-error-boundary instead - nope - just use error state and loading state~~ **DONE**
 
 ## 21/6/24 - fix issue with handleClueClick
@@ -1777,3 +1773,43 @@ grid[currSelectedClue.indices[0]]
 - ~~wrap grid-container and button-container in their own grid~~ DONE
 - ~~Wrapper should be 3 col grid~~ DONE
 - ~~we shouldn't need relative and absolute positioning for our col contents and Wrapper~~ DONE
+
+## 23/6/24
+- we have the same issue as with our Wordle clone
+  - if the screen is wider than high, we need to scale our cells with the height
+  - if the screen is higher than wide (mobiles, tablets in portrait), then scale the cell side length with the width
+- we still need some kind of onboarding or introduction modals to guide the user through using the app - i.e. "in create mode, you can click the cells on the grid to toggle a cell from light to dark"
+  - grid validation - we need to highlight to the user if the grid is not in a valid config. Examples:
+    - any words less than 3 letters long
+    - islands of cells not connected to the rest of the puzzle
+    - an entire edge of the puzzle consisting of voids
+
+- it's Sunday, let's start on some grid validation since it would be the easiest thing to look at
+  - everytime a cell gets toggled from dark to light or vice-versa we need to check if the grid is valid
+    - if it's not valid, feed back to the user
+      - you can't save an invalid grid
+      - you can't fetch clues for an invalid grid
+      - you can't generate clues for an invalid grid
+- answer length is less than 3
+  - the length of the answer is held in each Clue in clueList
+  - for each cell in the answer (indices), color it red if invalid
+- in our handleClick in Grid.tsx, this is where our cells get toggled between light and dark
+  - we could prevent the cell from being toggled if the update would put the grid into an invalid state
+    - this invalid state might be part of the user's bigger plan and they may intend toggling other cells which will leave the grid in a valid state
+    - let's allow the update but feed back that the state is not valid
+
+![alt text](image.png)
+- we get an array of 4 invalid clues here, 8 and 9 across and 22 and 23 across
+  - issue: we should also have 7 and 24 which are clues of length 1
+    - should these be 7 across and down and 24 across and down?
+  - the issue here is probably we check if a cell has non void cells surrounding it to determine if it is an across clue or a down clue
+    - in this case, cell 15 (7 across/down) has no cells that aren't void in any direction and so a clue is not being created
+- should these be created as clues?
+- I can handle it in a different way, i.e. if a cell has no connecting cells in any direction then it is an 'island' and it is invalid based on that
+- since our state is split between the clues and the grid (was this a bad choice?)
+  - do we handle an invalid grid in each cell or in the clue?
+  - well, there will be no clue-based invalidness if, for example, there is a diagonal of voids that stretches across the board
+  - in this case there is no individual cell that is responsible for an invalid grid and all clues may be valid in terms of length
+    - we could identify the voids and set an invalid state on them, so we can handle this at the cell level
+- add an invalid prop to each cell
+- on every cell toggle, we should set the isValid prop to true before running validateGrid?

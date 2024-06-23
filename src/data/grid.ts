@@ -9,6 +9,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -19,6 +20,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -29,6 +31,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -39,6 +42,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -49,6 +53,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -59,6 +64,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -69,6 +75,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -79,6 +86,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -89,6 +97,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -99,6 +108,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -109,6 +119,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -119,6 +130,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -129,6 +141,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // 2nd row, every other square
@@ -140,6 +153,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -150,6 +164,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -160,6 +175,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -170,6 +186,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -180,6 +197,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -190,6 +208,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -200,6 +219,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -210,6 +230,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -220,6 +241,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -230,6 +252,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -240,6 +263,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -250,6 +274,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -260,6 +285,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end of row 2
@@ -272,6 +298,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -282,6 +309,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -292,6 +320,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -302,6 +331,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -312,6 +342,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -322,6 +353,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -332,6 +364,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -342,6 +375,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -352,6 +386,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -362,6 +397,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -372,6 +408,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -382,6 +419,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -392,6 +430,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end of row 3
@@ -404,6 +443,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -414,6 +454,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -424,6 +465,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -434,6 +476,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -444,6 +487,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -454,6 +498,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -464,6 +509,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -474,6 +520,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -484,6 +531,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -494,6 +542,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -504,6 +553,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -514,6 +564,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -524,6 +575,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end of row
@@ -536,6 +588,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -546,6 +599,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -556,6 +610,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -566,6 +621,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -576,6 +632,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -586,6 +643,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -596,6 +654,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -606,6 +665,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -616,6 +676,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -626,6 +687,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -636,6 +698,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -646,6 +709,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -656,6 +720,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end of row 5
@@ -668,6 +733,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -678,6 +744,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -688,6 +755,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -698,6 +766,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -708,6 +777,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -718,6 +788,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -728,6 +799,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -738,6 +810,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -748,6 +821,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -758,6 +832,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -768,6 +843,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -778,6 +854,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -788,6 +865,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end of row 6
@@ -800,6 +878,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -810,6 +889,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -820,6 +900,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -830,6 +911,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -840,6 +922,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -850,6 +933,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -860,6 +944,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -870,6 +955,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -880,6 +966,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -890,6 +977,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -900,6 +988,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -910,6 +999,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -920,6 +1010,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end 7
@@ -932,6 +1023,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -942,6 +1034,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -952,6 +1045,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -962,6 +1056,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -972,6 +1067,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -982,6 +1078,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -992,6 +1089,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1002,6 +1100,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1012,6 +1111,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1022,6 +1122,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1032,6 +1133,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1042,6 +1144,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1052,6 +1155,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end 8
@@ -1064,6 +1168,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1074,6 +1179,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1084,6 +1190,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1094,6 +1201,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1104,6 +1212,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1114,6 +1223,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1124,6 +1234,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1134,6 +1245,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1144,6 +1256,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1154,6 +1267,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1164,6 +1278,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1174,6 +1289,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1184,6 +1300,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end 9
@@ -1196,6 +1313,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1206,6 +1324,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1216,6 +1335,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1226,6 +1346,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1236,6 +1357,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1246,6 +1368,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1256,6 +1379,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1266,6 +1390,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1276,6 +1401,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1286,6 +1412,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1296,6 +1423,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1306,6 +1434,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1316,6 +1445,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end 10
@@ -1328,6 +1458,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1338,6 +1469,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1348,6 +1480,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1358,6 +1491,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1368,6 +1502,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1378,6 +1513,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1388,6 +1524,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1398,6 +1535,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1408,6 +1546,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1418,6 +1557,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1428,6 +1568,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1438,6 +1579,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1448,6 +1590,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end 11
@@ -1460,6 +1603,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1470,6 +1614,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1480,6 +1625,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1490,6 +1636,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1500,6 +1647,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1510,6 +1658,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1520,6 +1669,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1530,6 +1680,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1540,6 +1691,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1550,6 +1702,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1560,6 +1713,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1570,6 +1724,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1580,6 +1735,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   // end 12
@@ -1592,6 +1748,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1602,6 +1759,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1612,6 +1770,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1622,6 +1781,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1632,6 +1792,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1642,6 +1803,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1652,6 +1814,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1662,6 +1825,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1672,6 +1836,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1682,6 +1847,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1692,6 +1858,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1702,6 +1869,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
   {
@@ -1712,6 +1880,7 @@ export const initialGrid: CellType[] = [
     bottom: true,
     left: true,
     clueNumber: "",
+    isValid: true,
     selected: false,
   },
 ];

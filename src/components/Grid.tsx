@@ -43,7 +43,7 @@ const Grid: React.FC = () => {
       ? getLocalStorage("editor").isModified
       : false
   );
-  const [gridState, setGridState] = useState(() =>
+  const [gridState, setGridState] = useState<CellType[]>(() =>
     localStorage.getItem("editor")
       ? getLocalStorage("editor").grid
       : initializeGrid(JSON.parse(JSON.stringify(initialGrid)))
@@ -68,6 +68,23 @@ const Grid: React.FC = () => {
     puzzles.push({ name: puzzleName, grid: gridState, clues: clueList });
     localStorage.removeItem("editor");
     setLocalStorage("puzzles", { puzzles });
+  };
+
+  const validateGrid = (clues: Clue[], grid: CellType[]) => {
+    // reset isValid to true
+    for (const cell of grid) {
+      cell.isValid = true;
+    }
+    // answer length < 3
+    const shortAnswers = clues.filter((clue) => clue.length < 3);
+    console.log(shortAnswers);
+    for (const clue of shortAnswers) {
+      // for each item in indices, set the cell.isvalid to false
+      for (const index of clue.indices) {
+        console.log(grid[index]);
+        grid[index].isValid = false;
+      }
+    }
   };
 
   async function getClues() {
@@ -122,8 +139,8 @@ const Grid: React.FC = () => {
   }
 
   const generateClues = () => {
-    const grid: CellType[] = [...gridState];
-    const clues = [...clueList];
+    const grid: CellType[] = JSON.parse(JSON.stringify(gridState));
+    const clues: Clue[] = JSON.parse(JSON.stringify(clueList));
 
     let hasEmpty = grid.filter((cell) => {
       if (!cell.isVoid && !cell.letter) {
@@ -195,6 +212,8 @@ const Grid: React.FC = () => {
         setCluesThatIntersect(clue, acrossClues);
       } else setCluesThatIntersect(clue, downClues);
     }
+    validateGrid(clues, tempGrid);
+    console.log("27th element: ", tempGrid[27]);
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);
