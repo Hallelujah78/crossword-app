@@ -1310,3 +1310,41 @@ export const getLocalStorage = (key: "solver" | "editor" | "puzzles") => {
   }
   return JSON.parse(localStorage.getItem(key) as string);
 };
+
+export const getRowOrColumn = (
+  index: number,
+  direction: Direction.ACROSS | Direction.DOWN,
+  grid: CellType[]
+): CellType[] => {
+  const arrayOfCells: CellType[] = [];
+  let currCellIndex = index;
+  const squareRootGridLength = Math.sqrt(grid.length);
+  if (direction === Direction.DOWN) {
+    // get the column of cells
+    while (!isTopEdge(grid, currCellIndex + squareRootGridLength)) {
+      arrayOfCells.push(grid[currCellIndex]);
+      currCellIndex = currCellIndex - squareRootGridLength;
+    }
+    currCellIndex = index + squareRootGridLength;
+    while (!isBottomEdge(grid, currCellIndex - squareRootGridLength)) {
+      arrayOfCells.push(grid[currCellIndex]);
+      currCellIndex = currCellIndex + squareRootGridLength;
+    }
+    return arrayOfCells;
+  }
+  // get the row of cells
+  // start and end vars
+  currCellIndex = index;
+  while (!isLeftEdge(grid, currCellIndex + 1)) {
+    arrayOfCells.push(grid[currCellIndex]);
+    --currCellIndex;
+  }
+  currCellIndex = index + 1;
+  while (!isRightEdge(grid, currCellIndex - 1)) {
+    arrayOfCells.push(grid[currCellIndex]);
+    ++currCellIndex;
+  }
+  // 0 - 12 - 13;
+  // 13 - 25 - 13;
+  return arrayOfCells;
+};

@@ -32,6 +32,7 @@ import {
   resetAllAnswers,
   getLocalStorage,
   setLocalStorage,
+  getRowOrColumn,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 import type { Puzzles } from "../models/Puzzles.model";
@@ -75,17 +76,27 @@ const Grid: React.FC = () => {
     for (const cell of grid) {
       cell.isValid = true;
     }
-    // answer length < 3
+
     const shortAnswers = clues.filter((clue) => clue.length < 3);
     const islandCell = grid.filter(
       (cell) =>
         !cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left
     );
-
+    // we want to check if any row or any column consists of all voids (which is invalid)
+    // we start at index 0 and move diagonally towards the other corner
+    // the next index in a 13x13 is: index + sqrt grid.length + 1 (I think)
+    // getRow
+    // getColumn
+    // if the row doesn't contain at least one cell with isVoid: true, then that's invalid
+    // same for column
+    // we need a getRow and getColumn
+    const row = getRowOrColumn(0, Direction.ACROSS, grid);
+    console.log("the row i got: ", row);
+    const col = getRowOrColumn(0, Direction.DOWN, grid);
+    console.log("the column i got: ", col);
     // short answers
     for (const clue of shortAnswers) {
       for (const index of clue.indices) {
-        console.log(grid[index]);
         grid[index].isValid = false;
       }
     }
@@ -94,6 +105,8 @@ const Grid: React.FC = () => {
     for (const cell of islandCell) {
       grid[cell.id].isValid = false;
     }
+
+    // entire side is voids
   };
 
   async function getClues() {
@@ -222,7 +235,6 @@ const Grid: React.FC = () => {
       } else setCluesThatIntersect(clue, downClues);
     }
     validateGrid(clues, tempGrid);
-    console.log("27th element: ", tempGrid[27]);
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);
