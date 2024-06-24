@@ -297,7 +297,9 @@ const Grid: React.FC = () => {
           disabled={!isModified}
           type="button"
           onClick={() => {
-            const newGrid = initializeGrid(grid);
+            const newGrid = initializeGrid(
+              JSON.parse(JSON.stringify(initialGrid))
+            );
             const newClues = initializeApp(newGrid);
             setGridState(newGrid);
             setClueList(newClues);
