@@ -77,13 +77,22 @@ const Grid: React.FC = () => {
     }
     // answer length < 3
     const shortAnswers = clues.filter((clue) => clue.length < 3);
-    console.log(shortAnswers);
+    const islandCell = grid.filter(
+      (cell) =>
+        !cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left
+    );
+
+    // short answers
     for (const clue of shortAnswers) {
-      // for each item in indices, set the cell.isvalid to false
       for (const index of clue.indices) {
         console.log(grid[index]);
         grid[index].isValid = false;
       }
+    }
+
+    // island cell - a type of short answer
+    for (const cell of islandCell) {
+      grid[cell.id].isValid = false;
     }
   };
 

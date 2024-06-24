@@ -1812,4 +1812,11 @@ grid[currSelectedClue.indices[0]]
   - in this case there is no individual cell that is responsible for an invalid grid and all clues may be valid in terms of length
     - we could identify the voids and set an invalid state on them, so we can handle this at the cell level
 - add an invalid prop to each cell
-- on every cell toggle, we should set the isValid prop to true before running validateGrid?
+- on every cell toggle, we should set the isValid prop to true before running validateGrid?  **DONE**
+
+## 24/6/24
+- we've added logic for 'island' cells which can be thought of as a particular type of short answer
+  - there is no clue generated but they are essentially answers of length 1
+- new bug:
+  -  grid is not defined
+    at onClick (Grid.tsx:300:44)
