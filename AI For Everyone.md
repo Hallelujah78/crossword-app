@@ -89,7 +89,7 @@
 - why is supervised learning taking off now?
     - imagine a graph where we plot performance of AI on the Y axis and amount of data on the X axis
     - amount of data has grown in recent decades
-    - in traditional AI, as you feed more data, performance increases quickly initially but soon
+    - in traditional AI, as you feed more data, performance increases quickly initially but soon plateaus
     - neural networks and deep learning has meant AI has taken off in the last few 
 <image src="src/assets/whynow.png"/>
 
@@ -150,7 +150,7 @@
     - eg, feedback from AI team might be to collect the data from the factory machine every minute instead of every 10 minutes
   - **Avoid Assumptions**: Don’t assume data will be valuable without proper AI evaluation.
   - just because you have a lot of data, doesn't mean it is useful for AI
-- **Data Quality Issues**: Data can have errors or missing values, and it’s cruc ial to clean it.
+- **Data Quality Issues**: Data can have errors or missing values, and it’s crucial to clean it.
 - garbage in, garbage out
 - examples of data problems
     - take the house size and price data from before, but for some rows the number of bedrooms is unknown and in some cases the price is unknown, and the size in sq feet might be unknown
@@ -158,7 +158,7 @@
   - **Unstructured Data**: Includes images, audio, and text, needing specific AI techniques.
   - **Structured Data**: Lives in spreadsheets and requires different AI techniques.
 - **Current AI Applications**: generative AI today often generates unstructured data (text, images, audio).
-- supervised learning works well with unstructured data and unstructured data
+- supervised learning works well with unstructured data and structured data
 - **Learning Outcomes**:
   - **Understanding Data**: Identifying proper use of data and avoiding overinvestment in data infrastructure.
   - **Data Cleanup**: Handling inaccuracies and missing values in data.
@@ -170,11 +170,12 @@
   - back to our housing data again:
 
 <image src="./src/assets/housing.png"/>
+
 - first four columns are input A 
 - price is the output B
 - say you want to create a mobile app to help people price homes
 - this would be a Machine learning system
-  - specifically one that learns A to be mappings (input to output)
+  - specifically one that learns A to B mappings (input to output)
 - data science on the other hand might involve a team analyzing data to gain insights
   - eg a conclusion might be houses of a similar size that have 3 bedrooms are more valuable than houses with 2 bedrooms
   - or let's say a newly renovated home has a premium of 15%
@@ -217,7 +218,7 @@
 - **Future Videos**: Will cover what it means for a company to excel at AI.
 
 ### Vid 5: What makes an AI company?
-### What Makes a Company Good at AI?
+#### What Makes a Company Good at AI?
 
 Becoming great at AI involves more than just using a few neural networks; it requires leveraging AI's capabilities effectively. Here's what differentiates great AI companies:
 
@@ -229,14 +230,16 @@ Becoming great at AI involves more than just using a few neural networks; it req
 
 4. **New Roles and Structures**: The emergence of roles like Machine Learning Engineers (MLEs) and specialized team structures enables AI companies to effectively manage and implement AI projects.
 
-### Learning from the Internet Era
+#### Learning from the Internet Era
+- shopping mall + website !== internet company
+
 
 The transition from traditional businesses to internet companies offers valuable lessons for the AI era. A website alone doesn’t make a company an internet business; similarly, using AI superficially doesn't make a company an AI leader. Internet companies thrived by:
 
 - **Rapid Iteration**: Internet companies frequently deploy updates and test changes through A/B testing, allowing them to quickly learn and improve.
 - **Decentralized Decision-Making**: Empowering engineers and product managers, who are closest to the technology and user needs, to make key decisions rather than relying solely on top executives.
 
-### AI Transformation Playbook
+#### AI Transformation Playbook
 
 To transform into an AI-driven company, follow this five-step process:
 
@@ -246,6 +249,321 @@ To transform into an AI-driven company, follow this five-step process:
 4. **Align Communications**: Ensure all stakeholders, including employees, customers, and investors, are informed about the company’s AI journey and strategy.
 5. **Scale and Optimize**: As the company gains proficiency in AI, scale up projects and continually optimize processes and strategies.
 
-### Conclusion
+#### Conclusion
 
 By following these principles and steps, any company can evolve into a successful AI enterprise, creating substantial value across industries. The forthcoming detailed guide on the AI transformation playbook will further aid in navigating this journey.
+
+### Vid 5: What Machine Learning Can and Cannot Do
+- Introduction to the goal: Developing intuition about AI capabilities and limitations.
+- Importance of technical diligence before committing to an AI project.
+- Common issue: CEOs often overestimate AI capabilities.
+- Media and academic literature tend to highlight AI success stories, not failures.
+- Aim: Show examples of AI's current capabilities and limitations to aid project selection.
+- Example of current AI applications: spam filtering, speech recognition, machine translation.
+
+<image src="./src/assets/supervisedL.png"/>
+
+
+
+- Rule of thumb: Tasks that require less than a second of thought can often be automated with AI.
+  - Examples:
+    - Determining the position of other cars.
+    - Identifying if a phone is scratched.
+    - Transcribing spoken words.
+- AI limitation: Predicting the stock market is not feasible.
+  - Example: Predicting future stock prices based on historical data is unreliable.
+  - Explanation: Stock prices are too random for accurate prediction by AI.
+- Note: Combining historical stock prices with additional data (e.g., web traffic) might help but is still limited by market randomness.
+
+<image src="./src/assets/stonks.png" />
+
+
+- Additional rules of thumb for assessing AI feasibility:
+  - Simple concepts are more feasible for AI.
+    - Example: Spotting cars for a self-driving car is simpler than predicting company sales.
+  - Abundant data improves feasibility.
+    - Example: Thousands of labeled images increase the accuracy of detecting phone scratches. Data here means the input and the output.
+- Conclusion: AI is transformative but not omnipotent; understanding its limits helps in selecting feasible projects.
+- Upcoming content: More examples of AI capabilities and limitations.
+
+
+### Vid 6: More Examples of What Machine Learning Can and Cannot Do
+- Challenge: Recognizing AI capabilities requires seeing examples of successes and failures.
+- Problem: Gaining experience with multiple AI projects takes a long time.
+- Goal: Quickly show examples to help hone intuition and select valuable projects.
+- Example 1: Self-driving car
+  - Success: AI can determine the position of other cars using camera and sensor data (A: picture/sensor data, B: position of cars).
+  - Failure: AI struggles to interpret human gestures (A: short video of gestures, B: human intention).
+    - Difficulty: Large variety of gestures (requires a lot of data) and safety-critical application (requires high accuracy in output).
+    - Example: Construction worker signaling to stop, hitchhiker waving, bicyclist indicating a turn.
+- Example 2: Medical diagnosis
+  - Success: AI can diagnose pneumonia from X-ray images (A: X-ray image, B: diagnosis).
+  - Failure: AI cannot diagnose from limited data such as a few images and text from a medical textbook. (compare a human doctor who might learn a lot from a few images and a textbook)
+- Summary of strengths and weaknesses:
+  - Strengths: AI works well with simple concepts and large datasets.
+  - Weaknesses: AI struggles with complex concepts and small datasets, and performs poorly with new types of data.
+    - Example: AI trained on high-quality X-ray images fails with lower-quality or differently angled images from a different hospital.
+- Human adaptability vs. AI rigidity: Humans adapt better to new types of data compared to AI.
+- Encouragement: Understanding AI's capabilities and limitations helps in selecting feasible projects.
+- Note: Next videos will cover neural networks and deep learning, followed by a deeper dive into the AI project development process.
+
+
+### Vid 7: Non-Technical Explanation of Deep Learning part 1
+- Introduction: Deep learning and neural networks are often used interchangeably in AI, and this video aims to demystify them.
+  
+### Example: Demand Prediction for T-Shirts
+- **Scenario:** Predicting t-shirt sales based on price.
+- **Simple Neural Network:**
+  - **Data Set:** Higher t-shirt price leads to lower demand.
+  - **Model:** Fit a straight line showing demand decreases as price increases, flattening at zero demand.
+  - **Neural Network Representation:** 
+    - **Input A:** Price.
+    - **Output B:** Estimated demand.
+    - **Structure:** A single artificial neuron (depicted as an orange circle) computes the demand.
+    - **Explanation:** This is the simplest possible neural network with one neuron.
+
+    <image src="./src/assets/tshirtDemand.png"/>
+
+
+
+### Complex Neural Network Example
+- **Additional Factors:** Shipping costs, marketing budget, material quality.
+- **Neural Network Design:**
+  - **Affordability Neuron:**
+    - **Inputs:** Price, shipping cost.
+    - **Output:** Estimated affordability.
+  - **Awareness Neuron:**
+    - **Input:** Marketing budget.
+    - **Output:** Consumer awareness.
+  - **Perceived Quality Neuron:**
+    - **Inputs:** Price, marketing, material quality.
+    - **Output:** Perceived quality.
+  - **Demand Neuron:**
+    - **Inputs:** Affordability, awareness, perceived quality.
+    - **Output:** Estimated demand.
+- **Structure:** This network maps four inputs (A) to the output (B) using a small network of four neurons.
+
+<image src="src/assets/complexNN.png"/>
+
+
+### Practical Application
+- **Larger Networks:** Modern neural networks have thousands or tens of thousands of neurons.
+- **Training Process:**
+  - **Input Data (A):** Various factors affecting demand.
+  - **Output Data (B):** Actual demand.
+  - **Learning:** The network automatically figures out intermediate computations to map input A to output B accurately.
+- **Outcome:** With sufficient data and a large enough network, neural networks can effectively map complex functions from input to output. You don't need to tell it that you are looking for affordability, awareness, or perceived quality. You DO need to give it the demand (B). Then it can learn how to calculate the demand given any set of inputs.
+
+### Conclusion
+- **Neural Network:** A collection of artificial neurons computing simple functions, stacked to form complex functions.
+- **Upcoming Content:** The next video will cover a more complex example of neural networks applied to face recognition.
+
+
+### Vid 8: Non-Technical Explanation of Deep Learning part 2
+
+- Previous Video Recap: Neural network applied to demand prediction.
+- Question: How can a neural network recognize faces in pictures or understand audio clips?
+
+### Complex Example: Face Recognition
+- **Goal:** Build a system to recognize people from pictures.
+- **Understanding Computer Vision:**
+  - Humans see a human eye; computers see a grid of pixel brightness values.
+  - **Grayscale Image:** Each pixel corresponds to a single brightness value.
+  - **Color Image:** Each pixel has three values (red, green, blue).
+- **Neural Network Input:**
+  - Grayscale image with 1000x1000 pixels = 1 million brightness values.
+  - Color image with 1000x1000 pixels = 3 million values (RGB).
+- **Processing:**
+  - Neural network takes these pixel values as input.
+  - Many artificial neurons compute various values.
+  - The network figures out computations on its own.
+
+### How Neural Networks Process Images
+- Early neurons detect edges in pictures.
+- Later neurons detect parts of objects (eyes, noses, cheeks, mouths).
+- Final neurons detect different shapes of faces.
+- **Output:** Identity of the person in the image.
+
+### Key Points
+- **Magic of Neural Networks:** The learning algorithm figures out the computations.
+- **Data Requirement:** Provide lots of images (input A) and correct identities (output B).
+
+### Conclusion
+- Completion: All videos for this week finished.
+- Upcoming: Learn to build your own machine learning or data science project next week.
+- Farewell: See you next week.
+
+
+## Building AI Projects
+### Vid 1: Introduction
+- **Introduction:**
+  - Recap of last week's topic on basics of AI and machine learning technology.
+  - Introduction to using AI technology in projects, whether in a small setting (like a garage) or a larger company aligning with corporate strategy.
+
+- **AI Project Workflow:**
+  - Learning about the workflow of an AI project.
+  - Comparison to organizing a birthday party with predictable steps (guest list, venue, cake, invites).
+  - Understanding the sequence of predictable steps in an AI project.
+
+- **Selecting an AI Project:**
+  - Learning a framework for brainstorming and selecting promising AI projects.
+  - Applicable for individual efforts, small group collaborations, or larger company initiatives.
+
+- **Organizing Data and Team:**
+  - Learning how to organize data and the team for executing an AI project.
+  - Scenarios include individual efforts, small group collaborations, or larger corporate teams.
+
+- **Outcome:**
+  - By the end of the week, gaining knowledge on building an AI project.
+  - Encouragement to start exploring AI project ideas with friends.
+
+- **Transition:**
+  - Moving on to the next video.
+
+### Vid 2: Workflow of a Machine Learning Project
+- **Introduction:**
+  - Explanation of machine learning algorithms learning input to output (A to B) mappings.
+  - Introduction to building a machine learning project using speech recognition as an example.
+
+- **Speech Recognition Example:**
+  - Devices mentioned: Amazon Echo, Google Home, Apple Siri, Baidu DuerOS.
+  - Personal example: Using Amazon Echo to set a timer for boiling eggs.
+  - Key steps for building a speech recognition system:
+    - **Collect Data:**
+      - Record people saying "Alexa" and other words.
+    - **Train the Model:**
+      - Use machine learning algorithms to learn from audio clips.
+      - Expect initial attempts to not work well and require iteration.
+    - **Deploy the Model:**
+      - Put the AI software into smart speakers for testing or wide release.
+      - Monitor performance with new data, such as different accents, and update the model as needed.
+
+- **Summary of Machine Learning Project Steps:**
+  - Collect data.
+  - Train the model.
+  - Deploy the model.
+  - Importance of iteration and adaptation based on new data.
+
+- **Self-Driving Car Example:**
+  - Key component: Machine learning algorithm to detect other cars.
+  - Key steps:
+    - **Collect Data:**
+      - Gather images and annotate positions of cars.
+    - **Train the Model:**
+      - Train the algorithm to recognize cars, expect initial errors, and iterate.
+    - **Deploy the Model:**
+      - Ensure safety in deployment.
+      - Use new data (e.g., images of golf carts) to update and improve the model.
+
+- **Conclusion:**
+  - Key steps of a machine learning project:
+    - Collect data.
+    - Train the model.
+    - Deploy the model.
+  - Introduction to the workflow of a data science project in the next video.
+
+### Vid 3: Workflow of a Data Science Project
+
+- **Introduction:**
+  - Data science projects output actionable insights that may lead to changes in actions.
+  - Data science projects have a different workflow than machine learning projects.
+
+- **Optimizing a Sales Funnel Example:**
+  - **Context:**
+    - Running an e-commerce website selling coffee mugs.
+    - Steps for a user to buy: visit website, view product page, add to cart, checkout.
+  - **Key Steps of a Data Science Project:**
+    - **Collect Data:**
+      - Track user activity on the website and gather user information (e.g., country via IP address).
+    - **Analyze Data:**
+      - Identify factors affecting the sales funnel.
+      - Example insights:
+        - International shipping costs deterring overseas customers.
+        - Shopping patterns around holidays.
+        - Time-of-day shopping patterns in countries observing siesta.
+      - Iterate to generate actionable insights.
+    - **Suggest Hypotheses and Actions:**
+      - Incorporate shipping costs into product costs.
+      - Adjust advertising spend based on user activity patterns.
+    - **Deploy Changes and Collect New Data:**
+      - Implement suggested actions on the website.
+      - Collect and analyze new data to refine actions.
+
+- **Optimizing a Manufacturing Line Example:**
+  - **Context:**
+    - Manufacturing coffee mugs in a factory.
+    - Key steps: mix clay, shape mugs, add glaze, fire in kiln, inspect mugs.
+  - **Key Steps:**
+    - **Collect Data:**
+      - Gather data on clay batches, mixing process, moisture content, kiln temperature, and firing duration.
+    - **Analyze Data:**
+      - Identify factors affecting mug quality.
+      - Example insights:
+        - Low humidity and high kiln temperature causing cracks.
+        - Afternoon warmth requiring adjustments to humidity and temperature.
+    - **Suggest Hypotheses and Actions:**
+      - Adjust operations based on data insights to reduce defects.
+    - **Deploy Changes and Collect New Data:**
+      - Implement changes in the manufacturing process.
+      - Collect and reanalyze data to further optimize the process.
+
+- **Conclusion:**
+  - Key steps of a data science project: collect data, analyze data, suggest hypotheses and actions.
+  - Machine learning and data science impact almost every job function.
+  - Next video will explore how these ideas affect various job functions, including potentially yours and your colleagues'.
+
+### Vid 4: Every Job Function Needs to Learn How to Use Data
+
+- **Introduction:**
+  - Data is transforming various job functions, including recruiting, sales, marketing, manufacturing, and agriculture.
+  - Digitization of society has increased the availability of data.
+  - Data science and machine learning tools can help improve job functions.
+
+- **Impact on Sales:**
+  - Data science optimizes sales funnels.
+  - Machine learning helps prioritize sales leads, making salespeople more efficient.
+  - Example: Prioritizing the CEO of a large company over an intern from a smaller company.
+
+- **Impact on Manufacturing:**
+  - Data science optimizes manufacturing lines.
+  - Machine learning automates final inspection to detect defects, reducing labor costs and improving quality.
+  - Example: Automated visual inspection for scratches or dents in coffee mugs.
+
+- **Impact on Recruiting:**
+  - Data science optimizes recruiting funnels.
+  - Example: Adjusting the number of candidates moving from phone screen to on-site interviews based on data analysis.
+  - Machine learning automates resume screening.
+  - Ethical concerns: Ensuring AI software is unbiased and treats candidates fairly.
+
+- **Impact on Marketing:**
+  - Data science uses AB testing to optimize website performance.
+  - Example: Comparing red and green buttons to see which generates more clicks.
+  - Machine learning provides customized product recommendations, significantly increasing sales.
+  - Example: A clothing website recommending blue shirts based on user shopping behavior.
+
+- **Impact on Agriculture:**
+  - Data science used for crop analytics, optimizing planting decisions based on soil and weather conditions.
+  - Machine learning enables precision agriculture.
+  - Example: Using machine learning to precisely target and spray weed killers, improving crop yields and preserving the environment.
+
+- **Conclusion:**
+  - Data science and machine learning are affecting various job functions.
+  - Upcoming discussion: How to select a promising AI project to work on.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+summarize the following text with bullet points, keep the summary in the same order as the original content, retain all of the examples used:

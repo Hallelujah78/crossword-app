@@ -1798,7 +1798,6 @@ grid[currSelectedClue.indices[0]]
     - this invalid state might be part of the user's bigger plan and they may intend toggling other cells which will leave the grid in a valid state
     - let's allow the update but feed back that the state is not valid
 
-![alt text](image.png)
 - we get an array of 4 invalid clues here, 8 and 9 across and 22 and 23 across
   - issue: we should also have 7 and 24 which are clues of length 1
     - should these be 7 across and down and 24 across and down?
@@ -1820,3 +1819,14 @@ grid[currSelectedClue.indices[0]]
 - new bug:
   -  grid is not defined
     at onClick (Grid.tsx:300:44)
+**FIXED**
+
+## 25/6/24
+- idea to identify groups of islands of cells (cells that are not connected by clues)
+- to create an island, I think we have to have contiguous voids (and this can include diagnonl connection) from an edge/side of the grid to an edge/side of the grid (and it can be the same side)
+- get all voids that are on edges
+- while there is a void in some direction, add that void to our array
+  - in fact for each direction, copy what you have so far, and push the void at direction to the end of that array
+- for any given array, we know the starting cell is void and is on an edge
+  - assume we run out of voids to add to our array
+  - if the last element added is on an edge, then the grid is invalid
