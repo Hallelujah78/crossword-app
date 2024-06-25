@@ -1,5 +1,6 @@
 import type { CellType } from "../models/Cell.model";
 // quick crossword 16824
+
 export const initialGrid: CellType[] = [
   {
     isVoid: true,
@@ -1884,3 +1885,5 @@ export const initialGrid: CellType[] = [
     selected: false,
   },
 ];
+
+export const gridSideLength = Math.sqrt(initialGrid.length);

@@ -7,6 +7,7 @@ import type Answer from "../models/Answer.model";
 import * as AllAnswers from "../data/answers2";
 import type { Dispatch, SetStateAction } from "react";
 import type { Puzzles } from "../models/Puzzles.model";
+import { gridSideLength } from "../data/grid";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
@@ -1347,4 +1348,70 @@ export const getRowOrColumn = (
   // 0 - 12 - 13;
   // 13 - 25 - 13;
   return arrayOfCells;
+};
+
+export const getCellUpRight = (index: number, grid: CellType[]) => {
+  // there is no up-right for a cell that is on the right side of the grid or on the top of the grid
+  let cell: CellType | undefined = undefined;
+  if (!isTopEdge(grid, index) && !isRightEdge(grid, index)) {
+    cell = grid[index - gridSideLength + 1];
+  }
+  return cell;
+};
+
+export const getCellDownRight = (index: number, grid: CellType[]) => {
+  let cell: CellType | undefined = undefined;
+  if (!isBottomEdge(grid, index) && !isRightEdge(grid, index)) {
+    cell = grid[index + Math.sqrt(grid.length) + 1];
+  }
+  return cell;
+};
+
+export const getCellDownLeft = (index: number, grid: CellType[]) => {
+  let cell: CellType | undefined = undefined;
+  if (!isBottomEdge(grid, index) && !isLeftEdge(grid, index)) {
+    cell = grid[index + gridSideLength - 1];
+  }
+  return cell;
+};
+
+export const getCellUpLeft = (index: number, grid: CellType[]) => {
+  let cell: CellType | undefined = undefined;
+  if (!isTopEdge(grid, index) && !isLeftEdge(grid, index)) {
+    cell = grid[index - gridSideLength - 1];
+  }
+  return cell;
+};
+
+export const getContiguousVoids = (grid: CellType[], index: number) => {
+  // index will be the index of a cell where isVoid is true
+  const cell = grid[index];
+  const voids: number[] = [index];
+  // cell left
+  if (cell.left === false && !isLeftEdge(grid, index)) {
+    voids.push(index - 1);
+  }
+  // cell up
+  if (cell.top === false && !isTopEdge(grid, index)) {
+    voids.push(index - gridSideLength);
+  }
+  // cell right
+  if (cell.right === false && !isRightEdge(grid, index)) {
+    voids.push(index + 1);
+  }
+  // cell down
+  if (cell.bottom === false && !isBottomEdge(grid, index)) {
+    voids.push(index + gridSideLength);
+  }
+  // upleft
+  getCellUpLeft(index, grid)?.isVoid && voids.push(index - gridSideLength - 1);
+  // upright
+  getCellUpRight(index, grid)?.isVoid && voids.push(index - gridSideLength + 1);
+  // downright
+  getCellDownRight(index, grid)?.isVoid &&
+    voids.push(index + gridSideLength + 1);
+  // downleft
+  getCellDownLeft(index, grid)?.isVoid &&
+    voids.push(index + gridSideLength - 1);
+  return voids;
 };

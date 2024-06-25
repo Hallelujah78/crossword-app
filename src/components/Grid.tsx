@@ -33,6 +33,7 @@ import {
   getLocalStorage,
   setLocalStorage,
   getRowOrColumn,
+  getContiguousVoids,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 import type { Puzzles } from "../models/Puzzles.model";
@@ -235,6 +236,13 @@ const Grid: React.FC = () => {
       } else setCluesThatIntersect(clue, downClues);
     }
     validateGrid(clues, tempGrid);
+    for (const [index, cell] of tempGrid.entries()) {
+      const voids = getContiguousVoids(tempGrid, index);
+      if (voids.length > 1) {
+        console.log(`the voids for cell ${index}: `, voids);
+      }
+    }
+
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);

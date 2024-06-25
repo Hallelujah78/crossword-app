@@ -1830,3 +1830,45 @@ grid[currSelectedClue.indices[0]]
 - for any given array, we know the starting cell is void and is on an edge
   - assume we run out of voids to add to our array
   - if the last element added is on an edge, then the grid is invalid
+
+- the above might be complicated where you have a 'blob' of voids that sit together
+  - actually we can just add unique elements
+- let's try it, as it's brain melting to think about
+- we start at index 0, identify if there is a void in any direction, add it to the array
+  - index 1 is void too
+  - is it in the array already? yes
+    - is there a void in any direction that is not in the array, add it
+  - index 2 is void too
+  - is it in the array already? no
+  - add index 2
+
+- since we are moving top to bottom and left to right, what directions do we need to check for a void?
+  - \ | /
+    -   -
+    / | \
+- don't check upleft, don't check up, don't check back
+- we DO check back down, because the preceding two cells to the left of the current cell could both be lights and so we would miss this void that is below and to the left of our current void
+- if a void has no contiguous voids then do nothing 
+  - don't create an array, no need
+- if a void has contiguous voids, check if it is in existing arrays, if yes, then add all contiguous voids to those arrays
+- once we've iterated over all cells in the array:
+  - see if any arrays share indices
+    - if yes, combine these arrays
+  - once we've combined all the arrays we can
+    - check if these arrays contain two indexes that occur on a side of the grid
+      - this means that we have a continuous line of voids from a side of the grid to another/the same side of the grid
+
+- is there an easier way?
+- each clue has an intersection prop that holds the ID of clues that intersect with it 
+  - say we iterate over each clue
+  - each clue has an ID, the intersection prop contains the ID of any clues that intersect
+  - okay, immediate problem is it is the contiguity of the voids that is creating the problem
+  - we'll be able to say, yes, there are unconnected islands of clues using this method, BUT we still won't know which voids are causing it
+    - it won't be possible to feed back to the user what the problem is
+
+- what if ...
+  - for every single void that has a contiguous void, create an array of the indexes of the contiguous void and the index of the void we're currently looking at
+  - once that is done, iterate over all of these arrays and if they have common indexes, create a new set with them
+  - repeat this until there is no combining that can be done
+  - now you essentially have arrays of contiguous voids
+  - now test each remaining set to see if they contain two different index values that occur on an edge => all of these voids contribute to an invalid grid state
