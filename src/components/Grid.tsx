@@ -108,6 +108,10 @@ const Grid: React.FC = () => {
     }
 
     // entire side is voids
+
+    // continuous line of voids creating island
+    // use getContiguousVoids and:
+    // arr1.some(item => arr2.includes(item))
   };
 
   async function getClues() {
