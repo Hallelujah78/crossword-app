@@ -270,17 +270,17 @@ const Grid: React.FC = () => {
 
         let lf = -1;
         while (lf !== first.length) {
-          lf = first.length;
+          lf = first.length; // this means this inner while loop runs the for loop once and then exits
           console.log("lenght of first: ", lf);
           const rest2 = [];
           for (const arr of rest) {
             if (hasCommonElements(first, arr)) {
               first = mergeTwoArrays(first, arr);
             } else {
-              rest2.push(arr);
+              rest2.push(arr); // if no common elements between first and arr of rest, store it in rest2
             }
           }
-          rest = rest2;
+          rest = rest2; // rest now contains the original values of rest that didn't match first
         }
 
         result.push(first);
