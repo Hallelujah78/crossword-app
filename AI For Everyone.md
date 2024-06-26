@@ -517,6 +517,7 @@ By following these principles and steps, any company can evolve into a successfu
 - **Introduction:**
   - Data is transforming various job functions, including recruiting, sales, marketing, manufacturing, and agriculture.
   - Digitization of society has increased the availability of data.
+    - eg doctor's notes are digital
   - Data science and machine learning tools can help improve job functions.
 
 - **Impact on Sales:**
@@ -526,17 +527,20 @@ By following these principles and steps, any company can evolve into a successfu
 
 - **Impact on Manufacturing:**
   - Data science optimizes manufacturing lines.
+    - coffee mug example
   - Machine learning automates final inspection to detect defects, reducing labor costs and improving quality.
   - Example: Automated visual inspection for scratches or dents in coffee mugs.
 
 - **Impact on Recruiting:**
   - Data science optimizes recruiting funnels.
+    - predictable sequence: email outreach => phone screen => onsite interview => offer
   - Example: Adjusting the number of candidates moving from phone screen to on-site interviews based on data analysis.
   - Machine learning automates resume screening.
   - Ethical concerns: Ensuring AI software is unbiased and treats candidates fairly.
 
 - **Impact on Marketing:**
-  - Data science uses AB testing to optimize website performance.
+  - Data science uses AB testing to optimize website performance
+    - i.e. how well does version A convert versus version B
   - Example: Comparing red and green buttons to see which generates more clicks.
   - Machine learning provides customized product recommendations, significantly increasing sales.
   - Example: A clothing website recommending blue shirts based on user shopping behavior.
@@ -551,7 +555,40 @@ By following these principles and steps, any company can evolve into a successfu
   - Upcoming discussion: How to select a promising AI project to work on.
 
 
+### Vid 5: How to Choose an AI Project
+- **Selecting a Worthwhile AI Project**:
+  - Finding a valuable AI project idea can take time.
+  - Use a brainstorming framework to identify potential AI projects.
 
+- **Intersection of Feasibility and Value**:
+  - AI can't do everything; there's a set of things AI can do.
+  - There’s also a set of things valuable for your business.
+  - Select projects at the intersection of these two sets.
+  - AI experts understand what AI can do; domain experts understand business value.
+  - Form cross-functional teams with both AI and domain experts to brainstorm.
+
+- **Principles for Brainstorming AI Projects**:
+  - **Automating Tasks vs. Jobs**:
+    - Focus on automating specific tasks, not entire jobs.
+    - Example: Call centers – tasks like call or email routing might be suitable for automation.
+    - Example: Radiologists – AI could assist with reading X-rays while other tasks remain manual.
+  
+  - **Drivers of Business Value**:
+    - Identify main drivers of business value.
+    - Find AI solutions to augment these drivers.
+
+  - **Addressing Business Pain Points**:
+    - Identify main pain points in your business.
+    - Some pain points might be solvable with AI.
+
+- **Data Requirements**:
+  - Progress is possible without big data.
+  - More data is generally better but not always necessary.
+  - Example: Visual inspection of coffee mugs – progress can be made with a small dataset.
+  - Amount of data needed is problem-dependent; consult with an AI expert.
+
+- **Next Steps**:
+  - Discuss selecting and committing to specific projects in the next video.
 
 
 

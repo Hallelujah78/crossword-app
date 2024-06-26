@@ -250,85 +250,59 @@ const Grid: React.FC = () => {
         }
       }
     }
-    const initialArray = allVoids;
-    console.log("all voids: ", allVoids);
-    // const initialArray = [
-    //   [1, 2, 3, 9],
-    //   [1, 2, 4, 5],
-    //   [6, 7, 8],
-    //   [6, 9],
-    //   [11, 10, 12],
-    //   [10, 13, 22],
-    // ];
 
-    const combinedArrays: number[][] = [];
-    let i = 0;
-    while (i < initialArray.length) {
-      const testArray = initialArray[i];
-      const valuesToTest = initialArray.toSpliced(i, 1);
-      let j = 0;
-      const combined: number[][] = [];
-      while (j < valuesToTest.length) {
-        if (
-          testArray.some((num) => {
-            return valuesToTest[j].includes(num);
-          })
-        ) {
-          console.log(`**${testArray} & ${valuesToTest[j]} do share values!**`);
-          console.log(
-            "is concat doing what I think?: **YES** ",
-            initialArray[i].concat(valuesToTest[j])
-          );
-          combined.push(
-            Array.from(new Set(initialArray[i].concat(valuesToTest[j])))
-          );
-          console.log(`the value of 'combined when j is ${j}:`, combined);
-          // initialArray[i] and valuesToTest[j] contain common values
-          // we can combine them and try to update the initialArray
-          // another option is to store them, and then whatever we have at the end of this while loop is all combined
-        }
-
-        // we can update j in here
-        if (combined.length > 0 && j === valuesToTest.length - 1) {
-          console.log(
-            "**value of combined at the end of the inner array: ",
-            combined
-          );
-          const combinedFlat = Array.from(new Set(combined.flat()));
-          if (combinedArrays.length > 0) {
-            let k = 0;
-            while (k < combinedArrays.length) {
-              if (
-                combinedFlat.some((num) => {
-                  return combinedArrays[k].includes(num);
-                })
-              ) {
-                combinedArrays[k] = Array.from(
-                  new Set(combinedFlat.concat(combinedArrays[k]))
-                );
-                console.log("infinite loop? value of k: ", k);
-              } else if (k === combinedArrays.length - 1) {
-                combinedArrays.push(combinedFlat);
-              }
-              ++k;
-            }
-          } else {
-            // there's nothing in combinedArrays to check against, so just push it
-            combinedArrays.push(combinedFlat);
-            console.log("combinedFlat: ", combinedFlat);
-            console.log("combined Arrays: ", combinedArrays);
-          }
-        }
-        j++;
+    function mergeSubarrays(arrays) {
+      function mergeTwoArrays(arr1, arr2) {
+        return [...new Set([...arr1, ...arr2])];
       }
-      // we can update i in here
-      i++;
-    }
-    for (const arr of combinedArrays) {
-      arr.sort((a, b) => a - b);
+
+      function hasCommonElements(arr1, arr2) {
+        return arr1.some((item) => arr2.includes(item));
+      }
+
+      // This array will store the result
+      let result = [];
+
+      while (arrays.length > 0) {
+        let first = arrays[0];
+        console.log("first: ", first);
+        let rest = arrays.slice(1); //copies array from pos 1 inclusive
+
+        let lf = -1;
+        while (lf !== first.length) {
+          lf = first.length;
+          console.log("lenght of first: ", lf);
+          const rest2 = [];
+          for (const arr of rest) {
+            if (hasCommonElements(first, arr)) {
+              first = mergeTwoArrays(first, arr);
+            } else {
+              rest2.push(arr);
+            }
+          }
+          rest = rest2;
+        }
+
+        result.push(first);
+        console.log("result: ", result);
+        arrays = rest; // rest hasn't been changed since it was declared at the start
+      }
+
+      return result;
     }
 
-    console.log("the combined arrays: ", combinedArrays);
+    // Example usage
+    const arrays = [
+      [1, 2, 3],
+      [3, 4, 5],
+      [6, 7],
+      [5, 6],
+      [8, 9],
+    ];
+
+    const mergedArrays = mergeSubarrays(allVoids);
+    console.log(mergedArrays);
+
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);
