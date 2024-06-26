@@ -1415,3 +1415,10 @@ export const getContiguousVoids = (grid: CellType[], index: number) => {
     voids.push(index + gridSideLength - 1);
   return voids;
 };
+
+export const combineVoids = () => {
+  // base case is what here
+  // in words
+  // for every array in arrayOfArrays
+  // if array includes arrayOfArrays[i], combine them discarding common elements
+};

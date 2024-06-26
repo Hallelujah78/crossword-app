@@ -240,13 +240,69 @@ const Grid: React.FC = () => {
       } else setCluesThatIntersect(clue, downClues);
     }
     validateGrid(clues, tempGrid);
+    const allVoids = [];
     for (const [index, cell] of tempGrid.entries()) {
-      const voids = getContiguousVoids(tempGrid, index);
-      if (voids.length > 1) {
-        console.log(`the voids for cell ${index}: `, voids);
+      if (cell.isVoid) {
+        const voids = getContiguousVoids(tempGrid, index);
+        if (voids.length > 1) {
+          // console.log(`the voids for cell ${index}: `, voids);
+          allVoids.push(voids);
+        }
       }
     }
+    const initialArray = allVoids;
+    console.log("all voids: ", allVoids);
+    // [
+    //   [1, 2, 3, 9],
+    //   [1, 2, 4, 5],
+    //   [6, 7, 8],
+    //   [6, 9],
+    // ];
 
+    const combinedArrays = [];
+    let i = 0;
+    while (i < initialArray.length) {
+      const testArray = initialArray[i];
+      const valuesToTest = initialArray.toSpliced(i, 1);
+      let j = 0;
+      const combined = [];
+      while (j < valuesToTest.length) {
+        if (
+          testArray.some((num) => {
+            return valuesToTest[j].includes(num);
+          })
+        ) {
+          console.log(`**${testArray} & ${valuesToTest[j]} do share values!**`);
+          console.log(
+            "is concat doing what I think?: **YES** ",
+            initialArray[i].concat(valuesToTest[j])
+          );
+          combined.push(
+            Array.from(new Set(initialArray[i].concat(valuesToTest[j])))
+          );
+          console.log(`the value of 'combined when j is ${j}:`, combined);
+          // initialArray[i] and valuesToTest[j] contain common values
+          // we can combine them and try to update the initialArray
+          // another option is to store them, and then whatever we have at the end of this while loop is all combined
+        }
+
+        // we can update j in here
+        if (combined.length > 0 && j === valuesToTest.length - 1) {
+          console.log(
+            "**value of combined at the end of the inner array: ",
+            combined
+          );
+          const combinedFlat = Array.from(new Set(combined.flat()));
+          combinedArrays.push(combinedFlat);
+          console.log("combinedFlat: ", combinedFlat);
+          console.log("combined Arrays: ", combinedArrays);
+        }
+        j++;
+      }
+      // we can update i in here
+      i++;
+    }
+    console.log("the combined arrays: ", combinedArrays);
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);

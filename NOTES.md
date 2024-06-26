@@ -1872,3 +1872,128 @@ grid[currSelectedClue.indices[0]]
   - repeat this until there is no combining that can be done
   - now you essentially have arrays of contiguous voids
   - now test each remaining set to see if they contain two different index values that occur on an edge => all of these voids contribute to an invalid grid state
+
+## 26/6/24
+- we have our array of arrays of void indices
+- next, if arrays share a value, we combine them and remove duplicate values
+- we repeat this until there are no further combinations possible
+- is this best done with recursion?
+- example array of arrays:
+
+```js
+const arr1 = [[1, 2, 3, 9], [1, 2, 4, 5], [6, 7, 8], [6, 9]]
+```
+- step through it
+- arr1[0] shares a value with arr[1] - concat
+- arr[0] becomes [1, 2, 3, 4, 5, 9]
+  - do we modify the existing array?
+- let's say we try a while loop
+  - i is the index, if we combine, the index remains the same
+  - arr1 is the array
+
+- the code so far:
+```js
+ const arr1 = [
+      [1, 2, 3, 9],
+      [1, 2, 4, 5],
+      [6, 7, 8],
+      [6, 9],
+    ];
+    console.log(arr1);
+    let i = 0;
+    while (i < arr1.length) {
+      const modArray = arr1.toSpliced(i, 1); // remove array we're testing
+      for (const [index, voids] of modArray.entries()) {
+        if (arr1[i].some((item) => voids.includes(item))) {
+          // at this point we combine them
+          // 1 remove 'voids' from array 1
+          arr1.splice(index, 1);
+          // 2 create a set with arr1[i] and voids
+          const combinedArray = new Set([...arr1, ...modArray]);
+          // 3 set arr1[i] equal to the set (convert to array?)
+          arr1[i] = Array.from(combinedArray.values());
+          // 4 don't increment i?
+        }
+      }
+
+      ++i;
+    }
+    console.log(arr1);
+```
+- the output from this code:
+
+```js
+[
+    [
+        [
+            1,
+            2,
+            4,
+            5
+        ],
+        [
+            6,
+            7,
+            8
+        ],
+        [
+            6,
+            9
+        ]
+    ],
+    [
+        [
+            [
+                1,
+                2,
+                4,
+                5
+            ],
+            [
+                6,
+                7,
+                8
+            ],
+            [
+                6,
+                9
+            ]
+        ],
+        [
+            6,
+            9
+        ]
+    ]
+]
+```
+- which is definitely not right!
+- what should it be:
+
+```js
+ [[1, 2, 3, 9],
+      [1, 2, 4, 5],
+      [6, 7, 8],
+      [6, 9]]
+```
+- arr[0] and arr[1] have common elements
+- giving [1,2,3,9,4,5]
+- arr1 should now be:
+`[[1, 2, 3, 9, 4, 5],[6, 7, 8],[6, 9]]`
+- arr[0] shares nothing with arr[0]
+- i gets incremented
+- modArray should be `[[1, 2, 3, 9, 4, 5],[6, 9]]`
+- item being tested is: [6, 7, 8]
+- 
+- let's assume i is not incremented now
+
+
+## how to fix what I currently have:
+- we have the original array
+- we have the original array minus the array we're testing
+- we end up testing values multiple times and they get added to our combinedArays
+  - when i is 0, we test the 0th array against 1, 2, 3
+  - when i is 3, we test the 3rd array against array 0, 1, 2
+    - hence arr[0] and arr[3] share values and get added to combined
+    - and arr[3] and arr[0] share values and get added to combined
+    - this in turn gets added to combinedArrays
+- before pushing our combined value to combinedArrays, first check if they have common values and then you want to merge!
