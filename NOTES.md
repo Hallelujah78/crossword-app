@@ -1997,3 +1997,10 @@ const arr1 = [[1, 2, 3, 9], [1, 2, 4, 5], [6, 7, 8], [6, 9]]
     - and arr[3] and arr[0] share values and get added to combined
     - this in turn gets added to combinedArrays
 - before pushing our combined value to combinedArrays, first check if they have common values and then you want to merge!
+  - **DONE**
+
+- remaining issue: combinedArrays still has duplicate values
+  - the easiest way to handle this at this point, and it's not clean, is to convert each array to a string and compare it to the string version of every other array in combinedArrays, if they match, remove the duplicate. We've already sorted each array in combinedArrays in ascending order.
+
+## Todo 27/6/2024
+- remove duplicates from combinedArrays

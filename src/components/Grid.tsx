@@ -252,20 +252,22 @@ const Grid: React.FC = () => {
     }
     const initialArray = allVoids;
     console.log("all voids: ", allVoids);
-    // [
+    // const initialArray = [
     //   [1, 2, 3, 9],
     //   [1, 2, 4, 5],
     //   [6, 7, 8],
     //   [6, 9],
+    //   [11, 10, 12],
+    //   [10, 13, 22],
     // ];
 
-    const combinedArrays = [];
+    const combinedArrays: number[][] = [];
     let i = 0;
     while (i < initialArray.length) {
       const testArray = initialArray[i];
       const valuesToTest = initialArray.toSpliced(i, 1);
       let j = 0;
-      const combined = [];
+      const combined: number[][] = [];
       while (j < valuesToTest.length) {
         if (
           testArray.some((num) => {
@@ -293,15 +295,39 @@ const Grid: React.FC = () => {
             combined
           );
           const combinedFlat = Array.from(new Set(combined.flat()));
-          combinedArrays.push(combinedFlat);
-          console.log("combinedFlat: ", combinedFlat);
-          console.log("combined Arrays: ", combinedArrays);
+          if (combinedArrays.length > 0) {
+            let k = 0;
+            while (k < combinedArrays.length) {
+              if (
+                combinedFlat.some((num) => {
+                  return combinedArrays[k].includes(num);
+                })
+              ) {
+                combinedArrays[k] = Array.from(
+                  new Set(combinedFlat.concat(combinedArrays[k]))
+                );
+                console.log("infinite loop? value of k: ", k);
+              } else if (k === combinedArrays.length - 1) {
+                combinedArrays.push(combinedFlat);
+              }
+              ++k;
+            }
+          } else {
+            // there's nothing in combinedArrays to check against, so just push it
+            combinedArrays.push(combinedFlat);
+            console.log("combinedFlat: ", combinedFlat);
+            console.log("combined Arrays: ", combinedArrays);
+          }
         }
         j++;
       }
       // we can update i in here
       i++;
     }
+    for (const arr of combinedArrays) {
+      arr.sort((a, b) => a - b);
+    }
+
     console.log("the combined arrays: ", combinedArrays);
     sortCluesDescendingLength(clues);
     setClueList(clues);
