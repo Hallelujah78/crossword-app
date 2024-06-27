@@ -1422,3 +1422,13 @@ export const combineVoids = () => {
   // for every array in arrayOfArrays
   // if array includes arrayOfArrays[i], combine them discarding common elements
 };
+
+export const getAllEdgeCells = (grid: CellType[]) => {
+  let allEdge = [];
+  allEdge.push(findBottomEdge(grid));
+  allEdge.push(findLeftEdge(grid));
+  allEdge.push(findRightEdge(grid));
+  allEdge.push(findTopEdge(grid));
+  allEdge = allEdge.flat();
+  return allEdge;
+};

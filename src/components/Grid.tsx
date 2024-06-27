@@ -34,6 +34,7 @@ import {
   setLocalStorage,
   getRowOrColumn,
   getContiguousVoids,
+  getAllEdgeCells,
 } from "../utils/utils";
 import { Direction } from "../models/Direction.model";
 import type { Puzzles } from "../models/Puzzles.model";
@@ -268,13 +269,24 @@ const Grid: React.FC = () => {
         console.log("first: ", first);
         let rest = arrays.slice(1); //copies array from pos 1 inclusive
 
-        let lf = -1;
+        // on iteration 2
+        // - arrays contains the arrays that had no intersection with the initial value of first
+        // - first is the first element of this new arrays
+        // - rest is the rest of the values of this new arrays
+        // - on the first iteration, we take the first element of arrays and compare it to all the others
+        // - we update arrays that couldn't be merged
+        // - we then compare the first element of this new array with the rest, and so on
+        // what happens
+
+        let lf = -1; // lf is not equal to first.length, so enter while
         while (lf !== first.length) {
           lf = first.length; // this means this inner while loop runs the for loop once and then exits
           console.log("lenght of first: ", lf);
           const rest2 = [];
           for (const arr of rest) {
             if (hasCommonElements(first, arr)) {
+              // we set first to be the merging of first and arr
+              // lf !== first.length, and so the while only gets executed once
               first = mergeTwoArrays(first, arr);
             } else {
               rest2.push(arr); // if no common elements between first and arr of rest, store it in rest2
@@ -283,9 +295,9 @@ const Grid: React.FC = () => {
           rest = rest2; // rest now contains the original values of rest that didn't match first
         }
 
-        result.push(first);
+        result.push(first); // all of the merged arrays so far
         console.log("result: ", result);
-        arrays = rest; // rest hasn't been changed since it was declared at the start
+        arrays = rest; // rest and array now contains only unmerged arrays
       }
 
       return result;
@@ -301,8 +313,14 @@ const Grid: React.FC = () => {
     ];
 
     const mergedArrays = mergeSubarrays(allVoids);
-    console.log(mergedArrays);
+    console.log("the merged arrays: ", mergedArrays);
 
+    const edgeCells: number[] = getAllEdgeCells(tempGrid);
+    // iterate over each array in allVoids
+    // for each array in allVoids, check if it shares multiple values in each array of edgeCells
+    // if yes, it may be creating islands
+
+    getAllEdgeCells(tempGrid);
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);
