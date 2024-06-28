@@ -1,12 +1,16 @@
+// react
+import type { Dispatch, SetStateAction } from "react";
+
 // models
 import type { Storage } from "../models/LocalStorage.model";
 import type { CellType } from "../models/Cell.model";
 import Clue from "../classes/Clue";
 import { Direction } from "../models/Direction.model";
 import type Answer from "../models/Answer.model";
-import * as AllAnswers from "../data/answers2";
-import type { Dispatch, SetStateAction } from "react";
 import type { Puzzles } from "../models/Puzzles.model";
+
+// state
+import * as AllAnswers from "../data/answers2";
 import { gridSideLength } from "../data/grid";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
@@ -1416,13 +1420,6 @@ export const getContiguousVoids = (grid: CellType[], index: number) => {
   return voids;
 };
 
-export const combineVoids = () => {
-  // base case is what here
-  // in words
-  // for every array in arrayOfArrays
-  // if array includes arrayOfArrays[i], combine them discarding common elements
-};
-
 export const getAllEdgeCells = (grid: CellType[]) => {
   let allEdge = [];
   allEdge.push(findBottomEdge(grid));
@@ -1430,5 +1427,28 @@ export const getAllEdgeCells = (grid: CellType[]) => {
   allEdge.push(findRightEdge(grid));
   allEdge.push(findTopEdge(grid));
   allEdge = allEdge.flat();
+  allEdge = Array.from(new Set(allEdge));
   return allEdge;
+};
+
+export const isSubset = (arr1: number[], arr2: number[]) => {
+  let mySet: Set<number> | number[];
+  let myArray = arr1;
+  console.log("arr1: ", arr1);
+  console.log("arr2: ", arr2);
+
+  if (arr1.length >= arr2.length) {
+    console.log("you should see nothing here!");
+    mySet = new Set(arr1);
+    myArray = arr2;
+  } else {
+    mySet = new Set(arr2);
+  }
+
+  for (const num of myArray) {
+    if (!mySet.has(num)) {
+      return false;
+    }
+  }
+  return true;
 };

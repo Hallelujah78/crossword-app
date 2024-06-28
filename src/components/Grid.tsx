@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model";
-
+import { Direction } from "../models/Direction.model";
+import type { Puzzles } from "../models/Puzzles.model";
 import type Clue from "../classes/Clue";
 
 // libs
@@ -12,9 +13,8 @@ import styled from "styled-components";
 // components
 import Cell from "./Cell";
 
-// data
+// data/state
 import { initialGrid } from "../data/grid";
-
 import * as AllAnswers from "../data/answers2";
 
 // utils
@@ -35,9 +35,8 @@ import {
   getRowOrColumn,
   getContiguousVoids,
   getAllEdgeCells,
+  isSubset,
 } from "../utils/utils";
-import { Direction } from "../models/Direction.model";
-import type { Puzzles } from "../models/Puzzles.model";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
@@ -93,9 +92,7 @@ const Grid: React.FC = () => {
     // same for column
     // we need a getRow and getColumn
     const row = getRowOrColumn(0, Direction.ACROSS, grid);
-    console.log("the row i got: ", row);
     const col = getRowOrColumn(0, Direction.DOWN, grid);
-    console.log("the column i got: ", col);
     // short answers
     for (const clue of shortAnswers) {
       for (const index of clue.indices) {
@@ -138,7 +135,6 @@ const Grid: React.FC = () => {
         body: JSON.stringify(requestArray),
       });
       const data = (await response.json()) as ReqClue;
-      // console.log("the respn data: ", data);
 
       // verify the data is as expected
       if (Array.isArray(data)) {
@@ -217,7 +213,7 @@ const Grid: React.FC = () => {
 
     const symmetricalIndex = gridState.length - 1 - targetIndex;
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
-
+    const edgeCells: number[] = getAllEdgeCells(tempGrid);
     // toggle the cell background
     tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
     // update the top, bottom, left and right props of surrounding cells
@@ -241,12 +237,12 @@ const Grid: React.FC = () => {
       } else setCluesThatIntersect(clue, downClues);
     }
     validateGrid(clues, tempGrid);
+
     const allVoids = [];
     for (const [index, cell] of tempGrid.entries()) {
       if (cell.isVoid) {
         const voids = getContiguousVoids(tempGrid, index);
         if (voids.length > 1) {
-          // console.log(`the voids for cell ${index}: `, voids);
           allVoids.push(voids);
         }
       }
@@ -266,7 +262,7 @@ const Grid: React.FC = () => {
 
       while (arrays.length > 0) {
         let first = arrays[0];
-        console.log("first: ", first);
+        // console.log("first: ", first);
         let rest = arrays.slice(1); //copies array from pos 1 inclusive
 
         // on iteration 2
@@ -281,7 +277,7 @@ const Grid: React.FC = () => {
         let lf = -1; // lf is not equal to first.length, so enter while
         while (lf !== first.length) {
           lf = first.length; // this means this inner while loop runs the for loop once and then exits
-          console.log("lenght of first: ", lf);
+          // console.log("lenght of first: ", lf);
           const rest2 = [];
           for (const arr of rest) {
             if (hasCommonElements(first, arr)) {
@@ -296,31 +292,53 @@ const Grid: React.FC = () => {
         }
 
         result.push(first); // all of the merged arrays so far
-        console.log("result: ", result);
+        // console.log("result: ", result);
         arrays = rest; // rest and array now contains only unmerged arrays
       }
 
       return result;
     }
 
-    // Example usage
-    const arrays = [
-      [1, 2, 3],
-      [3, 4, 5],
-      [6, 7],
-      [5, 6],
-      [8, 9],
-    ];
-
     const mergedArrays = mergeSubarrays(allVoids);
     console.log("the merged arrays: ", mergedArrays);
 
-    const edgeCells: number[] = getAllEdgeCells(tempGrid);
+    console.log(edgeCells.length);
     // iterate over each array in allVoids
+    const mightCauseIsland: number[][] = [];
+
+    for (const arr of mergedArrays) {
+      const result = [];
+      console.log("the current arr: ", arr);
+      for (let i = 0; i < edgeCells.length; i++) {
+        // console.log("val of i: ", i);
+        if (arr.includes(edgeCells[i])) {
+          result.push(edgeCells[i]);
+          if (result.length > 1) {
+            mightCauseIsland.push(arr);
+            break;
+          }
+        }
+      }
+    }
+
+    for (const arr of mightCauseIsland) {
+      for (const el of arr) {
+        tempGrid[el].isValid = false;
+      }
+    }
     // for each array in allVoids, check if it shares multiple values in each array of edgeCells
     // if yes, it may be creating islands
+    console.log("could these cause islands? ", mightCauseIsland);
+    // getAllEdgeCells(tempGrid);
 
-    getAllEdgeCells(tempGrid);
+    console.log("is it a subset? ", isSubset(mightCauseIsland[0], edgeCells));
+    if (isSubset(mightCauseIsland[0], edgeCells)) {
+      console.log("yes, it's a subset");
+      for (const index of mightCauseIsland[0]) {
+        tempGrid[index].isValid = true;
+      }
+    }
+
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);

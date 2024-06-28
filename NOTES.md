@@ -2003,4 +2003,53 @@ const arr1 = [[1, 2, 3, 9], [1, 2, 4, 5], [6, 7, 8], [6, 9]]
   - the easiest way to handle this at this point, and it's not clean, is to convert each array to a string and compare it to the string version of every other array in combinedArrays, if they match, remove the duplicate. We've already sorted each array in combinedArrays in ascending order.
 
 ## Todo 27/6/2024
-- remove duplicates from combinedArrays
+- ~~remove duplicates from combinedArrays~~ **USED CHATGPT CODE**
+
+- at this point we have an array of arrays where each subarray contains a list of indices for contiguous voids. We've given this the rather terrible name `mightCauseIsland`
+- an issue is this includes arrays where all of the voids are side by side on an edge
+  - example, 2 voids side-by-side on an edge will be included in `mightCauseIsland` but they can never actually cause an island of clues
+- in order to cause an island, there must be a gap where there is a light cell on the edge in between 2 or more voids that also touch that edge
+- take the top edge
+  - imagine we have 2 voids side by side
+  - we know that the indices for these will be sequential `[0, 1]`
+  - in words, in order for voids on an edge to create an island, there must not be an unbroken string of voids on that edge (maybe?)
+
+- the top edge: `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]`
+- our mightCauseIslands includes an array at pos 0: `[0, 1]`
+- we might say: any array of voids where every element of the array is part of an edge is valid, unless the array length is equal to the edge length
+
+- we want to return false if every element of an array is not part of an edge
+- chatgpt, use sets
+
+```js
+function isSubset(arr1, arr2) {
+  // Ensure arr1 is the smaller array and arr2 is the larger array
+  if (arr1.length > arr2.length) {
+    [arr1, arr2] = [arr2, arr1];
+  }
+
+  // Convert the larger array to a Set
+  const set = new Set(arr2);
+
+  // Check if every element of the smaller array exists in the Set
+  for (let elem of arr1) {
+    if (!set.has(elem)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Example usage:
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6, 1, 2, 3];
+
+console.log(isSubset(arr1, arr2)); // Output: true
+
+const arr3 = [1, 2, 4];
+console.log(isSubset(arr3, arr2)); // Output: false
+
+```
+
+
