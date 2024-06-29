@@ -2052,4 +2052,15 @@ console.log(isSubset(arr3, arr2)); // Output: false
 
 ```
 
+## Update 29/6/24
+- discarded trying to use voids to indicate islands of disconnected islands
+  - it was overly complex
+  - however, I can use a lot of the code I've already written and simply focus on the light cells instead of the voids
+### Todo
+- color the background of light cells that are in each island grouping
+- an edge consisting entirely of voids still needs to be highlighted as invalid
 
+- at this point we have arrays which represent groups of disconnected lights in an array called `mergedLights`
+  - this is in Grid.tsx in our handleClick function
+- now we need to dynamically set the background color of each grouping
+- I think we need to add a backgroundColor prop to our cells

@@ -1,6 +1,6 @@
 const dotenv = require("dotenv").config();
 import Anthropic from "@anthropic-ai/sdk";
-import stringResp from "../../src/data/example_ai_response";
+import stringResp from "../../src/state/example_ai_response";
 
 exports.handler = async (event) => {
   // const anthropic = new Anthropic({

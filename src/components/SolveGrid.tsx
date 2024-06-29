@@ -15,9 +15,9 @@ import SolveCell from "./SolveCell";
 import ErrorPage from "./ErrorPage";
 
 // data
-import { initialGrid } from "../data/grid";
+import { initialGrid } from "../state/grid";
 
-import * as AllAnswers from "../data/answers2";
+import * as AllAnswers from "../state/answers2";
 
 // utils
 import {

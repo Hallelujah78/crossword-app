@@ -4,7 +4,7 @@ import styled from "styled-components";
 import type { CellProps } from "../models/CellProps.model";
 
 const Cell: React.FC<CellProps> = ({ cell, handleClick }) => {
-  const { isVoid, id, clueNumber, letter, isValid } = cell;
+  const { isVoid, id, clueNumber, letter, isValid, backgroundColor } = cell;
 
   return (
     <Wrapper
@@ -13,7 +13,11 @@ const Cell: React.FC<CellProps> = ({ cell, handleClick }) => {
         handleClick ? handleClick(e) : () => {}
       }
       style={{
-        background: isVoid ? "black" : "white",
+        background: backgroundColor
+          ? backgroundColor
+          : isVoid
+          ? "black"
+          : "white",
         border: isValid ? "black solid 1px" : "red 3px solid",
       }}
     >

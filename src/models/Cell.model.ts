@@ -10,4 +10,5 @@ export type CellType = {
   selected: boolean;
   answer?: string;
   isValid?: boolean;
+  backgroundColor?: string;
 };

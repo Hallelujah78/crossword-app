@@ -14,8 +14,9 @@ import styled from "styled-components";
 import Cell from "./Cell";
 
 // data/state
-import { initialGrid } from "../data/grid";
-import * as AllAnswers from "../data/answers2";
+import { initialGrid } from "../state/grid";
+import * as AllAnswers from "../state/answers2";
+import backgroundColors from "../state/backgroundColors";
 
 // utils
 import {
@@ -33,9 +34,8 @@ import {
   getLocalStorage,
   setLocalStorage,
   getRowOrColumn,
-  getContiguousVoids,
   getAllEdgeCells,
-  isSubset,
+  mergeSubarrays,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
@@ -57,6 +57,7 @@ const Grid: React.FC = () => {
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
+  const [isValid, setIsValid] = useState<boolean>(true);
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });
@@ -73,9 +74,10 @@ const Grid: React.FC = () => {
   };
 
   const validateGrid = (clues: Clue[], grid: CellType[]) => {
-    // reset isValid to true
+    // reset isValid to true and backgroundColor to ""
     for (const cell of grid) {
       cell.isValid = true;
+      cell.backgroundColor = "";
     }
 
     const shortAnswers = clues.filter((clue) => clue.length < 3);
@@ -107,9 +109,19 @@ const Grid: React.FC = () => {
 
     // entire side is voids
 
-    // continuous line of voids creating island
-    // use getContiguousVoids and:
-    // arr1.some(item => arr2.includes(item))
+    const allLights = [];
+    for (const clue of clues) {
+      allLights.push(clue.indices);
+    }
+    const mergedLights = mergeSubarrays(allLights);
+
+    if (mergedLights.length > 1) {
+      for (const [index, lights] of mergedLights.entries()) {
+        for (const num of lights) {
+          grid[num].backgroundColor = backgroundColors[index];
+        }
+      }
+    }
   };
 
   async function getClues() {
@@ -213,6 +225,7 @@ const Grid: React.FC = () => {
 
     const symmetricalIndex = gridState.length - 1 - targetIndex;
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
+
     const edgeCells: number[] = getAllEdgeCells(tempGrid);
     // toggle the cell background
     tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
@@ -236,109 +249,8 @@ const Grid: React.FC = () => {
         setCluesThatIntersect(clue, acrossClues);
       } else setCluesThatIntersect(clue, downClues);
     }
+
     validateGrid(clues, tempGrid);
-
-    const allVoids = [];
-    for (const [index, cell] of tempGrid.entries()) {
-      if (cell.isVoid) {
-        const voids = getContiguousVoids(tempGrid, index);
-        if (voids.length > 1) {
-          allVoids.push(voids);
-        }
-      }
-    }
-
-    function mergeSubarrays(arrays) {
-      function mergeTwoArrays(arr1, arr2) {
-        return [...new Set([...arr1, ...arr2])];
-      }
-
-      function hasCommonElements(arr1, arr2) {
-        return arr1.some((item) => arr2.includes(item));
-      }
-
-      // This array will store the result
-      let result = [];
-
-      while (arrays.length > 0) {
-        let first = arrays[0];
-        // console.log("first: ", first);
-        let rest = arrays.slice(1); //copies array from pos 1 inclusive
-
-        // on iteration 2
-        // - arrays contains the arrays that had no intersection with the initial value of first
-        // - first is the first element of this new arrays
-        // - rest is the rest of the values of this new arrays
-        // - on the first iteration, we take the first element of arrays and compare it to all the others
-        // - we update arrays that couldn't be merged
-        // - we then compare the first element of this new array with the rest, and so on
-        // what happens
-
-        let lf = -1; // lf is not equal to first.length, so enter while
-        while (lf !== first.length) {
-          lf = first.length; // this means this inner while loop runs the for loop once and then exits
-          // console.log("lenght of first: ", lf);
-          const rest2 = [];
-          for (const arr of rest) {
-            if (hasCommonElements(first, arr)) {
-              // we set first to be the merging of first and arr
-              // lf !== first.length, and so the while only gets executed once
-              first = mergeTwoArrays(first, arr);
-            } else {
-              rest2.push(arr); // if no common elements between first and arr of rest, store it in rest2
-            }
-          }
-          rest = rest2; // rest now contains the original values of rest that didn't match first
-        }
-
-        result.push(first); // all of the merged arrays so far
-        // console.log("result: ", result);
-        arrays = rest; // rest and array now contains only unmerged arrays
-      }
-
-      return result;
-    }
-
-    const mergedArrays = mergeSubarrays(allVoids);
-    console.log("the merged arrays: ", mergedArrays);
-
-    console.log(edgeCells.length);
-    // iterate over each array in allVoids
-    const mightCauseIsland: number[][] = [];
-
-    for (const arr of mergedArrays) {
-      const result = [];
-      console.log("the current arr: ", arr);
-      for (let i = 0; i < edgeCells.length; i++) {
-        // console.log("val of i: ", i);
-        if (arr.includes(edgeCells[i])) {
-          result.push(edgeCells[i]);
-          if (result.length > 1) {
-            mightCauseIsland.push(arr);
-            break;
-          }
-        }
-      }
-    }
-
-    for (const arr of mightCauseIsland) {
-      for (const el of arr) {
-        tempGrid[el].isValid = false;
-      }
-    }
-    // for each array in allVoids, check if it shares multiple values in each array of edgeCells
-    // if yes, it may be creating islands
-    console.log("could these cause islands? ", mightCauseIsland);
-    // getAllEdgeCells(tempGrid);
-
-    console.log("is it a subset? ", isSubset(mightCauseIsland[0], edgeCells));
-    if (isSubset(mightCauseIsland[0], edgeCells)) {
-      console.log("yes, it's a subset");
-      for (const index of mightCauseIsland[0]) {
-        tempGrid[index].isValid = true;
-      }
-    }
-
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);

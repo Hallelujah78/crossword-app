@@ -10,8 +10,8 @@ import type Answer from "../models/Answer.model";
 import type { Puzzles } from "../models/Puzzles.model";
 
 // state
-import * as AllAnswers from "../data/answers2";
-import { gridSideLength } from "../data/grid";
+import * as AllAnswers from "../state/answers2";
+import { gridSideLength } from "../state/grid";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
@@ -1452,3 +1452,76 @@ export const isSubset = (arr1: number[], arr2: number[]) => {
   }
   return true;
 };
+
+export const getContiguousLights = (grid: CellType[], index: number) => {
+  // index will be the index of a cell where isVoid is false
+
+  const cell = grid[index];
+  const lightCells: number[] = [index];
+  // cell left
+  if (cell.left === false && !isLeftEdge(grid, index)) {
+    lightCells.push(index - 1);
+  }
+  // cell up
+  if (cell.top === false && !isTopEdge(grid, index)) {
+    lightCells.push(index - gridSideLength);
+  }
+  // cell right
+  if (cell.right === false && !isRightEdge(grid, index)) {
+    lightCells.push(index + 1);
+  }
+  // cell down
+  if (cell.bottom === false && !isBottomEdge(grid, index)) {
+    lightCells.push(index + gridSideLength);
+  }
+
+  return lightCells;
+};
+
+export function mergeSubarrays(arrays: number[][]) {
+  function mergeTwoArrays(arr1: number[], arr2: number[]) {
+    return [...new Set([...arr1, ...arr2])];
+  }
+
+  function hasCommonElements(arr1: number[], arr2: number[]) {
+    return arr1.some((item) => arr2.includes(item));
+  }
+
+  // This array will store the result
+  const result = [];
+
+  while (arrays.length > 0) {
+    let first = arrays[0];
+    let rest = arrays.slice(1); //copies array from pos 1 inclusive
+
+    // on iteration 2
+    // - arrays contains the arrays that had no intersection with the initial value of first
+    // - first is the first element of this new arrays
+    // - rest is the rest of the values of this new arrays
+    // - on the first iteration, we take the first element of arrays and compare it to all the others
+    // - we update arrays that couldn't be merged
+    // - we then compare the first element of this new array with the rest, and so on
+    // what happens
+
+    let lf = -1; // lf is not equal to first.length, so enter while
+    while (lf !== first.length) {
+      lf = first.length; // this means this inner while loop runs the for loop once and then exits
+      const rest2 = [];
+      for (const arr of rest) {
+        if (hasCommonElements(first, arr)) {
+          // we set first to be the merging of first and arr
+          // lf !== first.length, and so the while only gets executed once
+          first = mergeTwoArrays(first, arr);
+        } else {
+          rest2.push(arr); // if no common elements between first and arr of rest, store it in rest2
+        }
+      }
+      rest = rest2; // rest now contains the original values of rest that didn't match first
+    }
+
+    result.push(first); // all of the merged arrays so far
+    arrays = rest; // rest and array now contains only unmerged arrays
+  }
+
+  return result;
+}
