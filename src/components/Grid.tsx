@@ -74,6 +74,7 @@ const Grid: React.FC = () => {
   };
 
   const validateGrid = (clues: Clue[], grid: CellType[]) => {
+    setIsValid(true);
     // reset isValid to true and backgroundColor to ""
     for (const cell of grid) {
       cell.isValid = true;
@@ -120,6 +121,13 @@ const Grid: React.FC = () => {
         for (const num of lights) {
           grid[num].backgroundColor = backgroundColors[index];
         }
+      }
+    }
+
+    for (const cell of grid) {
+      if (cell.backgroundColor || !cell.isValid) {
+        setIsValid(false);
+        break;
       }
     }
   };
@@ -271,7 +279,7 @@ const Grid: React.FC = () => {
       <div className="control-container">
         <button
           type="button"
-          disabled={!clueList[0].answer.includes("")}
+          disabled={!isValid || !clueList[0].answer.includes("")}
           onClick={() => generateClues()}
         >
           Generate Answers
@@ -332,13 +340,18 @@ const Grid: React.FC = () => {
             setGridState(newGrid);
             setClueList(newClues);
             setIsModified(false);
+            setIsValid(true);
           }}
         >
           Reset Grid & Answers
         </button>
         <br />
         <button
-          disabled={clueList[0].clue !== "" || clueList[0].answer.includes("")}
+          disabled={
+            !isValid ||
+            clueList[0].clue !== "" ||
+            clueList[0].answer.includes("")
+          }
           type="button"
           onClick={getClues}
         >

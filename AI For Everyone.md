@@ -398,7 +398,7 @@ By following these principles and steps, any company can evolve into a successfu
 ### Vid 1: Introduction
 - **Introduction:**
   - Recap of last week's topic on basics of AI and machine learning technology.
-  - Introduction to using AI technology in projects, whether in a small setting (like a garage) or a larger company aligning with corporate strategy.
+  - Introduction to using AI technology in projects, whether in a small setting (like a garage startup) or a larger company aligning with corporate strategy.
 
 - **AI Project Workflow:**
   - Learning about the workflow of an AI project.
@@ -584,22 +584,150 @@ By following these principles and steps, any company can evolve into a successfu
 - **Data Requirements**:
   - Progress is possible without big data.
   - More data is generally better but not always necessary.
+    - data can make some businesses defensible (web search)
+    - having access to the rare searhes that people make (as a large web search company) can be advantageous
   - Example: Visual inspection of coffee mugs – progress can be made with a small dataset.
+    - as few as 10, 100, 1000 images
   - Amount of data needed is problem-dependent; consult with an AI expert.
+    - some problems do require big data
 
 - **Next Steps**:
   - Discuss selecting and committing to specific projects in the next video.
 
+### Vid 6: How to Choose an AI Project (Part Deux)
+
+- **Introduction to AI Project Evaluation:**
+  - Before committing to an AI project, especially long-term ones, ensure it's worthwhile.
+  - For quick projects, jump in and test feasibility immediately.
+  - For projects taking months, use due diligence to confirm their value and feasibility.
+
+- **Due Diligence:**
+  - Due diligence involves verifying the project's feasibility and value.
+  - Two main types: technical diligence and business diligence.
+
+- **Technical Diligence:** (what can AI Do)
+  - Ensure the AI system is feasible:
+    - Consult AI experts or literature on system performance.
+    - Example: Checking if a speech system can achieve 95% accuracy.
+    - Example: Ensuring a factory inspection system can be 99% accurate.
+  - Assess the required data and its availability.
+  - Estimate the engineering timeline and resources needed.
+
+- **Business Diligence:** (what is valuable for business)
+  - Ensure the project provides business value:
+    - Examples: Lowering costs through automation or increasing efficiency.
+    - Examples: Increasing revenue by improving checkout rates (webstore) or launching new products.
+  - Create financial models to estimate value and economics before committing.
+
+- **Ethical Diligence:**
+  - Consider the societal impact of the AI project.
+  - Ensure the project benefits humanity and society.
+
+- **Build vs. Buy Decision:**
+  - Evaluate whether to build AI systems in-house or outsource:
+    - Example: Companies buy computers and Wi-Fi routers instead of building them.
+    - Machine learning projects can be outsourced for faster talent access. (or can be in-house)
+    - Data science projects are often done in-house due to close business ties.
+      - takes deep day-to-day knowledge to do good DS
+  - Build specialized, unique projects and buy industry-standard solutions.
+  - Avoid "sprinting in front of a train":
+    (the train is the industry standard solution)
+    - Don't try to outpace industry-standard solutions.
+    - Embrace industry standards when beneficial.
+
+- **Resource Allocation:**
+  - Focus limited resources on the most unique and impactful projects.
+  - Conduct technical and business diligence to identify promising projects.
+  - Spend weeks on diligence for large projects before committing.
+
+- **Next Steps:**
+  - Once promising projects are identified, learn how to engage and work with an AI team in the following video.
 
 
+### Vid 7: Working with an AI Team
+
+- **Introduction to Working with an AI Team:**
+  - Learn how AI teams think about data to effectively collaborate on AI projects.
+  - If you lack access to AI engineers, online courses in machine learning or deep learning can help.
+
+- **Specifying Acceptance Criteria:**
+  - Define clear acceptance criteria for the AI project.
+  - Example: Detecting defects in coffee mugs with at least 95% accuracy.
+  - Provide a dataset (test set) for measuring performance against the criteria.
+
+- **Understanding the Test Set:**
+  - A test set consists of labeled images to evaluate AI performance.
+  - Example: A test set of 1,000 pictures might suffice, but consult AI experts for precise needs.
+
+- **Statistical Performance:**
+  - AI performance is often specified statistically (e.g., percentage accuracy).
+  - Example: Requesting 95% accuracy rather than perfect performance.
+
+- **Datasets in AI:**
+  - AI teams use two main datasets: training set and test set.
+  - **Training Set:**
+    - Contains labeled images (e.g., coffee mugs marked as okay or defective).
+    - Used by machine learning algorithms to learn the mapping from input to output.
+  - **Test Set:**
+    - Different from the training set, used to evaluate AI performance.
+    - Example: Achieving 66.7% accuracy on a three-image test set.
+      - i.e. if it got 2 of 3 examples correct 2/3 = 66.7%
+    - for most problems, the training set is much, much, much bigger than the test set
+
+- **Additional Test Sets:**
+  - AI teams might need two test sets (development/validation sets) for technical reasons.
+  - Providing multiple test sets is reasonable if requested.
+    - the reason AI teams need two test sets is beyond the scope of the course/technical
+
+- **Avoiding the 100% Accuracy Pitfall:**
+  - Expecting 100% accuracy from AI software is unrealistic.
+  - Challenges include:
+    - Technological limitations of current machine learning.
+    - Insufficient or messy data.
+    - Ambiguous or mislabeled data.
+  - Example: A green coffee mug mislabeled as defective.
+
+- **Improving AI Accuracy:**
+  - Collect more data to improve performance.
+  - Clean up mislabeled data and resolve ambiguous labels.
+
+- **Setting Realistic Goals:**
+  - Discuss with AI engineers to determine a reasonable accuracy level.
+  - Aim for a balance that meets both technical and business diligence without demanding 100% accuracy.
+
+- **Conclusion:**
+  - You've learned the basics of building and evaluating AI projects.
+  - Optional video available on technical tools used by AI teams.
+  - Next week’s focus: How AI projects fit within a larger company context.
 
 
+### Vid 8: Technical Tools for AI Teams (optional)
 
+- AI teams use various tools to build AI systems, many of which are open-source.
+- Common AI tools and frameworks include:
+  - PyTorch
+  - TensorFlow
+  - Hugging Face
+  - PaddlePaddle
+  - Scikit-Learn
+  - R
+- These tools help AI teams be more effective.
+- AI technology breakthroughs are often published on a website called arXiv (pronounced archive).
+- Teams frequently share their code on GitHub, a major repository for open-source software.
+  - Example: Searching for face recognition software on GitHub can provide detailed and useful software descriptions.
+- AI engineers often discuss hardware like CPUs and GPUs:
+  - CPU (Central Processing Unit): Found in desktops, laptops, and cloud servers, made by companies like Intel and AMD.
+  - GPU (Graphics Processing Unit): Originally for graphics processing, now used for training large neural networks.
+    - Companies like Nvidia and Qualcomm, and Google with its TPUs, are making specialized hardware for AI.
+- AI deployments can be categorized into:
+  - Cloud Deployments: Renting compute servers from providers like AWS, Azure, or GCP.
+  - On-Premises Deployments: Using locally owned compute servers.
+  - Edge Deployments: Processing data locally on the device where data is collected, such as in self-driving cars or smart speakers.
+    - Example: Self-driving cars and smart speakers use edge deployment to increase response time and reduce data transmission.
+- The video aims to provide a better understanding of AI tools and terms used by AI engineers.
 
-
-
-
-
+## Week 3
+### Vid 9: 
 
 
 

@@ -2057,10 +2057,17 @@ console.log(isSubset(arr3, arr2)); // Output: false
   - it was overly complex
   - however, I can use a lot of the code I've already written and simply focus on the light cells instead of the voids
 ### Todo
-- color the background of light cells that are in each island grouping
-- an edge consisting entirely of voids still needs to be highlighted as invalid
+- ~~color the background of light cells that are in each island grouping~~ **DONE**
 
 - at this point we have arrays which represent groups of disconnected lights in an array called `mergedLights`
   - this is in Grid.tsx in our handleClick function
-- now we need to dynamically set the background color of each grouping
-- I think we need to add a backgroundColor prop to our cells
+- ~~now we need to dynamically set the background color of each grouping~~ **DONE**
+- ~~I think we need to add a backgroundColor prop to our cells~~ **DONE**
+- ~~add an isValid state - if any cell in grid has a backgroundColor prop that is not nullish OR it has an isValid prop that is false, then setIsValid(false)~~ **DONE**
+  - ~~the initial state is true **DONE**
+  - ~~the state is set to true each time the validateGrid function is called~~ **DONE**
+    - ~~once validation is complete, we set it to false if appropriate~~ **DONE**
+  - ~~the isValid state is used to control whether buttons are disabled or not~~ **DONE**
+
+## Todo
+- an edge consisting entirely of voids still needs to be highlighted as invalid
