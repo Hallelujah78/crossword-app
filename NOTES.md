@@ -2071,3 +2071,4 @@ console.log(isSubset(arr3, arr2)); // Output: false
 
 ## Todo
 - an edge consisting entirely of voids still needs to be highlighted as invalid
+- ~~backGroundColor needs about 40 colors to handle clue islands on a 13x13 grid~~ **DONE**
