@@ -36,6 +36,7 @@ import {
   getRowOrColumn,
   getAllEdgeCells,
   mergeSubarrays,
+  setAllVoidEdgeInvalid,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
@@ -109,7 +110,9 @@ const Grid: React.FC = () => {
     }
 
     // entire side is voids
+    setAllVoidEdgeInvalid(grid);
 
+    // are all light cells connected?
     const allLights = [];
     for (const clue of clues) {
       allLights.push(clue.indices);

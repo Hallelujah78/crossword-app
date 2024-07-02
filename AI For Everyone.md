@@ -727,8 +727,239 @@ By following these principles and steps, any company can evolve into a successfu
 - The video aims to provide a better understanding of AI tools and terms used by AI engineers.
 
 ## Week 3
-### Vid 9: 
+### Vid 9: Introduction
+- **Introduction**
+  - Review of last two weeks: Learning about AI and building an AI project.
+  - This week's focus: Projects in the context of a company (for-profit, non-profit, government).
+
+- **AI in Companies**
+  - Applicability of building AI for various organizations.
+  - CEO-level talk, but useful for everyone aiming to improve their organization with AI.
+  - It takes 2-3 years for a company to become good at AI.
+  - Goal: Paint a vision for long-term AI integration and provide concrete short-term steps.
+
+- **Topics Covered This Week**
+  - **Case Studies of Complex AI Products**
+    - Example products: Smart speakers, self-driving cars.
+    - Focus on multiple modules working together.
+
+  - **Major Roles in an AI Team**
+    - Building large AI teams with dozens or hundreds of people.
+    - Defining the roles and tasks of team members.
+    - Roadmap for building an AI team.
+
+  - **AI Transformation Playbook**
+    - Helping companies become good at AI.
+    - Moving beyond one or two projects to company-wide AI effectiveness and value.
+
+  - **Concrete First Steps**
+    - Immediate actions to start building AI in your company.
+
+- **Additional Content**
+  - Optional videos on major AI application areas and techniques.
 
 
+### Vid 10: Case Study: Smart Speaker
+- **Introduction to Working on Complex AI Products**
+  - Focus on more complex AI projects beyond a single machine-learning algorithm.
+  - Introduction to two case studies: smart speaker and self-driving car.
+
+- **Case Study 1: Smart Speaker**
+  - **Context and Popularity**
+    - Smart speakers and voice-activated devices are becoming increasingly popular.
+    - Example command: "Hey device, tell me a joke."
+
+  - **Steps to Process a Command**
+    1. **Trigger Word Detection**
+       - Detects wake word "Hey device" using a machine-learning algorithm.
+       - Outputs 0 or 1 indicating presence of wake word.
+    2. **Speech Recognition**
+       - Transcribes audio after wake word to text, e.g., "Tell me a joke."
+       - also uses machine learning to map the audio to text output
+    3. **Intent Recognition**
+       - Determines user’s intent from the transcribed text.
+       - Maps text to specific commands like telling a joke, checking the weather, etc.
+    4. **Command Execution**
+       - Executes the command (e.g., selects and tells a joke).
+
+- these multiple steps are an "AI pipeline"
+- not unusual to have four teams where each team focuses on one of the steps
+
+  - **Example: Setting a Timer**
+    - Similar initial steps: trigger word detection, speech recognition, and intent recognition.
+    - Additional step to extract duration from the command (e.g., "10 minutes").
+    - Executes by starting a timer for the specified duration.
+
+- other functions of smart speaker
+- play music
+- volume up/down
+- make call
+- current time
+- units conversion
+- simple question
+
+  - **Challenges in Smart Speaker Functionality**
+    - Requires multiple specialized software components for various functions.
+    - Extensive software engineering effort to support numerous commands (e.g., playing music, making calls).
+    - User training is crucial to help users understand the capabilities and limitations of smart speakers.
+      - it's hard for a user to keep in their head all of the things a speaker can do or cannot do
+
+- **Conclusion**
+  - Overview of the complexity involved in building AI products like smart speakers.
+  - Transition to the next case study: building a self-driving car.
+
+### Vid 11: Case Study: Self-Driving Car
+
+- **Introduction to Self-Driving Cars**
+  - Exciting yet mysterious AI product.
+  - Simplified description to understand how multiple AI components work together.
+
+- **Key Steps in Driving a Self-Driving Car**
+  - **Sensor Inputs**
+    - Various sensors: cameras (front, sides, rear), radar, and Lidar.
+  - **Car and Pedestrian Detection**
+    - Detects cars and pedestrians using machine learning.
+    - Inputs: pictures, radar, and Lidar; outputs: locations of cars and pedestrians.
+  - **Motion Planning**
+    - Plans the car’s path to avoid collisions while progressing to the destination.
+    - Translates the path into specific steering, acceleration, and brake commands.
+
+- **Detailed Steps Explained**
+  - **Car Detection**
+    - Uses supervised learning with multiple cameras and sensors (radar, Lidar).
+  - **Pedestrian Detection**
+    - Similar sensors and techniques as car detection.
+  - **Motion Planning**
+    - Example 1: Path planning to follow a road without hitting the car in front.
+    - Example 2: Path planning to overtake a parked car on the side of the road.
+
+- **Additional Components in Real Self-Driving Cars**
+  - **Enhanced Inputs**
+    - GPS, accelerometers (IMU), gyroscopes, and maps for more accurate positioning and context.
+  - **Trajectory Prediction**
+    - Predicts future positions of detected cars and pedestrians.
+  - **Lane and Traffic Light Detection**
+    - Detects lane markings and traffic light signals (red, yellow, green).
+  - **Other Obstacles**
+    - Detects unexpected obstacles like traffic cones or animals (e.g., geese).
+
+- **Team Structure in Self-Driving Car Development**
+  - Large teams or multiple people working on each component (car detection, pedestrian detection, motion planning, etc.).
+  - Complexity requires coordination of various specialized teams.
+
+- **Conclusion and Transition**
+  - Importance of team collaboration in building complex AI products.
+  - Next video will cover key roles in large AI teams and vision for future team building.
+
+
+### Vid 12: Example Roles of an AI Team
+
+- **Introduction to AI Teams**
+  - AI products may require large teams (e.g., 100+ engineers).
+  - Understanding roles and responsibilities in a large AI team.
+  - Useful insights for small teams (1-5 people).
+  - Job titles and responsibilities can vary across companies.
+
+- **Common Roles in AI Teams**
+  - **Software Engineers**
+    - Write specialized software for tasks (e.g., smart speaker functions, self-driving car reliability).
+    - Often make up a large portion of AI teams (sometimes 50% or more).
+  - **Machine Learning Engineers**
+    - Develop algorithms for A to B mappings and other machine-learning tasks.
+    - Gather data, train models, and ensure accurate outputs.
+  - **Machine Learning Researchers**
+    - Extend the state-of-the-art in machine learning.
+    - May publish research papers or focus on advancing company-specific AI capabilities.
+  - **Applied Machine Learning Scientists**
+    - Bridge the gap between research and engineering.
+    - Adapt cutting-edge techniques to practical problems (e.g., wake word detection for smart speakers).
+
+- **Additional Roles in AI Teams**
+  - **Data Scientists**
+    - Examine data, provide insights, and aid business decision-making.
+    - Role is evolving; some tasks overlap with machine learning engineers.
+  - **Data Engineers**
+    - Organize and manage large volumes of data.
+    - Ensure data is accessible, secure, and cost-effective.
+    - Handle data storage from gigabytes to petabytes (e.g., self-driving car data).
+  - **AI Product Managers**
+    - Decide what to build and determine feasibility and value.
+    - Need new skill sets specific to AI capabilities and limitations.
+
+- **Data Storage Challenges**
+  - Managing large volumes of data is complex.
+  - Examples:
+    - Megabytes (MB): Typical song file.
+    - Gigabytes (GB): Hour-long movie.
+    - Terabytes (TB) and Petabytes (PB): Large datasets (e.g., self-driving car data).
+
+- **Starting with Small AI Teams**
+  - Small teams (or even individuals) can begin AI projects.
+  - Online courses in machine learning, deep learning, or data science can be sufficient to start.
+  - Emphasis on starting small and scaling up.
+
+- **Next Steps: AI Transformation Playbook**
+  - Integrating AI teams into larger company structures.
+  - Roadmap for companies to become proficient in AI.
+  - Upcoming videos will delve into the AI transformation playbook.
+
+### Vid 13: AI Transformation Playbook (part I)
+
+- **Introduction to AI Transformation Playbook**
+  - Experience from leading Google Brain Team and Baidu's AI group.
+  - Five steps to help companies become good at AI.
+  - Useful for everyone in the company, not just CEOs.
+
+- **Five Steps of the AI Transformation Playbook**
+  - **Step 1: Execute Pilot Projects**
+    - Aim for success to gain momentum.
+    - Example: Google Brain Team’s first project with speech recognition.
+    - Select projects with a high chance of success.
+    - Show traction within 6-12 months.
+    - First projects can be in-house or outsourced.
+  - **Step 2: Build an In-House AI Team**
+    - Centralize the AI team.
+    - Matrix AI talent into different business units.
+    - Example: Gift card business unit and centralized AI team collaboration.
+    - Develop company-wide platforms and tools.
+    - The AI unit can report to various senior executives.
+    - Initial funding from the CEO helps get momentum.
+  - **Step 3: Provide Broad AI Training**
+    - Train executives and senior leaders on AI basics and strategy.
+    - Suggested training duration: Executives (~4 hours), Division leaders (at least 12 hours).
+    - Train existing engineers in AI skills (~100 hours of training).
+    - Utilize online digital content for training.
+  - **Step 4: Develop Your AI Strategy**
+    - (To be covered in the next video)
+  - **Step 5: Develop Internal and External Communications**
+    - (To be covered in the next video)
+
+- **Importance of Pilot Projects**
+  - Focus on quick success rather than high value.
+  - Example: Google Maps Team as a second customer.
+  - Success builds internal momentum and credibility.
+
+- **Building an AI Team**
+  - Centralized AI team ensures consistent standards.
+  - Helps business units leverage AI effectively.
+  - Provides resources for company-wide initiatives.
+
+- **Providing AI Training**
+  - Essential for all levels within the company.
+  - Enables better decision-making and project management.
+  - Addresses the shortage of AI engineers through in-house training.
+
+- **Getting Started with Training**
+  - Leverage online resources (courses, books, YouTube, blog posts).
+  - Curate content with the help of a Chief Learning Officer (CLO).
+
+- **Conclusion of Steps 1-3**
+  - Initial projects, team building, and training create AI momentum.
+  - AI impacts company strategy and stakeholder alignment.
+
+- **Next Steps**
+  - Next video will discuss AI strategy and aligning stakeholders.
+
+---
 
 summarize the following text with bullet points, keep the summary in the same order as the original content, retain all of the examples used:

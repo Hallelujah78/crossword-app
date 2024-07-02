@@ -1525,3 +1525,24 @@ export function mergeSubarrays(arrays: number[][]) {
 
   return result;
 }
+
+// if all cells on an edge are void, set grid prop to invalid for each cell
+export const setAllVoidEdgeInvalid = (grid: CellType[]) => {
+  const allEdge = [];
+  allEdge.push(findBottomEdge(grid));
+  allEdge.push(findLeftEdge(grid));
+  allEdge.push(findRightEdge(grid));
+  allEdge.push(findTopEdge(grid));
+
+  for (const edge of allEdge) {
+    //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    const nonVoid = edge.filter((index: number) => {
+      return !grid[index].isVoid;
+    });
+    if (nonVoid.length === 0) {
+      for (const index of edge) {
+        grid[index].isValid = false;
+      }
+    }
+  }
+};
