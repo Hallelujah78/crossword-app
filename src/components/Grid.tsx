@@ -37,6 +37,7 @@ import {
   getAllEdgeCells,
   mergeSubarrays,
   setAllVoidEdgeInvalid,
+  isGridValid,
 } from "../utils/utils";
 
 const Grid: React.FC = () => {
@@ -58,7 +59,11 @@ const Grid: React.FC = () => {
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
-  const [isValid, setIsValid] = useState<boolean>(true);
+  const [isValid, setIsValid] = useState<boolean>(() => {
+    return localStorage.getItem("editor")
+      ? isGridValid(clueList, gridState)
+      : true;
+  });
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });

@@ -2072,3 +2072,17 @@ console.log(isSubset(arr3, arr2)); // Output: false
 ## Todo
 - an edge consisting entirely of voids still needs to be highlighted as invalid
 - ~~backGroundColor needs about 40 colors to handle clue islands on a 13x13 grid~~ **DONE**
+
+
+## What is next? Todo
+- when the player loads the create/edit (you can't actually edit a crossword you have created) we:
+  - welcome them, give them a step by step of what they can do:
+    - welcome to the crossword creation tool!
+    - you can click the cells on the grid to toggle them from light to dark and vice-versa
+    - once you're happy with the grid, click the 'Generate Answers' button to create answers for your grid
+    - you may reset the answers or reset the grid and answers by clicking the appropriate buttons
+    - if you are happy with the grid and the answers that have been generated, click 'AI Generate Clues!' which will fetch clues for your answers from OpenAI
+    - then save your puzzle by giving it a name and clicking 'Save Crossword'
+    - you can solve your puzzle by clicking solve and selecting it from the menu
+- state related to whether the grid is valid or not need to be saved to local storage
+  - if we don't do this, navigating away and back will mean our buttons are enabled even though the grid is in an invalid state

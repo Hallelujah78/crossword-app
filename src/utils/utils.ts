@@ -1546,3 +1546,14 @@ export const setAllVoidEdgeInvalid = (grid: CellType[]) => {
     }
   }
 };
+
+export const isGridValid = (clues: Clue[], grid: CellType[]) => {
+  let isValid = true;
+  for (const cell of grid) {
+    if (cell.backgroundColor || !cell.isValid) {
+      isValid = false;
+      break;
+    }
+  }
+  return isValid;
+};
