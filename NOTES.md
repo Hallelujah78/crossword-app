@@ -2084,5 +2084,11 @@ console.log(isSubset(arr3, arr2)); // Output: false
     - if you are happy with the grid and the answers that have been generated, click 'AI Generate Clues!' which will fetch clues for your answers from OpenAI
     - then save your puzzle by giving it a name and clicking 'Save Crossword'
     - you can solve your puzzle by clicking solve and selecting it from the menu
-- state related to whether the grid is valid or not need to be saved to local storage
-  - if we don't do this, navigating away and back will mean our buttons are enabled even though the grid is in an invalid state
+- ~~state related to whether the grid is valid or not need to be saved to local storage~~ **DONE**
+  - ~~if we don't do this, navigating away and back will mean our buttons are enabled even though the grid is in an invalid state~~ **DONE**
+  - the app falls over when generating answers if:
+    - you start with the basic grid
+    - toggle the 4 void cells in the top left corner to be light cells
+    - click 'Generate Answers'
+      - we get errors in the console
+      - not all letters are filled in (which should result, I suppose, in attempting to regenerate the answers again from scratch)

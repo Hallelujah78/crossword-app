@@ -10,7 +10,6 @@ import Editor from "./routes/Editor.tsx";
 
 // libraries
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ErrorBoundary } from "react-error-boundary";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +30,7 @@ const router = createBrowserRouter([
 
 import Root from "./routes/Root.tsx";
 import Solve from "./routes/Solve.tsx";
-import ErrorPage from "./components/ErrorPage.tsx";
+
 const docRoot = document.getElementById("root");
 if (docRoot) {
   ReactDOM.createRoot(docRoot).render(
