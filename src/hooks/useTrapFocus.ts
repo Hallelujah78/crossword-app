@@ -13,7 +13,7 @@ const useTrapFocus = (elementRef: React.RefObject<HTMLElement | null>) => {
 
       setFirstEl(focussableEls[0]);
       setLastEl(focussableEls[focussableEls.length - 1]);
-      focussableEls[0].focus();
+      focussableEls[0]?.focus();
     }
   };
 

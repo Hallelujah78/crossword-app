@@ -18,6 +18,7 @@ import Information from "./Information";
 import { initialGrid } from "../state/grid";
 import * as AllAnswers from "../state/answers2";
 import backgroundColors from "../state/backgroundColors";
+import steps from "../state/walkthroughSteps";
 
 // utils
 import {
@@ -247,7 +248,6 @@ const Grid: React.FC = () => {
     const symmetricalIndex = gridState.length - 1 - targetIndex;
     const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
-    const edgeCells: number[] = getAllEdgeCells(tempGrid);
     // toggle the cell background
     tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
     // update the top, bottom, left and right props of surrounding cells
@@ -411,7 +411,9 @@ const Grid: React.FC = () => {
       {isVisible &&
         // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
         // when finished development
-        localStorage.getItem("editor") && <Information close={close} />}
+        localStorage.getItem("editor") && (
+          <Information steps={steps} close={close} />
+        )}
     </Wrapper>
   );
 };
@@ -447,7 +449,7 @@ const Wrapper = styled.div`
     width: 100%;
     background-color: rgba(138, 239, 247, 0.125);
     position: absolute;
-    z-index: 9999;
+    z-index: 1119;
     cursor: not-allowed;
   }
   .checkbox-group {

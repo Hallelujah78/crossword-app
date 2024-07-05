@@ -1,9 +1,10 @@
 // react
-import { useRef } from "react";
+import { useRef, useState, type ComponentPropsWithoutRef } from "react";
 
 // third party
-import { FaTimes } from "react-icons/fa";
+
 import styled from "styled-components";
+import Button from "../components/Button";
 // utils
 
 // data
@@ -14,28 +15,38 @@ import styled from "styled-components";
 
 // hooks
 import useTrapFocus from "../hooks/useTrapFocus";
+import type { Steps } from "../state/walkthroughSteps";
 
 // models
 
 // assets
 
-interface InformationProps {
+interface InformationProps extends ComponentPropsWithoutRef<"div"> {
   close: () => void;
+  steps: Steps;
 }
 
-const Information: React.FC<InformationProps> = ({ close }) => {
+const Information: React.FC<InformationProps> = ({
+  close,
+  steps,
+}: InformationProps) => {
+  const [currStep, setCurrStep] = useState(0);
   const selfRef = useRef<HTMLDivElement>(null);
   useTrapFocus(selfRef);
 
-  const closeInfo = () => {
-    console.log("you clicked close!");
-    close();
+  const updateCurrStep = (index: 1 | -1) => {
+    if (
+      (index === -1 && currStep > 0) ||
+      (index === 1 && currStep < steps.length - 1)
+    ) {
+      setCurrStep((prev) => prev + index);
+    }
   };
 
   return (
     <Wrapper ref={selfRef} data-testid="information">
       <div className="modal">
-        <button
+        {/* <button
           type="button"
           data-testid="close-info"
           onClick={closeInfo}
@@ -43,12 +54,22 @@ const Information: React.FC<InformationProps> = ({ close }) => {
           className="close"
         >
           <FaTimes />
-        </button>
+        </button> */}
         <div className="info-container">
-          <h1>Info</h1>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit earum
-          id beatae ullam dicta. Repellendus quidem vitae doloremque
-          perspiciatis aut.
+          <h1>{steps[currStep].title}</h1>
+          <p>{steps[currStep].text}</p>
+        </div>
+        <div className="button-container">
+          {steps[currStep].buttons.map((button) => {
+            return (
+              <Button
+                key={button.buttonType}
+                {...button}
+                close={close}
+                updateCurrStep={updateCurrStep}
+              />
+            );
+          })}
         </div>
       </div>
     </Wrapper>
@@ -57,13 +78,13 @@ const Information: React.FC<InformationProps> = ({ close }) => {
 export default Information;
 
 const Wrapper = styled.div`
-  top: -3rem;
-  left: 0;
+  top: 0rem;
+  left: 0rem;
   position: absolute;
   font-size: calc(1rem + 0.390625vw);
   text-align: center;
-  z-index: 100;
-  height: calc(100vh - 3rem);
+  z-index: 9999;
+  height: calc(100vh - 5rem);
   width: 100%;
   display: grid;
   place-content: center;
@@ -73,8 +94,8 @@ const Wrapper = styled.div`
     width: 40vw;
     height: 40vh;
     border-radius: 1rem;
-    background: white;
-    color: black;
+    background: var(--primary-400);
+    color: white;
     position: relative;
     p {
       margin: 3rem;
@@ -98,5 +119,10 @@ const Wrapper = styled.div`
     top: 1rem !important;
     right: 1rem !important;
     width: fit-content !important;
+  }
+  .info-container {
+    p {
+      line-height: 2rem;
+    }
   }
 `;

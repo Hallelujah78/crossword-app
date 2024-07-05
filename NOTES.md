@@ -2096,6 +2096,11 @@ console.log(isSubset(arr3, arr2)); // Output: false
 ## 4/7/2024
 - since the product tour libs for React either don't work or are aimed at React class components, I'll have to cobble something together myself...
 - we need modals
+
+
+## 5/7/2024
   - on first visit, we welcome the user and let them step through some modals (or skip)
   - if 'editor' is in local storage, then it isn't their first visit and we skip the walkthrough
-    - !local storage editor && walkthrough bruh 
+    - !local storage editor && walkthrough bruh
+  - we should provide a menu where the user can start the tutorial later
+  - we should also provide clickable info elements when the grid is in an invalid state
