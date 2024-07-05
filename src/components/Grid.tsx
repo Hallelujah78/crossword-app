@@ -12,6 +12,7 @@ import styled from "styled-components";
 
 // components
 import Cell from "./Cell";
+import Information from "./Information";
 
 // data/state
 import { initialGrid } from "../state/grid";
@@ -40,6 +41,9 @@ import {
   isGridValid,
 } from "../utils/utils";
 
+// hooks
+import useModal from "../hooks/useModal";
+
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
   const [isModified, setIsModified] = useState<boolean>(() =>
@@ -64,6 +68,7 @@ const Grid: React.FC = () => {
       ? isGridValid(clueList, gridState)
       : true;
   });
+  const { isVisible, show, close } = useModal();
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });
@@ -403,6 +408,10 @@ const Grid: React.FC = () => {
           </button>
         </form>
       </div>
+      {isVisible &&
+        // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
+        // when finished development
+        localStorage.getItem("editor") && <Information close={close} />}
     </Wrapper>
   );
 };

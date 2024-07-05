@@ -2092,3 +2092,10 @@ console.log(isSubset(arr3, arr2)); // Output: false
     - click 'Generate Answers'
       - we get errors in the console
       - not all letters are filled in (which should result, I suppose, in attempting to regenerate the answers again from scratch)
+
+## 4/7/2024
+- since the product tour libs for React either don't work or are aimed at React class components, I'll have to cobble something together myself...
+- we need modals
+  - on first visit, we welcome the user and let them step through some modals (or skip)
+  - if 'editor' is in local storage, then it isn't their first visit and we skip the walkthrough
+    - !local storage editor && walkthrough bruh 
