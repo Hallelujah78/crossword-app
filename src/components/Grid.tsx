@@ -1,5 +1,6 @@
 // react
 import { useState, useEffect } from "react";
+import { TbArrowBigLeftFilled } from "react-icons/tb";
 
 // models
 import type { CellType } from "../models/Cell.model";
@@ -8,7 +9,7 @@ import type { Puzzles } from "../models/Puzzles.model";
 import type Clue from "../classes/Clue";
 
 // libs
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // components
 import Cell from "./Cell";
@@ -35,8 +36,6 @@ import {
   resetAllAnswers,
   getLocalStorage,
   setLocalStorage,
-  getRowOrColumn,
-  getAllEdgeCells,
   mergeSubarrays,
   setAllVoidEdgeInvalid,
   isGridValid,
@@ -98,16 +97,7 @@ const Grid: React.FC = () => {
       (cell) =>
         !cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left
     );
-    // we want to check if any row or any column consists of all voids (which is invalid)
-    // we start at index 0 and move diagonally towards the other corner
-    // the next index in a 13x13 is: index + sqrt grid.length + 1 (I think)
-    // getRow
-    // getColumn
-    // if the row doesn't contain at least one cell with isVoid: true, then that's invalid
-    // same for column
-    // we need a getRow and getColumn
-    const row = getRowOrColumn(0, Direction.ACROSS, grid);
-    const col = getRowOrColumn(0, Direction.DOWN, grid);
+
     // short answers
     for (const clue of shortAnswers) {
       for (const index of clue.indices) {
@@ -414,12 +404,35 @@ const Grid: React.FC = () => {
         localStorage.getItem("editor") && (
           <Information steps={steps} close={close} />
         )}
+      <TbArrowBigLeftFilled id="myArrow" />
     </Wrapper>
   );
 };
 export default Grid;
 
+const boxShadow = keyframes`
+ 0% {  font-size: 5.5rem; opacity: .9 }
+ 25% { font-size: 6rem; opacity: 0.75; }
+ 50% { font-size: 6.5; opacity: 0.5; }
+ 75% { font-size: 6rem; opacity: 0.75; }
+ /* 80% { font-size: 5.5rem; opacity: 0.9; }
+ 100% { font-size: 5rem; opacity: 1; } */
+`;
+
 const Wrapper = styled.div`
+  #myArrow {
+    animation-name: ${boxShadow};
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 5rem;
+    z-index: 99999;
+    color: red;
+  }
   cursor: "pointer";
   position: relative;
   .grid-container {

@@ -34,6 +34,11 @@ const Information: React.FC<InformationProps> = ({
   const selfRef = useRef<HTMLDivElement>(null);
   useTrapFocus(selfRef);
 
+  const closeInfo = () => {
+    setCurrStep(0);
+    close();
+  };
+
   const updateCurrStep = (index: 1 | -1) => {
     if (
       (index === -1 && currStep > 0) ||
@@ -65,7 +70,7 @@ const Information: React.FC<InformationProps> = ({
               <Button
                 key={button.buttonType}
                 {...button}
-                close={close}
+                close={closeInfo}
                 updateCurrStep={updateCurrStep}
               />
             );

@@ -136,6 +136,44 @@ const steps: Steps = [
     title: "Mommy, where do clues come from?",
     text: "Why, they come from clicking the 'AI Generate Clues' button, of course! Your answers are sent to OpenAI and it comes up with the clues for your puzzle. Pretty sweet!",
   }, // a single step
+  {
+    id: "step8",
+    buttons: [
+      {
+        text: "Exit",
+        buttonType: "cancel",
+      },
+      {
+        text: "Back",
+        buttonType: "back",
+      },
+      {
+        text: "Next",
+        buttonType: "next",
+      },
+    ],
+    title: "Saving Your Puzzle",
+    text: "Once you have completed all the previous steps and created your puzzle, you can save it by entering a name and hitting 'Save Crossword.'",
+  }, // a single step
+  {
+    id: "step9",
+    buttons: [
+      {
+        text: "Exit",
+        buttonType: "cancel",
+      },
+      {
+        text: "Back",
+        buttonType: "back",
+      },
+      {
+        text: "Next",
+        buttonType: "next",
+      },
+    ],
+    title: "Solving Your Puzzle",
+    text: "Once your puzzle is saved, you can try to solve it by clicking on 'Solve' and selecting it from the dropdown menu!",
+  }, // a single step
 ];
 
 /* what you might need in steps
