@@ -2099,8 +2099,26 @@ console.log(isSubset(arr3, arr2)); // Output: false
 
 
 ## 5/7/2024
-  - on first visit, we welcome the user and let them step through some modals (or skip)
+  - ~~on first visit, we welcome the user and let them step through some modals (or skip)~~ **DONE**
   - if 'editor' is in local storage, then it isn't their first visit and we skip the walkthrough
     - !local storage editor && walkthrough bruh
   - we should provide a menu where the user can start the tutorial later
   - we should also provide clickable info elements when the grid is in an invalid state
+
+## 7/7/24
+- we have our information modals
+- Grid.tsx renders Information
+- Information takes its info from walkthroughSteps  (content, title, buttons to display)
+- Grid.tsx currently renders an arrow that will point towards the thing the modal is referring to, eg click this button to do X
+  - for each step in the walkthrough, we want to 'attach' the arrow to the thing it needs to point to
+  - we should store the arrow type and what it is attached to in walkthroughSteps
+- keeping it simple (and less reusable)
+  - create a useRef for the element we want to attach our arrow to
+**DONE**
+
+- we have an arrow, we have a ref to our button, we added postion state and this tells our arrow where to be
+- not a great solution so far
+
+## Todo
+- refactor Grid so that it is the same as SolveGrid - a grid container with 3 columns
+  - at the moment we're using absolute positioning which is terrible

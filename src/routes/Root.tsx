@@ -11,7 +11,7 @@ const Root: React.FC = () => {
           <h1>Powered by OpenAI</h1>
           <RiOpenaiFill className="ai-icon" />
         </div>
-        <h1 className="title">CrossWord</h1>
+        <h1 className="title">GridMaster</h1>
         <div className="link-container">
           <NavLink to={"/"}>Create/Edit</NavLink>
           <NavLink to={"solver"}>Solve</NavLink>
@@ -65,6 +65,7 @@ const Wrapper = styled.div`
     display: grid;
     place-content: center;
     max-width: 100%;
+    width: 100%;
   }
   a {
     text-decoration: none;

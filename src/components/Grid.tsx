@@ -1,6 +1,5 @@
 // react
-import { useState, useEffect } from "react";
-import { TbArrowBigLeftFilled } from "react-icons/tb";
+import { useState, useEffect, useRef } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model";
@@ -9,8 +8,7 @@ import type { Puzzles } from "../models/Puzzles.model";
 import type Clue from "../classes/Clue";
 
 // libs
-import styled, { keyframes } from "styled-components";
-
+import styled from "styled-components";
 // components
 import Cell from "./Cell";
 import Information from "./Information";
@@ -43,6 +41,7 @@ import {
 
 // hooks
 import useModal from "../hooks/useModal";
+import ArrowLeft from "./ArrowLeft";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
@@ -69,10 +68,35 @@ const Grid: React.FC = () => {
       : true;
   });
   const { isVisible, show, close } = useModal();
+  const firstStepRef = useRef<HTMLButtonElement | null>(null);
+  const [position, setPosition] = useState<
+    { top: number; left: number } | undefined
+  >();
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });
   }, [gridState, clueList, isModified]);
+
+  useEffect(
+    () => {
+      if (firstStepRef?.current) {
+        console.log(firstStepRef?.current?.getBoundingClientRect()?.top);
+        setPosition({
+          top:
+            firstStepRef?.current &&
+            firstStepRef?.current?.getBoundingClientRect()?.top -
+              window.scrollY,
+          left:
+            firstStepRef?.current &&
+            firstStepRef?.current?.getBoundingClientRect()?.right -
+              window.scrollX,
+        });
+      }
+    },
+    [
+      // update each time window resize
+    ]
+  );
 
   const saveHandler = () => {
     let puzzles: Puzzles = [];
@@ -281,6 +305,7 @@ const Grid: React.FC = () => {
       </div>
       <div className="control-container">
         <button
+          ref={firstStepRef}
           type="button"
           disabled={!isValid || !clueList[0].answer.includes("")}
           onClick={() => generateClues()}
@@ -404,35 +429,16 @@ const Grid: React.FC = () => {
         localStorage.getItem("editor") && (
           <Information steps={steps} close={close} />
         )}
-      <TbArrowBigLeftFilled id="myArrow" />
+      {isVisible && position && (
+        <ArrowLeft top={position.top} left={position.left} />
+      )}
     </Wrapper>
   );
 };
 export default Grid;
 
-const boxShadow = keyframes`
- 0% {  font-size: 5.5rem; opacity: .9 }
- 25% { font-size: 6rem; opacity: 0.75; }
- 50% { font-size: 6.5; opacity: 0.5; }
- 75% { font-size: 6rem; opacity: 0.75; }
- /* 80% { font-size: 5.5rem; opacity: 0.9; }
- 100% { font-size: 5rem; opacity: 1; } */
-`;
-
 const Wrapper = styled.div`
-  #myArrow {
-    animation-name: ${boxShadow};
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 5rem;
-    z-index: 99999;
-    color: red;
-  }
+  border: red solid 1px;
   cursor: "pointer";
   position: relative;
   .grid-container {

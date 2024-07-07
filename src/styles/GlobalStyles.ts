@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
 ${reset}
 #root{
+  width: 100%;
   box-sizing: border-box !important;
 --primary-100: #8b9fc5;
 --primary-200: #778fbb;

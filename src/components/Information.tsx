@@ -51,15 +51,6 @@ const Information: React.FC<InformationProps> = ({
   return (
     <Wrapper ref={selfRef} data-testid="information">
       <div className="modal">
-        {/* <button
-          type="button"
-          data-testid="close-info"
-          onClick={closeInfo}
-          aria-label="close information"
-          className="close"
-        >
-          <FaTimes />
-        </button> */}
         <div className="info-container">
           <h1>{steps[currStep].title}</h1>
           <p>{steps[currStep].text}</p>

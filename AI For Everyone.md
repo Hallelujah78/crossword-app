@@ -1063,18 +1063,178 @@ By following these principles and steps, any company can evolve into a successfu
 - Common pitfalls in AI implementation.
   - Next video will discuss common pitfalls to avoid when implementing AI across the enterprise.
 
+### Vid 15: AI Pitfalls to Avoid
+- Aim to use AI to create valuable projects for yourself or your company and improve lives.
+- Avoid common pitfalls in AI development.
+
+**Five Key Points for Building AI in Your Company:**
+
+1. **Realistic Expectations:**
+   - AI can't solve everything; be realistic about its capabilities and limitations.
+   - Conduct technical and business diligence for feasible AI projects.
+
+2. **Collaborative Teams:**
+   - Don't rely solely on a few machine learning engineers for use cases.
+   - Pair engineering talent with business talent for valuable and feasible projects.
+
+3. **Iterative Process:**
+   - AI development is iterative; plan for multiple attempts.
+
+4. **Adapted Planning:**
+   - Traditional planning processes need adjustments for AI projects.
+   - Work with AI teams to establish appropriate timeline estimates, milestones, KPIs, and metrics.
+
+5. **Team Building:**
+   - Don't wait for superstar AI engineers; start with the team you have.
+   - Many capable AI engineers are available, including those from online courses.
+
+- Starting AI projects is crucial; improvement comes with subsequent projects.
+- Move on to the next steps with concrete actions in AI development.
+
+
+### Vid 16: Taking Your First Steps in AI
+- **Complex AI Products:**
+  - Examples: Smart speakers, self-driving cars
+  - Learnings: Roles and responsibilities in large AI teams, building large AI teams, AI transformation playbook
+
+- **Addressing Daunting Tasks:**
+  - Execution time: 2-3 years for some tasks
+  - Importance: Taking the first step is crucial
+  - Course impact: Taking the course is a significant first step
+
+- **Next Steps in AI:**
+  - **Learning with Friends:**
+    - Involving friends at work or personal friends
+    - Activities: Taking the course together, starting a reading group
+
+  - **Brainstorming Projects:**
+    - Starting small projects with friends, especially engineering friends
+    - Taking online machine learning courses to gain sufficient knowledge
+
+  - **In a Company:**
+    - Hiring machine learning or data science personnel
+    - Providing in-house training for existing talent
+    - Potentially appointing an AI leader (VP of AI or Chief AI Officer)
+
+- **AI Transformation:**
+  - Discussing AI transformation with CEO and Board
+  - Key question: Will the company be more valuable and effective with AI?
+  - Varying difficulty levels for execution
+
+- **Encouragement:**
+  - Use the tools and knowledge gained to help yourself, your company, and others
+  - Opportunities for both technical and non-technical individuals to contribute to AI efforts
+
+- **Optional Videos:**
+  - Topics: Survey of major AI application areas and techniques
+  - Examples: Computer Vision, Natural Language Processing, Reinforcement Learning, Unsupervised Learning
+  - Purpose: Better communication with AI engineers
+  - Encouragement to watch for deeper understanding
+
+- **Conclusion:**
+  - Thanking viewers and looking forward to next week's videos
+
+
+### Vid 17 Survey of Major AI Application Areas (optional)
+- AI is being successfully applied to various data types: image, video, language, speech.
+- The video surveys AI applications in these areas to inspire ideas for personal projects.
+- **Computer Vision**:
+  - **Image Classification and Object Recognition**:
+    - Example: Identifying a cat in a picture.
+    - Recognizing specific types of flowers and food.
+  - **Face Recognition**:
+    - Example: Unlocking devices based on face identity.
+    - Caution on respecting privacy.
+  - **Object Detection**:
+    - Example: Self-driving cars identifying and locating cars and pedestrians.
+  - **Image Segmentation**:
+    - Example: Precise boundaries around objects, such as identifying organs in X-rays.
+  - **Video Tracking**:
+    - Example: Tracking runners' movements over time in a video.
+    - Tracking wildlife, like birds, in videos.
+- **Natural Language Processing (NLP)**:
+  - **Text Classification**:
+    - Example: Classifying emails as spam or non-spam.
+    - Automatically categorizing product descriptions for online listings.
+
+- **Sentiment Recognition**
+  - Analyzes text to determine the sentiment, e.g., reviews.
+  - Example: "The food was good" might be a four-star review.
+  - Example: "Service was horrible" might be a one-star review.
+
+- **Information Retrieval**
+  - Finds relevant documents based on text queries.
+  - Example: Web search engines.
+  - Example: Internal corporate search systems for company documents.
+
+- **Name Entity Recognition**
+  - Identifies names of people, places, companies, etc., in text.
+  - Example: "Queen Elizabeth" and "Sir Paul McCartney" in a sentence.
+  - Can also extract company names, phone numbers, and countries from large document collections.
+
+- **Machine Translation**
+  - Translates text from one language to another.
+  - Example: Translating Japanese to English.
+
+- **Audio Data Processing**
+  - **Speech Recognition (Speech-to-Text)**
+    - Converts audio waveforms into text.
+    - Example: Identifying words in an audio recording of "machine learning."
+  - **Trigger Word Detection**
+    - Detects specific wake words like "Alexa" or "Hey Google."
+  - **Speaker ID**
+    - Identifies the speaker from their voice, similar to face recognition.
+  - **Speech Synthesis (Text-to-Speech, TTS)**
+    - Converts text into spoken audio.
+    - Example: "The quick brown fox jumps over the lazy dog," a sentence containing every letter from A to Z, when processed, produces natural-sounding audio.
+
+- **Generative AI**:
+  - Produces high-quality media: text, images, audio.
+  - **Text Generation**:
+    - Large language models handle tasks like writing, summarizing, and editing.
+    - Example: Suggesting creative names for chocolate ice cream.
+    - Prompts: Input texts to generate desired outputs.
+    - Benefits: Productivity boost for knowledge workers.
+  - **Image Generation**:
+    - Tools: Journey Ali, Adobe Firefly, Stable Diffusion.
+    - Process: Generate images from text descriptions.
+    - Example: "A purple-friendly robot eating ice cream."
+  - **Audio Generation**:
+    - Tools: SyboI's Stable Audio, Meta's Audicraft.
+    - Process: Generate music and sound effects from text prompts.
+    - Example: "Drum solo, 140 BPM."
+
+- **Impact of Generative AI**:
+  - Affects multiple industry sectors.
+  - Future lessons: Impact on jobs.
+
+- **AI in Robotics**:
+  - **Perception**: Understanding the environment using sensors.
+    - Example: 3-D laser scan from a self-driving car.
+  - **Motion Planning**: Creating a path and speed for movement.
+    - Example: Planning a left turn for a car.
+  - **Control**: Executing movement commands.
+    - Example: Steering, gas pedal, and brake controls.
+
+- **Machine Learning Applications**:
+  - Applies to both unstructured (images, audio, text) and structured data (tables).
+  - Popular focus: Unstructured data due to its universal appeal and ease of understanding.
+  - Structured data: Significant economic value, less media coverage due to specificity.
+
+- **Supervised Learning**:
+  - Most discussed technique: Learning from labeled data (input-output mappings).
+  - **Other AI Techniques**:
+    - Unsupervised learning.
+    - Reinforcement learning.
+    - Future lesson: Overview of various AI techniques.
+
+
+### Vid 18 Survey of Major AI Techniques
+
 ---
 
 summarize the following text with bullet points, keep the summary in the same order as the original content, retain all of the examples used:
 
-In the last video, you learned how to execute pilot projects to gain momentum, build an in house AI team and provide broad AI training. But if you want your business to not just gain momentum in the short term, using AI, but in the long term be a very valuable and maybe even defensible business, what can you do? Let's talk about AI strategy, as well as, perhaps important for some companies internal and external communications relative to AI. To recap, this is the five step AI transformation playbook, and in this video we'll dive more deeply into these final two steps. Step four of the AI transformation playbook is to develop an AI strategy, which I hope for you may mean to leverage AI to create an advantage specific to your industry sector. One unusual part of this playbook is that developing the AI strategy is step four, not step one. When I shared this with many CEOs, consistent requests or piece of feedback I got was, can you please put the strategy as step one because I want to figure out what is my company strategy, then want to find the resources and then I'll execute on the strategy. But I found that companies that try to define the strategy as step one before getting your feet wet, before trying out AI and knowing what it feels like to build an AI project. Companies like that tend to end up with sometimes very academic strategies that are sometimes not true to life. So for example, I've seen some CEOs copy and paste newspaper headlines into their strategy. We read that data is important, so you say, my strategy is to focus on collecting a lot of data. But for your company, that data may or may not be valuable, it may or may not be a good strategy for your company. So I tend to recommend to companies to start the other steps first. Execute the pilot projects, start building a little bit of a team, start providing some training, so that only after you understand AI and understand how it may apply to your business. That you then formulate your strategy, and I think this will work much better for your company than if you try to formulate an AI strategy before your company. Including specifically the executive team, has some slightly deeper understanding of what AI can and cannot do for your industry sector. In addition, you might consider designing a strategy that is aligned with the Virtuous Cycle of AI. Let me illustrate that with an example from web search. One of the reasons that web search is a very defensible business, meaning it's very difficult for new entrants to compete with the incumbents with the existing large web search engines, is this. If a company has a better product, maybe a slightly better product, then that web search engine can acquire more users. And having more users means that you collect more data, because you get to observe what different users click on when they search for different terms. And that data can be fed into an AI engine to produce an even better product. So this means that, the company with a somewhat better product ends up with even more users, ends up with even more data, and does an even better product with this link being created by modern AI technology. And it makes it very difficult for a new entrant to break into this self reinforcing positive feedback loop called the Virtuous Cycle of AI. Fortunately though, this Virtuous Cycle of AI can be used by smaller teams entering new verticals as well. So I think today it's very difficult to build a new web search engine to compete with Google, or Baidu, or Bing, or Yandex. But if you are entering a new vertical, a new application area where there isn't an entrenched incumbent. Then you might be able to develop a strategy that lets you be the one to take advantage of this virtuous cycle. Let me illustrate with an example. There is a company called Blue River that was acquired by John Deere for over 300 million US dollars. And Blue River makes agricultural technology using AI. So what they did was built these machines that would be towed behind a tractor in a big agricultural field. And this machine would take pictures of crops and figure out which is a crop and which is a weed, and use precision AI to kill off just the weeds, but not the crop. So I knew some of the founders of Blue River while they were Stanford students taking my class. And so to get the project started, they actually just used strappiness and sweat. They used their personal cameras and went out to a bunch of farms and took a lot of pictures of crops in these agricultural fields. So they started to collect pictures of heads of cabbage and weeds around the cabbage. Once they had enough data, start off with a small data set, they could train a basic product. And the first product, frankly, wasn't that great, it was trained on a small data set. But it kind of worked well enough to start to convince some users to start to use their product. To tow this machine behind a tractor in order to start cooling weeds for the farmers. And once this thing was running around the farms, through the process of taking pictures of heads of cabbage and killing off weeds, they naturally acquired more and more data. And over the next few years, what they did was, they were able to enter this positive feedback loop where having more data allows you to have a better product, have a better product allows you to convince more farmers to use it, and having farmers use it, allows you to collect more data. And over several years entering a virtuous cycle like this, can allow you to collect a huge data asset that then makes your business quite defensible. And in fact, at the time of acquisition, I'm pretty sure that they had a much bigger data asset of pictures of heads of cabbage lying in a field than even the large tech companies had. And this actually makes the business relatively defensible from even the large tech companies that have a lot of web search data but do not have nearly as many pictures as this company does of heads of cabbage lying in the agriculture fields.
-
-
-summarize the following text with bullet points, keep the summary in the same order as the original content, retain all of the examples used:
-
- One more piece of advice, a lot of people think that some of the large tech companies are great at AI, and I think that's true. Some of the large tech companies are very good at AI. But this doesn't mean you need to or should try to compete with these large tech companies on AI in general. Because a lot of AI needs to be specialized or verticalized for your industry sector. And so for most companies, it'll be in your best interest to build AI specialized for your industry, and to do great work on AI for your application areas. Rather than try to compete or feel like you need to compete left and right with the large tech companies on AI over the place, which just isn't true for most companies. Other elements of an AI strategy, we are going to live in an AI powered world, and the right strategy can help your company navigate these changes much more effectively. You should also consider creating a data strategy. Leading AI companies are very good at strategic data acquisition. For example, some of the large consumer facing AI companies will launch services like a free email service, or a free photo sharing service, or many other free services that do not monetize. But allows them to collect data in all sorts of ways that lets them learn more about you, so they can serve you more relevant ads and thereby monetize the data in a way that is quite different than direct monetization of that product. The way you acquire data is very different depending on your industry vertical. But I have been involved in what feels like these multi-year chess games, where other corporate competitors and I play multi-year games to see who can acquire the most strategic data assets. You might also consider building a unified data warehouse. If you have 50 different data warehouses under the control of 50 different vice presidents. Then it's almost impossible for an AI engineer or for a piece of AI software to pull together all of this data in order to connect the dots. For example, if the data warehouse for manufacturing is in a totally different place than the data warehouse for customer complaints. Then how can an AI engineer pull together this data to figure out what are the things that might happen in manufacturing that causes you to ship a faulty cell phone, that causes the customer to complain two months later. So a lot of leading AI companies have put a lot of upfront effort into pulling the data into a single data warehouse. Because this increases the odds that an engineer or a piece of software can connect the dots and spot the patterns between how an elevated temperature in manufacturing today, may result in a faulty device that leads to a customer complaint two months in the future. Thus letting you go back to improve your manufacturing processes, there are many examples of this in multiple industries. You can also use AI to create network effects and platform advantages. In industries with winner take all dynamics, AI can be a huge accelerator. For example, take the right sharing or the right hailing business. Today companies like Uber and Lyfts and Didi and Grab. Seem like they have relatively defensible businesses because there are platforms that connect drivers with passengers. And is quite difficult for a new entrant to accumulate both a large rider audience and a large passenger audience at the same time. Social media platforms like Twitter and Facebook are also very defensible because they are very strong network effects. Where having a lot of people on one platform makes that platform more attractive to other people. So it's very difficult for a new entrant to break in. If you are working in a business with these types of winner take all dynamics or winner take most dynamics. Then if AI can be used to help you with growing faster, for example, with accelerating user acquisition. Then that can perhaps translate into a much bigger chance that your company will be the one to succeed in this business vertical. Strategy is very company and industry and situation specific, so it's hard to give strategy advice that's completely general to every single company. But I hope that these principles give you a framework for thinking about what might be some key elements of an AI strategy for your company.
- 
- 
- summarize the following text with bullet points, keep the summary in the same order as the original content, retain all of the examples used:
- 
-  Now AI can also fit into more traditional strategy frameworks. For example, Michael Porter many years ago had written about low cost and high value strategies. If your company has a low cost strategy, then perhaps AI can be used to reduce costs for your business. Or if your company has a high value strategy to deliver really, really valuable products with a higher cost. Then you might use AI to focus on increasing the value of your products. And so, AI capabilities can also help augment existing elements of a broader corporate strategy. Lastly, as you're building these valuable and defensible businesses, I hope that you will also build only businesses that make people better off. AI is a superpower, this is a very powerful thing that you can do to build a great AI company. And so I hope that whatever you do, you do this only in ways that make humanity better off. The final step of the AI transformation playbook is to develop internal and external communications. AI can change a company and its products, and it's important to communicate appropriately with the relevant stakeholders about this. For example, this may include investor relations to make sure that your investors can value your company appropriately as an AI company. Investor relations may also include government relations. For example, AI is entering healthcare, which is a highly regulated industry, because government has a legitimate need to protect patients. And so for AI to affect these highly regulated industries, I think it's important for companies to communicate with governments and to work collaboratively with them in public-private partnerships. To make sure that, AI solutions bring people the benefits it can, while also making sure that governments can protect consumers and protect patients. So this will be true for healthcare, it'll be true for self driving cars, it will be true for finance and many other AI industry verticals. If your products change, then consumer or user education will be important. AI talent is very scarce in today's world, and so if you are able to showcase some of your initial successes, that could really help with talent and recruiting. Finally, internal communications is also important. If you are making a shift in your company, then many people internally may have worries, some legitimate and some less rational. About AI and internal communications, to reassure people where appropriate can only be helpful. With these five steps, I hope it gives you a vision for how you might be able to help a company become good at AI. I hope you enjoyed these two videos on the AI transformation playbook. I've seen companies become much more valuable and much more effective by embracing and become good at AI. And I hope these ideas may help you take a first step toward helping your company good at AI. Having said that, I've also seen many common pitfalls that companies run into when trying to implement AI across the enterprise. Let's take a look at some of these common pitfalls in the next video so that hopefully you can avoid them. Let's go on to the next video.
+You've heard me mention generative AI a few times so far in this course. Generative I is a collection of AI systems that can produce high-quality media, specifically text, images, or audio. Let's take a look at these applications of generative AI in more detail. Large language models are great at text generation tasks, including writing content from scratch, writing summaries, copy editing, that is, editing text, improve grammar clarity, and so on and chatting. For example, you can give one of these models an instruction like suggests the funny creative names for a line of chocolate ice cream and the model will generate some creative-sounding names like Les. Note that this input text here is known as a prompt and writing prompts to generate the output you want is becoming a useful skill for many jobs. I find that having a large language model as a brainstorming partner makes me more productive. If you're able to write prompts effectively, perhaps you find it a useful tool and work, or in your personal life as well. In fact, I think large language models are now at the point where almost all knowledge workers can get at least a bit of a productivity boost by learning and using them in their day-to-day workflow. Generative AI can also create new images from scratch software like Journey Ali, Adobe Firefly, and Stable Diffusion have learned how to generate images from text descriptions by learning from millions of images on the Internet. With one of these image generation models, you can input an example prompt, like a purple-friendly robot eating ice cream and the model will generate a high-quality image for you that matches your prompt. What a Q robot. Lastly, generative AI is also capable of generating audio. Previously we saw how speech synthesis models can convert text to speech. Audio software also exists like SyboI's Stable Audio or Meta's Audicraft. They can generate music and sound effects from a text prom so by writing a prompt like drum solo, 140 BPM, or beats per minute. You can use a music generation model to create an audio track like this one.
+Play video starting at :12:53 and follow transcript12:53
+Generative AI is capable of creating several types of content. This is affecting many industry sectors and we'll learn more about the impact of AI, including generative AI on jobs next week. AI is also applied to many applications in robotics and you've already seen one example in the self-driving car. In robotics, the term perception means figuring out what's in the world around you based on the senses you have, be it cameras or radar or lied. Shown on the right is the three-D laser scan or the light-up scan of a cell-driving car as well as the vehicles that this cell-driving car in the middle has detected in the vicinity of your car. Motion planning refers to finding a path for your robot to follow if your car wants to make a left turn. The motion planner might plan a path as well as a speed for the car to make a left turn that way. Finally, control refers to sending commands to the motors, such as your steering wheel motor, as well as your gas pedal and brake motors, in order to make the car smoothly follow the path that you want. On this line, focus on the software and the AI aspects of robotics. Of course, there's also a lot of important work being done to build hardware for robotics as well. But a lot of the work of AI on perception, motion planning, and control has focused on the software rather than the hardware of robotics. In addition to these major application areas, machine learning is also very broadly used. The examples you've seen in this video relate mainly to unstructured data, such as images, audio, and text. Machine learning is applied at least as much to structured data and that means these tables of data, some of which you saw in the earlier videos. But because unstructured data such as images, is so easy for humans to understand, there's something very universal, very easy for any person to understand and empathize with. When we talk about an AI system that recognizes a cat, the popular press tends to cover AI progress on unstructured data much more than it does AI on structured data. Structured data also tends to be more specific to a single company, and so it's harder for people to write about or understand. But AI on structured data or machine learning on structured data is creating tremendous economic value today, as well as AI on unstructured data. I hope this survey of AI application areas gives you a sense of the wide range of data that AI is successfully applied to today and maybe this will even inspire you to think of how some of these application areas may be useful for your own projects. Now, so far, the one AI technique we've spend the most time talking about is supervised learning. That means learning input, output, or A, B mappings from labeled data, where you give the AI system both A and B. But that's not the only AI technique out there. In fact, the term supervised learning almost invites the question of what is unsupervised learning. Or you might also have heard from media articles from the news about reinforcement learning. What are all these other techniques? In the next video, the final optional video for this week, we'll do a survey of AI techniques and I hope that through that maybe you'll see if some of these other AI techniques and supervised learning could be useful for your projects as well. Let's go on to the final optional video for the week.
