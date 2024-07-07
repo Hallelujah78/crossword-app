@@ -31,11 +31,10 @@ export default Cell;
 const Wrapper = styled.div<{ id: number | undefined }>`
   cursor: pointer;
   position: relative;
-
   display: inline-block;
-  height: calc(85vh / 13);
-  width: calc(85vh / 13);
-  /* border: black solid 1px !important; */
+  height: calc(39vw / 13);
+  width: calc(39vw / 13);
+  border: black solid 1px !important;
   .clue-number {
     position: absolute;
     top: 0;
@@ -47,7 +46,7 @@ const Wrapper = styled.div<{ id: number | undefined }>`
     width: 100%;
     height: 100%;
     text-align: center;
-    line-height: calc(85vh / 13);
+    line-height: calc(39vw / 13);
     font-weight: bold;
   }
 `;

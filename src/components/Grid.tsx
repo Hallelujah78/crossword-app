@@ -80,7 +80,10 @@ const Grid: React.FC = () => {
   useEffect(
     () => {
       if (firstStepRef?.current) {
-        console.log(firstStepRef?.current?.getBoundingClientRect()?.top);
+        console.log(
+          "the top of our el",
+          firstStepRef?.current?.getBoundingClientRect()?.top
+        );
         setPosition({
           top:
             firstStepRef?.current &&
@@ -294,15 +297,6 @@ const Grid: React.FC = () => {
 
   return (
     <Wrapper>
-      <div className="grid-container">
-        {gridState.map((cell) => {
-          return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
-        })}
-
-        {clueList[0].answer.includes("") ? null : (
-          <div className="prevent-click"> </div>
-        )}
-      </div>
       <div className="control-container">
         <button
           ref={firstStepRef}
@@ -423,6 +417,15 @@ const Grid: React.FC = () => {
           </button>
         </form>
       </div>
+      <div className="grid-container">
+        {gridState.map((cell) => {
+          return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
+        })}
+
+        {clueList[0].answer.includes("") ? null : (
+          <div className="prevent-click"> </div>
+        )}
+      </div>
       {isVisible &&
         // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
         // when finished development
@@ -438,22 +441,29 @@ const Grid: React.FC = () => {
 export default Grid;
 
 const Wrapper = styled.div`
-  border: red solid 1px;
-  cursor: "pointer";
-  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: calc(100vh - 3rem);
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 2fr 0.5fr;
+
   .grid-container {
     grid-template-columns: repeat(13, 1fr);
     display: grid;
-    width: auto;
-    height: auto;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-left: 4rem;
   }
 
   .control-container {
     display: grid;
-    position: absolute;
-    top: 2rem;
-    left: -25vw;
-    width: 22vw;
+    height: calc(100vh - 3rem);
+    place-content: center;
+
     button,
     input,
     label {

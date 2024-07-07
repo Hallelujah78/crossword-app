@@ -7,6 +7,7 @@ interface ArrowLeftProps {
 }
 
 const ArrowLeft: React.FC<ArrowLeftProps> = ({ top, left }) => {
+  console.log("the top val for arrow left: ", top);
   return (
     <Wrapper top={top} left={left}>
       <TbArrowBigLeftFilled id="myArrow" />
@@ -17,18 +18,19 @@ const ArrowLeft: React.FC<ArrowLeftProps> = ({ top, left }) => {
 export default ArrowLeft;
 
 const boxShadow = keyframes`
- 0% {  font-size: 5.5rem; opacity: .9 }
- 25% { font-size: 6rem; opacity: 0.75; }
- 50% { font-size: 6.5; opacity: 0.5; }
- 75% { font-size: 6rem; opacity: 0.75; }
+ 0% {   opacity: .9 }
+ 25% { opacity: 0.75; }
+ 50% {  opacity: 0.5; }
+ 75% {  opacity: 0.75; }
 
 `;
 
 const Wrapper = styled.div<{ top: number; left: number }>`
   z-index: 99999;
   position: absolute;
-  top: ${(props) => props.top}px;
+  top: ${(props) => props.top - 48}px;
   left: ${(props) => props.left}px;
+  transform: translate(0, -25%);
   #myArrow {
     animation-name: ${boxShadow};
     animation-duration: 2s;
