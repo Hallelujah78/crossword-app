@@ -84,7 +84,7 @@ const steps: Steps = [
     ],
     title: "Generate Answers",
     text: "If your grid is valid, you'll be able to click the 'Generate Answers' button to, well, er ... generate answers for your crossword. Hurray!",
-    component: null,
+    component: ArrowLeft,
   },
   {
     id: "step5",

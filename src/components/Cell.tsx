@@ -34,7 +34,7 @@ const Wrapper = styled.div<{ id: number | undefined }>`
   display: inline-block;
   height: calc(39vw / 13);
   width: calc(39vw / 13);
-  border: black solid 1px !important;
+  border: black solid 1px;
   .clue-number {
     position: absolute;
     top: 0;

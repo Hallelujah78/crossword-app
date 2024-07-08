@@ -2120,5 +2120,16 @@ console.log(isSubset(arr3, arr2)); // Output: false
 - not a great solution so far
 
 ## Todo
-- refactor Grid so that it is the same as SolveGrid - a grid container with 3 columns
-  - at the moment we're using absolute positioning which is terrible
+- ~~refactor Grid so that it is the same as SolveGrid - a grid container with 3 columns~~ **DONE**
+  - ~~at the moment we're using absolute positioning which is terrible~~ **FIXED**
+
+## Todo
+- for each component in walkthroughSteps, we need to associate it with one of our refs
+  - the id of the step in walkthroughComponents could be added as an ID to each component that we want to attach our Arrow (or whatever) to
+- we pass all the refs to our Information component, and based on the currStep, we can do something like:
+
+```js 
+stepRefs.querySelector('#step1')
+```
+- and can we chain getbounding client rect off this to get the top and left positions?
+  - yes, because this is literally what we're doing inside a useEffect in Grid.tsx at the moment

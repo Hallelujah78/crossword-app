@@ -24,6 +24,7 @@ import ArrowLeft from "./ArrowLeft";
 // assets
 
 interface InformationProps extends ComponentPropsWithoutRef<"div"> {
+  myRefs;
   close: () => void;
   steps: Steps;
   top: number;
@@ -32,6 +33,7 @@ interface InformationProps extends ComponentPropsWithoutRef<"div"> {
 }
 
 const Information: React.FC<InformationProps> = ({
+  myRefs,
   close,
   steps,
   top,
@@ -47,6 +49,9 @@ const Information: React.FC<InformationProps> = ({
   };
 
   const renderStep = () => {
+    // using myRefs.current[currStep], we can derive the top
+    // and left values
+    // we don't need position state in Grid to be passed down to info
     const { component: Arrow } = steps[currStep];
     if (Arrow) {
       return <Arrow top={top} left={left} />;

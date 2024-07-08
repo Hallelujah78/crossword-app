@@ -68,6 +68,7 @@ const Grid: React.FC = () => {
   });
   const { isVisible, show, close } = useModal();
   const firstStepRef = useRef<HTMLButtonElement | null>(null);
+  const stepRefs = useRef([]);
   const [position, setPosition] = useState<
     { top: number; left: number } | undefined
   >();
@@ -78,6 +79,7 @@ const Grid: React.FC = () => {
 
   useEffect(
     () => {
+      console.log(stepRefs.current[0]);
       if (firstStepRef?.current) {
         console.log(
           "the top of our el",
@@ -337,6 +339,9 @@ const Grid: React.FC = () => {
 
         <br />
         <button
+          ref={(el) => {
+            stepRefs.current[0] = el;
+          }}
           disabled={clueList[0].answer.includes("") || clueList[0].clue !== ""}
           type="button"
           onClick={() => {
@@ -431,6 +436,7 @@ const Grid: React.FC = () => {
         // when finished development
         localStorage.getItem("editor") && (
           <Information
+            myRefs={stepRefs}
             steps={steps}
             close={close}
             top={position?.top}
