@@ -68,7 +68,7 @@ const Grid: React.FC = () => {
   });
   const { isVisible, show, close } = useModal();
   const firstStepRef = useRef<HTMLButtonElement | null>(null);
-  const stepRefs = useRef([]);
+  const stepRefs = useRef<HTMLElement[]>([]);
   const [position, setPosition] = useState<
     { top: number; left: number } | undefined
   >();

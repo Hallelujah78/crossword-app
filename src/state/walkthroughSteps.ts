@@ -24,7 +24,7 @@ const steps: Steps = [
     ],
     title: "Welcome to the CrossWord creation tool!",
     text: "Let's walk through what you can do here.",
-    component: null,
+    component: ArrowLeft,
   },
   {
     id: "step2",

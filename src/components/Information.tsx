@@ -1,5 +1,10 @@
 // react
-import { useRef, useState, type ComponentPropsWithoutRef } from "react";
+import {
+  useRef,
+  useState,
+  type ComponentPropsWithoutRef,
+  MutableRefObject,
+} from "react";
 
 // third party
 
@@ -24,7 +29,7 @@ import ArrowLeft from "./ArrowLeft";
 // assets
 
 interface InformationProps extends ComponentPropsWithoutRef<"div"> {
-  myRefs;
+  myRefs: MutableRefObject<HTMLElement[]>;
   close: () => void;
   steps: Steps;
   top: number;
@@ -49,11 +54,17 @@ const Information: React.FC<InformationProps> = ({
   };
 
   const renderStep = () => {
-    // using myRefs.current[currStep], we can derive the top
-    // and left values
-    // we don't need position state in Grid to be passed down to info
+    let currRef: HTMLElement;
+    let top: number = 0;
+    let left: number = 0;
+    if (myRefs.current[currStep]) {
+      currRef = myRefs.current[currStep];
+      top = currRef.getBoundingClientRect().top;
+      left = currRef.getBoundingClientRect().right;
+    }
+
     const { component: Arrow } = steps[currStep];
-    if (Arrow) {
+    if (Arrow && top && left) {
       return <Arrow top={top} left={left} />;
     }
   };
