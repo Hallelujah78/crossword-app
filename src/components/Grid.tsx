@@ -41,7 +41,6 @@ import {
 
 // hooks
 import useModal from "../hooks/useModal";
-import ArrowLeft from "./ArrowLeft";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
@@ -427,14 +426,18 @@ const Grid: React.FC = () => {
         )}
       </div>
       {isVisible &&
+        position &&
         // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
         // when finished development
         localStorage.getItem("editor") && (
-          <Information steps={steps} close={close} />
+          <Information
+            steps={steps}
+            close={close}
+            top={position?.top}
+            left={position?.left}
+            isVisible={isVisible}
+          />
         )}
-      {isVisible && position && (
-        <ArrowLeft top={position.top} left={position.left} />
-      )}
     </Wrapper>
   );
 };
@@ -445,7 +448,7 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - var(--nav-height));
   display: grid;
   place-content: center;
   grid-template-columns: 1fr 2fr 0.5fr;
@@ -461,7 +464,7 @@ const Wrapper = styled.div`
 
   .control-container {
     display: grid;
-    height: calc(100vh - 3rem);
+    height: calc(100vh - var(--nav-height));
     place-content: center;
 
     button,

@@ -61,7 +61,7 @@ const Wrapper = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box !important;
-    height: calc(100vh - 3rem - 1px);
+    height: calc(100vh - var(--nav-height));
     display: grid;
     place-content: center;
     max-width: 100%;

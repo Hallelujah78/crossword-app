@@ -12,7 +12,7 @@ const Solve: React.FC = () => {
 export default Solve;
 
 const Wrapper = styled.div`
-  height: calc(100vh - 3rem - 1px);
+  height: calc(100vh - var(--nav-height));
   display: grid;
   place-content: center;
   max-width: 100%;

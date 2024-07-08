@@ -12,10 +12,12 @@ import Button from "../components/Button";
 // components
 
 // state
+import steps from "../state/walkthroughSteps";
 
 // hooks
 import useTrapFocus from "../hooks/useTrapFocus";
 import type { Steps } from "../state/walkthroughSteps";
+import ArrowLeft from "./ArrowLeft";
 
 // models
 
@@ -24,11 +26,16 @@ import type { Steps } from "../state/walkthroughSteps";
 interface InformationProps extends ComponentPropsWithoutRef<"div"> {
   close: () => void;
   steps: Steps;
+  top: number;
+  left: number;
+  isVisible: boolean;
 }
 
 const Information: React.FC<InformationProps> = ({
   close,
   steps,
+  top,
+  left,
 }: InformationProps) => {
   const [currStep, setCurrStep] = useState(0);
   const selfRef = useRef<HTMLDivElement>(null);
@@ -37,6 +44,13 @@ const Information: React.FC<InformationProps> = ({
   const closeInfo = () => {
     setCurrStep(0);
     close();
+  };
+
+  const renderStep = () => {
+    const { component: Arrow } = steps[currStep];
+    if (Arrow) {
+      return <Arrow top={top} left={left} />;
+    }
   };
 
   const updateCurrStep = (index: 1 | -1) => {
@@ -68,6 +82,8 @@ const Information: React.FC<InformationProps> = ({
           })}
         </div>
       </div>
+
+      {renderStep()}
     </Wrapper>
   );
 };
@@ -80,7 +96,7 @@ const Wrapper = styled.div`
   font-size: calc(1rem + 0.390625vw);
   text-align: center;
   z-index: 9999;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - var(--nav-height));
   width: 100%;
   display: grid;
   place-content: center;

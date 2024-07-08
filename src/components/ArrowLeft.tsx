@@ -1,7 +1,7 @@
 import { TbArrowBigLeftFilled } from "react-icons/tb";
 import styled, { keyframes } from "styled-components";
 
-interface ArrowLeftProps {
+export interface ArrowLeftProps {
   top: number;
   left: number;
 }

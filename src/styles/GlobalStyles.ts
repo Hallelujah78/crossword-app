@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
 ${reset}
 #root{
-  
+--nav-height: 3rem;  
   box-sizing: border-box !important;
 --primary-100: #8b9fc5;
 --primary-200: #778fbb;

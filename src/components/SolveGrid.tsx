@@ -763,7 +763,7 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - var(--nav-height));
   display: grid;
   grid-template-columns: 0.8fr 2fr 2fr;
   .grid-button-container {
