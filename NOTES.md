@@ -2133,3 +2133,12 @@ stepRefs.querySelector('#step1')
 ```
 - and can we chain getbounding client rect off this to get the top and left positions?
   - yes, because this is literally what we're doing inside a useEffect in Grid.tsx at the moment
+- note: our first step has no associated ref - it's just the 'welcome' message
+**DONE**
+
+## 9/7/2024 - day 756, food is becoming scarce, please help...
+- in our ArrowLeft component, we're currently translating the position of the component by -25%
+  - this is is 25% of the height of the Arrow BUT we want to translate it by a % of the height or width of the element that it is attached to to ensure it is centered on that element
+- since we're setting top and translating, we can use the `+ prop.height/2` when setting top
+  - this centers the top of our arrow container with the center of the element we're pointing towards
+- then we simply translate the arrow's Y by -50% and the center of our arrow is pointing to the center of our element

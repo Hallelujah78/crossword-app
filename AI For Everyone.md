@@ -1229,12 +1229,118 @@ By following these principles and steps, any company can evolve into a successfu
     - Future lesson: Overview of various AI techniques.
 
 
-### Vid 18 Survey of Major AI Techniques
+### Vid 18 Survey of Major AI Techniques (optional)
+
+
+## Week 4
+### Vid 1 Introduction
+- Welcome back to the fourth and final week of AI for everyone.
+- AI is a superpower that enables small teams to impact many lives.
+- It's crucial to understand AI trends to ensure positive societal impact.
+- AI is changing the world but is also surrounded by unnecessary hype.
+- Having a realistic view of AI is important for citizens, business leaders, and government leaders.
+- In week one, you learned about some technical limitations of AI.
+- AI has other limitations, such as:
+  - Bias and unfair discrimination against minorities and other groups.
+  - Susceptibility to adversarial attacks (e.g., spammers attacking spam filters).
+- AI is widely used in developed economies like the US and China.
+- AI will significantly impact developing economies and the global job landscape.
+- Many issues in AI relate to ethics, a complex topic without simple answers.
+- The topic of AI and ethics could warrant its own extensive course.
+- This week will touch on major ethical issues in AI.
+- The goal is to build or use AI with an understanding of these major issues.
+- This week will wrap up the AI for everyone course.
+- The next video will discuss having a realistic view of AI beyond technical and performance limitations.
+
+### Vid 2 A Realistic View of AI
+
+- **Impact of AI on Society**:
+  - AI is significantly affecting society and many people's lives.
+  - Important to have a realistic view of AI, avoiding extreme optimism or pessimism.
+
+- **Goldilocks Rule for AI**:
+  - Story of Goldilocks and the three bears: porridge should be neither too hot nor too cold, and a bed should be neither too firm nor too soft.
+  - Similarly, we should have a balanced view of AI's capabilities.
+
+- **Avoiding Over-Optimism**:
+  - AI is powerful but won't solve all of humanity's problems or create a utopia.
+  - Over-optimism stems from beliefs in imminent AI sentience, general intelligence, and superintelligence.
+  - Unrealistic expectations of breakthroughs in healthcare and wealth creation.
+
+- **Avoiding Over-Pessimism**:
+  - Fears about AI superintelligence leading to human extinction are unlikely.
+  - Risks exist (e.g., bias, inaccurate outputs) but fears of losing control to AI are exaggerated.
+  - Humanity has experience managing powerful entities like corporations and nation-states.
+
+- **Realistic View of AI**:
+  - AI is a powerful tool with limitations, such as bias and inaccurate outputs.
+  - It is creating significant economic value and has potential for more.
+  - AI will continue to grow and benefit more people.
+
+- **Goldilocks Principle for AI**:
+  - Balance between optimism and pessimism is key.
+  - Share the Goldilocks rule to promote a realistic view of AI.
+
+- **Explainability Issue in AI**:
+  - Many high-performing AI systems are black boxes.
+  - Example: AI diagnosing pneumothorax from an x-ray, but how to trust its diagnosis?
+  - Explainability helps gain confidence in AI outputs.
+  - Humans also struggle to explain their decision-making process.
+  - Explainability is crucial for AI acceptance and improvement.
+
+- **Bias and Discrimination in AI**:
+  - AI can inherit biases from data reflecting societal inequalities.
+  - The AI community is working to address these issues but much work remains.
+
+- **Adversarial Attacks on AI**:
+  - AI systems can be vulnerable to deliberate attempts to fool them.
+  - Important to protect AI systems from such attacks.
+
+- **Importance of Addressing AI Issues**:
+  - Bias and adversarial attacks on AI are critical issues for developers and society.
+  - Next video will explore AI and bias in more detail.
+
+### Vid 3 AI and Society
+- **AI Bias and Discrimination:**
+  - AI systems can develop biases and discriminate against people.
+  - Example: Microsoft found AI learned unhealthy stereotypes from Internet text files.
+  
+- **Bias in AI Analogies:**
+  - AI learns word associations from Internet text.
+  - Example: "man is to woman as father is to mother" reflects typical usage.
+  - Bias Example: "man is to computer programmer as woman is to homemaker."
+
+- **Reducing Bias in AI Systems:**
+  - AI stores words as sets of numbers based on usage statistics.
+  - Bias occurs when these statistics reflect societal biases.
+  - Example: AI analogy "man is to computer programmer as woman is to homemaker" is biased.
+
+- **Importance of Reducing Bias:**
+  - AI makes important decisions, so bias matters.
+  - Examples:
+    - Hiring AI discriminating against women.
+    - Facial recognition systems working better for lighter skin tones.
+    - Loan approval systems discriminating against minority ethnic groups.
+
+- **AI Reinforcing Stereotypes:**
+  - Example: Image search showing only men for "Chief Executive Officer" discourages diversity.
+
+- **Efforts to Combat AI Bias:**
+  - Technical solutions: Zeroing out bias-related numbers.
+  - Using more inclusive data.
+  - Transparency and auditing processes.
+  - Example: Checking facial recognition accuracy for different skin tones.
+  - Diverse workforce helps spot and address bias.
+
+- **Optimism for Reducing AI Bias:**
+  - Better ideas for reducing AI bias than human bias.
+  - Potential to make AI decisions more fair and less biased.
+  
+- **Next Topic:**
+  - Introduction to adversarial attacks on AI and protection strategies.
 
 ---
 
 summarize the following text with bullet points, keep the summary in the same order as the original content, retain all of the examples used:
 
-You've heard me mention generative AI a few times so far in this course. Generative I is a collection of AI systems that can produce high-quality media, specifically text, images, or audio. Let's take a look at these applications of generative AI in more detail. Large language models are great at text generation tasks, including writing content from scratch, writing summaries, copy editing, that is, editing text, improve grammar clarity, and so on and chatting. For example, you can give one of these models an instruction like suggests the funny creative names for a line of chocolate ice cream and the model will generate some creative-sounding names like Les. Note that this input text here is known as a prompt and writing prompts to generate the output you want is becoming a useful skill for many jobs. I find that having a large language model as a brainstorming partner makes me more productive. If you're able to write prompts effectively, perhaps you find it a useful tool and work, or in your personal life as well. In fact, I think large language models are now at the point where almost all knowledge workers can get at least a bit of a productivity boost by learning and using them in their day-to-day workflow. Generative AI can also create new images from scratch software like Journey Ali, Adobe Firefly, and Stable Diffusion have learned how to generate images from text descriptions by learning from millions of images on the Internet. With one of these image generation models, you can input an example prompt, like a purple-friendly robot eating ice cream and the model will generate a high-quality image for you that matches your prompt. What a Q robot. Lastly, generative AI is also capable of generating audio. Previously we saw how speech synthesis models can convert text to speech. Audio software also exists like SyboI's Stable Audio or Meta's Audicraft. They can generate music and sound effects from a text prom so by writing a prompt like drum solo, 140 BPM, or beats per minute. You can use a music generation model to create an audio track like this one.
-Play video starting at :12:53 and follow transcript12:53
-Generative AI is capable of creating several types of content. This is affecting many industry sectors and we'll learn more about the impact of AI, including generative AI on jobs next week. AI is also applied to many applications in robotics and you've already seen one example in the self-driving car. In robotics, the term perception means figuring out what's in the world around you based on the senses you have, be it cameras or radar or lied. Shown on the right is the three-D laser scan or the light-up scan of a cell-driving car as well as the vehicles that this cell-driving car in the middle has detected in the vicinity of your car. Motion planning refers to finding a path for your robot to follow if your car wants to make a left turn. The motion planner might plan a path as well as a speed for the car to make a left turn that way. Finally, control refers to sending commands to the motors, such as your steering wheel motor, as well as your gas pedal and brake motors, in order to make the car smoothly follow the path that you want. On this line, focus on the software and the AI aspects of robotics. Of course, there's also a lot of important work being done to build hardware for robotics as well. But a lot of the work of AI on perception, motion planning, and control has focused on the software rather than the hardware of robotics. In addition to these major application areas, machine learning is also very broadly used. The examples you've seen in this video relate mainly to unstructured data, such as images, audio, and text. Machine learning is applied at least as much to structured data and that means these tables of data, some of which you saw in the earlier videos. But because unstructured data such as images, is so easy for humans to understand, there's something very universal, very easy for any person to understand and empathize with. When we talk about an AI system that recognizes a cat, the popular press tends to cover AI progress on unstructured data much more than it does AI on structured data. Structured data also tends to be more specific to a single company, and so it's harder for people to write about or understand. But AI on structured data or machine learning on structured data is creating tremendous economic value today, as well as AI on unstructured data. I hope this survey of AI application areas gives you a sense of the wide range of data that AI is successfully applied to today and maybe this will even inspire you to think of how some of these application areas may be useful for your own projects. Now, so far, the one AI technique we've spend the most time talking about is supervised learning. That means learning input, output, or A, B mappings from labeled data, where you give the AI system both A and B. But that's not the only AI technique out there. In fact, the term supervised learning almost invites the question of what is unsupervised learning. Or you might also have heard from media articles from the news about reinforcement learning. What are all these other techniques? In the next video, the final optional video for this week, we'll do a survey of AI techniques and I hope that through that maybe you'll see if some of these other AI techniques and supervised learning could be useful for your projects as well. Let's go on to the final optional video for the week.
+How does an AI system become bias and therefore discriminate against some people? And how do we try to reduce or eliminate this effect in our AI systems? Let's start with an example. A group at Microsoft found this remarkable result that when AI learns from text file on the internet, it can learn unhealthy stereotypes. To the credit, they also proposed technical solutions for reducing the amount of bias in this type of AI system. Here's what they found. By having an AI read text on the Internet, it can learn about words, and you can ask it to reason about analogies. So, you can quiz the AI system now that you've read all this text on the Internet, in the analogy, man is to woman as father is to what? So, the AI will output the word mother, which reflects the way these words are typically used on the Internet. If you ask it men is to women, as king is to what? Then the same AI system will say, as King is to Queen, which again seems reasonable relative to the way these words are used on the Internet. The researchers also found the following result, which is that if you ask it, man is to computer programmer as women is to what? That same AI system would output the answer, woman is to homemaker. I think this answer is really unfortunate. Less bias answer would be of words to say, woman is to computer programmer. If we want our AI system to understand that men and women can equally be computer programmers, just as men and women can equally be homemakers, then we would like it to output man is to computer programmer, as woman is to computer programmer, and also man is to homemaker as woman is to homemaker. How does an AI system learn to become bias like this from data? Let's dive a bit more into the technical details. The way an AI system stores words is using a set of numbers. So, let's say the word man is stored, or we sometimes say represented as the two numbers (1,1). The way an AI system comes up with these numbers is through statistics of how the word man is used on the Internet. The specific process for how these numbers are computed is quite complex and I won't go into that here. But these numbers represent the typical usage of these words. In practice, an AI might have hundreds or thousands of numbers to store a word, but I'm just going to use two numbers here to keep the example simpler. Let me take this number and plot it on a chart. So, the word man, I'm going to plot at the position 1,1 on the figure on the right. By looking at the statistics of how the words or how the phrase computer programmer is used on the Internet, the AI will have a different pair of numbers, say (3,2), to store or to represent the phrase computer programmer. Similarly, by looking at how the word woman is used, it'll come up with a different pair of numbers, say (2,3), to store or to represent the word woman. When you ask the AI system to compute the analogy above, man is to computer programmer, as women is to what? Then what the AI system will do, is construct a parallelogram that looks like this. It will ask, what is the word associated with the position (4,4)? Because it will think that is the answer to this analogy. One way to think about this mathematically is that the AI thinks the relationship of man to computer programmer is that you start from the word man, go two steps to the right, and one step up. So, to find the same answer for women is to what? You would also go two steps to the right, and one step up. Unfortunately, when these numbers are derived from texts on the Internet, and the AI system finds that the way the word homemaker is used on the internet causes it to be placed to the position (4,4), which is why the AI system comes up with this bias analogy. AI systems are already making important decisions today, and will continue to do so in the future as well. So, bias matters. For example, there's a company that was using AI for hiring, and found that their hiring too discriminated against women. This is clearly unfair, and so this company shut down their tool. Second, there're also some facial recognition systems that seem to work more accurately for light-skinned and dark-skinned individuals. If an AI system is trained primarily on data of lighter skin individuals, then it will be more accurate for that category of individuals to the extent that these systems are used in, for example, criminal investigations, this can create a very biased and unfair effect for dark-skinned individuals. So, many face recognition teams today are working hard to ensure that the systems do not exhibit this type of bias. There have also been AI or statistical loan approval systems that wound up discriminating against some minority ethnic groups, and quoted them a higher interest rate. Banks have also been working to make sure to diminish or eliminate this type of bias in their approval systems. Finally, I think it's important that AI systems do not contribute to the toxic effect of reinforcing unhealthy stereotypes. For example, if an eight-year old girl goes to an image search engine and searches for Chief Executive Officer, if they see only pictures of men or if they see no one that looks like themselves either by gender or ethnicity, we don't want them to be discouraged from pursuing a career that might lead her to someday be a Chief Executive Officer of a large company. Because of these issues, the AI community has put a lot of effort into combating bias. For example, we're starting to have better and better technical solutions for reducing bias in AI systems. In the example you saw at the start of this video of the AI outputting buyers analogies. Simplifying the description a little bit, researchers have found that when an AI system learns a lot of different numbers with which to store words, there are few numbers that correspond to the bias. If you zero out those numbers, just set them to zero, then the bias diminishes significantly. A second solution is to try to use less bias and or more inclusive data. For example, if you are building a face-recognition system, and make sure to include data from multiple ethnicities, and all genders, then your system will be less biased and more inclusive. Second, many AI teams are subjecting their systems to better transparency and or auditing processes, so that we can constantly check what types of bias, if any, these AI systems are exhibiting, so that we can at least recognize the problem if it exists, and then take steps to address it. For example, many face recognition teams are systematically checking how accurate their system is on different subsets of the population to check whether, it is more or less accurate on dark-skinned versus light-skinned individuals, for example. Having transparent systems as well as systematic auditing processes increases the odds that will at least quickly spot a problem, in case there is one, so that we can fix it. Finally, I think having a diverse workforce will also help reduce bias. If you have a diverse workforce, then the individuals in your workforce are more likely to be able to spot different problems, and maybe they'll help make your data more diverse and more inclusive in the first place. By having more unique points of view as you're building AI systems, I think there's a hope all of us create less biased applications. AI systems are making really important decisions today, and so the bias or potential for bias is something we must pay attention to and work to diminish. One thing that makes me optimistic about this is that we actually have better ideas today for reducing bias in AI than reducing bias in humans. So, while we should never be satisfied until all AI bias is gone, and it will take us quite a bit of work to get there, I'm also optimistic if we could take AI systems that started off with a level similar to humans, because it learned from humans, and we can cut down the bias from there through technical solutions or other means, so that as a society, we can hopefully make the decisions we're making through humans or through AI rapidly become more fair and less biased. In addition to the problem of bias, one of the other limitations of AI is that it can be open to adversarial attacks. In the next video, you'll learn what are adversarial attacks, as well as some of the things you could do to guard against them. Let's go on to the next video.

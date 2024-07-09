@@ -67,40 +67,12 @@ const Grid: React.FC = () => {
       : true;
   });
   const { isVisible, show, close } = useModal();
-  const firstStepRef = useRef<HTMLButtonElement | null>(null);
+
   const stepRefs = useRef<HTMLElement[]>([]);
-  const [position, setPosition] = useState<
-    { top: number; left: number } | undefined
-  >();
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });
   }, [gridState, clueList, isModified]);
-
-  useEffect(
-    () => {
-      console.log(stepRefs.current[0]);
-      if (firstStepRef?.current) {
-        console.log(
-          "the top of our el",
-          firstStepRef?.current?.getBoundingClientRect()?.top
-        );
-        setPosition({
-          top:
-            firstStepRef?.current &&
-            firstStepRef?.current?.getBoundingClientRect()?.top -
-              window.scrollY,
-          left:
-            firstStepRef?.current &&
-            firstStepRef?.current?.getBoundingClientRect()?.right -
-              window.scrollX,
-        });
-      }
-    },
-    [
-      // update each time window resize
-    ]
-  );
 
   const saveHandler = () => {
     let puzzles: Puzzles = [];
@@ -300,7 +272,10 @@ const Grid: React.FC = () => {
     <Wrapper>
       <div className="control-container">
         <button
-          ref={firstStepRef}
+          className="step4"
+          ref={(el) => {
+            if (el) stepRefs.current.push(el);
+          }}
           type="button"
           disabled={!isValid || !clueList[0].answer.includes("")}
           onClick={() => generateClues()}
@@ -326,6 +301,8 @@ const Grid: React.FC = () => {
         <div className="checkbox-group">
           <label htmlFor="fill_grid">Force Fill Grid</label>
           <input
+            className="step5"
+            ref={(el) => el && stepRefs.current.push(el)}
             checked={fillGrid}
             onChange={() => {
               setRemoveEmpty((prev) => !prev);
@@ -339,8 +316,9 @@ const Grid: React.FC = () => {
 
         <br />
         <button
+          className="step6"
           ref={(el) => {
-            stepRefs.current[0] = el;
+            if (el) stepRefs.current.push(el);
           }}
           disabled={clueList[0].answer.includes("") || clueList[0].clue !== ""}
           type="button"
@@ -373,6 +351,10 @@ const Grid: React.FC = () => {
         </button>
         <br />
         <button
+          className="step7"
+          ref={(el) => {
+            if (el) stepRefs.current.push(el);
+          }}
           disabled={
             !isValid ||
             clueList[0].clue !== "" ||
@@ -398,6 +380,10 @@ const Grid: React.FC = () => {
             placeholder="puzzleName"
           />
           <button
+            className="step8"
+            ref={(el) => {
+              if (el) stepRefs.current.push(el);
+            }}
             disabled={
               clueList[0].answer.includes("") ||
               puzzleName.length < 3 ||
@@ -421,7 +407,12 @@ const Grid: React.FC = () => {
           </button>
         </form>
       </div>
-      <div className="grid-container">
+      <div
+        className="grid-container step2"
+        ref={(el) => {
+          if (el) stepRefs.current.push(el);
+        }}
+      >
         {gridState.map((cell) => {
           return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
         })}
@@ -431,7 +422,6 @@ const Grid: React.FC = () => {
         )}
       </div>
       {isVisible &&
-        position &&
         // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
         // when finished development
         localStorage.getItem("editor") && (
@@ -439,8 +429,6 @@ const Grid: React.FC = () => {
             myRefs={stepRefs}
             steps={steps}
             close={close}
-            top={position?.top}
-            left={position?.left}
             isVisible={isVisible}
           />
         )}

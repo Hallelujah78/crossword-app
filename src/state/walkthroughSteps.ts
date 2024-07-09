@@ -1,16 +1,18 @@
-import ArrowLeft, { type ArrowLeftProps } from "../components/ArrowLeft";
+import ArrowLeft, { type PositionProps } from "../components/ArrowLeft";
+import { Side } from "../models/Side.model";
 
 export type Steps = {
   id: string;
   buttons: { text: string; buttonType: string }[];
   title: string;
   text: string;
-  component: React.FC<ArrowLeftProps> | null;
+  component?: React.FC<PositionProps> | null;
+  attach?: Side;
 }[];
 
 const steps: Steps = [
   {
-    id: "welcome",
+    id: "step1",
     buttons: [
       {
         text: "Exit",
@@ -24,7 +26,6 @@ const steps: Steps = [
     ],
     title: "Welcome to the CrossWord creation tool!",
     text: "Let's walk through what you can do here.",
-    component: ArrowLeft,
   },
   {
     id: "step2",
@@ -45,6 +46,7 @@ const steps: Steps = [
     title: "Editing the Grid",
     text: "Click on the dark or light squares to toggle them from dark to light, and vice-versa.",
     component: ArrowLeft,
+    attach: Side.LEFT,
   },
   {
     id: "step3",
@@ -64,7 +66,6 @@ const steps: Steps = [
     ],
     title: "Editing the Grid",
     text: "Be careful though! There are some rules to determine if a crossword grid is valid or not. We'll let you know if your grid is not valid!",
-    component: null,
   },
   {
     id: "step4",
@@ -85,6 +86,7 @@ const steps: Steps = [
     title: "Generate Answers",
     text: "If your grid is valid, you'll be able to click the 'Generate Answers' button to, well, er ... generate answers for your crossword. Hurray!",
     component: ArrowLeft,
+    attach: Side.BOTTOM,
   },
   {
     id: "step5",
@@ -104,7 +106,8 @@ const steps: Steps = [
     ],
     title: "The Force Fill Grid Option",
     text: "If this is unchecked, we'll try to fill in all the blank answers on your grid. If there is nothing that fits, we'll remove the empty cells at the end.",
-    component: null,
+    component: ArrowLeft,
+    attach: Side.BOTTOM,
   },
   {
     id: "step6",
@@ -124,7 +127,8 @@ const steps: Steps = [
     ],
     title: "Resetting the Answers and/or Grid",
     text: "These buttons become available after you edit the grid and/or generate answers. You can reset the generated answers while retaining any changes you've made to your grid!",
-    component: null,
+    component: ArrowLeft,
+    attach: Side.RIGHT,
   },
   {
     id: "step7",
@@ -144,7 +148,8 @@ const steps: Steps = [
     ],
     title: "Mommy, where do clues come from?",
     text: "Why, they come from clicking the 'AI Generate Clues' button, of course! Your answers are sent to OpenAI and it comes up with the clues for your puzzle. Pretty sweet!",
-    component: null,
+    component: ArrowLeft,
+    attach: Side.LEFT,
   },
   {
     id: "step8",
@@ -164,7 +169,8 @@ const steps: Steps = [
     ],
     title: "Saving Your Puzzle",
     text: "Once you have completed all the previous steps and created your puzzle, you can save it by entering a name and hitting 'Save Crossword.'",
-    component: null,
+    component: ArrowLeft,
+    attach: Side.LEFT,
   },
   {
     id: "step9",
@@ -181,6 +187,7 @@ const steps: Steps = [
     title: "Solving Your Puzzle",
     text: "Once your puzzle is saved, you can try to solve it by clicking on 'Solve' and selecting it from the dropdown menu!",
     component: null,
+    attach: Side.LEFT,
   },
 ];
 

@@ -3,7 +3,7 @@ import {
   useRef,
   useState,
   type ComponentPropsWithoutRef,
-  MutableRefObject,
+  type MutableRefObject,
 } from "react";
 
 // third party
@@ -17,12 +17,10 @@ import Button from "../components/Button";
 // components
 
 // state
-import steps from "../state/walkthroughSteps";
 
 // hooks
 import useTrapFocus from "../hooks/useTrapFocus";
 import type { Steps } from "../state/walkthroughSteps";
-import ArrowLeft from "./ArrowLeft";
 
 // models
 
@@ -32,8 +30,6 @@ interface InformationProps extends ComponentPropsWithoutRef<"div"> {
   myRefs: MutableRefObject<HTMLElement[]>;
   close: () => void;
   steps: Steps;
-  top: number;
-  left: number;
   isVisible: boolean;
 }
 
@@ -41,8 +37,6 @@ const Information: React.FC<InformationProps> = ({
   myRefs,
   close,
   steps,
-  top,
-  left,
 }: InformationProps) => {
   const [currStep, setCurrStep] = useState(0);
   const selfRef = useRef<HTMLDivElement>(null);
@@ -54,18 +48,25 @@ const Information: React.FC<InformationProps> = ({
   };
 
   const renderStep = () => {
-    let currRef: HTMLElement;
-    let top: number = 0;
-    let left: number = 0;
-    if (myRefs.current[currStep]) {
-      currRef = myRefs.current[currStep];
-      top = currRef.getBoundingClientRect().top;
-      left = currRef.getBoundingClientRect().right;
+    const currStepId = steps[currStep].id;
+    const currEl = myRefs.current.find((el) => {
+      return el.classList.contains(currStepId);
+    });
+    let top = 0;
+    let left = 0;
+    let height = 0;
+    let width = 0;
+    console.log(currEl);
+    if (currEl) {
+      top = currEl.getBoundingClientRect().top;
+      height = currEl.getBoundingClientRect().height;
+      width = currEl.getBoundingClientRect().width;
+      left = currEl.getBoundingClientRect().right;
     }
 
     const { component: Arrow } = steps[currStep];
     if (Arrow && top && left) {
-      return <Arrow top={top} left={left} />;
+      return <Arrow top={top} left={left} height={height} width={width} />;
     }
   };
 

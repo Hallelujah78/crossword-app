@@ -1,15 +1,18 @@
 import { TbArrowBigLeftFilled } from "react-icons/tb";
 import styled, { keyframes } from "styled-components";
 
-export interface ArrowLeftProps {
-  top: number;
-  left: number;
+export interface PositionProps {
+  top?: number;
+  left?: number;
+  right?: number;
+  bottom?: number;
+  height: number;
+  width: number;
 }
 
-const ArrowLeft: React.FC<ArrowLeftProps> = ({ top, left }) => {
-  console.log("the top val for arrow left: ", top);
+const ArrowLeft: React.FC<PositionProps> = ({ top, left, height, width }) => {
   return (
-    <Wrapper top={top} left={left}>
+    <Wrapper top={top} left={left} height={height} width={width}>
       <TbArrowBigLeftFilled id="myArrow" />
     </Wrapper>
   );
@@ -25,12 +28,17 @@ const boxShadow = keyframes`
 
 `;
 
-const Wrapper = styled.div<{ top: number; left: number }>`
+const Wrapper = styled.div<{
+  top: number;
+  left: number;
+  height: number;
+  width: number;
+}>`
   z-index: 99999;
   position: absolute;
-  top: ${(props) => props.top - 48}px;
+  top: ${(props) => props.top - 48 + props.height / 2}px;
   left: ${(props) => props.left}px;
-  transform: translate(0, -25%);
+  transform: translate(0, -50%);
   #myArrow {
     animation-name: ${boxShadow};
     animation-duration: 2s;
