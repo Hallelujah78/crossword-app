@@ -21,6 +21,7 @@ import Button from "../components/Button";
 // hooks
 import useTrapFocus from "../hooks/useTrapFocus";
 import type { Steps } from "../state/walkthroughSteps";
+//
 
 // models
 
@@ -56,17 +57,25 @@ const Information: React.FC<InformationProps> = ({
     let left = 0;
     let height = 0;
     let width = 0;
-    console.log(currEl);
+    const side = steps[currStep].attach;
     if (currEl) {
       top = currEl.getBoundingClientRect().top;
       height = currEl.getBoundingClientRect().height;
       width = currEl.getBoundingClientRect().width;
-      left = currEl.getBoundingClientRect().right;
+      left = currEl.getBoundingClientRect().left;
     }
 
     const { component: Arrow } = steps[currStep];
     if (Arrow && top && left) {
-      return <Arrow top={top} left={left} height={height} width={width} />;
+      return (
+        <Arrow
+          top={top}
+          left={left}
+          height={height}
+          width={width}
+          side={side}
+        />
+      );
     }
   };
 

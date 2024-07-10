@@ -7,15 +7,6 @@ const Editor: React.FC = () => {
   return (
     <Wrapper>
       <Grid />
-      {/* {isVisible &&
-        // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
-        // when finished development
-        localStorage.getItem("editor") && (
-          <Information steps={steps} close={close} />
-        )}
-      {isVisible && position && (
-        <ArrowLeft top={position.top} left={position.left} />
-      )} */}
     </Wrapper>
   );
 };

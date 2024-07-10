@@ -2142,3 +2142,4 @@ stepRefs.querySelector('#step1')
 - since we're setting top and translating, we can use the `+ prop.height/2` when setting top
   - this centers the top of our arrow container with the center of the element we're pointing towards
 - then we simply translate the arrow's Y by -50% and the center of our arrow is pointing to the center of our element
+**DONE**
