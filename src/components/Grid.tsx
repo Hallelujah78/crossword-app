@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, MutableRefObject } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model";
@@ -9,6 +9,8 @@ import type Clue from "../classes/Clue";
 
 // libs
 import styled from "styled-components";
+import { useOutletContext } from "react-router-dom";
+
 // components
 import Cell from "./Cell";
 import Information from "./Information";
@@ -67,12 +69,15 @@ const Grid: React.FC = () => {
       : true;
   });
   const { isVisible, show, close } = useModal();
-
+  const linkRef = useOutletContext() as MutableRefObject<HTMLElement>;
   const stepRefs = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });
-  }, [gridState, clueList, isModified]);
+    if (linkRef) {
+      stepRefs.current.push(linkRef.current);
+    }
+  }, [gridState, clueList, isModified, linkRef]);
 
   const saveHandler = () => {
     let puzzles: Puzzles = [];

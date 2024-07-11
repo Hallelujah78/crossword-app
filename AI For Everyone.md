@@ -1395,9 +1395,182 @@ By following these principles and steps, any company can evolve into a successfu
 - **Impact on Developing Economies**:
   - AI's impact on developing economies will be discussed in the next video.
 
-
 ---
 
-summarize the following text with bullet points, keep the summary in the same order as the original content, retain all of the examples used:
+### Vid 6 AI & Developing Economies
 
-AI is incredibly powerful and the vast majority of users of AI are making people, companies, countries, society better off. But there are a few adverse uses of AI as well. Let's take a look at some of them and discuss what we can do about them. AI technology has been used to create deep fakes and that means to synthesize video of people doing things that they never actually did. The website BuzzFeed created a video of former US President Barack Obama saying things that he never did. BuzzFeed was transparent about it and when they publish the video, it was really obvious because he told everyone that this is a fake video. But if this type of technology is used to target an individual and make others think they said or did things they never actually did, then these individuals could be harmed and left to defend themselves against fake video evidence of something they never actually did. Similar to the war of spam versus anti-spam, there is AI technology today for detecting if a video is a deep fake. But in today's world of social media, where a fake could spread around the world faster than the truth can catch up, many people are concerned about the potential of deep fakes to harm individuals. There's also a risk of AI technology being used to undermine democracy and privacy. For example, many governments around the world are trying to improve their citizens' lives, and have a lot of respect for the government leaders that are uplifting their citizens. But there are also some oppressive regimes that are not doing the right things by their citizens, that may seek to use this type of technology to carry out oppressive surveillance of their citizens. While governments have illegitimate need to improve public safety and reduce crime, there are also ways of using AI that feel more oppressive than uplifting of its own citizens. Closely related to this, is the rise of fake comments that AI can generate. Using AI technology is now possible to generate fake comments. Either on the commercial side, fake comments of products, or in political discourse, fake comments about political matters in the public discourse, and to generate fake comments much more efficiently than if you only had humans writing them. So, detecting such fake comments and weeding them out, is an important technology for maintaining trust in comments that we might read online as well. Similar to the battles of spam versus anti-spam and fraud verses anti-fraud, I think that for all of these issues, there may be a competition on both sides for quite some time to come. Similar to the battles of span versus anti-spam, fraud versus anti-fraud, I'm optimistic about how these battles will play out. Because if you take spam filter as an example, there are a lot more people that are motivated to make sure spam filters do work, that anti-spam does work. Then there are the smaller number of spammers trying to get this spam into your inbox. Because of this, there's a lot more resources on the side of anti-spam than on the side of spam. Because society actually functions better, if anti-spam and anti-fraud works out well. Because of this, even though the AI community still has a lot of work to do to defend against these adverse use cases. Because society is genuinely better off, if we could have only good uses of AI, I am optimistic that the balance of resources means that the side of goodwill prevail, but it will still take a lot of work from the AI community over many years to come. Next, AI is also having a big impact on developing economies. Let's take a look at that in the next video.
+### Technological Disruptions and Opportunities
+
+- Major technological disruptions, like AI, offer chances to remake the world.
+- AI impacts both developed and developing economies significantly.
+- Ensuring AI-generated wealth benefits all nations is a critical challenge.
+
+### Economic Progression in Developing Economies
+
+- Developing economies follow a predictable progression to gain skills and wealth:
+  - Start with low-end agricultural products.
+  - Move to low-end textile manufacturing.
+  - Transition to low-end components manufacturing.
+  - Progress to low-end electronics manufacturing, then higher-end electronics and automotive manufacturing.
+
+### AI's Impact on Economic Ladders
+
+- AI threatens to automate lower-end jobs, removing entry-level opportunities.
+- Automation could disrupt the traditional economic ladder for developing nations.
+
+### AI as a Trampoline for Growth
+
+- AI can help developing economies leapfrog to higher technology levels:
+  - Example: Developing nations skipped landlines and adopted mobile phones directly.
+  - Mobile payments adoption is faster in developing economies due to lack of entrenched credit card systems.
+  - Online education is rapidly adopted in developing countries without extensive physical educational infrastructure.
+
+### Global AI Leadership
+
+- The US leads in generative AI, with China, the UK, Canada, India, Korea, Latin America, and others having strong AI communities.
+- Opportunities for growth and innovation in AI are still abundant.
+
+### Strategic Focus for Developing Economies
+
+- Developing economies should use AI to enhance their strong vertical industries rather than competing directly with global AI leaders:
+  - Example: Countries strong in coffee manufacturing should focus on AI for coffee production.
+- Public-private partnerships can accelerate AI development in vertical industries.
+
+### Regulatory and Educational Investments
+
+- Thoughtful government regulations can protect citizens and promote AI adoption in sectors like healthcare, transportation, and finance.
+- Investing in AI education is crucial as the field is still maturing, providing opportunities to build a skilled AI workforce.
+
+### Leadership and Technological Advancement
+
+- Leadership in times of technological disruption is crucial.
+- Governments and companies should embrace AI to uplift citizens and contribute to global advancements.
+
+### Conclusion and Next Steps
+
+- The video briefly touched on AI's impact on jobs.
+- The following video will delve deeper into the relationship between AI and employment.
+
+---
+### Vid 7 AI and Jobs
+
+### Automation's Historical Impact
+- **Pre-AI Era**: Automation had already significantly impacted many jobs.
+- **Modern AI**: The range of tasks that can be automated has increased, further affecting jobs.
+
+### Job Displacement and Creation Estimates
+- **McKinsey Global Institute**:
+  - Estimated 400 to 800 million jobs displaced by AI by 2030.
+  - Potential for an even larger number of new jobs created by AI. 555-890 mil.
+- **Goldman Sachs**:
+  - Estimated 300 million jobs displaced by AI by 2033.
+- **General Consensus**: Significant impact on jobs with a potential net positive in job creation.
+
+### Future Job Market and Reskilling
+- **Reskilling Needs**: Significant need for worker reskilling in certain sectors.
+- **New Job Titles**:
+  - Examples include drone traffic optimizer, 3D printed clothing designer, and custom DNA-based drug designer.
+
+### Estimating Job Displacement
+- **Methodology**:
+  - Analyzing the tasks that make up a job.
+  - Estimating the automatable tasks for each job (e.g., tasks of a radiologist or taxi driver).
+  - Higher risk of displacement for jobs with a majority of automatable tasks.
+
+### Jobs Most and Least Likely to be Displaced
+- **McKinsey's Study**: Impact of AI on various jobs, including generative AI tools.
+
+<img src="/src/assets/ai_impact_2.png"></img>
+
+- **Top 10 Jobs with Most Potential for Automation by 2033**:
+  - Jobs span occupation groups like office work, mechanical installation and repair, business and legal, professional work, and customer service and sales.
+  - Percentage of work tasks that may be automated (e.g., 87% or 82%).
+
+Overall, while AI is set to displace many jobs, it also holds the promise of creating new opportunities, necessitating adaptation and reskilling in the workforce.
+
+### Impact of Generative AI on Job Automation
+- Generative AI significantly impacts job automation capabilities.
+- These tools generate human-like text, write empathetic emails, and interact with humans.
+- New categories of jobs are now exposed to AI automation, particularly in writing and communications.
+- Occupations like office support and legal work see increased automation potential.
+- These top 10 occupations employ over 70% of the global workforce.
+
+### Solutions for Navigating AI's Impact on Jobs
+
+#### Conditional Basic Income
+- Conditional basic income: A safety net with incentives for continuous learning and development.
+- More effective than universal basic income, as it encourages reentry into the workforce.
+- Benefits include personal development, family contribution, societal benefits, and tax base support.
+
+#### Lifelong Learning Society
+- Lifelong learning is essential in a rapidly changing world.
+- The traditional education model is outdated; continuous learning is necessary.
+- Governments, companies, and individuals need to embrace lifelong learning.
+- Positions individuals better for new job opportunities created by technological advancements.
+- Continuous education should extend beyond college throughout one's life.
+
+#### Political Solutions
+- Various political solutions are being explored.
+- These include incentives for new job creation and fair treatment legislation.
+- Society needs to develop effective political solutions to manage AI's job impacts.
+
+### Career Advice in the Age of AI
+- AI's impact on specific professions, like radiology, prompts career reconsideration.
+- Learning AI from scratch is possible and beneficial for career transitions.
+- Combining existing knowledge with AI expertise can create unique and valuable roles.
+- Example: A radiologist combining radiology with AI knowledge can excel in AI-driven radiology.
+
+### Conclusion
+- The video aims to help navigate AI's impact on jobs.
+- Encourages exploration of AI integration with existing expertise for career advancement.
+
+
+### Vid 8 Conclusion
+
+### Course Summary
+
+#### Week 1: Introduction to AI
+- **Understanding AI Technology**:
+  - Definition of AI and Machine Learning.
+  - Explanation of Supervised Learning (learning inputs, outputs, or A to B mappings).
+  - Overview of Data Science and the role of data in AI technologies.
+- **AI Capabilities**:
+  - Examples of what AI can and cannot do.
+
+#### Week 2: Building AI Projects
+- **AI Project Workflow**:
+  - Steps: Collecting data, building a system, and deploying it.
+- **Data Science Project Workflow**:
+  - Technical and business diligence to ensure project feasibility and value.
+
+#### Week 3: AI in Business Context
+- **Complex AI Products**:
+  - Examples: Smart speakers, self-driving cars.
+- **AI Team Roles and Responsibilities**:
+  - Insights into large AI teams.
+- **AI Transformation Playbook**:
+  - Five-step guide to help a company become a great AI company.
+- **Brainstorming AI Projects**:
+  - How to use AI in your company or organization.
+
+#### Week 4: AI and Society
+- **AI Limitations**:
+  - Beyond technical limitations.
+- **Global Impact of AI**:
+  - Effects on developing economies and jobs worldwide.
+
+### Continued Learning and Resources
+- **Further Education**:
+  - Additional online courses (Coursera, deeplearning.ai), books, blogs, and discussions with friends.
+- **Coding and Implementation**:
+  - Easier than ever to learn coding and AI technology implementation through available resources.
+- **Staying Informed**:
+  - Sign up for the deeplearning.ai mailing list for useful AI information updates.
+
+Congratulations on completing the course and continue your journey in AI!
+
+---
+summarize the following text with bullet points and headings where appropriate. Keep the summary in the same order as the original content and retain all of the examples used:
+
+
+Congratulations on coming to the last video of this course. AI is a superpower and understanding it allows you to do things that very few people on the planet can. Let's summarize what you've seen in this course. In the first week, you learned about AI technology, what is AI and what is machine learning? What's supervised learning, that is learning inputs, outputs, or A to B mappings. As well as what is data science, and how data feeds into all of these technologies? Importantly, you also saw examples of what AI can and cannot do. In the second week, you learned what it feels like to build an AI project. You saw the workflow of machine learning projects, of collecting data, building a system, and deploying it, as well as the workflow of data science projects. And you also learned about carrying out technical diligence to make sure a project is feasible, together with business diligence to make sure that the project is valuable before you commit to taking on a specific AI project. In the third week, you learned how such AI projects could fit in the context of your company. You saw examples of complex AI products, such as a smart speaker, a self-driving car, the roles and responsibilities of large AI teams. And you also saw the AI transformation playbook, the five-step playbook for helping a company become a great AI company. I hope these materials throughout these first three weeks can help you brainstorm AI projects or think about how you might want to use AI in your company or in your organization. In this week, week four, you learned about AI and society. You saw some of the limitations of AI beyond just technical limitations, and also learned about how AI is affecting developing economies and jobs worldwide. You've learned a lot in these four weeks, but AI is a complex topic. So I hope you will keep on learning, whether through additional online courses, through Coursera or deeplearning.ai, or books, or blogs, or just by talking to friends. If you ever want to try your hand at building AI technology, it is now easier than ever to learn to code and learn how to implement AI technology through these resources. If you'd like to keep on receiving information about AI, you can also sign up for the deeplearning.ai mailing list, by going to the deeplearning.ai website and signing up there. I'll occasionally send you useful information about AI through that mailing list.

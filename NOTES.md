@@ -2143,3 +2143,7 @@ stepRefs.querySelector('#step1')
   - this centers the top of our arrow container with the center of the element we're pointing towards
 - then we simply translate the arrow's Y by -50% and the center of our arrow is pointing to the center of our element
 **DONE**
+
+## 11/7/2024
+- add a ref to the solve link and pass it to our Grid, so we can attach our arrow component to it
+- React Router v6 has useOutletContent for this, which is extremely easy to use!

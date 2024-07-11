@@ -53,6 +53,7 @@ const Information: React.FC<InformationProps> = ({
     const currEl = myRefs.current.find((el) => {
       return el.classList.contains(currStepId);
     });
+
     let top = 0;
     let left = 0;
     let height = 0;
@@ -66,7 +67,7 @@ const Information: React.FC<InformationProps> = ({
     }
 
     const { component: Arrow } = steps[currStep];
-    if (Arrow && top && left) {
+    if (Arrow) {
       return (
         <Arrow
           top={top}

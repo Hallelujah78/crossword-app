@@ -26,37 +26,37 @@ const Arrow: React.FC<PositionProps> = ({ top, left, height, width, side }) => {
   if (!left) {
     left = 0;
   }
-  let xVal = 0;
-  let yVal = 0;
-  let transformX = "0%";
-  let transformY = "0%";
+  let xval = 0;
+  let yval = 0;
+  let transformx = "0%";
+  let transformy = "0%";
   let Component: IconType = TbArrowBigLeftFilled;
   switch (side) {
     case Side.BOTTOM:
       Component = TbArrowBigUpFilled;
-      xVal = left ? left + width / 2 : 0;
-      transformX = "-50%";
-      yVal = top + height;
+      xval = left ? left + width / 2 : 0;
+      transformx = "-50%";
+      yval = top + height;
       break;
     case Side.TOP:
       Component = TbArrowBigDownFilled;
-      xVal = left ? left + width / 2 : 0;
-      transformX = "-50%";
-      yVal = top;
-      transformY = "-100%";
+      xval = left ? left + width / 2 : 0;
+      transformx = "-50%";
+      yval = top;
+      transformy = "-100%";
       break;
     case Side.RIGHT:
       Component = TbArrowBigLeftFilled;
-      xVal = left ? left + width : 0;
-      yVal = top + height / 2;
-      transformY = "-50%";
+      xval = left ? left + width : 0;
+      yval = top + height / 2;
+      transformy = "-50%";
       break;
     case Side.LEFT:
       Component = TbArrowBigRightFilled;
-      xVal = left ? left : 0;
-      transformX = "-100%";
-      yVal = top + height / 2;
-      transformY = "-50%";
+      xval = left ? left : 0;
+      transformx = "-100%";
+      yval = top + height / 2;
+      transformy = "-50%";
       break;
     default:
       Component = TbArrowBigLeftFilled;
@@ -64,14 +64,10 @@ const Arrow: React.FC<PositionProps> = ({ top, left, height, width, side }) => {
 
   return (
     <Wrapper
-      top={top}
-      left={left}
-      height={height}
-      width={width}
-      xVal={xVal}
-      yVal={yVal}
-      transformX={transformX}
-      transformY={transformY}
+      $xval={xval}
+      $yval={yval}
+      $transformx={transformx}
+      $transformy={transformy}
     >
       <Component id="myArrow" />
     </Wrapper>
@@ -89,22 +85,20 @@ const boxShadow = keyframes`
 `;
 
 const Wrapper = styled.div<{
-  top: number;
-  left: number;
-  height: number;
-  width: number;
-  xVal: number;
-  yVal: number;
-  transformX: string;
-  transformY: string;
+  $xval: number;
+  $yval: number;
+  $transformx: string;
+  $transformy: string;
 }>`
   z-index: 99999;
   position: absolute;
-  top: ${(props) => props.yVal - 48}px;
-  left: ${(props) => props.xVal}px;
+  top: ${(props) => props.$yval - 48}px;
+
+  left: ${(props) => props.$xval}px;
+
   transform: translate(
-    ${(props) => props.transformX},
-    ${(props) => props.transformY}
+    ${(props) => props.$transformx},
+    ${(props) => props.$transformy}
   );
   #myArrow {
     animation-name: ${boxShadow};

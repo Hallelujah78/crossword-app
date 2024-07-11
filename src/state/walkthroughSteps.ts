@@ -128,7 +128,7 @@ const steps: Steps = [
     title: "Resetting the Answers and/or Grid",
     text: "These buttons become available after you edit the grid and/or generate answers. You can reset the generated answers while retaining any changes you've made to your grid!",
     component: Arrow,
-    attach: Side.LEFT,
+    attach: Side.BOTTOM,
   },
   {
     id: "step7",

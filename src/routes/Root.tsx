@@ -1,9 +1,13 @@
+// react
+import { useRef } from "react";
+
 // libs
 import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
 import { RiOpenaiFill } from "react-icons/ri";
 
 const Root: React.FC = () => {
+  const linkRef = useRef<HTMLAnchorElement>(null);
   return (
     <Wrapper>
       <nav>
@@ -14,11 +18,13 @@ const Root: React.FC = () => {
         <h1 className="title">GridMaster</h1>
         <div className="link-container">
           <NavLink to={"/"}>Create/Edit</NavLink>
-          <NavLink to={"solver"}>Solve</NavLink>
+          <NavLink ref={linkRef} className="step9" to={"solver"}>
+            Solve
+          </NavLink>
         </div>
       </nav>
       <section>
-        <Outlet />
+        <Outlet context={linkRef} />
       </section>
     </Wrapper>
   );
