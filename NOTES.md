@@ -2147,3 +2147,30 @@ stepRefs.querySelector('#step1')
 ## 11/7/2024
 - add a ref to the solve link and pass it to our Grid, so we can attach our arrow component to it
 - React Router v6 has useOutletContent for this, which is extremely easy to use!
+**DONE**
+
+## 12/7/24 Marching onwards - Todo
+- there should be a menu that lets you start the tutorial any time
+- when the grid becomes invalid, we show a modal to explain why it is invalid and suggest what the user can do
+- ~~set the tutorial to start only if the user has no local storage in the app (i.e. first time visit)~~ **DONE**
+- see how I can go about creating an npm package for my modal walkthrough stuff
+  - a separate project by itself no doubt
+
+### Invalid Grid
+- Grid.tsx has an isValid state
+  - if this is false, the grid is not valid
+- each Cell has a backgroundColor prop and a isValid prop
+  - if Grid isValid = false and backgroundColor of all cells is ""
+    - this is either
+      - answer is too short - less than 3 characters - (!isVoid && !isValid)
+      - an entire side of the grid consists of all voids (isVoid && !isValid)
+    - if Grid isValid = false and backgroundColor of any cell is not ""
+      - there are islands of unconnected answers
+- since potentially all of these invalid grid states might occur at the same time we might
+  - show a modal explaining that the grid is invalid and telling the user to click on a dot for more info
+  - place pulsating dots next to the first occurence of each issue that causes an invalid grid
+    - one for islands, one for too short, one for all voids on an edge
+  - the user can click on the dot to get more info in a modal
+- it should be possible for the user to disable this help (store in local storage)
+- the modal to inform the user to click the dots should not appear every time a new invalid issue occurs
+  - only show it when the grid goes from valid to invalid

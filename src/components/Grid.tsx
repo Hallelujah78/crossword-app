@@ -429,7 +429,7 @@ const Grid: React.FC = () => {
       {isVisible &&
         // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
         // when finished development
-        localStorage.getItem("editor") && (
+        !localStorage.getItem("editor") && (
           <Information
             myRefs={stepRefs}
             steps={steps}
