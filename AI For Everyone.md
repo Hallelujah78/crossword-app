@@ -1336,6 +1336,7 @@ By following these principles and steps, any company can evolve into a successfu
 
 - **Optimism for Reducing AI Bias:**
   - Better ideas for reducing AI bias than human bias.
+    - it's potentially easier to eliminate AI bias than human bias
   - Potential to make AI decisions more fair and less biased.
   
 - **Next Topic:**

@@ -2174,3 +2174,6 @@ stepRefs.querySelector('#step1')
 - it should be possible for the user to disable this help (store in local storage)
 - the modal to inform the user to click the dots should not appear every time a new invalid issue occurs
   - only show it when the grid goes from valid to invalid
+
+
+- show the modal when grid is invalid && 

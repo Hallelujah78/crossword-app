@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useRef, MutableRefObject } from "react";
+import { useState, useEffect, useRef, type MutableRefObject } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model";
@@ -14,6 +14,7 @@ import { useOutletContext } from "react-router-dom";
 // components
 import Cell from "./Cell";
 import Information from "./Information";
+import Modal from "./Modal";
 
 // data/state
 import { initialGrid } from "../state/grid";
@@ -68,9 +69,26 @@ const Grid: React.FC = () => {
       ? isGridValid(clueList, gridState)
       : true;
   });
-  const { isVisible, show, close } = useModal();
+  const { isVisible, close } = useModal(true);
+  const {
+    isVisible: isModalVisible,
+    show: showModal,
+    close: closeModal,
+  } = useModal(false);
   const linkRef = useOutletContext() as MutableRefObject<HTMLElement>;
   const stepRefs = useRef<HTMLElement[]>([]);
+  const prevIsValid = useRef(isValid);
+
+  useEffect(() => {
+    if (prevIsValid.current === true && isValid === false) {
+      showModal();
+      // isValid is boolean1
+      // prevIsValid is boolean2
+    } else if (isValid === true) {
+      closeModal();
+    }
+    prevIsValid.current = isValid;
+  }, [isValid, closeModal, showModal]);
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });
@@ -426,6 +444,7 @@ const Grid: React.FC = () => {
           <div className="prevent-click"> </div>
         )}
       </div>
+
       {isVisible &&
         // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
         // when finished development
@@ -437,6 +456,7 @@ const Grid: React.FC = () => {
             isVisible={isVisible}
           />
         )}
+      {isModalVisible && <Modal closeModal={closeModal} />}
     </Wrapper>
   );
 };
