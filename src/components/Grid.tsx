@@ -8,7 +8,7 @@ import type { Puzzles } from "../models/Puzzles.model";
 import type Clue from "../classes/Clue";
 
 // libs
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useOutletContext } from "react-router-dom";
 
 // components
@@ -44,6 +44,7 @@ import {
 
 // hooks
 import useModal from "../hooks/useModal";
+import { FaCircleInfo } from "react-icons/fa6";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
@@ -77,18 +78,6 @@ const Grid: React.FC = () => {
   } = useModal(false);
   const linkRef = useOutletContext() as MutableRefObject<HTMLElement>;
   const stepRefs = useRef<HTMLElement[]>([]);
-  const prevIsValid = useRef(isValid);
-
-  useEffect(() => {
-    if (prevIsValid.current === true && isValid === false) {
-      showModal();
-      // isValid is boolean1
-      // prevIsValid is boolean2
-    } else if (isValid === true) {
-      closeModal();
-    }
-    prevIsValid.current = isValid;
-  }, [isValid, closeModal, showModal]);
 
   useEffect(() => {
     setLocalStorage("editor", { gridState, clueList, isModified });
@@ -443,25 +432,45 @@ const Grid: React.FC = () => {
         {clueList[0].answer.includes("") ? null : (
           <div className="prevent-click"> </div>
         )}
+        {!isValid && (
+          <div className="invalid-grid">
+            <p>Whoops - Invalid grid!</p>
+
+            <button onClick={showModal} className="info-button" type="button">
+              <FaCircleInfo className="info-icon" />
+            </button>
+          </div>
+        )}
       </div>
 
-      {isVisible &&
-        // localStorage.getItem("editor") for development, but !localStorage.getItem("editor")
-        // when finished development
-        !localStorage.getItem("editor") && (
-          <Information
-            myRefs={stepRefs}
-            steps={steps}
-            close={close}
-            isVisible={isVisible}
-          />
-        )}
+      {isVisible && !localStorage.getItem("editor") && (
+        <Information
+          myRefs={stepRefs}
+          steps={steps}
+          close={close}
+          isVisible={isVisible}
+        />
+      )}
       {isModalVisible && <Modal closeModal={closeModal} />}
     </Wrapper>
   );
 };
 export default Grid;
 
+const pulse = keyframes`
+  0% {
+    transform: scale(.9);
+  }
+  70% {
+    transform: scale(1);
+  
+  }
+    100% {
+    transform: scale(.9);
+  
+  }
+
+`;
 const Wrapper = styled.div`
   box-sizing: border-box;
   margin: 0;
@@ -516,6 +525,38 @@ const Wrapper = styled.div`
       width: 9rem;
       text-transform: capitalize;
       border-radius: 3px;
+    }
+  }
+  .invalid-grid {
+    top: 1rem;
+    right: 50%;
+    transform: translateX(50%);
+    position: absolute;
+    display: flex;
+    color: white;
+    background-color: #d47e7e;
+    width: fit-content;
+    height: 2rem;
+    border-radius: 6px;
+    padding: 0 0.5rem 0 0.5rem;
+    p {
+      width: fit-content;
+      line-height: 2rem;
+      text-transform: lowercase;
+    }
+    button.info-button {
+      border-radius: 50%;
+      width: 2rem !important;
+      height: 2rem !important;
+      margin-top: 0rem !important;
+      padding: 0 !important;
+      background: transparent !important;
+      .info-icon {
+        font-size: 2rem;
+        background: var(--primary-400);
+        border-radius: 50%;
+        animation: ${pulse} 1.5s infinite;
+      }
     }
   }
 `;

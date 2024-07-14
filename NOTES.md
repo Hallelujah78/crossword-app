@@ -2151,7 +2151,7 @@ stepRefs.querySelector('#step1')
 
 ## 12/7/24 Marching onwards - Todo
 - there should be a menu that lets you start the tutorial any time
-- when the grid becomes invalid, we show a modal to explain why it is invalid and suggest what the user can do
+- ~~when the grid becomes invalid, we show a modal to explain why it is invalid and suggest what the user can do~~ **DONE**
 - ~~set the tutorial to start only if the user has no local storage in the app (i.e. first time visit)~~ **DONE**
 - see how I can go about creating an npm package for my modal walkthrough stuff
   - a separate project by itself no doubt
@@ -2176,4 +2176,12 @@ stepRefs.querySelector('#step1')
   - only show it when the grid goes from valid to invalid
 
 
-- show the modal when grid is invalid && 
+## 14/7/24
+- showing the modal everytime the isValid state flips from isVaid=true to isValid=false is extreme overkill
+- let's just show a paragraph with a more info icon
+  - we can let the user disable all warnings in the more info modal
+  - we can have multiple modals with a next, previous, exit,and disable all warnings buttons
+  - each modal will highlight one type of invalid grid state
+    - islands of answers
+    - short answers
+    - all voids on one edge
