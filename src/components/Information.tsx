@@ -20,7 +20,7 @@ import Button from "../components/Button";
 
 // hooks
 import useTrapFocus from "../hooks/useTrapFocus";
-import type { Steps } from "../state/walkthroughSteps";
+import type { Steps } from "../models/Steps.model";
 //
 
 // models
@@ -50,6 +50,7 @@ const Information: React.FC<InformationProps> = ({
 
   const renderStep = () => {
     const currStepId = steps[currStep].id;
+
     const currEl = myRefs.current.find((el) => {
       return el.classList.contains(currStepId);
     });

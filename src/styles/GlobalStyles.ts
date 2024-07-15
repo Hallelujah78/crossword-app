@@ -21,7 +21,7 @@ ${reset}
 
 html, #root, body, * {
 box-sizing: border-box !important;
-
+user-select: none; 
 }
 
 button {

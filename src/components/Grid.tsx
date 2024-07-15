@@ -14,13 +14,13 @@ import { useOutletContext } from "react-router-dom";
 // components
 import Cell from "./Cell";
 import Information from "./Information";
-import Modal from "./Modal";
 
 // data/state
 import { initialGrid } from "../state/grid";
 import * as AllAnswers from "../state/answers2";
 import backgroundColors from "../state/backgroundColors";
 import steps from "../state/walkthroughSteps";
+import invalidGridSteps from "../state/invalidGridSteps.ts";
 
 // utils
 import {
@@ -451,7 +451,14 @@ const Grid: React.FC = () => {
           isVisible={isVisible}
         />
       )}
-      {isModalVisible && <Modal closeModal={closeModal} />}
+      {isModalVisible && (
+        <Information
+          myRefs={stepRefs} // optional
+          steps={invalidGridSteps}
+          close={closeModal}
+          isVisible={isVisible}
+        />
+      )}
     </Wrapper>
   );
 };

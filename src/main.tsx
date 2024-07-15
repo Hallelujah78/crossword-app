@@ -4,12 +4,14 @@ import ReactDOM from "react-dom/client";
 
 // style
 import GlobalStyle from "./styles/GlobalStyles.ts";
+import "react-toastify/dist/ReactToastify.css";
 
 // components
 import Editor from "./routes/Editor.tsx";
 
 // libraries
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,7 @@ if (docRoot) {
       <GlobalStyle />
 
       <RouterProvider router={router} />
+      <ToastContainer />
     </React.StrictMode>
   );
 }

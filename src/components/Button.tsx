@@ -6,6 +6,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   text: string;
   buttonType: string;
   updateCurrStep: (index: 1 | -1) => void;
+  func?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   id,
   close,
   updateCurrStep,
+  func,
 }: ButtonProps) => {
   const exitModal = () => {
     close();
@@ -28,7 +30,11 @@ const Button: React.FC<ButtonProps> = ({
           ? exitModal()
           : buttonType === "back"
           ? updateCurrStep(-1)
-          : updateCurrStep(1);
+          : buttonType === "next"
+          ? updateCurrStep(1)
+          : func
+          ? func()
+          : () => {};
       }}
     >
       {text}

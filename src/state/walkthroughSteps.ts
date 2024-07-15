@@ -1,14 +1,6 @@
-import Arrow, { type PositionProps } from "../components/Arrow";
+import Arrow from "../components/Arrow";
 import { Side } from "../models/Side.model";
-
-export type Steps = {
-  id: string;
-  buttons: { text: string; buttonType: string }[];
-  title: string;
-  text: string;
-  component?: React.FC<PositionProps> | null;
-  attach?: Side;
-}[];
+import type { Steps } from "../models/Steps.model";
 
 const steps: Steps = [
   {
