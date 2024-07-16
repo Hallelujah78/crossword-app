@@ -2178,10 +2178,17 @@ stepRefs.querySelector('#step1')
 
 ## 14/7/24
 - showing the modal everytime the isValid state flips from isVaid=true to isValid=false is extreme overkill
-- let's just show a paragraph with a more info icon
+- ~~let's just show a paragraph with a more info icon~~ **DONE**
   - we can let the user disable all warnings in the more info modal
   - we can have multiple modals with a next, previous, exit,and disable all warnings buttons
   - each modal will highlight one type of invalid grid state
     - islands of answers
     - short answers
     - all voids on one edge
+
+## 16/7/24
+- there's an issue when Force Fill Grid is unchecked
+- when my code edits the grid (removes empty spaces), the isModified flag must not be set to true, and so even though cells have been set to isVoid=true, the user can't click 'Reset Grid & Answers'
+
+- I wanted to allow the user to disable warnings in the Information modal that uses invalidGridSteps. However, this requires setting func to a function that uses a state setter in Grid. It's possible but messy.
+- ~~We'll group the disable warnings setting with our other buttons/options on the left~~ **DONE**

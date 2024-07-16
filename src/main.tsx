@@ -37,10 +37,10 @@ const docRoot = document.getElementById("root");
 if (docRoot) {
   ReactDOM.createRoot(docRoot).render(
     <React.StrictMode>
+      <ToastContainer />
       <GlobalStyle />
 
       <RouterProvider router={router} />
-      <ToastContainer />
     </React.StrictMode>
   );
 }

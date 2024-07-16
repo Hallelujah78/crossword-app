@@ -1269,7 +1269,7 @@ export const getCluesFromCell = (cell: CellType, clues: Clue[]) => {
 };
 
 export const setLocalStorage = (
-  key: "solver" | "editor" | "puzzles" | "warn",
+  key: "solver" | "editor" | "puzzles",
   data: Storage
 ) => {
   const {
@@ -1281,7 +1281,7 @@ export const setLocalStorage = (
     puzzles,
     warn,
   } = data;
-  let dataStore: Puzzles | Storage | boolean;
+  let dataStore: Puzzles | Storage;
   if (key === "solver") {
     dataStore = {
       grid,
@@ -1294,9 +1294,8 @@ export const setLocalStorage = (
       grid: grid,
       clues: clues,
       isModified: isModified,
+      warn: warn,
     };
-  } else if ((key === "warn" && warn === true) || warn === false) {
-    dataStore = warn;
   } else {
     if (puzzles && puzzles.length > 0) {
       dataStore = puzzles;
@@ -1305,11 +1304,13 @@ export const setLocalStorage = (
   localStorage.setItem(key, JSON.stringify(dataStore));
 };
 
-export const getLocalStorage = (key: "solver" | "editor" | "puzzles") => {
+export const getLocalStorage = (
+  key: "solver" | "editor" | "puzzles"
+): Storage | null => {
   if (key === "solver" || key === "editor") {
-    return JSON.parse(localStorage.getItem(key) as string);
+    return JSON.parse(localStorage.getItem(key) as string) as Storage;
   }
-  return JSON.parse(localStorage.getItem(key) as string);
+  return JSON.parse(localStorage.getItem(key) as string) as Storage;
 };
 
 export const getRowOrColumn = (

@@ -53,7 +53,7 @@ const SolveGrid: React.FC = () => {
   const [removeEmpty, _setRemoveEmpty] = useState<boolean>(false);
   const [selectedClue, setSelectedClue] = useState<string>(() =>
     localStorage.getItem("solver")
-      ? getLocalStorage("solver").clueSelection
+      ? getLocalStorage("solver")?.clueSelection
       : ""
   );
   const [puzzles, _setPuzzles] = useState<Storage | Puzzles>(() =>
@@ -74,10 +74,10 @@ const SolveGrid: React.FC = () => {
 
   useEffect(() => {
     setLocalStorage("solver", {
-      gridState,
-      clueList,
-      selectedClue,
-      selectedCell,
+      grid: gridState,
+      clues: clueList,
+      clueSelection: selectedClue,
+      cellSelection: selectedCell,
     });
   }, [gridState, clueList, selectedClue, selectedCell]);
 

@@ -1,5 +1,3 @@
-import { toast } from "react-toastify";
-
 export type InvalidSteps = {
   id: string;
   buttons: { text: string; buttonType: string; func?: () => void }[];
@@ -15,38 +13,26 @@ const invalidGridSteps: InvalidSteps = [
         text: "Exit",
         buttonType: "cancel",
       },
-      {
-        text: "Disable Warnings",
-        buttonType: "turnoff",
-        func: () => {
-          toast("Invalid grid warnings are turned off!");
-        },
-      },
 
       {
         text: "Next",
         buttonType: "next",
       },
     ],
-    title: "Invalid Grid Modal",
-    text: "Let's walk through what you can do here.",
+    title: "Step 1",
+    text: "Lorem ipsum",
   },
   {
-    id: "step1",
+    id: "step2",
     buttons: [
       {
         text: "Exit",
         buttonType: "cancel",
       },
       {
-        text: "Disable Warnings",
-        buttonType: "turnoff",
-        func: () => {
-          console.log("hi");
-          alert("yo!");
-        },
+        text: "Back",
+        buttonType: "back",
       },
-
       {
         text: "Next",
         buttonType: "next",

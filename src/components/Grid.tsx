@@ -76,15 +76,27 @@ const Grid: React.FC = () => {
     show: showModal,
     close: closeModal,
   } = useModal(false);
+
+  const [hideWarn, sethideWarn] = useState<boolean | null>(() => {
+    return localStorage.getItem("editor")
+      ? getLocalStorage("editor")?.warn
+      : false;
+  });
+
   const linkRef = useOutletContext() as MutableRefObject<HTMLElement>;
   const stepRefs = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
-    setLocalStorage("editor", { grid: gridState, clues: clueList, isModified });
+    setLocalStorage("editor", {
+      grid: gridState,
+      clues: clueList,
+      isModified,
+      warn: hideWarn,
+    });
     if (linkRef) {
       stepRefs.current.push(linkRef.current);
     }
-  }, [gridState, clueList, isModified, linkRef]);
+  }, [gridState, clueList, isModified, linkRef, hideWarn]);
 
   const saveHandler = () => {
     let puzzles: Puzzles = [];
@@ -296,16 +308,16 @@ const Grid: React.FC = () => {
         </button>
         <br />
         <div className="checkbox-group">
-          <label htmlFor="remove_blank">Remove Empty Cells</label>
+          <label htmlFor="disable">Disable Warnings</label>
           <input
-            checked={removeEmpty}
+            checked={hideWarn}
+            className="step4-5"
             onChange={() => {
-              setRemoveEmpty((prev) => !prev);
-              setFillGrid((prev) => !prev);
+              sethideWarn((prev) => !prev);
             }}
+            id="disable"
+            name="disable"
             type="checkbox"
-            name="remove_blank"
-            id="remove_blank"
           />
         </div>
 
@@ -432,9 +444,9 @@ const Grid: React.FC = () => {
         {clueList[0].answer.includes("") ? null : (
           <div className="prevent-click"> </div>
         )}
-        {!isValid && (
+        {!isValid && !hideWarn && (
           <div className="invalid-grid">
-            <p>Whoops - Invalid grid!</p>
+            <p>Invalid Grid!</p>
 
             <button onClick={showModal} className="info-button" type="button">
               <FaCircleInfo className="info-icon" />
@@ -549,7 +561,6 @@ const Wrapper = styled.div`
     p {
       width: fit-content;
       line-height: 2rem;
-      text-transform: lowercase;
     }
     button.info-button {
       border-radius: 50%;
