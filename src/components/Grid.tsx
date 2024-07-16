@@ -80,7 +80,7 @@ const Grid: React.FC = () => {
   const stepRefs = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
-    setLocalStorage("editor", { gridState, clueList, isModified });
+    setLocalStorage("editor", { grid: gridState, clues: clueList, isModified });
     if (linkRef) {
       stepRefs.current.push(linkRef.current);
     }

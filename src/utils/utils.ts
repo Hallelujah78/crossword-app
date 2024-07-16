@@ -1269,38 +1269,34 @@ export const getCluesFromCell = (cell: CellType, clues: Clue[]) => {
 };
 
 export const setLocalStorage = (
-  key: "solver" | "editor" | "puzzles",
-  data: {
-    gridState: CellType[];
-    clueList: Clue[];
-    selectedClue?: string;
-    selectedCell?: CellType | undefined;
-    isModified?: boolean;
-    puzzles: Puzzles;
-  }
+  key: "solver" | "editor" | "puzzles" | "warn",
+  data: Storage
 ) => {
   const {
-    gridState,
-    clueList,
-    selectedClue,
-    selectedCell,
+    grid,
+    clues,
+    clueSelection,
+    cellSelection,
     isModified,
     puzzles,
+    warn,
   } = data;
-  let dataStore: Puzzles | Storage;
+  let dataStore: Puzzles | Storage | boolean;
   if (key === "solver") {
     dataStore = {
-      grid: gridState,
-      clues: clueList,
-      clueSelection: selectedClue ? selectedClue : "",
-      cellSelection: selectedCell,
+      grid,
+      clues,
+      clueSelection: clueSelection ? clueSelection : "",
+      cellSelection: cellSelection ? cellSelection : undefined,
     };
   } else if (key === "editor") {
     dataStore = {
-      grid: gridState,
-      clues: clueList,
+      grid: grid,
+      clues: clues,
       isModified: isModified,
     };
+  } else if ((key === "warn" && warn === true) || warn === false) {
+    dataStore = warn;
   } else {
     if (puzzles && puzzles.length > 0) {
       dataStore = puzzles;
@@ -1557,3 +1553,5 @@ export const isGridValid = (clues: Clue[], grid: CellType[]) => {
   }
   return isValid;
 };
+
+//  setLocalStorage("editor", { gridState, clueList, isModified });
