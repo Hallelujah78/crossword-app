@@ -95,6 +95,14 @@ const Information: React.FC<InformationProps> = ({
       <div className="modal">
         <div className="info-container">
           <h1>{steps[currStep].title}</h1>
+          <img
+            src={steps[currStep]?.image}
+            alt=""
+            style={{
+              height: steps[currStep].height,
+              width: steps[currStep].width,
+            }}
+          />
           <p>{steps[currStep].text}</p>
         </div>
         <div className="button-container">

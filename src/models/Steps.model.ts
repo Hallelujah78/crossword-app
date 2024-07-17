@@ -8,4 +8,8 @@ export type Steps = {
   text: string;
   component?: React.FC<PositionProps> | null;
   attach?: Side;
+  image?: string;
+  alt?: string;
+  width?: string;
+  height?: string;
 }[];
