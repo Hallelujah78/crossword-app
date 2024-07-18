@@ -95,15 +95,21 @@ const Information: React.FC<InformationProps> = ({
       <div className="modal">
         <div className="info-container">
           <h1>{steps[currStep].title}</h1>
-          <img
-            src={steps[currStep]?.image}
-            alt=""
-            style={{
-              height: steps[currStep].height,
-              width: steps[currStep].width,
-            }}
-          />
-          <p>{steps[currStep].text}</p>
+          {steps[currStep]?.image ? (
+            <div className="content-container">
+              <img
+                src={steps[currStep]?.image}
+                alt=""
+                style={{
+                  height: steps[currStep].height,
+                  width: steps[currStep].width,
+                }}
+              />
+              <p>{steps[currStep].text}</p>
+            </div>
+          ) : (
+            <p>{steps[currStep].text}</p>
+          )}
         </div>
         <div className="button-container">
           {steps[currStep].buttons.map((button) => {
@@ -140,7 +146,7 @@ const Wrapper = styled.div`
     display: grid;
     place-content: center;
     width: 40vw;
-    height: 40vh;
+    height: auto;
     border-radius: 1rem;
     background: var(--primary-400);
     color: white;
@@ -154,20 +160,14 @@ const Wrapper = styled.div`
         border-bottom: 1px solid gray;
       }
     }
+    h1 {
+      margin-top: 1rem;
+    }
+    button {
+      margin-bottom: 1rem !important;
+    }
   }
 
-  button.close {
-    display: grid !important;
-    color: black !important;
-    background-color: transparent !important;
-    border: none !important;
-    font-size: calc(1.25rem + 0.390625vw) !important;
-    cursor: pointer !important;
-    position: absolute !important;
-    top: 1rem !important;
-    right: 1rem !important;
-    width: fit-content !important;
-  }
   .info-container {
     p {
       line-height: 2rem;

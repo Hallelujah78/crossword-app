@@ -26,7 +26,7 @@ const invalidGridSteps: InvalidSteps = [
       },
     ],
     title: "Invalid Grid: Answer Too Short",
-    text: "Generally, a cross word clue answer must be at least 3 letters long. When answers are too short, we highlight the cells in the problem answer with a red border.",
+    text: "Crossword clue answers must be at least 3 letters long. When answers are too short, the cells of the answer have a red border.",
     image: shortAnswer,
     alt: "short answer",
     width: "9rem",
