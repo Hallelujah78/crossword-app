@@ -455,7 +455,7 @@ const Grid: React.FC = () => {
         )}
       </div>
 
-      {isVisible && !localStorage.getItem("editor") && (
+      {isVisible && localStorage.getItem("editor") && (
         <Information
           myRefs={stepRefs}
           steps={steps}

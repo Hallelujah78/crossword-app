@@ -2192,3 +2192,8 @@ stepRefs.querySelector('#step1')
 
 - I wanted to allow the user to disable warnings in the Information modal that uses invalidGridSteps. However, this requires setting func to a function that uses a state setter in Grid. It's possible but messy.
 - ~~We'll group the disable warnings setting with our other buttons/options on the left~~ **DONE**
+
+## 19/7/24
+- todo
+  - update the Steps model so that we can pass in text or a styled component/component, or some html
+  - update Information.tsx so it renders whatever we pass in

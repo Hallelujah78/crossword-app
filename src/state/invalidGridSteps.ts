@@ -1,14 +1,13 @@
-import shortAnswer from "../assets/images/short.png";
+import type { ReactNode, FC } from "react";
+
+// components
+import TooShort from "../components/InvalidSteps/TooShort";
 
 export type InvalidSteps = {
   id: string;
   buttons: { text: string; buttonType: string; func?: () => void }[];
   title: string;
-  text: string;
-  image?: string;
-  alt?: string;
-  height?: string;
-  width?: string;
+  content: ReactNode | FC;
 }[];
 
 const invalidGridSteps: InvalidSteps = [
@@ -26,11 +25,7 @@ const invalidGridSteps: InvalidSteps = [
       },
     ],
     title: "Invalid Grid: Answer Too Short",
-    text: "Crossword clue answers must be at least 3 letters long. When answers are too short, the cells of the answer have a red border.",
-    image: shortAnswer,
-    alt: "short answer",
-    width: "9rem",
-    height: "9rem",
+    content: TooShort,
   },
   {
     id: "step2",
@@ -49,7 +44,7 @@ const invalidGridSteps: InvalidSteps = [
       },
     ],
     title: "Step 2",
-    text: "Let's walk through what you can do here.",
+    content: "Let's walk through what you can do here.",
   },
 ];
 
