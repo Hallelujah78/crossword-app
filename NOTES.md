@@ -2195,5 +2195,11 @@ stepRefs.querySelector('#step1')
 
 ## 19/7/24
 - todo
-  - update the Steps model so that we can pass in text or a styled component/component, or some html
-  - update Information.tsx so it renders whatever we pass in
+  - ~~update the Steps model so that we can pass in text or a styled component/component, or some html~~ **DONE** it only takes a component though
+  - ~~update Information.tsx so it renders whatever we pass in~~ **DONE**
+
+- if the user wants to use a simple string, they have to create a component to do this
+- options
+  - provide a helper component that just renders a paragraph
+    - will have to allow user to style
+  - use dangerouslySetInnerHTML with dompurify and let user type html in a string with inline styles?
