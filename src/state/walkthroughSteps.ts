@@ -1,6 +1,9 @@
-import Arrow from "../components/Arrow";
 import { Side } from "../models/Side.model";
 import type { Steps } from "../models/Steps.model";
+
+// components
+import Arrow from "../components/Arrow";
+import Paragraph from "../components/Paragraph";
 
 const steps: Steps = [
   {
@@ -17,7 +20,7 @@ const steps: Steps = [
       },
     ],
     title: "Welcome to the CrossWord creation tool!",
-    content: "Let's walk through what you can do here.",
+    content: Paragraph({ text: "Let's walk through what you can do here." }),
   },
   {
     id: "step2",

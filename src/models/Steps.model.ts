@@ -7,7 +7,7 @@ export type Steps = {
   id: string;
   buttons: { text: string; buttonType: string; func?: () => void }[];
   title: string;
-  content: ReactNode | FC<EmptyProps>;
+  content: ReactNode | FC<EmptyProps> | FC;
   component?: React.FC<PositionProps> | null;
   attach?: Side;
 }[];

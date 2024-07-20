@@ -2203,3 +2203,4 @@ stepRefs.querySelector('#step1')
   - provide a helper component that just renders a paragraph
     - will have to allow user to style
   - use dangerouslySetInnerHTML with dompurify and let user type html in a string with inline styles?
+  - cons - dompurify becomes a dependency
