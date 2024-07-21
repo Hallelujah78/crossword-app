@@ -39,8 +39,9 @@ const steps: Steps = [
       },
     ],
     title: "Editing the Grid",
-    content:
-      "Click on the dark or light squares to toggle them from dark to light, and vice-versa.",
+    content: Paragraph({
+      text: "Click on the dark or light squares to toggle them from dark to light, and vice-versa.",
+    }),
     component: Arrow,
     attach: Side.RIGHT,
   },
