@@ -62,8 +62,9 @@ const steps: Steps = [
       },
     ],
     title: "Editing the Grid",
-    content:
-      "Be careful though! There are some rules to determine if a crossword grid is valid or not. We'll let you know if your grid is not valid!",
+    content: Paragraph({
+      text: "Be careful though! There are some rules to determine if a crossword grid is valid or not. We'll let you know if your grid is not valid!",
+    }),
   },
   {
     id: "step4",
@@ -82,9 +83,30 @@ const steps: Steps = [
       },
     ],
     title: "Generate Answers",
-    content:
-      "If your grid is valid, you'll be able to click the 'Generate Answers' button to, well, er ... generate answers for your crossword. Hurray!",
-
+    content: Paragraph({
+      text: "If your grid is valid, you'll be able to click the 'Generate Answers' button to, well, er ... generate answers for your crossword. Hurray!",
+    }),
+  },
+  {
+    id: "step4.5",
+    buttons: [
+      {
+        text: "Exit",
+        buttonType: "cancel",
+      },
+      {
+        text: "Back",
+        buttonType: "back",
+      },
+      {
+        text: "Next",
+        buttonType: "next",
+      },
+    ],
+    title: "Disable Warnings",
+    content: Paragraph({
+      text: "You can turn off warnings about the grid being invalid here.",
+    }),
     component: Arrow,
     attach: Side.TOP,
   },
@@ -105,8 +127,10 @@ const steps: Steps = [
       },
     ],
     title: "The Force Fill Grid Option",
-    content:
-      "If this is unchecked, we'll try to fill in all the blank answers on your grid. If there is nothing that fits, we'll remove the empty cells at the end.",
+    content: Paragraph({
+      text: "If this is unchecked, we'll try to fill in all the blank answers on your grid. If there is nothing that fits, we'll remove the empty cells at the end.",
+    }),
+
     component: Arrow,
     attach: Side.LEFT,
   },
@@ -127,8 +151,9 @@ const steps: Steps = [
       },
     ],
     title: "Resetting the Answers and/or Grid",
-    content:
-      "These buttons become available after you edit the grid and/or generate answers. You can reset the generated answers while retaining any changes you've made to your grid!",
+    content: Paragraph({
+      text: "These buttons become available after you edit the grid and/or generate answers. You can reset the generated answers while retaining any changes you've made to your grid!",
+    }),
     component: Arrow,
     attach: Side.BOTTOM,
   },
@@ -149,8 +174,9 @@ const steps: Steps = [
       },
     ],
     title: "Mommy, where do clues come from?",
-    content:
-      "Why, they come from clicking the 'AI Generate Clues' button, of course! Your answers are sent to OpenAI and it comes up with the clues for your puzzle. Pretty sweet!",
+    content: Paragraph({
+      text: "Why, they come from clicking the 'AI Generate Clues' button, of course! Your answers are sent to OpenAI and it comes up with the clues for your puzzle. Pretty sweet!",
+    }),
     component: Arrow,
     attach: Side.RIGHT,
   },
@@ -171,8 +197,9 @@ const steps: Steps = [
       },
     ],
     title: "Saving Your Puzzle",
-    content:
-      "Once you have completed all the previous steps and created your puzzle, you can save it by entering a name and hitting 'Save Crossword.'",
+    content: Paragraph({
+      text: "Once you have completed all the previous steps and created your puzzle, you can save it by entering a name and hitting 'Save Crossword.'",
+    }),
     component: Arrow,
     attach: Side.RIGHT,
   },
@@ -189,8 +216,9 @@ const steps: Steps = [
       },
     ],
     title: "Solving Your Puzzle",
-    content:
-      "Once your puzzle is saved, you can try to solve it by clicking on 'Solve' and selecting it from the dropdown menu!",
+    content: Paragraph({
+      text: "Once your puzzle is saved, you can try to solve it by clicking on 'Solve' and selecting it from the dropdown menu!",
+    }),
     component: Arrow,
     attach: Side.BOTTOM,
   },

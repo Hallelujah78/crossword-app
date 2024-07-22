@@ -12,5 +12,6 @@ const Paragraph: FC<ParagraphProps> = ({ text }) => {
 export default Paragraph;
 
 const Wrapper = styled.p`
-  margin: 3rem 0 3rem 0;
+  margin: 3rem auto 3rem auto;
+  width: 90%;
 `;
