@@ -88,7 +88,7 @@ const steps: Steps = [
     }),
   },
   {
-    id: "step4.5",
+    id: "step4-5",
     buttons: [
       {
         text: "Exit",
@@ -108,7 +108,7 @@ const steps: Steps = [
       text: "You can turn off warnings about the grid being invalid here.",
     }),
     component: Arrow,
-    attach: Side.TOP,
+    attach: Side.LEFT,
   },
   {
     id: "step5",

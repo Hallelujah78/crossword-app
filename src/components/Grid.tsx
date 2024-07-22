@@ -310,6 +310,9 @@ const Grid: React.FC = () => {
         <div className="checkbox-group">
           <label htmlFor="disable">Disable Warnings</label>
           <input
+            ref={(el) => {
+              if (el) stepRefs.current.push(el);
+            }}
             checked={hideWarn}
             className="step4-5"
             onChange={() => {
