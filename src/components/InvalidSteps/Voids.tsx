@@ -12,9 +12,9 @@ const Voids: React.FC<EmptyProps> = () => {
     <Wrapper className="inner-container">
       <img src={voids} alt="" />
       <p>
-        Answers must be must be connected to the rest of the grid. When there
-        are islands of disconnected answers, different groups of disconnected
-        cells will have
+        If an entire side of the grid is made up of voids (dark cells), the grid
+        is invalid. In this case, the void cells will have a red border to
+        indicate that the grid is not a valid crossword grid.
       </p>
     </Wrapper>
   );

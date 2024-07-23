@@ -92,7 +92,7 @@ const Wrapper = styled.div<{
 }>`
   z-index: 99999;
   position: absolute;
-  top: ${(props) => props.$yval - 48}px;
+  top: ${(props) => props.$yval}px;
 
   left: ${(props) => props.$xval}px;
 

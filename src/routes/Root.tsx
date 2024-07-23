@@ -41,18 +41,23 @@ const Wrapper = styled.div`
     border-bottom: 1px solid gray;
     height: 3rem;
     color: white;
+    align-items: center;
     .powered-by {
       position: absolute;
       height: 3rem;
       line-height: 3rem;
       margin-left: 2rem;
       display: flex;
-    }
-    .ai-icon {
-      line-height: 3rem;
-      font-size: 2rem;
-      padding: 0.5rem 0;
-      margin-left: 0.5rem;
+      align-items: center;
+      h1 {
+        display: inline-block;
+      }
+      .ai-icon {
+        vertical-align: middle;
+        line-height: 3rem;
+        font-size: 2rem;
+        margin-left: 0.5rem;
+      }
     }
   }
 

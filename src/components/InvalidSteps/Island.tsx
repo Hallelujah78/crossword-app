@@ -12,9 +12,9 @@ const Island: React.FC<EmptyProps> = () => {
     <Wrapper className="inner-container">
       <img src={island} alt="" />
       <p>
-        Answers must be must be connected to the rest of the grid. When there
-        are islands of disconnected answers, different groups of disconnected
-        cells will have
+        Answers must be connected to the rest of the grid. When there are
+        islands of disconnected answers, groups of disconnected cells will have
+        different background colours.
       </p>
     </Wrapper>
   );

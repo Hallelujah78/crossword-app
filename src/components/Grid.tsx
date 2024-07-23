@@ -504,12 +504,52 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 2fr 0.5fr;
 
   .grid-container {
+    position: relative;
     grid-template-columns: repeat(13, 1fr);
     display: grid;
     width: fit-content;
     height: fit-content;
     margin: auto;
     margin-left: 4rem;
+    .prevent-click {
+      height: 100%;
+      width: 100%;
+      background-color: rgba(138, 239, 247, 0.125);
+      position: absolute;
+      z-index: 1119;
+      cursor: not-allowed;
+    }
+    .invalid-grid {
+      top: -2.1rem;
+      right: 50%;
+      transform: translateX(50%);
+      position: absolute;
+      display: flex;
+      color: white;
+      background-color: #d47e7e;
+      width: fit-content;
+      height: 2rem;
+      border-radius: 6px;
+      padding: 0 0.5rem 0 0.5rem;
+      p {
+        width: fit-content;
+        line-height: 2rem;
+      }
+      button.info-button {
+        border-radius: 50%;
+        width: 2rem !important;
+        height: 2rem !important;
+        margin-top: 0rem !important;
+        padding: 0 !important;
+        background: transparent !important;
+        .info-icon {
+          font-size: 2rem;
+          background: var(--primary-400);
+          border-radius: 50%;
+          animation: ${pulse} 1.5s infinite;
+        }
+      }
+    }
   }
 
   .control-container {
@@ -526,14 +566,7 @@ const Wrapper = styled.div`
       color: white;
     }
   }
-  .prevent-click {
-    height: 100%;
-    width: 100%;
-    background-color: rgba(138, 239, 247, 0.125);
-    position: absolute;
-    z-index: 1119;
-    cursor: not-allowed;
-  }
+
   .checkbox-group {
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -547,37 +580,6 @@ const Wrapper = styled.div`
       width: 9rem;
       text-transform: capitalize;
       border-radius: 3px;
-    }
-  }
-  .invalid-grid {
-    top: 1rem;
-    right: 50%;
-    transform: translateX(50%);
-    position: absolute;
-    display: flex;
-    color: white;
-    background-color: #d47e7e;
-    width: fit-content;
-    height: 2rem;
-    border-radius: 6px;
-    padding: 0 0.5rem 0 0.5rem;
-    p {
-      width: fit-content;
-      line-height: 2rem;
-    }
-    button.info-button {
-      border-radius: 50%;
-      width: 2rem !important;
-      height: 2rem !important;
-      margin-top: 0rem !important;
-      padding: 0 !important;
-      background: transparent !important;
-      .info-icon {
-        font-size: 2rem;
-        background: var(--primary-400);
-        border-radius: 50%;
-        animation: ${pulse} 1.5s infinite;
-      }
     }
   }
 `;

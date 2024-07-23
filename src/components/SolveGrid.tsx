@@ -758,7 +758,6 @@ export default SolveGrid;
 // *******************************
 
 const Wrapper = styled.div`
-  border: red solid 1px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;

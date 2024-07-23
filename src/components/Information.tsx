@@ -120,17 +120,18 @@ const Information: React.FC<InformationProps> = ({
 export default Information;
 
 const Wrapper = styled.div`
-  top: 0rem;
+  top: -3rem;
   left: 0rem;
   position: absolute;
   font-size: calc(1rem + 0.390625vw);
   text-align: center;
   z-index: 9999;
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
   width: 100%;
   display: grid;
   place-content: center;
   .modal {
+    padding: 2rem;
     display: grid;
     place-content: center;
     width: 40vw;
