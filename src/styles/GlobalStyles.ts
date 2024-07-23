@@ -35,6 +35,7 @@ button {
     color: white;
     cursor: pointer;
 
+    
     &:disabled {
       background-color: var(--primary-100);
       cursor: not-allowed;
@@ -43,6 +44,11 @@ button {
     transition: 0.3s linear all;
   }
 }
+@media (max-width: 500px) {
+      button{
+        width: 25vw !important;
+      }
+    }
 `;
 
 export default GlobalStyle;
