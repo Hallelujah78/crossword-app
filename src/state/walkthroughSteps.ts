@@ -19,7 +19,7 @@ const steps: Steps = [
         buttonType: "next",
       },
     ],
-    title: "Welcome to the CrossWord creation tool!",
+    title: "Welcome to the GridMaster create tool!",
     content: Paragraph({ text: "Let's walk through what you can do here." }),
   },
   {

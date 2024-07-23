@@ -17,7 +17,7 @@ const Root: React.FC = () => {
         </div>
         <h1 className="title">GridMaster</h1>
         <div className="link-container">
-          <NavLink to={"/"}>Create/Edit</NavLink>
+          <NavLink to={"/"}>Create</NavLink>
           <NavLink ref={linkRef} className="step9" to={"solver"}>
             Solve
           </NavLink>
