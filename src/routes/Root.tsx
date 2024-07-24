@@ -4,17 +4,14 @@ import { useRef } from "react";
 // libs
 import styled from "styled-components";
 import { NavLink, Outlet } from "react-router-dom";
-import { RiOpenaiFill } from "react-icons/ri";
+import PoweredBy from "../components/PoweredBy";
 
 const Root: React.FC = () => {
   const linkRef = useRef<HTMLAnchorElement>(null);
   return (
     <Wrapper>
       <nav>
-        <div className="powered-by">
-          <h1>Powered by OpenAI</h1>
-          <RiOpenaiFill className="ai-icon" />
-        </div>
+        <PoweredBy />
         <h1 className="title">GridMaster</h1>
         <div className="link-container">
           <NavLink to={"/"}>Create</NavLink>
@@ -42,36 +39,19 @@ const Wrapper = styled.div`
     height: 3rem;
     color: white;
     align-items: center;
-    .powered-by {
-      position: absolute;
-      height: 3rem;
-      line-height: 3rem;
-      margin-left: 2rem;
-      display: flex;
-      align-items: center;
-      h1 {
-        display: inline-block;
-      }
-      .ai-icon {
-        vertical-align: middle;
-        line-height: 3rem;
-        font-size: 2rem;
-        margin-left: 0.5rem;
-      }
-    }
   }
 
   .title {
     margin: auto;
     height: 100%;
-    font-size: 2.5rem;
+    font-size: calc(1.5rem + 0.390625vw) !important;
     line-height: 3rem;
   }
 
   section {
     margin: 0;
     padding: 0;
-    box-sizing: border-box !important;
+    box-sizing: border-box;
     height: calc(100vh - var(--nav-height));
     display: grid;
     place-content: center;
@@ -100,5 +80,10 @@ const Wrapper = styled.div`
 
     display: flex;
     margin-right: 2rem;
+  }
+  @media (max-width: 500px) {
+    .powered-by {
+      display: none;
+    }
   }
 `;

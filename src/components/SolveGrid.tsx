@@ -38,6 +38,7 @@ import {
 } from "../utils/utils";
 import type { Puzzle, Puzzles } from "../models/Puzzles.model";
 import Loading from "./Loading";
+import PoweredBy from "./PoweredBy";
 
 const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() =>
@@ -612,6 +613,7 @@ const SolveGrid: React.FC = () => {
   }
   return (
     <Wrapper>
+      <PoweredBy />
       <div className="control-container">
         <label htmlFor="puzzles">Select Puzzle</label>
         <select
@@ -791,6 +793,7 @@ const Wrapper = styled.div`
     }
     select {
       border-radius: 3px;
+      width: fit-content;
       min-width: 6vw;
     }
     button {
@@ -836,6 +839,17 @@ const Wrapper = styled.div`
     }
     .grid-container {
       margin: auto;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .powered-by {
+      display: flex;
+    }
+  }
+  @media (min-width: 501px) {
+    .powered-by {
+      display: none;
     }
   }
 `;
