@@ -16,6 +16,12 @@ const Wrapper = styled.div`
   display: grid;
   place-content: center;
   max-width: 100%;
+  width: 100%;
   position: relative;
   background-color: #1c1d1f;
+
+  @media (max-width: 500px) {
+    height: fit-content;
+    position: absolute;
+  }
 `;

@@ -585,7 +585,6 @@ const Wrapper = styled.div`
   @media (max-width: 500px) {
     grid-template-columns: 1fr;
     .control-container {
-      border: red solid 1px;
       max-width: 100%;
     }
     .grid-container {

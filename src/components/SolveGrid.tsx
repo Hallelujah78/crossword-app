@@ -790,14 +790,17 @@ const Wrapper = styled.div`
     }
     label {
       color: white;
+      font-size: calc(0.6rem + 0.390625vw);
     }
     select {
       border-radius: 3px;
       width: fit-content;
       min-width: 6vw;
+      font-size: calc(0.6rem + 0.390625vw);
     }
     button {
       margin-top: 2rem !important;
+      font-size: calc(0.6rem + 0.390625vw);
     }
   }
   // clues
@@ -832,21 +835,45 @@ const Wrapper = styled.div`
     }
   }
   @media (max-width: 500px) {
+    height: fit-content;
     grid-template-columns: 1fr;
+    width: 100%;
+
     .control-container {
-      border: red solid 1px;
+      display: flex;
+      height: fit-content;
       max-width: 100%;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+      label {
+        height: fit-content;
+      }
+      select {
+        height: fit-content;
+      }
+      button {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
+      }
     }
     .grid-container {
       margin: auto;
     }
-  }
-
-  @media (max-width: 500px) {
+    .clue-container {
+      width: 100%;
+    }
     .powered-by {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0.5rem;
       display: flex;
+      position: relative;
+      height: 1rem;
     }
   }
+
   @media (min-width: 501px) {
     .powered-by {
       display: none;

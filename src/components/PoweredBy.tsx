@@ -14,7 +14,7 @@ export default PoweredBy;
 const Wrapper = styled.div`
   color: white;
   position: absolute;
-  height: 3rem;
+  height: var(--nav-height);
   line-height: 3rem;
   margin-left: 2rem;
   display: flex;
