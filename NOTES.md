@@ -2204,3 +2204,17 @@ stepRefs.querySelector('#step1')
     - will have to allow user to style
   - use dangerouslySetInnerHTML with dompurify and let user type html in a string with inline styles?
   - cons - dompurify becomes a dependency
+
+## 27/7/2024 to do
+- all the below applies to smaller screens!
+- in SolveGrid, hide the clues if there are no clues (at least on smaller screens)
+  - use visibility hidden on larger screens? or put a placeholder that says 'when a puzzle is created/loaded, clues will appear here'
+- make buttons for clear/reveal/reset all/this bigger and space them apart slightly on smaller screens
+- when a user selects an answer on small screens, it would be best to display the clue above the crossword (so they don't have to scroll down all the time to see what the clue for the selected answer is)
+- in Grid.tsx (create tool) - move the logo next to GridMaster text. place a menu in the top right of the nav that is for:
+  - seeing the tutorial/onboarding tutorial
+  - stick in your links to portfolio, linkedin, and github
+- walkthrough steps and invalid grid steps will have to be updated for different screen sizes
+  - this might be easy but difficult to make reusable - we'll see
+- fix walkthrough modal and invalid grid modal sizing/positioning on small screens
+- fix the controls styling on small screen
