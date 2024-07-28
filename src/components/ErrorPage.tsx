@@ -1,7 +1,15 @@
 import type React from "react";
 import styled from "styled-components";
 
-const ErrorPage: React.FC = ({ error }) => {
+interface ErrorProps {
+  error: {
+    message?: string;
+    status?: string;
+    error?: { message?: string; type?: string };
+  };
+}
+
+const ErrorPage: React.FC<ErrorProps> = ({ error }) => {
   return (
     <Wrapper id="error-page">
       <div className="center-content">

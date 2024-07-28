@@ -392,6 +392,7 @@ const SolveGrid: React.FC = () => {
     const cluesToRender = clues.filter((clue) => {
       return clue.direction === direction;
     });
+
     return cluesToRender.map((clue) => {
       const isSelected = clue.id === selectedClue;
       return (
@@ -734,19 +735,27 @@ const SolveGrid: React.FC = () => {
           </div>
         </div>
       </div>
-
-      <div className="clue-container">
-        <div className="across">
-          <h2>Across</h2>
-          <ul>{renderClues(clueList, Direction.ACROSS)}</ul>
+      {clueList[0].clue === "" ? (
+        <div className="no-clues">
+          <p>
+            Clues are displayed here. Select a puzzle from the dropdown or
+            create a new random puzzle to show clues!
+          </p>
         </div>
-        <div className="down">
-          <h2>Down</h2>
-          <ul>
-            <ul>{renderClues(clueList, Direction.DOWN)}</ul>
-          </ul>
+      ) : (
+        <div className="clue-container">
+          <div className="across">
+            <h2>Across</h2>
+            <ul>{renderClues(clueList, Direction.ACROSS)}</ul>
+          </div>
+          <div className="down">
+            <h2>Down</h2>
+            <ul>
+              <ul>{renderClues(clueList, Direction.DOWN)}</ul>
+            </ul>
+          </div>
         </div>
-      </div>
+      )}
     </Wrapper>
   );
 };
@@ -804,11 +813,13 @@ const Wrapper = styled.div`
     }
   }
   // clues
-  .clue-container {
-    place-content: center;
+  .clue-container,
+  .no-clues {
     margin: auto;
-    width: 30vw;
+    width: 35vw;
+    min-height: 90vh;
     color: #d1d0ce;
+
     h2 {
       border-bottom: 1px rgba(80, 80, 80, 0.8) solid;
       font-size: clamp(1.25rem, 1.7vw, 1.5rem);
@@ -834,7 +845,19 @@ const Wrapper = styled.div`
       margin-top: 1.25rem;
     }
   }
-  @media (max-width: 500px) {
+  .no-clues {
+    padding: 1rem;
+    place-content: center;
+    display: grid;
+    border: 1px rgba(80, 80, 80, 0.8) solid;
+    p {
+      font-size: calc(1.3rem + 0.390625vw);
+      max-width: 90%;
+      margin: auto;
+      text-align: center;
+    }
+  }
+  @media (max-width: 600px) {
     height: fit-content;
     grid-template-columns: 1fr;
     width: 100%;
@@ -861,8 +884,15 @@ const Wrapper = styled.div`
     .grid-container {
       margin: auto;
     }
-    .clue-container {
+    .clue-container,
+    .no-clues {
       width: 100%;
+      margin-top: 1rem;
+    }
+    .no-clues {
+      display: block;
+      width: 90vw;
+      min-height: fit-content;
     }
     .powered-by {
       width: 100%;
