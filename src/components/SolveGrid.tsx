@@ -52,6 +52,7 @@ const SolveGrid: React.FC = () => {
       : initializeApp(gridState)
   );
   const [removeEmpty, _setRemoveEmpty] = useState<boolean>(false);
+
   const [selectedClue, setSelectedClue] = useState<string>(() =>
     localStorage.getItem("solver")
       ? getLocalStorage("solver")?.clueSelection
@@ -415,6 +416,25 @@ const SolveGrid: React.FC = () => {
     });
   };
 
+  const renderSelectedClue = () => {
+    const currSelectedClue = clueList.find((clue) => clue.id === selectedClue);
+
+    if (currSelectedClue?.clue) {
+      return (
+        <li id={currSelectedClue.id}>
+          <span>
+            {currSelectedClue.clueNumber +
+              (currSelectedClue.direction === 1 ? "D" : "A")}
+          </span>{" "}
+          <div>
+            {currSelectedClue.clue}{" "}
+            <span>{getWordLength(currSelectedClue)}</span>
+          </div>
+        </li>
+      );
+    }
+  };
+
   async function getClues(clues: Clue[]) {
     type ReqClue = {
       id: string;
@@ -647,10 +667,12 @@ const SolveGrid: React.FC = () => {
             getClues(resetClues);
           }}
         >
-          New Random Puzzle
+          New Puzzle
         </button>
         <br />
       </div>
+
+      {<div className="selected-clue">{renderSelectedClue()}</div>}
       <div className="grid-button-container">
         <div className="grid-container">
           {gridState?.map((cell: CellType, index: number) => {
@@ -773,11 +795,10 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
-  height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - var(--nav-height));
   display: grid;
   grid-template-columns: 0.8fr 2fr 2fr;
   .grid-button-container {
-    place-content: center;
     .grid-container {
       grid-template-columns: repeat(13, 1fr);
       display: grid;
@@ -786,6 +807,12 @@ const Wrapper = styled.div`
     }
     .button-container {
       margin-top: 0.75rem;
+
+      button {
+        font-size: calc(0.65rem + 0.390625vw) !important;
+        padding: 0.35rem !important;
+        margin: 0.45rem 0.3rem 0.45rem 0.3rem !important;
+      }
     }
   }
 
@@ -808,9 +835,13 @@ const Wrapper = styled.div`
       font-size: calc(0.6rem + 0.390625vw);
     }
     button {
-      margin-top: 2rem !important;
+      margin-top: 1.5rem !important;
       font-size: calc(0.6rem + 0.390625vw);
     }
+  }
+  .selected-clue {
+    display: none;
+    color: white;
   }
   // clues
   .clue-container,
@@ -851,17 +882,17 @@ const Wrapper = styled.div`
     display: grid;
     border: 1px rgba(80, 80, 80, 0.8) solid;
     p {
-      font-size: calc(1.3rem + 0.390625vw);
+      font-size: calc(1.2rem + 0.390625vw);
       max-width: 90%;
       margin: auto;
       text-align: center;
     }
   }
+
   @media (max-width: 600px) {
     height: fit-content;
     grid-template-columns: 1fr;
     width: 100%;
-
     .control-container {
       display: flex;
       height: fit-content;
@@ -874,6 +905,7 @@ const Wrapper = styled.div`
       }
       select {
         height: fit-content;
+        min-width: calc((0.6rem + 0.390625vw) * 8);
       }
       button {
         margin-top: 0 !important;
@@ -881,6 +913,11 @@ const Wrapper = styled.div`
         margin-right: 0 !important;
       }
     }
+    .selected-clue {
+      display: inline;
+      border: red solid 1px;
+    }
+
     .grid-container {
       margin: auto;
     }
@@ -901,6 +938,15 @@ const Wrapper = styled.div`
       display: flex;
       position: relative;
       height: 1rem;
+    }
+    .grid-button-container {
+      .button-container {
+        button {
+          font-size: calc(0.9rem + 0.390625vw) !important;
+          padding: 0.25rem !important;
+          margin: 0.6rem 0.3rem 0.6rem 0.3rem !important;
+        }
+      }
     }
   }
 

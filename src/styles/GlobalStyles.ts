@@ -44,7 +44,7 @@ button {
     transition: 0.3s linear all;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
       button{
         width: 25vw !important;
       }

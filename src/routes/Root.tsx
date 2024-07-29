@@ -42,9 +42,10 @@ const Root: React.FC = () => {
 export default Root;
 
 const Wrapper = styled.div`
-  height: 100vh;
   position: relative;
   background-color: #1c1d1f;
+  /* width: 100%;
+  height: 100%; */
   .nav-container {
     width: 100%;
     height: var(--nav-height);
@@ -71,11 +72,13 @@ const Wrapper = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: calc(100vh - var(--nav-height));
+    /* min-height: calc(100vh - var(--nav-height)); */
+    height: auto;
     display: grid;
     place-content: center;
     max-width: 100%;
     width: 100%;
+    background-color: #1c1d1f;
   }
   a {
     text-decoration: none;
