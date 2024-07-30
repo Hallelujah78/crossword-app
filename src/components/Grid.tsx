@@ -582,7 +582,7 @@ const Wrapper = styled.div`
       border-radius: 3px;
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     grid-template-columns: 1fr;
     .control-container {
       height: fit-content;

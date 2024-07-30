@@ -102,7 +102,7 @@ const Wrapper = styled.div`
   .logo-container {
     display: none;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     .powered-by {
       display: none;
     }

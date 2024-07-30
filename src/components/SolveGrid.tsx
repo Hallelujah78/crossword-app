@@ -397,7 +397,8 @@ const SolveGrid: React.FC = () => {
     return cluesToRender.map((clue) => {
       const isSelected = clue.id === selectedClue;
       return (
-        <li
+        <div
+          className="clue-item"
           id={clue.id}
           onClick={(e) => handleClueClick(e)}
           onKeyDown={() => {}}
@@ -407,11 +408,16 @@ const SolveGrid: React.FC = () => {
           }}
           key={clue.id}
         >
-          <span>{clue.clueNumber}</span>{" "}
-          <div>
-            {clue.clue} <span>{getWordLength(clue)}</span>
+          <div className="clue-number">
+            <p>{clue.clueNumber}</p>
           </div>
-        </li>
+
+          <div className="clue-text">
+            <p>
+              {clue.clue} <span>{getWordLength(clue)}</span>
+            </p>
+          </div>
+        </div>
       );
     });
   };
@@ -421,16 +427,23 @@ const SolveGrid: React.FC = () => {
 
     if (currSelectedClue?.clue) {
       return (
-        <li id={currSelectedClue.id}>
-          <span>
-            {currSelectedClue.clueNumber +
-              (currSelectedClue.direction === 1 ? "D" : "A")}
-          </span>{" "}
+        <>
           <div>
-            {currSelectedClue.clue}{" "}
-            <span>{getWordLength(currSelectedClue)}</span>
+            <p className="clue-number">
+              {currSelectedClue.clueNumber +
+                (currSelectedClue.direction === 1 ? "D" : "A")}
+            </p>
           </div>
-        </li>
+
+          <div>
+            <p className="clue-text">{currSelectedClue.clue}</p>
+          </div>
+          <div>
+            <p>
+              <p className="answer-length">{getWordLength(currSelectedClue)}</p>
+            </p>
+          </div>
+        </>
       );
     }
   };
@@ -859,14 +872,15 @@ const Wrapper = styled.div`
       height: 1.75rem;
     }
 
-    li {
+    div.clue-item {
       font-size: clamp(1rem, 1vw, 1.25rem);
       border-radius: 0.2rem;
       margin: 0.55rem 0 0.55rem 0;
       padding: 0 0.9rem 0 0.9rem;
       color: darkgray;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 10% 90%;
+      gap: 0.5rem;
 
       &:hover {
         cursor: pointer;
@@ -914,8 +928,23 @@ const Wrapper = styled.div`
       }
     }
     .selected-clue {
-      display: inline;
-      border: red solid 1px;
+      margin: 0.5rem 0 0rem 0;
+      grid-template-columns: 10% 75% 15%;
+      display: grid;
+      min-height: 2rem;
+      div {
+        display: grid;
+        place-content: center;
+        height: fit-content;
+
+        p {
+          text-align: center;
+        }
+        .clue-text {
+          margin: auto;
+          overflow-x: wrap;
+        }
+      }
     }
 
     .grid-container {
@@ -950,7 +979,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media (min-width: 501px) {
+  @media (min-width: 601px) {
     .powered-by {
       display: none;
     }

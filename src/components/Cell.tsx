@@ -49,7 +49,7 @@ const Wrapper = styled.div<{ id: number | undefined }>`
     line-height: calc(39vw / 13);
     font-weight: bold;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     height: calc(95vw / 13);
     width: calc(95vw / 13);
   }

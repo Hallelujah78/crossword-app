@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   position: relative;
   background-color: #1c1d1f;
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     height: fit-content;
     position: absolute;
   }

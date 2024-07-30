@@ -72,7 +72,7 @@ const Wrapper = styled.div<{ id: number | undefined }>`
       }
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     height: calc(95vw / 13);
     width: calc(95vw / 13);
   }
