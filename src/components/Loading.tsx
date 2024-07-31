@@ -6,8 +6,12 @@ const Loading: React.FC = () => {
       <div className="loading-container">
         <div className="loading" />
         <div className="powered-by">
-          <h1>Fetching clues from OpenAI</h1>
-          <RiOpenaiFill className="ai-icon" />
+          <h1>
+            Fetching clues from OpenAI
+            <span>
+              <RiOpenaiFill className="ai-icon" />
+            </span>
+          </h1>
         </div>
       </div>
     </Wrapper>
@@ -22,10 +26,16 @@ const spinnerAnimation = keyframes`
 `;
 
 const Wrapper = styled.div`
+  width: 100vw;
+  max-width: 100%;
+
   .loading-container {
     height: 100%;
     display: grid;
+    margin: auto;
     place-content: center;
+    width: 100%;
+
     .loading {
       margin: auto;
       color: white;
@@ -41,9 +51,20 @@ const Wrapper = styled.div`
       margin-top: 2rem;
       display: flex;
       color: white;
-      font-size: 2rem;
+      align-items: center;
+      width: fit-content;
+
+      h1 {
+        font-size: calc(1rem + 0.390625vw);
+        text-align: left;
+        span {
+          height: 100%;
+        }
+      }
       .ai-icon {
-        margin-left: 1rem;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+        font-size: calc(1rem + 0.390625vw);
       }
     }
   }

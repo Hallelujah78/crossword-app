@@ -639,7 +639,7 @@ const SolveGrid: React.FC = () => {
   // *******************************
   // *******************************
   // *******************************
-  if (isLoading) {
+  if (!isLoading) {
     return <Loading />;
   }
   if (error) {
@@ -904,6 +904,7 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: 600px) {
+    /* min-height: calc(100vh - var(--nav-height)); */
     height: fit-content;
     grid-template-columns: 1fr;
     width: 100%;
