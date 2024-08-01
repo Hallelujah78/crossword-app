@@ -140,6 +140,11 @@ const Wrapper = styled.div`
     background: var(--primary-400);
     color: white;
     position: relative;
+    .button-container {
+      display: flex;
+      width: fit-content;
+      margin: auto;
+    }
     p {
       a {
         background-color: transparent;
@@ -159,6 +164,17 @@ const Wrapper = styled.div`
   .info-container {
     p {
       line-height: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .modal {
+      width: 90vw;
+      height: fit-content;
+      position: absolute;
+      bottom: 4rem;
+      right: calc(50%);
+      transform: translateX(50%);
     }
   }
 `;

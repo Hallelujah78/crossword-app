@@ -639,7 +639,7 @@ const SolveGrid: React.FC = () => {
   // *******************************
   // *******************************
   // *******************************
-  if (!isLoading) {
+  if (isLoading) {
     return <Loading />;
   }
   if (error) {

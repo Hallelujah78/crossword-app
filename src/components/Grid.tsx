@@ -77,7 +77,7 @@ const Grid: React.FC = () => {
     close: closeModal,
   } = useModal(false);
 
-  const [hideWarn, sethideWarn] = useState<boolean | null>(() => {
+  const [hideWarn, sethideWarn] = useState<boolean | undefined>(() => {
     return localStorage.getItem("editor")
       ? getLocalStorage("editor")?.warn
       : false;
@@ -342,40 +342,44 @@ const Grid: React.FC = () => {
         </div>
 
         <br />
-        <button
-          className="step6"
-          ref={(el) => {
-            if (el) stepRefs.current.push(el);
-          }}
-          disabled={clueList[0].answer.includes("") || clueList[0].clue !== ""}
-          type="button"
-          onClick={() => {
-            const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
-              clueList,
-              gridState
-            );
-            setGridState(resetGrid);
-            setClueList(resetClues);
-          }}
-        >
-          Reset Answers
-        </button>
-        <button
-          disabled={!isModified}
-          type="button"
-          onClick={() => {
-            const newGrid = initializeGrid(
-              JSON.parse(JSON.stringify(initialGrid))
-            );
-            const newClues = initializeApp(newGrid);
-            setGridState(newGrid);
-            setClueList(newClues);
-            setIsModified(false);
-            setIsValid(true);
-          }}
-        >
-          Reset Grid & Answers
-        </button>
+        <div className="reset">
+          <button
+            className="step6"
+            ref={(el) => {
+              if (el) stepRefs.current.push(el);
+            }}
+            disabled={
+              clueList[0].answer.includes("") || clueList[0].clue !== ""
+            }
+            type="button"
+            onClick={() => {
+              const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
+                clueList,
+                gridState
+              );
+              setGridState(resetGrid);
+              setClueList(resetClues);
+            }}
+          >
+            Reset Answers
+          </button>
+          <button
+            disabled={!isModified}
+            type="button"
+            onClick={() => {
+              const newGrid = initializeGrid(
+                JSON.parse(JSON.stringify(initialGrid))
+              );
+              const newClues = initializeApp(newGrid);
+              setGridState(newGrid);
+              setClueList(newClues);
+              setIsModified(false);
+              setIsValid(true);
+            }}
+          >
+            Reset Grid & Answers
+          </button>
+        </div>
         <br />
         <button
           className="step7"
@@ -494,13 +498,12 @@ const pulse = keyframes`
 
 `;
 const Wrapper = styled.div`
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - var(--nav-height));
   display: grid;
-  place-content: center;
+  /* place-content: ; */
   grid-template-columns: 1fr 2fr 0.5fr;
 
   .grid-container {
@@ -556,7 +559,6 @@ const Wrapper = styled.div`
     display: grid;
     height: calc(100vh - var(--nav-height));
     place-content: center;
-
     button,
     input,
     label {
@@ -574,6 +576,7 @@ const Wrapper = styled.div`
   .save-container {
     display: flex;
 
+    align-items: center;
     input {
       font-size: 1rem;
       padding-left: 1rem;
@@ -584,12 +587,42 @@ const Wrapper = styled.div`
   }
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    max-width: 100%;
     .control-container {
+      padding-top: 0.5rem;
+
       height: fit-content;
       max-width: 100%;
+
+      button,
+      input,
+      label {
+      }
+      label {
+      }
+    }
+    button {
+      height: fit-content !important;
+      width: fit-content !important;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+    }
+    .save-container {
+      display: flex;
+
+      input {
+        font-size: 1rem;
+        padding-left: 1rem;
+        width: 9rem;
+        text-transform: capitalize;
+        border-radius: 3px;
+      }
     }
     .grid-container {
-      margin: auto;
+      margin: 0 auto 0 auto;
     }
   }
 `;

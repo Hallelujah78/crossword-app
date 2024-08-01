@@ -2214,8 +2214,8 @@ stepRefs.querySelector('#step1')
 - in Grid.tsx (create tool) - move the logo next to GridMaster text. place a menu in the top right of the nav that is for:
   - seeing the tutorial/onboarding tutorial
   - stick in your links to portfolio, linkedin, and github
-- walkthrough steps and invalid grid steps will have to be updated for different screen sizes
+- ~~walkthrough steps and invalid grid steps will have to be updated for different screen sizes~~ **DONE FOR MAX 600 PX**
   - this might be easy but difficult to make reusable - we'll see
-- fix walkthrough modal and invalid grid modal sizing/positioning on small screens
-- fix the controls styling on small screen
+- ~~fix walkthrough modal and invalid grid modal sizing/positioning on small screens~~ **DONE 600 PX**
+- ~~fix the controls styling on small screen~~ **DONE 600PX**
 - further issue: check/reveal/clear buttons are hidden by the keyboard on mobile devices when the user clicks on an answer

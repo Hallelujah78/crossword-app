@@ -43,7 +43,7 @@ const steps: Steps = [
       text: "Click on the dark or light squares to toggle them from dark to light, and vice-versa.",
     }),
     component: Arrow,
-    attach: Side.RIGHT,
+    attach: Side.TOP,
   },
   {
     id: "step3",
@@ -86,6 +86,8 @@ const steps: Steps = [
     content: Paragraph({
       text: "If your grid is valid, you'll be able to click the 'Generate Answers' button to, well, er ... generate answers for your crossword. Hurray!",
     }),
+    component: Arrow,
+    attach: Side.RIGHT,
   },
   {
     id: "step4-5",
@@ -155,7 +157,7 @@ const steps: Steps = [
       text: "These buttons become available after you edit the grid and/or generate answers. You can reset the generated answers while retaining any changes you've made to your grid!",
     }),
     component: Arrow,
-    attach: Side.BOTTOM,
+    attach: Side.RIGHT,
   },
   {
     id: "step7",
@@ -201,7 +203,7 @@ const steps: Steps = [
       text: "Once you have completed all the previous steps and created your puzzle, you can save it by entering a name and hitting 'Save Crossword.'",
     }),
     component: Arrow,
-    attach: Side.RIGHT,
+    attach: Side.TOP,
   },
   {
     id: "step9",
