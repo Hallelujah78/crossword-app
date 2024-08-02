@@ -2219,3 +2219,6 @@ stepRefs.querySelector('#step1')
 - ~~fix walkthrough modal and invalid grid modal sizing/positioning on small screens~~ **DONE 600 PX**
 - ~~fix the controls styling on small screen~~ **DONE 600PX**
 - further issue: check/reveal/clear buttons are hidden by the keyboard on mobile devices when the user clicks on an answer
+
+## 2/8/2024
+- on small screens, the letters are not positioned correctly after you generate the answers

@@ -40,6 +40,7 @@ const Wrapper = styled.div<{ id: number | undefined }>`
     top: 0;
     left: 0;
     padding: 0.1rem;
+    font-size: calc(0.4rem + 0.390625vw);
   }
   .letter-container {
     margin: auto;
@@ -48,9 +49,13 @@ const Wrapper = styled.div<{ id: number | undefined }>`
     text-align: center;
     line-height: calc(39vw / 13);
     font-weight: bold;
+    font-size: calc(0.7rem + 0.390625vw);
   }
   @media (max-width: 600px) {
     height: calc(95vw / 13);
     width: calc(95vw / 13);
+    .letter-container {
+      line-height: calc(95vw / 13);
+    }
   }
 `;
