@@ -185,6 +185,9 @@ const SolveGrid: React.FC = () => {
   const handleAlpha = (e: KeyboardEvent) => {
     const clues = [...clueList];
     const grid = [...gridState];
+    if (e.key === "Unidentified") {
+      return;
+    }
     const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
     let targetCell: CellType | undefined = selectedCell
       ? { ...selectedCell, answer: e.key }
@@ -236,7 +239,10 @@ const SolveGrid: React.FC = () => {
     if (e.key === "Backspace") {
       handleDelete(e);
     }
-    if ("ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(e.key.toUpperCase())) {
+    if (
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(e.key.toUpperCase()) ||
+      e.key === "Unidentified"
+    ) {
       handleAlpha(e);
     }
     if (e.key === "Tab") {

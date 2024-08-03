@@ -2221,4 +2221,13 @@ stepRefs.querySelector('#step1')
 - further issue: check/reveal/clear buttons are hidden by the keyboard on mobile devices when the user clicks on an answer
 
 ## 2/8/2024
-- on small screens, the letters are not positioned correctly after you generate the answers
+- ~~on small screens, the letters are not positioned correctly after you generate the answers~~ **DONE**
+
+## 3/8/24
+- big problem right now is:
+  - in chrome, you can't get the e.key, it's unidentified
+  - this means we can't restrict what the user enters using e.key on android
+- one possible solution:
+  - each cell has its own state for the value of the input
+  - when the value changes, we get the value of the input, validate it, and then update the grid/clue state of the app?
+- 

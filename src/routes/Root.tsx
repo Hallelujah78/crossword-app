@@ -44,8 +44,10 @@ export default Root;
 const Wrapper = styled.div`
   position: relative;
   background-color: #1c1d1f;
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  min-width: 100% !important;
+  /* height: 100%; */
+
   .nav-container {
     width: 100%;
     height: var(--nav-height);
@@ -75,8 +77,6 @@ const Wrapper = styled.div`
     /* min-height: calc(100vh - var(--nav-height)); */
     height: auto;
     display: grid;
-    place-content: center;
-    max-width: 100%;
     width: 100%;
     background-color: #1c1d1f;
   }

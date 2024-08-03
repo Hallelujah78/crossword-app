@@ -503,8 +503,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: calc(100vh - var(--nav-height));
   display: grid;
-  /* place-content: ; */
-  grid-template-columns: 1fr 2fr 0.5fr;
+  grid-template-columns: 1fr 2fr 1fr;
 
   .grid-container {
     position: relative;

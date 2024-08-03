@@ -15,8 +15,10 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
             <input
               onKeyDown={(e) => (handleKeyDown ? handleKeyDown(e) : () => {})}
               onChange={() => {}}
+              pattern="[A-Za-Z]"
               value={answer}
               ref={ref}
+              spellCheck={false}
               autoComplete="off"
               id={id.toString()}
               onClick={(event) => {

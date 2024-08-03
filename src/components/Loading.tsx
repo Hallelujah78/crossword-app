@@ -26,7 +26,7 @@ const spinnerAnimation = keyframes`
 `;
 
 const Wrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
 
   .loading-container {
