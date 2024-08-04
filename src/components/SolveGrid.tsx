@@ -13,6 +13,7 @@ import styled from "styled-components";
 // components
 import SolveCell from "./SolveCell";
 import ErrorPage from "./ErrorPage";
+import SolveCellTest from "./SolveCellTest";
 
 // data
 import { initialGrid } from "../state/grid";
@@ -445,9 +446,7 @@ const SolveGrid: React.FC = () => {
             <p className="clue-text">{currSelectedClue.clue}</p>
           </div>
           <div>
-            <p>
-              <p className="answer-length">{getWordLength(currSelectedClue)}</p>
-            </p>
+            <p className="answer-length">{getWordLength(currSelectedClue)}</p>
           </div>
         </>
       );
@@ -696,7 +695,7 @@ const SolveGrid: React.FC = () => {
         <div className="grid-container">
           {gridState?.map((cell: CellType, index: number) => {
             return (
-              <SolveCell
+              <SolveCellTest
                 handleKeyDown={handleKeyDown}
                 key={cell.id}
                 cell={cell}

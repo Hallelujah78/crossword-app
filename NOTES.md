@@ -10,7 +10,7 @@
 - cell: a square on a crossword grid
 - void: a dark square
 - lights: a series of light squares
-- darks: a series of light squares
+- darks: a series of dark squares
 
 ## Why This Project?
 
@@ -2230,4 +2230,76 @@ stepRefs.querySelector('#step1')
 - one possible solution:
   - each cell has its own state for the value of the input
   - when the value changes, we get the value of the input, validate it, and then update the grid/clue state of the app?
-- 
+
+## 4/8/24 Addressing event.key not being accessible on Android
+- event.key is ‘unidentified’ on android (chrome, samsung internet, brave browser)
+- in our app in SolveCel.tsx
+- the input has `onKeyDown={(e) => (handleKeyDown ? handleKeyDown(e) : () => {})}`
+- `handleKeyDown` is a prop passed from SolveGrid.tsx
+  - if e.key is a capital letter, `handleKeyDown` calls `handleAlpha`
+- handleAlpha updates the answer prop in two places using e.key
+
+```js
+...
+let targetCell: CellType | undefined = selectedCell
+      ? { ...selectedCell, answer: e.key }
+      : undefined;
+...
+const updatedGrid = grid.map((gridItem) =>
+      gridItem.id === selectedCell?.id
+        ? { ...gridItem, answer: e.key.toUpperCase() }
+        : gridItem
+    );
+```
+
+- one potential approach
+  - use an onchange and a ref to track what the user presses
+- an onchange does work with local state for the SolveCell.tsx
+- this is actually a BIG problem due to the way I've implemented all of the logic regarding key presses
+  - none of this logic works on mobile
+- solutions?
+  - create a MobileSolveCell and render that if the
+- interesting to note from the Guardian Quick Crossword:
+  - there is a single input for the entire crossword (as far as I can tell)
+
+```html
+<div>
+  <input/>
+</div>
+```
+- the inputs for each letter are custom html elements
+
+```html
+<g>
+  <rect></rect>
+  <text></text>
+</g>
+
+```
+- I think what's happening on Guardian is:
+  - user clicks a cell
+  - the div that wraps the input has its position updated so it is superimposed over the g element
+  - the user types into the input which probably has some state
+  - the `<g>` element is probably moved so it overlays the input or the input is hidden
+  - the logic relating to what to do next is executed based on the value of the input
+  - the result is displayed in the `<g>` element
+- when the user clicks a cell that is already populated
+  - we may retrieve the state relating to that cell and populate the input/input state with it 
+  - this allows the user to delete the content of the input (assuming e.key can't detect backspace)
+
+- all of this is to say that: the app requires a major rewrite for it to work on mobile!
+
+### How might it work
+
+- click on a cell, focus is switched to our singular input with local state
+  - when we click on the cell, the state relating to that cell must be loaded into our hidden input
+  - display the input with the state
+- press or click a key
+  - input and local state of input gets updated
+  - we hide the input
+  - we run logic everytime the value of the hidden input changes to determine what we should do
+  - we already have this logic in handleKeyDown and handleAlpha
+- this should mean we
+  - get a solution that works on both mobile and desktop
+  - will probably have to refactor SolveGrid and SolveCell
+    - make a copy of these and work on the problem

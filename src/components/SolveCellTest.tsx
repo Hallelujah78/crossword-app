@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 // models
 import type { CellProps } from "../models/CellProps.model";
 
-const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
+const SolveCellTest = React.forwardRef<HTMLInputElement, CellProps>(
   ({ cell, handleCellClick, handleKeyDown }, ref) => {
     const { isVoid, id, clueNumber, selected, answer } = cell;
+
+    const [cellValue, setCellValue] = useState("");
 
     return (
       <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
@@ -20,8 +22,13 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
                   return handleKeyDown ? handleKeyDown(e) : () => {};
                 }
               }}
-              onChange={() => {}}
-              value={answer}
+              onChange={(e) => {
+                if (cellValue.length > 0) {
+                  return;
+                }
+                setCellValue(e.target.value);
+              }}
+              value={answer ? answer : cellValue}
               ref={ref}
               spellCheck={false}
               autoComplete="off"
@@ -40,7 +47,7 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
     );
   }
 );
-export default SolveCell;
+export default SolveCellTest;
 
 const Wrapper = styled.div<{ id: number | undefined }>`
   position: relative;
