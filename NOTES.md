@@ -2303,3 +2303,11 @@ const updatedGrid = grid.map((gridItem) =>
   - get a solution that works on both mobile and desktop
   - will probably have to refactor SolveGrid and SolveCell
     - make a copy of these and work on the problem
+
+
+## 5/8/2024
+- issues to be resolved
+  - we still need access to event.key for desktop so we can use a shift modifier with tab to allow us to cycle back and forward between clues
+  - our input in SolveCellTest allows non-alpha characters to be input, +, -, etc
+  - this doesn't get updated in our app state because we don't allow those characters, and so pressing 'Backspace' has no effect on these characters - they only exist in the input and local state
+- arrow keys shouldn't require e.key and so we can fix that next easily
