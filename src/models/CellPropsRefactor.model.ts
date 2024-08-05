@@ -1,8 +1,8 @@
 import type { CellType } from "./Cell.model";
 
-export interface CellProps {
+export interface CellPropsRefactor {
   cell: CellType;
   handleClick?: (e: React.MouseEvent) => void;
   handleCellClick?: (e: React.MouseEvent) => void;
-  handleKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  handleKeyDown?: (val: string) => void;
 }

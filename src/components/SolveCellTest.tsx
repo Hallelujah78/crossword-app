@@ -1,39 +1,65 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // models
-import type { CellProps } from "../models/CellProps.model";
+import type { CellPropsRefactor } from "../models/CellPropsRefactor.model";
 
-const SolveCellTest = React.forwardRef<HTMLInputElement, CellProps>(
+const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
   ({ cell, handleCellClick, handleKeyDown }, ref) => {
     const { isVoid, id, clueNumber, selected, answer } = cell;
 
     const [cellValue, setCellValue] = useState("");
+
+    useEffect(() => {
+      // if handleKeyDown is defined, call it when state of input changes
+      if (handleKeyDown) handleKeyDown(cellValue);
+      // this is purely for mobile
+    }, [cellValue]);
+
+    useEffect(() => {
+      // if handleKeyDown is defined, call it when state of input changes
+
+      answer !== undefined && setCellValue(answer);
+
+      // this is purely for mobile
+    }, [answer]);
 
     return (
       <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
         <div className="letter-container">
           {isVoid ? null : (
             <input
-              onKeyDown={(e) => {
-                if (e.key === "Unidentified") {
-                  console.log(e.key);
-                } else {
-                  return handleKeyDown ? handleKeyDown(e) : () => {};
-                }
-              }}
               onChange={(e) => {
+                // this purely updates local state for the input
+                // which in turn calls the useEffect
                 if (cellValue.length > 0) {
                   return;
                 }
+                console.log(
+                  "target value in solveCell (state): ",
+                  e.target.value
+                );
                 setCellValue(e.target.value);
               }}
-              value={answer ? answer : cellValue}
+              onKeyDown={(e) => {
+                // this handles everything on desktop
+                // it should handle backspace?
+                if (handleKeyDown) {
+                  if (e.key !== "Unidentified") {
+                    console.log("e.key onKeyDown is: ", e.key);
+                    handleKeyDown(e.key);
+                  }
+                }
+              }}
+              value={cellValue}
               ref={ref}
               spellCheck={false}
               autoComplete="off"
               id={id.toString()}
               onClick={(event) => {
+                if (answer !== undefined) {
+                  setCellValue(answer);
+                }
                 handleCellClick ? handleCellClick(event) : () => {};
               }}
               maxLength={1}

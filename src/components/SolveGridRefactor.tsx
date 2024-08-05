@@ -41,7 +41,7 @@ import type { Puzzle, Puzzles } from "../models/Puzzles.model";
 import Loading from "./Loading";
 import PoweredBy from "./PoweredBy";
 
-const SolveGrid: React.FC = () => {
+const SolveGridRefactor: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() =>
     localStorage.getItem("solver")
       ? getLocalStorage("solver")?.grid
@@ -183,15 +183,16 @@ const SolveGrid: React.FC = () => {
     }
   };
 
-  const handleAlpha = (e: KeyboardEvent) => {
+  const handleAlpha = (val?: string) => {
+    console.log("val in handleAlpha: ", val);
     const clues = [...clueList];
     const grid = [...gridState];
-    if (e.key === "Unidentified") {
+    if (val === "Unidentified") {
       return;
     }
     const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
     let targetCell: CellType | undefined = selectedCell
-      ? { ...selectedCell, answer: e.key }
+      ? { ...selectedCell, answer: val }
       : undefined;
 
     if (currSelectedClue && currSelectedClue.direction === 1 && selectedCell) {
@@ -212,7 +213,10 @@ const SolveGrid: React.FC = () => {
     }
     const updatedGrid = grid.map((gridItem) =>
       gridItem.id === selectedCell?.id
-        ? { ...gridItem, answer: e.key.toUpperCase() }
+        ? {
+            ...gridItem,
+            answer: val,
+          }
         : gridItem
     );
     setSelectedCell(targetCell);
@@ -236,39 +240,43 @@ const SolveGrid: React.FC = () => {
     }
   };
 
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === "Backspace") {
-      handleDelete(e);
+  const handleKeyDown = (val: string) => {
+    // at this point val can be the state of the input in SolveCellTest
+    // OR it can be the value of e.key
+    // e.key can be 'Backspace' on mobile/desktop or
+    if (val === "Backspace") {
+      console.log("val in handleKeyDown definition: ", val);
+      handleDelete(val);
     }
-    if (
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(e.key.toUpperCase()) ||
-      e.key === "Unidentified"
-    ) {
-      handleAlpha(e);
+    if (val && "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(val.toUpperCase())) {
+      console.log(val);
+      handleAlpha(val);
     }
-    if (e.key === "Tab") {
+    if (val === "Tab") {
       handleTabPress(e);
     }
     if (
-      e.key === "ArrowUp" ||
-      e.key === "ArrowDown" ||
-      e.key === "ArrowLeft" ||
-      e.key === "ArrowRight"
+      val === "ArrowUp" ||
+      val === "ArrowDown" ||
+      val === "ArrowLeft" ||
+      val === "ArrowRight"
     ) {
       handleArrowKeyPress(e);
     }
   };
 
-  const handleDelete = (e: KeyboardEvent) => {
+  const handleDelete = (val: string) => {
     if (!selectedCell) {
+      console.log("no selected cell");
       return;
     }
-    e.preventDefault();
+    // e.preventDefault();
     const grid = [...gridState];
     const clues = [...clueList];
 
     // if cell has answer, set answer to ""
     if (selectedCell.answer) {
+      console.log("is there an answer in the cell? : ", selectedCell.answer);
       selectedCell.answer = "";
       setSelectedCell((prev) => prev);
       const updatedGrid = grid.map((gridItem) =>
@@ -302,11 +310,11 @@ const SolveGrid: React.FC = () => {
     }
   };
 
-  const handleTabPress = (event: KeyboardEvent) => {
-    if (selectedClue === "" || event.key !== "Tab") {
+  const handleTabPress = (val) => {
+    if (selectedClue === "" || val !== "Tab") {
       return;
     }
-    event.preventDefault();
+    // event.preventDefault();
     const currentSelectedClue = selectedClue;
     const clues = [...clueList];
     const grid = [...gridState];
@@ -320,7 +328,7 @@ const SolveGrid: React.FC = () => {
     let index = clues.findIndex(
       (clue: Clue) => clue.id === currentSelectedClue
     );
-    if (selectedClue !== "" && event.key === "Tab" && !event.shiftKey) {
+    if (selectedClue !== "" && val === "Tab" && !event.shiftKey) {
       if (index === clues.length - 1) {
         index = 0;
       } else {
@@ -799,7 +807,7 @@ const SolveGrid: React.FC = () => {
     </Wrapper>
   );
 };
-export default SolveGrid;
+export default SolveGridRefactor;
 
 // *******************************
 // *******************************
