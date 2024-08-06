@@ -241,19 +241,15 @@ const SolveGridRefactor: React.FC = () => {
   };
 
   const handleKeyDown = (val: string) => {
-    // at this point val can be the state of the input in SolveCellTest
-    // OR it can be the value of e.key
-    // e.key can be 'Backspace' on mobile/desktop or
     if (val === "Backspace") {
-      console.log("val in handleKeyDown definition: ", val);
       handleDelete(val);
     }
     if (val && "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(val.toUpperCase())) {
-      console.log(val);
       handleAlpha(val);
     }
     if (val === "Tab") {
-      handleTabPress(e);
+      // handleTabPress(e);
+      return;
     }
     if (
       val === "ArrowUp" ||
@@ -261,7 +257,7 @@ const SolveGridRefactor: React.FC = () => {
       val === "ArrowLeft" ||
       val === "ArrowRight"
     ) {
-      handleArrowKeyPress(e);
+      handleArrowKeyPress(val);
     }
   };
 
@@ -310,8 +306,8 @@ const SolveGridRefactor: React.FC = () => {
     }
   };
 
-  const handleTabPress = (val) => {
-    if (selectedClue === "" || val !== "Tab") {
+  const handleTabPress = (e) => {
+    if (selectedClue === "" || e?.key !== "Tab") {
       return;
     }
     // event.preventDefault();
@@ -328,14 +324,14 @@ const SolveGridRefactor: React.FC = () => {
     let index = clues.findIndex(
       (clue: Clue) => clue.id === currentSelectedClue
     );
-    if (selectedClue !== "" && val === "Tab" && !event.shiftKey) {
+    if (selectedClue !== "" && e.key === "Tab" && !e.shiftKey) {
       if (index === clues.length - 1) {
         index = 0;
       } else {
         index = index + 1;
       }
     }
-    if (selectedClue !== "" && event.key === "Tab" && event.shiftKey) {
+    if (selectedClue !== "" && e.key === "Tab" && e.shiftKey) {
       if (index === 0) {
         index = clues.length - 1;
       } else {
@@ -352,13 +348,13 @@ const SolveGridRefactor: React.FC = () => {
     setSelectedCell(newSelectedCell);
   };
 
-  const handleArrowKeyPress = (event: KeyboardEvent) => {
+  const handleArrowKeyPress = (val: string) => {
     if (
       !selectedCell ||
-      (event.key !== "ArrowDown" &&
-        event.key !== "ArrowUp" &&
-        event.key !== "ArrowLeft" &&
-        event.key !== "ArrowRight")
+      (val !== "ArrowDown" &&
+        val !== "ArrowUp" &&
+        val !== "ArrowLeft" &&
+        val !== "ArrowRight")
     ) {
       return;
     }
@@ -370,16 +366,16 @@ const SolveGridRefactor: React.FC = () => {
     const cellId = selectedCell.id; // number
     let targetCell: CellType | undefined = undefined;
 
-    if (event.key === "ArrowDown") {
+    if (val === "ArrowDown") {
       targetCell = getCellBelow(grid, cellId);
     }
-    if (event.key === "ArrowUp") {
+    if (val === "ArrowUp") {
       targetCell = getCellAbove(grid, cellId);
     }
-    if (event.key === "ArrowLeft" && !isLeftEdge(grid, cellId)) {
+    if (val === "ArrowLeft" && !isLeftEdge(grid, cellId)) {
       targetCell = grid[cellId - 1];
     }
-    if (event.key === "ArrowRight" && !isRightEdge(grid, cellId)) {
+    if (val === "ArrowRight" && !isRightEdge(grid, cellId)) {
       targetCell = grid[cellId + 1];
     }
     if (targetCell && !targetCell.isVoid) {
@@ -708,6 +704,7 @@ const SolveGridRefactor: React.FC = () => {
                 key={cell.id}
                 cell={cell}
                 handleCellClick={handleCellClick}
+                handleTabKeyPress={handleTabPress}
                 ref={(el) => {
                   cellRefs.current[index] = el;
                 }}

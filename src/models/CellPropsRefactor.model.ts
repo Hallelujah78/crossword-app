@@ -5,4 +5,5 @@ export interface CellPropsRefactor {
   handleClick?: (e: React.MouseEvent) => void;
   handleCellClick?: (e: React.MouseEvent) => void;
   handleKeyDown?: (val: string) => void;
+  handleTabKeyPress?: (e: React.KeyboardEvent) => void;
 }

@@ -269,3 +269,35 @@ This version is simpler and more intuitive as it avoids the complexities of the 
 
 ---
 - the second function is way easier for my brain to comprehend and it makes sense that we reset the for loop everytime we match
+
+---
+
+## `event.key` not available on soft keyboards (mobile)
+- I created this app PC/laptop-first, adding styling for mobiles as an afterthought. 
+- As a result, I added a bunch of logic for what should happen when a user presses a key, and all of this logic relies on the value of `e.key`.
+    - e.g. when a user enters a value, the next cell in the answer gains focus
+- This means I'm now trying to resolve this so my app works on both mobile and desktop/laptop
+- the solution I have is not great but it's triaging a problem without rewriting a lot of code
+    - my input has local state
+    - there is also a global state in the parent that is what really matters
+    - I use an onInput on the input and an onKeyDown (access to e.key)
+        - onInput handles all alpha keys and updates local state for the input
+        - when local state for the input updates, call a handler from the parent to update global state
+        - when the global state changes, set the local state for the input
+    - onKeyDown handles "Backspace" through e.key for both mobile and laptop/PC
+        - e.key for my mobile is "Backspace", go figure
+    - onKeyDown will handle the following on desktop/laptop (not applicable to mobile):
+        - tab with/without shift
+        - arrow keys
+- in SolveGrid.tsx, we had various handlers:
+    - handleKeyDown
+        - initially took an `event` prop
+        - used event.key to determine which of the following to call:
+            - handleAlpha
+            - handleTabPress
+            - handleDelete
+            - handleArrowKeyPress
+- refactored handleKeyDown to use `val: string`
+    - this works for most things (arrow keys, backspace), but for tab we need to know if shift is down, so we'll have to add back our event
+        - when handleKeyDown is invoked by onKeyDown AND e.key is "Tab", we pass the event
+        - the easiest way to do this might be to simply pass in the handleTabKeyPress to our component

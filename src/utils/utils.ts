@@ -1556,3 +1556,10 @@ export const isGridValid = (clues: Clue[], grid: CellType[]) => {
 };
 
 //  setLocalStorage("editor", { gridState, clueList, isModified });
+
+export const isLetter = (letter: string) => {
+  return (
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".includes(letter) &&
+    letter.length === 1
+  );
+};
