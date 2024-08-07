@@ -29,7 +29,7 @@ const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
       }
 
       // this is purely for mobile
-    }, [answer, cellValue]);
+    }, [answer]);
 
     return (
       <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
@@ -37,22 +37,15 @@ const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
           {isVoid ? null : (
             <input
               onInput={(e: React.FormEvent<HTMLInputElement>) => {
-                // this purely updates local state for the input
-                // which in turn calls the useEffect
-                if (cellValue.length > 0) {
-                  return;
-                }
                 const element = e.target as HTMLInputElement;
-                console.log(
-                  "target value in solveCell (state): ",
-                  element.value
-                );
-                setCellValue(element.value);
+                if (element.value.length <= 1) {
+                  setCellValue(element.value);
+                } else if (element.value.length > 1) {
+                  const lastChar = element.value.slice(-1);
+                  setCellValue(lastChar);
+                }
               }}
               onKeyDown={(e) => {
-                // this handles everything on desktop
-                // it should handle backspace?
-                // onInput handles
                 if (handleKeyDown)
                   if (e.key === "Backspace") {
                     handleKeyDown(e.key);
@@ -67,12 +60,11 @@ const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
               autoComplete="off"
               id={id.toString()}
               onClick={(event) => {
-                if (answer !== undefined) {
-                  setCellValue(answer);
-                }
+                const element = event.target as HTMLInputElement;
+                element.setSelectionRange(1, 1);
                 handleCellClick ? handleCellClick(event) : () => {};
               }}
-              maxLength={1}
+              // maxLength={2}
               type="text"
               style={{ background: selected ? "#fff7b2  " : "white" }}
             />

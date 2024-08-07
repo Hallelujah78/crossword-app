@@ -2307,7 +2307,16 @@ const updatedGrid = grid.map((gridItem) =>
 
 ## 5/8/2024
 - issues to be resolved
-  - we still need access to event.key for desktop so we can use a shift modifier with tab to allow us to cycle back and forward between clues
-  - our input in SolveCellTest allows non-alpha characters to be input, +, -, etc
-  - this doesn't get updated in our app state because we don't allow those characters, and so pressing 'Backspace' has no effect on these characters - they only exist in the input and local state
-- arrow keys shouldn't require e.key and so we can fix that next easily
+  - ~~we still need access to event.key for desktop so we can use a shift modifier with tab to allow us to cycle back and forward between clues~~ **DONE**
+  - ~~our input in SolveCellTest allows non-alpha characters to be input, +, -, etc~~ **DONE**
+  
+
+## 6/8
+- ~~try using e.preventDefault with tab to fix focusing 2nd cell of each clue and prevent focussing other elements when cycling backwards through clues~~ **DONE**
+- ~~selecting a cell that already has a value in it and pressing a key to overwrite that value does nothing (think backspace also doens't work)~~ **DONE**
+
+## 7/8
+- backspace not working fully as intended
+  - have to hit backspace twice to go to previous cell
+  - when you move to the previous cell, content is deleted when the cell gains focus
+- desired behaviour: pressing backspace clears the contents of a cell, pressing it again focuses the previous cell, pressing it again clears the content of the cell etc

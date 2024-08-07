@@ -187,9 +187,7 @@ const SolveGridRefactor: React.FC = () => {
     console.log("val in handleAlpha: ", val);
     const clues = [...clueList];
     const grid = [...gridState];
-    if (val === "Unidentified") {
-      return;
-    }
+
     const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
     let targetCell: CellType | undefined = selectedCell
       ? { ...selectedCell, answer: val }
@@ -306,7 +304,8 @@ const SolveGridRefactor: React.FC = () => {
     }
   };
 
-  const handleTabPress = (e) => {
+  const handleTabPress = (e: KeyboardEvent) => {
+    e.preventDefault();
     if (selectedClue === "" || e?.key !== "Tab") {
       return;
     }
