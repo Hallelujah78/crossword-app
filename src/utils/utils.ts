@@ -423,8 +423,9 @@ const setClueAnswers = (
 ) => {
   // if an answer has some letters but is not complete, create a regexp, and get all words that match that pattern
   let regExp: RegExp;
+
   if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
-    regExp = arrayToRegularExp(clue.answer)!;
+    regExp = arrayToRegularExp(clue.answer) as RegExp;
 
     possibleAnswers = getMatches(
       possibleAnswers,
@@ -440,7 +441,9 @@ const setClueAnswers = (
       possibleAnswers[Math.floor(randVal * possibleAnswers.length)];
 
     clue.answer = [
-      ...(clueAnswer.word !== undefined ? clueAnswer.word! : clueAnswer.raw),
+      ...(clueAnswer.word !== undefined && clueAnswer.word !== null
+        ? clueAnswer.word
+        : clueAnswer.raw),
     ];
     clue.raw = [...clueAnswer.raw];
     clue.intersection?.forEach((item) => {

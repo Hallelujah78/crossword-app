@@ -2320,3 +2320,4 @@ const updatedGrid = grid.map((gridItem) =>
   - have to hit backspace twice to go to previous cell
   - when you move to the previous cell, content is deleted when the cell gains focus
 - desired behaviour: pressing backspace clears the contents of a cell, pressing it again focuses the previous cell, pressing it again clears the content of the cell etc
+- fix arrow keys (easy fix)

@@ -48,6 +48,7 @@ const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
               onKeyDown={(e) => {
                 if (handleKeyDown)
                   if (e.key === "Backspace") {
+                    e.preventDefault();
                     handleKeyDown(e.key);
                   }
                 if (e.key === "Tab" && handleTabKeyPress) {
@@ -64,7 +65,6 @@ const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
                 element.setSelectionRange(1, 1);
                 handleCellClick ? handleCellClick(event) : () => {};
               }}
-              // maxLength={2}
               type="text"
               style={{ background: selected ? "#fff7b2  " : "white" }}
             />
