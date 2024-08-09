@@ -91,9 +91,8 @@ const SolveGridRefactor: React.FC = () => {
       // reset the state
       setSelectedCell(undefined);
       setSelectedClue("");
-      console.log("the grid when - selected: ", initialGrid);
+
       const resetGrid = initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
-      console.log("initialized grid: ", resetGrid);
 
       const clues = initializeApp(resetGrid);
       setGridState(resetGrid);
@@ -184,7 +183,6 @@ const SolveGridRefactor: React.FC = () => {
   };
 
   const handleAlpha = (val?: string) => {
-    console.log("val in handleAlpha: ", val);
     const clues = [...clueList];
     const grid = [...gridState];
 
@@ -226,8 +224,7 @@ const SolveGridRefactor: React.FC = () => {
     const clues = JSON.parse(JSON.stringify(clueList));
     const target = e.currentTarget;
     const currSelectedClue = clues.find((clue: Clue) => clue.id === target.id);
-    console.log("the target: ", target.id);
-    console.log("the currSelected: ", currSelectedClue);
+
     if (target && currSelectedClue) {
       resetSelectedCells(grid);
       setSelection(grid, currSelectedClue);
@@ -246,7 +243,7 @@ const SolveGridRefactor: React.FC = () => {
       handleAlpha(val);
     }
     if (val === "Tab") {
-      // handleTabPress(e);
+      handleTabPress(val);
       return;
     }
     if (
@@ -261,7 +258,6 @@ const SolveGridRefactor: React.FC = () => {
 
   const handleDelete = (val: string) => {
     if (!selectedCell) {
-      console.log("no selected cell");
       return;
     }
     // e.preventDefault();
@@ -270,7 +266,6 @@ const SolveGridRefactor: React.FC = () => {
 
     // if cell has answer, set answer to ""
     if (selectedCell.answer) {
-      console.log("is there an answer in the cell? : ", selectedCell.answer);
       selectedCell.answer = "";
       setSelectedCell((prev) => prev);
       const updatedGrid = grid.map((gridItem) =>
@@ -487,9 +482,6 @@ const SolveGridRefactor: React.FC = () => {
 
       const data = await response.json();
 
-      console.log("the data after response.json(): ", data);
-      console.log("the raw response: ", response);
-
       if (response.ok) {
         for (const clue of clues) {
           const id = clue.id;
@@ -504,10 +496,7 @@ const SolveGridRefactor: React.FC = () => {
             );
           }
         }
-        console.log(
-          "these are the clues with the response from the server filled in: ",
-          clues
-        );
+
         setClueList(clues);
       } else {
         // response is not okay, and we already know that there's a body and the status is not 500 => we can use the response's body to provide information to the user

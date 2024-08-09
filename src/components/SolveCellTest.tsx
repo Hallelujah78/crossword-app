@@ -12,23 +12,16 @@ const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
     const [cellValue, setCellValue] = useState("");
 
     useEffect(() => {
-      // if handleKeyDown is defined, call it when state of input changes
+      // when the local input state changes, update the global state
       if (handleKeyDown && answer !== cellValue && isLetter(cellValue)) {
         handleKeyDown(cellValue.toUpperCase());
-        console.log("UEff: handleKeyDown(cellValue)");
       }
-      // this is purely for mobile
     }, [cellValue]);
 
     useEffect(() => {
-      // if handleKeyDown is defined, call it when state of input changes
-
       if (answer !== undefined && answer !== cellValue) {
-        console.log("UEff: setCellValue(answer)");
         setCellValue(answer);
       }
-
-      // this is purely for mobile
     }, [answer]);
 
     return (
@@ -38,21 +31,31 @@ const SolveCellTest = React.forwardRef<HTMLInputElement, CellPropsRefactor>(
             <input
               onInput={(e: React.FormEvent<HTMLInputElement>) => {
                 const element = e.target as HTMLInputElement;
-                if (element.value.length <= 1) {
+
+                if (element.value.length <= 1 && isLetter(element.value)) {
                   setCellValue(element.value);
                 } else if (element.value.length > 1) {
                   const lastChar = element.value.slice(-1);
-                  setCellValue(lastChar);
+                  if (isLetter(lastChar)) setCellValue(lastChar);
                 }
               }}
               onKeyDown={(e) => {
-                if (handleKeyDown)
-                  if (e.key === "Backspace") {
+                if (handleKeyDown) {
+                  if (
+                    e.key === "Backspace" ||
+                    e.key === "ArrowDown" ||
+                    e.key === "ArrowUp" ||
+                    e.key === "ArrowLeft" ||
+                    e.key === "ArrowRight"
+                  ) {
                     e.preventDefault();
                     handleKeyDown(e.key);
                   }
-                if (e.key === "Tab" && handleTabKeyPress) {
-                  handleTabKeyPress(e);
+                  if (e.key === "Tab" && handleTabKeyPress) {
+                    e.preventDefault();
+                    // must have access to e.key due to shiftKey
+                    handleTabKeyPress(e);
+                  }
                 }
               }}
               value={cellValue}

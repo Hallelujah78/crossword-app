@@ -1434,11 +1434,8 @@ export const getAllEdgeCells = (grid: CellType[]) => {
 export const isSubset = (arr1: number[], arr2: number[]) => {
   let mySet: Set<number> | number[];
   let myArray = arr1;
-  console.log("arr1: ", arr1);
-  console.log("arr2: ", arr2);
 
   if (arr1.length >= arr2.length) {
-    console.log("you should see nothing here!");
     mySet = new Set(arr1);
     myArray = arr2;
   } else {

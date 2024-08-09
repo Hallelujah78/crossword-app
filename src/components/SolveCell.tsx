@@ -15,7 +15,6 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
             <input
               onKeyDown={(e) => {
                 if (e.key === "Unidentified") {
-                  console.log(e.key);
                 } else {
                   return handleKeyDown ? handleKeyDown(e) : () => {};
                 }
