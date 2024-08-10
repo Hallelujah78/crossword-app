@@ -1310,10 +1310,11 @@ export const setLocalStorage = (
 export const getLocalStorage = (
   key: "solver" | "editor" | "puzzles"
 ): Storage | null => {
-  if (key === "solver" || key === "editor") {
-    return JSON.parse(localStorage.getItem(key) as string) as Storage;
+  let val = null;
+  if (key === "solver" || key === "editor" || key === "puzzles") {
+    val = JSON.parse(localStorage.getItem(key) as string) as Storage;
   }
-  return JSON.parse(localStorage.getItem(key) as string) as Storage;
+  return val;
 };
 
 export const getRowOrColumn = (

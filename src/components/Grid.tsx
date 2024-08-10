@@ -48,26 +48,27 @@ import { FaCircleInfo } from "react-icons/fa6";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
-  const [isModified, setIsModified] = useState<boolean>(() =>
-    localStorage.getItem("editor")
-      ? getLocalStorage("editor").isModified
+  const [isModified, setIsModified] = useState<boolean | undefined>(() =>
+    localStorage.getItem("editor") !== null
+      ? getLocalStorage("editor")?.isModified
       : false
   );
-  const [gridState, setGridState] = useState<CellType[]>(() =>
+  const [gridState, setGridState] = useState<CellType[]>(() => {
+    const storage = getLocalStorage("editor")?.grid;
+    return storage
+      ? (storage as CellType[])
+      : initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
+  });
+  const [clueList, setClueList] = useState<Clue[] | undefined>(() =>
     localStorage.getItem("editor")
-      ? getLocalStorage("editor").grid
-      : initializeGrid(JSON.parse(JSON.stringify(initialGrid)))
-  );
-  const [clueList, setClueList] = useState<Clue[]>(() =>
-    localStorage.getItem("editor")
-      ? getLocalStorage("editor").clues
-      : initializeApp(gridState)
+      ? getLocalStorage("editor")?.clues
+      : initializeApp(gridState as CellType[])
   );
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [isValid, setIsValid] = useState<boolean>(() => {
     return localStorage.getItem("editor")
-      ? isGridValid(clueList, gridState)
+      ? isGridValid(clueList as Clue[], gridState as CellType[])
       : true;
   });
   const { isVisible, close } = useModal(true);
@@ -103,7 +104,11 @@ const Grid: React.FC = () => {
     if (localStorage.getItem("puzzles")) {
       puzzles = getLocalStorage("puzzles") as Puzzles;
     }
-    puzzles.push({ name: puzzleName, grid: gridState, clues: clueList });
+    puzzles.push({
+      name: puzzleName,
+      grid: gridState as CellType[],
+      clues: clueList as Clue[],
+    });
     localStorage.removeItem("editor");
     setLocalStorage("puzzles", { puzzles });
   };
@@ -161,6 +166,7 @@ const Grid: React.FC = () => {
   };
 
   async function getClues() {
+    if (clueList === undefined) return;
     const clues = [...clueList];
     type ReqClue = {
       id: string;

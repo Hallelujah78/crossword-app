@@ -4,14 +4,10 @@
   "description": "An attempt to programmatically generate a crossword",
   "main": "index.tsx",
   "type": "module",
-  "author": {
-    "name": "Gavan Browne",
-    "email": "gavan.browne@gmail.com",
-    "url": "https://gwib-personal-portfolio-react.netlify.app/"
-  },
+  "author": "Gavan Browne <gavan.browne@gmail.com> (https://gwib-personal-portfolio-react.netlify.app/)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Hallelujah78/crossword-app"
+    "url": "git+https://github.com/Hallelujah78/crossword-app.git"
   },
   "scripts": {
     "ndev": "netlify dev",
@@ -49,5 +45,10 @@
     "netlify-cli": "^17.23.5",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
-  }
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hallelujah78/crossword-app/issues"
+  },
+  "homepage": "https://github.com/Hallelujah78/crossword-app#readme"
 }
