@@ -48,22 +48,20 @@ import { FaCircleInfo } from "react-icons/fa6";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
-  const [isModified, setIsModified] = useState<boolean | undefined>(() =>
-    localStorage.getItem("editor") !== null
-      ? getLocalStorage("editor")?.isModified
-      : false
-  );
+  const [isModified, setIsModified] = useState<boolean | undefined>(() => {
+    const modifiedState = getLocalStorage("editor")?.isModified;
+    return modifiedState ? modifiedState : false;
+  });
   const [gridState, setGridState] = useState<CellType[]>(() => {
     const storage = getLocalStorage("editor")?.grid;
     return storage
-      ? (storage as CellType[])
+      ? storage
       : initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
   });
-  const [clueList, setClueList] = useState<Clue[] | undefined>(() =>
-    localStorage.getItem("editor")
-      ? getLocalStorage("editor")?.clues
-      : initializeApp(gridState as CellType[])
-  );
+  const [clueList, setClueList] = useState<Clue[]>(() => {
+    const clueState = getLocalStorage("editor")?.clues;
+    return clueState ? clueState : initializeApp(gridState);
+  });
   const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [isValid, setIsValid] = useState<boolean>(() => {
