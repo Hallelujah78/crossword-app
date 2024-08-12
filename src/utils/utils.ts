@@ -11,6 +11,8 @@ import type { Puzzles } from "../models/Puzzles.model";
 
 // state
 import * as AllAnswers from "../state/answers2";
+import type { AllAnswersType } from "../state/answers2";
+
 import { gridSideLength } from "../state/grid";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
@@ -722,7 +724,7 @@ export type AllAnswerKey = keyof typeof AllAnswers;
 
 export const getWordList: (
   answerLength: AnswerLength,
-  AllAnswers: AllAnswers
+  AllAnswers: AllAnswersType
 ) => Answer[] = (answerLength, AllAnswers) => {
   const allAnswerKey: AllAnswerKey = AnswerMapping[answerLength];
   return AllAnswers[allAnswerKey];
@@ -1284,7 +1286,7 @@ export const setLocalStorage = (
     puzzles,
     warn,
   } = data;
-  let dataStore: Puzzles | Storage;
+  let dataStore: Puzzles | Storage | null = null;
   if (key === "solver") {
     dataStore = {
       grid,
@@ -1545,7 +1547,7 @@ export const setAllVoidEdgeInvalid = (grid: CellType[]) => {
   }
 };
 
-export const isGridValid = (clues: Clue[], grid: CellType[]) => {
+export const isGridValid = (grid: CellType[]) => {
   let isValid = true;
   for (const cell of grid) {
     if (cell.backgroundColor || !cell.isValid) {
@@ -1555,8 +1557,6 @@ export const isGridValid = (clues: Clue[], grid: CellType[]) => {
   }
   return isValid;
 };
-
-//  setLocalStorage("editor", { gridState, clueList, isModified });
 
 export const isLetter = (letter: string) => {
   return (

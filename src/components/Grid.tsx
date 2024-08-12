@@ -66,7 +66,7 @@ const Grid: React.FC = () => {
   const [fillGrid, setFillGrid] = useState<boolean>(true);
   const [isValid, setIsValid] = useState<boolean>(() => {
     return localStorage.getItem("editor")
-      ? isGridValid(clueList as Clue[], gridState as CellType[])
+      ? isGridValid(gridState as CellType[])
       : true;
   });
   const { isVisible, close } = useModal(true);

@@ -1,5 +1,28 @@
 import type Answer from "../models/Answer.model";
 
+export type AllAnswersType = {
+  three: Answer[];
+  four: Answer[];
+  five: Answer[];
+  six: Answer[];
+  seven: Answer[];
+  eight: Answer[];
+  nine: Answer[];
+  ten: Answer[];
+  eleven: Answer[];
+  twelve: Answer[];
+  thirteen: Answer[];
+  fourteen: Answer[];
+  fifteen: Answer[];
+  sixteen: Answer[];
+  seventeen: Answer[];
+  eighteen: Answer[];
+  nineteen: Answer[];
+  twenty: Answer[];
+  twentyone: Answer[];
+  twentytwo: Answer[];
+};
+
 const five: Answer[] = [
   {
     freq: 19,
@@ -58720,30552 +58743,6 @@ const six: Answer[] = [
   {
     freq: 59933,
     raw: "GAOLER",
-  },
-];
-
-const seven: Answer[] = [
-  {
-    freq: 66,
-    raw: "BECAUSE",
-  },
-  {
-    freq: 88,
-    raw: "THROUGH",
-  },
-  {
-    freq: 113,
-    raw: "BETWEEN",
-  },
-  {
-    freq: 118,
-    raw: "ANOTHER",
-  },
-  {
-    freq: 129,
-    raw: "STUDENT",
-  },
-  {
-    freq: 138,
-    raw: "COUNTRY",
-  },
-  {
-    freq: 143,
-    raw: "PROBLEM",
-  },
-  {
-    freq: 152,
-    raw: "AGAINST",
-  },
-  {
-    freq: 161,
-    raw: "COMPANY",
-  },
-  {
-    freq: 166,
-    raw: "PROGRAM",
-  },
-  {
-    freq: 183,
-    raw: "BELIEVE",
-  },
-  {
-    freq: 189,
-    raw: "WITHOUT",
-  },
-  {
-    freq: 193,
-    raw: "MILLION",
-  },
-  {
-    freq: 233,
-    raw: "PROVIDE",
-  },
-  {
-    freq: 234,
-    raw: "SERVICE",
-  },
-  {
-    freq: 255,
-    raw: "HOWEVER",
-  },
-  {
-    freq: 263,
-    raw: "INCLUDE",
-  },
-  {
-    freq: 281,
-    raw: "SEVERAL",
-  },
-  {
-    freq: 286,
-    raw: "NOTHING",
-  },
-  {
-    freq: 292,
-    raw: "WHETHER",
-  },
-  {
-    freq: 305,
-    raw: "ALREADY",
-  },
-  {
-    freq: 321,
-    raw: "HISTORY",
-  },
-  {
-    freq: 328,
-    raw: "MORNING",
-  },
-  {
-    freq: 338,
-    raw: "HIMSELF",
-  },
-  {
-    freq: 342,
-    raw: "TEACHER",
-  },
-  {
-    freq: 362,
-    raw: "PROCESS",
-  },
-  {
-    freq: 385,
-    raw: "COLLEGE",
-  },
-  {
-    freq: 389,
-    raw: "SOMEONE",
-  },
-  {
-    freq: 400,
-    raw: "SUGGEST",
-  },
-  {
-    freq: 402,
-    raw: "CONTROL",
-  },
-  {
-    freq: 405,
-    raw: "PERHAPS",
-  },
-  {
-    freq: 416,
-    raw: "REQUIRE",
-  },
-  {
-    freq: 439,
-    raw: "FINALLY",
-  },
-  {
-    freq: 449,
-    raw: "EXPLAIN",
-  },
-  {
-    freq: 453,
-    raw: "DEVELOP",
-  },
-  {
-    freq: 462,
-    raw: "FEDERAL",
-  },
-  {
-    freq: 466,
-    raw: "RECEIVE",
-  },
-  {
-    freq: 476,
-    raw: "SOCIETY",
-  },
-  {
-    freq: 477,
-    raw: "BECAUSE",
-  },
-  {
-    freq: 489,
-    raw: "SPECIAL",
-  },
-  {
-    freq: 493,
-    raw: "SUPPORT",
-  },
-  {
-    freq: 503,
-    raw: "PROJECT",
-  },
-  {
-    freq: 511,
-    raw: "PRODUCE",
-  },
-  {
-    freq: 531,
-    raw: "PICTURE",
-  },
-  {
-    freq: 538,
-    raw: "PRODUCT",
-  },
-  {
-    freq: 541,
-    raw: "PATIENT",
-  },
-  {
-    freq: 546,
-    raw: "CERTAIN",
-  },
-  {
-    freq: 551,
-    raw: "SUPPORT",
-  },
-  {
-    freq: 574,
-    raw: "CENTURY",
-  },
-  {
-    freq: 580,
-    raw: "CULTURE",
-  },
-  {
-    freq: 581,
-    raw: "BILLION",
-  },
-  {
-    freq: 583,
-    raw: "BROTHER",
-  },
-  {
-    freq: 585,
-    raw: "REALIZE",
-  },
-  {
-    freq: 590,
-    raw: "HUNDRED",
-  },
-  {
-    freq: 606,
-    raw: "HUSBAND",
-  },
-  {
-    freq: 614,
-    raw: "ECONOMY",
-  },
-  {
-    freq: 615,
-    raw: "MEDICAL",
-  },
-  {
-    freq: 621,
-    raw: "CURRENT",
-  },
-  {
-    freq: 625,
-    raw: "INVOLVE",
-  },
-  {
-    freq: 626,
-    raw: "DEFENSE",
-  },
-  {
-    freq: 639,
-    raw: "SUBJECT",
-  },
-  {
-    freq: 640,
-    raw: "OFFICER",
-  },
-  {
-    freq: 641,
-    raw: "PRIVATE",
-  },
-  {
-    freq: 648,
-    raw: "QUICKLY",
-  },
-  {
-    freq: 658,
-    raw: "FOREIGN",
-  },
-  {
-    freq: 683,
-    raw: "NATURAL",
-  },
-  {
-    freq: 685,
-    raw: "CONCERN",
-  },
-  {
-    freq: 688,
-    raw: "SIMILAR",
-  },
-  {
-    freq: 692,
-    raw: "USUALLY",
-  },
-  {
-    freq: 699,
-    raw: "ARTICLE",
-  },
-  {
-    freq: 710,
-    raw: "DESPITE",
-  },
-  {
-    freq: 711,
-    raw: "CENTRAL",
-  },
-  {
-    freq: 716,
-    raw: "EXACTLY",
-  },
-  {
-    freq: 717,
-    raw: "PROTECT",
-  },
-  {
-    freq: 723,
-    raw: "SERIOUS",
-  },
-  {
-    freq: 728,
-    raw: "THOUGHT",
-  },
-  {
-    freq: 732,
-    raw: "QUALITY",
-  },
-  {
-    freq: 740,
-    raw: "MEETING",
-  },
-  {
-    freq: 742,
-    raw: "PREPARE",
-  },
-  {
-    freq: 743,
-    raw: "DISEASE",
-  },
-  {
-    freq: 745,
-    raw: "SUCCESS",
-  },
-  {
-    freq: 751,
-    raw: "ABILITY",
-  },
-  {
-    freq: 760,
-    raw: "HERSELF",
-  },
-  {
-    freq: 772,
-    raw: "GENERAL",
-  },
-  {
-    freq: 773,
-    raw: "FEELING",
-  },
-  {
-    freq: 775,
-    raw: "MESSAGE",
-  },
-  {
-    freq: 778,
-    raw: "OUTSIDE",
-  },
-  {
-    freq: 781,
-    raw: "BENEFIT",
-  },
-  {
-    freq: 784,
-    raw: "FORWARD",
-  },
-  {
-    freq: 786,
-    raw: "PRESENT",
-  },
-  {
-    freq: 787,
-    raw: "SECTION",
-  },
-  {
-    freq: 798,
-    raw: "COMPARE",
-  },
-  {
-    freq: 808,
-    raw: "STATION",
-  },
-  {
-    freq: 813,
-    raw: "CLEARLY",
-  },
-  {
-    freq: 814,
-    raw: "DISCUSS",
-  },
-  {
-    freq: 819,
-    raw: "EXAMPLE",
-  },
-  {
-    freq: 826,
-    raw: "VARIOUS",
-  },
-  {
-    freq: 844,
-    raw: "MANAGER",
-  },
-  {
-    freq: 849,
-    raw: "NETWORK",
-  },
-  {
-    freq: 856,
-    raw: "SCIENCE",
-  },
-  {
-    freq: 876,
-    raw: "IMAGINE",
-  },
-  {
-    freq: 877,
-    raw: "TONIGHT",
-  },
-  {
-    freq: 886,
-    raw: "RESPOND",
-  },
-  {
-    freq: 890,
-    raw: "POPULAR",
-  },
-  {
-    freq: 897,
-    raw: "CONTAIN",
-  },
-  {
-    freq: 901,
-    raw: "CONTROL",
-  },
-  {
-    freq: 907,
-    raw: "MEASURE",
-  },
-  {
-    freq: 919,
-    raw: "PERFORM",
-  },
-  {
-    freq: 927,
-    raw: "EVENING",
-  },
-  {
-    freq: 937,
-    raw: "MENTION",
-  },
-  {
-    freq: 947,
-    raw: "TROUBLE",
-  },
-  {
-    freq: 960,
-    raw: "INSTEAD",
-  },
-  {
-    freq: 961,
-    raw: "IMPROVE",
-  },
-  {
-    freq: 969,
-    raw: "SOLDIER",
-  },
-  {
-    freq: 970,
-    raw: "REFLECT",
-  },
-  {
-    freq: 980,
-    raw: "PURPOSE",
-  },
-  {
-    freq: 981,
-    raw: "SURFACE",
-  },
-  {
-    freq: 983,
-    raw: "PATTERN",
-  },
-  {
-    freq: 988,
-    raw: "MACHINE",
-  },
-  {
-    freq: 994,
-    raw: "ADDRESS",
-  },
-  {
-    freq: 998,
-    raw: "REALITY",
-  },
-  {
-    freq: 1014,
-    raw: "PARTNER",
-  },
-  {
-    freq: 1017,
-    raw: "KITCHEN",
-  },
-  {
-    freq: 1027,
-    raw: "CAPITAL",
-  },
-  {
-    freq: 1031,
-    raw: "INSTEAD",
-  },
-  {
-    freq: 1037,
-    raw: "ACCOUNT",
-  },
-  {
-    freq: 1045,
-    raw: "WESTERN",
-  },
-  {
-    freq: 1049,
-    raw: "PREVENT",
-  },
-  {
-    freq: 1050,
-    raw: "CITIZEN",
-  },
-  {
-    freq: 1061,
-    raw: "MISSION",
-  },
-  {
-    freq: 1081,
-    raw: "PUBLISH",
-  },
-  {
-    freq: 1085,
-    raw: "RELEASE",
-  },
-  {
-    freq: 1089,
-    raw: "OPINION",
-  },
-  {
-    freq: 1095,
-    raw: "VERSION",
-  },
-  {
-    freq: 1106,
-    raw: "SPECIES",
-  },
-  {
-    freq: 1113,
-    raw: "FREEDOM",
-  },
-  {
-    freq: 1117,
-    raw: "ACHIEVE",
-  },
-  {
-    freq: 1123,
-    raw: "CONCEPT",
-  },
-  {
-    freq: 1125,
-    raw: "PERFECT",
-  },
-  {
-    freq: 1127,
-    raw: "CONDUCT",
-  },
-  {
-    freq: 1130,
-    raw: "EXAMINE",
-  },
-  {
-    freq: 1136,
-    raw: "VARIETY",
-  },
-  {
-    freq: 1141,
-    raw: "NUCLEAR",
-  },
-  {
-    freq: 1147,
-    raw: "REPLACE",
-  },
-  {
-    freq: 1148,
-    raw: "BRITISH",
-  },
-  {
-    freq: 1155,
-    raw: "FEATURE",
-  },
-  {
-    freq: 1157,
-    raw: "WEEKEND",
-  },
-  {
-    freq: 1167,
-    raw: "AFRICAN",
-  },
-  {
-    freq: 1176,
-    raw: "THROUGH",
-  },
-  {
-    freq: 1178,
-    raw: "ELEMENT",
-  },
-  {
-    freq: 1182,
-    raw: "CHINESE",
-  },
-  {
-    freq: 1192,
-    raw: "ATTEMPT",
-  },
-  {
-    freq: 1211,
-    raw: "VILLAGE",
-  },
-  {
-    freq: 1238,
-    raw: "EXPRESS",
-  },
-  {
-    freq: 1240,
-    raw: "WILLING",
-  },
-  {
-    freq: 1254,
-    raw: "DELIVER",
-  },
-  {
-    freq: 1259,
-    raw: "VEHICLE",
-  },
-  {
-    freq: 1260,
-    raw: "OBSERVE",
-  },
-  {
-    freq: 1265,
-    raw: "AVERAGE",
-  },
-  {
-    freq: 1275,
-    raw: "OPERATE",
-  },
-  {
-    freq: 1284,
-    raw: "COLLECT",
-  },
-  {
-    freq: 1294,
-    raw: "PROMOTE",
-  },
-  {
-    freq: 1296,
-    raw: "PRESENT",
-  },
-  {
-    freq: 1308,
-    raw: "SURVIVE",
-  },
-  {
-    freq: 1326,
-    raw: "FAILURE",
-  },
-  {
-    freq: 1329,
-    raw: "COMMENT",
-  },
-  {
-    freq: 1336,
-    raw: "REGULAR",
-  },
-  {
-    freq: 1343,
-    raw: "MEASURE",
-  },
-  {
-    freq: 1346,
-    raw: "ANYBODY",
-  },
-  {
-    freq: 1367,
-    raw: "QUARTER",
-  },
-  {
-    freq: 1379,
-    raw: "GROWING",
-  },
-  {
-    freq: 1384,
-    raw: "DESTROY",
-  },
-  {
-    freq: 1393,
-    raw: "CONTEXT",
-  },
-  {
-    freq: 1396,
-    raw: "MISTAKE",
-  },
-  {
-    freq: 1400,
-    raw: "CLOTHES",
-  },
-  {
-    freq: 1404,
-    raw: "PROMISE",
-  },
-  {
-    freq: 1413,
-    raw: "AVERAGE",
-  },
-  {
-    freq: 1414,
-    raw: "COMBINE",
-  },
-  {
-    freq: 1429,
-    raw: "VICTORY",
-  },
-  {
-    freq: 1434,
-    raw: "HEALTHY",
-  },
-  {
-    freq: 1443,
-    raw: "FINDING",
-  },
-  {
-    freq: 1447,
-    raw: "CONTACT",
-  },
-  {
-    freq: 1448,
-    raw: "JUSTICE",
-  },
-  {
-    freq: 1470,
-    raw: "EASTERN",
-  },
-  {
-    freq: 1471,
-    raw: "PRIMARY",
-  },
-  {
-    freq: 1490,
-    raw: "PLASTIC",
-  },
-  {
-    freq: 1495,
-    raw: "WRITING",
-  },
-  {
-    freq: 1502,
-    raw: "THEATER",
-  },
-  {
-    freq: 1505,
-    raw: "CHICKEN",
-  },
-  {
-    freq: 1511,
-    raw: "SESSION",
-  },
-  {
-    freq: 1512,
-    raw: "WELCOME",
-  },
-  {
-    freq: 1521,
-    raw: "RESPECT",
-  },
-  {
-    freq: 1529,
-    raw: "RUSSIAN",
-  },
-  {
-    freq: 1547,
-    raw: "STRANGE",
-  },
-  {
-    freq: 1548,
-    raw: "READING",
-  },
-  {
-    freq: 1561,
-    raw: "EXPLORE",
-  },
-  {
-    freq: 1565,
-    raw: "COMPLEX",
-  },
-  {
-    freq: 1567,
-    raw: "ATHLETE",
-  },
-  {
-    freq: 1575,
-    raw: "MEANING",
-  },
-  {
-    freq: 1577,
-    raw: "MARRIED",
-  },
-  {
-    freq: 1580,
-    raw: "PREDICT",
-  },
-  {
-    freq: 1581,
-    raw: "WEATHER",
-  },
-  {
-    freq: 1585,
-    raw: "SUPREME",
-  },
-  {
-    freq: 1598,
-    raw: "BALANCE",
-  },
-  {
-    freq: 1602,
-    raw: "ATTEMPT",
-  },
-  {
-    freq: 1603,
-    raw: "CONNECT",
-  },
-  {
-    freq: 1617,
-    raw: "SOMEHOW",
-  },
-  {
-    freq: 1640,
-    raw: "ANALYST",
-  },
-  {
-    freq: 1647,
-    raw: "LARGELY",
-  },
-  {
-    freq: 1649,
-    raw: "REVENUE",
-  },
-  {
-    freq: 1654,
-    raw: "PACKAGE",
-  },
-  {
-    freq: 1658,
-    raw: "OBVIOUS",
-  },
-  {
-    freq: 1663,
-    raw: "ANYMORE",
-  },
-  {
-    freq: 1664,
-    raw: "PROPOSE",
-  },
-  {
-    freq: 1668,
-    raw: "VISITOR",
-  },
-  {
-    freq: 1681,
-    raw: "HEARING",
-  },
-  {
-    freq: 1682,
-    raw: "TRAFFIC",
-  },
-  {
-    freq: 1685,
-    raw: "CAPTURE",
-  },
-  {
-    freq: 1698,
-    raw: "FEATURE",
-  },
-  {
-    freq: 1703,
-    raw: "CONTENT",
-  },
-  {
-    freq: 1707,
-    raw: "DECLARE",
-  },
-  {
-    freq: 1708,
-    raw: "OUTSIDE",
-  },
-  {
-    freq: 1713,
-    raw: "SETTING",
-  },
-  {
-    freq: 1718,
-    raw: "OUTCOME",
-  },
-  {
-    freq: 1736,
-    raw: "AIRPORT",
-  },
-  {
-    freq: 1753,
-    raw: "ENGLISH",
-  },
-  {
-    freq: 1761,
-    raw: "NEITHER",
-  },
-  {
-    freq: 1764,
-    raw: "SURGERY",
-  },
-  {
-    freq: 1765,
-    raw: "CORRECT",
-  },
-  {
-    freq: 1777,
-    raw: "ADDRESS",
-  },
-  {
-    freq: 1788,
-    raw: "ANCIENT",
-  },
-  {
-    freq: 1791,
-    raw: "SILENCE",
-  },
-  {
-    freq: 1806,
-    raw: "TYPICAL",
-  },
-  {
-    freq: 1822,
-    raw: "CONFIRM",
-  },
-  {
-    freq: 1838,
-    raw: "ATTRACT",
-  },
-  {
-    freq: 1840,
-    raw: "BEDROOM",
-  },
-  {
-    freq: 1874,
-    raw: "ENGLISH",
-  },
-  {
-    freq: 1880,
-    raw: "ACCOUNT",
-  },
-  {
-    freq: 1882,
-    raw: "TOTALLY",
-  },
-  {
-    freq: 1886,
-    raw: "STRETCH",
-  },
-  {
-    freq: 1893,
-    raw: "FASHION",
-  },
-  {
-    freq: 1904,
-    raw: "WELFARE",
-  },
-  {
-    freq: 1911,
-    raw: "OPENING",
-  },
-  {
-    freq: 1912,
-    raw: "OVERALL",
-  },
-  {
-    freq: 1914,
-    raw: "INITIAL",
-  },
-  {
-    freq: 1923,
-    raw: "CAREFUL",
-  },
-  {
-    freq: 1934,
-    raw: "HOLIDAY",
-  },
-  {
-    freq: 1941,
-    raw: "WITNESS",
-  },
-  {
-    freq: 1948,
-    raw: "BENEATH",
-  },
-  {
-    freq: 1953,
-    raw: "LIMITED",
-  },
-  {
-    freq: 1956,
-    raw: "FACULTY",
-  },
-  {
-    freq: 1964,
-    raw: "LIBERAL",
-  },
-  {
-    freq: 1967,
-    raw: "MASSIVE",
-  },
-  {
-    freq: 1971,
-    raw: "DECLINE",
-  },
-  {
-    freq: 1973,
-    raw: "PROMISE",
-  },
-  {
-    freq: 1975,
-    raw: "TOWARDS",
-  },
-  {
-    freq: 1990,
-    raw: "SUCCEED",
-  },
-  {
-    freq: 1994,
-    raw: "FISHING",
-  },
-  {
-    freq: 2009,
-    raw: "UNUSUAL",
-  },
-  {
-    freq: 2010,
-    raw: "CLOSELY",
-  },
-  {
-    freq: 2025,
-    raw: "APPROVE",
-  },
-  {
-    freq: 2027,
-    raw: "OUTSIDE",
-  },
-  {
-    freq: 2035,
-    raw: "ACQUIRE",
-  },
-  {
-    freq: 2037,
-    raw: "COMPETE",
-  },
-  {
-    freq: 2043,
-    raw: "ILLEGAL",
-  },
-  {
-    freq: 2053,
-    raw: "FOREVER",
-  },
-  {
-    freq: 2056,
-    raw: "ISRAELI",
-  },
-  {
-    freq: 2064,
-    raw: "DISPLAY",
-  },
-  {
-    freq: 2069,
-    raw: "MUSICAL",
-  },
-  {
-    freq: 2072,
-    raw: "SUSPECT",
-  },
-  {
-    freq: 2073,
-    raw: "SCHOLAR",
-  },
-  {
-    freq: 2074,
-    raw: "WARNING",
-  },
-  {
-    freq: 2075,
-    raw: "CLIMATE",
-  },
-  {
-    freq: 2078,
-    raw: "PAYMENT",
-  },
-  {
-    freq: 2088,
-    raw: "REQUEST",
-  },
-  {
-    freq: 2089,
-    raw: "EMOTION",
-  },
-  {
-    freq: 2101,
-    raw: "AIRLINE",
-  },
-  {
-    freq: 2102,
-    raw: "LIBRARY",
-  },
-  {
-    freq: 2104,
-    raw: "RECOVER",
-  },
-  {
-    freq: 2105,
-    raw: "FACTORY",
-  },
-  {
-    freq: 2110,
-    raw: "EXPENSE",
-  },
-  {
-    freq: 2114,
-    raw: "FUNDING",
-  },
-  {
-    freq: 2115,
-    raw: "THERAPY",
-  },
-  {
-    freq: 2120,
-    raw: "HOUSING",
-  },
-  {
-    freq: 2131,
-    raw: "VIOLENT",
-  },
-  {
-    freq: 2134,
-    raw: "SUPPOSE",
-  },
-  {
-    freq: 2149,
-    raw: "WEDDING",
-  },
-  {
-    freq: 2151,
-    raw: "PORTION",
-  },
-  {
-    freq: 2155,
-    raw: "ABANDON",
-  },
-  {
-    freq: 2160,
-    raw: "TENSION",
-  },
-  {
-    freq: 2161,
-    raw: "DISPLAY",
-  },
-  {
-    freq: 2162,
-    raw: "LEADING",
-  },
-  {
-    freq: 2164,
-    raw: "CONSIST",
-  },
-  {
-    freq: 2165,
-    raw: "ALCOHOL",
-  },
-  {
-    freq: 2174,
-    raw: "RELEASE",
-  },
-  {
-    freq: 2178,
-    raw: "SPANISH",
-  },
-  {
-    freq: 2184,
-    raw: "PASSAGE",
-  },
-  {
-    freq: 2190,
-    raw: "ARRANGE",
-  },
-  {
-    freq: 2198,
-    raw: "DESERVE",
-  },
-  {
-    freq: 2207,
-    raw: "BENEFIT",
-  },
-  {
-    freq: 2216,
-    raw: "RESOLVE",
-  },
-  {
-    freq: 2219,
-    raw: "PRESENT",
-  },
-  {
-    freq: 2222,
-    raw: "MEXICAN",
-  },
-  {
-    freq: 2223,
-    raw: "SYMPTOM",
-  },
-  {
-    freq: 2224,
-    raw: "CONTACT",
-  },
-  {
-    freq: 2238,
-    raw: "BREATHE",
-  },
-  {
-    freq: 2248,
-    raw: "SUICIDE",
-  },
-  {
-    freq: 2257,
-    raw: "PASSION",
-  },
-  {
-    freq: 2267,
-    raw: "AMAZING",
-  },
-  {
-    freq: 2268,
-    raw: "INTENSE",
-  },
-  {
-    freq: 2269,
-    raw: "ADVANCE",
-  },
-  {
-    freq: 2272,
-    raw: "INSPIRE",
-  },
-  {
-    freq: 2276,
-    raw: "ILLNESS",
-  },
-  {
-    freq: 2277,
-    raw: "VISIBLE",
-  },
-  {
-    freq: 2289,
-    raw: "ANALYZE",
-  },
-  {
-    freq: 2290,
-    raw: "ANOTHER",
-  },
-  {
-    freq: 2295,
-    raw: "PARKING",
-  },
-  {
-    freq: 2304,
-    raw: "ENHANCE",
-  },
-  {
-    freq: 2305,
-    raw: "MYSTERY",
-  },
-  {
-    freq: 2306,
-    raw: "POVERTY",
-  },
-  {
-    freq: 2323,
-    raw: "MONITOR",
-  },
-  {
-    freq: 2330,
-    raw: "DIGITAL",
-  },
-  {
-    freq: 2337,
-    raw: "HEAVILY",
-  },
-  {
-    freq: 2341,
-    raw: "MISSILE",
-  },
-  {
-    freq: 2343,
-    raw: "EQUALLY",
-  },
-  {
-    freq: 2352,
-    raw: "COMMAND",
-  },
-  {
-    freq: 2364,
-    raw: "VETERAN",
-  },
-  {
-    freq: 2367,
-    raw: "CAPABLE",
-  },
-  {
-    freq: 2368,
-    raw: "NERVOUS",
-  },
-  {
-    freq: 2369,
-    raw: "TOURIST",
-  },
-  {
-    freq: 2372,
-    raw: "CRUCIAL",
-  },
-  {
-    freq: 2378,
-    raw: "DEFICIT",
-  },
-  {
-    freq: 2384,
-    raw: "JOURNEY",
-  },
-  {
-    freq: 2388,
-    raw: "MIXTURE",
-  },
-  {
-    freq: 2421,
-    raw: "WHISPER",
-  },
-  {
-    freq: 2442,
-    raw: "ANXIETY",
-  },
-  {
-    freq: 2448,
-    raw: "EMBRACE",
-  },
-  {
-    freq: 2476,
-    raw: "TESTING",
-  },
-  {
-    freq: 2478,
-    raw: "STOMACH",
-  },
-  {
-    freq: 2480,
-    raw: "INSTALL",
-  },
-  {
-    freq: 2490,
-    raw: "CONCERT",
-  },
-  {
-    freq: 2493,
-    raw: "CHANNEL",
-  },
-  {
-    freq: 2494,
-    raw: "EXTREME",
-  },
-  {
-    freq: 2496,
-    raw: "DRAWING",
-  },
-  {
-    freq: 2498,
-    raw: "PROTEIN",
-  },
-  {
-    freq: 2499,
-    raw: "ABSENCE",
-  },
-  {
-    freq: 2502,
-    raw: "RAPIDLY",
-  },
-  {
-    freq: 2504,
-    raw: "COMMENT",
-  },
-  {
-    freq: 2510,
-    raw: "SPEAKER",
-  },
-  {
-    freq: 2518,
-    raw: "RESTORE",
-  },
-  {
-    freq: 2528,
-    raw: "QUIETLY",
-  },
-  {
-    freq: 2536,
-    raw: "GENERAL",
-  },
-  {
-    freq: 2553,
-    raw: "UTILITY",
-  },
-  {
-    freq: 2558,
-    raw: "HIGHWAY",
-  },
-  {
-    freq: 2560,
-    raw: "ROUTINE",
-  },
-  {
-    freq: 2571,
-    raw: "ISLAMIC",
-  },
-  {
-    freq: 2574,
-    raw: "REFUGEE",
-  },
-  {
-    freq: 2584,
-    raw: "BARRIER",
-  },
-  {
-    freq: 2591,
-    raw: "CLASSIC",
-  },
-  {
-    freq: 2605,
-    raw: "DISTANT",
-  },
-  {
-    freq: 2612,
-    raw: "ITALIAN",
-  },
-  {
-    freq: 2616,
-    raw: "CEILING",
-  },
-  {
-    freq: 2632,
-    raw: "ROUGHLY",
-  },
-  {
-    freq: 2635,
-    raw: "LAWSUIT",
-  },
-  {
-    freq: 2642,
-    raw: "CHAMBER",
-  },
-  {
-    freq: 2651,
-    raw: "PROFILE",
-  },
-  {
-    freq: 2655,
-    raw: "PENALTY",
-  },
-  {
-    freq: 2657,
-    raw: "ADVANCE",
-  },
-  {
-    freq: 2667,
-    raw: "CABINET",
-  },
-  {
-    freq: 2671,
-    raw: "PROCEED",
-  },
-  {
-    freq: 2677,
-    raw: "FORTUNE",
-  },
-  {
-    freq: 2679,
-    raw: "DISPUTE",
-  },
-  {
-    freq: 2695,
-    raw: "ADVISER",
-  },
-  {
-    freq: 2696,
-    raw: "GENETIC",
-  },
-  {
-    freq: 2706,
-    raw: "WHEREAS",
-  },
-  {
-    freq: 2711,
-    raw: "OLYMPIC",
-  },
-  {
-    freq: 2720,
-    raw: "PROCESS",
-  },
-  {
-    freq: 2721,
-    raw: "DECLINE",
-  },
-  {
-    freq: 2737,
-    raw: "FICTION",
-  },
-  {
-    freq: 2739,
-    raw: "BALANCE",
-  },
-  {
-    freq: 2744,
-    raw: "SENATOR",
-  },
-  {
-    freq: 2747,
-    raw: "HUNTING",
-  },
-  {
-    freq: 2755,
-    raw: "JOURNAL",
-  },
-  {
-    freq: 2762,
-    raw: "GENERAL",
-  },
-  {
-    freq: 2765,
-    raw: "TESTIFY",
-  },
-  {
-    freq: 2775,
-    raw: "FOUNDER",
-  },
-  {
-    freq: 2777,
-    raw: "DISMISS",
-  },
-  {
-    freq: 2783,
-    raw: "FINANCE",
-  },
-  {
-    freq: 2787,
-    raw: "RESPECT",
-  },
-  {
-    freq: 2788,
-    raw: "DIVERSE",
-  },
-  {
-    freq: 2794,
-    raw: "WORKING",
-  },
-  {
-    freq: 2800,
-    raw: "UNKNOWN",
-  },
-  {
-    freq: 2803,
-    raw: "OFFENSE",
-  },
-  {
-    freq: 2805,
-    raw: "COUNTER",
-  },
-  {
-    freq: 2809,
-    raw: "JUSTIFY",
-  },
-  {
-    freq: 2810,
-    raw: "PROTEST",
-  },
-  {
-    freq: 2815,
-    raw: "INSIGHT",
-  },
-  {
-    freq: 2817,
-    raw: "POSSESS",
-  },
-  {
-    freq: 2821,
-    raw: "EPISODE",
-  },
-  {
-    freq: 2828,
-    raw: "SHORTLY",
-  },
-  {
-    freq: 2835,
-    raw: "ASSAULT",
-  },
-  {
-    freq: 2847,
-    raw: "LICENSE",
-  },
-  {
-    freq: 2849,
-    raw: "SHELTER",
-  },
-  {
-    freq: 2858,
-    raw: "TRAGEDY",
-  },
-  {
-    freq: 2860,
-    raw: "FUNERAL",
-  },
-  {
-    freq: 2866,
-    raw: "SQUEEZE",
-  },
-  {
-    freq: 2870,
-    raw: "CONVERT",
-  },
-  {
-    freq: 2880,
-    raw: "PRETEND",
-  },
-  {
-    freq: 2882,
-    raw: "ELDERLY",
-  },
-  {
-    freq: 2884,
-    raw: "VIOLATE",
-  },
-  {
-    freq: 2892,
-    raw: "NEITHER",
-  },
-  {
-    freq: 2897,
-    raw: "SEGMENT",
-  },
-  {
-    freq: 2899,
-    raw: "NOWHERE",
-  },
-  {
-    freq: 2903,
-    raw: "COMFORT",
-  },
-  {
-    freq: 2904,
-    raw: "RADICAL",
-  },
-  {
-    freq: 2916,
-    raw: "STORAGE",
-  },
-  {
-    freq: 2918,
-    raw: "LEATHER",
-  },
-  {
-    freq: 2930,
-    raw: "COUNCIL",
-  },
-  {
-    freq: 2941,
-    raw: "FANTASY",
-  },
-  {
-    freq: 2946,
-    raw: "GESTURE",
-  },
-  {
-    freq: 2947,
-    raw: "ONGOING",
-  },
-  {
-    freq: 2952,
-    raw: "WITNESS",
-  },
-  {
-    freq: 2953,
-    raw: "CHAPTER",
-  },
-  {
-    freq: 2955,
-    raw: "DIVORCE",
-  },
-  {
-    freq: 2963,
-    raw: "SUSTAIN",
-  },
-  {
-    freq: 2972,
-    raw: "FIFTEEN",
-  },
-  {
-    freq: 2978,
-    raw: "SATISFY",
-  },
-  {
-    freq: 2979,
-    raw: "BRIEFLY",
-  },
-  {
-    freq: 2983,
-    raw: "CONSUME",
-  },
-  {
-    freq: 2987,
-    raw: "TOBACCO",
-  },
-  {
-    freq: 2989,
-    raw: "BESIDES",
-  },
-  {
-    freq: 2991,
-    raw: "WEALTHY",
-  },
-  {
-    freq: 3004,
-    raw: "FIGHTER",
-  },
-  {
-    freq: 3009,
-    raw: "EDUCATE",
-  },
-  {
-    freq: 3010,
-    raw: "PAINFUL",
-  },
-  {
-    freq: 3019,
-    raw: "UNIFORM",
-  },
-  {
-    freq: 3025,
-    raw: "QUALIFY",
-  },
-  {
-    freq: 3028,
-    raw: "SCANDAL",
-  },
-  {
-    freq: 3029,
-    raw: "HELPFUL",
-  },
-  {
-    freq: 3030,
-    raw: "IMPRESS",
-  },
-  {
-    freq: 3035,
-    raw: "PRIVACY",
-  },
-  {
-    freq: 3037,
-    raw: "CONTEST",
-  },
-  {
-    freq: 3045,
-    raw: "ORGANIC",
-  },
-  {
-    freq: 3062,
-    raw: "BOMBING",
-  },
-  {
-    freq: 3071,
-    raw: "SUSPECT",
-  },
-  {
-    freq: 3081,
-    raw: "EXPLODE",
-  },
-  {
-    freq: 3084,
-    raw: "HANDFUL",
-  },
-  {
-    freq: 3087,
-    raw: "CURIOUS",
-  },
-  {
-    freq: 3088,
-    raw: "HORIZON",
-  },
-  {
-    freq: 3092,
-    raw: "REQUEST",
-  },
-  {
-    freq: 3116,
-    raw: "UNDERGO",
-  },
-  {
-    freq: 3130,
-    raw: "EDITION",
-  },
-  {
-    freq: 3139,
-    raw: "COMPLEX",
-  },
-  {
-    freq: 3148,
-    raw: "APPOINT",
-  },
-  {
-    freq: 3170,
-    raw: "BATTERY",
-  },
-  {
-    freq: 3171,
-    raw: "ARRIVAL",
-  },
-  {
-    freq: 3177,
-    raw: "CLUSTER",
-  },
-  {
-    freq: 3198,
-    raw: "HABITAT",
-  },
-  {
-    freq: 3213,
-    raw: "ACTRESS",
-  },
-  {
-    freq: 3227,
-    raw: "CORRECT",
-  },
-  {
-    freq: 3229,
-    raw: "RUNNING",
-  },
-  {
-    freq: 3237,
-    raw: "WORRIED",
-  },
-  {
-    freq: 3239,
-    raw: "PORTRAY",
-  },
-  {
-    freq: 3246,
-    raw: "COOKING",
-  },
-  {
-    freq: 3247,
-    raw: "CARRIER",
-  },
-  {
-    freq: 3255,
-    raw: "MIRACLE",
-  },
-  {
-    freq: 3259,
-    raw: "KILLING",
-  },
-  {
-    freq: 3263,
-    raw: "CHARITY",
-  },
-  {
-    freq: 3270,
-    raw: "VENTURE",
-  },
-  {
-    freq: 3277,
-    raw: "GROCERY",
-  },
-  {
-    freq: 3279,
-    raw: "EXHIBIT",
-  },
-  {
-    freq: 3282,
-    raw: "BLANKET",
-  },
-  {
-    freq: 3291,
-    raw: "RECRUIT",
-  },
-  {
-    freq: 3299,
-    raw: "PAINTER",
-  },
-  {
-    freq: 3301,
-    raw: "COURAGE",
-  },
-  {
-    freq: 3317,
-    raw: "FORMULA",
-  },
-  {
-    freq: 3324,
-    raw: "CAPTAIN",
-  },
-  {
-    freq: 3331,
-    raw: "GALLERY",
-  },
-  {
-    freq: 3334,
-    raw: "FITNESS",
-  },
-  {
-    freq: 3344,
-    raw: "INQUIRY",
-  },
-  {
-    freq: 3357,
-    raw: "COMPOSE",
-  },
-  {
-    freq: 3369,
-    raw: "RELATED",
-  },
-  {
-    freq: 3374,
-    raw: "LIGHTLY",
-  },
-  {
-    freq: 3386,
-    raw: "TRADING",
-  },
-  {
-    freq: 3387,
-    raw: "CONCERN",
-  },
-  {
-    freq: 3391,
-    raw: "SURGEON",
-  },
-  {
-    freq: 3395,
-    raw: "PHYSICS",
-  },
-  {
-    freq: 3396,
-    raw: "COUNSEL",
-  },
-  {
-    freq: 3404,
-    raw: "EXCITED",
-  },
-  {
-    freq: 3414,
-    raw: "GREATLY",
-  },
-  {
-    freq: 3416,
-    raw: "SERVING",
-  },
-  {
-    freq: 3426,
-    raw: "PLEASED",
-  },
-  {
-    freq: 3428,
-    raw: "FINANCE",
-  },
-  {
-    freq: 3431,
-    raw: "SPONSOR",
-  },
-  {
-    freq: 3432,
-    raw: "ETHICAL",
-  },
-  {
-    freq: 3443,
-    raw: "ENTITLE",
-  },
-  {
-    freq: 3444,
-    raw: "EVIDENT",
-  },
-  {
-    freq: 3446,
-    raw: "ESSENCE",
-  },
-  {
-    freq: 3448,
-    raw: "EXCLUDE",
-  },
-  {
-    freq: 3456,
-    raw: "PITCHER",
-  },
-  {
-    freq: 3474,
-    raw: "PATIENT",
-  },
-  {
-    freq: 3476,
-    raw: "REVERSE",
-  },
-  {
-    freq: 3478,
-    raw: "MISSING",
-  },
-  {
-    freq: 3487,
-    raw: "STRETCH",
-  },
-  {
-    freq: 3497,
-    raw: "CONFUSE",
-  },
-  {
-    freq: 3499,
-    raw: "MONTHLY",
-  },
-  {
-    freq: 3505,
-    raw: "LECTURE",
-  },
-  {
-    freq: 3516,
-    raw: "SWALLOW",
-  },
-  {
-    freq: 3526,
-    raw: "ENFORCE",
-  },
-  {
-    freq: 3533,
-    raw: "CONTEND",
-  },
-  {
-    freq: 3536,
-    raw: "FRANKLY",
-  },
-  {
-    freq: 3540,
-    raw: "HALLWAY",
-  },
-  {
-    freq: 3546,
-    raw: "MONSTER",
-  },
-  {
-    freq: 3547,
-    raw: "PROTEST",
-  },
-  {
-    freq: 3555,
-    raw: "CRYSTAL",
-  },
-  {
-    freq: 3562,
-    raw: "WRITTEN",
-  },
-  {
-    freq: 3572,
-    raw: "CONSULT",
-  },
-  {
-    freq: 3576,
-    raw: "FORGIVE",
-  },
-  {
-    freq: 3581,
-    raw: "PROJECT",
-  },
-  {
-    freq: 3584,
-    raw: "MAXIMUM",
-  },
-  {
-    freq: 3588,
-    raw: "WARRIOR",
-  },
-  {
-    freq: 3595,
-    raw: "OUTDOOR",
-  },
-  {
-    freq: 3604,
-    raw: "CURTAIN",
-  },
-  {
-    freq: 3605,
-    raw: "MONITOR",
-  },
-  {
-    freq: 3611,
-    raw: "SUBJECT",
-  },
-  {
-    freq: 3612,
-    raw: "PLAYOFF",
-  },
-  {
-    freq: 3614,
-    raw: "MINIMUM",
-  },
-  {
-    freq: 3615,
-    raw: "WALKING",
-  },
-  {
-    freq: 3623,
-    raw: "EXECUTE",
-  },
-  {
-    freq: 3626,
-    raw: "AVERAGE",
-  },
-  {
-    freq: 3629,
-    raw: "WELCOME",
-  },
-  {
-    freq: 3635,
-    raw: "CHRONIC",
-  },
-  {
-    freq: 3647,
-    raw: "TRIGGER",
-  },
-  {
-    freq: 3651,
-    raw: "RETIRED",
-  },
-  {
-    freq: 3657,
-    raw: "VIRTUAL",
-  },
-  {
-    freq: 3660,
-    raw: "CONVICT",
-  },
-  {
-    freq: 3670,
-    raw: "LANDING",
-  },
-  {
-    freq: 3672,
-    raw: "CONDUCT",
-  },
-  {
-    freq: 3694,
-    raw: "DRIVING",
-  },
-  {
-    freq: 3697,
-    raw: "VITAMIN",
-  },
-  {
-    freq: 3704,
-    raw: "ENDLESS",
-  },
-  {
-    freq: 3706,
-    raw: "MANDATE",
-  },
-  {
-    freq: 3722,
-    raw: "RESERVE",
-  },
-  {
-    freq: 3730,
-    raw: "GENUINE",
-  },
-  {
-    freq: 3737,
-    raw: "SCATTER",
-  },
-  {
-    freq: 3747,
-    raw: "RELIEVE",
-  },
-  {
-    freq: 3759,
-    raw: "SUSPEND",
-  },
-  {
-    freq: 3769,
-    raw: "PENSION",
-  },
-  {
-    freq: 3774,
-    raw: "REBUILD",
-  },
-  {
-    freq: 3794,
-    raw: "SHUTTLE",
-  },
-  {
-    freq: 3805,
-    raw: "EXHIBIT",
-  },
-  {
-    freq: 3810,
-    raw: "PRECISE",
-  },
-  {
-    freq: 3811,
-    raw: "ANXIOUS",
-  },
-  {
-    freq: 3819,
-    raw: "LIBERTY",
-  },
-  {
-    freq: 3844,
-    raw: "PRIMARY",
-  },
-  {
-    freq: 3848,
-    raw: "PROGRAM",
-  },
-  {
-    freq: 3850,
-    raw: "DOORWAY",
-  },
-  {
-    freq: 3852,
-    raw: "TEENAGE",
-  },
-  {
-    freq: 3857,
-    raw: "PURSUIT",
-  },
-  {
-    freq: 3864,
-    raw: "ISRAELI",
-  },
-  {
-    freq: 3868,
-    raw: "ENDORSE",
-  },
-  {
-    freq: 3873,
-    raw: "OVERALL",
-  },
-  {
-    freq: 3875,
-    raw: "THEREBY",
-  },
-  {
-    freq: 3886,
-    raw: "PICTURE",
-  },
-  {
-    freq: 3892,
-    raw: "SHARPLY",
-  },
-  {
-    freq: 3919,
-    raw: "GARBAGE",
-  },
-  {
-    freq: 3923,
-    raw: "SERVANT",
-  },
-  {
-    freq: 3927,
-    raw: "ELEGANT",
-  },
-  {
-    freq: 3935,
-    raw: "CONFESS",
-  },
-  {
-    freq: 3937,
-    raw: "STARTER",
-  },
-  {
-    freq: 3938,
-    raw: "BANKING",
-  },
-  {
-    freq: 3941,
-    raw: "GRAVITY",
-  },
-  {
-    freq: 3948,
-    raw: "ISOLATE",
-  },
-  {
-    freq: 3957,
-    raw: "HOSTAGE",
-  },
-  {
-    freq: 3963,
-    raw: "DYNAMIC",
-  },
-  {
-    freq: 3977,
-    raw: "CONTENT",
-  },
-  {
-    freq: 3980,
-    raw: "RUSSIAN",
-  },
-  {
-    freq: 3982,
-    raw: "COMMAND",
-  },
-  {
-    freq: 3986,
-    raw: "STUMBLE",
-  },
-  {
-    freq: 3991,
-    raw: "DESCEND",
-  },
-  {
-    freq: 3998,
-    raw: "READILY",
-  },
-  {
-    freq: 4001,
-    raw: "ROMANCE",
-  },
-  {
-    freq: 4009,
-    raw: "CIRCUIT",
-  },
-  {
-    freq: 4024,
-    raw: "RESERVE",
-  },
-  {
-    freq: 4025,
-    raw: "COASTAL",
-  },
-  {
-    freq: 4027,
-    raw: "BURNING",
-  },
-  {
-    freq: 4030,
-    raw: "DIAMOND",
-  },
-  {
-    freq: 4041,
-    raw: "OVERSEE",
-  },
-  {
-    freq: 4048,
-    raw: "TRAILER",
-  },
-  {
-    freq: 4063,
-    raw: "LOYALTY",
-  },
-  {
-    freq: 4067,
-    raw: "NOMINEE",
-  },
-  {
-    freq: 4077,
-    raw: "ALLEGED",
-  },
-  {
-    freq: 4086,
-    raw: "DIGNITY",
-  },
-  {
-    freq: 4093,
-    raw: "TIGHTLY",
-  },
-  {
-    freq: 4096,
-    raw: "SEVENTH",
-  },
-  {
-    freq: 4105,
-    raw: "DILEMMA",
-  },
-  {
-    freq: 4110,
-    raw: "SHALLOW",
-  },
-  {
-    freq: 4115,
-    raw: "STADIUM",
-  },
-  {
-    freq: 4125,
-    raw: "CONDEMN",
-  },
-  {
-    freq: 4139,
-    raw: "COSTUME",
-  },
-  {
-    freq: 4140,
-    raw: "STATUTE",
-  },
-  {
-    freq: 4142,
-    raw: "CARTOON",
-  },
-  {
-    freq: 4144,
-    raw: "BESIDES",
-  },
-  {
-    freq: 4150,
-    raw: "HOSTILE",
-  },
-  {
-    freq: 4160,
-    raw: "VACCINE",
-  },
-  {
-    freq: 4162,
-    raw: "OPPOSED",
-  },
-  {
-    freq: 4174,
-    raw: "JEWELRY",
-  },
-  {
-    freq: 4179,
-    raw: "CONCEDE",
-  },
-  {
-    freq: 4206,
-    raw: "SECULAR",
-  },
-  {
-    freq: 4208,
-    raw: "DIVORCE",
-  },
-  {
-    freq: 4210,
-    raw: "NEUTRAL",
-  },
-  {
-    freq: 4213,
-    raw: "BIOLOGY",
-  },
-  {
-    freq: 4229,
-    raw: "WHOEVER",
-  },
-  {
-    freq: 4235,
-    raw: "VERDICT",
-  },
-  {
-    freq: 4242,
-    raw: "SUBSIDY",
-  },
-  {
-    freq: 4254,
-    raw: "RESPECT",
-  },
-  {
-    freq: 4255,
-    raw: "UTILIZE",
-  },
-  {
-    freq: 4260,
-    raw: "DESSERT",
-  },
-  {
-    freq: 4290,
-    raw: "ROLLING",
-  },
-  {
-    freq: 4305,
-    raw: "MINIMAL",
-  },
-  {
-    freq: 4307,
-    raw: "COCAINE",
-  },
-  {
-    freq: 4329,
-    raw: "SIBLING",
-  },
-  {
-    freq: 4343,
-    raw: "PASSING",
-  },
-  {
-    freq: 4344,
-    raw: "PERSIST",
-  },
-  {
-    freq: 4359,
-    raw: "BICYCLE",
-  },
-  {
-    freq: 4367,
-    raw: "EXPLOIT",
-  },
-  {
-    freq: 4376,
-    raw: "MINIMUM",
-  },
-  {
-    freq: 4379,
-    raw: "CHARTER",
-  },
-  {
-    freq: 4384,
-    raw: "CONSENT",
-  },
-  {
-    freq: 4397,
-    raw: "WORKOUT",
-  },
-  {
-    freq: 4405,
-    raw: "COUNTER",
-  },
-  {
-    freq: 4407,
-    raw: "TEXTURE",
-  },
-  {
-    freq: 4410,
-    raw: "HORMONE",
-  },
-  {
-    freq: 4416,
-    raw: "CUSTODY",
-  },
-  {
-    freq: 4423,
-    raw: "OUTLINE",
-  },
-  {
-    freq: 4426,
-    raw: "UNCOVER",
-  },
-  {
-    freq: 4437,
-    raw: "CATALOG",
-  },
-  {
-    freq: 4445,
-    raw: "SOMEDAY",
-  },
-  {
-    freq: 4447,
-    raw: "INSTANT",
-  },
-  {
-    freq: 4452,
-    raw: "TRAINER",
-  },
-  {
-    freq: 4460,
-    raw: "EYEBROW",
-  },
-  {
-    freq: 4466,
-    raw: "INHERIT",
-  },
-  {
-    freq: 4467,
-    raw: "PIONEER",
-  },
-  {
-    freq: 4481,
-    raw: "KINGDOM",
-  },
-  {
-    freq: 4486,
-    raw: "TERRAIN",
-  },
-  {
-    freq: 4494,
-    raw: "PLANNER",
-  },
-  {
-    freq: 4497,
-    raw: "CLOSEST",
-  },
-  {
-    freq: 4506,
-    raw: "DENSITY",
-  },
-  {
-    freq: 4519,
-    raw: "PERSIAN",
-  },
-  {
-    freq: 4524,
-    raw: "FEATHER",
-  },
-  {
-    freq: 4529,
-    raw: "TIGHTEN",
-  },
-  {
-    freq: 4540,
-    raw: "PARTIAL",
-  },
-  {
-    freq: 4543,
-    raw: "BUILDER",
-  },
-  {
-    freq: 4549,
-    raw: "GLIMPSE",
-  },
-  {
-    freq: 4550,
-    raw: "PREMISE",
-  },
-  {
-    freq: 4558,
-    raw: "LEGALLY",
-  },
-  {
-    freq: 4560,
-    raw: "DISTURB",
-  },
-  {
-    freq: 4564,
-    raw: "LOGICAL",
-  },
-  {
-    freq: 4570,
-    raw: "SLAVERY",
-  },
-  {
-    freq: 4572,
-    raw: "LIBERAL",
-  },
-  {
-    freq: 4579,
-    raw: "MINERAL",
-  },
-  {
-    freq: 4583,
-    raw: "HALFWAY",
-  },
-  {
-    freq: 4607,
-    raw: "SPONSOR",
-  },
-  {
-    freq: 4625,
-    raw: "FUCKING",
-  },
-  {
-    freq: 4628,
-    raw: "AUCTION",
-  },
-  {
-    freq: 4634,
-    raw: "TRIUMPH",
-  },
-  {
-    freq: 4640,
-    raw: "SCRATCH",
-  },
-  {
-    freq: 4665,
-    raw: "HARMONY",
-  },
-  {
-    freq: 4671,
-    raw: "RUNNING",
-  },
-  {
-    freq: 4672,
-    raw: "INSTANT",
-  },
-  {
-    freq: 4676,
-    raw: "PEASANT",
-  },
-  {
-    freq: 4688,
-    raw: "DEPOSIT",
-  },
-  {
-    freq: 4691,
-    raw: "IMPULSE",
-  },
-  {
-    freq: 4702,
-    raw: "TROUBLE",
-  },
-  {
-    freq: 4704,
-    raw: "HAPPILY",
-  },
-  {
-    freq: 4705,
-    raw: "DANCING",
-  },
-  {
-    freq: 4707,
-    raw: "REMOVAL",
-  },
-  {
-    freq: 4713,
-    raw: "UNHAPPY",
-  },
-  {
-    freq: 4717,
-    raw: "TOURISM",
-  },
-  {
-    freq: 4729,
-    raw: "FRAGILE",
-  },
-  {
-    freq: 4730,
-    raw: "EXHAUST",
-  },
-  {
-    freq: 4735,
-    raw: "CROWDED",
-  },
-  {
-    freq: 4738,
-    raw: "PREVAIL",
-  },
-  {
-    freq: 4754,
-    raw: "MENTION",
-  },
-  {
-    freq: 4758,
-    raw: "MANSION",
-  },
-  {
-    freq: 4762,
-    raw: "COTTAGE",
-  },
-  {
-    freq: 4771,
-    raw: "BALLOON",
-  },
-  {
-    freq: 4784,
-    raw: "RETREAT",
-  },
-  {
-    freq: 4786,
-    raw: "SWEATER",
-  },
-  {
-    freq: 4792,
-    raw: "VETERAN",
-  },
-  {
-    freq: 4797,
-    raw: "PREMIUM",
-  },
-  {
-    freq: 4803,
-    raw: "FATIGUE",
-  },
-  {
-    freq: 4818,
-    raw: "PROVOKE",
-  },
-  {
-    freq: 4837,
-    raw: "HARVEST",
-  },
-  {
-    freq: 4857,
-    raw: "TRANSIT",
-  },
-  {
-    freq: 4858,
-    raw: "SPECIFY",
-  },
-  {
-    freq: 4860,
-    raw: "SEMINAR",
-  },
-  {
-    freq: 4889,
-    raw: "DELIGHT",
-  },
-  {
-    freq: 4902,
-    raw: "SKILLED",
-  },
-  {
-    freq: 4916,
-    raw: "SUMMARY",
-  },
-  {
-    freq: 4932,
-    raw: "DICTATE",
-  },
-  {
-    freq: 4933,
-    raw: "HARVEST",
-  },
-  {
-    freq: 4939,
-    raw: "LAUNDRY",
-  },
-  {
-    freq: 4943,
-    raw: "APOLOGY",
-  },
-  {
-    freq: 4946,
-    raw: "BELOVED",
-  },
-  {
-    freq: 4949,
-    raw: "WEBSITE",
-  },
-  {
-    freq: 4950,
-    raw: "CHOPPED",
-  },
-  {
-    freq: 4952,
-    raw: "TRIBUTE",
-  },
-  {
-    freq: 4955,
-    raw: "SMOKING",
-  },
-  {
-    freq: 4956,
-    raw: "BIZARRE",
-  },
-  {
-    freq: 4961,
-    raw: "BARGAIN",
-  },
-  {
-    freq: 4971,
-    raw: "EXTRACT",
-  },
-  {
-    freq: 4994,
-    raw: "AWKWARD",
-  },
-  {
-    freq: 4996,
-    raw: "IRANIAN",
-  },
-  {
-    freq: 5000,
-    raw: "MILITIA",
-  },
-  {
-    freq: 5018,
-    raw: "SHERIFF",
-  },
-  {
-    freq: 5033,
-    raw: "INSPECT",
-  },
-  {
-    freq: 5038,
-    raw: "CLASSIC",
-  },
-  {
-    freq: 5041,
-    raw: "RANKING",
-  },
-  {
-    freq: 5053,
-    raw: "CLARIFY",
-  },
-  {
-    freq: 5066,
-    raw: "NEGLECT",
-  },
-  {
-    freq: 5069,
-    raw: "WARFARE",
-  },
-  {
-    freq: 5081,
-    raw: "LEARNER",
-  },
-  {
-    freq: 5089,
-    raw: "CREATOR",
-  },
-  {
-    freq: 5110,
-    raw: "FARMING",
-  },
-  {
-    freq: 5111,
-    raw: "VINEGAR",
-  },
-  {
-    freq: 5121,
-    raw: "HOPEFUL",
-  },
-  {
-    freq: 5137,
-    raw: "DEVOTED",
-  },
-  {
-    freq: 5143,
-    raw: "WARMING",
-  },
-  {
-    freq: 5145,
-    raw: "BETWEEN",
-  },
-  {
-    freq: 5147,
-    raw: "COLORED",
-  },
-  {
-    freq: 5149,
-    raw: "RETREAT",
-  },
-  {
-    freq: 5153,
-    raw: "CONCEAL",
-  },
-  {
-    freq: 5162,
-    raw: "HEALING",
-  },
-  {
-    freq: 5167,
-    raw: "DESTINY",
-  },
-  {
-    freq: 5178,
-    raw: "OUTLINE",
-  },
-  {
-    freq: 5195,
-    raw: "MIGRANT",
-  },
-  {
-    freq: 5202,
-    raw: "IMAGERY",
-  },
-  {
-    freq: 5241,
-    raw: "TRIGGER",
-  },
-  {
-    freq: 5242,
-    raw: "TREMBLE",
-  },
-  {
-    freq: 5245,
-    raw: "ITALIAN",
-  },
-  {
-    freq: 5247,
-    raw: "VENTURE",
-  },
-  {
-    freq: 5259,
-    raw: "NURSING",
-  },
-  {
-    freq: 5274,
-    raw: "NOTABLY",
-  },
-  {
-    freq: 5281,
-    raw: "TORTURE",
-  },
-  {
-    freq: 5289,
-    raw: "REVENGE",
-  },
-  {
-    freq: 5291,
-    raw: "UNCLEAR",
-  },
-  {
-    freq: 5295,
-    raw: "CAUTION",
-  },
-  {
-    freq: 5298,
-    raw: "COMPILE",
-  },
-  {
-    freq: 5302,
-    raw: "NOTABLE",
-  },
-  {
-    freq: 5318,
-    raw: "DISRUPT",
-  },
-  {
-    freq: 5326,
-    raw: "REMAINS",
-  },
-  {
-    freq: 5335,
-    raw: "SIXTEEN",
-  },
-  {
-    freq: 5336,
-    raw: "HOLDING",
-  },
-  {
-    freq: 5340,
-    raw: "COMFORT",
-  },
-  {
-    freq: 5345,
-    raw: "INSIDER",
-  },
-  {
-    freq: 5348,
-    raw: "CONFINE",
-  },
-  {
-    freq: 5356,
-    raw: "PAYROLL",
-  },
-  {
-    freq: 5357,
-    raw: "FRESHLY",
-  },
-  {
-    freq: 5360,
-    raw: "WINNING",
-  },
-  {
-    freq: 5364,
-    raw: "DROUGHT",
-  },
-  {
-    freq: 5384,
-    raw: "ELECTED",
-  },
-  {
-    freq: 5385,
-    raw: "VANILLA",
-  },
-  {
-    freq: 5387,
-    raw: "WOUNDED",
-  },
-  {
-    freq: 5390,
-    raw: "SHOTGUN",
-  },
-  {
-    freq: 5392,
-    raw: "GRAPHIC",
-  },
-  {
-    freq: 5417,
-    raw: "POSTURE",
-  },
-  {
-    freq: 5427,
-    raw: "DISCARD",
-  },
-  {
-    freq: 5428,
-    raw: "REVIVAL",
-  },
-  {
-    freq: 5438,
-    raw: "DESPAIR",
-  },
-  {
-    freq: 5442,
-    raw: "FULFILL",
-  },
-  {
-    freq: 5454,
-    raw: "CLARITY",
-  },
-  {
-    freq: 5466,
-    raw: "SHATTER",
-  },
-  {
-    freq: 5467,
-    raw: "DESCENT",
-  },
-  {
-    freq: 5468,
-    raw: "STARTLE",
-  },
-  {
-    freq: 5476,
-    raw: "SUBJECT",
-  },
-  {
-    freq: 5482,
-    raw: "CUTTING",
-  },
-  {
-    freq: 5496,
-    raw: "MISTAKE",
-  },
-  {
-    freq: 5498,
-    raw: "RECOUNT",
-  },
-  {
-    freq: 5503,
-    raw: "SETTLER",
-  },
-  {
-    freq: 5511,
-    raw: "OPTICAL",
-  },
-  {
-    freq: 5520,
-    raw: "SADNESS",
-  },
-  {
-    freq: 5531,
-    raw: "INJURED",
-  },
-  {
-    freq: 5547,
-    raw: "NURTURE",
-  },
-  {
-    freq: 5550,
-    raw: "RESERVE",
-  },
-  {
-    freq: 5558,
-    raw: "FURIOUS",
-  },
-  {
-    freq: 5572,
-    raw: "TURKISH",
-  },
-  {
-    freq: 5586,
-    raw: "UTTERLY",
-  },
-  {
-    freq: 5594,
-    raw: "GOODBYE",
-  },
-  {
-    freq: 5600,
-    raw: "MAGICAL",
-  },
-  {
-    freq: 5612,
-    raw: "ACADEMY",
-  },
-  {
-    freq: 5622,
-    raw: "PRECEDE",
-  },
-  {
-    freq: 5629,
-    raw: "NURSING",
-  },
-  {
-    freq: 5633,
-    raw: "CALCIUM",
-  },
-  {
-    freq: 5634,
-    raw: "QUANTUM",
-  },
-  {
-    freq: 5639,
-    raw: "TEXTILE",
-  },
-  {
-    freq: 5644,
-    raw: "ETERNAL",
-  },
-  {
-    freq: 5647,
-    raw: "PLANNED",
-  },
-  {
-    freq: 5648,
-    raw: "CURRENT",
-  },
-  {
-    freq: 5650,
-    raw: "NURSERY",
-  },
-  {
-    freq: 5660,
-    raw: "FACTION",
-  },
-  {
-    freq: 5662,
-    raw: "SKILLET",
-  },
-  {
-    freq: 5664,
-    raw: "IMMENSE",
-  },
-  {
-    freq: 5670,
-    raw: "ASHAMED",
-  },
-  {
-    freq: 5678,
-    raw: "USELESS",
-  },
-  {
-    freq: 5690,
-    raw: "LISTING",
-  },
-  {
-    freq: 5699,
-    raw: "SHOCKED",
-  },
-  {
-    freq: 5702,
-    raw: "PASSIVE",
-  },
-  {
-    freq: 5706,
-    raw: "OUTRAGE",
-  },
-  {
-    freq: 5734,
-    raw: "DIOXIDE",
-  },
-  {
-    freq: 5744,
-    raw: "APPLAUD",
-  },
-  {
-    freq: 5753,
-    raw: "EMBASSY",
-  },
-  {
-    freq: 5762,
-    raw: "PRESUME",
-  },
-  {
-    freq: 5766,
-    raw: "NEAREST",
-  },
-  {
-    freq: 5771,
-    raw: "ANTIQUE",
-  },
-  {
-    freq: 5790,
-    raw: "WHISPER",
-  },
-  {
-    freq: 5796,
-    raw: "CLOSURE",
-  },
-  {
-    freq: 5807,
-    raw: "FOOLISH",
-  },
-  {
-    freq: 5811,
-    raw: "SMOKING",
-  },
-  {
-    freq: 5814,
-    raw: "WETLAND",
-  },
-  {
-    freq: 5819,
-    raw: "AMATEUR",
-  },
-  {
-    freq: 5823,
-    raw: "BALCONY",
-  },
-  {
-    freq: 5827,
-    raw: "CLOSING",
-  },
-  {
-    freq: 5830,
-    raw: "RECYCLE",
-  },
-  {
-    freq: 5832,
-    raw: "WORSHIP",
-  },
-  {
-    freq: 5833,
-    raw: "HARMFUL",
-  },
-  {
-    freq: 5834,
-    raw: "TORTURE",
-  },
-  {
-    freq: 5842,
-    raw: "TUITION",
-  },
-  {
-    freq: 5854,
-    raw: "TERRIFY",
-  },
-  {
-    freq: 5859,
-    raw: "GRAPHIC",
-  },
-  {
-    freq: 5876,
-    raw: "CORRUPT",
-  },
-  {
-    freq: 5879,
-    raw: "OBSCURE",
-  },
-  {
-    freq: 5889,
-    raw: "OUTLOOK",
-  },
-  {
-    freq: 5895,
-    raw: "SPATIAL",
-  },
-  {
-    freq: 5897,
-    raw: "VARYING",
-  },
-  {
-    freq: 5898,
-    raw: "CLEANUP",
-  },
-  {
-    freq: 5901,
-    raw: "PRINTER",
-  },
-  {
-    freq: 5905,
-    raw: "LOCALLY",
-  },
-  {
-    freq: 5912,
-    raw: "REBOUND",
-  },
-  {
-    freq: 5923,
-    raw: "ADVISOR",
-  },
-  {
-    freq: 5926,
-    raw: "FOOTAGE",
-  },
-  {
-    freq: 5941,
-    raw: "ANALOGY",
-  },
-  {
-    freq: 5944,
-    raw: "TODDLER",
-  },
-  {
-    freq: 5954,
-    raw: "MAXIMUM",
-  },
-  {
-    freq: 5956,
-    raw: "UPGRADE",
-  },
-  {
-    freq: 5957,
-    raw: "POSTWAR",
-  },
-  {
-    freq: 5959,
-    raw: "EROSION",
-  },
-  {
-    freq: 5962,
-    raw: "REFUSAL",
-  },
-  {
-    freq: 5966,
-    raw: "LICENSE",
-  },
-  {
-    freq: 5970,
-    raw: "UNAWARE",
-  },
-  {
-    freq: 5988,
-    raw: "GOOD-BYE",
-    word: "GOODBYE",
-  },
-  {
-    freq: 5994,
-    raw: "CURATOR",
-  },
-  {
-    freq: 5995,
-    raw: "OVERALL",
-  },
-  {
-    freq: 6003,
-    raw: "FISHERY",
-  },
-  {
-    freq: 6018,
-    raw: "BEATING",
-  },
-  {
-    freq: 6022,
-    raw: "UNIFORM",
-  },
-  {
-    freq: 6029,
-    raw: "WARRANT",
-  },
-  {
-    freq: 6038,
-    raw: "STAFFER",
-  },
-  {
-    freq: 6042,
-    raw: "ROBBERY",
-  },
-  {
-    freq: 6052,
-    raw: "ELEVATE",
-  },
-  {
-    freq: 6057,
-    raw: "LOTTERY",
-  },
-  {
-    freq: 6060,
-    raw: "SHOPPER",
-  },
-  {
-    freq: 6061,
-    raw: "LENGTHY",
-  },
-  {
-    freq: 6064,
-    raw: "REDUCED",
-  },
-  {
-    freq: 6067,
-    raw: "HEATING",
-  },
-  {
-    freq: 6082,
-    raw: "INHABIT",
-  },
-  {
-    freq: 6088,
-    raw: "EXCERPT",
-  },
-  {
-    freq: 6092,
-    raw: "INSURER",
-  },
-  {
-    freq: 6095,
-    raw: "WARRANT",
-  },
-  {
-    freq: 6097,
-    raw: "REUNION",
-  },
-  {
-    freq: 6108,
-    raw: "WAITING",
-  },
-  {
-    freq: 6116,
-    raw: "ALL-STAR",
-    word: "ALLSTAR",
-  },
-  {
-    freq: 6128,
-    raw: "MUSTARD",
-  },
-  {
-    freq: 6137,
-    raw: "RELAXED",
-  },
-  {
-    freq: 6145,
-    raw: "GARMENT",
-  },
-  {
-    freq: 6151,
-    raw: "TRUSTEE",
-  },
-  {
-    freq: 6161,
-    raw: "AFRICAN",
-  },
-  {
-    freq: 6162,
-    raw: "PYRAMID",
-  },
-  {
-    freq: 6170,
-    raw: "PROUDLY",
-  },
-  {
-    freq: 6175,
-    raw: "FREEWAY",
-  },
-  {
-    freq: 6182,
-    raw: "PUMPKIN",
-  },
-  {
-    freq: 6183,
-    raw: "IMITATE",
-  },
-  {
-    freq: 6189,
-    raw: "COMPOST",
-  },
-  {
-    freq: 6200,
-    raw: "BROADLY",
-  },
-  {
-    freq: 6225,
-    raw: "HONESTY",
-  },
-  {
-    freq: 6231,
-    raw: "FEARFUL",
-  },
-  {
-    freq: 6232,
-    raw: "SAUSAGE",
-  },
-  {
-    freq: 6236,
-    raw: "DEPRIVE",
-  },
-  {
-    freq: 6237,
-    raw: "COMPACT",
-  },
-  {
-    freq: 6241,
-    raw: "EMPOWER",
-  },
-  {
-    freq: 6246,
-    raw: "LOBSTER",
-  },
-  {
-    freq: 6249,
-    raw: "TURNING",
-  },
-  {
-    freq: 6253,
-    raw: "ARTWORK",
-  },
-  {
-    freq: 6254,
-    raw: "LASTING",
-  },
-  {
-    freq: 6259,
-    raw: "RENEWED",
-  },
-  {
-    freq: 6277,
-    raw: "SURPLUS",
-  },
-  {
-    freq: 6280,
-    raw: "MARITAL",
-  },
-  {
-    freq: 6281,
-    raw: "VICIOUS",
-  },
-  {
-    freq: 6286,
-    raw: "CAUTION",
-  },
-  {
-    freq: 6301,
-    raw: "FASHION",
-  },
-  {
-    freq: 6304,
-    raw: "LEISURE",
-  },
-  {
-    freq: 6311,
-    raw: "SCRATCH",
-  },
-  {
-    freq: 6315,
-    raw: "BASTARD",
-  },
-  {
-    freq: 6318,
-    raw: "DESIRED",
-  },
-  {
-    freq: 6333,
-    raw: "EXCLAIM",
-  },
-  {
-    freq: 6337,
-    raw: "DENTIST",
-  },
-  {
-    freq: 6343,
-    raw: "ADVERSE",
-  },
-  {
-    freq: 6353,
-    raw: "REACTOR",
-  },
-  {
-    freq: 6357,
-    raw: "VOLCANO",
-  },
-  {
-    freq: 6358,
-    raw: "JEALOUS",
-  },
-  {
-    freq: 6366,
-    raw: "PASTURE",
-  },
-  {
-    freq: 6370,
-    raw: "CHUCKLE",
-  },
-  {
-    freq: 6373,
-    raw: "AWESOME",
-  },
-  {
-    freq: 6374,
-    raw: "LESBIAN",
-  },
-  {
-    freq: 6391,
-    raw: "EMBARGO",
-  },
-  {
-    freq: 6396,
-    raw: "IMPLANT",
-  },
-  {
-    freq: 6398,
-    raw: "ANTIQUE",
-  },
-  {
-    freq: 6401,
-    raw: "VINTAGE",
-  },
-  {
-    freq: 6404,
-    raw: "DIETARY",
-  },
-  {
-    freq: 6414,
-    raw: "URGENCY",
-  },
-  {
-    freq: 6434,
-    raw: "REMNANT",
-  },
-  {
-    freq: 6436,
-    raw: "MORALLY",
-  },
-  {
-    freq: 6440,
-    raw: "SITUATE",
-  },
-  {
-    freq: 6441,
-    raw: "GUIDING",
-  },
-  {
-    freq: 6443,
-    raw: "CUISINE",
-  },
-  {
-    freq: 6445,
-    raw: "THINKER",
-  },
-  {
-    freq: 6447,
-    raw: "WRESTLE",
-  },
-  {
-    freq: 6461,
-    raw: "DARLING",
-  },
-  {
-    freq: 6465,
-    raw: "ECOLOGY",
-  },
-  {
-    freq: 6471,
-    raw: "TERRACE",
-  },
-  {
-    freq: 6478,
-    raw: "BLOSSOM",
-  },
-  {
-    freq: 6479,
-    raw: "SMILING",
-  },
-  {
-    freq: 6486,
-    raw: "GENERIC",
-  },
-  {
-    freq: 6496,
-    raw: "APPLIED",
-  },
-  {
-    freq: 6505,
-    raw: "WHISTLE",
-  },
-  {
-    freq: 6521,
-    raw: "INFLICT",
-  },
-  {
-    freq: 6528,
-    raw: "TWO-YEAR",
-    word: "TWOYEAR",
-  },
-  {
-    freq: 6532,
-    raw: "SINGING",
-  },
-  {
-    freq: 6544,
-    raw: "RENEWAL",
-  },
-  {
-    freq: 6545,
-    raw: "TURMOIL",
-  },
-  {
-    freq: 6546,
-    raw: "PAINTED",
-  },
-  {
-    freq: 6547,
-    raw: "MIGRATE",
-  },
-  {
-    freq: 6558,
-    raw: "ARCHIVE",
-  },
-  {
-    freq: 6560,
-    raw: "RECEIPT",
-  },
-  {
-    freq: 6566,
-    raw: "SWEDISH",
-  },
-  {
-    freq: 6573,
-    raw: "LESBIAN",
-  },
-  {
-    freq: 6592,
-    raw: "TRACTOR",
-  },
-  {
-    freq: 6600,
-    raw: "BOSNIAN",
-  },
-  {
-    freq: 6603,
-    raw: "PATHWAY",
-  },
-  {
-    freq: 6607,
-    raw: "MADNESS",
-  },
-  {
-    freq: 6611,
-    raw: "CLEANER",
-  },
-  {
-    freq: 6622,
-    raw: "SLENDER",
-  },
-  {
-    freq: 6633,
-    raw: "LETTUCE",
-  },
-  {
-    freq: 6636,
-    raw: "PERFUME",
-  },
-  {
-    freq: 6641,
-    raw: "RIVALRY",
-  },
-  {
-    freq: 6642,
-    raw: "FIREARM",
-  },
-  {
-    freq: 6658,
-    raw: "BROADEN",
-  },
-  {
-    freq: 6664,
-    raw: "PARSLEY",
-  },
-  {
-    freq: 6666,
-    raw: "DISTORT",
-  },
-  {
-    freq: 6670,
-    raw: "RADICAL",
-  },
-  {
-    freq: 6680,
-    raw: "GODDESS",
-  },
-  {
-    freq: 6687,
-    raw: "PASSING",
-  },
-  {
-    freq: 6708,
-    raw: "SERVICE",
-  },
-  {
-    freq: 6723,
-    raw: "TALKING",
-  },
-  {
-    freq: 6732,
-    raw: "INQUIRE",
-  },
-  {
-    freq: 6734,
-    raw: "DEPOSIT",
-  },
-  {
-    freq: 6735,
-    raw: "SIGNIFY",
-  },
-  {
-    freq: 6738,
-    raw: "BOLSTER",
-  },
-  {
-    freq: 6743,
-    raw: "VIBRANT",
-  },
-  {
-    freq: 6752,
-    raw: "SHOOTER",
-  },
-  {
-    freq: 6753,
-    raw: "SCORING",
-  },
-  {
-    freq: 6755,
-    raw: "STICKER",
-  },
-  {
-    freq: 6766,
-    raw: "BEARING",
-  },
-  {
-    freq: 6783,
-    raw: "CONQUER",
-  },
-  {
-    freq: 6791,
-    raw: "HEALING",
-  },
-  {
-    freq: 6805,
-    raw: "WELCOME",
-  },
-  {
-    freq: 6808,
-    raw: "FASTEST",
-  },
-  {
-    freq: 6821,
-    raw: "FORWARD",
-  },
-  {
-    freq: 6823,
-    raw: "PARADOX",
-  },
-  {
-    freq: 6829,
-    raw: "PRESIDE",
-  },
-  {
-    freq: 6844,
-    raw: "GRADUAL",
-  },
-  {
-    freq: 6857,
-    raw: "PENDING",
-  },
-  {
-    freq: 6859,
-    raw: "NEGLECT",
-  },
-  {
-    freq: 6860,
-    raw: "COCONUT",
-  },
-  {
-    freq: 6861,
-    raw: "DISLIKE",
-  },
-  {
-    freq: 6866,
-    raw: "SEAFOOD",
-  },
-  {
-    freq: 6868,
-    raw: "GRANITE",
-  },
-  {
-    freq: 6875,
-    raw: "VIEWING",
-  },
-  {
-    freq: 6879,
-    raw: "DESKTOP",
-  },
-  {
-    freq: 6890,
-    raw: "INDULGE",
-  },
-  {
-    freq: 6894,
-    raw: "INTERIM",
-  },
-  {
-    freq: 6895,
-    raw: "PRAIRIE",
-  },
-  {
-    freq: 6909,
-    raw: "SURPASS",
-  },
-  {
-    freq: 6918,
-    raw: "COMMUTE",
-  },
-  {
-    freq: 6926,
-    raw: "SINCERE",
-  },
-  {
-    freq: 6944,
-    raw: "CUSHION",
-  },
-  {
-    freq: 6947,
-    raw: "VAGUELY",
-  },
-  {
-    freq: 6949,
-    raw: "ONE-TIME",
-    word: "ONETIME",
-  },
-  {
-    freq: 6953,
-    raw: "DISPOSE",
-  },
-  {
-    freq: 6955,
-    raw: "IMAGING",
-  },
-  {
-    freq: 6960,
-    raw: "DESTINE",
-  },
-  {
-    freq: 6962,
-    raw: "ROYALTY",
-  },
-  {
-    freq: 6970,
-    raw: "LOOSELY",
-  },
-  {
-    freq: 6972,
-    raw: "RECRUIT",
-  },
-  {
-    freq: 6979,
-    raw: "GESTURE",
-  },
-  {
-    freq: 6984,
-    raw: "ELUSIVE",
-  },
-  {
-    freq: 6993,
-    raw: "LABORER",
-  },
-  {
-    freq: 6998,
-    raw: "NUCLEUS",
-  },
-  {
-    freq: 7001,
-    raw: "TALIBAN",
-  },
-  {
-    freq: 7003,
-    raw: "BUFFALO",
-  },
-  {
-    freq: 7006,
-    raw: "TORNADO",
-  },
-  {
-    freq: 7012,
-    raw: "CONFORM",
-  },
-  {
-    freq: 7028,
-    raw: "EARRING",
-  },
-  {
-    freq: 7037,
-    raw: "CABBAGE",
-  },
-  {
-    freq: 7049,
-    raw: "BOULDER",
-  },
-  {
-    freq: 7051,
-    raw: "PRODUCE",
-  },
-  {
-    freq: 7055,
-    raw: "OBSCURE",
-  },
-  {
-    freq: 7057,
-    raw: "EARNEST",
-  },
-  {
-    freq: 7059,
-    raw: "OPTIMAL",
-  },
-  {
-    freq: 7060,
-    raw: "CLOSING",
-  },
-  {
-    freq: 7078,
-    raw: "WHISKEY",
-  },
-  {
-    freq: 7080,
-    raw: "GRILLED",
-  },
-  {
-    freq: 7093,
-    raw: "FIXTURE",
-  },
-  {
-    freq: 7095,
-    raw: "CRUMBLE",
-  },
-  {
-    freq: 7096,
-    raw: "VAMPIRE",
-  },
-  {
-    freq: 7099,
-    raw: "CERTIFY",
-  },
-  {
-    freq: 7107,
-    raw: "MASSAGE",
-  },
-  {
-    freq: 7109,
-    raw: "CYNICAL",
-  },
-  {
-    freq: 7117,
-    raw: "EMPEROR",
-  },
-  {
-    freq: 7127,
-    raw: "DEEPEST",
-  },
-  {
-    freq: 7132,
-    raw: "WHISTLE",
-  },
-  {
-    freq: 7139,
-    raw: "SELLING",
-  },
-  {
-    freq: 7153,
-    raw: "SURFACE",
-  },
-  {
-    freq: 7161,
-    raw: "POTTERY",
-  },
-  {
-    freq: 7173,
-    raw: "ASSAULT",
-  },
-  {
-    freq: 7176,
-    raw: "EXPOSED",
-  },
-  {
-    freq: 7182,
-    raw: "ANTENNA",
-  },
-  {
-    freq: 7183,
-    raw: "PRINTED",
-  },
-  {
-    freq: 7193,
-    raw: "SECRECY",
-  },
-  {
-    freq: 7194,
-    raw: "ABUSIVE",
-  },
-  {
-    freq: 7208,
-    raw: "DAYTIME",
-  },
-  {
-    freq: 7211,
-    raw: "THERMAL",
-  },
-  {
-    freq: 7215,
-    raw: "SILENCE",
-  },
-  {
-    freq: 7225,
-    raw: "COCKPIT",
-  },
-  {
-    freq: 7229,
-    raw: "OBESITY",
-  },
-  {
-    freq: 7235,
-    raw: "STATION",
-  },
-  {
-    freq: 7237,
-    raw: "INNINGS",
-  },
-  {
-    freq: 7238,
-    raw: "REALISM",
-  },
-  {
-    freq: 7249,
-    raw: "SPINACH",
-  },
-  {
-    freq: 7252,
-    raw: "SWIFTLY",
-  },
-  {
-    freq: 7268,
-    raw: "ALL-TIME",
-    word: "ALLTIME",
-  },
-  {
-    freq: 7273,
-    raw: "WORSHIP",
-  },
-  {
-    freq: 7277,
-    raw: "WOULD-BE",
-    word: "WOULDBE",
-  },
-  {
-    freq: 7278,
-    raw: "BAPTIST",
-  },
-  {
-    freq: 7281,
-    raw: "PLATTER",
-  },
-  {
-    freq: 7287,
-    raw: "ALLERGY",
-  },
-  {
-    freq: 7291,
-    raw: "EXTRACT",
-  },
-  {
-    freq: 7302,
-    raw: "RETIREE",
-  },
-  {
-    freq: 7306,
-    raw: "FREEZER",
-  },
-  {
-    freq: 7312,
-    raw: "VOUCHER",
-  },
-  {
-    freq: 7321,
-    raw: "FILLING",
-  },
-  {
-    freq: 7326,
-    raw: "ORCHARD",
-  },
-  {
-    freq: 7331,
-    raw: "AUDITOR",
-  },
-  {
-    freq: 7344,
-    raw: "UNIFIED",
-  },
-  {
-    freq: 7346,
-    raw: "TURBINE",
-  },
-  {
-    freq: 7349,
-    raw: "SHINING",
-  },
-  {
-    freq: 7350,
-    raw: "MANKIND",
-  },
-  {
-    freq: 7352,
-    raw: "SERBIAN",
-  },
-  {
-    freq: 7354,
-    raw: "REVERSE",
-  },
-  {
-    freq: 7355,
-    raw: "BAGGAGE",
-  },
-  {
-    freq: 7367,
-    raw: "SETBACK",
-  },
-  {
-    freq: 7373,
-    raw: "MANDATE",
-  },
-  {
-    freq: 7379,
-    raw: "CRUSADE",
-  },
-  {
-    freq: 7382,
-    raw: "SUNRISE",
-  },
-  {
-    freq: 7388,
-    raw: "PUZZLED",
-  },
-  {
-    freq: 7393,
-    raw: "DIAGRAM",
-  },
-  {
-    freq: 7399,
-    raw: "PANCAKE",
-  },
-  {
-    freq: 7401,
-    raw: "LUGGAGE",
-  },
-  {
-    freq: 7403,
-    raw: "FURNISH",
-  },
-  {
-    freq: 7413,
-    raw: "FOLIAGE",
-  },
-  {
-    freq: 7416,
-    raw: "UNLEASH",
-  },
-  {
-    freq: 7439,
-    raw: "MEDIATE",
-  },
-  {
-    freq: 7442,
-    raw: "SEIZURE",
-  },
-  {
-    freq: 7443,
-    raw: "SIGNING",
-  },
-  {
-    freq: 7454,
-    raw: "PALETTE",
-  },
-  {
-    freq: 7455,
-    raw: "SELFISH",
-  },
-  {
-    freq: 7457,
-    raw: "BUILT-IN",
-    word: "BUILTIN",
-  },
-  {
-    freq: 7464,
-    raw: "REVOLVE",
-  },
-  {
-    freq: 7469,
-    raw: "ARSENAL",
-  },
-  {
-    freq: 7474,
-    raw: "INHIBIT",
-  },
-  {
-    freq: 7475,
-    raw: "REVERSE",
-  },
-  {
-    freq: 7479,
-    raw: "ALUMNUS",
-  },
-  {
-    freq: 7481,
-    raw: "CHAOTIC",
-  },
-  {
-    freq: 7485,
-    raw: "DEFAULT",
-  },
-  {
-    freq: 7495,
-    raw: "COMRADE",
-  },
-  {
-    freq: 7497,
-    raw: "RAINBOW",
-  },
-  {
-    freq: 7502,
-    raw: "CAMPING",
-  },
-  {
-    freq: 7506,
-    raw: "FLATTEN",
-  },
-  {
-    freq: 7507,
-    raw: "GLOWING",
-  },
-  {
-    freq: 7515,
-    raw: "FRANTIC",
-  },
-  {
-    freq: 7524,
-    raw: "RECLAIM",
-  },
-  {
-    freq: 7526,
-    raw: "CATCHER",
-  },
-  {
-    freq: 7530,
-    raw: "FERTILE",
-  },
-  {
-    freq: 7531,
-    raw: "EMBRACE",
-  },
-  {
-    freq: 7537,
-    raw: "DISGUST",
-  },
-  {
-    freq: 7539,
-    raw: "EXTREME",
-  },
-  {
-    freq: 7543,
-    raw: "EAGERLY",
-  },
-  {
-    freq: 7544,
-    raw: "MEXICAN",
-  },
-  {
-    freq: 7546,
-    raw: "RANCHER",
-  },
-  {
-    freq: 7552,
-    raw: "CAPSULE",
-  },
-  {
-    freq: 7560,
-    raw: "UPRIGHT",
-  },
-  {
-    freq: 7562,
-    raw: "ABOLISH",
-  },
-  {
-    freq: 7574,
-    raw: "HANDS-ON",
-    word: "HANDSON",
-  },
-  {
-    freq: 7587,
-    raw: "SITTING",
-  },
-  {
-    freq: 7589,
-    raw: "PROPHET",
-  },
-  {
-    freq: 7602,
-    raw: "PERSONA",
-  },
-  {
-    freq: 7605,
-    raw: "PREVIEW",
-  },
-  {
-    freq: 7606,
-    raw: "ENLARGE",
-  },
-  {
-    freq: 7615,
-    raw: "COLONEL",
-  },
-  {
-    freq: 7622,
-    raw: "CRUISER",
-  },
-  {
-    freq: 7633,
-    raw: "CAPTURE",
-  },
-  {
-    freq: 7656,
-    raw: "RESIDUE",
-  },
-  {
-    freq: 7658,
-    raw: "SHORTEN",
-  },
-  {
-    freq: 7665,
-    raw: "EMPATHY",
-  },
-  {
-    freq: 7668,
-    raw: "COLLIDE",
-  },
-  {
-    freq: 7673,
-    raw: "MASTERY",
-  },
-  {
-    freq: 7678,
-    raw: "ONESELF",
-  },
-  {
-    freq: 7679,
-    raw: "DUBIOUS",
-  },
-  {
-    freq: 7690,
-    raw: "ECLIPSE",
-  },
-  {
-    freq: 7693,
-    raw: "LOADING",
-  },
-  {
-    freq: 7695,
-    raw: "FORESEE",
-  },
-  {
-    freq: 7697,
-    raw: "PREMIER",
-  },
-  {
-    freq: 7699,
-    raw: "BRACKET",
-  },
-  {
-    freq: 7706,
-    raw: "POULTRY",
-  },
-  {
-    freq: 7709,
-    raw: "REWRITE",
-  },
-  {
-    freq: 7712,
-    raw: "RIGHTLY",
-  },
-  {
-    freq: 7715,
-    raw: "CRACKER",
-  },
-  {
-    freq: 7728,
-    raw: "AMATEUR",
-  },
-  {
-    freq: 7734,
-    raw: "RAILING",
-  },
-  {
-    freq: 7754,
-    raw: "BREAKUP",
-  },
-  {
-    freq: 7755,
-    raw: "BOILING",
-  },
-  {
-    freq: 7759,
-    raw: "LINKAGE",
-  },
-  {
-    freq: 7762,
-    raw: "PLUMMET",
-  },
-  {
-    freq: 7779,
-    raw: "WARTIME",
-  },
-  {
-    freq: 7782,
-    raw: "REFINED",
-  },
-  {
-    freq: 7789,
-    raw: "LITERAL",
-  },
-  {
-    freq: 7794,
-    raw: "DISCERN",
-  },
-  {
-    freq: 7799,
-    raw: "SOLICIT",
-  },
-  {
-    freq: 7807,
-    raw: "STAGGER",
-  },
-  {
-    freq: 7811,
-    raw: "CONJURE",
-  },
-  {
-    freq: 7814,
-    raw: "PERFECT",
-  },
-  {
-    freq: 7818,
-    raw: "TRAINED",
-  },
-  {
-    freq: 7828,
-    raw: "ORDERLY",
-  },
-  {
-    freq: 7833,
-    raw: "BUILDUP",
-  },
-  {
-    freq: 7843,
-    raw: "NEWBORN",
-  },
-  {
-    freq: 7852,
-    raw: "COUNSEL",
-  },
-  {
-    freq: 7859,
-    raw: "INITIAL",
-  },
-  {
-    freq: 7866,
-    raw: "AUTOPSY",
-  },
-  {
-    freq: 7873,
-    raw: "SHUFFLE",
-  },
-  {
-    freq: 7874,
-    raw: "RETHINK",
-  },
-  {
-    freq: 7879,
-    raw: "KURDISH",
-  },
-  {
-    freq: 7881,
-    raw: "URANIUM",
-  },
-  {
-    freq: 7891,
-    raw: "CERAMIC",
-  },
-  {
-    freq: 7900,
-    raw: "CONVENE",
-  },
-  {
-    freq: 7901,
-    raw: "ROASTED",
-  },
-  {
-    freq: 7903,
-    raw: "WRINKLE",
-  },
-  {
-    freq: 7904,
-    raw: "PSYCHIC",
-  },
-  {
-    freq: 7905,
-    raw: "AMONGST",
-  },
-  {
-    freq: 7908,
-    raw: "COMPUTE",
-  },
-  {
-    freq: 7922,
-    raw: "ASPIRIN",
-  },
-  {
-    freq: 7923,
-    raw: "REBOUND",
-  },
-  {
-    freq: 7933,
-    raw: "ONSTAGE",
-  },
-  {
-    freq: 7939,
-    raw: "DISPUTE",
-  },
-  {
-    freq: 7943,
-    raw: "IDEALLY",
-  },
-  {
-    freq: 7950,
-    raw: "HELPING",
-  },
-  {
-    freq: 7954,
-    raw: "CHANNEL",
-  },
-  {
-    freq: 7957,
-    raw: "LECTURE",
-  },
-  {
-    freq: 7961,
-    raw: "GLACIER",
-  },
-  {
-    freq: 7963,
-    raw: "POLLING",
-  },
-  {
-    freq: 7975,
-    raw: "SUCCUMB",
-  },
-  {
-    freq: 7976,
-    raw: "SEVENTY",
-  },
-  {
-    freq: 7980,
-    raw: "STATURE",
-  },
-  {
-    freq: 7982,
-    raw: "FOREARM",
-  },
-  {
-    freq: 7987,
-    raw: "GRENADE",
-  },
-  {
-    freq: 7988,
-    raw: "SHUDDER",
-  },
-  {
-    freq: 7990,
-    raw: "STELLAR",
-  },
-  {
-    freq: 7997,
-    raw: "REGIMEN",
-  },
-  {
-    freq: 7998,
-    raw: "GODDAMN",
-  },
-  {
-    freq: 8005,
-    raw: "CONTOUR",
-  },
-  {
-    freq: 8014,
-    raw: "MERCURY",
-  },
-  {
-    freq: 8017,
-    raw: "CONFIDE",
-  },
-  {
-    freq: 8022,
-    raw: "REVISIT",
-  },
-  {
-    freq: 8026,
-    raw: "WORKING",
-  },
-  {
-    freq: 8031,
-    raw: "CASTING",
-  },
-  {
-    freq: 8033,
-    raw: "REVISED",
-  },
-  {
-    freq: 8035,
-    raw: "BOWLING",
-  },
-  {
-    freq: 8039,
-    raw: "VILLAIN",
-  },
-  {
-    freq: 8040,
-    raw: "DURABLE",
-  },
-  {
-    freq: 8049,
-    raw: "COMPASS",
-  },
-  {
-    freq: 8052,
-    raw: "NOVELTY",
-  },
-  {
-    freq: 8056,
-    raw: "MARTIAL",
-  },
-  {
-    freq: 8060,
-    raw: "DROPOUT",
-  },
-  {
-    freq: 8103,
-    raw: "TURNOUT",
-  },
-  {
-    freq: 8105,
-    raw: "TWISTED",
-  },
-  {
-    freq: 8117,
-    raw: "CARDIAC",
-  },
-  {
-    freq: 8133,
-    raw: "FLUTTER",
-  },
-  {
-    freq: 8136,
-    raw: "FLICKER",
-  },
-  {
-    freq: 8142,
-    raw: "BLESSED",
-  },
-  {
-    freq: 8160,
-    raw: "BISCUIT",
-  },
-  {
-    freq: 8162,
-    raw: "ANGRILY",
-  },
-  {
-    freq: 8183,
-    raw: "THUNDER",
-  },
-  {
-    freq: 8187,
-    raw: "WITHOUT",
-  },
-  {
-    freq: 8190,
-    raw: "IMMERSE",
-  },
-  {
-    freq: 8196,
-    raw: "PREHEAT",
-  },
-  {
-    freq: 8213,
-    raw: "DRASTIC",
-  },
-  {
-    freq: 8221,
-    raw: "STRIPED",
-  },
-  {
-    freq: 8233,
-    raw: "DOLPHIN",
-  },
-  {
-    freq: 8239,
-    raw: "LONGING",
-  },
-  {
-    freq: 8240,
-    raw: "BOOSTER",
-  },
-  {
-    freq: 8241,
-    raw: "INDOORS",
-  },
-  {
-    freq: 8247,
-    raw: "SWIMMER",
-  },
-  {
-    freq: 8248,
-    raw: "SCENERY",
-  },
-  {
-    freq: 8250,
-    raw: "PIVOTAL",
-  },
-  {
-    freq: 8256,
-    raw: "ANATOMY",
-  },
-  {
-    freq: 8258,
-    raw: "DISSENT",
-  },
-  {
-    freq: 8263,
-    raw: "DRUNKEN",
-  },
-  {
-    freq: 8271,
-    raw: "LUCKILY",
-  },
-  {
-    freq: 8277,
-    raw: "TRIVIAL",
-  },
-  {
-    freq: 8281,
-    raw: "SCANNER",
-  },
-  {
-    freq: 8282,
-    raw: "PRICING",
-  },
-  {
-    freq: 8284,
-    raw: "EXPANSE",
-  },
-  {
-    freq: 8293,
-    raw: "GOURMET",
-  },
-  {
-    freq: 8297,
-    raw: "CYCLING",
-  },
-  {
-    freq: 8298,
-    raw: "START-UP",
-    word: "STARTUP",
-  },
-  {
-    freq: 8301,
-    raw: "AQUATIC",
-  },
-  {
-    freq: 8304,
-    raw: "LIGHTER",
-  },
-  {
-    freq: 8306,
-    raw: "LIAISON",
-  },
-  {
-    freq: 8317,
-    raw: "TROOPER",
-  },
-  {
-    freq: 8321,
-    raw: "CLUSTER",
-  },
-  {
-    freq: 8322,
-    raw: "CARVING",
-  },
-  {
-    freq: 8331,
-    raw: "ARMORED",
-  },
-  {
-    freq: 8338,
-    raw: "PLASTER",
-  },
-  {
-    freq: 8341,
-    raw: "SHELTER",
-  },
-  {
-    freq: 8349,
-    raw: "PROSPER",
-  },
-  {
-    freq: 8350,
-    raw: "PIANIST",
-  },
-  {
-    freq: 8362,
-    raw: "DIVIDED",
-  },
-  {
-    freq: 8376,
-    raw: "UPSCALE",
-  },
-  {
-    freq: 8394,
-    raw: "BACKING",
-  },
-  {
-    freq: 8395,
-    raw: "PLAYING",
-  },
-  {
-    freq: 8397,
-    raw: "SHARPEN",
-  },
-  {
-    freq: 8399,
-    raw: "CROOKED",
-  },
-  {
-    freq: 8401,
-    raw: "ASPHALT",
-  },
-  {
-    freq: 8411,
-    raw: "WEEKDAY",
-  },
-  {
-    freq: 8421,
-    raw: "CHIMNEY",
-  },
-  {
-    freq: 8422,
-    raw: "LATERAL",
-  },
-  {
-    freq: 8435,
-    raw: "AWFULLY",
-  },
-  {
-    freq: 8436,
-    raw: "CRUELTY",
-  },
-  {
-    freq: 8437,
-    raw: "LANTERN",
-  },
-  {
-    freq: 8438,
-    raw: "PLATEAU",
-  },
-  {
-    freq: 8442,
-    raw: "HEROINE",
-  },
-  {
-    freq: 8454,
-    raw: "GRAPPLE",
-  },
-  {
-    freq: 8467,
-    raw: "GRAMMAR",
-  },
-  {
-    freq: 8469,
-    raw: "RAILWAY",
-  },
-  {
-    freq: 8479,
-    raw: "OMINOUS",
-  },
-  {
-    freq: 8482,
-    raw: "CRICKET",
-  },
-  {
-    freq: 8488,
-    raw: "DECEIVE",
-  },
-  {
-    freq: 8489,
-    raw: "COATING",
-  },
-  {
-    freq: 8491,
-    raw: "ETHANOL",
-  },
-  {
-    freq: 8505,
-    raw: "PRESENT",
-  },
-  {
-    freq: 8511,
-    raw: "ANGUISH",
-  },
-  {
-    freq: 8521,
-    raw: "BUTCHER",
-  },
-  {
-    freq: 8540,
-    raw: "DEGRADE",
-  },
-  {
-    freq: 8542,
-    raw: "DRUMMER",
-  },
-  {
-    freq: 8544,
-    raw: "LOW-COST",
-    word: "LOWCOST",
-  },
-  {
-    freq: 8545,
-    raw: "PLAYFUL",
-  },
-  {
-    freq: 8554,
-    raw: "DIPLOMA",
-  },
-  {
-    freq: 8560,
-    raw: "ENCLOSE",
-  },
-  {
-    freq: 8575,
-    raw: "CRUSHED",
-  },
-  {
-    freq: 8578,
-    raw: "HAIRCUT",
-  },
-  {
-    freq: 8587,
-    raw: "THICKEN",
-  },
-  {
-    freq: 8591,
-    raw: "SENSORY",
-  },
-  {
-    freq: 8598,
-    raw: "RADIATE",
-  },
-  {
-    freq: 8599,
-    raw: "WHEREBY",
-  },
-  {
-    freq: 8601,
-    raw: "DRESSER",
-  },
-  {
-    freq: 8612,
-    raw: "CONTEST",
-  },
-  {
-    freq: 8616,
-    raw: "BOYCOTT",
-  },
-  {
-    freq: 8618,
-    raw: "REFEREE",
-  },
-  {
-    freq: 8620,
-    raw: "PUDDING",
-  },
-  {
-    freq: 8636,
-    raw: "DELIGHT",
-  },
-  {
-    freq: 8639,
-    raw: "BARGAIN",
-  },
-  {
-    freq: 8644,
-    raw: "DAMAGED",
-  },
-  {
-    freq: 8645,
-    raw: "RESOLVE",
-  },
-  {
-    freq: 8659,
-    raw: "EXHAUST",
-  },
-  {
-    freq: 8662,
-    raw: "GRUMBLE",
-  },
-  {
-    freq: 8670,
-    raw: "FREIGHT",
-  },
-  {
-    freq: 8680,
-    raw: "PRIVATE",
-  },
-  {
-    freq: 8686,
-    raw: "LIGHTEN",
-  },
-  {
-    freq: 8692,
-    raw: "ROOFTOP",
-  },
-  {
-    freq: 8693,
-    raw: "SIZABLE",
-  },
-  {
-    freq: 8701,
-    raw: "CAVALRY",
-  },
-  {
-    freq: 8703,
-    raw: "CATFISH",
-  },
-  {
-    freq: 8705,
-    raw: "OUTWARD",
-  },
-  {
-    freq: 8717,
-    raw: "MUSICAL",
-  },
-  {
-    freq: 8718,
-    raw: "SEATING",
-  },
-  {
-    freq: 8726,
-    raw: "CLIMBER",
-  },
-  {
-    freq: 8729,
-    raw: "PACKAGE",
-  },
-  {
-    freq: 8744,
-    raw: "STUFFED",
-  },
-  {
-    freq: 8750,
-    raw: "MONARCH",
-  },
-  {
-    freq: 8758,
-    raw: "GROWN-UP",
-    word: "GROWNUP",
-  },
-  {
-    freq: 8760,
-    raw: "LENDING",
-  },
-  {
-    freq: 8761,
-    raw: "NOSTRIL",
-  },
-  {
-    freq: 8766,
-    raw: "ANNOYED",
-  },
-  {
-    freq: 8772,
-    raw: "CHERISH",
-  },
-  {
-    freq: 8773,
-    raw: "UNRAVEL",
-  },
-  {
-    freq: 8780,
-    raw: "SMUGGLE",
-  },
-  {
-    freq: 8782,
-    raw: "MISLEAD",
-  },
-  {
-    freq: 8783,
-    raw: "BOREDOM",
-  },
-  {
-    freq: 8791,
-    raw: "PREMIUM",
-  },
-  {
-    freq: 8793,
-    raw: "EMANATE",
-  },
-  {
-    freq: 8807,
-    raw: "BAPTIST",
-  },
-  {
-    freq: 8813,
-    raw: "GLIMPSE",
-  },
-  {
-    freq: 8817,
-    raw: "RAMPANT",
-  },
-  {
-    freq: 8825,
-    raw: "STYLISH",
-  },
-  {
-    freq: 8829,
-    raw: "TABLOID",
-  },
-  {
-    freq: 8836,
-    raw: "AILMENT",
-  },
-  {
-    freq: 8837,
-    raw: "GUNFIRE",
-  },
-  {
-    freq: 8841,
-    raw: "REUNITE",
-  },
-  {
-    freq: 8843,
-    raw: "UPGRADE",
-  },
-  {
-    freq: 8880,
-    raw: "ILLICIT",
-  },
-  {
-    freq: 8886,
-    raw: "AEROBIC",
-  },
-  {
-    freq: 8887,
-    raw: "SKEPTIC",
-  },
-  {
-    freq: 8895,
-    raw: "SLIPPER",
-  },
-  {
-    freq: 8896,
-    raw: "SAME-SEX",
-    word: "SAMESEX",
-  },
-  {
-    freq: 8903,
-    raw: "HANDGUN",
-  },
-  {
-    freq: 8911,
-    raw: "SUBSIDE",
-  },
-  {
-    freq: 8915,
-    raw: "BASEMAN",
-  },
-  {
-    freq: 8929,
-    raw: "BILLING",
-  },
-  {
-    freq: 8939,
-    raw: "MUNDANE",
-  },
-  {
-    freq: 8942,
-    raw: "PRUDENT",
-  },
-  {
-    freq: 8956,
-    raw: "NIGHTLY",
-  },
-  {
-    freq: 8961,
-    raw: "POPCORN",
-  },
-  {
-    freq: 8962,
-    raw: "TALIBAN",
-  },
-  {
-    freq: 8980,
-    raw: "STUNNED",
-  },
-  {
-    freq: 8987,
-    raw: "TRICKLE",
-  },
-  {
-    freq: 8989,
-    raw: "INFLATE",
-  },
-  {
-    freq: 8994,
-    raw: "OVERLAP",
-  },
-  {
-    freq: 8997,
-    raw: "HANDLER",
-  },
-  {
-    freq: 9001,
-    raw: "CULPRIT",
-  },
-  {
-    freq: 9002,
-    raw: "IN-DEPTH",
-    word: "INDEPTH",
-  },
-  {
-    freq: 9006,
-    raw: "ANOMALY",
-  },
-  {
-    freq: 9007,
-    raw: "VARIANT",
-  },
-  {
-    freq: 9013,
-    raw: "WATCHER",
-  },
-  {
-    freq: 9015,
-    raw: "KINSHIP",
-  },
-  {
-    freq: 9019,
-    raw: "BLENDER",
-  },
-  {
-    freq: 9029,
-    raw: "JOINTLY",
-  },
-  {
-    freq: 9032,
-    raw: "MACHINE",
-  },
-  {
-    freq: 9036,
-    raw: "SALVAGE",
-  },
-  {
-    freq: 9037,
-    raw: "BEDSIDE",
-  },
-  {
-    freq: 9056,
-    raw: "SOYBEAN",
-  },
-  {
-    freq: 9062,
-    raw: "PLYWOOD",
-  },
-  {
-    freq: 9064,
-    raw: "TRUMPET",
-  },
-  {
-    freq: 9069,
-    raw: "HIGH-END",
-    word: "HIGHEND",
-  },
-  {
-    freq: 9074,
-    raw: "APPAREL",
-  },
-  {
-    freq: 9079,
-    raw: "GUNSHOT",
-  },
-  {
-    freq: 9082,
-    raw: "FUCKING",
-  },
-  {
-    freq: 9087,
-    raw: "WASHING",
-  },
-  {
-    freq: 9102,
-    raw: "FACTUAL",
-  },
-  {
-    freq: 9107,
-    raw: "WAITING",
-  },
-  {
-    freq: 9111,
-    raw: "MIND-SET",
-    word: "MINDSET",
-  },
-  {
-    freq: 9115,
-    raw: "PAJAMAS",
-  },
-  {
-    freq: 9133,
-    raw: "CALLING",
-  },
-  {
-    freq: 9135,
-    raw: "MAILBOX",
-  },
-  {
-    freq: 9136,
-    raw: "VANTAGE",
-  },
-  {
-    freq: 9143,
-    raw: "SHUTTER",
-  },
-  {
-    freq: 9148,
-    raw: "DESPISE",
-  },
-  {
-    freq: 9157,
-    raw: "EMULATE",
-  },
-  {
-    freq: 9159,
-    raw: "LOGGING",
-  },
-  {
-    freq: 9160,
-    raw: "BLADDER",
-  },
-  {
-    freq: 9161,
-    raw: "REFRAIN",
-  },
-  {
-    freq: 9165,
-    raw: "KNUCKLE",
-  },
-  {
-    freq: 9167,
-    raw: "POINTED",
-  },
-  {
-    freq: 9169,
-    raw: "PILGRIM",
-  },
-  {
-    freq: 9173,
-    raw: "CURTAIL",
-  },
-  {
-    freq: 9174,
-    raw: "AMUSING",
-  },
-  {
-    freq: 9179,
-    raw: "LINEAGE",
-  },
-  {
-    freq: 9180,
-    raw: "BOOMING",
-  },
-  {
-    freq: 9191,
-    raw: "BANQUET",
-  },
-  {
-    freq: 9205,
-    raw: "FIREMAN",
-  },
-  {
-    freq: 9224,
-    raw: "BOUQUET",
-  },
-  {
-    freq: 9225,
-    raw: "PIONEER",
-  },
-  {
-    freq: 9226,
-    raw: "ANTHRAX",
-  },
-  {
-    freq: 9233,
-    raw: "ENCLAVE",
-  },
-  {
-    freq: 9234,
-    raw: "LIFTING",
-  },
-  {
-    freq: 9237,
-    raw: "LEFTIST",
-  },
-  {
-    freq: 9238,
-    raw: "FURNACE",
-  },
-  {
-    freq: 9239,
-    raw: "PIGMENT",
-  },
-  {
-    freq: 9249,
-    raw: "AUGMENT",
-  },
-  {
-    freq: 9253,
-    raw: "CAPTION",
-  },
-  {
-    freq: 9254,
-    raw: "BINDING",
-  },
-  {
-    freq: 9258,
-    raw: "RAISING",
-  },
-  {
-    freq: 9264,
-    raw: "INSULIN",
-  },
-  {
-    freq: 9269,
-    raw: "FALLOUT",
-  },
-  {
-    freq: 9273,
-    raw: "MALARIA",
-  },
-  {
-    freq: 9278,
-    raw: "ONE-YEAR",
-    word: "ONEYEAR",
-  },
-  {
-    freq: 9289,
-    raw: "CRAMPED",
-  },
-  {
-    freq: 9298,
-    raw: "CONSOLE",
-  },
-  {
-    freq: 9326,
-    raw: "CHEMIST",
-  },
-  {
-    freq: 9343,
-    raw: "SLIDING",
-  },
-  {
-    freq: 9349,
-    raw: "POLLUTE",
-  },
-  {
-    freq: 9352,
-    raw: "MARTIAN",
-  },
-  {
-    freq: 9355,
-    raw: "OUTPOST",
-  },
-  {
-    freq: 9359,
-    raw: "COVERED",
-  },
-  {
-    freq: 9364,
-    raw: "BEDTIME",
-  },
-  {
-    freq: 9366,
-    raw: "HAITIAN",
-  },
-  {
-    freq: 9367,
-    raw: "CAPTIVE",
-  },
-  {
-    freq: 9371,
-    raw: "IRANIAN",
-  },
-  {
-    freq: 9372,
-    raw: "TEXTUAL",
-  },
-  {
-    freq: 9384,
-    raw: "REPRINT",
-  },
-  {
-    freq: 9406,
-    raw: "LINEMAN",
-  },
-  {
-    freq: 9408,
-    raw: "REPLICA",
-  },
-  {
-    freq: 9425,
-    raw: "BRIGADE",
-  },
-  {
-    freq: 9437,
-    raw: "SUFFICE",
-  },
-  {
-    freq: 9440,
-    raw: "ARTISAN",
-  },
-  {
-    freq: 9452,
-    raw: "CRACKED",
-  },
-  {
-    freq: 9464,
-    raw: "HASTILY",
-  },
-  {
-    freq: 9465,
-    raw: "EDITING",
-  },
-  {
-    freq: 9470,
-    raw: "CONSOLE",
-  },
-  {
-    freq: 9474,
-    raw: "MASSAGE",
-  },
-  {
-    freq: 9490,
-    raw: "TYRANNY",
-  },
-  {
-    freq: 9492,
-    raw: "BREADTH",
-  },
-  {
-    freq: 9493,
-    raw: "VIVIDLY",
-  },
-  {
-    freq: 9498,
-    raw: "STERILE",
-  },
-  {
-    freq: 9501,
-    raw: "EXTINCT",
-  },
-  {
-    freq: 9504,
-    raw: "IMPETUS",
-  },
-  {
-    freq: 9510,
-    raw: "ONE-HALF",
-    word: "ONEHALF",
-  },
-  {
-    freq: 9512,
-    raw: "WEATHER",
-  },
-  {
-    freq: 9514,
-    raw: "GORILLA",
-  },
-  {
-    freq: 9518,
-    raw: "ASSHOLE",
-  },
-  {
-    freq: 9519,
-    raw: "CLONING",
-  },
-  {
-    freq: 9522,
-    raw: "HANGING",
-  },
-  {
-    freq: 9529,
-    raw: "RESHAPE",
-  },
-  {
-    freq: 9533,
-    raw: "ACCUSED",
-  },
-  {
-    freq: 9542,
-    raw: "PLATOON",
-  },
-  {
-    freq: 9549,
-    raw: "PLACEBO",
-  },
-  {
-    freq: 9551,
-    raw: "CRIPPLE",
-  },
-  {
-    freq: 9556,
-    raw: "FOOTING",
-  },
-  {
-    freq: 9558,
-    raw: "MAN-MADE",
-    word: "MANMADE",
-  },
-  {
-    freq: 9559,
-    raw: "SALIENT",
-  },
-  {
-    freq: 9561,
-    raw: "CARCASS",
-  },
-  {
-    freq: 9565,
-    raw: "SOLVING",
-  },
-  {
-    freq: 9573,
-    raw: "ECSTASY",
-  },
-  {
-    freq: 9579,
-    raw: "BANDAGE",
-  },
-  {
-    freq: 9581,
-    raw: "FAIRWAY",
-  },
-  {
-    freq: 9601,
-    raw: "PROLONG",
-  },
-  {
-    freq: 9623,
-    raw: "GARNISH",
-  },
-  {
-    freq: 9631,
-    raw: "TANGLED",
-  },
-  {
-    freq: 9668,
-    raw: "SKYLINE",
-  },
-  {
-    freq: 9679,
-    raw: "PAGEANT",
-  },
-  {
-    freq: 9723,
-    raw: "MAILING",
-  },
-  {
-    freq: 9726,
-    raw: "MAGNIFY",
-  },
-  {
-    freq: 9728,
-    raw: "ADMIRER",
-  },
-  {
-    freq: 9743,
-    raw: "PLAINLY",
-  },
-  {
-    freq: 9749,
-    raw: "DEFLECT",
-  },
-  {
-    freq: 9753,
-    raw: "AMPLIFY",
-  },
-  {
-    freq: 9762,
-    raw: "HORRIFY",
-  },
-  {
-    freq: 9783,
-    raw: "DEFIANT",
-  },
-  {
-    freq: 9784,
-    raw: "SWOLLEN",
-  },
-  {
-    freq: 9793,
-    raw: "AFFLICT",
-  },
-  {
-    freq: 9805,
-    raw: "SOARING",
-  },
-  {
-    freq: 9806,
-    raw: "CYCLIST",
-  },
-  {
-    freq: 9807,
-    raw: "MANAGED",
-  },
-  {
-    freq: 9814,
-    raw: "DISDAIN",
-  },
-  {
-    freq: 9818,
-    raw: "CONVERT",
-  },
-  {
-    freq: 9827,
-    raw: "VIBRATE",
-  },
-  {
-    freq: 9832,
-    raw: "MINIVAN",
-  },
-  {
-    freq: 9840,
-    raw: "COASTER",
-  },
-  {
-    freq: 9842,
-    raw: "FAINTLY",
-  },
-  {
-    freq: 9848,
-    raw: "AROUSAL",
-  },
-  {
-    freq: 9850,
-    raw: "MILEAGE",
-  },
-  {
-    freq: 9851,
-    raw: "BROWSER",
-  },
-  {
-    freq: 9854,
-    raw: "CLOSE-UP",
-    word: "CLOSEUP",
-  },
-  {
-    freq: 9858,
-    raw: "STAINED",
-  },
-  {
-    freq: 9871,
-    raw: "BEARDED",
-  },
-  {
-    freq: 9873,
-    raw: "SHADOWY",
-  },
-  {
-    freq: 9874,
-    raw: "ABDOMEN",
-  },
-  {
-    freq: 9895,
-    raw: "RADIANT",
-  },
-  {
-    freq: 9896,
-    raw: "ORBITAL",
-  },
-  {
-    freq: 9907,
-    raw: "SILICON",
-  },
-  {
-    freq: 9910,
-    raw: "BONDING",
-  },
-  {
-    freq: 9916,
-    raw: "IMMORAL",
-  },
-  {
-    freq: 9923,
-    raw: "STIFFEN",
-  },
-  {
-    freq: 9924,
-    raw: "VOLTAGE",
-  },
-  {
-    freq: 9930,
-    raw: "HEADING",
-  },
-  {
-    freq: 9931,
-    raw: "BATHTUB",
-  },
-  {
-    freq: 9933,
-    raw: "HARNESS",
-  },
-  {
-    freq: 9938,
-    raw: "DRIZZLE",
-  },
-  {
-    freq: 9939,
-    raw: "WALKWAY",
-  },
-  {
-    freq: 9945,
-    raw: "VISIBLY",
-  },
-  {
-    freq: 9954,
-    raw: "ENSUING",
-  },
-  {
-    freq: 9956,
-    raw: "DIOCESE",
-  },
-  {
-    freq: 9961,
-    raw: "BIDDING",
-  },
-  {
-    freq: 9963,
-    raw: "OBSCENE",
-  },
-  {
-    freq: 9969,
-    raw: "INVADER",
-  },
-  {
-    freq: 10003,
-    raw: "WARHEAD",
-  },
-  {
-    freq: 10028,
-    raw: "HARNESS",
-  },
-  {
-    freq: 10049,
-    raw: "INSOFAR",
-  },
-  {
-    freq: 10090,
-    raw: "ROUNDED",
-  },
-  {
-    freq: 10095,
-    raw: "FAVORED",
-  },
-  {
-    freq: 10105,
-    raw: "ALTERED",
-  },
-  {
-    freq: 10107,
-    raw: "FLATTER",
-  },
-  {
-    freq: 10112,
-    raw: "MARKING",
-  },
-  {
-    freq: 10119,
-    raw: "REALIST",
-  },
-  {
-    freq: 10123,
-    raw: "SHOWING",
-  },
-  {
-    freq: 10129,
-    raw: "RUNAWAY",
-  },
-  {
-    freq: 10131,
-    raw: "COEXIST",
-  },
-  {
-    freq: 10132,
-    raw: "ANTI-WAR",
-    word: "ANTIWAR",
-  },
-  {
-    freq: 10138,
-    raw: "TRAITOR",
-  },
-  {
-    freq: 10141,
-    raw: "ESPOUSE",
-  },
-  {
-    freq: 10145,
-    raw: "CHOPPER",
-  },
-  {
-    freq: 10150,
-    raw: "OVERLAP",
-  },
-  {
-    freq: 10163,
-    raw: "ICEBERG",
-  },
-  {
-    freq: 10167,
-    raw: "MIDTOWN",
-  },
-  {
-    freq: 10185,
-    raw: "FLOWING",
-  },
-  {
-    freq: 10195,
-    raw: "STYLING",
-  },
-  {
-    freq: 10196,
-    raw: "GATEWAY",
-  },
-  {
-    freq: 10204,
-    raw: "SAILING",
-  },
-  {
-    freq: 10209,
-    raw: "IMPLANT",
-  },
-  {
-    freq: 10222,
-    raw: "SPOTTED",
-  },
-  {
-    freq: 10237,
-    raw: "ANGULAR",
-  },
-  {
-    freq: 10247,
-    raw: "RINGING",
-  },
-  {
-    freq: 10252,
-    raw: "MARXIST",
-  },
-  {
-    freq: 10254,
-    raw: "TWO-HOUR",
-    word: "TWOHOUR",
-  },
-  {
-    freq: 10261,
-    raw: "SHAMPOO",
-  },
-  {
-    freq: 10265,
-    raw: "SENSUAL",
-  },
-  {
-    freq: 10266,
-    raw: "FITTING",
-  },
-  {
-    freq: 10283,
-    raw: "WINDING",
-  },
-  {
-    freq: 10288,
-    raw: "IN-HOUSE",
-    word: "INHOUSE",
-  },
-  {
-    freq: 10294,
-    raw: "ROBOTIC",
-  },
-  {
-    freq: 10296,
-    raw: "FESTIVE",
-  },
-  {
-    freq: 10305,
-    raw: "MICROBE",
-  },
-  {
-    freq: 10307,
-    raw: "ENGAGED",
-  },
-  {
-    freq: 10317,
-    raw: "FOLDING",
-  },
-  {
-    freq: 10330,
-    raw: "PROFILE",
-  },
-  {
-    freq: 10332,
-    raw: "RE-ELECT",
-    word: "REELECT",
-  },
-  {
-    freq: 10336,
-    raw: "NEUTRON",
-  },
-  {
-    freq: 10343,
-    raw: "INTRUDE",
-  },
-  {
-    freq: 10345,
-    raw: "MAPPING",
-  },
-  {
-    freq: 10359,
-    raw: "EARTHLY",
-  },
-  {
-    freq: 10365,
-    raw: "UPRIGHT",
-  },
-  {
-    freq: 10375,
-    raw: "DEPLETE",
-  },
-  {
-    freq: 10376,
-    raw: "MARTINI",
-  },
-  {
-    freq: 10395,
-    raw: "CARAVAN",
-  },
-  {
-    freq: 10399,
-    raw: "GAMBLER",
-  },
-  {
-    freq: 10404,
-    raw: "BRITTLE",
-  },
-  {
-    freq: 10420,
-    raw: "DAYCARE",
-  },
-  {
-    freq: 10424,
-    raw: "NOURISH",
-  },
-  {
-    freq: 10436,
-    raw: "DRINKER",
-  },
-  {
-    freq: 10440,
-    raw: "BARRAGE",
-  },
-  {
-    freq: 10459,
-    raw: "BAILOUT",
-  },
-  {
-    freq: 10464,
-    raw: "VACANCY",
-  },
-  {
-    freq: 10465,
-    raw: "IMPRINT",
-  },
-  {
-    freq: 10475,
-    raw: "PACKING",
-  },
-  {
-    freq: 10480,
-    raw: "POLYMER",
-  },
-  {
-    freq: 10489,
-    raw: "APRICOT",
-  },
-  {
-    freq: 10493,
-    raw: "HERRING",
-  },
-  {
-    freq: 10497,
-    raw: "THIRSTY",
-  },
-  {
-    freq: 10506,
-    raw: "HOSPICE",
-  },
-  {
-    freq: 10510,
-    raw: "SCARLET",
-  },
-  {
-    freq: 10513,
-    raw: "HOSTESS",
-  },
-  {
-    freq: 10519,
-    raw: "TELLING",
-  },
-  {
-    freq: 10527,
-    raw: "PROFESS",
-  },
-  {
-    freq: 10542,
-    raw: "AUDIBLE",
-  },
-  {
-    freq: 10551,
-    raw: "YEAR-OLD",
-    word: "YEAROLD",
-  },
-  {
-    freq: 10565,
-    raw: "AVOCADO",
-  },
-  {
-    freq: 10567,
-    raw: "GETAWAY",
-  },
-  {
-    freq: 10571,
-    raw: "SUBLIME",
-  },
-  {
-    freq: 10572,
-    raw: "TRUSTED",
-  },
-  {
-    freq: 10585,
-    raw: "DECENCY",
-  },
-  {
-    freq: 10595,
-    raw: "BELGIAN",
-  },
-  {
-    freq: 10597,
-    raw: "CHATTER",
-  },
-  {
-    freq: 10606,
-    raw: "HANGING",
-  },
-  {
-    freq: 10609,
-    raw: "ENTRUST",
-  },
-  {
-    freq: 10613,
-    raw: "CUTBACK",
-  },
-  {
-    freq: 10627,
-    raw: "BIOMASS",
-  },
-  {
-    freq: 10635,
-    raw: "NARRATE",
-  },
-  {
-    freq: 10654,
-    raw: "GLISTEN",
-  },
-  {
-    freq: 10662,
-    raw: "MELTING",
-  },
-  {
-    freq: 10663,
-    raw: "EXCERPT",
-  },
-  {
-    freq: 10664,
-    raw: "TAKEOFF",
-  },
-  {
-    freq: 10668,
-    raw: "REMORSE",
-  },
-  {
-    freq: 10670,
-    raw: "CUBICLE",
-  },
-  {
-    freq: 10680,
-    raw: "LOOKOUT",
-  },
-  {
-    freq: 10693,
-    raw: "BATTING",
-  },
-  {
-    freq: 10699,
-    raw: "TEDIOUS",
-  },
-  {
-    freq: 10728,
-    raw: "KUWAITI",
-  },
-  {
-    freq: 10730,
-    raw: "REPTILE",
-  },
-  {
-    freq: 10732,
-    raw: "HALFWAY",
-  },
-  {
-    freq: 10737,
-    raw: "SURREAL",
-  },
-  {
-    freq: 10738,
-    raw: "HOLDING",
-  },
-  {
-    freq: 10740,
-    raw: "CLEANSE",
-  },
-  {
-    freq: 10742,
-    raw: "COMPACT",
-  },
-  {
-    freq: 10743,
-    raw: "ADOPTED",
-  },
-  {
-    freq: 10748,
-    raw: "COMMEND",
-  },
-  {
-    freq: 10749,
-    raw: "SURPLUS",
-  },
-  {
-    freq: 10752,
-    raw: "DYNASTY",
-  },
-  {
-    freq: 10754,
-    raw: "CORONER",
-  },
-  {
-    freq: 10756,
-    raw: "ECLIPSE",
-  },
-  {
-    freq: 10763,
-    raw: "AMNESTY",
-  },
-  {
-    freq: 10796,
-    raw: "STEWARD",
-  },
-  {
-    freq: 10803,
-    raw: "SPARKLE",
-  },
-  {
-    freq: 10806,
-    raw: "BIPOLAR",
-  },
-  {
-    freq: 10822,
-    raw: "COVER-UP",
-    word: "COVERUP",
-  },
-  {
-    freq: 10823,
-    raw: "BOOKLET",
-  },
-  {
-    freq: 10829,
-    raw: "FOCUSED",
-  },
-  {
-    freq: 10839,
-    raw: "ERRATIC",
-  },
-  {
-    freq: 10850,
-    raw: "SYRINGE",
-  },
-  {
-    freq: 10856,
-    raw: "POINTER",
-  },
-  {
-    freq: 10858,
-    raw: "ENVELOP",
-  },
-  {
-    freq: 10861,
-    raw: "SPECIAL",
-  },
-  {
-    freq: 10869,
-    raw: "SQUEEZE",
-  },
-  {
-    freq: 10877,
-    raw: "BREEDER",
-  },
-  {
-    freq: 10893,
-    raw: "ROADWAY",
-  },
-  {
-    freq: 10894,
-    raw: "WRAPPER",
-  },
-  {
-    freq: 10899,
-    raw: "UNEARTH",
-  },
-  {
-    freq: 10902,
-    raw: "CALIBER",
-  },
-  {
-    freq: 10910,
-    raw: "UPDATED",
-  },
-  {
-    freq: 10920,
-    raw: "FEEDING",
-  },
-  {
-    freq: 10922,
-    raw: "WORLDLY",
-  },
-  {
-    freq: 10931,
-    raw: "DIALECT",
-  },
-  {
-    freq: 10932,
-    raw: "VARSITY",
-  },
-  {
-    freq: 10938,
-    raw: "SHARING",
-  },
-  {
-    freq: 10944,
-    raw: "DWINDLE",
-  },
-  {
-    freq: 10948,
-    raw: "REJOICE",
-  },
-  {
-    freq: 10958,
-    raw: "UNEQUAL",
-  },
-  {
-    freq: 10967,
-    raw: "SLEEPER",
-  },
-  {
-    freq: 10995,
-    raw: "NOMINAL",
-  },
-  {
-    freq: 10998,
-    raw: "FRONTAL",
-  },
-  {
-    freq: 11000,
-    raw: "BLATANT",
-  },
-  {
-    freq: 11011,
-    raw: "FANATIC",
-  },
-  {
-    freq: 11012,
-    raw: "ROUTINE",
-  },
-  {
-    freq: 11016,
-    raw: "UPSTATE",
-  },
-  {
-    freq: 11029,
-    raw: "DWELLER",
-  },
-  {
-    freq: 11031,
-    raw: "HYGIENE",
-  },
-  {
-    freq: 11032,
-    raw: "MINDFUL",
-  },
-  {
-    freq: 11036,
-    raw: "MUSSELS",
-  },
-  {
-    freq: 11039,
-    raw: "DEBACLE",
-  },
-  {
-    freq: 11056,
-    raw: "LEARNED",
-  },
-  {
-    freq: 11062,
-    raw: "REGULAR",
-  },
-  {
-    freq: 11077,
-    raw: "FIELDER",
-  },
-  {
-    freq: 11080,
-    raw: "GRIMACE",
-  },
-  {
-    freq: 11107,
-    raw: "BOTTLED",
-  },
-  {
-    freq: 11119,
-    raw: "CHUCKLE",
-  },
-  {
-    freq: 11124,
-    raw: "ASCRIBE",
-  },
-  {
-    freq: 11127,
-    raw: "UNCANNY",
-  },
-  {
-    freq: 11140,
-    raw: "SMOTHER",
-  },
-  {
-    freq: 11147,
-    raw: "MARSHAL",
-  },
-  {
-    freq: 11149,
-    raw: "TRAINEE",
-  },
-  {
-    freq: 11152,
-    raw: "HIDEOUS",
-  },
-  {
-    freq: 11153,
-    raw: "INFANCY",
-  },
-  {
-    freq: 11154,
-    raw: "TSUNAMI",
-  },
-  {
-    freq: 11160,
-    raw: "EYEBALL",
-  },
-  {
-    freq: 11163,
-    raw: "OATMEAL",
-  },
-  {
-    freq: 11176,
-    raw: "REMARRY",
-  },
-  {
-    freq: 11178,
-    raw: "CHANGED",
-  },
-  {
-    freq: 11180,
-    raw: "FOREMAN",
-  },
-  {
-    freq: 11184,
-    raw: "FITTING",
-  },
-  {
-    freq: 11193,
-    raw: "OVERDUE",
-  },
-  {
-    freq: 11207,
-    raw: "TELLING",
-  },
-  {
-    freq: 11208,
-    raw: "UPWARDS",
-  },
-  {
-    freq: 11210,
-    raw: "UNNAMED",
-  },
-  {
-    freq: 11215,
-    raw: "SIDEBAR",
-  },
-  {
-    freq: 11216,
-    raw: "PARTNER",
-  },
-  {
-    freq: 11227,
-    raw: "DISABLE",
-  },
-  {
-    freq: 11242,
-    raw: "OPTIMUM",
-  },
-  {
-    freq: 11244,
-    raw: "PITFALL",
-  },
-  {
-    freq: 11247,
-    raw: "MAMMOTH",
-  },
-  {
-    freq: 11258,
-    raw: "CHIEFLY",
-  },
-  {
-    freq: 11266,
-    raw: "THICKET",
-  },
-  {
-    freq: 11271,
-    raw: "PROWESS",
-  },
-  {
-    freq: 11274,
-    raw: "BURGLAR",
-  },
-  {
-    freq: 11287,
-    raw: "SHALLOT",
-  },
-  {
-    freq: 11291,
-    raw: "BRISTLE",
-  },
-  {
-    freq: 11292,
-    raw: "SWEETIE",
-  },
-  {
-    freq: 11317,
-    raw: "CAPTIVE",
-  },
-  {
-    freq: 11319,
-    raw: "TENUOUS",
-  },
-  {
-    freq: 11325,
-    raw: "FALLING",
-  },
-  {
-    freq: 11326,
-    raw: "CHATTER",
-  },
-  {
-    freq: 11335,
-    raw: "EMINENT",
-  },
-  {
-    freq: 11344,
-    raw: "SHINGLE",
-  },
-  {
-    freq: 11347,
-    raw: "COLLAGE",
-  },
-  {
-    freq: 11351,
-    raw: "BIOTECH",
-  },
-  {
-    freq: 11360,
-    raw: "GARNISH",
-  },
-  {
-    freq: 11364,
-    raw: "BEDDING",
-  },
-  {
-    freq: 11366,
-    raw: "PASTIME",
-  },
-  {
-    freq: 11381,
-    raw: "BLISTER",
-  },
-  {
-    freq: 11400,
-    raw: "ARABIAN",
-  },
-  {
-    freq: 11403,
-    raw: "SPUTTER",
-  },
-  {
-    freq: 11405,
-    raw: "GRANDMA",
-  },
-  {
-    freq: 11407,
-    raw: "QUARREL",
-  },
-  {
-    freq: 11408,
-    raw: "CERTAIN",
-  },
-  {
-    freq: 11410,
-    raw: "METHANE",
-  },
-  {
-    freq: 11419,
-    raw: "TOPPING",
-  },
-  {
-    freq: 11426,
-    raw: "PERJURY",
-  },
-  {
-    freq: 11431,
-    raw: "CONDONE",
-  },
-  {
-    freq: 11438,
-    raw: "SUBDUED",
-  },
-  {
-    freq: 11441,
-    raw: "CASHIER",
-  },
-  {
-    freq: 11444,
-    raw: "BLOATED",
-  },
-  {
-    freq: 11449,
-    raw: "HEADSET",
-  },
-  {
-    freq: 11450,
-    raw: "SEISMIC",
-  },
-  {
-    freq: 11456,
-    raw: "BLOSSOM",
-  },
-  {
-    freq: 11469,
-    raw: "FURTHER",
-  },
-  {
-    freq: 11475,
-    raw: "GHOSTLY",
-  },
-  {
-    freq: 11477,
-    raw: "STYLIST",
-  },
-  {
-    freq: 11481,
-    raw: "ADAMANT",
-  },
-  {
-    freq: 11483,
-    raw: "OVERRUN",
-  },
-  {
-    freq: 11484,
-    raw: "BOYCOTT",
-  },
-  {
-    freq: 11488,
-    raw: "CONVENT",
-  },
-  {
-    freq: 11519,
-    raw: "QUARTET",
-  },
-  {
-    freq: 11531,
-    raw: "TRAMPLE",
-  },
-  {
-    freq: 11556,
-    raw: "WRONGLY",
-  },
-  {
-    freq: 11562,
-    raw: "RUMMAGE",
-  },
-  {
-    freq: 11570,
-    raw: "JANITOR",
-  },
-  {
-    freq: 11576,
-    raw: "PURPORT",
-  },
-  {
-    freq: 11585,
-    raw: "PRO-LIFE",
-    word: "PROLIFE",
-  },
-  {
-    freq: 11589,
-    raw: "REMODEL",
-  },
-  {
-    freq: 11594,
-    raw: "PRIMATE",
-  },
-  {
-    freq: 11596,
-    raw: "ANARCHY",
-  },
-  {
-    freq: 11607,
-    raw: "QUICKER",
-  },
-  {
-    freq: 11627,
-    raw: "SEMINAL",
-  },
-  {
-    freq: 11629,
-    raw: "TABLOID",
-  },
-  {
-    freq: 11637,
-    raw: "ACUTELY",
-  },
-  {
-    freq: 11640,
-    raw: "CONSENT",
-  },
-  {
-    freq: 11644,
-    raw: "SUBVERT",
-  },
-  {
-    freq: 11655,
-    raw: "CHINESE",
-  },
-  {
-    freq: 11662,
-    raw: "DEPRESS",
-  },
-  {
-    freq: 11663,
-    raw: "TRICKLE",
-  },
-  {
-    freq: 11665,
-    raw: "QUICKEN",
-  },
-  {
-    freq: 11668,
-    raw: "CRACKLE",
-  },
-  {
-    freq: 11676,
-    raw: "STATELY",
-  },
-  {
-    freq: 11690,
-    raw: "GEOLOGY",
-  },
-  {
-    freq: 11702,
-    raw: "LITURGY",
-  },
-  {
-    freq: 11718,
-    raw: "BRISKLY",
-  },
-  {
-    freq: 11728,
-    raw: "DORMANT",
-  },
-  {
-    freq: 11730,
-    raw: "BIG-TIME",
-    word: "BIGTIME",
-  },
-  {
-    freq: 11738,
-    raw: "TRIUMPH",
-  },
-  {
-    freq: 11739,
-    raw: "PRETEST",
-  },
-  {
-    freq: 11740,
-    raw: "TWO-WEEK",
-    word: "TWOWEEK",
-  },
-  {
-    freq: 11742,
-    raw: "SPARKLE",
-  },
-  {
-    freq: 11743,
-    raw: "TOASTED",
-  },
-  {
-    freq: 11744,
-    raw: "CARNAGE",
-  },
-  {
-    freq: 11748,
-    raw: "REBIRTH",
-  },
-  {
-    freq: 11780,
-    raw: "UTOPIAN",
-  },
-  {
-    freq: 11788,
-    raw: "EXPLOIT",
-  },
-  {
-    freq: 11801,
-    raw: "OREGANO",
-  },
-  {
-    freq: 11811,
-    raw: "ROOSTER",
-  },
-  {
-    freq: 11813,
-    raw: "TOPICAL",
-  },
-  {
-    freq: 11834,
-    raw: "SOLVENT",
-  },
-  {
-    freq: 11846,
-    raw: "CASCADE",
-  },
-  {
-    freq: 11847,
-    raw: "RESCUER",
-  },
-  {
-    freq: 11855,
-    raw: "BAPTISM",
-  },
-  {
-    freq: 11856,
-    raw: "PENGUIN",
-  },
-  {
-    freq: 11862,
-    raw: "BUDDING",
-  },
-  {
-    freq: 11873,
-    raw: "TOURING",
-  },
-  {
-    freq: 11889,
-    raw: "SINKING",
-  },
-  {
-    freq: 11891,
-    raw: "SOLIDLY",
-  },
-  {
-    freq: 11893,
-    raw: "UNHEARD",
-  },
-  {
-    freq: 11897,
-    raw: "PLANTER",
-  },
-  {
-    freq: 11906,
-    raw: "SERPENT",
-  },
-  {
-    freq: 11921,
-    raw: "STAUNCH",
-  },
-  {
-    freq: 11922,
-    raw: "OUTWARD",
-  },
-  {
-    freq: 11923,
-    raw: "GLUCOSE",
-  },
-  {
-    freq: 11927,
-    raw: "STAGING",
-  },
-  {
-    freq: 11949,
-    raw: "KETCHUP",
-  },
-  {
-    freq: 11951,
-    raw: "MATCHUP",
-  },
-  {
-    freq: 11960,
-    raw: "HARSHLY",
-  },
-  {
-    freq: 11966,
-    raw: "BOURBON",
-  },
-  {
-    freq: 11967,
-    raw: "BRUISED",
-  },
-  {
-    freq: 11971,
-    raw: "FRAUGHT",
-  },
-  {
-    freq: 11978,
-    raw: "DRIBBLE",
-  },
-  {
-    freq: 11988,
-    raw: "TORRENT",
-  },
-  {
-    freq: 12003,
-    raw: "NITRATE",
-  },
-  {
-    freq: 12004,
-    raw: "PLASTER",
-  },
-  {
-    freq: 12009,
-    raw: "DREAMER",
-  },
-  {
-    freq: 12014,
-    raw: "CONVICT",
-  },
-  {
-    freq: 12027,
-    raw: "MIDWIFE",
-  },
-  {
-    freq: 12029,
-    raw: "CHILEAN",
-  },
-  {
-    freq: 12035,
-    raw: "ELASTIC",
-  },
-  {
-    freq: 12045,
-    raw: "BREAKER",
-  },
-  {
-    freq: 12051,
-    raw: "DENSELY",
-  },
-  {
-    freq: 12055,
-    raw: "HANDBAG",
-  },
-  {
-    freq: 12059,
-    raw: "HEROISM",
-  },
-  {
-    freq: 12078,
-    raw: "MANHOOD",
-  },
-  {
-    freq: 12082,
-    raw: "ADJUNCT",
-  },
-  {
-    freq: 12083,
-    raw: "TURNING",
-  },
-  {
-    freq: 12086,
-    raw: "CRUMPLE",
-  },
-  {
-    freq: 12092,
-    raw: "DISLIKE",
-  },
-  {
-    freq: 12094,
-    raw: "TERMITE",
-  },
-  {
-    freq: 12102,
-    raw: "FENCING",
-  },
-  {
-    freq: 12107,
-    raw: "PRELUDE",
-  },
-  {
-    freq: 12108,
-    raw: "GLITTER",
-  },
-  {
-    freq: 12110,
-    raw: "REDWOOD",
-  },
-  {
-    freq: 12112,
-    raw: "DISSECT",
-  },
-  {
-    freq: 12113,
-    raw: "MODESTY",
-  },
-  {
-    freq: 12129,
-    raw: "ALASKAN",
-  },
-  {
-    freq: 12138,
-    raw: "SILVERY",
-  },
-  {
-    freq: 12140,
-    raw: "RE-ENTER",
-    word: "REENTER",
-  },
-  {
-    freq: 12141,
-    raw: "BOROUGH",
-  },
-  {
-    freq: 12143,
-    raw: "TIBETAN",
-  },
-  {
-    freq: 12144,
-    raw: "RESTING",
-  },
-  {
-    freq: 12162,
-    raw: "LOOMING",
-  },
-  {
-    freq: 12172,
-    raw: "BULLPEN",
-  },
-  {
-    freq: 12173,
-    raw: "GROSSLY",
-  },
-  {
-    freq: 12174,
-    raw: "STRATUM",
-  },
-  {
-    freq: 12188,
-    raw: "LEOPARD",
-  },
-  {
-    freq: 12190,
-    raw: "SCREECH",
-  },
-  {
-    freq: 12202,
-    raw: "CHILLED",
-  },
-  {
-    freq: 12204,
-    raw: "FLANNEL",
-  },
-  {
-    freq: 12220,
-    raw: "RUSHING",
-  },
-  {
-    freq: 12225,
-    raw: "PROBING",
-  },
-  {
-    freq: 12226,
-    raw: "RECITAL",
-  },
-  {
-    freq: 12234,
-    raw: "WARSHIP",
-  },
-  {
-    freq: 12243,
-    raw: "INCENSE",
-  },
-  {
-    freq: 12265,
-    raw: "PLUMBER",
-  },
-  {
-    freq: 12278,
-    raw: "WHEREIN",
-  },
-  {
-    freq: 12288,
-    raw: "INSTILL",
-  },
-  {
-    freq: 12290,
-    raw: "PUMPING",
-  },
-  {
-    freq: 12295,
-    raw: "TORMENT",
-  },
-  {
-    freq: 12302,
-    raw: "MUFFLED",
-  },
-  {
-    freq: 12309,
-    raw: "ASHTRAY",
-  },
-  {
-    freq: 12319,
-    raw: "PERVADE",
-  },
-  {
-    freq: 12324,
-    raw: "EXPRESS",
-  },
-  {
-    freq: 12330,
-    raw: "CONDUIT",
-  },
-  {
-    freq: 12331,
-    raw: "SEEMING",
-  },
-  {
-    freq: 12335,
-    raw: "HANDOUT",
-  },
-  {
-    freq: 12345,
-    raw: "ENDEMIC",
-  },
-  {
-    freq: 12346,
-    raw: "RAPPORT",
-  },
-  {
-    freq: 12359,
-    raw: "TWO-TIME",
-    word: "TWOTIME",
-  },
-  {
-    freq: 12362,
-    raw: "DEVOTEE",
-  },
-  {
-    freq: 12369,
-    raw: "PATRIOT",
-  },
-  {
-    freq: 12401,
-    raw: "CLUTTER",
-  },
-  {
-    freq: 12411,
-    raw: "MARSHAL",
-  },
-  {
-    freq: 12417,
-    raw: "AGITATE",
-  },
-  {
-    freq: 12422,
-    raw: "BLUNTLY",
-  },
-  {
-    freq: 12423,
-    raw: "TROLLEY",
-  },
-  {
-    freq: 12431,
-    raw: "NONSTOP",
-  },
-  {
-    freq: 12435,
-    raw: "UNDRESS",
-  },
-  {
-    freq: 12451,
-    raw: "FLICKER",
-  },
-  {
-    freq: 12463,
-    raw: "CRIMSON",
-  },
-  {
-    freq: 12471,
-    raw: "EARMARK",
-  },
-  {
-    freq: 12473,
-    raw: "FINNISH",
-  },
-  {
-    freq: 12479,
-    raw: "ASSURED",
-  },
-  {
-    freq: 12485,
-    raw: "CADENCE",
-  },
-  {
-    freq: 12493,
-    raw: "WARLORD",
-  },
-  {
-    freq: 12497,
-    raw: "PERTAIN",
-  },
-  {
-    freq: 12503,
-    raw: "GLITTER",
-  },
-  {
-    freq: 12511,
-    raw: "BURNOUT",
-  },
-  {
-    freq: 12524,
-    raw: "KICKOFF",
-  },
-  {
-    freq: 12535,
-    raw: "SEASIDE",
-  },
-  {
-    freq: 12547,
-    raw: "WEAVING",
-  },
-  {
-    freq: 12571,
-    raw: "ALRIGHT",
-  },
-  {
-    freq: 12573,
-    raw: "PENDING",
-  },
-  {
-    freq: 12575,
-    raw: "COVETED",
-  },
-  {
-    freq: 12577,
-    raw: "ENGRAVE",
-  },
-  {
-    freq: 12585,
-    raw: "HAUNTED",
-  },
-  {
-    freq: 12592,
-    raw: "FARAWAY",
-  },
-  {
-    freq: 12593,
-    raw: "POURING",
-  },
-  {
-    freq: 12599,
-    raw: "RACCOON",
-  },
-  {
-    freq: 12602,
-    raw: "ADMIRAL",
-  },
-  {
-    freq: 12603,
-    raw: "BRAVERY",
-  },
-  {
-    freq: 12604,
-    raw: "PRICKLY",
-  },
-  {
-    freq: 12605,
-    raw: "PANTIES",
-  },
-  {
-    freq: 12619,
-    raw: "BOYHOOD",
-  },
-  {
-    freq: 12626,
-    raw: "WORDING",
-  },
-  {
-    freq: 12634,
-    raw: "TASTING",
-  },
-  {
-    freq: 12642,
-    raw: "AMBIENT",
-  },
-  {
-    freq: 12646,
-    raw: "UNARMED",
-  },
-  {
-    freq: 12649,
-    raw: "CRAVING",
-  },
-  {
-    freq: 12657,
-    raw: "MOUNTED",
-  },
-  {
-    freq: 12658,
-    raw: "PAIRING",
-  },
-  {
-    freq: 12660,
-    raw: "REFRESH",
-  },
-  {
-    freq: 12666,
-    raw: "REDDISH",
-  },
-  {
-    freq: 12667,
-    raw: "SCALLOP",
-  },
-  {
-    freq: 12671,
-    raw: "DIFFUSE",
-  },
-  {
-    freq: 12676,
-    raw: "DELAYED",
-  },
-  {
-    freq: 12683,
-    raw: "THYROID",
-  },
-  {
-    freq: 12687,
-    raw: "EMERALD",
-  },
-  {
-    freq: 12688,
-    raw: "FALSELY",
-  },
-  {
-    freq: 12689,
-    raw: "SWALLOW",
-  },
-  {
-    freq: 12697,
-    raw: "DISSENT",
-  },
-  {
-    freq: 12710,
-    raw: "CONCOCT",
-  },
-  {
-    freq: 12712,
-    raw: "FATEFUL",
-  },
-  {
-    freq: 12721,
-    raw: "ANIMATE",
-  },
-  {
-    freq: 12731,
-    raw: "ACCLAIM",
-  },
-  {
-    freq: 12735,
-    raw: "APPEASE",
-  },
-  {
-    freq: 12738,
-    raw: "LOOTING",
-  },
-  {
-    freq: 12739,
-    raw: "CORRUPT",
-  },
-  {
-    freq: 12744,
-    raw: "BLINDLY",
-  },
-  {
-    freq: 12751,
-    raw: "ARDUOUS",
-  },
-  {
-    freq: 12767,
-    raw: "STEALTH",
-  },
-  {
-    freq: 12786,
-    raw: "GOODIES",
-  },
-  {
-    freq: 12798,
-    raw: "BEDROCK",
-  },
-  {
-    freq: 12801,
-    raw: "AMMONIA",
-  },
-  {
-    freq: 12810,
-    raw: "GLIMMER",
-  },
-  {
-    freq: 12818,
-    raw: "STEROID",
-  },
-  {
-    freq: 12827,
-    raw: "DRAINED",
-  },
-  {
-    freq: 12834,
-    raw: "THUNDER",
-  },
-  {
-    freq: 12837,
-    raw: "THEREOF",
-  },
-  {
-    freq: 12849,
-    raw: "TANTRUM",
-  },
-  {
-    freq: 12868,
-    raw: "TAXABLE",
-  },
-  {
-    freq: 12891,
-    raw: "SWEETLY",
-  },
-  {
-    freq: 12894,
-    raw: "PUBERTY",
-  },
-  {
-    freq: 12904,
-    raw: "ACCUSER",
-  },
-  {
-    freq: 12909,
-    raw: "KNOWING",
-  },
-  {
-    freq: 12912,
-    raw: "TWELFTH",
-  },
-  {
-    freq: 12916,
-    raw: "UNNERVE",
-  },
-  {
-    freq: 12926,
-    raw: "ATHEIST",
-  },
-  {
-    freq: 12933,
-    raw: "GLARING",
-  },
-  {
-    freq: 12936,
-    raw: "STAGGER",
-  },
-  {
-    freq: 12942,
-    raw: "CASCADE",
-  },
-  {
-    freq: 12949,
-    raw: "CLAMBER",
-  },
-  {
-    freq: 12958,
-    raw: "FORFEIT",
-  },
-  {
-    freq: 12964,
-    raw: "NAUGHTY",
-  },
-  {
-    freq: 12978,
-    raw: "UTENSIL",
-  },
-  {
-    freq: 12980,
-    raw: "FLAMING",
-  },
-  {
-    freq: 12983,
-    raw: "OVERTLY",
-  },
-  {
-    freq: 12990,
-    raw: "IMPASSE",
-  },
-  {
-    freq: 12997,
-    raw: "START-UP",
-    word: "STARTUP",
-  },
-  {
-    freq: 13001,
-    raw: "BATHING",
-  },
-  {
-    freq: 13002,
-    raw: "AUCTION",
-  },
-  {
-    freq: 13006,
-    raw: "CHECKUP",
-  },
-  {
-    freq: 13031,
-    raw: "INCLINE",
-  },
-  {
-    freq: 13042,
-    raw: "SCUTTLE",
-  },
-  {
-    freq: 13048,
-    raw: "VAGINAL",
-  },
-  {
-    freq: 13058,
-    raw: "MOURNER",
-  },
-  {
-    freq: 13060,
-    raw: "WHIPPED",
-  },
-  {
-    freq: 13071,
-    raw: "WORKMAN",
-  },
-  {
-    freq: 13082,
-    raw: "BONFIRE",
-  },
-  {
-    freq: 13084,
-    raw: "FORTIFY",
-  },
-  {
-    freq: 13087,
-    raw: "ACREAGE",
-  },
-  {
-    freq: 13090,
-    raw: "ARSENIC",
-  },
-  {
-    freq: 13095,
-    raw: "EQUATOR",
-  },
-  {
-    freq: 13097,
-    raw: "PRIMACY",
-  },
-  {
-    freq: 13104,
-    raw: "BABY-SIT",
-    word: "BABYSIT",
-  },
-  {
-    freq: 13106,
-    raw: "TWINKLE",
-  },
-  {
-    freq: 13112,
-    raw: "ACRYLIC",
-  },
-  {
-    freq: 13126,
-    raw: "ANALYSE",
-  },
-  {
-    freq: 13128,
-    raw: "ALGEBRA",
-  },
-  {
-    freq: 13134,
-    raw: "GIMMICK",
-  },
-  {
-    freq: 13140,
-    raw: "ASTOUND",
-  },
-  {
-    freq: 13144,
-    raw: "MEANDER",
-  },
-  {
-    freq: 13148,
-    raw: "PITIFUL",
-  },
-  {
-    freq: 13151,
-    raw: "CUNNING",
-  },
-  {
-    freq: 13159,
-    raw: "LOWLAND",
-  },
-  {
-    freq: 13161,
-    raw: "CYPRESS",
-  },
-  {
-    freq: 13162,
-    raw: "STAMINA",
-  },
-  {
-    freq: 13163,
-    raw: "GRIZZLY",
-  },
-  {
-    freq: 13174,
-    raw: "BAPTIZE",
-  },
-  {
-    freq: 13175,
-    raw: "ROCKING",
-  },
-  {
-    freq: 13177,
-    raw: "ACRYLIC",
-  },
-  {
-    freq: 13186,
-    raw: "JUMPING",
-  },
-  {
-    freq: 13189,
-    raw: "CAYENNE",
-  },
-  {
-    freq: 13191,
-    raw: "TRUCKER",
-  },
-  {
-    freq: 13193,
-    raw: "ANNUITY",
-  },
-  {
-    freq: 13197,
-    raw: "SIX-YEAR",
-    word: "SIXYEAR",
-  },
-  {
-    freq: 13203,
-    raw: "REFRAIN",
-  },
-  {
-    freq: 13232,
-    raw: "LAYERED",
-  },
-  {
-    freq: 13237,
-    raw: "MIDLIFE",
-  },
-  {
-    freq: 13238,
-    raw: "GRAZING",
-  },
-  {
-    freq: 13244,
-    raw: "DRIVING",
-  },
-  {
-    freq: 13249,
-    raw: "STEAMED",
-  },
-  {
-    freq: 13264,
-    raw: "RAUCOUS",
-  },
-  {
-    freq: 13270,
-    raw: "FASCIST",
-  },
-  {
-    freq: 13276,
-    raw: "TREASON",
-  },
-  {
-    freq: 13278,
-    raw: "THEREIN",
-  },
-  {
-    freq: 13282,
-    raw: "PARABLE",
-  },
-  {
-    freq: 13285,
-    raw: "SPIN-OFF",
-    word: "SPINOFF",
-  },
-  {
-    freq: 13286,
-    raw: "DROPLET",
-  },
-  {
-    freq: 13288,
-    raw: "PROVERB",
-  },
-  {
-    freq: 13296,
-    raw: "JOURNEY",
-  },
-  {
-    freq: 13302,
-    raw: "RESPITE",
-  },
-  {
-    freq: 13311,
-    raw: "LODGING",
-  },
-  {
-    freq: 13314,
-    raw: "INERTIA",
-  },
-  {
-    freq: 13320,
-    raw: "BROTHEL",
-  },
-  {
-    freq: 13327,
-    raw: "HOLSTER",
-  },
-  {
-    freq: 13332,
-    raw: "CO-OWNER",
-    word: "COOWNER",
-  },
-  {
-    freq: 13340,
-    raw: "VULTURE",
-  },
-  {
-    freq: 13341,
-    raw: "TORPEDO",
-  },
-  {
-    freq: 13349,
-    raw: "BIGOTRY",
-  },
-  {
-    freq: 13350,
-    raw: "HAITIAN",
-  },
-  {
-    freq: 13351,
-    raw: "DIGGING",
-  },
-  {
-    freq: 13353,
-    raw: "NAGGING",
-  },
-  {
-    freq: 13356,
-    raw: "AUSPICE",
-  },
-  {
-    freq: 13362,
-    raw: "WARRING",
-  },
-  {
-    freq: 13364,
-    raw: "RESTART",
-  },
-  {
-    freq: 13369,
-    raw: "CARIBOU",
-  },
-  {
-    freq: 13370,
-    raw: "OPPRESS",
-  },
-  {
-    freq: 13382,
-    raw: "REPRESS",
-  },
-  {
-    freq: 13383,
-    raw: "TABLEAU",
-  },
-  {
-    freq: 13387,
-    raw: "PUNGENT",
-  },
-  {
-    freq: 13392,
-    raw: "TRILOGY",
-  },
-  {
-    freq: 13396,
-    raw: "STARDOM",
-  },
-  {
-    freq: 13399,
-    raw: "BOMBARD",
-  },
-  {
-    freq: 13410,
-    raw: "GRINDER",
-  },
-  {
-    freq: 13421,
-    raw: "TRUMPET",
-  },
-  {
-    freq: 13427,
-    raw: "SCOOTER",
-  },
-  {
-    freq: 13429,
-    raw: "MARQUEE",
-  },
-  {
-    freq: 13431,
-    raw: "KISSING",
-  },
-  {
-    freq: 13436,
-    raw: "GRAVELY",
-  },
-  {
-    freq: 13442,
-    raw: "LIGHTED",
-  },
-  {
-    freq: 13446,
-    raw: "COURIER",
-  },
-  {
-    freq: 13448,
-    raw: "LYRICAL",
-  },
-  {
-    freq: 13451,
-    raw: "EVASION",
-  },
-  {
-    freq: 13459,
-    raw: "OVATION",
-  },
-  {
-    freq: 13473,
-    raw: "WEAKEST",
-  },
-  {
-    freq: 13478,
-    raw: "FEEDING",
-  },
-  {
-    freq: 13481,
-    raw: "ARCHAIC",
-  },
-  {
-    freq: 13483,
-    raw: "VESTIGE",
-  },
-  {
-    freq: 13490,
-    raw: "COMPOST",
-  },
-  {
-    freq: 13508,
-    raw: "STIFFLY",
-  },
-  {
-    freq: 13512,
-    raw: "FAILING",
-  },
-  {
-    freq: 13527,
-    raw: "CADMIUM",
-  },
-  {
-    freq: 13531,
-    raw: "WRINKLE",
-  },
-  {
-    freq: 13552,
-    raw: "FLUENCY",
-  },
-  {
-    freq: 13555,
-    raw: "CLUTTER",
-  },
-  {
-    freq: 13556,
-    raw: "REPLETE",
-  },
-  {
-    freq: 13561,
-    raw: "BLUNDER",
-  },
-  {
-    freq: 13566,
-    raw: "EYELASH",
-  },
-  {
-    freq: 13567,
-    raw: "CUSTARD",
-  },
-  {
-    freq: 13569,
-    raw: "SEAWEED",
-  },
-  {
-    freq: 13570,
-    raw: "FORWARD",
-  },
-  {
-    freq: 13572,
-    raw: "MEMENTO",
-  },
-  {
-    freq: 13576,
-    raw: "STAND-UP",
-    word: "STANDUP",
-  },
-  {
-    freq: 13587,
-    raw: "LAND-USE",
-    word: "LANDUSE",
-  },
-  {
-    freq: 13590,
-    raw: "ELITIST",
-  },
-  {
-    freq: 13595,
-    raw: "BENEATH",
-  },
-  {
-    freq: 13612,
-    raw: "NONSTOP",
-  },
-  {
-    freq: 13628,
-    raw: "NASCENT",
-  },
-  {
-    freq: 13635,
-    raw: "FANFARE",
-  },
-  {
-    freq: 13644,
-    raw: "TROPICS",
-  },
-  {
-    freq: 13648,
-    raw: "ROTTING",
-  },
-  {
-    freq: 13655,
-    raw: "PREFACE",
-  },
-  {
-    freq: 13659,
-    raw: "SHUDDER",
-  },
-  {
-    freq: 13670,
-    raw: "BRIBERY",
-  },
-  {
-    freq: 13671,
-    raw: "POSTAGE",
-  },
-  {
-    freq: 13676,
-    raw: "IMPLIED",
-  },
-  {
-    freq: 13687,
-    raw: "PROCURE",
-  },
-  {
-    freq: 13700,
-    raw: "ESTUARY",
-  },
-  {
-    freq: 13710,
-    raw: "STEAMER",
-  },
-  {
-    freq: 13714,
-    raw: "PENDANT",
-  },
-  {
-    freq: 13724,
-    raw: "KNOW-HOW",
-    word: "KNOWHOW",
-  },
-  {
-    freq: 13741,
-    raw: "FASCISM",
-  },
-  {
-    freq: 13748,
-    raw: "GUARDED",
-  },
-  {
-    freq: 13767,
-    raw: "HONORED",
-  },
-  {
-    freq: 13775,
-    raw: "JUNIPER",
-  },
-  {
-    freq: 13784,
-    raw: "CHEAPLY",
-  },
-  {
-    freq: 13791,
-    raw: "DIFFUSE",
-  },
-  {
-    freq: 13795,
-    raw: "CHASSIS",
-  },
-  {
-    freq: 13807,
-    raw: "BINDING",
-  },
-  {
-    freq: 13809,
-    raw: "SPATULA",
-  },
-  {
-    freq: 13810,
-    raw: "PENNANT",
-  },
-  {
-    freq: 13816,
-    raw: "HOTLINE",
-  },
-  {
-    freq: 13818,
-    raw: "GROWN-UP",
-    word: "GROWNUP",
-  },
-  {
-    freq: 13830,
-    raw: "PRETEXT",
-  },
-  {
-    freq: 13834,
-    raw: "RUN-DOWN",
-    word: "RUNDOWN",
-  },
-  {
-    freq: 13838,
-    raw: "AQUIFER",
-  },
-  {
-    freq: 13843,
-    raw: "LOWERED",
-  },
-  {
-    freq: 13845,
-    raw: "SARCASM",
-  },
-  {
-    freq: 13857,
-    raw: "DREADED",
-  },
-  {
-    freq: 13865,
-    raw: "VERANDA",
-  },
-  {
-    freq: 13874,
-    raw: "POTENCY",
-  },
-  {
-    freq: 13881,
-    raw: "WORKDAY",
-  },
-  {
-    freq: 13884,
-    raw: "FINESSE",
-  },
-  {
-    freq: 13885,
-    raw: "SURMISE",
-  },
-  {
-    freq: 13887,
-    raw: "ACRONYM",
-  },
-  {
-    freq: 13902,
-    raw: "HILLTOP",
-  },
-  {
-    freq: 13904,
-    raw: "FORWARD",
-  },
-  {
-    freq: 13911,
-    raw: "DROP-OFF",
-    word: "DROPOFF",
-  },
-  {
-    freq: 13918,
-    raw: "JEWELER",
-  },
-  {
-    freq: 13919,
-    raw: "DESPAIR",
-  },
-  {
-    freq: 13930,
-    raw: "FIANCEE",
-  },
-  {
-    freq: 13933,
-    raw: "TAX-FREE",
-    word: "TAXFREE",
-  },
-  {
-    freq: 13941,
-    raw: "OLD-TIME",
-    word: "OLDTIME",
-  },
-  {
-    freq: 13942,
-    raw: "OCEANIC",
-  },
-  {
-    freq: 13964,
-    raw: "STRIKER",
-  },
-  {
-    freq: 13965,
-    raw: "MELODIC",
-  },
-  {
-    freq: 13984,
-    raw: "GLORIFY",
-  },
-  {
-    freq: 13988,
-    raw: "DEFINED",
-  },
-  {
-    freq: 14002,
-    raw: "LEAFLET",
-  },
-  {
-    freq: 14006,
-    raw: "COOLING",
-  },
-  {
-    freq: 14009,
-    raw: "POSTING",
-  },
-  {
-    freq: 14012,
-    raw: "PADDING",
-  },
-  {
-    freq: 14025,
-    raw: "ADAPTER",
-  },
-  {
-    freq: 14026,
-    raw: "DEFLATE",
-  },
-  {
-    freq: 14029,
-    raw: "CREVICE",
-  },
-  {
-    freq: 14036,
-    raw: "CLATTER",
-  },
-  {
-    freq: 14039,
-    raw: "TARNISH",
-  },
-  {
-    freq: 14040,
-    raw: "BROWNIE",
-  },
-  {
-    freq: 14049,
-    raw: "JUMPING",
-  },
-  {
-    freq: 14051,
-    raw: "TAKE-OUT",
-    word: "TAKEOUT",
-  },
-  {
-    freq: 14057,
-    raw: "PARTING",
-  },
-  {
-    freq: 14070,
-    raw: "OUTGROW",
-  },
-  {
-    freq: 14073,
-    raw: "UNLUCKY",
-  },
-  {
-    freq: 14074,
-    raw: "CRITTER",
-  },
-  {
-    freq: 14087,
-    raw: "CUSHION",
-  },
-  {
-    freq: 14114,
-    raw: "PAYBACK",
-  },
-  {
-    freq: 14115,
-    raw: "TORMENT",
-  },
-  {
-    freq: 14117,
-    raw: "RETRACE",
-  },
-  {
-    freq: 14122,
-    raw: "SLOPING",
-  },
-  {
-    freq: 14123,
-    raw: "FRECKLE",
-  },
-  {
-    freq: 14124,
-    raw: "DIVULGE",
-  },
-  {
-    freq: 14126,
-    raw: "IMPLORE",
-  },
-  {
-    freq: 14128,
-    raw: "RECOUNT",
-  },
-  {
-    freq: 14129,
-    raw: "AUSTERE",
-  },
-  {
-    freq: 14138,
-    raw: "WRIGGLE",
-  },
-  {
-    freq: 14149,
-    raw: "TIME-OUT",
-    word: "TIMEOUT",
-  },
-  {
-    freq: 14165,
-    raw: "BLOCKER",
-  },
-  {
-    freq: 14169,
-    raw: "PREDATE",
-  },
-  {
-    freq: 14184,
-    raw: "LOOKING",
-  },
-  {
-    freq: 14186,
-    raw: "SNUGGLE",
-  },
-  {
-    freq: 14195,
-    raw: "TEEMING",
-  },
-  {
-    freq: 14198,
-    raw: "TEQUILA",
-  },
-  {
-    freq: 14202,
-    raw: "GRIZZLY",
-  },
-  {
-    freq: 14205,
-    raw: "WHISKER",
-  },
-  {
-    freq: 14206,
-    raw: "CRUNCHY",
-  },
-  {
-    freq: 14207,
-    raw: "DEVIATE",
-  },
-  {
-    freq: 14208,
-    raw: "MASCARA",
-  },
-  {
-    freq: 14234,
-    raw: "ALARMED",
-  },
-  {
-    freq: 14245,
-    raw: "IDYLLIC",
-  },
-  {
-    freq: 14250,
-    raw: "ABSTAIN",
-  },
-  {
-    freq: 14256,
-    raw: "KEYNOTE",
-  },
-  {
-    freq: 14270,
-    raw: "DIVERGE",
-  },
-  {
-    freq: 14271,
-    raw: "TACTILE",
-  },
-  {
-    freq: 14278,
-    raw: "WANTING",
-  },
-  {
-    freq: 14281,
-    raw: "SKATING",
-  },
-  {
-    freq: 14283,
-    raw: "MASKING",
-  },
-  {
-    freq: 14286,
-    raw: "DISBAND",
-  },
-  {
-    freq: 14287,
-    raw: "DEVALUE",
-  },
-  {
-    freq: 14288,
-    raw: "BONANZA",
-  },
-  {
-    freq: 14292,
-    raw: "MOCKERY",
-  },
-  {
-    freq: 14309,
-    raw: "COOLING",
-  },
-  {
-    freq: 14310,
-    raw: "IMPEACH",
-  },
-  {
-    freq: 14324,
-    raw: "WEARILY",
-  },
-  {
-    freq: 14326,
-    raw: "PRECEPT",
-  },
-  {
-    freq: 14329,
-    raw: "CHOLERA",
-  },
-  {
-    freq: 14330,
-    raw: "RETRACT",
-  },
-  {
-    freq: 14340,
-    raw: "POTHOLE",
-  },
-  {
-    freq: 14345,
-    raw: "WEIGHTY",
-  },
-  {
-    freq: 14346,
-    raw: "ONE-HOUR",
-    word: "ONEHOUR",
-  },
-  {
-    freq: 14366,
-    raw: "HAMMOCK",
-  },
-  {
-    freq: 14381,
-    raw: "RUPTURE",
-  },
-  {
-    freq: 14387,
-    raw: "INFLAME",
-  },
-  {
-    freq: 14399,
-    raw: "BRAVADO",
-  },
-  {
-    freq: 14404,
-    raw: "OPEN-AIR",
-    word: "OPENAIR",
-  },
-  {
-    freq: 14412,
-    raw: "SCREECH",
-  },
-  {
-    freq: 14417,
-    raw: "DEPLORE",
-  },
-  {
-    freq: 14422,
-    raw: "OUTLIVE",
-  },
-  {
-    freq: 14431,
-    raw: "WHIMPER",
-  },
-  {
-    freq: 14432,
-    raw: "GENITAL",
-  },
-  {
-    freq: 14448,
-    raw: "BLANKET",
-  },
-  {
-    freq: 14457,
-    raw: "WILLFUL",
-  },
-  {
-    freq: 14473,
-    raw: "BASTION",
-  },
-  {
-    freq: 14479,
-    raw: "FLORIST",
-  },
-  {
-    freq: 14480,
-    raw: "GLACIAL",
-  },
-  {
-    freq: 14489,
-    raw: "OUTCAST",
-  },
-  {
-    freq: 14491,
-    raw: "REGROUP",
-  },
-  {
-    freq: 14510,
-    raw: "BRAVELY",
-  },
-  {
-    freq: 14526,
-    raw: "WISHFUL",
-  },
-  {
-    freq: 14540,
-    raw: "CONTENT",
-  },
-  {
-    freq: 14547,
-    raw: "SOPRANO",
-  },
-  {
-    freq: 14553,
-    raw: "ENTRANT",
-  },
-  {
-    freq: 14558,
-    raw: "BREWING",
-  },
-  {
-    freq: 14559,
-    raw: "TRAFFIC",
-  },
-  {
-    freq: 14561,
-    raw: "FERVENT",
-  },
-  {
-    freq: 14567,
-    raw: "SPARROW",
-  },
-  {
-    freq: 14569,
-    raw: "SLITHER",
-  },
-  {
-    freq: 14572,
-    raw: "GHASTLY",
-  },
-  {
-    freq: 14574,
-    raw: "PROTEGE",
-  },
-  {
-    freq: 14582,
-    raw: "COMMUNE",
-  },
-  {
-    freq: 14586,
-    raw: "MARXISM",
-  },
-  {
-    freq: 14587,
-    raw: "SAWDUST",
-  },
-  {
-    freq: 14594,
-    raw: "APOSTLE",
-  },
-  {
-    freq: 14599,
-    raw: "SNAPPER",
-  },
-  {
-    freq: 14604,
-    raw: "PREEMPT",
-  },
-  {
-    freq: 14613,
-    raw: "WIDOWED",
-  },
-  {
-    freq: 14614,
-    raw: "NETWORK",
-  },
-  {
-    freq: 14634,
-    raw: "LABELED",
-  },
-  {
-    freq: 14643,
-    raw: "HAPLESS",
-  },
-  {
-    freq: 14659,
-    raw: "FOUR-DAY",
-    word: "FOURDAY",
-  },
-  {
-    freq: 14663,
-    raw: "MAJESTY",
-  },
-  {
-    freq: 14664,
-    raw: "WAYWARD",
-  },
-  {
-    freq: 14688,
-    raw: "VERTIGO",
-  },
-  {
-    freq: 14702,
-    raw: "BARRING",
-  },
-  {
-    freq: 14703,
-    raw: "PRODIGY",
-  },
-  {
-    freq: 14713,
-    raw: "MOCKING",
-  },
-  {
-    freq: 14728,
-    raw: "LUNATIC",
-  },
-  {
-    freq: 14742,
-    raw: "SEARING",
-  },
-  {
-    freq: 14755,
-    raw: "AIRLOCK",
-  },
-  {
-    freq: 14775,
-    raw: "STAMMER",
-  },
-  {
-    freq: 14783,
-    raw: "REVERIE",
-  },
-  {
-    freq: 14788,
-    raw: "INROADS",
-  },
-  {
-    freq: 14804,
-    raw: "CHARRED",
-  },
-  {
-    freq: 14810,
-    raw: "RICKETY",
-  },
-  {
-    freq: 14812,
-    raw: "STUTTER",
-  },
-  {
-    freq: 14814,
-    raw: "RECTIFY",
-  },
-  {
-    freq: 14815,
-    raw: "RUPTURE",
-  },
-  {
-    freq: 14821,
-    raw: "PAYLOAD",
-  },
-  {
-    freq: 14831,
-    raw: "DETRACT",
-  },
-  {
-    freq: 14832,
-    raw: "MIDTERM",
-  },
-  {
-    freq: 14834,
-    raw: "CARAMEL",
-  },
-  {
-    freq: 14841,
-    raw: "OVARIAN",
-  },
-  {
-    freq: 14848,
-    raw: "LEAKAGE",
-  },
-  {
-    freq: 14849,
-    raw: "FATALLY",
-  },
-  {
-    freq: 14874,
-    raw: "BALDING",
-  },
-  {
-    freq: 14879,
-    raw: "QUARREL",
-  },
-  {
-    freq: 14881,
-    raw: "FAILING",
-  },
-  {
-    freq: 14884,
-    raw: "SHIMMER",
-  },
-  {
-    freq: 14889,
-    raw: "STUBBLE",
-  },
-  {
-    freq: 14892,
-    raw: "MAYORAL",
-  },
-  {
-    freq: 14901,
-    raw: "CORDIAL",
-  },
-  {
-    freq: 14925,
-    raw: "CHICKEN",
-  },
-  {
-    freq: 14930,
-    raw: "JUKEBOX",
-  },
-  {
-    freq: 14933,
-    raw: "BRISTLE",
-  },
-  {
-    freq: 14943,
-    raw: "BOOKING",
-  },
-  {
-    freq: 14946,
-    raw: "BACKLOG",
-  },
-  {
-    freq: 14952,
-    raw: "CRYPTIC",
-  },
-  {
-    freq: 14957,
-    raw: "SOMATIC",
-  },
-  {
-    freq: 14961,
-    raw: "PARCHED",
-  },
-  {
-    freq: 14967,
-    raw: "HATEFUL",
-  },
-  {
-    freq: 14976,
-    raw: "INFIELD",
-  },
-  {
-    freq: 14987,
-    raw: "CALLING",
-  },
-  {
-    freq: 14993,
-    raw: "ROARING",
-  },
-  {
-    freq: 14997,
-    raw: "FORSAKE",
-  },
-  {
-    freq: 15027,
-    raw: "NESTING",
-  },
-  {
-    freq: 15043,
-    raw: "DEVIANT",
-  },
-  {
-    freq: 15048,
-    raw: "NETTING",
-  },
-  {
-    freq: 15051,
-    raw: "MODULAR",
-  },
-  {
-    freq: 15060,
-    raw: "CHECKER",
-  },
-  {
-    freq: 15077,
-    raw: "SOLOIST",
-  },
-  {
-    freq: 15105,
-    raw: "PRIVATE",
-  },
-  {
-    freq: 15114,
-    raw: "JOBLESS",
-  },
-  {
-    freq: 15120,
-    raw: "LIKABLE",
-  },
-  {
-    freq: 15155,
-    raw: "EDIFICE",
-  },
-  {
-    freq: 15164,
-    raw: "COUTURE",
-  },
-  {
-    freq: 15165,
-    raw: "FIVE-DAY",
-    word: "FIVEDAY",
-  },
-  {
-    freq: 15173,
-    raw: "OUTSIDE",
-  },
-  {
-    freq: 15178,
-    raw: "SWEETEN",
-  },
-  {
-    freq: 15179,
-    raw: "ODYSSEY",
-  },
-  {
-    freq: 15185,
-    raw: "PULLOUT",
-  },
-  {
-    freq: 15190,
-    raw: "SCOURGE",
-  },
-  {
-    freq: 15192,
-    raw: "COMICAL",
-  },
-  {
-    freq: 15198,
-    raw: "DUMPING",
-  },
-  {
-    freq: 15207,
-    raw: "BLANKLY",
-  },
-  {
-    freq: 15210,
-    raw: "CRIMSON",
-  },
-  {
-    freq: 15213,
-    raw: "EPITHET",
-  },
-  {
-    freq: 15227,
-    raw: "DOORMAN",
-  },
-  {
-    freq: 15232,
-    raw: "SHYNESS",
-  },
-  {
-    freq: 15234,
-    raw: "OVERLAY",
-  },
-  {
-    freq: 15238,
-    raw: "ENSLAVE",
-  },
-  {
-    freq: 15239,
-    raw: "DISCORD",
-  },
-  {
-    freq: 15264,
-    raw: "AGILITY",
-  },
-  {
-    freq: 15275,
-    raw: "HOWLING",
-  },
-  {
-    freq: 15279,
-    raw: "FAT-FREE",
-    word: "FATFREE",
-  },
-  {
-    freq: 15283,
-    raw: "SMOLDER",
-  },
-  {
-    freq: 15295,
-    raw: "WALLEYE",
-  },
-  {
-    freq: 15301,
-    raw: "BALLAST",
-  },
-  {
-    freq: 15310,
-    raw: "FOUNDER",
-  },
-  {
-    freq: 15315,
-    raw: "GRADING",
-  },
-  {
-    freq: 15319,
-    raw: "SWAGGER",
-  },
-  {
-    freq: 15322,
-    raw: "UP-FRONT",
-    word: "UPFRONT",
-  },
-  {
-    freq: 15324,
-    raw: "PREVIEW",
-  },
-  {
-    freq: 15326,
-    raw: "ETCHING",
-  },
-  {
-    freq: 15347,
-    raw: "SAUNTER",
-  },
-  {
-    freq: 15352,
-    raw: "SYNERGY",
-  },
-  {
-    freq: 15365,
-    raw: "MASONRY",
-  },
-  {
-    freq: 15366,
-    raw: "SPANISH",
-  },
-  {
-    freq: 15371,
-    raw: "CAPITOL",
-  },
-  {
-    freq: 15377,
-    raw: "CHARTER",
-  },
-  {
-    freq: 15385,
-    raw: "BESIEGE",
-  },
-  {
-    freq: 15393,
-    raw: "BLOCKED",
-  },
-  {
-    freq: 15397,
-    raw: "ROUNDUP",
-  },
-  {
-    freq: 15401,
-    raw: "THICKLY",
-  },
-  {
-    freq: 15403,
-    raw: "PROPANE",
-  },
-  {
-    freq: 15408,
-    raw: "ZIONIST",
-  },
-  {
-    freq: 15418,
-    raw: "SUBTEST",
-  },
-  {
-    freq: 15433,
-    raw: "JOGGING",
-  },
-  {
-    freq: 15448,
-    raw: "FALLACY",
-  },
-  {
-    freq: 15450,
-    raw: "ARBITER",
-  },
-  {
-    freq: 15456,
-    raw: "FORLORN",
-  },
-  {
-    freq: 15458,
-    raw: "RUBBISH",
-  },
-  {
-    freq: 15459,
-    raw: "OBLIQUE",
-  },
-  {
-    freq: 15467,
-    raw: "BAYONET",
-  },
-  {
-    freq: 15468,
-    raw: "FROSTED",
-  },
-  {
-    freq: 15469,
-    raw: "TOASTER",
-  },
-  {
-    freq: 15476,
-    raw: "AMNESIA",
-  },
-  {
-    freq: 15491,
-    raw: "SCAMPER",
-  },
-  {
-    freq: 15492,
-    raw: "DRAPERY",
-  },
-  {
-    freq: 15497,
-    raw: "OUTPACE",
-  },
-  {
-    freq: 15500,
-    raw: "RAMPAGE",
-  },
-  {
-    freq: 15532,
-    raw: "NOMADIC",
-  },
-  {
-    freq: 15537,
-    raw: "SECRETE",
-  },
-  {
-    freq: 15543,
-    raw: "CRACKLE",
-  },
-  {
-    freq: 15550,
-    raw: "HUSTLER",
-  },
-  {
-    freq: 15553,
-    raw: "MISSTEP",
-  },
-  {
-    freq: 15559,
-    raw: "FLEEING",
-  },
-  {
-    freq: 15574,
-    raw: "PAPRIKA",
-  },
-  {
-    freq: 15576,
-    raw: "CALMING",
-  },
-  {
-    freq: 15577,
-    raw: "TRUFFLE",
-  },
-  {
-    freq: 15578,
-    raw: "MID-SIZE",
-    word: "MIDSIZE",
-  },
-  {
-    freq: 15579,
-    raw: "WHITTLE",
-  },
-  {
-    freq: 15583,
-    raw: "LATTICE",
-  },
-  {
-    freq: 15591,
-    raw: "SPINNER",
-  },
-  {
-    freq: 15594,
-    raw: "STIPEND",
-  },
-  {
-    freq: 15597,
-    raw: "SPOILED",
-  },
-  {
-    freq: 15603,
-    raw: "GREASED",
-  },
-  {
-    freq: 15604,
-    raw: "TICKING",
-  },
-  {
-    freq: 15606,
-    raw: "BAND-AID",
-    word: "BANDAID",
-  },
-  {
-    freq: 15607,
-    raw: "RUNAWAY",
-  },
-  {
-    freq: 15610,
-    raw: "REDHEAD",
-  },
-  {
-    freq: 15611,
-    raw: "QUARTER",
-  },
-  {
-    freq: 15622,
-    raw: "URINATE",
-  },
-  {
-    freq: 15629,
-    raw: "BOATING",
-  },
-  {
-    freq: 15636,
-    raw: "SCALPEL",
-  },
-  {
-    freq: 15648,
-    raw: "PREMIER",
-  },
-  {
-    freq: 15657,
-    raw: "SALVAGE",
-  },
-  {
-    freq: 15672,
-    raw: "MOISTEN",
-  },
-  {
-    freq: 15685,
-    raw: "SUBSUME",
-  },
-  {
-    freq: 15687,
-    raw: "BREWERY",
-  },
-  {
-    freq: 15692,
-    raw: "OFFBEAT",
-  },
-  {
-    freq: 15697,
-    raw: "VARNISH",
-  },
-  {
-    freq: 15704,
-    raw: "KINETIC",
-  },
-  {
-    freq: 15711,
-    raw: "SATANIC",
-  },
-  {
-    freq: 15712,
-    raw: "HEINOUS",
-  },
-  {
-    freq: 15718,
-    raw: "SKIPPER",
-  },
-  {
-    freq: 15719,
-    raw: "POACHER",
-  },
-  {
-    freq: 15736,
-    raw: "BLAZING",
-  },
-  {
-    freq: 15744,
-    raw: "BLACKEN",
-  },
-  {
-    freq: 15787,
-    raw: "RETRAIN",
-  },
-  {
-    freq: 15789,
-    raw: "ENLIVEN",
-  },
-  {
-    freq: 15793,
-    raw: "SLAYING",
-  },
-  {
-    freq: 15806,
-    raw: "LOVABLE",
-  },
-  {
-    freq: 15808,
-    raw: "BUOYANT",
-  },
-  {
-    freq: 15815,
-    raw: "CHARGED",
-  },
-  {
-    freq: 15823,
-    raw: "CENSURE",
-  },
-  {
-    freq: 15832,
-    raw: "NEWBORN",
-  },
-  {
-    freq: 15837,
-    raw: "WISTFUL",
-  },
-  {
-    freq: 15849,
-    raw: "MOTTLED",
-  },
-  {
-    freq: 15866,
-    raw: "SUCTION",
-  },
-  {
-    freq: 15871,
-    raw: "TREETOP",
-  },
-  {
-    freq: 15878,
-    raw: "ISOTOPE",
-  },
-  {
-    freq: 15879,
-    raw: "FISSURE",
-  },
-  {
-    freq: 15881,
-    raw: "ALFALFA",
-  },
-  {
-    freq: 15896,
-    raw: "PERPLEX",
-  },
-  {
-    freq: 15898,
-    raw: "INTERIM",
-  },
-  {
-    freq: 15904,
-    raw: "PHANTOM",
-  },
-  {
-    freq: 15906,
-    raw: "WELDING",
-  },
-  {
-    freq: 15908,
-    raw: "ENVIOUS",
-  },
-  {
-    freq: 15921,
-    raw: "COLOGNE",
-  },
-  {
-    freq: 15926,
-    raw: "MALAISE",
-  },
-  {
-    freq: 15927,
-    raw: "GNARLED",
-  },
-  {
-    freq: 15930,
-    raw: "NOXIOUS",
-  },
-  {
-    freq: 15931,
-    raw: "SHAKING",
-  },
-  {
-    freq: 15935,
-    raw: "DEFUNCT",
-  },
-  {
-    freq: 15937,
-    raw: "AEROSOL",
-  },
-  {
-    freq: 15943,
-    raw: "UPSTART",
-  },
-  {
-    freq: 15945,
-    raw: "ONEROUS",
-  },
-  {
-    freq: 15947,
-    raw: "AGONIZE",
-  },
-  {
-    freq: 15951,
-    raw: "NEMESIS",
-  },
-  {
-    freq: 15954,
-    raw: "BICYCLE",
-  },
-  {
-    freq: 15958,
-    raw: "PEACOCK",
-  },
-  {
-    freq: 15969,
-    raw: "GIRAFFE",
-  },
-  {
-    freq: 15970,
-    raw: "SKYWARD",
-  },
-  {
-    freq: 15990,
-    raw: "LENTILS",
-  },
-  {
-    freq: 15999,
-    raw: "GARLAND",
-  },
-  {
-    freq: 16007,
-    raw: "OCTOPUS",
-  },
-  {
-    freq: 16011,
-    raw: "SARDINE",
-  },
-  {
-    freq: 16012,
-    raw: "BRAIDED",
-  },
-  {
-    freq: 16017,
-    raw: "CREATED",
-  },
-  {
-    freq: 16022,
-    raw: "PLACARD",
-  },
-  {
-    freq: 16027,
-    raw: "TOENAIL",
-  },
-  {
-    freq: 16031,
-    raw: "DISOBEY",
-  },
-  {
-    freq: 16042,
-    raw: "GOLFING",
-  },
-  {
-    freq: 16049,
-    raw: "TOUGHEN",
-  },
-  {
-    freq: 16051,
-    raw: "STERNLY",
-  },
-  {
-    freq: 16060,
-    raw: "BEMUSED",
-  },
-  {
-    freq: 16067,
-    raw: "INHUMAN",
-  },
-  {
-    freq: 16068,
-    raw: "NIGHTLY",
-  },
-  {
-    freq: 16069,
-    raw: "PROFFER",
-  },
-  {
-    freq: 16073,
-    raw: "SPACING",
-  },
-  {
-    freq: 16075,
-    raw: "PRE-DAWN",
-    word: "PREDAWN",
-  },
-  {
-    freq: 16076,
-    raw: "COMMONS",
-  },
-  {
-    freq: 16080,
-    raw: "CONSIGN",
-  },
-  {
-    freq: 16089,
-    raw: "HEADWAY",
-  },
-  {
-    freq: 16094,
-    raw: "LAUNDER",
-  },
-  {
-    freq: 16097,
-    raw: "TERRIER",
-  },
-  {
-    freq: 16098,
-    raw: "SOULFUL",
-  },
-  {
-    freq: 16100,
-    raw: "PARTAKE",
-  },
-  {
-    freq: 16104,
-    raw: "AVIATOR",
-  },
-  {
-    freq: 16107,
-    raw: "INKLING",
-  },
-  {
-    freq: 16109,
-    raw: "BROILER",
-  },
-  {
-    freq: 16112,
-    raw: "EMBROIL",
-  },
-  {
-    freq: 16113,
-    raw: "MONTAGE",
-  },
-  {
-    freq: 16117,
-    raw: "CLOSE-UP",
-    word: "CLOSEUP",
-  },
-  {
-    freq: 16124,
-    raw: "RELIANT",
-  },
-  {
-    freq: 16126,
-    raw: "WHALING",
-  },
-  {
-    freq: 16149,
-    raw: "SLUMBER",
-  },
-  {
-    freq: 16152,
-    raw: "CANTEEN",
-  },
-  {
-    freq: 16176,
-    raw: "ABIDING",
-  },
-  {
-    freq: 16195,
-    raw: "TENDRIL",
-  },
-  {
-    freq: 16197,
-    raw: "SEVERED",
-  },
-  {
-    freq: 16201,
-    raw: "AIRFARE",
-  },
-  {
-    freq: 16209,
-    raw: "RE-ENTRY",
-    word: "REENTRY",
-  },
-  {
-    freq: 16217,
-    raw: "STAMPED",
-  },
-  {
-    freq: 16223,
-    raw: "ORGANIC",
-  },
-  {
-    freq: 16233,
-    raw: "CURSORY",
-  },
-  {
-    freq: 16234,
-    raw: "ROOFING",
-  },
-  {
-    freq: 16239,
-    raw: "BUZZING",
-  },
-  {
-    freq: 16241,
-    raw: "SURNAME",
-  },
-  {
-    freq: 16247,
-    raw: "SAPLING",
-  },
-  {
-    freq: 16259,
-    raw: "CLATTER",
-  },
-  {
-    freq: 16266,
-    raw: "KIDDING",
-  },
-  {
-    freq: 16283,
-    raw: "DOGWOOD",
-  },
-  {
-    freq: 16285,
-    raw: "STACKED",
-  },
-  {
-    freq: 16286,
-    raw: "WIDOWER",
-  },
-  {
-    freq: 16292,
-    raw: "INVOICE",
-  },
-  {
-    freq: 16302,
-    raw: "LITHIUM",
-  },
-  {
-    freq: 16305,
-    raw: "SAMPLER",
-  },
-  {
-    freq: 16307,
-    raw: "DARLING",
-  },
-  {
-    freq: 16311,
-    raw: "POLENTA",
-  },
-  {
-    freq: 16318,
-    raw: "GENESIS",
-  },
-  {
-    freq: 16330,
-    raw: "DIE-HARD",
-    word: "DIEHARD",
-  },
-  {
-    freq: 16333,
-    raw: "DEFAULT",
-  },
-  {
-    freq: 16354,
-    raw: "GONDOLA",
-  },
-  {
-    freq: 16360,
-    raw: "AMIABLE",
-  },
-  {
-    freq: 16363,
-    raw: "ISSUING",
-  },
-  {
-    freq: 16374,
-    raw: "EPITOME",
-  },
-  {
-    freq: 16375,
-    raw: "PREMIER",
-  },
-  {
-    freq: 16378,
-    raw: "DEMONIC",
-  },
-  {
-    freq: 16384,
-    raw: "PRETZEL",
-  },
-  {
-    freq: 16387,
-    raw: "HURTFUL",
-  },
-  {
-    freq: 16394,
-    raw: "CHARIOT",
-  },
-  {
-    freq: 16395,
-    raw: "STEEPLY",
-  },
-  {
-    freq: 16401,
-    raw: "TREATED",
-  },
-  {
-    freq: 16408,
-    raw: "GRIMACE",
-  },
-  {
-    freq: 16417,
-    raw: "TRIPLET",
-  },
-  {
-    freq: 16421,
-    raw: "RECLINE",
-  },
-  {
-    freq: 16424,
-    raw: "MISREAD",
-  },
-  {
-    freq: 16425,
-    raw: "TOP-DOWN",
-    word: "TOPDOWN",
-  },
-  {
-    freq: 16442,
-    raw: "TRAPPER",
-  },
-  {
-    freq: 16447,
-    raw: "MACHETE",
-  },
-  {
-    freq: 16450,
-    raw: "PANACEA",
-  },
-  {
-    freq: 16454,
-    raw: "SOUNDLY",
-  },
-  {
-    freq: 16456,
-    raw: "ANCHOVY",
-  },
-  {
-    freq: 16461,
-    raw: "POWERED",
-  },
-  {
-    freq: 16472,
-    raw: "PREGAME",
-  },
-  {
-    freq: 16475,
-    raw: "CHEWING",
-  },
-  {
-    freq: 16479,
-    raw: "WEEPING",
-  },
-  {
-    freq: 16486,
-    raw: "ALRIGHT",
-  },
-  {
-    freq: 16488,
-    raw: "CO-WRITE",
-    word: "COWRITE",
-  },
-  {
-    freq: 16493,
-    raw: "PRUNING",
-  },
-  {
-    freq: 16494,
-    raw: "RELAPSE",
-  },
-  {
-    freq: 16495,
-    raw: "GENTEEL",
-  },
-  {
-    freq: 16497,
-    raw: "TWO-PART",
-    word: "TWOPART",
-  },
-  {
-    freq: 16502,
-    raw: "BURRITO",
-  },
-  {
-    freq: 16505,
-    raw: "UNDERLY",
-  },
-  {
-    freq: 16521,
-    raw: "BLOGGER",
-  },
-  {
-    freq: 16543,
-    raw: "CONCISE",
-  },
-  {
-    freq: 16546,
-    raw: "ZEALOUS",
-  },
-  {
-    freq: 16547,
-    raw: "HANGOUT",
-  },
-  {
-    freq: 16564,
-    raw: "PLUNDER",
-  },
-  {
-    freq: 16565,
-    raw: "CATERER",
-  },
-  {
-    freq: 16568,
-    raw: "CAPITAL",
-  },
-  {
-    freq: 16579,
-    raw: "SKETCHY",
-  },
-  {
-    freq: 16581,
-    raw: "STUDIED",
-  },
-  {
-    freq: 16603,
-    raw: "SELLOUT",
-  },
-  {
-    freq: 16604,
-    raw: "SUNDOWN",
-  },
-  {
-    freq: 16613,
-    raw: "SMARTLY",
-  },
-  {
-    freq: 16614,
-    raw: "ASSUMED",
-  },
-  {
-    freq: 16620,
-    raw: "LEXICON",
-  },
-  {
-    freq: 16623,
-    raw: "MOLDING",
-  },
-  {
-    freq: 16624,
-    raw: "CUTTING",
-  },
-  {
-    freq: 16644,
-    raw: "OFF-ROAD",
-    word: "OFFROAD",
-  },
-  {
-    freq: 16652,
-    raw: "BASSIST",
-  },
-  {
-    freq: 16657,
-    raw: "JASMINE",
-  },
-  {
-    freq: 16666,
-    raw: "TEASING",
-  },
-  {
-    freq: 16672,
-    raw: "LEAGUER",
-  },
-  {
-    freq: 16673,
-    raw: "TELECOM",
-  },
-  {
-    freq: 16678,
-    raw: "LENIENT",
-  },
-  {
-    freq: 16679,
-    raw: "PLACATE",
-  },
-  {
-    freq: 16684,
-    raw: "ENGROSS",
-  },
-  {
-    freq: 16703,
-    raw: "SUBTEXT",
-  },
-  {
-    freq: 16717,
-    raw: "KUWAITI",
-  },
-  {
-    freq: 16719,
-    raw: "RIGIDLY",
-  },
-  {
-    freq: 16730,
-    raw: "BALLOON",
-  },
-  {
-    freq: 16731,
-    raw: "CHAGRIN",
-  },
-  {
-    freq: 16737,
-    raw: "RE-ENACT",
-    word: "REENACT",
-  },
-  {
-    freq: 16740,
-    raw: "RESCIND",
-  },
-  {
-    freq: 16742,
-    raw: "VINTAGE",
-  },
-  {
-    freq: 16751,
-    raw: "DICTATE",
-  },
-  {
-    freq: 16754,
-    raw: "TAINTED",
-  },
-  {
-    freq: 16756,
-    raw: "POETICS",
-  },
-  {
-    freq: 16762,
-    raw: "TASTING",
-  },
-  {
-    freq: 16763,
-    raw: "TRACKER",
-  },
-  {
-    freq: 16769,
-    raw: "NOISILY",
-  },
-  {
-    freq: 16770,
-    raw: "SHRIVEL",
-  },
-  {
-    freq: 16771,
-    raw: "IMPRINT",
-  },
-  {
-    freq: 16772,
-    raw: "GYMNAST",
-  },
-  {
-    freq: 16777,
-    raw: "BAROQUE",
-  },
-  {
-    freq: 16780,
-    raw: "LEAVING",
-  },
-  {
-    freq: 16782,
-    raw: "CATWALK",
-  },
-  {
-    freq: 16799,
-    raw: "ERODING",
-  },
-  {
-    freq: 16805,
-    raw: "SOJOURN",
-  },
-  {
-    freq: 16808,
-    raw: "BONDAGE",
-  },
-  {
-    freq: 16820,
-    raw: "DUALITY",
-  },
-  {
-    freq: 16821,
-    raw: "HITTING",
-  },
-  {
-    freq: 16837,
-    raw: "STARKLY",
-  },
-  {
-    freq: 16841,
-    raw: "AFFABLE",
-  },
-  {
-    freq: 16843,
-    raw: "AT-LARGE",
-    word: "ATLARGE",
-  },
-  {
-    freq: 16848,
-    raw: "AL-QAEDA",
-    word: "ALQAEDA",
-  },
-  {
-    freq: 16849,
-    raw: "SHUTTLE",
-  },
-  {
-    freq: 16855,
-    raw: "URINARY",
-  },
-  {
-    freq: 16866,
-    raw: "COMPACT",
-  },
-  {
-    freq: 16873,
-    raw: "TRAPPED",
-  },
-  {
-    freq: 16880,
-    raw: "FALSIFY",
-  },
-  {
-    freq: 16881,
-    raw: "MAGNATE",
-  },
-  {
-    freq: 16883,
-    raw: "AFFRONT",
-  },
-  {
-    freq: 16894,
-    raw: "CHECHEN",
-  },
-  {
-    freq: 16896,
-    raw: "GELATIN",
-  },
-  {
-    freq: 16908,
-    raw: "CLEANLY",
-  },
-  {
-    freq: 16915,
-    raw: "CREWMAN",
-  },
-  {
-    freq: 16917,
-    raw: "SETTLED",
-  },
-  {
-    freq: 16929,
-    raw: "RISOTTO",
-  },
-  {
-    freq: 16930,
-    raw: "DIGGING",
-  },
-  {
-    freq: 16944,
-    raw: "ROUSING",
-  },
-  {
-    freq: 16948,
-    raw: "EARSHOT",
-  },
-  {
-    freq: 16954,
-    raw: "STIR-FRY",
-    word: "STIRFRY",
-  },
-  {
-    freq: 16960,
-    raw: "CO-CHAIR",
-    word: "COCHAIR",
-  },
-  {
-    freq: 16966,
-    raw: "RAPTURE",
-  },
-  {
-    freq: 16976,
-    raw: "ORDERED",
-  },
-  {
-    freq: 16983,
-    raw: "RUNDOWN",
-  },
-  {
-    freq: 16994,
-    raw: "CONIFER",
-  },
-  {
-    freq: 17009,
-    raw: "ABANDON",
-  },
-  {
-    freq: 17019,
-    raw: "SNIPPET",
-  },
-  {
-    freq: 17039,
-    raw: "READOUT",
-  },
-  {
-    freq: 17045,
-    raw: "TOPLESS",
-  },
-  {
-    freq: 17047,
-    raw: "MILLING",
-  },
-  {
-    freq: 17057,
-    raw: "MOBSTER",
-  },
-  {
-    freq: 17059,
-    raw: "DEAD-END",
-    word: "DEADEND",
-  },
-  {
-    freq: 17064,
-    raw: "ABREAST",
-  },
-  {
-    freq: 17074,
-    raw: "BETTING",
-  },
-  {
-    freq: 17078,
-    raw: "EXPOUND",
-  },
-  {
-    freq: 17083,
-    raw: "FIREFLY",
-  },
-  {
-    freq: 17085,
-    raw: "ADJOURN",
-  },
-  {
-    freq: 17090,
-    raw: "SAFFRON",
-  },
-  {
-    freq: 17102,
-    raw: "VALIANT",
-  },
-  {
-    freq: 17103,
-    raw: "SLUGGER",
-  },
-  {
-    freq: 17108,
-    raw: "REPRINT",
-  },
-  {
-    freq: 17110,
-    raw: "GRANDPA",
-  },
-  {
-    freq: 17121,
-    raw: "CALLOUS",
-  },
-  {
-    freq: 17129,
-    raw: "OUTFLOW",
-  },
-  {
-    freq: 17131,
-    raw: "FORGERY",
-  },
-  {
-    freq: 17144,
-    raw: "EVASIVE",
-  },
-  {
-    freq: 17157,
-    raw: "STORIED",
-  },
-  {
-    freq: 17167,
-    raw: "CUPCAKE",
-  },
-  {
-    freq: 17175,
-    raw: "BULLISH",
-  },
-  {
-    freq: 17187,
-    raw: "MONSOON",
-  },
-  {
-    freq: 17194,
-    raw: "MAMMOTH",
-  },
-  {
-    freq: 17198,
-    raw: "RHUBARB",
-  },
-  {
-    freq: 17218,
-    raw: "TWINKLE",
-  },
-  {
-    freq: 17236,
-    raw: "SKITTER",
-  },
-  {
-    freq: 17243,
-    raw: "TEARFUL",
-  },
-  {
-    freq: 17248,
-    raw: "BUTCHER",
-  },
-  {
-    freq: 17249,
-    raw: "JACKPOT",
-  },
-  {
-    freq: 17257,
-    raw: "INVERSE",
-  },
-  {
-    freq: 17265,
-    raw: "BIG-CITY",
-    word: "BIGCITY",
-  },
-  {
-    freq: 17266,
-    raw: "PANTHER",
-  },
-  {
-    freq: 17267,
-    raw: "ENRAGED",
-  },
-  {
-    freq: 17268,
-    raw: "LEASING",
-  },
-  {
-    freq: 17272,
-    raw: "PEDDLER",
-  },
-  {
-    freq: 17273,
-    raw: "REDRESS",
-  },
-  {
-    freq: 17275,
-    raw: "DRIVE-IN",
-    word: "DRIVEIN",
-  },
-  {
-    freq: 17277,
-    raw: "OPULENT",
-  },
-  {
-    freq: 17315,
-    raw: "SUMMONS",
-  },
-  {
-    freq: 17318,
-    raw: "PAUCITY",
-  },
-  {
-    freq: 17323,
-    raw: "REVERED",
-  },
-  {
-    freq: 17326,
-    raw: "STANDBY",
-  },
-  {
-    freq: 17334,
-    raw: "BREAK-IN",
-    word: "BREAKIN",
-  },
-  {
-    freq: 17345,
-    raw: "CADAVER",
-  },
-  {
-    freq: 17349,
-    raw: "KARAOKE",
-  },
-  {
-    freq: 17383,
-    raw: "GRAZING",
-  },
-  {
-    freq: 17386,
-    raw: "ASSUAGE",
-  },
-  {
-    freq: 17394,
-    raw: "RESTATE",
-  },
-  {
-    freq: 17415,
-    raw: "ECHELON",
-  },
-  {
-    freq: 17416,
-    raw: "SUNBURN",
-  },
-  {
-    freq: 17423,
-    raw: "PENANCE",
-  },
-  {
-    freq: 17424,
-    raw: "ONE-ROOM",
-    word: "ONEROOM",
-  },
-  {
-    freq: 17425,
-    raw: "EARMARK",
-  },
-  {
-    freq: 17444,
-    raw: "ADORING",
-  },
-  {
-    freq: 17448,
-    raw: "FLOODED",
-  },
-  {
-    freq: 17452,
-    raw: "NUANCED",
-  },
-  {
-    freq: 17459,
-    raw: "EXALTED",
-  },
-  {
-    freq: 17475,
-    raw: "BOUNCER",
-  },
-  {
-    freq: 17480,
-    raw: "SQUEAKY",
-  },
-  {
-    freq: 17487,
-    raw: "NAIVETE",
-  },
-  {
-    freq: 17493,
-    raw: "PLAYING",
-  },
-  {
-    freq: 17495,
-    raw: "FIBROUS",
-  },
-  {
-    freq: 17496,
-    raw: "LASAGNA",
-  },
-  {
-    freq: 17500,
-    raw: "OUTLAST",
-  },
-  {
-    freq: 17503,
-    raw: "SCRUFFY",
-  },
-  {
-    freq: 17506,
-    raw: "BEGGING",
-  },
-  {
-    freq: 17516,
-    raw: "SCENTED",
-  },
-  {
-    freq: 17525,
-    raw: "MOVABLE",
-  },
-  {
-    freq: 17527,
-    raw: "SAGGING",
-  },
-  {
-    freq: 17531,
-    raw: "UNITARY",
-  },
-  {
-    freq: 17533,
-    raw: "SIX-PACK",
-    word: "SIXPACK",
-  },
-  {
-    freq: 17535,
-    raw: "SCRAWNY",
-  },
-  {
-    freq: 17536,
-    raw: "TRELLIS",
-  },
-  {
-    freq: 17546,
-    raw: "GOBBLER",
-  },
-  {
-    freq: 17561,
-    raw: "SENSING",
-  },
-  {
-    freq: 17565,
-    raw: "PROGENY",
-  },
-  {
-    freq: 17566,
-    raw: "PRONOUN",
-  },
-  {
-    freq: 17568,
-    raw: "RIOTING",
-  },
-  {
-    freq: 17571,
-    raw: "ORBITER",
-  },
-  {
-    freq: 17573,
-    raw: "JITTERY",
-  },
-  {
-    freq: 17574,
-    raw: "SATCHEL",
-  },
-  {
-    freq: 17576,
-    raw: "STUNTED",
-  },
-  {
-    freq: 17580,
-    raw: "AMPUTEE",
-  },
-  {
-    freq: 17585,
-    raw: "BLOWOUT",
-  },
-  {
-    freq: 17594,
-    raw: "TOPSOIL",
-  },
-  {
-    freq: 17604,
-    raw: "STALKER",
-  },
-  {
-    freq: 17623,
-    raw: "SYNONYM",
-  },
-  {
-    freq: 17630,
-    raw: "ENTWINE",
-  },
-  {
-    freq: 17632,
-    raw: "REGRESS",
-  },
-  {
-    freq: 17637,
-    raw: "ANTIGEN",
-  },
-  {
-    freq: 17663,
-    raw: "VENISON",
-  },
-  {
-    freq: 17669,
-    raw: "INCENSE",
-  },
-  {
-    freq: 17688,
-    raw: "DRIVE-BY",
-    word: "DRIVEBY",
-  },
-  {
-    freq: 17724,
-    raw: "TUBULAR",
-  },
-  {
-    freq: 17726,
-    raw: "HALIBUT",
-  },
-  {
-    freq: 17730,
-    raw: "ALCHEMY",
-  },
-  {
-    freq: 17737,
-    raw: "SPILLED",
-  },
-  {
-    freq: 17744,
-    raw: "GRATING",
-  },
-  {
-    freq: 17753,
-    raw: "POMPOUS",
-  },
-  {
-    freq: 17756,
-    raw: "NECKTIE",
-  },
-  {
-    freq: 17761,
-    raw: "ABSOLVE",
-  },
-  {
-    freq: 17765,
-    raw: "NULLIFY",
-  },
-  {
-    freq: 17766,
-    raw: "CRUCIFY",
-  },
-  {
-    freq: 17768,
-    raw: "UTERINE",
-  },
-  {
-    freq: 17769,
-    raw: "WEDLOCK",
-  },
-  {
-    freq: 17771,
-    raw: "DOCKING",
-  },
-  {
-    freq: 17774,
-    raw: "RAFTING",
-  },
-  {
-    freq: 17777,
-    raw: "MATINEE",
-  },
-  {
-    freq: 17783,
-    raw: "WEEPING",
-  },
-  {
-    freq: 17786,
-    raw: "THROUGH",
-  },
-  {
-    freq: 17789,
-    raw: "GALLANT",
-  },
-  {
-    freq: 17791,
-    raw: "DECORUM",
-  },
-  {
-    freq: 17803,
-    raw: "PURSUER",
-  },
-  {
-    freq: 17807,
-    raw: "LIQUEUR",
-  },
-  {
-    freq: 17813,
-    raw: "SUFFUSE",
-  },
-  {
-    freq: 17814,
-    raw: "SHIMMER",
-  },
-  {
-    freq: 17818,
-    raw: "LAWLESS",
-  },
-  {
-    freq: 17826,
-    raw: "AMALGAM",
-  },
-  {
-    freq: 17832,
-    raw: "THERMOS",
-  },
-  {
-    freq: 17834,
-    raw: "TUMBLER",
-  },
-  {
-    freq: 17835,
-    raw: "VELVETY",
-  },
-  {
-    freq: 17838,
-    raw: "SHUFFLE",
-  },
-  {
-    freq: 17845,
-    raw: "LOW-WAGE",
-    word: "LOWWAGE",
-  },
-  {
-    freq: 17851,
-    raw: "FRAILTY",
-  },
-  {
-    freq: 17858,
-    raw: "MAESTRO",
-  },
-  {
-    freq: 17876,
-    raw: "DUNGEON",
-  },
-  {
-    freq: 17884,
-    raw: "SPOUSAL",
-  },
-  {
-    freq: 17896,
-    raw: "HULKING",
-  },
-  {
-    freq: 17901,
-    raw: "THEOREM",
-  },
-  {
-    freq: 17902,
-    raw: "MAXIMAL",
-  },
-  {
-    freq: 17916,
-    raw: "CO-PILOT",
-    word: "COPILOT",
-  },
-  {
-    freq: 17917,
-    raw: "FLOURED",
-  },
-  {
-    freq: 17925,
-    raw: "CABARET",
-  },
-  {
-    freq: 17927,
-    raw: "SHALLOW",
-  },
-  {
-    freq: 17932,
-    raw: "PEPTIDE",
-  },
-  {
-    freq: 17935,
-    raw: "DEFRAUD",
-  },
-  {
-    freq: 17940,
-    raw: "GODDAMN",
-  },
-  {
-    freq: 17945,
-    raw: "COURTLY",
-  },
-  {
-    freq: 17953,
-    raw: "SUBSIST",
-  },
-  {
-    freq: 17961,
-    raw: "CHEDDAR",
-  },
-  {
-    freq: 17967,
-    raw: "LOCKOUT",
-  },
-  {
-    freq: 18000,
-    raw: "SHAPING",
-  },
-  {
-    freq: 18014,
-    raw: "RUMPLED",
-  },
-  {
-    freq: 18015,
-    raw: "SHAPING",
-  },
-  {
-    freq: 18039,
-    raw: "TOOLBOX",
-  },
-  {
-    freq: 18058,
-    raw: "MONIKER",
-  },
-  {
-    freq: 18068,
-    raw: "UNICORN",
-  },
-  {
-    freq: 18094,
-    raw: "REDNECK",
-  },
-  {
-    freq: 18096,
-    raw: "FILMING",
-  },
-  {
-    freq: 18111,
-    raw: "HEARSAY",
-  },
-  {
-    freq: 18112,
-    raw: "RAVAGES",
-  },
-  {
-    freq: 18113,
-    raw: "IDIOTIC",
-  },
-  {
-    freq: 18122,
-    raw: "SHACKLE",
-  },
-  {
-    freq: 18127,
-    raw: "COPIOUS",
-  },
-  {
-    freq: 18131,
-    raw: "RICOTTA",
-  },
-  {
-    freq: 18136,
-    raw: "KEYWORD",
-  },
-  {
-    freq: 18139,
-    raw: "TEN-YEAR",
-    word: "TENYEAR",
-  },
-  {
-    freq: 18141,
-    raw: "THISTLE",
-  },
-  {
-    freq: 18159,
-    raw: "CANNING",
-  },
-  {
-    freq: 18164,
-    raw: "DISAVOW",
-  },
-  {
-    freq: 18173,
-    raw: "FLUTTER",
-  },
-  {
-    freq: 18175,
-    raw: "SORCERY",
-  },
-  {
-    freq: 18179,
-    raw: "CONTORT",
-  },
-  {
-    freq: 18183,
-    raw: "INGRAIN",
-  },
-  {
-    freq: 18184,
-    raw: "SMASHED",
-  },
-  {
-    freq: 18190,
-    raw: "WAYSIDE",
-  },
-  {
-    freq: 18195,
-    raw: "MATCHED",
-  },
-  {
-    freq: 18196,
-    raw: "WARMING",
-  },
-  {
-    freq: 18201,
-    raw: "SAVANNA",
-  },
-  {
-    freq: 18212,
-    raw: "HEMLOCK",
-  },
-  {
-    freq: 18219,
-    raw: "CHIFFON",
-  },
-  {
-    freq: 18223,
-    raw: "ENCHANT",
-  },
-  {
-    freq: 18228,
-    raw: "ACIDITY",
-  },
-  {
-    freq: 18234,
-    raw: "ENTHUSE",
-  },
-  {
-    freq: 18247,
-    raw: "INVALID",
-  },
-  {
-    freq: 18254,
-    raw: "LACQUER",
-  },
-  {
-    freq: 18260,
-    raw: "HOLDOUT",
-  },
-  {
-    freq: 18266,
-    raw: "MARCHER",
-  },
-  {
-    freq: 18267,
-    raw: "WANNABE",
-  },
-  {
-    freq: 18275,
-    raw: "IMPERIL",
-  },
-  {
-    freq: 18288,
-    raw: "PURVIEW",
-  },
-  {
-    freq: 18294,
-    raw: "LULLABY",
-  },
-  {
-    freq: 18296,
-    raw: "SLATHER",
-  },
-  {
-    freq: 18298,
-    raw: "SHACKLE",
-  },
-  {
-    freq: 18304,
-    raw: "PICKLED",
-  },
-  {
-    freq: 18312,
-    raw: "SHIFTER",
-  },
-  {
-    freq: 18325,
-    raw: "REDNESS",
-  },
-  {
-    freq: 18329,
-    raw: "BUTTERY",
-  },
-  {
-    freq: 18331,
-    raw: "TWO-LANE",
-    word: "TWOLANE",
-  },
-  {
-    freq: 18338,
-    raw: "TWOFOLD",
-  },
-  {
-    freq: 18339,
-    raw: "MISDEED",
-  },
-  {
-    freq: 18341,
-    raw: "ELATION",
-  },
-  {
-    freq: 18345,
-    raw: "ANCIENT",
-  },
-  {
-    freq: 18346,
-    raw: "JITTERS",
-  },
-  {
-    freq: 18347,
-    raw: "BLURRED",
-  },
-  {
-    freq: 18349,
-    raw: "BLEMISH",
-  },
-  {
-    freq: 18354,
-    raw: "SANDBAG",
-  },
-  {
-    freq: 18360,
-    raw: "DRYNESS",
-  },
-  {
-    freq: 18363,
-    raw: "IMPLODE",
-  },
-  {
-    freq: 18374,
-    raw: "POLEMIC",
-  },
-  {
-    freq: 18375,
-    raw: "WROUGHT",
-  },
-  {
-    freq: 18393,
-    raw: "DENIZEN",
-  },
-  {
-    freq: 18403,
-    raw: "COBBLER",
-  },
-  {
-    freq: 18404,
-    raw: "TRAVAIL",
-  },
-  {
-    freq: 18408,
-    raw: "HERETIC",
-  },
-  {
-    freq: 18410,
-    raw: "CONNOTE",
-  },
-  {
-    freq: 18413,
-    raw: "ANGELIC",
-  },
-  {
-    freq: 18434,
-    raw: "PROFANE",
-  },
-  {
-    freq: 18442,
-    raw: "BIG-NAME",
-    word: "BIGNAME",
-  },
-  {
-    freq: 18450,
-    raw: "DEADPAN",
-  },
-  {
-    freq: 18453,
-    raw: "FESTOON",
-  },
-  {
-    freq: 18465,
-    raw: "UPTIGHT",
-  },
-  {
-    freq: 18473,
-    raw: "BLENDED",
-  },
-  {
-    freq: 18476,
-    raw: "CYANIDE",
-  },
-  {
-    freq: 18481,
-    raw: "PHANTOM",
-  },
-  {
-    freq: 18484,
-    raw: "TRANSOM",
-  },
-  {
-    freq: 18493,
-    raw: "NOTEPAD",
-  },
-  {
-    freq: 18501,
-    raw: "FERMENT",
-  },
-  {
-    freq: 18506,
-    raw: "E-MAILED",
-    word: "EMAILED",
-  },
-  {
-    freq: 18509,
-    raw: "MERMAID",
-  },
-  {
-    freq: 18517,
-    raw: "CHIPPED",
-  },
-  {
-    freq: 18518,
-    raw: "STOPPER",
-  },
-  {
-    freq: 18523,
-    raw: "PEELING",
-  },
-  {
-    freq: 18533,
-    raw: "SHUTOUT",
-  },
-  {
-    freq: 18551,
-    raw: "TRINKET",
-  },
-  {
-    freq: 18553,
-    raw: "DISDAIN",
-  },
-  {
-    freq: 18566,
-    raw: "PREPAID",
-  },
-  {
-    freq: 18569,
-    raw: "CONCEIT",
-  },
-  {
-    freq: 18576,
-    raw: "GRATIFY",
-  },
-  {
-    freq: 18594,
-    raw: "YIDDISH",
-  },
-  {
-    freq: 18597,
-    raw: "MYSTIFY",
-  },
-  {
-    freq: 18618,
-    raw: "HATCHET",
-  },
-  {
-    freq: 18624,
-    raw: "INSULAR",
-  },
-  {
-    freq: 18629,
-    raw: "BELATED",
-  },
-  {
-    freq: 18630,
-    raw: "INFIDEL",
-  },
-  {
-    freq: 18636,
-    raw: "DRIZZLE",
-  },
-  {
-    freq: 18641,
-    raw: "OVERLAY",
-  },
-  {
-    freq: 18644,
-    raw: "HALTING",
-  },
-  {
-    freq: 18649,
-    raw: "CURRANT",
-  },
-  {
-    freq: 18658,
-    raw: "OVEREAT",
-  },
-  {
-    freq: 18663,
-    raw: "CRUELLY",
-  },
-  {
-    freq: 18686,
-    raw: "BEEHIVE",
-  },
-  {
-    freq: 18688,
-    raw: "CARRY-ON",
-    word: "CARRYON",
-  },
-  {
-    freq: 18692,
-    raw: "MAGENTA",
-  },
-  {
-    freq: 18693,
-    raw: "LEGGING",
-  },
-  {
-    freq: 18702,
-    raw: "WINDROW",
-  },
-  {
-    freq: 18710,
-    raw: "RAVIOLI",
-  },
-  {
-    freq: 18719,
-    raw: "BEQUEST",
-  },
-  {
-    freq: 18720,
-    raw: "REPAINT",
-  },
-  {
-    freq: 18721,
-    raw: "FURTIVE",
-  },
-  {
-    freq: 18722,
-    raw: "DASHING",
-  },
-  {
-    freq: 18727,
-    raw: "ALL-STAR",
-    word: "ALLSTAR",
-  },
-  {
-    freq: 18744,
-    raw: "LOW-TECH",
-    word: "LOWTECH",
-  },
-  {
-    freq: 18745,
-    raw: "OFF-DUTY",
-    word: "OFFDUTY",
-  },
-  {
-    freq: 18753,
-    raw: "MEASLES",
-  },
-  {
-    freq: 18766,
-    raw: "CYCLONE",
-  },
-  {
-    freq: 18768,
-    raw: "WORN-OUT",
-    word: "WORNOUT",
-  },
-  {
-    freq: 18773,
-    raw: "GROUPIE",
-  },
-  {
-    freq: 18775,
-    raw: "STEEPLE",
-  },
-  {
-    freq: 18787,
-    raw: "CO-FOUND",
-    word: "COFOUND",
-  },
-  {
-    freq: 18808,
-    raw: "EARTHEN",
-  },
-  {
-    freq: 18816,
-    raw: "RANSACK",
-  },
-  {
-    freq: 18820,
-    raw: "UPRIVER",
-  },
-  {
-    freq: 18855,
-    raw: "HUMANLY",
-  },
-  {
-    freq: 18857,
-    raw: "SCRUNCH",
-  },
-  {
-    freq: 18872,
-    raw: "BOARDER",
-  },
-  {
-    freq: 18882,
-    raw: "CRUDELY",
-  },
-  {
-    freq: 18918,
-    raw: "UNSCREW",
-  },
-  {
-    freq: 18922,
-    raw: "SNORKEL",
-  },
-  {
-    freq: 18923,
-    raw: "NEWSMAN",
-  },
-  {
-    freq: 18936,
-    raw: "SPINDLE",
-  },
-  {
-    freq: 18942,
-    raw: "CHEATER",
-  },
-  {
-    freq: 18951,
-    raw: "SNOWMAN",
-  },
-  {
-    freq: 18957,
-    raw: "SPINDLY",
-  },
-  {
-    freq: 18963,
-    raw: "ARUGULA",
-  },
-  {
-    freq: 18968,
-    raw: "HANDSET",
-  },
-  {
-    freq: 18974,
-    raw: "BRACKET",
-  },
-  {
-    freq: 18975,
-    raw: "BULGING",
-  },
-  {
-    freq: 18977,
-    raw: "TRAWLER",
-  },
-  {
-    freq: 18981,
-    raw: "HELLISH",
-  },
-  {
-    freq: 18982,
-    raw: "ASCETIC",
-  },
-  {
-    freq: 18988,
-    raw: "PLEATED",
-  },
-  {
-    freq: 18993,
-    raw: "DEVOLVE",
-  },
-  {
-    freq: 19004,
-    raw: "MANHUNT",
-  },
-  {
-    freq: 19008,
-    raw: "FOUNDRY",
-  },
-  {
-    freq: 19011,
-    raw: "MORTIFY",
-  },
-  {
-    freq: 19017,
-    raw: "REPULSE",
-  },
-  {
-    freq: 19022,
-    raw: "SIX-WEEK",
-    word: "SIXWEEK",
-  },
-  {
-    freq: 19027,
-    raw: "BOTCHED",
-  },
-  {
-    freq: 19052,
-    raw: "HURRIED",
-  },
-  {
-    freq: 19053,
-    raw: "LEANING",
-  },
-  {
-    freq: 19065,
-    raw: "GASEOUS",
-  },
-  {
-    freq: 19068,
-    raw: "WELL-OFF",
-    word: "WELLOFF",
-  },
-  {
-    freq: 19073,
-    raw: "DEVIOUS",
-  },
-  {
-    freq: 19075,
-    raw: "SOUFFLE",
-  },
-  {
-    freq: 19085,
-    raw: "WRECKED",
-  },
-  {
-    freq: 19086,
-    raw: "PUFFING",
-  },
-  {
-    freq: 19087,
-    raw: "CROPPED",
-  },
-  {
-    freq: 19106,
-    raw: "CURLING",
-  },
-  {
-    freq: 19107,
-    raw: "CRIPPLE",
-  },
-  {
-    freq: 19137,
-    raw: "STAND-IN",
-    word: "STANDIN",
-  },
-  {
-    freq: 19141,
-    raw: "CURVING",
-  },
-  {
-    freq: 19147,
-    raw: "PAYABLE",
-  },
-  {
-    freq: 19159,
-    raw: "MOONLIT",
-  },
-  {
-    freq: 19160,
-    raw: "BOSNIAN",
-  },
-  {
-    freq: 19167,
-    raw: "ANGLING",
-  },
-  {
-    freq: 19175,
-    raw: "SCARRED",
-  },
-  {
-    freq: 19178,
-    raw: "TITANIC",
-  },
-  {
-    freq: 19184,
-    raw: "VERDANT",
-  },
-  {
-    freq: 19190,
-    raw: "UNKNOWN",
-  },
-  {
-    freq: 19194,
-    raw: "NOVELLA",
-  },
-  {
-    freq: 19202,
-    raw: "ASTRIDE",
-  },
-  {
-    freq: 19204,
-    raw: "WIRETAP",
-  },
-  {
-    freq: 19214,
-    raw: "BANDAGE",
-  },
-  {
-    freq: 19233,
-    raw: "VISUALS",
-  },
-  {
-    freq: 19262,
-    raw: "IDOLIZE",
-  },
-  {
-    freq: 19270,
-    raw: "ARCHWAY",
-  },
-  {
-    freq: 19281,
-    raw: "CHARGER",
-  },
-  {
-    freq: 19283,
-    raw: "FLIPPER",
-  },
-  {
-    freq: 19286,
-    raw: "FRESHEN",
-  },
-  {
-    freq: 19298,
-    raw: "CHARADE",
-  },
-  {
-    freq: 19302,
-    raw: "ITALICS",
-  },
-  {
-    freq: 19305,
-    raw: "IMPINGE",
-  },
-  {
-    freq: 19307,
-    raw: "ILLEGAL",
-  },
-  {
-    freq: 19318,
-    raw: "ACCLAIM",
-  },
-  {
-    freq: 19327,
-    raw: "PORTEND",
-  },
-  {
-    freq: 19329,
-    raw: "SPLURGE",
-  },
-  {
-    freq: 19344,
-    raw: "HOTSHOT",
-  },
-  {
-    freq: 19350,
-    raw: "CENSURE",
-  },
-  {
-    freq: 19351,
-    raw: "STRINGY",
-  },
-  {
-    freq: 19360,
-    raw: "DIVIDER",
-  },
-  {
-    freq: 19365,
-    raw: "RUBBERY",
-  },
-  {
-    freq: 19373,
-    raw: "CAUSTIC",
-  },
-  {
-    freq: 19383,
-    raw: "FLUSHED",
-  },
-  {
-    freq: 19385,
-    raw: "VITALLY",
-  },
-  {
-    freq: 19405,
-    raw: "EVOLVED",
-  },
-  {
-    freq: 19413,
-    raw: "OSTRICH",
-  },
-  {
-    freq: 19417,
-    raw: "LONG-AGO",
-    word: "LONGAGO",
-  },
-  {
-    freq: 19419,
-    raw: "ABYSMAL",
-  },
-  {
-    freq: 19422,
-    raw: "SOLUBLE",
-  },
-  {
-    freq: 19424,
-    raw: "HIDEOUT",
-  },
-  {
-    freq: 19425,
-    raw: "LIVABLE",
-  },
-  {
-    freq: 19428,
-    raw: "SEAGULL",
-  },
-  {
-    freq: 19432,
-    raw: "MERRILY",
-  },
-  {
-    freq: 19435,
-    raw: "TENURED",
-  },
-  {
-    freq: 19439,
-    raw: "SQUELCH",
-  },
-  {
-    freq: 19459,
-    raw: "MIDWEEK",
-  },
-  {
-    freq: 19471,
-    raw: "ONE-STOP",
-    word: "ONESTOP",
-  },
-  {
-    freq: 19472,
-    raw: "PHALANX",
-  },
-  {
-    freq: 19473,
-    raw: "HOPEFUL",
-  },
-  {
-    freq: 19479,
-    raw: "DEEP-SEA",
-    word: "DEEPSEA",
-  },
-  {
-    freq: 19487,
-    raw: "MACABRE",
-  },
-  {
-    freq: 19494,
-    raw: "STAND-UP",
-    word: "STANDUP",
-  },
-  {
-    freq: 19495,
-    raw: "YIDDISH",
-  },
-  {
-    freq: 19501,
-    raw: "FISTFUL",
-  },
-  {
-    freq: 19506,
-    raw: "SIGHTED",
-  },
-  {
-    freq: 19518,
-    raw: "REVELER",
-  },
-  {
-    freq: 19526,
-    raw: "CHUTNEY",
-  },
-  {
-    freq: 19546,
-    raw: "LATENCY",
-  },
-  {
-    freq: 19566,
-    raw: "FLOWERY",
-  },
-  {
-    freq: 19568,
-    raw: "PLOTTER",
-  },
-  {
-    freq: 19576,
-    raw: "DUALISM",
-  },
-  {
-    freq: 19591,
-    raw: "TEASING",
-  },
-  {
-    freq: 19593,
-    raw: "CHEETAH",
-  },
-  {
-    freq: 19595,
-    raw: "MUFFLER",
-  },
-  {
-    freq: 19597,
-    raw: "OFFERED",
-  },
-  {
-    freq: 19598,
-    raw: "REPLANT",
-  },
-  {
-    freq: 19604,
-    raw: "MIMETIC",
-  },
-  {
-    freq: 19605,
-    raw: "SPATTER",
-  },
-  {
-    freq: 19618,
-    raw: "PENSIVE",
-  },
-  {
-    freq: 19620,
-    raw: "ORATORY",
-  },
-  {
-    freq: 19629,
-    raw: "UNKEMPT",
-  },
-  {
-    freq: 19632,
-    raw: "LANGUID",
-  },
-  {
-    freq: 19635,
-    raw: "MINUTIA",
-  },
-  {
-    freq: 19642,
-    raw: "POWDERY",
-  },
-  {
-    freq: 19643,
-    raw: "FATIGUE",
-  },
-  {
-    freq: 19645,
-    raw: "SHEATHE",
-  },
-  {
-    freq: 19647,
-    raw: "STALLED",
-  },
-  {
-    freq: 19656,
-    raw: "ARMREST",
-  },
-  {
-    freq: 19661,
-    raw: "CUTICLE",
-  },
-  {
-    freq: 19668,
-    raw: "SHAKE-UP",
-    word: "SHAKEUP",
-  },
-  {
-    freq: 19685,
-    raw: "CRISPLY",
-  },
-  {
-    freq: 19687,
-    raw: "SO-AND-SO",
-    word: "SOANDSO",
-  },
-  {
-    freq: 19689,
-    raw: "SLICKER",
-  },
-  {
-    freq: 19701,
-    raw: "SCUFFLE",
-  },
-  {
-    freq: 19709,
-    raw: "CLIPPER",
-  },
-  {
-    freq: 19714,
-    raw: "TALKING",
-  },
-  {
-    freq: 19715,
-    raw: "PILINGS",
-  },
-  {
-    freq: 19724,
-    raw: "HAVE-NOT",
-    word: "HAVENOT",
-  },
-  {
-    freq: 19727,
-    raw: "PINCHED",
-  },
-  {
-    freq: 19729,
-    raw: "ODDBALL",
-  },
-  {
-    freq: 19731,
-    raw: "NURTURE",
-  },
-  {
-    freq: 19741,
-    raw: "CHECKED",
-  },
-  {
-    freq: 19746,
-    raw: "CREMATE",
-  },
-  {
-    freq: 19756,
-    raw: "YARDAGE",
-  },
-  {
-    freq: 19761,
-    raw: "KINDRED",
-  },
-  {
-    freq: 19764,
-    raw: "WEARING",
-  },
-  {
-    freq: 19780,
-    raw: "NEWNESS",
-  },
-  {
-    freq: 19798,
-    raw: "REALTOR",
-  },
-  {
-    freq: 19799,
-    raw: "ORDERLY",
-  },
-  {
-    freq: 19805,
-    raw: "GLIMMER",
-  },
-  {
-    freq: 19821,
-    raw: "ZIONIST",
-  },
-  {
-    freq: 19832,
-    raw: "SHAVING",
-  },
-  {
-    freq: 19839,
-    raw: "GIRLISH",
-  },
-  {
-    freq: 19849,
-    raw: "OVERUSE",
-  },
-  {
-    freq: 19859,
-    raw: "FLEMISH",
-  },
-  {
-    freq: 19860,
-    raw: "YEAR-END",
-    word: "YEAREND",
-  },
-  {
-    freq: 19869,
-    raw: "SNICKER",
-  },
-  {
-    freq: 19873,
-    raw: "AMOROUS",
-  },
-  {
-    freq: 19878,
-    raw: "SPENDER",
-  },
-  {
-    freq: 19881,
-    raw: "PICKING",
-  },
-  {
-    freq: 19887,
-    raw: "SANDBOX",
-  },
-  {
-    freq: 19889,
-    raw: "PANICKY",
-  },
-  {
-    freq: 19890,
-    raw: "STIRRUP",
-  },
-  {
-    freq: 19901,
-    raw: "SCALING",
-  },
-  {
-    freq: 19911,
-    raw: "REDRESS",
-  },
-  {
-    freq: 19928,
-    raw: "INFERNO",
-  },
-  {
-    freq: 19933,
-    raw: "FLEXION",
-  },
-  {
-    freq: 19936,
-    raw: "MAILMAN",
-  },
-  {
-    freq: 19938,
-    raw: "ECHOING",
-  },
-  {
-    freq: 19945,
-    raw: "REGALIA",
-  },
-  {
-    freq: 19947,
-    raw: "GASTRIC",
-  },
-  {
-    freq: 19953,
-    raw: "REBUILT",
-  },
-  {
-    freq: 19964,
-    raw: "WAR-TORN",
-    word: "WARTORN",
-  },
-  {
-    freq: 19967,
-    raw: "FRAMING",
-  },
-  {
-    freq: 19981,
-    raw: "BULWARK",
-  },
-  {
-    freq: 19982,
-    raw: "CRINKLE",
-  },
-  {
-    freq: 19991,
-    raw: "THYROID",
-  },
-  {
-    freq: 19992,
-    raw: "INVALID",
-  },
-  {
-    freq: 20008,
-    raw: "MANATEE",
-  },
-  {
-    freq: 20018,
-    raw: "KEEPING",
-  },
-  {
-    freq: 20024,
-    raw: "SHAPELY",
-  },
-  {
-    freq: 20033,
-    raw: "RIGGING",
-  },
-  {
-    freq: 20041,
-    raw: "CHOWDER",
-  },
-  {
-    freq: 20042,
-    raw: "BUCOLIC",
-  },
-  {
-    freq: 20045,
-    raw: "BULIMIA",
-  },
-  {
-    freq: 20052,
-    raw: "REMATCH",
-  },
-  {
-    freq: 20058,
-    raw: "TWO-FOLD",
-    word: "TWOFOLD",
-  },
-  {
-    freq: 20067,
-    raw: "PROVOST",
-  },
-  {
-    freq: 20073,
-    raw: "NUMERAL",
-  },
-  {
-    freq: 20075,
-    raw: "MARXIST",
-  },
-  {
-    freq: 20079,
-    raw: "EVACUEE",
-  },
-  {
-    freq: 20084,
-    raw: "ARCHIVE",
-  },
-  {
-    freq: 20090,
-    raw: "RESOUND",
-  },
-  {
-    freq: 20108,
-    raw: "SUBJECT",
-  },
-  {
-    freq: 20120,
-    raw: "HANDILY",
-  },
-  {
-    freq: 20121,
-    raw: "AIRFLOW",
-  },
-  {
-    freq: 20128,
-    raw: "KNOTTED",
-  },
-  {
-    freq: 20138,
-    raw: "ESCAPED",
-  },
-  {
-    freq: 20143,
-    raw: "PARAGON",
-  },
-  {
-    freq: 20147,
-    raw: "MALLARD",
-  },
-  {
-    freq: 20152,
-    raw: "DUTIFUL",
-  },
-  {
-    freq: 20153,
-    raw: "UPSWING",
-  },
-  {
-    freq: 20157,
-    raw: "HEIRESS",
-  },
-  {
-    freq: 20164,
-    raw: "HAMSTER",
-  },
-  {
-    freq: 20172,
-    raw: "MERGING",
-  },
-  {
-    freq: 20196,
-    raw: "MUDDLED",
-  },
-  {
-    freq: 20209,
-    raw: "REARING",
-  },
-  {
-    freq: 20218,
-    raw: "BLUNDER",
-  },
-  {
-    freq: 20230,
-    raw: "PROSAIC",
-  },
-  {
-    freq: 20232,
-    raw: "ACROBAT",
-  },
-  {
-    freq: 20233,
-    raw: "SIX-FOOT",
-    word: "SIXFOOT",
-  },
-  {
-    freq: 20243,
-    raw: "ABSCESS",
-  },
-  {
-    freq: 20255,
-    raw: "STEPSON",
-  },
-  {
-    freq: 20264,
-    raw: "SNIFFLE",
-  },
-  {
-    freq: 20276,
-    raw: "OUTCROP",
-  },
-  {
-    freq: 20296,
-    raw: "SUNSPOT",
-  },
-  {
-    freq: 20305,
-    raw: "CORRODE",
-  },
-  {
-    freq: 20308,
-    raw: "HARD-WON",
-    word: "HARDWON",
-  },
-  {
-    freq: 20313,
-    raw: "COPYCAT",
-  },
-  {
-    freq: 20322,
-    raw: "BULBOUS",
-  },
-  {
-    freq: 20325,
-    raw: "REISSUE",
-  },
-  {
-    freq: 20328,
-    raw: "NAIVELY",
-  },
-  {
-    freq: 20334,
-    raw: "BEDEVIL",
-  },
-  {
-    freq: 20343,
-    raw: "PRESSED",
-  },
-  {
-    freq: 20360,
-    raw: "CALORIC",
-  },
-  {
-    freq: 20368,
-    raw: "CHECK-IN",
-    word: "CHECKIN",
-  },
-  {
-    freq: 20374,
-    raw: "BROCADE",
-  },
-  {
-    freq: 20379,
-    raw: "SHADING",
-  },
-  {
-    freq: 20389,
-    raw: "ELASTIC",
-  },
-  {
-    freq: 20393,
-    raw: "AIRLIFT",
-  },
-  {
-    freq: 20405,
-    raw: "CRAPPIE",
-  },
-  {
-    freq: 20409,
-    raw: "ENCRUST",
-  },
-  {
-    freq: 20424,
-    raw: "SAWMILL",
-  },
-  {
-    freq: 20430,
-    raw: "WHIMPER",
-  },
-  {
-    freq: 20431,
-    raw: "ARCHERY",
-  },
-  {
-    freq: 20432,
-    raw: "BEAMING",
-  },
-  {
-    freq: 20439,
-    raw: "ROTUNDA",
-  },
-  {
-    freq: 20441,
-    raw: "FISSION",
-  },
-  {
-    freq: 20448,
-    raw: "HAUGHTY",
-  },
-  {
-    freq: 20459,
-    raw: "THIRDLY",
-  },
-  {
-    freq: 20460,
-    raw: "BIOFUEL",
-  },
-  {
-    freq: 20462,
-    raw: "WALKMAN",
-  },
-  {
-    freq: 20463,
-    raw: "MESTIZO",
-  },
-  {
-    freq: 20469,
-    raw: "VENDING",
-  },
-  {
-    freq: 20471,
-    raw: "PHONICS",
-  },
-  {
-    freq: 20486,
-    raw: "TACITLY",
-  },
-  {
-    freq: 20501,
-    raw: "ATHEISM",
-  },
-  {
-    freq: 20506,
-    raw: "VAULTED",
-  },
-  {
-    freq: 20511,
-    raw: "ALL-MALE",
-    word: "ALLMALE",
-  },
-  {
-    freq: 20512,
-    raw: "STOPPED",
-  },
-  {
-    freq: 20529,
-    raw: "CONICAL",
-  },
-  {
-    freq: 20531,
-    raw: "CHATEAU",
-  },
-  {
-    freq: 20534,
-    raw: "CHANGER",
-  },
-  {
-    freq: 20536,
-    raw: "BACKLIT",
-  },
-  {
-    freq: 20541,
-    raw: "PRETEND",
-  },
-  {
-    freq: 20548,
-    raw: "QUILTED",
-  },
-  {
-    freq: 20558,
-    raw: "ELITISM",
-  },
-  {
-    freq: 20559,
-    raw: "BRISKET",
-  },
-  {
-    freq: 20560,
-    raw: "INVITED",
-  },
-  {
-    freq: 20563,
-    raw: "DRIFTER",
-  },
-  {
-    freq: 20564,
-    raw: "DISGUST",
-  },
-  {
-    freq: 20565,
-    raw: "SQUALID",
-  },
-  {
-    freq: 20573,
-    raw: "PERVERT",
-  },
-  {
-    freq: 20580,
-    raw: "INNARDS",
-  },
-  {
-    freq: 20597,
-    raw: "GUNSHIP",
-  },
-  {
-    freq: 20599,
-    raw: "SNICKER",
-  },
-  {
-    freq: 20600,
-    raw: "LATRINE",
-  },
-  {
-    freq: 20602,
-    raw: "MANGLED",
-  },
-  {
-    freq: 20627,
-    raw: "REALIGN",
-  },
-  {
-    freq: 20636,
-    raw: "VAUNTED",
-  },
-  {
-    freq: 20647,
-    raw: "GRANOLA",
-  },
-  {
-    freq: 20659,
-    raw: "SPANIEL",
-  },
-  {
-    freq: 20677,
-    raw: "PLANTED",
-  },
-  {
-    freq: 20682,
-    raw: "CATCH-22",
-    word: "CATCH22",
-  },
-  {
-    freq: 20685,
-    raw: "RESTFUL",
-  },
-  {
-    freq: 20694,
-    raw: "ENTROPY",
-  },
-  {
-    freq: 20695,
-    raw: "QUIBBLE",
-  },
-  {
-    freq: 20705,
-    raw: "BALONEY",
-  },
-  {
-    freq: 20707,
-    raw: "REVIVED",
-  },
-  {
-    freq: 20727,
-    raw: "DEBRIEF",
-  },
-  {
-    freq: 20735,
-    raw: "TRACING",
-  },
-  {
-    freq: 20743,
-    raw: "STARLET",
-  },
-  {
-    freq: 20745,
-    raw: "SINUOUS",
-  },
-  {
-    freq: 20746,
-    raw: "HARRIED",
-  },
-  {
-    freq: 20754,
-    raw: "DICTION",
-  },
-  {
-    freq: 20759,
-    raw: "KLEENEX",
-  },
-  {
-    freq: 20765,
-    raw: "ROUNDLY",
-  },
-  {
-    freq: 20772,
-    raw: "CHARMER",
-  },
-  {
-    freq: 20777,
-    raw: "SAINTLY",
-  },
-  {
-    freq: 20781,
-    raw: "MODICUM",
-  },
-  {
-    freq: 20782,
-    raw: "SANDBAR",
-  },
-  {
-    freq: 20785,
-    raw: "ABORTED",
-  },
-  {
-    freq: 20804,
-    raw: "CHICANO",
-  },
-  {
-    freq: 20829,
-    raw: "TIBETAN",
-  },
-  {
-    freq: 20830,
-    raw: "ATROPHY",
-  },
-  {
-    freq: 20839,
-    raw: "BRAISED",
-  },
-  {
-    freq: 20843,
-    raw: "HYDRANT",
-  },
-  {
-    freq: 20855,
-    raw: "LEGIBLE",
-  },
-  {
-    freq: 20863,
-    raw: "UNDOING",
-  },
-  {
-    freq: 20864,
-    raw: "SLANTED",
-  },
-  {
-    freq: 20868,
-    raw: "BULLDOG",
-  },
-  {
-    freq: 20871,
-    raw: "VISCOUS",
-  },
-  {
-    freq: 20874,
-    raw: "EPITAPH",
-  },
-  {
-    freq: 20878,
-    raw: "RAMPART",
-  },
-  {
-    freq: 20888,
-    raw: "ROWBOAT",
-  },
-  {
-    freq: 20903,
-    raw: "ZILLION",
-  },
-  {
-    freq: 20905,
-    raw: "HAGGARD",
-  },
-  {
-    freq: 20912,
-    raw: "SHOWBIZ",
-  },
-  {
-    freq: 20916,
-    raw: "COMBINE",
-  },
-  {
-    freq: 20920,
-    raw: "UNMOVED",
-  },
-  {
-    freq: 20921,
-    raw: "DRUGGED",
-  },
-  {
-    freq: 20944,
-    raw: "SULFATE",
-  },
-  {
-    freq: 20948,
-    raw: "PULSATE",
-  },
-  {
-    freq: 20959,
-    raw: "PELICAN",
-  },
-  {
-    freq: 20964,
-    raw: "BAILIFF",
-  },
-  {
-    freq: 20966,
-    raw: "HIGH-FAT",
-    word: "HIGHFAT",
-  },
-  {
-    freq: 20967,
-    raw: "KINGPIN",
-  },
-  {
-    freq: 20975,
-    raw: "KEYHOLE",
-  },
-  {
-    freq: 20976,
-    raw: "ROOMFUL",
-  },
-  {
-    freq: 20983,
-    raw: "TRICEPS",
-  },
-  {
-    freq: 20984,
-    raw: "LETDOWN",
-  },
-  {
-    freq: 20993,
-    raw: "DOUBTER",
-  },
-  {
-    freq: 20997,
-    raw: "CAROTID",
-  },
-  {
-    freq: 21001,
-    raw: "SQUALOR",
-  },
-  {
-    freq: 21002,
-    raw: "MITZVAH",
-  },
-  {
-    freq: 21011,
-    raw: "CLARION",
-  },
-  {
-    freq: 21012,
-    raw: "DONATED",
-  },
-  {
-    freq: 21013,
-    raw: "HICKORY",
-  },
-  {
-    freq: 21017,
-    raw: "RACQUET",
-  },
-  {
-    freq: 21019,
-    raw: "CHEVRON",
-  },
-  {
-    freq: 21021,
-    raw: "PINBALL",
-  },
-  {
-    freq: 21026,
-    raw: "CLOBBER",
-  },
-  {
-    freq: 21044,
-    raw: "FASCIST",
-  },
-  {
-    freq: 21045,
-    raw: "CROSSED",
-  },
-  {
-    freq: 21054,
-    raw: "FICTIVE",
-  },
-  {
-    freq: 21057,
-    raw: "PRETEEN",
-  },
-  {
-    freq: 21078,
-    raw: "LONG-RUN",
-    word: "LONGRUN",
-  },
-  {
-    freq: 21081,
-    raw: "ON-BOARD",
-    word: "ONBOARD",
-  },
-  {
-    freq: 21089,
-    raw: "THROWER",
-  },
-  {
-    freq: 21100,
-    raw: "OIL-RICH",
-    word: "OILRICH",
-  },
-  {
-    freq: 21109,
-    raw: "SOLD-OUT",
-    word: "SOLDOUT",
-  },
-  {
-    freq: 21112,
-    raw: "INSHORE",
-  },
-  {
-    freq: 21114,
-    raw: "SURGING",
-  },
-  {
-    freq: 21115,
-    raw: "LECTERN",
-  },
-  {
-    freq: 21116,
-    raw: "THROATY",
-  },
-  {
-    freq: 21122,
-    raw: "SUBTYPE",
-  },
-  {
-    freq: 21124,
-    raw: "CONSORT",
-  },
-  {
-    freq: 21139,
-    raw: "UNAIDED",
-  },
-  {
-    freq: 21150,
-    raw: "SWEEPER",
-  },
-  {
-    freq: 21153,
-    raw: "RUFFLED",
-  },
-  {
-    freq: 21157,
-    raw: "CORNICE",
-  },
-  {
-    freq: 21170,
-    raw: "DOSSIER",
-  },
-  {
-    freq: 21181,
-    raw: "SULFIDE",
-  },
-  {
-    freq: 21185,
-    raw: "BREVITY",
-  },
-  {
-    freq: 21190,
-    raw: "SPOTTER",
-  },
-  {
-    freq: 21199,
-    raw: "BUZZARD",
-  },
-  {
-    freq: 21203,
-    raw: "PETUNIA",
-  },
-  {
-    freq: 21210,
-    raw: "PREMISE",
-  },
-  {
-    freq: 21213,
-    raw: "HEAVING",
-  },
-  {
-    freq: 21230,
-    raw: "UPSTAGE",
-  },
-  {
-    freq: 21247,
-    raw: "ELECTOR",
-  },
-  {
-    freq: 21251,
-    raw: "COMEDIC",
-  },
-  {
-    freq: 21254,
-    raw: "ATTACHE",
-  },
-  {
-    freq: 21280,
-    raw: "GODSEND",
-  },
-  {
-    freq: 21282,
-    raw: "FLATBED",
-  },
-  {
-    freq: 21284,
-    raw: "UPSURGE",
-  },
-  {
-    freq: 21287,
-    raw: "HONOREE",
-  },
-  {
-    freq: 21290,
-    raw: "CITADEL",
-  },
-  {
-    freq: 21291,
-    raw: "OMNIBUS",
-  },
-  {
-    freq: 21294,
-    raw: "POSTMAN",
-  },
-  {
-    freq: 21300,
-    raw: "PRESAGE",
-  },
-  {
-    freq: 21311,
-    raw: "GANGSTA",
-  },
-  {
-    freq: 21313,
-    raw: "CONCAVE",
-  },
-  {
-    freq: 21326,
-    raw: "DRYWALL",
-  },
-  {
-    freq: 21342,
-    raw: "DIPPING",
-  },
-  {
-    freq: 21347,
-    raw: "RETINAL",
-  },
-  {
-    freq: 21350,
-    raw: "SPOILER",
-  },
-  {
-    freq: 21353,
-    raw: "GERMANE",
-  },
-  {
-    freq: 21355,
-    raw: "ALIMONY",
-  },
-  {
-    freq: 21357,
-    raw: "BARBELL",
-  },
-  {
-    freq: 21363,
-    raw: "MANHOLE",
-  },
-  {
-    freq: 21378,
-    raw: "ANDROID",
-  },
-  {
-    freq: 21397,
-    raw: "WARBLER",
-  },
-  {
-    freq: 21398,
-    raw: "EARLOBE",
-  },
-  {
-    freq: 21402,
-    raw: "DEATHLY",
-  },
-  {
-    freq: 21403,
-    raw: "CRANIAL",
-  },
-  {
-    freq: 21407,
-    raw: "BELGIAN",
-  },
-  {
-    freq: 21410,
-    raw: "STUMBLE",
-  },
-  {
-    freq: 21435,
-    raw: "WEBBING",
-  },
-  {
-    freq: 21437,
-    raw: "FACE-OFF",
-    word: "FACEOFF",
-  },
-  {
-    freq: 21448,
-    raw: "EARDRUM",
-  },
-  {
-    freq: 21466,
-    raw: "DEEP-SKY",
-    word: "DEEPSKY",
-  },
-  {
-    freq: 21468,
-    raw: "UPSTATE",
-  },
-  {
-    freq: 21477,
-    raw: "CROQUET",
-  },
-  {
-    freq: 21479,
-    raw: "PROBATE",
-  },
-  {
-    freq: 21486,
-    raw: "SPATTER",
-  },
-  {
-    freq: 21505,
-    raw: "CELLIST",
-  },
-  {
-    freq: 21507,
-    raw: "GRANDLY",
-  },
-  {
-    freq: 21510,
-    raw: "CROWBAR",
-  },
-  {
-    freq: 21511,
-    raw: "SELL-OFF",
-    word: "SELLOFF",
-  },
-  {
-    freq: 21523,
-    raw: "SCRAPPY",
-  },
-  {
-    freq: 21533,
-    raw: "CAPSIZE",
-  },
-  {
-    freq: 21538,
-    raw: "MOORING",
-  },
-  {
-    freq: 21557,
-    raw: "LOW-RISK",
-    word: "LOWRISK",
-  },
-  {
-    freq: 21565,
-    raw: "AGROUND",
-  },
-  {
-    freq: 21577,
-    raw: "OVERUSE",
-  },
-  {
-    freq: 21584,
-    raw: "CLEAVER",
-  },
-  {
-    freq: 21586,
-    raw: "NO-FAULT",
-    word: "NOFAULT",
-  },
-  {
-    freq: 21592,
-    raw: "ZERO-SUM",
-    word: "ZEROSUM",
-  },
-  {
-    freq: 21609,
-    raw: "TADPOLE",
-  },
-  {
-    freq: 21620,
-    raw: "BURNISH",
-  },
-  {
-    freq: 21623,
-    raw: "ARMOIRE",
-  },
-  {
-    freq: 21624,
-    raw: "RELAPSE",
-  },
-  {
-    freq: 21637,
-    raw: "BLISTER",
-  },
-  {
-    freq: 21642,
-    raw: "FRIGATE",
-  },
-  {
-    freq: 21653,
-    raw: "ACOLYTE",
-  },
-  {
-    freq: 21671,
-    raw: "MILKING",
-  },
-  {
-    freq: 21673,
-    raw: "HIPSTER",
-  },
-  {
-    freq: 21680,
-    raw: "IN-STATE",
-    word: "INSTATE",
-  },
-  {
-    freq: 21681,
-    raw: "STENCIL",
-  },
-  {
-    freq: 21689,
-    raw: "YAWNING",
-  },
-  {
-    freq: 21691,
-    raw: "EXCRETE",
-  },
-  {
-    freq: 21693,
-    raw: "GLEEFUL",
-  },
-  {
-    freq: 21710,
-    raw: "UNPAVED",
-  },
-  {
-    freq: 21724,
-    raw: "TWISTER",
-  },
-  {
-    freq: 21731,
-    raw: "DISCARD",
-  },
-  {
-    freq: 21733,
-    raw: "OBVIATE",
-  },
-  {
-    freq: 21735,
-    raw: "MASONIC",
-  },
-  {
-    freq: 21740,
-    raw: "IRONING",
-  },
-  {
-    freq: 21746,
-    raw: "BRAMBLE",
-  },
-  {
-    freq: 21775,
-    raw: "MARBLED",
-  },
-  {
-    freq: 21780,
-    raw: "INSURED",
-  },
-  {
-    freq: 21781,
-    raw: "SLANDER",
-  },
-  {
-    freq: 21785,
-    raw: "FRINGED",
-  },
-  {
-    freq: 21789,
-    raw: "HAIRPIN",
-  },
-  {
-    freq: 21795,
-    raw: "SORGHUM",
-  },
-  {
-    freq: 21800,
-    raw: "KNEECAP",
-  },
-  {
-    freq: 21812,
-    raw: "REQUIEM",
-  },
-  {
-    freq: 21832,
-    raw: "POTLUCK",
-  },
-  {
-    freq: 21842,
-    raw: "WHINING",
-  },
-  {
-    freq: 21860,
-    raw: "HALOGEN",
-  },
-  {
-    freq: 21865,
-    raw: "DRIBBLE",
-  },
-  {
-    freq: 21871,
-    raw: "GRIDDLE",
-  },
-  {
-    freq: 21876,
-    raw: "STENCIL",
-  },
-  {
-    freq: 21881,
-    raw: "BACKHOE",
-  },
-  {
-    freq: 21887,
-    raw: "OBELISK",
-  },
-  {
-    freq: 21891,
-    raw: "REGARDS",
-  },
-  {
-    freq: 21892,
-    raw: "PHARAOH",
-  },
-  {
-    freq: 21902,
-    raw: "FIGURAL",
-  },
-  {
-    freq: 21909,
-    raw: "FLUSTER",
-  },
-  {
-    freq: 21910,
-    raw: "TURNOFF",
-  },
-  {
-    freq: 21916,
-    raw: "KIBBUTZ",
-  },
-  {
-    freq: 21919,
-    raw: "WHATNOT",
-  },
-  {
-    freq: 21925,
-    raw: "UNCLEAN",
-  },
-  {
-    freq: 21926,
-    raw: "HYDRATE",
-  },
-  {
-    freq: 21928,
-    raw: "TRAIPSE",
-  },
-  {
-    freq: 21936,
-    raw: "PANOPLY",
-  },
-  {
-    freq: 21941,
-    raw: "SIAMESE",
-  },
-  {
-    freq: 21945,
-    raw: "PERSIAN",
-  },
-  {
-    freq: 21947,
-    raw: "GRANULE",
-  },
-  {
-    freq: 21972,
-    raw: "CHALICE",
-  },
-  {
-    freq: 21980,
-    raw: "PARSNIP",
-  },
-  {
-    freq: 21986,
-    raw: "GINSENG",
-  },
-  {
-    freq: 21992,
-    raw: "HEARTEN",
-  },
-  {
-    freq: 21999,
-    raw: "TRUNDLE",
-  },
-  {
-    freq: 22002,
-    raw: "ROSETTE",
-  },
-  {
-    freq: 22012,
-    raw: "OVERPAY",
-  },
-  {
-    freq: 22024,
-    raw: "BUNDLED",
-  },
-  {
-    freq: 22032,
-    raw: "GALLOWS",
-  },
-  {
-    freq: 22035,
-    raw: "FIRSTLY",
-  },
-  {
-    freq: 22036,
-    raw: "MARTIAN",
-  },
-  {
-    freq: 22042,
-    raw: "ESCAPEE",
-  },
-  {
-    freq: 22062,
-    raw: "BOXWOOD",
-  },
-  {
-    freq: 22077,
-    raw: "POSTURE",
-  },
-  {
-    freq: 22078,
-    raw: "CROUTON",
-  },
-  {
-    freq: 22081,
-    raw: "OFF-LINE",
-    word: "OFFLINE",
-  },
-  {
-    freq: 22101,
-    raw: "AIRLIFT",
-  },
-  {
-    freq: 22115,
-    raw: "SANCTUM",
-  },
-  {
-    freq: 22119,
-    raw: "WRANGLE",
-  },
-  {
-    freq: 22130,
-    raw: "DAMNING",
-  },
-  {
-    freq: 22146,
-    raw: "CATCH-UP",
-    word: "CATCHUP",
-  },
-  {
-    freq: 22147,
-    raw: "PLENARY",
-  },
-  {
-    freq: 22158,
-    raw: "PIERCED",
-  },
-  {
-    freq: 22159,
-    raw: "WRAPPED",
-  },
-  {
-    freq: 22170,
-    raw: "NIRVANA",
-  },
-  {
-    freq: 22171,
-    raw: "OVERRUN",
-  },
-  {
-    freq: 22176,
-    raw: "FOAMING",
-  },
-  {
-    freq: 22180,
-    raw: "HASIDIC",
-  },
-  {
-    freq: 22198,
-    raw: "FOLDING",
-  },
-  {
-    freq: 22199,
-    raw: "GOUACHE",
-  },
-  {
-    freq: 22200,
-    raw: "PREFACE",
-  },
-  {
-    freq: 22204,
-    raw: "PLIABLE",
-  },
-  {
-    freq: 22205,
-    raw: "ONENESS",
-  },
-  {
-    freq: 22209,
-    raw: "SHOWMAN",
-  },
-  {
-    freq: 22220,
-    raw: "POTABLE",
-  },
-  {
-    freq: 22221,
-    raw: "LEADOFF",
-  },
-  {
-    freq: 22233,
-    raw: "AIMLESS",
-  },
-  {
-    freq: 22240,
-    raw: "FREEBIE",
-  },
-  {
-    freq: 22259,
-    raw: "ADMIRED",
-  },
-  {
-    freq: 22278,
-    raw: "SHIPPER",
-  },
-  {
-    freq: 22286,
-    raw: "REPRISE",
-  },
-  {
-    freq: 22291,
-    raw: "IMPOSED",
-  },
-  {
-    freq: 22293,
-    raw: "RIVULET",
-  },
-  {
-    freq: 22308,
-    raw: "ELLIPSE",
-  },
-  {
-    freq: 22312,
-    raw: "COSSACK",
-  },
-  {
-    freq: 22315,
-    raw: "SMELTER",
-  },
-  {
-    freq: 22328,
-    raw: "SEAPORT",
-  },
-  {
-    freq: 22329,
-    raw: "SEABIRD",
-  },
-  {
-    freq: 22335,
-    raw: "SOBERLY",
-  },
-  {
-    freq: 22338,
-    raw: "SPARTAN",
-  },
-  {
-    freq: 22341,
-    raw: "PANACHE",
-  },
-  {
-    freq: 22342,
-    raw: "FINICKY",
-  },
-  {
-    freq: 22348,
-    raw: "BESEECH",
-  },
-  {
-    freq: 22355,
-    raw: "RECLUSE",
-  },
-  {
-    freq: 22367,
-    raw: "PLACING",
-  },
-  {
-    freq: 22368,
-    raw: "CRAWLER",
-  },
-  {
-    freq: 22369,
-    raw: "JAVELIN",
-  },
-  {
-    freq: 22372,
-    raw: "HELLUVA",
-  },
-  {
-    freq: 22386,
-    raw: "PILLAGE",
-  },
-  {
-    freq: 22387,
-    raw: "SIT-DOWN",
-    word: "SITDOWN",
-  },
-  {
-    freq: 22393,
-    raw: "PADDOCK",
-  },
-  {
-    freq: 22416,
-    raw: "RUINOUS",
-  },
-  {
-    freq: 22418,
-    raw: "SAMURAI",
-  },
-  {
-    freq: 22420,
-    raw: "ENCRYPT",
-  },
-  {
-    freq: 22421,
-    raw: "SIX-HOUR",
-    word: "SIXHOUR",
-  },
-  {
-    freq: 22423,
-    raw: "PORTICO",
-  },
-  {
-    freq: 22433,
-    raw: "BAFFLED",
-  },
-  {
-    freq: 22472,
-    raw: "STRIPER",
-  },
-  {
-    freq: 22474,
-    raw: "TATTERS",
-  },
-  {
-    freq: 22486,
-    raw: "MISSIVE",
-  },
-  {
-    freq: 22504,
-    raw: "BIGOTED",
-  },
-  {
-    freq: 22507,
-    raw: "COOLANT",
-  },
-  {
-    freq: 22520,
-    raw: "AGELESS",
-  },
-  {
-    freq: 22526,
-    raw: "SKY-HIGH",
-    word: "SKYHIGH",
-  },
-  {
-    freq: 22529,
-    raw: "JUDGING",
-  },
-  {
-    freq: 22534,
-    raw: "FRACTAL",
-  },
-  {
-    freq: 22537,
-    raw: "WETNESS",
-  },
-  {
-    freq: 22544,
-    raw: "ANTI-GAY",
-    word: "ANTIGAY",
-  },
-  {
-    freq: 22546,
-    raw: "LAID-OFF",
-    word: "LAIDOFF",
-  },
-  {
-    freq: 22562,
-    raw: "CRUMBLY",
-  },
-  {
-    freq: 22567,
-    raw: "STANDBY",
-  },
-  {
-    freq: 22573,
-    raw: "DIORAMA",
-  },
-  {
-    freq: 22601,
-    raw: "PHALLIC",
-  },
-  {
-    freq: 22608,
-    raw: "BARROOM",
-  },
-  {
-    freq: 22613,
-    raw: "SPLASHY",
-  },
-  {
-    freq: 22614,
-    raw: "HEROICS",
-  },
-  {
-    freq: 22626,
-    raw: "INCLINE",
-  },
-  {
-    freq: 22641,
-    raw: "WEIRDLY",
-  },
-  {
-    freq: 22655,
-    raw: "GLAZING",
-  },
-  {
-    freq: 22672,
-    raw: "SHOCKER",
-  },
-  {
-    freq: 22680,
-    raw: "BURMESE",
-  },
-  {
-    freq: 22688,
-    raw: "QUINTET",
-  },
-  {
-    freq: 22689,
-    raw: "CARRION",
-  },
-  {
-    freq: 22691,
-    raw: "ONE-WEEK",
-    word: "ONEWEEK",
-  },
-  {
-    freq: 22696,
-    raw: "OUTLIER",
-  },
-  {
-    freq: 22711,
-    raw: "HEADMAN",
-  },
-  {
-    freq: 22715,
-    raw: "PORTENT",
-  },
-  {
-    freq: 22728,
-    raw: "ACADEME",
-  },
-  {
-    freq: 22729,
-    raw: "LARCENY",
-  },
-  {
-    freq: 22739,
-    raw: "PINKISH",
-  },
-  {
-    freq: 22743,
-    raw: "LUNATIC",
-  },
-  {
-    freq: 22745,
-    raw: "BLUSTER",
-  },
-  {
-    freq: 22749,
-    raw: "ROUTING",
-  },
-  {
-    freq: 22750,
-    raw: "ROLLOUT",
-  },
-  {
-    freq: 22757,
-    raw: "BENZENE",
-  },
-  {
-    freq: 22764,
-    raw: "BETWEEN",
-  },
-  {
-    freq: 22765,
-    raw: "ONE-EYED",
-    word: "ONEEYED",
-  },
-  {
-    freq: 22767,
-    raw: "RESTIVE",
-  },
-  {
-    freq: 22770,
-    raw: "PLAYBOY",
-  },
-  {
-    freq: 22774,
-    raw: "STARVED",
-  },
-  {
-    freq: 22777,
-    raw: "BAGPIPE",
-  },
-  {
-    freq: 22787,
-    raw: "AMENDED",
-  },
-  {
-    freq: 22790,
-    raw: "SLACKEN",
-  },
-  {
-    freq: 22801,
-    raw: "FLARE-UP",
-    word: "FLAREUP",
-  },
-  {
-    freq: 22807,
-    raw: "THRIFTY",
-  },
-  {
-    freq: 22820,
-    raw: "INHALER",
-  },
-  {
-    freq: 22832,
-    raw: "REMOVER",
-  },
-  {
-    freq: 22839,
-    raw: "MONTHLY",
-  },
-  {
-    freq: 22857,
-    raw: "MOLLIFY",
-  },
-  {
-    freq: 22862,
-    raw: "NOTABLE",
-  },
-  {
-    freq: 22875,
-    raw: "WALKOUT",
-  },
-  {
-    freq: 22881,
-    raw: "TIMIDLY",
-  },
-  {
-    freq: 22882,
-    raw: "RATCHET",
-  },
-  {
-    freq: 22883,
-    raw: "SCRAPER",
-  },
-  {
-    freq: 22909,
-    raw: "UNSOUND",
-  },
-  {
-    freq: 22911,
-    raw: "PITCHED",
-  },
-  {
-    freq: 22917,
-    raw: "BRANDED",
-  },
-  {
-    freq: 22918,
-    raw: "ANEMONE",
-  },
-  {
-    freq: 22928,
-    raw: "SYNAPSE",
-  },
-  {
-    freq: 22944,
-    raw: "MARINER",
-  },
-  {
-    freq: 22966,
-    raw: "MESSIAH",
-  },
-  {
-    freq: 22989,
-    raw: "NEO-NAZI",
-    word: "NEONAZI",
-  },
-  {
-    freq: 22994,
-    raw: "AL-QAIDA",
-    word: "ALQAIDA",
-  },
-  {
-    freq: 23027,
-    raw: "REPRISE",
-  },
-  {
-    freq: 23038,
-    raw: "FUCHSIA",
-  },
-  {
-    freq: 23040,
-    raw: "CHIMERA",
-  },
-  {
-    freq: 23044,
-    raw: "SENDING",
-  },
-  {
-    freq: 23060,
-    raw: "BUYBACK",
-  },
-  {
-    freq: 23072,
-    raw: "DEFENCE",
-  },
-  {
-    freq: 23082,
-    raw: "PARASOL",
-  },
-  {
-    freq: 23085,
-    raw: "PADLOCK",
-  },
-  {
-    freq: 23091,
-    raw: "GODLIKE",
-  },
-  {
-    freq: 23100,
-    raw: "MENORAH",
-  },
-  {
-    freq: 23101,
-    raw: "BROMIDE",
-  },
-  {
-    freq: 23124,
-    raw: "HAWKISH",
-  },
-  {
-    freq: 23128,
-    raw: "TAFFETA",
-  },
-  {
-    freq: 23153,
-    raw: "CHORTLE",
-  },
-  {
-    freq: 23156,
-    raw: "PARKWAY",
-  },
-  {
-    freq: 23163,
-    raw: "REORDER",
-  },
-  {
-    freq: 23171,
-    raw: "GRAYING",
-  },
-  {
-    freq: 23180,
-    raw: "BOTANIC",
-  },
-  {
-    freq: 23182,
-    raw: "BELOVED",
-  },
-  {
-    freq: 23186,
-    raw: "REFINER",
-  },
-  {
-    freq: 23191,
-    raw: "U-SHAPED",
-    word: "USHAPED",
-  },
-  {
-    freq: 23196,
-    raw: "ZOOLOGY",
-  },
-  {
-    freq: 23205,
-    raw: "JUGGLER",
-  },
-  {
-    freq: 23206,
-    raw: "PLUMAGE",
-  },
-  {
-    freq: 23210,
-    raw: "UNTAMED",
-  },
-  {
-    freq: 23224,
-    raw: "BLOTTER",
-  },
-  {
-    freq: 23234,
-    raw: "TAPERED",
-  },
-  {
-    freq: 23247,
-    raw: "SORTING",
-  },
-  {
-    freq: 23253,
-    raw: "NUMERIC",
-  },
-  {
-    freq: 23256,
-    raw: "BRUSQUE",
-  },
-  {
-    freq: 23266,
-    raw: "BEELINE",
-  },
-  {
-    freq: 23269,
-    raw: "MUCOSAL",
-  },
-  {
-    freq: 23274,
-    raw: "TYPHOON",
-  },
-  {
-    freq: 23285,
-    raw: "FRECKLE",
-  },
-  {
-    freq: 23288,
-    raw: "DIVINER",
-  },
-  {
-    freq: 23293,
-    raw: "DROPPED",
-  },
-  {
-    freq: 23333,
-    raw: "KINSMAN",
-  },
-  {
-    freq: 23337,
-    raw: "PERTURB",
-  },
-  {
-    freq: 23338,
-    raw: "OXIDIZE",
-  },
-  {
-    freq: 23339,
-    raw: "FRITTER",
-  },
-  {
-    freq: 23359,
-    raw: "FERMENT",
-  },
-  {
-    freq: 23382,
-    raw: "OLD-LINE",
-    word: "OLDLINE",
-  },
-  {
-    freq: 23389,
-    raw: "TENFOLD",
-  },
-  {
-    freq: 23393,
-    raw: "HARPOON",
-  },
-  {
-    freq: 23404,
-    raw: "OFFHAND",
-  },
-  {
-    freq: 23413,
-    raw: "PARAPET",
-  },
-  {
-    freq: 23414,
-    raw: "TETANUS",
-  },
-  {
-    freq: 23433,
-    raw: "WOODCUT",
-  },
-  {
-    freq: 23440,
-    raw: "TRESTLE",
-  },
-  {
-    freq: 23447,
-    raw: "RECTORY",
-  },
-  {
-    freq: 23454,
-    raw: "SQUISHY",
-  },
-  {
-    freq: 23462,
-    raw: "CRAZILY",
-  },
-  {
-    freq: 23468,
-    raw: "LEPROSY",
-  },
-  {
-    freq: 23469,
-    raw: "OFFENCE",
-  },
-  {
-    freq: 23471,
-    raw: "SECONDS",
-  },
-  {
-    freq: 23474,
-    raw: "TROUNCE",
-  },
-  {
-    freq: 23489,
-    raw: "SLANDER",
-  },
-  {
-    freq: 23493,
-    raw: "TOURNEY",
-  },
-  {
-    freq: 23507,
-    raw: "AIRLESS",
-  },
-  {
-    freq: 23509,
-    raw: "BUSLOAD",
-  },
-  {
-    freq: 23510,
-    raw: "EXPUNGE",
-  },
-  {
-    freq: 23511,
-    raw: "UP-FRONT",
-    word: "UPFRONT",
-  },
-  {
-    freq: 23518,
-    raw: "CISTERN",
-  },
-  {
-    freq: 23519,
-    raw: "SHAVING",
-  },
-  {
-    freq: 23520,
-    raw: "RELEARN",
-  },
-  {
-    freq: 23521,
-    raw: "MOLLUSK",
-  },
-  {
-    freq: 23522,
-    raw: "COUPLET",
-  },
-  {
-    freq: 23525,
-    raw: "PATTERN",
-  },
-  {
-    freq: 23526,
-    raw: "SPRINGY",
-  },
-  {
-    freq: 23527,
-    raw: "CAVEMAN",
-  },
-  {
-    freq: 23536,
-    raw: "WOMANLY",
-  },
-  {
-    freq: 23546,
-    raw: "PELAGIC",
-  },
-  {
-    freq: 23547,
-    raw: "CATTAIL",
-  },
-  {
-    freq: 23551,
-    raw: "WHEELED",
-  },
-  {
-    freq: 23555,
-    raw: "CRUSADE",
-  },
-  {
-    freq: 23569,
-    raw: "GO-AHEAD",
-    word: "GOAHEAD",
-  },
-  {
-    freq: 23584,
-    raw: "MIMICRY",
-  },
-  {
-    freq: 23591,
-    raw: "NATURAL",
-  },
-  {
-    freq: 23592,
-    raw: "REFRACT",
-  },
-  {
-    freq: 23594,
-    raw: "POACHED",
-  },
-  {
-    freq: 23595,
-    raw: "ERASURE",
-  },
-  {
-    freq: 23599,
-    raw: "SPLOTCH",
-  },
-  {
-    freq: 23604,
-    raw: "DAPPLED",
-  },
-  {
-    freq: 23620,
-    raw: "CONJOIN",
-  },
-  {
-    freq: 23635,
-    raw: "CULVERT",
-  },
-  {
-    freq: 23636,
-    raw: "DRESSED",
-  },
-  {
-    freq: 23648,
-    raw: "PRICKLE",
-  },
-  {
-    freq: 23668,
-    raw: "SPANDEX",
-  },
-  {
-    freq: 23687,
-    raw: "BUNTING",
-  },
-  {
-    freq: 23693,
-    raw: "OTTOMAN",
-  },
-  {
-    freq: 23696,
-    raw: "GODLESS",
-  },
-  {
-    freq: 23697,
-    raw: "BESPEAK",
-  },
-  {
-    freq: 23710,
-    raw: "METRICS",
-  },
-  {
-    freq: 23711,
-    raw: "TAXICAB",
-  },
-  {
-    freq: 23716,
-    raw: "DETENTE",
-  },
-  {
-    freq: 23725,
-    raw: "SWINDLE",
-  },
-  {
-    freq: 23728,
-    raw: "STARCHY",
-  },
-  {
-    freq: 23733,
-    raw: "LEXICAL",
-  },
-  {
-    freq: 23737,
-    raw: "BOMBARD",
-  },
-  {
-    freq: 23739,
-    raw: "CONGEAL",
-  },
-  {
-    freq: 23744,
-    raw: "DIMPLED",
-  },
-  {
-    freq: 23745,
-    raw: "CHIPPER",
-  },
-  {
-    freq: 23748,
-    raw: "CHINOOK",
-  },
-  {
-    freq: 23759,
-    raw: "ROMANCE",
-  },
-  {
-    freq: 23761,
-    raw: "CALIPER",
-  },
-  {
-    freq: 23765,
-    raw: "CLIPPED",
-  },
-  {
-    freq: 23770,
-    raw: "QUICKIE",
-  },
-  {
-    freq: 23771,
-    raw: "HOMINID",
-  },
-  {
-    freq: 23773,
-    raw: "TEMPEST",
-  },
-  {
-    freq: 23780,
-    raw: "HALF-DAY",
-    word: "HALFDAY",
-  },
-  {
-    freq: 23786,
-    raw: "TONNAGE",
-  },
-  {
-    freq: 23789,
-    raw: "TWO-ROOM",
-    word: "TWOROOM",
-  },
-  {
-    freq: 23796,
-    raw: "LOCATOR",
-  },
-  {
-    freq: 23815,
-    raw: "MULATTO",
-  },
-  {
-    freq: 23828,
-    raw: "DUCHESS",
-  },
-  {
-    freq: 23837,
-    raw: "SEEKING",
-  },
-  {
-    freq: 23846,
-    raw: "BEESWAX",
-  },
-  {
-    freq: 23847,
-    raw: "SHOEBOX",
-  },
-  {
-    freq: 23850,
-    raw: "CHEATED",
-  },
-  {
-    freq: 23875,
-    raw: "FIGMENT",
-  },
-  {
-    freq: 23880,
-    raw: "OPENING",
-  },
-  {
-    freq: 23887,
-    raw: "EMOTIVE",
-  },
-  {
-    freq: 23891,
-    raw: "SIRLOIN",
-  },
-  {
-    freq: 23896,
-    raw: "ERUDITE",
-  },
-  {
-    freq: 23897,
-    raw: "OPACITY",
-  },
-  {
-    freq: 23898,
-    raw: "CUTLERY",
-  },
-  {
-    freq: 23906,
-    raw: "UNHINGE",
-  },
-  {
-    freq: 23913,
-    raw: "RATTLER",
-  },
-  {
-    freq: 23921,
-    raw: "DEPOSED",
-  },
-  {
-    freq: 23929,
-    raw: "JEWELED",
-  },
-  {
-    freq: 23930,
-    raw: "ORIFICE",
-  },
-  {
-    freq: 23940,
-    raw: "TRAPEZE",
-  },
-  {
-    freq: 23943,
-    raw: "SUSPECT",
-  },
-  {
-    freq: 23954,
-    raw: "SKIMMER",
-  },
-  {
-    freq: 23956,
-    raw: "BENDING",
-  },
-  {
-    freq: 23971,
-    raw: "BLASTED",
-  },
-  {
-    freq: 23975,
-    raw: "STINGER",
-  },
-  {
-    freq: 23979,
-    raw: "DECIDED",
-  },
-  {
-    freq: 23998,
-    raw: "CATALAN",
-  },
-  {
-    freq: 23999,
-    raw: "HAYWIRE",
-  },
-  {
-    freq: 24009,
-    raw: "WINLESS",
-  },
-  {
-    freq: 24012,
-    raw: "PHONEME",
-  },
-  {
-    freq: 24017,
-    raw: "ADRENAL",
-  },
-  {
-    freq: 24025,
-    raw: "CLOYING",
-  },
-  {
-    freq: 24027,
-    raw: "WARLIKE",
-  },
-  {
-    freq: 24028,
-    raw: "ANASAZI",
-  },
-  {
-    freq: 24031,
-    raw: "GAZELLE",
-  },
-  {
-    freq: 24035,
-    raw: "DRAFTEE",
-  },
-  {
-    freq: 24036,
-    raw: "PAROTID",
-  },
-  {
-    freq: 24043,
-    raw: "ENSNARE",
-  },
-  {
-    freq: 24054,
-    raw: "CLOGGED",
-  },
-  {
-    freq: 24087,
-    raw: "BEHOOVE",
-  },
-  {
-    freq: 24095,
-    raw: "TAPPING",
-  },
-  {
-    freq: 24096,
-    raw: "PODCAST",
-  },
-  {
-    freq: 24105,
-    raw: "JACKASS",
-  },
-  {
-    freq: 24116,
-    raw: "ALMANAC",
-  },
-  {
-    freq: 24126,
-    raw: "PADDLER",
-  },
-  {
-    freq: 24133,
-    raw: "BRUTISH",
-  },
-  {
-    freq: 24148,
-    raw: "FOXHOLE",
-  },
-  {
-    freq: 24160,
-    raw: "PLATING",
-  },
-  {
-    freq: 24170,
-    raw: "ONSHORE",
-  },
-  {
-    freq: 24171,
-    raw: "EYESORE",
-  },
-  {
-    freq: 24180,
-    raw: "PONTIFF",
-  },
-  {
-    freq: 24185,
-    raw: "DILUTED",
-  },
-  {
-    freq: 24186,
-    raw: "ORATION",
-  },
-  {
-    freq: 24206,
-    raw: "HOODLUM",
-  },
-  {
-    freq: 24222,
-    raw: "MINARET",
-  },
-  {
-    freq: 24225,
-    raw: "LACTOSE",
-  },
-  {
-    freq: 24231,
-    raw: "FIEFDOM",
-  },
-  {
-    freq: 24240,
-    raw: "AIRTIME",
-  },
-  {
-    freq: 24253,
-    raw: "EQUINOX",
-  },
-  {
-    freq: 24257,
-    raw: "HECKLER",
-  },
-  {
-    freq: 24281,
-    raw: "BEWITCH",
-  },
-  {
-    freq: 24291,
-    raw: "JARRING",
-  },
-  {
-    freq: 24318,
-    raw: "WHOPPER",
-  },
-  {
-    freq: 24340,
-    raw: "TORPEDO",
-  },
-  {
-    freq: 24347,
-    raw: "STERNUM",
-  },
-  {
-    freq: 24358,
-    raw: "HOLIDAY",
-  },
-  {
-    freq: 24364,
-    raw: "KLINGON",
-  },
-  {
-    freq: 24366,
-    raw: "SUMMONS",
-  },
-  {
-    freq: 24378,
-    raw: "SPYWARE",
-  },
-  {
-    freq: 24382,
-    raw: "SEGMENT",
-  },
-  {
-    freq: 24388,
-    raw: "GUNWALE",
-  },
-  {
-    freq: 24396,
-    raw: "LAMBAST",
-  },
-  {
-    freq: 24400,
-    raw: "LEOTARD",
-  },
-  {
-    freq: 24423,
-    raw: "BASHFUL",
-  },
-  {
-    freq: 24432,
-    raw: "AMIABLY",
-  },
-  {
-    freq: 24433,
-    raw: "PROVISO",
-  },
-  {
-    freq: 24434,
-    raw: "COLLARD",
-  },
-  {
-    freq: 24450,
-    raw: "DIPPING",
-  },
-  {
-    freq: 24455,
-    raw: "GRAYISH",
-  },
-  {
-    freq: 24461,
-    raw: "CURABLE",
-  },
-  {
-    freq: 24471,
-    raw: "PLUNDER",
-  },
-  {
-    freq: 24479,
-    raw: "RESTOCK",
-  },
-  {
-    freq: 24490,
-    raw: "AVENGER",
-  },
-  {
-    freq: 24503,
-    raw: "COWGIRL",
-  },
-  {
-    freq: 24515,
-    raw: "REVELRY",
-  },
-  {
-    freq: 24522,
-    raw: "LOZENGE",
-  },
-  {
-    freq: 24541,
-    raw: "BOTTLER",
-  },
-  {
-    freq: 24549,
-    raw: "FLOATER",
-  },
-  {
-    freq: 24556,
-    raw: "TRANSIT",
-  },
-  {
-    freq: 24564,
-    raw: "FIDDLER",
-  },
-  {
-    freq: 24565,
-    raw: "DERVISH",
-  },
-  {
-    freq: 24570,
-    raw: "BRACING",
-  },
-  {
-    freq: 24573,
-    raw: "YEAR-END",
-    word: "YEAREND",
-  },
-  {
-    freq: 24585,
-    raw: "JUMBLED",
-  },
-  {
-    freq: 24589,
-    raw: "ADAPTED",
-  },
-  {
-    freq: 24590,
-    raw: "BRONZED",
-  },
-  {
-    freq: 24592,
-    raw: "FOCUSER",
-  },
-  {
-    freq: 24595,
-    raw: "DEFROST",
-  },
-  {
-    freq: 24596,
-    raw: "REPUTED",
-  },
-  {
-    freq: 24605,
-    raw: "ADVANCE",
-  },
-  {
-    freq: 24606,
-    raw: "SISTINE",
-  },
-  {
-    freq: 24616,
-    raw: "CHARMED",
-  },
-  {
-    freq: 24620,
-    raw: "RAVAGED",
-  },
-  {
-    freq: 24622,
-    raw: "EARPLUG",
-  },
-  {
-    freq: 24623,
-    raw: "GARBLED",
-  },
-  {
-    freq: 24634,
-    raw: "DUSTING",
-  },
-  {
-    freq: 24645,
-    raw: "PRAYING",
-  },
-  {
-    freq: 24667,
-    raw: "TOOLBAR",
-  },
-  {
-    freq: 24668,
-    raw: "KNUCKLE",
-  },
-  {
-    freq: 24736,
-    raw: "WELL-LIT",
-    word: "WELLLIT",
-  },
-  {
-    freq: 24743,
-    raw: "SWADDLE",
-  },
-  {
-    freq: 24752,
-    raw: "COBBLED",
-  },
-  {
-    freq: 24754,
-    raw: "STUTTER",
-  },
-  {
-    freq: 24770,
-    raw: "SLUMBER",
-  },
-  {
-    freq: 24773,
-    raw: "COPYING",
-  },
-  {
-    freq: 24774,
-    raw: "SPARKLY",
-  },
-  {
-    freq: 24775,
-    raw: "HUNCHED",
-  },
-  {
-    freq: 24782,
-    raw: "ARRAIGN",
-  },
-  {
-    freq: 24786,
-    raw: "COTERIE",
-  },
-  {
-    freq: 24787,
-    raw: "CANNERY",
-  },
-  {
-    freq: 24788,
-    raw: "CASSAVA",
-  },
-  {
-    freq: 24798,
-    raw: "BROWNED",
-  },
-  {
-    freq: 24828,
-    raw: "CRANIUM",
-  },
-  {
-    freq: 24831,
-    raw: "FOOTMAN",
-  },
-  {
-    freq: 24832,
-    raw: "COSTUME",
-  },
-  {
-    freq: 24840,
-    raw: "ICE-COLD",
-    word: "ICECOLD",
-  },
-  {
-    freq: 24841,
-    raw: "GROUPER",
-  },
-  {
-    freq: 24845,
-    raw: "ROTATOR",
-  },
-  {
-    freq: 24857,
-    raw: "ONE-SHOT",
-    word: "ONESHOT",
-  },
-  {
-    freq: 24858,
-    raw: "CURSIVE",
-  },
-  {
-    freq: 24863,
-    raw: "ENABLER",
-  },
-  {
-    freq: 24865,
-    raw: "INDUCED",
-  },
-  {
-    freq: 24866,
-    raw: "RAUNCHY",
-  },
-  {
-    freq: 24869,
-    raw: "ROMAINE",
-  },
-  {
-    freq: 24877,
-    raw: "COMPORT",
-  },
-  {
-    freq: 24889,
-    raw: "CREAMED",
-  },
-  {
-    freq: 24891,
-    raw: "ACTUARY",
-  },
-  {
-    freq: 24892,
-    raw: "UNDATED",
-  },
-  {
-    freq: 24908,
-    raw: "CROONER",
-  },
-  {
-    freq: 24918,
-    raw: "LACONIC",
-  },
-  {
-    freq: 24929,
-    raw: "ALASKAN",
-  },
-  {
-    freq: 24941,
-    raw: "CORONAL",
-  },
-  {
-    freq: 24942,
-    raw: "FEMORAL",
-  },
-  {
-    freq: 24947,
-    raw: "ITEMIZE",
-  },
-  {
-    freq: 24952,
-    raw: "CHIPPER",
-  },
-  {
-    freq: 24956,
-    raw: "APPRISE",
-  },
-  {
-    freq: 24971,
-    raw: "ROARING",
-  },
-  {
-    freq: 24982,
-    raw: "COLLUDE",
-  },
-  {
-    freq: 24983,
-    raw: "GELDING",
-  },
-  {
-    freq: 25002,
-    raw: "INBOUND",
-  },
-  {
-    freq: 25005,
-    raw: "SCRUPLE",
-  },
-  {
-    freq: 25014,
-    raw: "CANDIED",
-  },
-  {
-    freq: 25027,
-    raw: "LIFTOFF",
-  },
-  {
-    freq: 25043,
-    raw: "SUBPLOT",
-  },
-  {
-    freq: 25078,
-    raw: "IN-CLASS",
-    word: "INCLASS",
-  },
-  {
-    freq: 25079,
-    raw: "MELANGE",
-  },
-  {
-    freq: 25082,
-    raw: "JOINING",
-  },
-  {
-    freq: 25092,
-    raw: "BARKING",
-  },
-  {
-    freq: 25095,
-    raw: "NITROUS",
-  },
-  {
-    freq: 25103,
-    raw: "VALENCE",
-  },
-  {
-    freq: 25112,
-    raw: "TRIMMER",
-  },
-  {
-    freq: 25113,
-    raw: "BOOTLEG",
-  },
-  {
-    freq: 25120,
-    raw: "ONWARDS",
-  },
-  {
-    freq: 25136,
-    raw: "RAGTIME",
-  },
-  {
-    freq: 25151,
-    raw: "IMPOUND",
-  },
-  {
-    freq: 25159,
-    raw: "PONTOON",
-  },
-  {
-    freq: 25162,
-    raw: "BUFFOON",
-  },
-  {
-    freq: 25164,
-    raw: "BEARISH",
-  },
-  {
-    freq: 25167,
-    raw: "LEMMING",
-  },
-  {
-    freq: 25177,
-    raw: "CALYPSO",
-  },
-  {
-    freq: 25178,
-    raw: "SIGNAGE",
-  },
-  {
-    freq: 25199,
-    raw: "GROWING",
-  },
-  {
-    freq: 25201,
-    raw: "PAISLEY",
-  },
-  {
-    freq: 25220,
-    raw: "PAPYRUS",
-  },
-  {
-    freq: 25226,
-    raw: "BOOKISH",
-  },
-  {
-    freq: 25236,
-    raw: "MIDRIFF",
-  },
-  {
-    freq: 25248,
-    raw: "DERANGE",
-  },
-  {
-    freq: 25258,
-    raw: "CENTAUR",
-  },
-  {
-    freq: 25265,
-    raw: "FANATIC",
-  },
-  {
-    freq: 25270,
-    raw: "KNITTED",
-  },
-  {
-    freq: 25271,
-    raw: "ISTHMUS",
-  },
-  {
-    freq: 25276,
-    raw: "SHAMPOO",
-  },
-  {
-    freq: 25278,
-    raw: "MOORISH",
-  },
-  {
-    freq: 25280,
-    raw: "DECODER",
-  },
-  {
-    freq: 25283,
-    raw: "KAYAKER",
-  },
-  {
-    freq: 25288,
-    raw: "L-SHAPED",
-    word: "LSHAPED",
-  },
-  {
-    freq: 25293,
-    raw: "BREATHY",
-  },
-  {
-    freq: 25295,
-    raw: "DISTILL",
-  },
-  {
-    freq: 25321,
-    raw: "BANDANA",
-  },
-  {
-    freq: 25325,
-    raw: "SEAWALL",
-  },
-  {
-    freq: 25338,
-    raw: "BASHING",
-  },
-  {
-    freq: 25340,
-    raw: "LAMPOON",
-  },
-  {
-    freq: 25367,
-    raw: "TUGBOAT",
-  },
-  {
-    freq: 25368,
-    raw: "USED-CAR",
-    word: "USEDCAR",
-  },
-  {
-    freq: 25369,
-    raw: "CARBINE",
-  },
-  {
-    freq: 25370,
-    raw: "ANGOLAN",
-  },
-  {
-    freq: 25382,
-    raw: "LOWDOWN",
-  },
-  {
-    freq: 25400,
-    raw: "HOMEBOY",
-  },
-  {
-    freq: 25415,
-    raw: "EMIRATE",
-  },
-  {
-    freq: 25420,
-    raw: "IBERIAN",
-  },
-  {
-    freq: 25421,
-    raw: "JACUZZI",
-  },
-  {
-    freq: 25434,
-    raw: "ASIATIC",
-  },
-  {
-    freq: 25463,
-    raw: "TRUANCY",
-  },
-  {
-    freq: 25468,
-    raw: "ASKANCE",
-  },
-  {
-    freq: 25474,
-    raw: "VICEROY",
-  },
-  {
-    freq: 25481,
-    raw: "SCREW-UP",
-    word: "SCREWUP",
-  },
-  {
-    freq: 25482,
-    raw: "GRANTEE",
-  },
-  {
-    freq: 25495,
-    raw: "HEATHEN",
-  },
-  {
-    freq: 25497,
-    raw: "SQUARED",
-  },
-  {
-    freq: 25501,
-    raw: "LINKING",
-  },
-  {
-    freq: 25502,
-    raw: "HISSING",
-  },
-  {
-    freq: 25524,
-    raw: "PIGTAIL",
-  },
-  {
-    freq: 25531,
-    raw: "DROWNED",
-  },
-  {
-    freq: 25535,
-    raw: "ATELIER",
-  },
-  {
-    freq: 25542,
-    raw: "LABORED",
-  },
-  {
-    freq: 25556,
-    raw: "CHOKING",
-  },
-  {
-    freq: 25564,
-    raw: "VOYAGER",
-  },
-  {
-    freq: 25589,
-    raw: "SOLDIER",
-  },
-  {
-    freq: 25596,
-    raw: "CREASED",
-  },
-  {
-    freq: 25604,
-    raw: "ACERBIC",
-  },
-  {
-    freq: 25607,
-    raw: "ANIMATE",
-  },
-  {
-    freq: 25612,
-    raw: "FOUR-WAY",
-    word: "FOURWAY",
-  },
-  {
-    freq: 25629,
-    raw: "BOOMING",
-  },
-  {
-    freq: 25636,
-    raw: "TWO-PAGE",
-    word: "TWOPAGE",
-  },
-  {
-    freq: 25637,
-    raw: "ADOPTEE",
-  },
-  {
-    freq: 25642,
-    raw: "INQUEST",
-  },
-  {
-    freq: 25650,
-    raw: "RINGLET",
-  },
-  {
-    freq: 25659,
-    raw: "SAGUARO",
-  },
-  {
-    freq: 25664,
-    raw: "GENOMIC",
-  },
-  {
-    freq: 25668,
-    raw: "DRAFTER",
-  },
-  {
-    freq: 25688,
-    raw: "OFF-SITE",
-    word: "OFFSITE",
-  },
-  {
-    freq: 25703,
-    raw: "TEMPERA",
-  },
-  {
-    freq: 25713,
-    raw: "THIMBLE",
-  },
-  {
-    freq: 25717,
-    raw: "SLEIGHT",
-  },
-  {
-    freq: 25727,
-    raw: "PINHEAD",
-  },
-  {
-    freq: 25728,
-    raw: "FRAMING",
-  },
-  {
-    freq: 25738,
-    raw: "BLUBBER",
-  },
-  {
-    freq: 25751,
-    raw: "ONE-PAGE",
-    word: "ONEPAGE",
-  },
-  {
-    freq: 25758,
-    raw: "VAGRANT",
-  },
-  {
-    freq: 25762,
-    raw: "RHYMING",
-  },
-  {
-    freq: 25794,
-    raw: "SHAKILY",
-  },
-  {
-    freq: 25825,
-    raw: "OUTSIZE",
-  },
-  {
-    freq: 25827,
-    raw: "DIMNESS",
-  },
-  {
-    freq: 25834,
-    raw: "VOCALLY",
-  },
-  {
-    freq: 25843,
-    raw: "OUTBACK",
-  },
-  {
-    freq: 25847,
-    raw: "V-SHAPED",
-    word: "VSHAPED",
-  },
-  {
-    freq: 25850,
-    raw: "FEATHER",
-  },
-  {
-    freq: 25858,
-    raw: "EMITTER",
-  },
-  {
-    freq: 25864,
-    raw: "MIMESIS",
-  },
-  {
-    freq: 25865,
-    raw: "SEEPAGE",
-  },
-  {
-    freq: 25867,
-    raw: "LIQUEFY",
-  },
-  {
-    freq: 25868,
-    raw: "TRINITY",
-  },
-  {
-    freq: 25878,
-    raw: "BANNING",
-  },
-  {
-    freq: 25879,
-    raw: "PYLORUS",
-  },
-  {
-    freq: 25882,
-    raw: "INTEGER",
-  },
-  {
-    freq: 25899,
-    raw: "QUILTER",
-  },
-  {
-    freq: 25915,
-    raw: "WHITISH",
-  },
-  {
-    freq: 25920,
-    raw: "BRISTLY",
-  },
-  {
-    freq: 25938,
-    raw: "RIOTOUS",
-  },
-  {
-    freq: 25949,
-    raw: "ENDGAME",
-  },
-  {
-    freq: 25957,
-    raw: "DIGRESS",
-  },
-  {
-    freq: 25973,
-    raw: "MALTESE",
-  },
-  {
-    freq: 25988,
-    raw: "UNTRUTH",
-  },
-  {
-    freq: 25989,
-    raw: "DEBATER",
-  },
-  {
-    freq: 26001,
-    raw: "ENQUIRY",
-  },
-  {
-    freq: 26005,
-    raw: "GESTALT",
-  },
-  {
-    freq: 26006,
-    raw: "GALLING",
-  },
-  {
-    freq: 26008,
-    raw: "BRACKEN",
-  },
-  {
-    freq: 26026,
-    raw: "PROFANE",
-  },
-  {
-    freq: 26027,
-    raw: "HANGMAN",
-  },
-  {
-    freq: 26029,
-    raw: "COOKERY",
-  },
-  {
-    freq: 26039,
-    raw: "ARCHING",
-  },
-  {
-    freq: 26045,
-    raw: "OMITTED",
-  },
-  {
-    freq: 26046,
-    raw: "EMPRESS",
-  },
-  {
-    freq: 26067,
-    raw: "OPPOSED",
-  },
-  {
-    freq: 26071,
-    raw: "PLAYPEN",
-  },
-  {
-    freq: 26082,
-    raw: "UNGODLY",
-  },
-  {
-    freq: 26083,
-    raw: "TACTFUL",
-  },
-  {
-    freq: 26092,
-    raw: "UNLOVED",
-  },
-  {
-    freq: 26102,
-    raw: "HOME-RUN",
-    word: "HOMERUN",
-  },
-  {
-    freq: 26104,
-    raw: "UNDYING",
-  },
-  {
-    freq: 26123,
-    raw: "POSTDOC",
-  },
-  {
-    freq: 26132,
-    raw: "AIRSHIP",
-  },
-  {
-    freq: 26139,
-    raw: "CLEARED",
-  },
-  {
-    freq: 26141,
-    raw: "COOKOUT",
-  },
-  {
-    freq: 26149,
-    raw: "SCUFFLE",
-  },
-  {
-    freq: 26157,
-    raw: "CATALAN",
-  },
-  {
-    freq: 26158,
-    raw: "TWO-STEP",
-    word: "TWOSTEP",
-  },
-  {
-    freq: 26162,
-    raw: "STOPGAP",
-  },
-  {
-    freq: 26178,
-    raw: "WORRIER",
-  },
-  {
-    freq: 26184,
-    raw: "PEPPERY",
-  },
-  {
-    freq: 26193,
-    raw: "ISOLATE",
-  },
-  {
-    freq: 26202,
-    raw: "REFEREE",
-  },
-  {
-    freq: 26207,
-    raw: "CREEPER",
-  },
-  {
-    freq: 26222,
-    raw: "STUNNER",
-  },
-  {
-    freq: 26223,
-    raw: "SKINNED",
-  },
-  {
-    freq: 26229,
-    raw: "MONGREL",
-  },
-  {
-    freq: 26231,
-    raw: "FEVERED",
-  },
-  {
-    freq: 26300,
-    raw: "PSYCHIC",
-  },
-  {
-    freq: 26301,
-    raw: "OSMOSIS",
-  },
-  {
-    freq: 26316,
-    raw: "DOORMAT",
-  },
-  {
-    freq: 26320,
-    raw: "TANGENT",
-  },
-  {
-    freq: 26324,
-    raw: "PUT-DOWN",
-    word: "PUTDOWN",
-  },
-  {
-    freq: 26328,
-    raw: "LATVIAN",
-  },
-  {
-    freq: 26330,
-    raw: "HANDOFF",
-  },
-  {
-    freq: 26341,
-    raw: "SECTION",
-  },
-  {
-    freq: 26344,
-    raw: "SPRAYER",
-  },
-  {
-    freq: 26372,
-    raw: "COMMODE",
-  },
-  {
-    freq: 26394,
-    raw: "VENTING",
-  },
-  {
-    freq: 26404,
-    raw: "TAPIOCA",
-  },
-  {
-    freq: 26408,
-    raw: "TWO-MILE",
-    word: "TWOMILE",
-  },
-  {
-    freq: 26410,
-    raw: "OFF-LOAD",
-    word: "OFFLOAD",
-  },
-  {
-    freq: 26420,
-    raw: "WESTERN",
-  },
-  {
-    freq: 26421,
-    raw: "WREATHE",
-  },
-  {
-    freq: 26426,
-    raw: "ACETATE",
-  },
-  {
-    freq: 26436,
-    raw: "SEALANT",
-  },
-  {
-    freq: 26441,
-    raw: "KNOCKER",
-  },
-  {
-    freq: 26444,
-    raw: "JUNGIAN",
-  },
-  {
-    freq: 26446,
-    raw: "FORCEPS",
-  },
-  {
-    freq: 26452,
-    raw: "DECIMAL",
-  },
-  {
-    freq: 26467,
-    raw: "CUT-RATE",
-    word: "CUTRATE",
-  },
-  {
-    freq: 26471,
-    raw: "DELIMIT",
-  },
-  {
-    freq: 26488,
-    raw: "HILLOCK",
-  },
-  {
-    freq: 26492,
-    raw: "REDFISH",
-  },
-  {
-    freq: 26494,
-    raw: "OPOSSUM",
-  },
-  {
-    freq: 26504,
-    raw: "TROPHIC",
-  },
-  {
-    freq: 26506,
-    raw: "LOWLIFE",
-  },
-  {
-    freq: 26513,
-    raw: "VITRIOL",
-  },
-  {
-    freq: 26516,
-    raw: "GROOMED",
-  },
-  {
-    freq: 26526,
-    raw: "COMPOTE",
-  },
-  {
-    freq: 26547,
-    raw: "ENCODER",
-  },
-  {
-    freq: 26549,
-    raw: "BIGHORN",
-  },
-  {
-    freq: 26559,
-    raw: "MOANING",
-  },
-  {
-    freq: 26566,
-    raw: "FLOTSAM",
-  },
-  {
-    freq: 26587,
-    raw: "SWARTHY",
-  },
-  {
-    freq: 26594,
-    raw: "WINSOME",
-  },
-  {
-    freq: 26599,
-    raw: "HADDOCK",
-  },
-  {
-    freq: 26615,
-    raw: "LOCKING",
-  },
-  {
-    freq: 26616,
-    raw: "FIDGETY",
-  },
-  {
-    freq: 26635,
-    raw: "WILLOWY",
-  },
-  {
-    freq: 26637,
-    raw: "WINGTIP",
-  },
-  {
-    freq: 26644,
-    raw: "HACKING",
-  },
-  {
-    freq: 26654,
-    raw: "AQUEOUS",
-  },
-  {
-    freq: 26660,
-    raw: "GRANARY",
-  },
-  {
-    freq: 26672,
-    raw: "FEIGNED",
-  },
-  {
-    freq: 26678,
-    raw: "CARAWAY",
-  },
-  {
-    freq: 26707,
-    raw: "CONSORT",
-  },
-  {
-    freq: 26714,
-    raw: "WILDCAT",
-  },
-  {
-    freq: 26718,
-    raw: "CUTAWAY",
-  },
-  {
-    freq: 26739,
-    raw: "ATHEIST",
-  },
-  {
-    freq: 26770,
-    raw: "BOLOGNA",
-  },
-  {
-    freq: 26786,
-    raw: "MUSKRAT",
-  },
-  {
-    freq: 26801,
-    raw: "JAMMING",
-  },
-  {
-    freq: 26813,
-    raw: "FULCRUM",
-  },
-  {
-    freq: 26814,
-    raw: "SPITTLE",
-  },
-  {
-    freq: 26834,
-    raw: "INSIPID",
-  },
-  {
-    freq: 26836,
-    raw: "MAUDLIN",
-  },
-  {
-    freq: 26844,
-    raw: "WATTAGE",
-  },
-  {
-    freq: 26859,
-    raw: "CARLOAD",
-  },
-  {
-    freq: 26870,
-    raw: "PHOENIX",
-  },
-  {
-    freq: 26874,
-    raw: "LAGGARD",
-  },
-  {
-    freq: 26875,
-    raw: "TOPMOST",
-  },
-  {
-    freq: 26876,
-    raw: "MODULUS",
-  },
-  {
-    freq: 26884,
-    raw: "SWAHILI",
-  },
-  {
-    freq: 26892,
-    raw: "APROPOS",
-  },
-  {
-    freq: 26895,
-    raw: "BLOWING",
-  },
-  {
-    freq: 26907,
-    raw: "PERFUME",
-  },
-  {
-    freq: 26912,
-    raw: "IONIZED",
-  },
-  {
-    freq: 26931,
-    raw: "SPLURGE",
-  },
-  {
-    freq: 26959,
-    raw: "TENSILE",
-  },
-  {
-    freq: 26963,
-    raw: "ADOPTER",
-  },
-  {
-    freq: 27002,
-    raw: "HIPBELT",
-  },
-  {
-    freq: 27003,
-    raw: "RUMORED",
-  },
-  {
-    freq: 27005,
-    raw: "EPOCHAL",
-  },
-  {
-    freq: 27008,
-    raw: "CHEAPEN",
-  },
-  {
-    freq: 27014,
-    raw: "LIONESS",
-  },
-  {
-    freq: 27016,
-    raw: "WHACKED",
-  },
-  {
-    freq: 27021,
-    raw: "SECURED",
-  },
-  {
-    freq: 27034,
-    raw: "LOGBOOK",
-  },
-  {
-    freq: 27037,
-    raw: "LOW-DOSE",
-    word: "LOWDOSE",
-  },
-  {
-    freq: 27044,
-    raw: "UNLATCH",
-  },
-  {
-    freq: 27049,
-    raw: "BANGING",
-  },
-  {
-    freq: 27054,
-    raw: "AQUATIC",
-  },
-  {
-    freq: 27063,
-    raw: "DRILLER",
-  },
-  {
-    freq: 27064,
-    raw: "RHIZOME",
-  },
-  {
-    freq: 27066,
-    raw: "SPAMMER",
-  },
-  {
-    freq: 27078,
-    raw: "JUBILEE",
-  },
-  {
-    freq: 27083,
-    raw: "IN-GROUP",
-    word: "INGROUP",
-  },
-  {
-    freq: 27085,
-    raw: "ORDINAL",
-  },
-  {
-    freq: 27093,
-    raw: "FISHNET",
-  },
-  {
-    freq: 27101,
-    raw: "RUBBING",
-  },
-  {
-    freq: 27116,
-    raw: "VARNISH",
-  },
-  {
-    freq: 27122,
-    raw: "CATHODE",
-  },
-  {
-    freq: 27128,
-    raw: "WIZENED",
-  },
-  {
-    freq: 27133,
-    raw: "SWAHILI",
-  },
-  {
-    freq: 27166,
-    raw: "RAMEKIN",
-  },
-  {
-    freq: 27190,
-    raw: "ROILING",
-  },
-  {
-    freq: 27202,
-    raw: "HUMMING",
-  },
-  {
-    freq: 27210,
-    raw: "BLANDLY",
-  },
-  {
-    freq: 27218,
-    raw: "NUMBING",
-  },
-  {
-    freq: 27222,
-    raw: "HUMMING",
-  },
-  {
-    freq: 27224,
-    raw: "QUITTER",
-  },
-  {
-    freq: 27229,
-    raw: "EPISTLE",
-  },
-  {
-    freq: 27234,
-    raw: "RUSTING",
-  },
-  {
-    freq: 27238,
-    raw: "UGANDAN",
-  },
-  {
-    freq: 27250,
-    raw: "CORNISH",
-  },
-  {
-    freq: 27256,
-    raw: "FLU-LIKE",
-    word: "FLULIKE",
-  },
-  {
-    freq: 27264,
-    raw: "SCRUBBY",
-  },
-  {
-    freq: 27270,
-    raw: "FORELEG",
-  },
-  {
-    freq: 27283,
-    raw: "MUGGING",
-  },
-  {
-    freq: 27287,
-    raw: "RETINUE",
-  },
-  {
-    freq: 27290,
-    raw: "GEARBOX",
-  },
-  {
-    freq: 27296,
-    raw: "SUNROOM",
-  },
-  {
-    freq: 27305,
-    raw: "BLUSTER",
-  },
-  {
-    freq: 27309,
-    raw: "ARMBAND",
-  },
-  {
-    freq: 27316,
-    raw: "OEDIPAL",
-  },
-  {
-    freq: 27327,
-    raw: "VINTNER",
-  },
-  {
-    freq: 27337,
-    raw: "HUMDRUM",
-  },
-  {
-    freq: 27361,
-    raw: "EXTRUDE",
-  },
-  {
-    freq: 27362,
-    raw: "PRELATE",
-  },
-  {
-    freq: 27366,
-    raw: "GANGWAY",
-  },
-  {
-    freq: 27371,
-    raw: "COHABIT",
-  },
-  {
-    freq: 27376,
-    raw: "LARGESS",
-  },
-  {
-    freq: 27380,
-    raw: "SWELTER",
-  },
-  {
-    freq: 27382,
-    raw: "PANELED",
-  },
-  {
-    freq: 27400,
-    raw: "AUDIBLY",
-  },
-  {
-    freq: 27401,
-    raw: "FOUR-MAN",
-    word: "FOURMAN",
-  },
-  {
-    freq: 27419,
-    raw: "EXPIRED",
-  },
-  {
-    freq: 27435,
-    raw: "CHILEAN",
-  },
-  {
-    freq: 27458,
-    raw: "PERUSAL",
-  },
-  {
-    freq: 27465,
-    raw: "SULPHUR",
-  },
-  {
-    freq: 27470,
-    raw: "DAY-LONG",
-    word: "DAYLONG",
-  },
-  {
-    freq: 27472,
-    raw: "FALSITY",
-  },
-  {
-    freq: 27484,
-    raw: "TERSELY",
-  },
-  {
-    freq: 27487,
-    raw: "WRECKER",
-  },
-  {
-    freq: 27493,
-    raw: "TWO-TERM",
-    word: "TWOTERM",
-  },
-  {
-    freq: 27500,
-    raw: "LINSEED",
-  },
-  {
-    freq: 27525,
-    raw: "SEND-OFF",
-    word: "SENDOFF",
-  },
-  {
-    freq: 27529,
-    raw: "BROILED",
-  },
-  {
-    freq: 27534,
-    raw: "PULSING",
-  },
-  {
-    freq: 27535,
-    raw: "PARQUET",
-  },
-  {
-    freq: 27543,
-    raw: "RETOUCH",
-  },
-  {
-    freq: 27566,
-    raw: "GRUMBLE",
-  },
-  {
-    freq: 27569,
-    raw: "BOLSTER",
-  },
-  {
-    freq: 27572,
-    raw: "FISSILE",
-  },
-  {
-    freq: 27577,
-    raw: "MELDING",
-  },
-  {
-    freq: 27578,
-    raw: "COPPERY",
-  },
-  {
-    freq: 27603,
-    raw: "GO-AHEAD",
-    word: "GOAHEAD",
-  },
-  {
-    freq: 27604,
-    raw: "DERRICK",
-  },
-  {
-    freq: 27605,
-    raw: "SUNBURN",
-  },
-  {
-    freq: 27616,
-    raw: "RAMBLER",
-  },
-  {
-    freq: 27624,
-    raw: "BEGUILE",
-  },
-  {
-    freq: 27630,
-    raw: "DRAUGHT",
-  },
-  {
-    freq: 27631,
-    raw: "HEATHEN",
-  },
-  {
-    freq: 27643,
-    raw: "CHAMOIS",
-  },
-  {
-    freq: 27645,
-    raw: "SATIRIC",
-  },
-  {
-    freq: 27650,
-    raw: "MODELER",
-  },
-  {
-    freq: 27657,
-    raw: "OVERTAX",
-  },
-  {
-    freq: 27661,
-    raw: "CONNIVE",
-  },
-  {
-    freq: 27680,
-    raw: "PRETEEN",
-  },
-  {
-    freq: 27689,
-    raw: "DECLAIM",
-  },
-  {
-    freq: 27701,
-    raw: "FLACCID",
-  },
-  {
-    freq: 27723,
-    raw: "HEMLINE",
-  },
-  {
-    freq: 27724,
-    raw: "COLITIS",
-  },
-  {
-    freq: 27728,
-    raw: "ANAGRAM",
-  },
-  {
-    freq: 27748,
-    raw: "HAS-BEEN",
-    word: "HASBEEN",
-  },
-  {
-    freq: 27755,
-    raw: "SMEARED",
-  },
-  {
-    freq: 27759,
-    raw: "RATCHET",
-  },
-  {
-    freq: 27774,
-    raw: "TRACHEA",
-  },
-  {
-    freq: 27780,
-    raw: "SWAYING",
-  },
-  {
-    freq: 27790,
-    raw: "ALSO-RAN",
-    word: "ALSORAN",
-  },
-  {
-    freq: 27812,
-    raw: "GUNNERY",
-  },
-  {
-    freq: 27813,
-    raw: "POPPING",
-  },
-  {
-    freq: 27816,
-    raw: "BURNING",
-  },
-  {
-    freq: 27821,
-    raw: "PERCHED",
-  },
-  {
-    freq: 27822,
-    raw: "INGENUE",
-  },
-  {
-    freq: 27827,
-    raw: "CRUSHER",
-  },
-  {
-    freq: 27828,
-    raw: "WASH-OUT",
-    word: "WASHOUT",
-  },
-  {
-    freq: 27829,
-    raw: "BEGONIA",
-  },
-  {
-    freq: 27836,
-    raw: "GINGHAM",
-  },
-  {
-    freq: 27838,
-    raw: "SCUFFED",
-  },
-  {
-    freq: 27842,
-    raw: "LEAPING",
-  },
-  {
-    freq: 27847,
-    raw: "BOUDOIR",
-  },
-  {
-    freq: 27857,
-    raw: "MONTHLY",
-  },
-  {
-    freq: 27859,
-    raw: "YESHIVA",
-  },
-  {
-    freq: 27863,
-    raw: "HERDING",
-  },
-  {
-    freq: 27865,
-    raw: "BENTHIC",
-  },
-  {
-    freq: 27867,
-    raw: "BELTWAY",
-  },
-  {
-    freq: 27871,
-    raw: "EROTICA",
-  },
-  {
-    freq: 27872,
-    raw: "ASUNDER",
-  },
-  {
-    freq: 27874,
-    raw: "ROLODEX",
-  },
-  {
-    freq: 27883,
-    raw: "BRAVURA",
-  },
-  {
-    freq: 27901,
-    raw: "LIMINAL",
-  },
-  {
-    freq: 27905,
-    raw: "PERVERT",
-  },
-  {
-    freq: 27918,
-    raw: "INCISOR",
-  },
-  {
-    freq: 27929,
-    raw: "SKY-BLUE",
-    word: "SKYBLUE",
-  },
-  {
-    freq: 27933,
-    raw: "DOUBLET",
-  },
-  {
-    freq: 27954,
-    raw: "DECAYED",
-  },
-  {
-    freq: 27961,
-    raw: "GLIDING",
-  },
-  {
-    freq: 27976,
-    raw: "QUIBBLE",
-  },
-  {
-    freq: 27980,
-    raw: "CRASHED",
-  },
-  {
-    freq: 27982,
-    raw: "ROMANCE",
-  },
-  {
-    freq: 27995,
-    raw: "SUNBEAM",
-  },
-  {
-    freq: 28002,
-    raw: "MINGLED",
-  },
-  {
-    freq: 28005,
-    raw: "HAYRIDE",
-  },
-  {
-    freq: 28009,
-    raw: "DOUBLED",
-  },
-  {
-    freq: 28010,
-    raw: "VACUOUS",
-  },
-  {
-    freq: 28018,
-    raw: "LAYOVER",
-  },
-  {
-    freq: 28026,
-    raw: "CLUNKER",
-  },
-  {
-    freq: 28033,
-    raw: "END-USER",
-    word: "ENDUSER",
-  },
-  {
-    freq: 28038,
-    raw: "DINETTE",
-  },
-  {
-    freq: 28046,
-    raw: "SWAGGER",
-  },
-  {
-    freq: 28052,
-    raw: "ARMLOAD",
-  },
-  {
-    freq: 28058,
-    raw: "LADYBUG",
-  },
-  {
-    freq: 28059,
-    raw: "ENNOBLE",
-  },
-  {
-    freq: 28076,
-    raw: "LURKING",
-  },
-  {
-    freq: 28077,
-    raw: "WHITHER",
-  },
-  {
-    freq: 28084,
-    raw: "GRUFFLY",
-  },
-  {
-    freq: 28088,
-    raw: "MATADOR",
-  },
-  {
-    freq: 28104,
-    raw: "SARCOMA",
-  },
-  {
-    freq: 28105,
-    raw: "TITULAR",
-  },
-  {
-    freq: 28112,
-    raw: "DIGNIFY",
-  },
-  {
-    freq: 28118,
-    raw: "MIDLINE",
-  },
-  {
-    freq: 28156,
-    raw: "SMOOTHY",
-  },
-  {
-    freq: 28173,
-    raw: "HALF-DAY",
-    word: "HALFDAY",
-  },
-  {
-    freq: 28185,
-    raw: "LOW-CARB",
-    word: "LOWCARB",
-  },
-  {
-    freq: 28186,
-    raw: "TILAPIA",
-  },
-  {
-    freq: 28194,
-    raw: "GUNBOAT",
-  },
-  {
-    freq: 28203,
-    raw: "TAILING",
-  },
-  {
-    freq: 28213,
-    raw: "BLOOMER",
-  },
-  {
-    freq: 28215,
-    raw: "RAGGEDY",
-  },
-  {
-    freq: 28225,
-    raw: "VARMINT",
-  },
-  {
-    freq: 28233,
-    raw: "ARTISTE",
-  },
-  {
-    freq: 28234,
-    raw: "POUNDER",
-  },
-  {
-    freq: 28236,
-    raw: "FOREARM",
-  },
-  {
-    freq: 28241,
-    raw: "TWOSOME",
-  },
-  {
-    freq: 28244,
-    raw: "PINHOLE",
-  },
-  {
-    freq: 28247,
-    raw: "RETRIAL",
-  },
-  {
-    freq: 28260,
-    raw: "CHORIZO",
-  },
-  {
-    freq: 28263,
-    raw: "FLAT-OUT",
-    word: "FLATOUT",
-  },
-  {
-    freq: 28283,
-    raw: "BARMAID",
-  },
-  {
-    freq: 28289,
-    raw: "CURRIED",
-  },
-  {
-    freq: 28292,
-    raw: "POLLOCK",
-  },
-  {
-    freq: 28294,
-    raw: "SNIFFLE",
-  },
-  {
-    freq: 28297,
-    raw: "MID-TERM",
-    word: "MIDTERM",
-  },
-  {
-    freq: 28315,
-    raw: "FORGING",
-  },
-  {
-    freq: 28317,
-    raw: "JUGULAR",
-  },
-  {
-    freq: 28323,
-    raw: "IN-STORE",
-    word: "INSTORE",
-  },
-  {
-    freq: 28331,
-    raw: "PHALLUS",
-  },
-  {
-    freq: 28351,
-    raw: "SEARING",
-  },
-  {
-    freq: 28365,
-    raw: "STUPEFY",
-  },
-  {
-    freq: 28381,
-    raw: "ANTACID",
-  },
-  {
-    freq: 28388,
-    raw: "ASEXUAL",
-  },
-  {
-    freq: 28394,
-    raw: "JUGULAR",
-  },
-  {
-    freq: 28399,
-    raw: "COERCED",
-  },
-  {
-    freq: 28403,
-    raw: "RIBBING",
-  },
-  {
-    freq: 28404,
-    raw: "SCUMBAG",
-  },
-  {
-    freq: 28415,
-    raw: "REALIST",
-  },
-  {
-    freq: 28430,
-    raw: "SPASTIC",
-  },
-  {
-    freq: 28436,
-    raw: "SNUFFLE",
-  },
-  {
-    freq: 28440,
-    raw: "SPIDERY",
-  },
-  {
-    freq: 28443,
-    raw: "SUNDIAL",
-  },
-  {
-    freq: 28444,
-    raw: "SERVILE",
-  },
-  {
-    freq: 28445,
-    raw: "DEEP-SET",
-    word: "DEEPSET",
-  },
-  {
-    freq: 28454,
-    raw: "PROTEAN",
-  },
-  {
-    freq: 28455,
-    raw: "SEQUOIA",
-  },
-  {
-    freq: 28475,
-    raw: "BOBSLED",
-  },
-  {
-    freq: 28481,
-    raw: "SCROTUM",
-  },
-  {
-    freq: 28492,
-    raw: "UNITING",
-  },
-  {
-    freq: 28494,
-    raw: "RUFFIAN",
-  },
-  {
-    freq: 28514,
-    raw: "GROOMER",
-  },
-  {
-    freq: 28518,
-    raw: "BUILT-UP",
-    word: "BUILTUP",
-  },
-  {
-    freq: 28532,
-    raw: "STEMMED",
-  },
-  {
-    freq: 28536,
-    raw: "ROASTER",
-  },
-  {
-    freq: 28540,
-    raw: "ANASAZI",
-  },
-  {
-    freq: 28555,
-    raw: "BLASTER",
-  },
-  {
-    freq: 28562,
-    raw: "MONSTER",
-  },
-  {
-    freq: 28571,
-    raw: "TOEHOLD",
-  },
-  {
-    freq: 28579,
-    raw: "ANTI-TAX",
-    word: "ANTITAX",
-  },
-  {
-    freq: 28580,
-    raw: "PILLBOX",
-  },
-  {
-    freq: 28597,
-    raw: "PAROLEE",
-  },
-  {
-    freq: 28607,
-    raw: "SEASICK",
-  },
-  {
-    freq: 28608,
-    raw: "ROOMING",
-  },
-  {
-    freq: 28615,
-    raw: "FRAZZLE",
-  },
-  {
-    freq: 28618,
-    raw: "TELL-ALL",
-    word: "TELLALL",
-  },
-  {
-    freq: 28619,
-    raw: "LIMPING",
-  },
-  {
-    freq: 28621,
-    raw: "CARPOOL",
-  },
-  {
-    freq: 28630,
-    raw: "WELL-FED",
-    word: "WELLFED",
-  },
-  {
-    freq: 28644,
-    raw: "REISSUE",
-  },
-  {
-    freq: 28652,
-    raw: "BRAKING",
-  },
-  {
-    freq: 28653,
-    raw: "NEO-NAZI",
-    word: "NEONAZI",
-  },
-  {
-    freq: 28656,
-    raw: "CLOTURE",
-  },
-  {
-    freq: 28660,
-    raw: "TACKLER",
-  },
-  {
-    freq: 28671,
-    raw: "HEPATIC",
-  },
-  {
-    freq: 28690,
-    raw: "DRIED-UP",
-    word: "DRIEDUP",
-  },
-  {
-    freq: 28698,
-    raw: "HARDTOP",
-  },
-  {
-    freq: 28701,
-    raw: "BARKING",
-  },
-  {
-    freq: 28705,
-    raw: "INFLECT",
-  },
-  {
-    freq: 28718,
-    raw: "MUSCLED",
-  },
-  {
-    freq: 28723,
-    raw: "COLLATE",
-  },
-  {
-    freq: 28724,
-    raw: "SEALING",
-  },
-  {
-    freq: 28756,
-    raw: "SURFEIT",
-  },
-  {
-    freq: 28761,
-    raw: "SUCKING",
-  },
-  {
-    freq: 28769,
-    raw: "ROYALLY",
-  },
-  {
-    freq: 28770,
-    raw: "HARRIER",
-  },
-  {
-    freq: 28781,
-    raw: "HONEYED",
-  },
-  {
-    freq: 28791,
-    raw: "DOWAGER",
-  },
-  {
-    freq: 28817,
-    raw: "UNTRIED",
-  },
-  {
-    freq: 28826,
-    raw: "TANNING",
-  },
-  {
-    freq: 28836,
-    raw: "LONGISH",
-  },
-  {
-    freq: 28837,
-    raw: "INCISED",
-  },
-  {
-    freq: 28842,
-    raw: "SUBUNIT",
-  },
-  {
-    freq: 28844,
-    raw: "RASPING",
-  },
-  {
-    freq: 28846,
-    raw: "SLOWING",
-  },
-  {
-    freq: 28851,
-    raw: "KICKING",
-  },
-  {
-    freq: 28853,
-    raw: "DRAGNET",
-  },
-  {
-    freq: 28877,
-    raw: "SHARING",
-  },
-  {
-    freq: 28887,
-    raw: "BALEFUL",
-  },
-  {
-    freq: 28904,
-    raw: "GLADDEN",
-  },
-  {
-    freq: 28913,
-    raw: "RAMPAGE",
-  },
-  {
-    freq: 28924,
-    raw: "PROVING",
-  },
-  {
-    freq: 28930,
-    raw: "TOP-TIER",
-    word: "TOPTIER",
-  },
-  {
-    freq: 28941,
-    raw: "PIRANHA",
-  },
-  {
-    freq: 28942,
-    raw: "OUTTAKE",
-  },
-  {
-    freq: 28949,
-    raw: "SLASHER",
-  },
-  {
-    freq: 28950,
-    raw: "TOPCOAT",
-  },
-  {
-    freq: 28954,
-    raw: "ITCHING",
-  },
-  {
-    freq: 28984,
-    raw: "FRISSON",
-  },
-  {
-    freq: 28985,
-    raw: "INEXACT",
-  },
-  {
-    freq: 28988,
-    raw: "SCALPER",
-  },
-  {
-    freq: 28993,
-    raw: "CRUSTED",
-  },
-  {
-    freq: 28998,
-    raw: "UPDRAFT",
-  },
-  {
-    freq: 29000,
-    raw: "TOP-FIVE",
-    word: "TOPFIVE",
-  },
-  {
-    freq: 29017,
-    raw: "CUTLASS",
-  },
-  {
-    freq: 29028,
-    raw: "CANTINA",
-  },
-  {
-    freq: 29031,
-    raw: "PACIFIC",
-  },
-  {
-    freq: 29034,
-    raw: "GREMLIN",
-  },
-  {
-    freq: 29046,
-    raw: "AFGHANI",
-  },
-  {
-    freq: 29052,
-    raw: "CRAMPON",
-  },
-  {
-    freq: 29065,
-    raw: "LAMPOON",
-  },
-  {
-    freq: 29077,
-    raw: "LAOTIAN",
-  },
-  {
-    freq: 29086,
-    raw: "LEAKING",
-  },
-  {
-    freq: 29087,
-    raw: "REDOUBT",
-  },
-  {
-    freq: 29092,
-    raw: "KANTIAN",
-  },
-  {
-    freq: 29107,
-    raw: "PUTTING",
-  },
-  {
-    freq: 29109,
-    raw: "BUSHMAN",
-  },
-  {
-    freq: 29110,
-    raw: "TOUCH-UP",
-    word: "TOUCHUP",
-  },
-  {
-    freq: 29128,
-    raw: "CALDERA",
-  },
-  {
-    freq: 29132,
-    raw: "LEGWORK",
-  },
-  {
-    freq: 29133,
-    raw: "PATCHED",
-  },
-  {
-    freq: 29142,
-    raw: "DARTING",
-  },
-  {
-    freq: 29154,
-    raw: "PULLING",
-  },
-  {
-    freq: 29166,
-    raw: "ELEGIAC",
-  },
-  {
-    freq: 29174,
-    raw: "WELL-RUN",
-    word: "WELLRUN",
-  },
-  {
-    freq: 29188,
-    raw: "SCEPTER",
-  },
-  {
-    freq: 29192,
-    raw: "CLICKER",
-  },
-  {
-    freq: 29193,
-    raw: "ABRIDGE",
-  },
-  {
-    freq: 29200,
-    raw: "POLYGON",
-  },
-  {
-    freq: 29222,
-    raw: "MASTOID",
-  },
-  {
-    freq: 29223,
-    raw: "PLUNGER",
-  },
-  {
-    freq: 29228,
-    raw: "ONE-WORD",
-    word: "ONEWORD",
-  },
-  {
-    freq: 29234,
-    raw: "SUNFISH",
-  },
-  {
-    freq: 29246,
-    raw: "SOAKING",
-  },
-  {
-    freq: 29249,
-    raw: "SUNROOF",
-  },
-  {
-    freq: 29252,
-    raw: "MILKMAN",
-  },
-  {
-    freq: 29271,
-    raw: "OFFHAND",
-  },
-  {
-    freq: 29282,
-    raw: "SCATTER",
-  },
-  {
-    freq: 29289,
-    raw: "FEEDLOT",
-  },
-  {
-    freq: 29290,
-    raw: "REMODEL",
-  },
-  {
-    freq: 29294,
-    raw: "LUMP-SUM",
-    word: "LUMPSUM",
-  },
-  {
-    freq: 29295,
-    raw: "HEADS-UP",
-    word: "HEADSUP",
-  },
-  {
-    freq: 29305,
-    raw: "CAPRICE",
-  },
-  {
-    freq: 29315,
-    raw: "BIPLANE",
-  },
-  {
-    freq: 29317,
-    raw: "CARBIDE",
-  },
-  {
-    freq: 29323,
-    raw: "SANDBAG",
-  },
-  {
-    freq: 29325,
-    raw: "DIETING",
-  },
-  {
-    freq: 29327,
-    raw: "MISFIRE",
-  },
-  {
-    freq: 29337,
-    raw: "SCHMUCK",
-  },
-  {
-    freq: 29348,
-    raw: "GENTILE",
-  },
-  {
-    freq: 29359,
-    raw: "BELLMAN",
-  },
-  {
-    freq: 29370,
-    raw: "TENFOLD",
-  },
-  {
-    freq: 29374,
-    raw: "UNLINED",
-  },
-  {
-    freq: 29379,
-    raw: "SMIDGEN",
-  },
-  {
-    freq: 29382,
-    raw: "PLEASER",
-  },
-  {
-    freq: 29426,
-    raw: "LACQUER",
-  },
-  {
-    freq: 29428,
-    raw: "FIBROID",
-  },
-  {
-    freq: 29435,
-    raw: "UMBRAGE",
-  },
-  {
-    freq: 29438,
-    raw: "CLAIMED",
-  },
-  {
-    freq: 29444,
-    raw: "BOATMAN",
-  },
-  {
-    freq: 29452,
-    raw: "BELLHOP",
-  },
-  {
-    freq: 29463,
-    raw: "LAGGING",
-  },
-  {
-    freq: 29484,
-    raw: "FATUOUS",
-  },
-  {
-    freq: 29485,
-    raw: "SPECTRE",
-  },
-  {
-    freq: 29490,
-    raw: "TOPIARY",
-  },
-  {
-    freq: 29496,
-    raw: "LOW-RENT",
-    word: "LOWRENT",
-  },
-  {
-    freq: 29497,
-    raw: "TENABLE",
-  },
-  {
-    freq: 29506,
-    raw: "TOUCHED",
-  },
-  {
-    freq: 29516,
-    raw: "PILLORY",
-  },
-  {
-    freq: 29518,
-    raw: "BANSHEE",
-  },
-  {
-    freq: 29539,
-    raw: "EPSILON",
-  },
-  {
-    freq: 29543,
-    raw: "REGATTA",
-  },
-  {
-    freq: 29551,
-    raw: "TWO-FOOT",
-    word: "TWOFOOT",
-  },
-  {
-    freq: 29561,
-    raw: "FRITTER",
-  },
-  {
-    freq: 29564,
-    raw: "AVARICE",
-  },
-  {
-    freq: 29572,
-    raw: "TWO-TIER",
-    word: "TWOTIER",
-  },
-  {
-    freq: 29581,
-    raw: "LUNGING",
-  },
-  {
-    freq: 29585,
-    raw: "CHORALE",
-  },
-  {
-    freq: 29586,
-    raw: "PROWLER",
-  },
-  {
-    freq: 29598,
-    raw: "BANDING",
-  },
-  {
-    freq: 29606,
-    raw: "ABALONE",
-  },
-  {
-    freq: 29632,
-    raw: "SEMITIC",
-  },
-  {
-    freq: 29642,
-    raw: "TOUSLED",
-  },
-  {
-    freq: 29648,
-    raw: "TREKKER",
-  },
-  {
-    freq: 29660,
-    raw: "PROFUSE",
-  },
-  {
-    freq: 29671,
-    raw: "RED-EYED",
-    word: "REDEYED",
-  },
-  {
-    freq: 29680,
-    raw: "JAWBONE",
-  },
-  {
-    freq: 29686,
-    raw: "SWINGER",
-  },
-  {
-    freq: 29712,
-    raw: "HUDDLED",
-  },
-  {
-    freq: 29714,
-    raw: "HEARKEN",
-  },
-  {
-    freq: 29718,
-    raw: "GROUCHY",
-  },
-  {
-    freq: 29729,
-    raw: "TENSELY",
-  },
-  {
-    freq: 29730,
-    raw: "VETTING",
-  },
-  {
-    freq: 29731,
-    raw: "WRITE-IN",
-    word: "WRITEIN",
-  },
-  {
-    freq: 29736,
-    raw: "NOONDAY",
-  },
-  {
-    freq: 29737,
-    raw: "BUNGLED",
-  },
-  {
-    freq: 29750,
-    raw: "ROADMAP",
-  },
-  {
-    freq: 29753,
-    raw: "CATLIKE",
-  },
-  {
-    freq: 29775,
-    raw: "YELLING",
-  },
-  {
-    freq: 29779,
-    raw: "PIQUANT",
-  },
-  {
-    freq: 29780,
-    raw: "BEASTLY",
-  },
-  {
-    freq: 29786,
-    raw: "TILLAGE",
-  },
-  {
-    freq: 29788,
-    raw: "OCCLUDE",
-  },
-  {
-    freq: 29790,
-    raw: "OUTSELL",
-  },
-  {
-    freq: 29794,
-    raw: "SICHUAN",
-  },
-  {
-    freq: 29800,
-    raw: "CUMULUS",
-  },
-  {
-    freq: 29817,
-    raw: "DELETED",
-  },
-  {
-    freq: 29821,
-    raw: "TOPSIDE",
-  },
-  {
-    freq: 29839,
-    raw: "GRECIAN",
-  },
-  {
-    freq: 29847,
-    raw: "PRICKLE",
-  },
-  {
-    freq: 29848,
-    raw: "SELTZER",
-  },
-  {
-    freq: 29863,
-    raw: "SEXLESS",
-  },
-  {
-    freq: 29865,
-    raw: "EGOTISM",
-  },
-  {
-    freq: 29881,
-    raw: "CODEINE",
-  },
-  {
-    freq: 29884,
-    raw: "DERIVED",
-  },
-  {
-    freq: 29907,
-    raw: "FLAPPER",
-  },
-  {
-    freq: 29924,
-    raw: "TWO-STEP",
-    word: "TWOSTEP",
-  },
-  {
-    freq: 29931,
-    raw: "TWO-INCH",
-    word: "TWOINCH",
-  },
-  {
-    freq: 29938,
-    raw: "KITSCHY",
-  },
-  {
-    freq: 29945,
-    raw: "UKULELE",
-  },
-  {
-    freq: 29946,
-    raw: "SOAPBOX",
-  },
-  {
-    freq: 29953,
-    raw: "NEUTRAL",
-  },
-  {
-    freq: 29958,
-    raw: "PORTAGE",
-  },
-  {
-    freq: 29962,
-    raw: "INVERSE",
-  },
-  {
-    freq: 29964,
-    raw: "MELANIN",
-  },
-  {
-    freq: 29997,
-    raw: "BOOKEND",
-  },
-  {
-    freq: 30001,
-    raw: "COAXIAL",
-  },
-  {
-    freq: 30014,
-    raw: "GROMMET",
-  },
-  {
-    freq: 30016,
-    raw: "FORAGER",
-  },
-  {
-    freq: 30017,
-    raw: "RAWHIDE",
-  },
-  {
-    freq: 30035,
-    raw: "THYSELF",
-  },
-  {
-    freq: 30038,
-    raw: "ORIGAMI",
-  },
-  {
-    freq: 30046,
-    raw: "CARPORT",
-  },
-  {
-    freq: 30047,
-    raw: "MISERLY",
-  },
-  {
-    freq: 30070,
-    raw: "SKYDIVE",
-  },
-  {
-    freq: 30077,
-    raw: "LEEWARD",
-  },
-  {
-    freq: 30090,
-    raw: "CAPTION",
-  },
-  {
-    freq: 30121,
-    raw: "FLIGHTY",
-  },
-  {
-    freq: 30134,
-    raw: "CARJACK",
-  },
-  {
-    freq: 30137,
-    raw: "PIZZAZZ",
-  },
-  {
-    freq: 30160,
-    raw: "CONCORD",
-  },
-  {
-    freq: 30168,
-    raw: "SURFING",
-  },
-  {
-    freq: 30173,
-    raw: "TORSION",
-  },
-  {
-    freq: 30181,
-    raw: "LOYALLY",
-  },
-  {
-    freq: 30182,
-    raw: "ROSEBUD",
-  },
-  {
-    freq: 30190,
-    raw: "ENTREAT",
-  },
-  {
-    freq: 30193,
-    raw: "SHAMBLE",
-  },
-  {
-    freq: 30195,
-    raw: "SHERBET",
-  },
-  {
-    freq: 30202,
-    raw: "CHAGRIN",
-  },
-  {
-    freq: 30209,
-    raw: "FIREBOX",
-  },
-  {
-    freq: 30213,
-    raw: "SHELLED",
-  },
-  {
-    freq: 30214,
-    raw: "FULL-DAY",
-    word: "FULLDAY",
-  },
-  {
-    freq: 30218,
-    raw: "SNIFFER",
-  },
-  {
-    freq: 30227,
-    raw: "JAWLINE",
-  },
-  {
-    freq: 30228,
-    raw: "TINFOIL",
-  },
-  {
-    freq: 30243,
-    raw: "VIBRATO",
-  },
-  {
-    freq: 30252,
-    raw: "CLAPPER",
-  },
-  {
-    freq: 30269,
-    raw: "KESTREL",
-  },
-  {
-    freq: 30300,
-    raw: "SEEDING",
-  },
-  {
-    freq: 30303,
-    raw: "SIX-GAME",
-    word: "SIXGAME",
-  },
-  {
-    freq: 30310,
-    raw: "PARODIC",
-  },
-  {
-    freq: 30312,
-    raw: "ACCRETE",
-  },
-  {
-    freq: 30328,
-    raw: "SLAMMER",
-  },
-  {
-    freq: 30331,
-    raw: "MORTISE",
-  },
-  {
-    freq: 30335,
-    raw: "TWIDDLE",
-  },
-  {
-    freq: 30336,
-    raw: "LUSTFUL",
-  },
-  {
-    freq: 30344,
-    raw: "SPEEDER",
-  },
-  {
-    freq: 30349,
-    raw: "FLYOVER",
-  },
-  {
-    freq: 30350,
-    raw: "DISROBE",
-  },
-  {
-    freq: 30351,
-    raw: "DATASET",
-  },
-  {
-    freq: 30368,
-    raw: "LILTING",
-  },
-  {
-    freq: 30374,
-    raw: "SLOWING",
-  },
-  {
-    freq: 30380,
-    raw: "HOTSPOT",
-  },
-  {
-    freq: 30382,
-    raw: "ABSCOND",
-  },
-  {
-    freq: 30398,
-    raw: "SURFING",
-  },
-  {
-    freq: 30402,
-    raw: "GIBBOUS",
-  },
-  {
-    freq: 30405,
-    raw: "GREETER",
-  },
-  {
-    freq: 30406,
-    raw: "SLACKER",
-  },
-  {
-    freq: 30408,
-    raw: "MUSTANG",
-  },
-  {
-    freq: 30424,
-    raw: "GO-ROUND",
-    word: "GOROUND",
-  },
-  {
-    freq: 30450,
-    raw: "BULLOCK",
-  },
-  {
-    freq: 30460,
-    raw: "WHEEDLE",
-  },
-  {
-    freq: 30464,
-    raw: "CACIQUE",
-  },
-  {
-    freq: 30465,
-    raw: "NIGHTIE",
-  },
-  {
-    freq: 30467,
-    raw: "IRIDIUM",
-  },
-  {
-    freq: 30488,
-    raw: "BEATNIK",
-  },
-  {
-    freq: 30490,
-    raw: "STREAKY",
-  },
-  {
-    freq: 30512,
-    raw: "FRETFUL",
-  },
-  {
-    freq: 30517,
-    raw: "JOYLESS",
-  },
-  {
-    freq: 30527,
-    raw: "REDCOAT",
-  },
-  {
-    freq: 30528,
-    raw: "ON-FIELD",
-    word: "ONFIELD",
-  },
-  {
-    freq: 30537,
-    raw: "QUININE",
-  },
-  {
-    freq: 30539,
-    raw: "CHATTEL",
-  },
-  {
-    freq: 30542,
-    raw: "MINIBUS",
-  },
-  {
-    freq: 30544,
-    raw: "RIPPING",
-  },
-  {
-    freq: 30559,
-    raw: "OUTRANK",
-  },
-  {
-    freq: 30567,
-    raw: "RETICLE",
-  },
-  {
-    freq: 30571,
-    raw: "TOILING",
-  },
-  {
-    freq: 30573,
-    raw: "WITLESS",
-  },
-  {
-    freq: 30575,
-    raw: "REDUCER",
-  },
-  {
-    freq: 30578,
-    raw: "COUPLER",
-  },
-  {
-    freq: 30579,
-    raw: "FANCIER",
-  },
-  {
-    freq: 30581,
-    raw: "DUAL-USE",
-    word: "DUALUSE",
-  },
-  {
-    freq: 30587,
-    raw: "GNAWING",
-  },
-  {
-    freq: 30592,
-    raw: "TWO-TONE",
-    word: "TWOTONE",
-  },
-  {
-    freq: 30594,
-    raw: "FOGHORN",
-  },
-  {
-    freq: 30599,
-    raw: "PETTING",
-  },
-  {
-    freq: 30601,
-    raw: "NINE-DAY",
-    word: "NINEDAY",
-  },
-  {
-    freq: 30604,
-    raw: "COUPLED",
-  },
-  {
-    freq: 30607,
-    raw: "FLUIDLY",
-  },
-  {
-    freq: 30616,
-    raw: "BEDPOST",
-  },
-  {
-    freq: 30638,
-    raw: "LOW-FARE",
-    word: "LOWFARE",
-  },
-  {
-    freq: 30642,
-    raw: "POLITIC",
-  },
-  {
-    freq: 30643,
-    raw: "COOKTOP",
-  },
-  {
-    freq: 30648,
-    raw: "SIT-DOWN",
-    word: "SITDOWN",
-  },
-  {
-    freq: 30650,
-    raw: "AUDITED",
-  },
-  {
-    freq: 30659,
-    raw: "EX-LOVER",
-    word: "EXLOVER",
-  },
-  {
-    freq: 30671,
-    raw: "CORSAGE",
-  },
-  {
-    freq: 30673,
-    raw: "HAND-EYE",
-    word: "HANDEYE",
-  },
-  {
-    freq: 30674,
-    raw: "BATHING",
-  },
-  {
-    freq: 30679,
-    raw: "COINAGE",
-  },
-  {
-    freq: 30693,
-    raw: "VOLUBLE",
-  },
-  {
-    freq: 30696,
-    raw: "HOMINID",
-  },
-  {
-    freq: 30703,
-    raw: "IN-VITRO",
-    word: "INVITRO",
-  },
-  {
-    freq: 30709,
-    raw: "RANTING",
-  },
-  {
-    freq: 30711,
-    raw: "BLEAKLY",
-  },
-  {
-    freq: 30718,
-    raw: "UNCOUTH",
-  },
-  {
-    freq: 30724,
-    raw: "CRUMBLE",
-  },
-  {
-    freq: 30728,
-    raw: "UP-CLOSE",
-    word: "UPCLOSE",
-  },
-  {
-    freq: 30745,
-    raw: "SNORING",
-  },
-  {
-    freq: 30749,
-    raw: "BRIOCHE",
-  },
-  {
-    freq: 30754,
-    raw: "INITIAL",
-  },
-  {
-    freq: 30757,
-    raw: "FALL-OFF",
-    word: "FALLOFF",
-  },
-  {
-    freq: 30770,
-    raw: "BULLION",
-  },
-  {
-    freq: 30782,
-    raw: "UNGLUED",
-  },
-  {
-    freq: 30785,
-    raw: "SPUTTER",
-  },
-  {
-    freq: 30803,
-    raw: "HYPOXIA",
-  },
-  {
-    freq: 30805,
-    raw: "GEARING",
-  },
-  {
-    freq: 30810,
-    raw: "IGNOBLE",
-  },
-  {
-    freq: 30811,
-    raw: "ELAPSED",
-  },
-  {
-    freq: 30826,
-    raw: "HALCYON",
-  },
-  {
-    freq: 30832,
-    raw: "MODELED",
-  },
-  {
-    freq: 30833,
-    raw: "SIX-TIME",
-    word: "SIXTIME",
-  },
-  {
-    freq: 30847,
-    raw: "PRATTLE",
-  },
-  {
-    freq: 30848,
-    raw: "DIURNAL",
-  },
-  {
-    freq: 30853,
-    raw: "BIGNESS",
-  },
-  {
-    freq: 30863,
-    raw: "WHINING",
-  },
-  {
-    freq: 30869,
-    raw: "DARESAY",
-  },
-  {
-    freq: 30870,
-    raw: "COLD-WAR",
-    word: "COLDWAR",
-  },
-  {
-    freq: 30872,
-    raw: "URETHRA",
-  },
-  {
-    freq: 30883,
-    raw: "UP-TEMPO",
-    word: "UPTEMPO",
-  },
-  {
-    freq: 30892,
-    raw: "STILTED",
-  },
-  {
-    freq: 30896,
-    raw: "NUPTIAL",
-  },
-  {
-    freq: 30903,
-    raw: "SWINDLE",
-  },
-  {
-    freq: 30908,
-    raw: "TWO-WORD",
-    word: "TWOWORD",
-  },
-  {
-    freq: 30923,
-    raw: "ROOKERY",
-  },
-  {
-    freq: 30942,
-    raw: "CRYBABY",
-  },
-  {
-    freq: 30948,
-    raw: "TWO-GAME",
-    word: "TWOGAME",
-  },
-  {
-    freq: 30953,
-    raw: "COUNTER",
-  },
-  {
-    freq: 30955,
-    raw: "TYPHOID",
-  },
-  {
-    freq: 30967,
-    raw: "BURGHER",
-  },
-  {
-    freq: 30975,
-    raw: "OCTAGON",
-  },
-  {
-    freq: 30976,
-    raw: "BURGEON",
-  },
-  {
-    freq: 30981,
-    raw: "CHICORY",
-  },
-  {
-    freq: 30985,
-    raw: "ELITIST",
-  },
-  {
-    freq: 30995,
-    raw: "FILBERT",
-  },
-  {
-    freq: 31015,
-    raw: "PERGOLA",
-  },
-  {
-    freq: 31018,
-    raw: "DRAGOON",
-  },
-  {
-    freq: 31019,
-    raw: "TIREDLY",
-  },
-  {
-    freq: 31022,
-    raw: "CAPTAIN",
-  },
-  {
-    freq: 31031,
-    raw: "LIONIZE",
-  },
-  {
-    freq: 31063,
-    raw: "HESSIAN",
-  },
-  {
-    freq: 31075,
-    raw: "GNOSTIC",
-  },
-  {
-    freq: 31076,
-    raw: "HISSING",
-  },
-  {
-    freq: 31088,
-    raw: "PUNJABI",
-  },
-  {
-    freq: 31101,
-    raw: "DUSTBIN",
-  },
-  {
-    freq: 31108,
-    raw: "MUTATED",
-  },
-  {
-    freq: 31109,
-    raw: "ORGANZA",
-  },
-  {
-    freq: 31113,
-    raw: "ROADBED",
-  },
-  {
-    freq: 31122,
-    raw: "STRUDEL",
-  },
-  {
-    freq: 31137,
-    raw: "EPHEDRA",
-  },
-  {
-    freq: 31141,
-    raw: "BLUBBER",
-  },
-  {
-    freq: 31144,
-    raw: "SUGARED",
-  },
-  {
-    freq: 31148,
-    raw: "DRYLAND",
-  },
-  {
-    freq: 31160,
-    raw: "CLICHED",
-  },
-  {
-    freq: 31162,
-    raw: "PADLOCK",
-  },
-  {
-    freq: 31164,
-    raw: "SUMMERY",
-  },
-  {
-    freq: 31167,
-    raw: "LOW-RISE",
-    word: "LOWRISE",
-  },
-  {
-    freq: 31174,
-    raw: "WAILING",
-  },
-  {
-    freq: 31184,
-    raw: "KICKING",
-  },
-  {
-    freq: 31193,
-    raw: "MARQUIS",
-  },
-  {
-    freq: 31196,
-    raw: "GALLEON",
-  },
-  {
-    freq: 31202,
-    raw: "SLOBBER",
-  },
-  {
-    freq: 31223,
-    raw: "SIX-INCH",
-    word: "SIXINCH",
-  },
-  {
-    freq: 31234,
-    raw: "CRIMEAN",
-  },
-  {
-    freq: 31237,
-    raw: "BRACING",
-  },
-  {
-    freq: 31253,
-    raw: "UNLEARN",
-  },
-  {
-    freq: 31273,
-    raw: "BEANBAG",
-  },
-  {
-    freq: 31280,
-    raw: "BUG-EYED",
-    word: "BUGEYED",
-  },
-  {
-    freq: 31285,
-    raw: "SIDECUT",
-  },
-  {
-    freq: 31286,
-    raw: "COMMUNE",
-  },
-  {
-    freq: 31287,
-    raw: "MONEYED",
-  },
-  {
-    freq: 31304,
-    raw: "BILLOWS",
-  },
-  {
-    freq: 31307,
-    raw: "CIVILLY",
-  },
-  {
-    freq: 31309,
-    raw: "PURITAN",
-  },
-  {
-    freq: 31330,
-    raw: "BOORISH",
-  },
-  {
-    freq: 31333,
-    raw: "BASMATI",
-  },
-  {
-    freq: 31337,
-    raw: "WEIGH-IN",
-    word: "WEIGHIN",
-  },
-  {
-    freq: 31348,
-    raw: "SEDUCER",
-  },
-  {
-    freq: 31352,
-    raw: "CASSOCK",
-  },
-  {
-    freq: 31367,
-    raw: "TEN-FOOT",
-    word: "TENFOOT",
-  },
-  {
-    freq: 31369,
-    raw: "VERBENA",
-  },
-  {
-    freq: 31372,
-    raw: "OFF-PEAK",
-    word: "OFFPEAK",
-  },
-  {
-    freq: 31387,
-    raw: "TANKARD",
-  },
-  {
-    freq: 31395,
-    raw: "OUTPLAY",
-  },
-  {
-    freq: 31401,
-    raw: "DECIMAL",
-  },
-  {
-    freq: 31407,
-    raw: "BLUEFIN",
-  },
-  {
-    freq: 31408,
-    raw: "FORCING",
-  },
-  {
-    freq: 31415,
-    raw: "PROBITY",
-  },
-  {
-    freq: 31416,
-    raw: "RACEWAY",
-  },
-  {
-    freq: 31417,
-    raw: "HUMBLED",
-  },
-  {
-    freq: 31418,
-    raw: "CAROUSE",
-  },
-  {
-    freq: 31435,
-    raw: "POTSHOT",
-  },
-  {
-    freq: 31437,
-    raw: "AZIMUTH",
-  },
-  {
-    freq: 31438,
-    raw: "MUTABLE",
-  },
-  {
-    freq: 31483,
-    raw: "ERECTOR",
-  },
-  {
-    freq: 31485,
-    raw: "BRUISER",
-  },
-  {
-    freq: 31489,
-    raw: "FOURTHS",
-  },
-  {
-    freq: 31492,
-    raw: "BEIGNET",
-  },
-  {
-    freq: 31495,
-    raw: "UROLOGY",
-  },
-  {
-    freq: 31496,
-    raw: "DROPPER",
-  },
-  {
-    freq: 31513,
-    raw: "WEB-SITE",
-    word: "WEBSITE",
-  },
-  {
-    freq: 31522,
-    raw: "BUMPKIN",
-  },
-  {
-    freq: 31524,
-    raw: "STEPPED",
-  },
-  {
-    freq: 31528,
-    raw: "TOPPING",
-  },
-  {
-    freq: 31534,
-    raw: "SOCKEYE",
-  },
-  {
-    freq: 31540,
-    raw: "KINDRED",
-  },
-  {
-    freq: 31547,
-    raw: "VIADUCT",
-  },
-  {
-    freq: 31556,
-    raw: "BILLOWY",
-  },
-  {
-    freq: 31562,
-    raw: "SASHIMI",
-  },
-  {
-    freq: 31566,
-    raw: "REUNIFY",
-  },
-  {
-    freq: 31567,
-    raw: "ZEN-LIKE",
-    word: "ZENLIKE",
-  },
-  {
-    freq: 31568,
-    raw: "DESPOIL",
-  },
-  {
-    freq: 31574,
-    raw: "ABASHED",
-  },
-  {
-    freq: 31585,
-    raw: "HOSIERY",
-  },
-  {
-    freq: 31592,
-    raw: "PERJURE",
-  },
-  {
-    freq: 31622,
-    raw: "HOTHEAD",
-  },
-  {
-    freq: 31635,
-    raw: "GAINFUL",
-  },
-  {
-    freq: 31637,
-    raw: "CATCALL",
-  },
-  {
-    freq: 31657,
-    raw: "STOOPED",
-  },
-  {
-    freq: 31666,
-    raw: "UNEATEN",
-  },
-  {
-    freq: 31687,
-    raw: "DEMIGOD",
-  },
-  {
-    freq: 31693,
-    raw: "LETTING",
-  },
-  {
-    freq: 31695,
-    raw: "ONE-YARD",
-    word: "ONEYARD",
-  },
-  {
-    freq: 31735,
-    raw: "CANTATA",
-  },
-  {
-    freq: 31742,
-    raw: "TERRINE",
-  },
-  {
-    freq: 31746,
-    raw: "MIXED-UP",
-    word: "MIXEDUP",
-  },
-  {
-    freq: 31755,
-    raw: "DISTEND",
-  },
-  {
-    freq: 31757,
-    raw: "GRAPPLE",
-  },
-  {
-    freq: 31759,
-    raw: "PREFECT",
-  },
-  {
-    freq: 31798,
-    raw: "CABLE-TV",
-    word: "CABLETV",
-  },
-  {
-    freq: 31803,
-    raw: "FLASHER",
-  },
-  {
-    freq: 31812,
-    raw: "AIRPLAY",
-  },
-  {
-    freq: 31832,
-    raw: "CAST-OFF",
-    word: "CASTOFF",
-  },
-  {
-    freq: 31835,
-    raw: "READMIT",
-  },
-  {
-    freq: 31857,
-    raw: "CRINKLY",
-  },
-  {
-    freq: 31904,
-    raw: "MESSAGE",
-  },
-  {
-    freq: 31915,
-    raw: "FREIGHT",
-  },
-  {
-    freq: 31916,
-    raw: "SNORKEL",
-  },
-  {
-    freq: 31927,
-    raw: "MUDFLAT",
-  },
-  {
-    freq: 31933,
-    raw: "DEPRAVE",
-  },
-  {
-    freq: 31943,
-    raw: "ROTTING",
-  },
-  {
-    freq: 31944,
-    raw: "WAILING",
-  },
-  {
-    freq: 31947,
-    raw: "PIRATED",
-  },
-  {
-    freq: 31953,
-    raw: "SLAVISH",
-  },
-  {
-    freq: 31961,
-    raw: "WRITE-UP",
-    word: "WRITEUP",
-  },
-  {
-    freq: 31969,
-    raw: "UPRIGHT",
-  },
-  {
-    freq: 31978,
-    raw: "RACECAR",
-  },
-  {
-    freq: 31988,
-    raw: "STAPLER",
-  },
-  {
-    freq: 31990,
-    raw: "TIE-DYED",
-    word: "TIEDYED",
-  },
-  {
-    freq: 31991,
-    raw: "HUSBAND",
-  },
-  {
-    freq: 32000,
-    raw: "CABOOSE",
-  },
-  {
-    freq: 32004,
-    raw: "HIGH-TOP",
-    word: "HIGHTOP",
-  },
-  {
-    freq: 32005,
-    raw: "DUELING",
-  },
-  {
-    freq: 32031,
-    raw: "PULLING",
-  },
-  {
-    freq: 32033,
-    raw: "MASTIFF",
-  },
-  {
-    freq: 32038,
-    raw: "BUILDUP",
-  },
-  {
-    freq: 32052,
-    raw: "MORONIC",
-  },
-  {
-    freq: 32054,
-    raw: "NATURAL",
-  },
-  {
-    freq: 32059,
-    raw: "BEDROLL",
-  },
-  {
-    freq: 32061,
-    raw: "NAMETAG",
-  },
-  {
-    freq: 32062,
-    raw: "ALL-NEWS",
-    word: "ALLNEWS",
-  },
-  {
-    freq: 32064,
-    raw: "BRIGHTS",
-  },
-  {
-    freq: 32070,
-    raw: "ATROPHY",
-  },
-  {
-    freq: 32106,
-    raw: "STEPPER",
-  },
-  {
-    freq: 32114,
-    raw: "HACKSAW",
-  },
-  {
-    freq: 32141,
-    raw: "TESTILY",
-  },
-  {
-    freq: 32150,
-    raw: "FIXEDLY",
-  },
-  {
-    freq: 32154,
-    raw: "FISTULA",
-  },
-  {
-    freq: 32161,
-    raw: "BULIMIC",
-  },
-  {
-    freq: 32170,
-    raw: "BORSCHT",
-  },
-  {
-    freq: 32182,
-    raw: "BOUNDED",
-  },
-  {
-    freq: 32192,
-    raw: "REAGENT",
-  },
-  {
-    freq: 32193,
-    raw: "BIPEDAL",
-  },
-  {
-    freq: 32205,
-    raw: "HARPIST",
-  },
-  {
-    freq: 32206,
-    raw: "DEBASED",
-  },
-  {
-    freq: 32209,
-    raw: "TRIMMED",
-  },
-  {
-    freq: 32212,
-    raw: "IRKSOME",
-  },
-  {
-    freq: 32217,
-    raw: "WHEELIE",
-  },
-  {
-    freq: 32220,
-    raw: "HEXAGON",
-  },
-  {
-    freq: 32222,
-    raw: "ANNULAR",
-  },
-  {
-    freq: 32229,
-    raw: "ZAMBIAN",
-  },
-  {
-    freq: 32231,
-    raw: "TYPHOID",
-  },
-  {
-    freq: 32243,
-    raw: "JUTTING",
-  },
-  {
-    freq: 32251,
-    raw: "WISEGUY",
-  },
-  {
-    freq: 32253,
-    raw: "BRAZIER",
-  },
-  {
-    freq: 32258,
-    raw: "TOOTHED",
-  },
-  {
-    freq: 32272,
-    raw: "TWITTER",
-  },
-  {
-    freq: 32276,
-    raw: "BUCKLED",
-  },
-  {
-    freq: 32280,
-    raw: "ANTHILL",
-  },
-  {
-    freq: 32285,
-    raw: "SHRUBBY",
-  },
-  {
-    freq: 32291,
-    raw: "BUBONIC",
-  },
-  {
-    freq: 32295,
-    raw: "TOOLKIT",
-  },
-  {
-    freq: 32299,
-    raw: "TRITIUM",
-  },
-  {
-    freq: 32314,
-    raw: "FARMING",
-  },
-  {
-    freq: 32317,
-    raw: "ENQUIRE",
-  },
-  {
-    freq: 32321,
-    raw: "LEGROOM",
-  },
-  {
-    freq: 32322,
-    raw: "HOMERIC",
-  },
-  {
-    freq: 32329,
-    raw: "AIRFOIL",
-  },
-  {
-    freq: 32335,
-    raw: "SPLAYED",
-  },
-  {
-    freq: 32340,
-    raw: "MAN-HOUR",
-    word: "MANHOUR",
-  },
-  {
-    freq: 32343,
-    raw: "NEAREST",
-  },
-  {
-    freq: 32344,
-    raw: "WETSUIT",
-  },
-  {
-    freq: 32349,
-    raw: "BELLBOY",
-  },
-  {
-    freq: 32365,
-    raw: "HUMMOCK",
-  },
-  {
-    freq: 32368,
-    raw: "HEARTED",
-  },
-  {
-    freq: 32370,
-    raw: "ACTUATE",
-  },
-  {
-    freq: 32373,
-    raw: "FIVE-MAN",
-    word: "FIVEMAN",
-  },
-  {
-    freq: 32374,
-    raw: "ONE-GAME",
-    word: "ONEGAME",
-  },
-  {
-    freq: 32393,
-    raw: "PARFAIT",
-  },
-  {
-    freq: 32395,
-    raw: "STOUTLY",
-  },
-  {
-    freq: 32410,
-    raw: "ALLOWED",
-  },
-  {
-    freq: 32416,
-    raw: "RESCUED",
-  },
-  {
-    freq: 32422,
-    raw: "FREEING",
-  },
-  {
-    freq: 32426,
-    raw: "CHECKER",
-  },
-  {
-    freq: 32427,
-    raw: "GLOBULE",
-  },
-  {
-    freq: 32428,
-    raw: "BRAKING",
-  },
-  {
-    freq: 32439,
-    raw: "HIPBONE",
-  },
-  {
-    freq: 32458,
-    raw: "DOLEFUL",
-  },
-  {
-    freq: 32481,
-    raw: "BRACERO",
-  },
-  {
-    freq: 32494,
-    raw: "FLUTIST",
-  },
-  {
-    freq: 32496,
-    raw: "STUDDED",
-  },
-  {
-    freq: 32523,
-    raw: "DAYPACK",
-  },
-  {
-    freq: 32531,
-    raw: "BIVOUAC",
-  },
-  {
-    freq: 32545,
-    raw: "SPELLER",
-  },
-  {
-    freq: 32549,
-    raw: "DAWNING",
-  },
-  {
-    freq: 32554,
-    raw: "COWBELL",
-  },
-  {
-    freq: 32559,
-    raw: "HUMIDOR",
-  },
-  {
-    freq: 32563,
-    raw: "NITRITE",
-  },
-  {
-    freq: 32567,
-    raw: "SUN-LIKE",
-    word: "SUNLIKE",
-  },
-  {
-    freq: 32573,
-    raw: "BOBBING",
-  },
-  {
-    freq: 32583,
-    raw: "SECLUDE",
-  },
-  {
-    freq: 32585,
-    raw: "VISCERA",
-  },
-  {
-    freq: 32593,
-    raw: "PRALINE",
-  },
-  {
-    freq: 32604,
-    raw: "MIDWEST",
-  },
-  {
-    freq: 32629,
-    raw: "WRINGER",
-  },
-  {
-    freq: 32651,
-    raw: "POST-HOC",
-    word: "POSTHOC",
-  },
-  {
-    freq: 32671,
-    raw: "MISTRAL",
-  },
-  {
-    freq: 32672,
-    raw: "FAR-AWAY",
-    word: "FARAWAY",
-  },
-  {
-    freq: 32679,
-    raw: "RIMLESS",
-  },
-  {
-    freq: 32686,
-    raw: "BONE-DRY",
-    word: "BONEDRY",
-  },
-  {
-    freq: 32687,
-    raw: "GUZZLER",
-  },
-  {
-    freq: 32696,
-    raw: "BRONZER",
-  },
-  {
-    freq: 32709,
-    raw: "NUCLEIC",
-  },
-  {
-    freq: 32710,
-    raw: "SATIATE",
-  },
-  {
-    freq: 32718,
-    raw: "TOTEMIC",
-  },
-  {
-    freq: 32719,
-    raw: "PLAUDIT",
-  },
-  {
-    freq: 32721,
-    raw: "UNDRESS",
-  },
-  {
-    freq: 32723,
-    raw: "COULOIR",
-  },
-  {
-    freq: 32724,
-    raw: "BLUNTED",
-  },
-  {
-    freq: 32733,
-    raw: "BUGABOO",
-  },
-  {
-    freq: 32743,
-    raw: "BOMBAST",
-  },
-  {
-    freq: 32749,
-    raw: "DAWNING",
-  },
-  {
-    freq: 32759,
-    raw: "COTTONY",
-  },
-  {
-    freq: 32766,
-    raw: "GUTLESS",
-  },
-  {
-    freq: 32767,
-    raw: "SEAWARD",
-  },
-  {
-    freq: 32768,
-    raw: "OBLIQUE",
-  },
-  {
-    freq: 32794,
-    raw: "TWITCHY",
-  },
-  {
-    freq: 32801,
-    raw: "FERROUS",
-  },
-  {
-    freq: 32803,
-    raw: "SMUDGED",
-  },
-  {
-    freq: 32806,
-    raw: "ADENOMA",
-  },
-  {
-    freq: 32807,
-    raw: "MORAINE",
-  },
-  {
-    freq: 32812,
-    raw: "COLLECT",
-  },
-  {
-    freq: 32819,
-    raw: "GLUTEUS",
-  },
-  {
-    freq: 32824,
-    raw: "LOW-FLOW",
-    word: "LOWFLOW",
-  },
-  {
-    freq: 32829,
-    raw: "FINE-ART",
-    word: "FINEART",
-  },
-  {
-    freq: 32843,
-    raw: "WALKING",
-  },
-  {
-    freq: 32844,
-    raw: "SUNBELT",
-  },
-  {
-    freq: 32854,
-    raw: "BESTIAL",
-  },
-  {
-    freq: 32858,
-    raw: "BEVELED",
-  },
-  {
-    freq: 32882,
-    raw: "LICENCE",
-  },
-  {
-    freq: 32883,
-    raw: "GLUTTON",
-  },
-  {
-    freq: 32888,
-    raw: "KINFOLK",
-  },
-  {
-    freq: 32891,
-    raw: "GIDDILY",
-  },
-  {
-    freq: 32894,
-    raw: "COLONIA",
-  },
-  {
-    freq: 32911,
-    raw: "BIG-PLAY",
-    word: "BIGPLAY",
-  },
-  {
-    freq: 32914,
-    raw: "SURMISE",
-  },
-  {
-    freq: 32930,
-    raw: "OPERAND",
-  },
-  {
-    freq: 32936,
-    raw: "SNIFTER",
-  },
-  {
-    freq: 32939,
-    raw: "BRAWLER",
-  },
-  {
-    freq: 32943,
-    raw: "INHALED",
-  },
-  {
-    freq: 32969,
-    raw: "DRUGGIE",
-  },
-  {
-    freq: 32975,
-    raw: "ROLLING",
-  },
-  {
-    freq: 32997,
-    raw: "PUSHING",
-  },
-  {
-    freq: 33009,
-    raw: "GALLIUM",
-  },
-  {
-    freq: 33023,
-    raw: "SHAMING",
-  },
-  {
-    freq: 33025,
-    raw: "ASININE",
-  },
-  {
-    freq: 33030,
-    raw: "TEMBLOR",
-  },
-  {
-    freq: 33031,
-    raw: "CHEMISE",
-  },
-  {
-    freq: 33044,
-    raw: "DIARIST",
-  },
-  {
-    freq: 33048,
-    raw: "CROWNED",
-  },
-  {
-    freq: 33056,
-    raw: "LACTATE",
-  },
-  {
-    freq: 33063,
-    raw: "DEMERIT",
-  },
-  {
-    freq: 33072,
-    raw: "DELUDED",
-  },
-  {
-    freq: 33074,
-    raw: "SHOUTED",
-  },
-  {
-    freq: 33082,
-    raw: "ISSUING",
-  },
-  {
-    freq: 33091,
-    raw: "FATNESS",
-  },
-  {
-    freq: 33094,
-    raw: "TESTING",
-  },
-  {
-    freq: 33104,
-    raw: "RESPITE",
-  },
-  {
-    freq: 33107,
-    raw: "TOPPLED",
-  },
-  {
-    freq: 33112,
-    raw: "CHASTEN",
-  },
-  {
-    freq: 33129,
-    raw: "CORNCOB",
-  },
-  {
-    freq: 33155,
-    raw: "TOOTSIE",
-  },
-  {
-    freq: 33157,
-    raw: "GRABBER",
-  },
-  {
-    freq: 33170,
-    raw: "CAMPHOR",
-  },
-  {
-    freq: 33171,
-    raw: "CHAFING",
-  },
-  {
-    freq: 33172,
-    raw: "LICKING",
-  },
-  {
-    freq: 33210,
-    raw: "STUFFER",
-  },
-  {
-    freq: 33220,
-    raw: "PROBATE",
-  },
-  {
-    freq: 33221,
-    raw: "TUMBLED",
-  },
-  {
-    freq: 33222,
-    raw: "FLOUNCE",
-  },
-  {
-    freq: 33227,
-    raw: "SAME-DAY",
-    word: "SAMEDAY",
-  },
-  {
-    freq: 33231,
-    raw: "SLURRED",
-  },
-  {
-    freq: 33239,
-    raw: "PAN-ARAB",
-    word: "PANARAB",
-  },
-  {
-    freq: 33249,
-    raw: "BIGFOOT",
-  },
-  {
-    freq: 33252,
-    raw: "SACKING",
-  },
-  {
-    freq: 33253,
-    raw: "INVEIGH",
-  },
-  {
-    freq: 33274,
-    raw: "LUDDITE",
-  },
-  {
-    freq: 33281,
-    raw: "MAILBAG",
-  },
-  {
-    freq: 33282,
-    raw: "NUNNERY",
-  },
-  {
-    freq: 33287,
-    raw: "FORFEIT",
-  },
-  {
-    freq: 33290,
-    raw: "TWO-DOOR",
-    word: "TWODOOR",
-  },
-  {
-    freq: 33291,
-    raw: "ACADIAN",
-  },
-  {
-    freq: 33301,
-    raw: "BRIGAND",
-  },
-  {
-    freq: 33302,
-    raw: "MANITOU",
-  },
-  {
-    freq: 33307,
-    raw: "UPBRAID",
-  },
-  {
-    freq: 33309,
-    raw: "MAMMARY",
-  },
-  {
-    freq: 33331,
-    raw: "PRIMING",
-  },
-  {
-    freq: 33332,
-    raw: "LOOPING",
-  },
-  {
-    freq: 33351,
-    raw: "BADNESS",
-  },
-  {
-    freq: 33354,
-    raw: "PALMTOP",
-  },
-  {
-    freq: 33391,
-    raw: "GENTILE",
-  },
-  {
-    freq: 33411,
-    raw: "MINIBAR",
-  },
-  {
-    freq: 33420,
-    raw: "LOW-MASS",
-    word: "LOWMASS",
-  },
-  {
-    freq: 33422,
-    raw: "VITIATE",
-  },
-  {
-    freq: 33424,
-    raw: "WOODLOT",
-  },
-  {
-    freq: 33432,
-    raw: "CAISSON",
-  },
-  {
-    freq: 33433,
-    raw: "PIGSKIN",
-  },
-  {
-    freq: 33436,
-    raw: "NON-ARAB",
-    word: "NONARAB",
-  },
-  {
-    freq: 33438,
-    raw: "COPYIST",
-  },
-  {
-    freq: 33439,
-    raw: "MISFIRE",
-  },
-  {
-    freq: 33451,
-    raw: "LOW-DOWN",
-    word: "LOWDOWN",
-  },
-  {
-    freq: 33453,
-    raw: "SAMPLED",
-  },
-  {
-    freq: 33477,
-    raw: "MALWARE",
-  },
-  {
-    freq: 33483,
-    raw: "HOMERUN",
-  },
-  {
-    freq: 33485,
-    raw: "BEADING",
-  },
-  {
-    freq: 33489,
-    raw: "AFFRONT",
-  },
-  {
-    freq: 33500,
-    raw: "CESSION",
-  },
-  {
-    freq: 33513,
-    raw: "UNBAKED",
-  },
-  {
-    freq: 33516,
-    raw: "BUSHING",
-  },
-  {
-    freq: 33521,
-    raw: "SUBSOIL",
-  },
-  {
-    freq: 33527,
-    raw: "BAZOOKA",
-  },
-  {
-    freq: 33531,
-    raw: "TENANCY",
-  },
-  {
-    freq: 33543,
-    raw: "TRADE-IN",
-    word: "TRADEIN",
-  },
-  {
-    freq: 33570,
-    raw: "MEGATON",
-  },
-  {
-    freq: 33585,
-    raw: "STIFLED",
-  },
-  {
-    freq: 33596,
-    raw: "TURNKEY",
-  },
-  {
-    freq: 33613,
-    raw: "KORANIC",
-  },
-  {
-    freq: 33618,
-    raw: "CLOTTED",
-  },
-  {
-    freq: 33619,
-    raw: "USURPER",
-  },
-  {
-    freq: 33620,
-    raw: "ATOMIZE",
-  },
-  {
-    freq: 33634,
-    raw: "UNRATED",
-  },
-  {
-    freq: 33640,
-    raw: "DEVILED",
-  },
-  {
-    freq: 33647,
-    raw: "OIL-FREE",
-    word: "OILFREE",
-  },
-  {
-    freq: 33658,
-    raw: "CHARISM",
-  },
-  {
-    freq: 33667,
-    raw: "INBOARD",
-  },
-  {
-    freq: 33683,
-    raw: "SALABLE",
-  },
-  {
-    freq: 33686,
-    raw: "BEACHED",
-  },
-  {
-    freq: 33700,
-    raw: "STEERER",
-  },
-  {
-    freq: 33702,
-    raw: "PIOUSLY",
-  },
-  {
-    freq: 33744,
-    raw: "MEANDER",
-  },
-  {
-    freq: 33752,
-    raw: "SHINDIG",
-  },
-  {
-    freq: 33764,
-    raw: "LOW-PAID",
-    word: "LOWPAID",
-  },
-  {
-    freq: 33765,
-    raw: "VALANCE",
-  },
-  {
-    freq: 33766,
-    raw: "DAMMING",
-  },
-  {
-    freq: 33768,
-    raw: "FOREPAW",
-  },
-  {
-    freq: 33772,
-    raw: "BLOOPER",
-  },
-  {
-    freq: 33774,
-    raw: "SOUNDER",
-  },
-  {
-    freq: 33778,
-    raw: "PURPOSE",
-  },
-  {
-    freq: 33796,
-    raw: "SLICING",
-  },
-  {
-    freq: 33807,
-    raw: "LUSTILY",
-  },
-  {
-    freq: 33809,
-    raw: "EARACHE",
-  },
-  {
-    freq: 33814,
-    raw: "WANNA-BE",
-    word: "WANNABE",
-  },
-  {
-    freq: 33826,
-    raw: "SCANNED",
-  },
-  {
-    freq: 33829,
-    raw: "BLEMISH",
-  },
-  {
-    freq: 33832,
-    raw: "PALATAL",
-  },
-  {
-    freq: 33841,
-    raw: "EPAULET",
-  },
-  {
-    freq: 33843,
-    raw: "SLIMMER",
-  },
-  {
-    freq: 33845,
-    raw: "SPOOKED",
-  },
-  {
-    freq: 33851,
-    raw: "REGALLY",
-  },
-  {
-    freq: 33860,
-    raw: "CHILLER",
-  },
-  {
-    freq: 33863,
-    raw: "HELICAL",
-  },
-  {
-    freq: 33873,
-    raw: "ONE-TERM",
-    word: "ONETERM",
-  },
-  {
-    freq: 33888,
-    raw: "MATTING",
-  },
-  {
-    freq: 33902,
-    raw: "AIRBOAT",
-  },
-  {
-    freq: 33919,
-    raw: "DISUSED",
-  },
-  {
-    freq: 33930,
-    raw: "SIGNORA",
-  },
-  {
-    freq: 33934,
-    raw: "COWLING",
-  },
-  {
-    freq: 33936,
-    raw: "EGGHEAD",
-  },
-  {
-    freq: 33944,
-    raw: "FASTING",
-  },
-  {
-    freq: 33979,
-    raw: "HURDLER",
-  },
-  {
-    freq: 33984,
-    raw: "BOOTLEG",
-  },
-  {
-    freq: 33987,
-    raw: "FRISBEE",
-  },
-  {
-    freq: 34002,
-    raw: "BARRAGE",
-  },
-  {
-    freq: 34004,
-    raw: "LOBELIA",
-  },
-  {
-    freq: 34008,
-    raw: "CARLIKE",
-  },
-  {
-    freq: 34017,
-    raw: "STOWAGE",
-  },
-  {
-    freq: 34041,
-    raw: "OPERANT",
-  },
-  {
-    freq: 34050,
-    raw: "RANGING",
-  },
-  {
-    freq: 34054,
-    raw: "GRAYING",
-  },
-  {
-    freq: 34092,
-    raw: "GANTLET",
-  },
-  {
-    freq: 34095,
-    raw: "ANTI-GUN",
-    word: "ANTIGUN",
-  },
-  {
-    freq: 34107,
-    raw: "GOSSIPY",
-  },
-  {
-    freq: 34111,
-    raw: "INKWELL",
-  },
-  {
-    freq: 34119,
-    raw: "PERFIDY",
-  },
-  {
-    freq: 34121,
-    raw: "PUNCHER",
-  },
-  {
-    freq: 34133,
-    raw: "BIG-BAND",
-    word: "BIGBAND",
-  },
-  {
-    freq: 34136,
-    raw: "PREEMIE",
-  },
-  {
-    freq: 34140,
-    raw: "CLOAKED",
-  },
-  {
-    freq: 34141,
-    raw: "BOXLIKE",
-  },
-  {
-    freq: 34146,
-    raw: "UNASKED",
-  },
-  {
-    freq: 34171,
-    raw: "SCAMMER",
-  },
-  {
-    freq: 34186,
-    raw: "PROCTOR",
-  },
-  {
-    freq: 34201,
-    raw: "DILATED",
-  },
-  {
-    freq: 34203,
-    raw: "VALIDLY",
-  },
-  {
-    freq: 34210,
-    raw: "LOW-POST",
-    word: "LOWPOST",
-  },
-  {
-    freq: 34227,
-    raw: "FEBRILE",
-  },
-  {
-    freq: 34240,
-    raw: "NITPICK",
-  },
-  {
-    freq: 34243,
-    raw: "LEGLESS",
-  },
-  {
-    freq: 34253,
-    raw: "CO-OCCUR",
-    word: "COOCCUR",
-  },
-  {
-    freq: 34257,
-    raw: "BIOFILM",
-  },
-  {
-    freq: 34262,
-    raw: "FACTOID",
-  },
-  {
-    freq: 34281,
-    raw: "PHOTO-OP",
-    word: "PHOTOOP",
-  },
-  {
-    freq: 34284,
-    raw: "SHARPIE",
-  },
-  {
-    freq: 34286,
-    raw: "SOYMILK",
-  },
-  {
-    freq: 34302,
-    raw: "BUTTERY",
-  },
-  {
-    freq: 34316,
-    raw: "AERATED",
-  },
-  {
-    freq: 34366,
-    raw: "WRONGED",
-  },
-  {
-    freq: 34424,
-    raw: "DEVIANT",
-  },
-  {
-    freq: 34436,
-    raw: "SIDEMAN",
-  },
-  {
-    freq: 34446,
-    raw: "CABLING",
-  },
-  {
-    freq: 34467,
-    raw: "ACCRUED",
-  },
-  {
-    freq: 34473,
-    raw: "CULTIST",
-  },
-  {
-    freq: 34475,
-    raw: "USEABLE",
-  },
-  {
-    freq: 34484,
-    raw: "RAILCAR",
-  },
-  {
-    freq: 34485,
-    raw: "SANGRIA",
-  },
-  {
-    freq: 34488,
-    raw: "OARSMAN",
-  },
-  {
-    freq: 34513,
-    raw: "MID-TEEN",
-    word: "MIDTEEN",
-  },
-  {
-    freq: 34517,
-    raw: "ON-COURT",
-    word: "ONCOURT",
-  },
-  {
-    freq: 34527,
-    raw: "LANGUOR",
-  },
-  {
-    freq: 34528,
-    raw: "STEALER",
-  },
-  {
-    freq: 34536,
-    raw: "GIZZARD",
-  },
-  {
-    freq: 34545,
-    raw: "LEAKING",
-  },
-  {
-    freq: 34548,
-    raw: "TEAROOM",
-  },
-  {
-    freq: 34558,
-    raw: "VENTRAL",
-  },
-  {
-    freq: 34559,
-    raw: "BLOW-DRY",
-    word: "BLOWDRY",
-  },
-  {
-    freq: 34564,
-    raw: "BUCKING",
-  },
-  {
-    freq: 34571,
-    raw: "REGENCY",
-  },
-  {
-    freq: 34572,
-    raw: "POUNDED",
-  },
-  {
-    freq: 34575,
-    raw: "CANNOLI",
-  },
-  {
-    freq: 34580,
-    raw: "GRIZZLE",
-  },
-  {
-    freq: 34583,
-    raw: "SIX-FOLD",
-    word: "SIXFOLD",
-  },
-  {
-    freq: 34589,
-    raw: "STRAPPY",
-  },
-  {
-    freq: 34600,
-    raw: "SPECTER",
-  },
-  {
-    freq: 34609,
-    raw: "FINAGLE",
-  },
-  {
-    freq: 34614,
-    raw: "PANNIER",
-  },
-  {
-    freq: 34623,
-    raw: "WAHHABI",
-  },
-  {
-    freq: 34635,
-    raw: "RACE-CAR",
-    word: "RACECAR",
-  },
-  {
-    freq: 34638,
-    raw: "MARIMBA",
-  },
-  {
-    freq: 34644,
-    raw: "YEAR-AGO",
-    word: "YEARAGO",
-  },
-  {
-    freq: 34645,
-    raw: "SHRILLY",
-  },
-  {
-    freq: 34650,
-    raw: "EMPTIED",
-  },
-  {
-    freq: 34663,
-    raw: "SIX-PAGE",
-    word: "SIXPAGE",
-  },
-  {
-    freq: 34666,
-    raw: "DAYROOM",
-  },
-  {
-    freq: 34668,
-    raw: "CORNEAL",
-  },
-  {
-    freq: 34674,
-    raw: "JOCULAR",
-  },
-  {
-    freq: 34694,
-    raw: "PANTING",
-  },
-  {
-    freq: 34718,
-    raw: "CALDRON",
-  },
-  {
-    freq: 34720,
-    raw: "HIGH-TOP",
-    word: "HIGHTOP",
-  },
-  {
-    freq: 34732,
-    raw: "BANQUET",
-  },
-  {
-    freq: 34734,
-    raw: "INFIDEL",
-  },
-  {
-    freq: 34741,
-    raw: "WHITING",
-  },
-  {
-    freq: 34742,
-    raw: "SCRAPED",
-  },
-  {
-    freq: 34752,
-    raw: "NAKEDLY",
-  },
-  {
-    freq: 34761,
-    raw: "INGROWN",
-  },
-  {
-    freq: 34770,
-    raw: "ROGUISH",
-  },
-  {
-    freq: 34780,
-    raw: "UNCIVIL",
-  },
-  {
-    freq: 34794,
-    raw: "AIR-RAID",
-    word: "AIRRAID",
-  },
-  {
-    freq: 34795,
-    raw: "SHUTTER",
-  },
-  {
-    freq: 34797,
-    raw: "UGANDAN",
-  },
-  {
-    freq: 34801,
-    raw: "GRIFTER",
-  },
-  {
-    freq: 34804,
-    raw: "RAWNESS",
-  },
-  {
-    freq: 34810,
-    raw: "BLUNTLY",
-  },
-  {
-    freq: 34818,
-    raw: "OFF-YEAR",
-    word: "OFFYEAR",
-  },
-  {
-    freq: 34819,
-    raw: "INWARDS",
-  },
-  {
-    freq: 34829,
-    raw: "SCHEMER",
-  },
-  {
-    freq: 34834,
-    raw: "STIRRER",
-  },
-  {
-    freq: 34835,
-    raw: "CORONET",
-  },
-  {
-    freq: 34855,
-    raw: "FLESHLY",
-  },
-  {
-    freq: 34870,
-    raw: "AERATOR",
-  },
-  {
-    freq: 34873,
-    raw: "STARING",
-  },
-  {
-    freq: 34910,
-    raw: "FLARING",
-  },
-  {
-    freq: 34913,
-    raw: "HAYLOFT",
-  },
-  {
-    freq: 34934,
-    raw: "NEWSBOY",
-  },
-  {
-    freq: 34939,
-    raw: "COWLICK",
-  },
-  {
-    freq: 34940,
-    raw: "MACADAM",
-  },
-  {
-    freq: 34952,
-    raw: "IN-GROUP",
-    word: "INGROUP",
-  },
-  {
-    freq: 34953,
-    raw: "CHAPPED",
-  },
-  {
-    freq: 34954,
-    raw: "REPROVE",
-  },
-  {
-    freq: 34966,
-    raw: "BLATHER",
-  },
-  {
-    freq: 34970,
-    raw: "INVITEE",
-  },
-  {
-    freq: 34977,
-    raw: "SPECKLE",
-  },
-  {
-    freq: 34983,
-    raw: "KUMQUAT",
-  },
-  {
-    freq: 35014,
-    raw: "PEEVISH",
-  },
-  {
-    freq: 35015,
-    raw: "NODDING",
-  },
-  {
-    freq: 35019,
-    raw: "SNIGGER",
-  },
-  {
-    freq: 35020,
-    raw: "INSHORE",
-  },
-  {
-    freq: 35036,
-    raw: "PINTAIL",
-  },
-  {
-    freq: 35038,
-    raw: "COLORED",
-  },
-  {
-    freq: 35068,
-    raw: "BLOWN-UP",
-    word: "BLOWNUP",
-  },
-  {
-    freq: 35076,
-    raw: "PYRRHIC",
-  },
-  {
-    freq: 35077,
-    raw: "NOTCHED",
-  },
-  {
-    freq: 35081,
-    raw: "FINFISH",
-  },
-  {
-    freq: 35091,
-    raw: "ARTLESS",
-  },
-  {
-    freq: 35105,
-    raw: "ECTOPIC",
-  },
-  {
-    freq: 35110,
-    raw: "STINKER",
-  },
-  {
-    freq: 35113,
-    raw: "WEEDING",
-  },
-  {
-    freq: 35119,
-    raw: "RESTART",
-  },
-  {
-    freq: 35120,
-    raw: "ENCODED",
-  },
-  {
-    freq: 35131,
-    raw: "SHELLAC",
-  },
-  {
-    freq: 35137,
-    raw: "CLOUDED",
-  },
-  {
-    freq: 35154,
-    raw: "CROSSLY",
-  },
-  {
-    freq: 35158,
-    raw: "WITHERS",
-  },
-  {
-    freq: 35161,
-    raw: "BASSOON",
-  },
-  {
-    freq: 35171,
-    raw: "CRACK-UP",
-    word: "CRACKUP",
-  },
-  {
-    freq: 35178,
-    raw: "CYCLOPS",
-  },
-  {
-    freq: 35201,
-    raw: "UNSTUCK",
-  },
-  {
-    freq: 35219,
-    raw: "RIPPLED",
-  },
-  {
-    freq: 35222,
-    raw: "RENTIER",
-  },
-  {
-    freq: 35253,
-    raw: "WEBCAST",
-  },
-  {
-    freq: 35260,
-    raw: "DAUPHIN",
-  },
-  {
-    freq: 35268,
-    raw: "PATELLA",
-  },
-  {
-    freq: 35273,
-    raw: "LATVIAN",
-  },
-  {
-    freq: 35275,
-    raw: "UNBOUND",
-  },
-  {
-    freq: 35302,
-    raw: "PULSING",
-  },
-  {
-    freq: 35312,
-    raw: "REDLINE",
-  },
-  {
-    freq: 35313,
-    raw: "PEBBLED",
-  },
-  {
-    freq: 35317,
-    raw: "CAROLER",
-  },
-  {
-    freq: 35326,
-    raw: "CULLING",
-  },
-  {
-    freq: 35336,
-    raw: "CROPPER",
-  },
-  {
-    freq: 35340,
-    raw: "BUCKEYE",
-  },
-  {
-    freq: 35367,
-    raw: "REAR-END",
-    word: "REAREND",
-  },
-  {
-    freq: 35369,
-    raw: "PREMADE",
-  },
-  {
-    freq: 35370,
-    raw: "CORSAIR",
-  },
-  {
-    freq: 35377,
-    raw: "TASKBAR",
-  },
-  {
-    freq: 35383,
-    raw: "CANVASS",
-  },
-  {
-    freq: 35384,
-    raw: "SATIETY",
-  },
-  {
-    freq: 35387,
-    raw: "CZARIST",
-  },
-  {
-    freq: 35390,
-    raw: "SOBBING",
-  },
-  {
-    freq: 35397,
-    raw: "ALL-GIRL",
-    word: "ALLGIRL",
-  },
-  {
-    freq: 35398,
-    raw: "SUCROSE",
-  },
-  {
-    freq: 35407,
-    raw: "ALBUMIN",
-  },
-  {
-    freq: 35437,
-    raw: "VAQUERO",
-  },
-  {
-    freq: 35444,
-    raw: "COLICKY",
-  },
-  {
-    freq: 35445,
-    raw: "REMOUNT",
-  },
-  {
-    freq: 35446,
-    raw: "CLOTHED",
-  },
-  {
-    freq: 35448,
-    raw: "MASSEUR",
-  },
-  {
-    freq: 35454,
-    raw: "RICKETS",
-  },
-  {
-    freq: 35455,
-    raw: "STARLIT",
-  },
-  {
-    freq: 35458,
-    raw: "RHYMING",
-  },
-  {
-    freq: 35460,
-    raw: "DICKENS",
-  },
-  {
-    freq: 35465,
-    raw: "ASEPTIC",
-  },
-  {
-    freq: 35467,
-    raw: "NOTHING",
-  },
-  {
-    freq: 35468,
-    raw: "EYEWEAR",
-  },
-  {
-    freq: 35473,
-    raw: "WARTHOG",
-  },
-  {
-    freq: 35479,
-    raw: "SOBBING",
-  },
-  {
-    freq: 35481,
-    raw: "BLOTCHY",
-  },
-  {
-    freq: 35485,
-    raw: "CHOLINE",
-  },
-  {
-    freq: 35497,
-    raw: "CHEWING",
-  },
-  {
-    freq: 35501,
-    raw: "TEATIME",
-  },
-  {
-    freq: 35502,
-    raw: "SPAWNER",
-  },
-  {
-    freq: 35509,
-    raw: "WIPEOUT",
-  },
-  {
-    freq: 35521,
-    raw: "WITTILY",
-  },
-  {
-    freq: 35524,
-    raw: "DIAGRAM",
-  },
-  {
-    freq: 35532,
-    raw: "OFF-TASK",
-    word: "OFFTASK",
-  },
-  {
-    freq: 35544,
-    raw: "DOYENNE",
-  },
-  {
-    freq: 35546,
-    raw: "PIROGUE",
-  },
-  {
-    freq: 35548,
-    raw: "UNHITCH",
-  },
-  {
-    freq: 35551,
-    raw: "NUCLEON",
-  },
-  {
-    freq: 35562,
-    raw: "LOCKBOX",
-  },
-  {
-    freq: 35566,
-    raw: "CHALLAH",
-  },
-  {
-    freq: 35585,
-    raw: "DRONING",
-  },
-  {
-    freq: 35587,
-    raw: "NEUROMA",
-  },
-  {
-    freq: 35590,
-    raw: "NEEDFUL",
-  },
-  {
-    freq: 35598,
-    raw: "ENDOWED",
-  },
-  {
-    freq: 35634,
-    raw: "AIRMAIL",
-  },
-  {
-    freq: 35642,
-    raw: "PREQUEL",
-  },
-  {
-    freq: 35651,
-    raw: "TANNERY",
-  },
-  {
-    freq: 35657,
-    raw: "CHECHEN",
-  },
-  {
-    freq: 35663,
-    raw: "HEPARIN",
-  },
-  {
-    freq: 35683,
-    raw: "BIVALVE",
-  },
-  {
-    freq: 35688,
-    raw: "VEGETAL",
-  },
-  {
-    freq: 35697,
-    raw: "BETROTH",
-  },
-  {
-    freq: 35699,
-    raw: "LASHING",
-  },
-  {
-    freq: 35701,
-    raw: "BENGALI",
-  },
-  {
-    freq: 35712,
-    raw: "DELTOID",
-  },
-  {
-    freq: 35727,
-    raw: "TWO-SEAT",
-    word: "TWOSEAT",
-  },
-  {
-    freq: 35732,
-    raw: "WHEREOF",
-  },
-  {
-    freq: 35737,
-    raw: "VESPERS",
-  },
-  {
-    freq: 35738,
-    raw: "SEX-ROLE",
-    word: "SEXROLE",
-  },
-  {
-    freq: 35743,
-    raw: "WASHTUB",
-  },
-  {
-    freq: 35752,
-    raw: "HIPNESS",
-  },
-  {
-    freq: 35768,
-    raw: "AURALLY",
-  },
-  {
-    freq: 35772,
-    raw: "TILTING",
-  },
-  {
-    freq: 35778,
-    raw: "VACATED",
-  },
-  {
-    freq: 35779,
-    raw: "AROUSED",
-  },
-  {
-    freq: 35781,
-    raw: "SARACEN",
-  },
-  {
-    freq: 35782,
-    raw: "SYRINGE",
-  },
-  {
-    freq: 35788,
-    raw: "WINGMAN",
-  },
-  {
-    freq: 35803,
-    raw: "PLASMID",
-  },
-  {
-    freq: 35808,
-    raw: "GRISTLE",
-  },
-  {
-    freq: 35813,
-    raw: "GOULASH",
-  },
-  {
-    freq: 35814,
-    raw: "HARDHAT",
-  },
-  {
-    freq: 35830,
-    raw: "AMPHORA",
-  },
-  {
-    freq: 35831,
-    raw: "SANDLOT",
-  },
-  {
-    freq: 35841,
-    raw: "MENTHOL",
-  },
-  {
-    freq: 35856,
-    raw: "HOT-PINK",
-    word: "HOTPINK",
-  },
-  {
-    freq: 35859,
-    raw: "WARPATH",
-  },
-  {
-    freq: 35860,
-    raw: "BACK-END",
-    word: "BACKEND",
-  },
-  {
-    freq: 35874,
-    raw: "NEONATE",
-  },
-  {
-    freq: 35876,
-    raw: "WAKEFUL",
-  },
-  {
-    freq: 35884,
-    raw: "CURDLED",
-  },
-  {
-    freq: 35892,
-    raw: "RUBELLA",
-  },
-  {
-    freq: 35900,
-    raw: "HAIRNET",
-  },
-  {
-    freq: 35903,
-    raw: "CHIGNON",
-  },
-  {
-    freq: 35909,
-    raw: "STIPPLE",
-  },
-  {
-    freq: 35939,
-    raw: "DIZZILY",
-  },
-  {
-    freq: 35942,
-    raw: "MUEZZIN",
-  },
-  {
-    freq: 35946,
-    raw: "MYELOMA",
-  },
-  {
-    freq: 35947,
-    raw: "MESCLUN",
-  },
-  {
-    freq: 35951,
-    raw: "LANYARD",
-  },
-  {
-    freq: 35969,
-    raw: "REFRIED",
-  },
-  {
-    freq: 35984,
-    raw: "SPANGLE",
-  },
-  {
-    freq: 35989,
-    raw: "TRASHED",
-  },
-  {
-    freq: 36009,
-    raw: "UNCHECK",
-  },
-  {
-    freq: 36012,
-    raw: "EUGENIC",
-  },
-  {
-    freq: 36013,
-    raw: "COCHLEA",
-  },
-  {
-    freq: 36018,
-    raw: "SERFDOM",
-  },
-  {
-    freq: 36019,
-    raw: "CO-CHIEF",
-    word: "COCHIEF",
-  },
-  {
-    freq: 36020,
-    raw: "RIPOSTE",
-  },
-  {
-    freq: 36024,
-    raw: "TAXIWAY",
-  },
-  {
-    freq: 36029,
-    raw: "SHEBANG",
-  },
-  {
-    freq: 36040,
-    raw: "RETINOL",
-  },
-  {
-    freq: 36044,
-    raw: "CHANCEL",
-  },
-  {
-    freq: 36046,
-    raw: "FASTING",
-  },
-  {
-    freq: 36053,
-    raw: "HITLESS",
-  },
-  {
-    freq: 36069,
-    raw: "ENTERIC",
-  },
-  {
-    freq: 36076,
-    raw: "ABIOTIC",
-  },
-  {
-    freq: 36081,
-    raw: "HITCHES",
-  },
-  {
-    freq: 36082,
-    raw: "MANDALA",
-  },
-  {
-    freq: 36084,
-    raw: "ICE-FREE",
-    word: "ICEFREE",
-  },
-  {
-    freq: 36087,
-    raw: "CO-EQUAL",
-    word: "COEQUAL",
-  },
-  {
-    freq: 36088,
-    raw: "PUNCHED",
-  },
-  {
-    freq: 36092,
-    raw: "CARTOON",
-  },
-  {
-    freq: 36102,
-    raw: "SOLVENT",
-  },
-  {
-    freq: 36111,
-    raw: "BLINDED",
-  },
-  {
-    freq: 36119,
-    raw: "SHOW-OFF",
-    word: "SHOWOFF",
-  },
-  {
-    freq: 36121,
-    raw: "RENAMED",
-  },
-  {
-    freq: 36128,
-    raw: "SLATTED",
-  },
-  {
-    freq: 36155,
-    raw: "SIDECAR",
-  },
-  {
-    freq: 36157,
-    raw: "BOOMBOX",
-  },
-  {
-    freq: 36158,
-    raw: "QUR'ANIC",
-    word: "QURANIC",
-  },
-  {
-    freq: 36166,
-    raw: "LIVED-IN",
-    word: "LIVEDIN",
-  },
-  {
-    freq: 36191,
-    raw: "JOINERY",
-  },
-  {
-    freq: 36196,
-    raw: "OVULATE",
-  },
-  {
-    freq: 36211,
-    raw: "CANVASS",
-  },
-  {
-    freq: 36216,
-    raw: "PILLAGE",
-  },
-  {
-    freq: 36227,
-    raw: "PORCINE",
-  },
-  {
-    freq: 36230,
-    raw: "MANNISH",
-  },
-  {
-    freq: 36241,
-    raw: "PALPATE",
-  },
-  {
-    freq: 36251,
-    raw: "BOATMEN",
-  },
-  {
-    freq: 36252,
-    raw: "CODFISH",
-  },
-  {
-    freq: 36260,
-    raw: "FELT-TIP",
-    word: "FELTTIP",
-  },
-  {
-    freq: 36267,
-    raw: "PACKBAG",
-  },
-  {
-    freq: 36270,
-    raw: "MONOCLE",
-  },
-  {
-    freq: 36273,
-    raw: "COMBUST",
-  },
-  {
-    freq: 36274,
-    raw: "SUCTION",
-  },
-  {
-    freq: 36286,
-    raw: "HABITUS",
-  },
-  {
-    freq: 36291,
-    raw: "SCHLOCK",
-  },
-  {
-    freq: 36294,
-    raw: "LEERING",
-  },
-  {
-    freq: 36295,
-    raw: "LACTATE",
-  },
-  {
-    freq: 36298,
-    raw: "VESTING",
-  },
-  {
-    freq: 36302,
-    raw: "FACETED",
-  },
-  {
-    freq: 36305,
-    raw: "CRINKLE",
-  },
-  {
-    freq: 36318,
-    raw: "GUMBALL",
-  },
-  {
-    freq: 36322,
-    raw: "LAPPING",
-  },
-  {
-    freq: 36361,
-    raw: "SLOBBER",
-  },
-  {
-    freq: 36362,
-    raw: "PAUNCHY",
-  },
-  {
-    freq: 36383,
-    raw: "MUST-WIN",
-    word: "MUSTWIN",
-  },
-  {
-    freq: 36411,
-    raw: "GANACHE",
-  },
-  {
-    freq: 36413,
-    raw: "ARMORER",
-  },
-  {
-    freq: 36421,
-    raw: "TANTRIC",
-  },
-  {
-    freq: 36422,
-    raw: "AUSTRAL",
-  },
-  {
-    freq: 36425,
-    raw: "ROSEATE",
-  },
-  {
-    freq: 36428,
-    raw: "LEVELLY",
-  },
-  {
-    freq: 36430,
-    raw: "TITHING",
-  },
-  {
-    freq: 36441,
-    raw: "CORTEGE",
-  },
-  {
-    freq: 36451,
-    raw: "CHITTER",
-  },
-  {
-    freq: 36474,
-    raw: "BAKLAVA",
-  },
-  {
-    freq: 36489,
-    raw: "NOSTRUM",
-  },
-  {
-    freq: 36493,
-    raw: "INANITY",
-  },
-  {
-    freq: 36507,
-    raw: "FRACTAL",
-  },
-  {
-    freq: 36508,
-    raw: "AMYLOID",
-  },
-  {
-    freq: 36535,
-    raw: "GEE-WHIZ",
-    word: "GEEWHIZ",
-  },
-  {
-    freq: 36547,
-    raw: "BILIOUS",
-  },
-  {
-    freq: 36548,
-    raw: "SPURNED",
-  },
-  {
-    freq: 36549,
-    raw: "MARXIAN",
-  },
-  {
-    freq: 36565,
-    raw: "PANFISH",
-  },
-  {
-    freq: 36572,
-    raw: "PREACHY",
-  },
-  {
-    freq: 36574,
-    raw: "LEANING",
-  },
-  {
-    freq: 36575,
-    raw: "HOGWASH",
-  },
-  {
-    freq: 36577,
-    raw: "COWHIDE",
-  },
-  {
-    freq: 36582,
-    raw: "CHASING",
-  },
-  {
-    freq: 36608,
-    raw: "LOWBROW",
-  },
-  {
-    freq: 36620,
-    raw: "WICKING",
-  },
-  {
-    freq: 36621,
-    raw: "ODOROUS",
-  },
-  {
-    freq: 36629,
-    raw: "ONE-STEP",
-    word: "ONESTEP",
-  },
-  {
-    freq: 36642,
-    raw: "WRANGLE",
-  },
-  {
-    freq: 36645,
-    raw: "WETBACK",
-  },
-  {
-    freq: 36646,
-    raw: "EX-SLAVE",
-    word: "EXSLAVE",
-  },
-  {
-    freq: 36648,
-    raw: "DOGGONE",
-  },
-  {
-    freq: 36656,
-    raw: "SUNLESS",
-  },
-  {
-    freq: 36664,
-    raw: "DO-OR-DIE",
-    word: "DOORDIE",
-  },
-  {
-    freq: 36673,
-    raw: "SEAWARD",
-  },
-  {
-    freq: 36676,
-    raw: "LUNGFUL",
-  },
-  {
-    freq: 36678,
-    raw: "RUSTLER",
-  },
-  {
-    freq: 36691,
-    raw: "DUSTPAN",
-  },
-  {
-    freq: 36720,
-    raw: "ZAIRIAN",
-  },
-  {
-    freq: 36732,
-    raw: "BARKEEP",
-  },
-  {
-    freq: 36734,
-    raw: "CROCHET",
-  },
-  {
-    freq: 36741,
-    raw: "VAGRANT",
-  },
-  {
-    freq: 36746,
-    raw: "HUMERUS",
-  },
-  {
-    freq: 36751,
-    raw: "SCOOPED",
-  },
-  {
-    freq: 36755,
-    raw: "AVERTED",
-  },
-  {
-    freq: 36761,
-    raw: "SCRAPIE",
-  },
-  {
-    freq: 36768,
-    raw: "HIDALGO",
-  },
-  {
-    freq: 36776,
-    raw: "BIG-EYED",
-    word: "BIGEYED",
-  },
-  {
-    freq: 36782,
-    raw: "SLASHED",
-  },
-  {
-    freq: 36788,
-    raw: "OFF-RAMP",
-    word: "OFFRAMP",
-  },
-  {
-    freq: 36799,
-    raw: "MORDANT",
-  },
-  {
-    freq: 36800,
-    raw: "FEUDING",
-  },
-  {
-    freq: 36803,
-    raw: "CHAEBOL",
-  },
-  {
-    freq: 36805,
-    raw: "GUNPLAY",
-  },
-  {
-    freq: 36806,
-    raw: "SPECKLE",
-  },
-  {
-    freq: 36807,
-    raw: "OUTVOTE",
-  },
-  {
-    freq: 36815,
-    raw: "ROOTING",
-  },
-  {
-    freq: 36833,
-    raw: "OLDSTER",
-  },
-  {
-    freq: 36839,
-    raw: "COMFREY",
-  },
-  {
-    freq: 36844,
-    raw: "FULSOME",
-  },
-  {
-    freq: 36866,
-    raw: "MUDROOM",
-  },
-  {
-    freq: 36876,
-    raw: "SIXFOLD",
-  },
-  {
-    freq: 36880,
-    raw: "CREAMER",
-  },
-  {
-    freq: 36882,
-    raw: "FALAFEL",
-  },
-  {
-    freq: 36904,
-    raw: "MEDIGAP",
-  },
-  {
-    freq: 36907,
-    raw: "GRIFFIN",
-  },
-  {
-    freq: 36921,
-    raw: "AMBIENT",
-  },
-  {
-    freq: 36930,
-    raw: "TOPIARY",
-  },
-  {
-    freq: 36935,
-    raw: "FLYAWAY",
-  },
-  {
-    freq: 36939,
-    raw: "UNBOWED",
-  },
-  {
-    freq: 36940,
-    raw: "ROSTRUM",
-  },
-  {
-    freq: 36964,
-    raw: "BETWIXT",
-  },
-  {
-    freq: 36972,
-    raw: "RAFFISH",
-  },
-  {
-    freq: 37014,
-    raw: "JOYRIDE",
-  },
-  {
-    freq: 37022,
-    raw: "IMPASTO",
-  },
-  {
-    freq: 37063,
-    raw: "TACKING",
-  },
-  {
-    freq: 37065,
-    raw: "ACADIAN",
-  },
-  {
-    freq: 37072,
-    raw: "AUREOLE",
-  },
-  {
-    freq: 37081,
-    raw: "DRY-EYED",
-    word: "DRYEYED",
-  },
-  {
-    freq: 37113,
-    raw: "TABULAR",
-  },
-  {
-    freq: 37119,
-    raw: "ACCRUAL",
-  },
-  {
-    freq: 37133,
-    raw: "MANACLE",
-  },
-  {
-    freq: 37134,
-    raw: "PICKAXE",
-  },
-  {
-    freq: 37154,
-    raw: "CHOKING",
-  },
-  {
-    freq: 37165,
-    raw: "PHARYNX",
-  },
-  {
-    freq: 37167,
-    raw: "TRACKED",
-  },
-  {
-    freq: 37169,
-    raw: "AIRHEAD",
-  },
-  {
-    freq: 37189,
-    raw: "LAPPING",
-  },
-  {
-    freq: 37191,
-    raw: "MASTOID",
-  },
-  {
-    freq: 37197,
-    raw: "HYDRATE",
-  },
-  {
-    freq: 37202,
-    raw: "SLIPPED",
-  },
-  {
-    freq: 37209,
-    raw: "TOSSING",
-  },
-  {
-    freq: 37224,
-    raw: "WRINKLY",
-  },
-  {
-    freq: 37239,
-    raw: "PASCHAL",
-  },
-  {
-    freq: 37243,
-    raw: "CLAWING",
-  },
-  {
-    freq: 37252,
-    raw: "RETHINK",
-  },
-  {
-    freq: 37258,
-    raw: "KNITTER",
-  },
-  {
-    freq: 37259,
-    raw: "RUBDOWN",
-  },
-  {
-    freq: 37260,
-    raw: "TOLLWAY",
-  },
-  {
-    freq: 37272,
-    raw: "HITCHED",
-  },
-  {
-    freq: 37281,
-    raw: "SKYLARK",
-  },
-  {
-    freq: 37285,
-    raw: "PRUDISH",
-  },
-  {
-    freq: 37302,
-    raw: "SEXTANT",
-  },
-  {
-    freq: 37306,
-    raw: "ARMLESS",
-  },
-  {
-    freq: 37307,
-    raw: "SIX-PART",
-    word: "SIXPART",
-  },
-  {
-    freq: 37322,
-    raw: "GAINSAY",
-  },
-  {
-    freq: 37335,
-    raw: "OVERLIE",
-  },
-  {
-    freq: 37336,
-    raw: "BULRUSH",
-  },
-  {
-    freq: 37347,
-    raw: "TARTLET",
-  },
-  {
-    freq: 37359,
-    raw: "ETHMOID",
-  },
-  {
-    freq: 37370,
-    raw: "MUMBLED",
-  },
-  {
-    freq: 37374,
-    raw: "VITRINE",
-  },
-  {
-    freq: 37375,
-    raw: "PITTING",
-  },
-  {
-    freq: 37380,
-    raw: "RAIDING",
-  },
-  {
-    freq: 37382,
-    raw: "DISHRAG",
-  },
-  {
-    freq: 37395,
-    raw: "STEEPEN",
-  },
-  {
-    freq: 37432,
-    raw: "FORBEAR",
-  },
-  {
-    freq: 37449,
-    raw: "BLARING",
-  },
-  {
-    freq: 37463,
-    raw: "SINGLET",
-  },
-  {
-    freq: 37464,
-    raw: "HOOTING",
-  },
-  {
-    freq: 37472,
-    raw: "TAGGING",
-  },
-  {
-    freq: 37476,
-    raw: "HARDPAN",
-  },
-  {
-    freq: 37513,
-    raw: "EYELESS",
-  },
-  {
-    freq: 37526,
-    raw: "LASAGNE",
-  },
-  {
-    freq: 37527,
-    raw: "OVERTOP",
-  },
-  {
-    freq: 37531,
-    raw: "DRIZZLY",
-  },
-  {
-    freq: 37538,
-    raw: "BREWPUB",
-  },
-  {
-    freq: 37540,
-    raw: "ONE-VOTE",
-    word: "ONEVOTE",
-  },
-  {
-    freq: 37548,
-    raw: "PRECAST",
-  },
-  {
-    freq: 37562,
-    raw: "HELIPAD",
-  },
-  {
-    freq: 37595,
-    raw: "PINCERS",
-  },
-  {
-    freq: 37600,
-    raw: "TAPROOT",
-  },
-  {
-    freq: 37601,
-    raw: "PICCOLO",
-  },
-  {
-    freq: 37612,
-    raw: "QUAKING",
-  },
-  {
-    freq: 37615,
-    raw: "LEVELER",
-  },
-  {
-    freq: 37620,
-    raw: "TRIADIC",
-  },
-  {
-    freq: 37638,
-    raw: "UNFUNNY",
-  },
-  {
-    freq: 37648,
-    raw: "TEMPURA",
-  },
-  {
-    freq: 37659,
-    raw: "TRACERY",
-  },
-  {
-    freq: 37678,
-    raw: "EXCITON",
-  },
-  {
-    freq: 37683,
-    raw: "CRASHER",
-  },
-  {
-    freq: 37684,
-    raw: "SPEED-UP",
-    word: "SPEEDUP",
-  },
-  {
-    freq: 37688,
-    raw: "ENDNOTE",
-  },
-  {
-    freq: 37712,
-    raw: "TUNEFUL",
-  },
-  {
-    freq: 37715,
-    raw: "MISUSED",
-  },
-  {
-    freq: 37721,
-    raw: "DIMMING",
-  },
-  {
-    freq: 37736,
-    raw: "CLASPED",
-  },
-  {
-    freq: 37748,
-    raw: "SWAYING",
-  },
-  {
-    freq: 37758,
-    raw: "TANAGER",
-  },
-  {
-    freq: 37760,
-    raw: "THEN-NEW",
-    word: "THENNEW",
-  },
-  {
-    freq: 37767,
-    raw: "REOCCUR",
-  },
-  {
-    freq: 37777,
-    raw: "SCAPULA",
-  },
-  {
-    freq: 37797,
-    raw: "PURGING",
-  },
-  {
-    freq: 37800,
-    raw: "BEEPING",
-  },
-  {
-    freq: 37809,
-    raw: "THERETO",
-  },
-  {
-    freq: 37811,
-    raw: "ARIDITY",
-  },
-  {
-    freq: 37821,
-    raw: "COWBIRD",
-  },
-  {
-    freq: 37824,
-    raw: "HEDGING",
-  },
-  {
-    freq: 37826,
-    raw: "TOLUENE",
-  },
-  {
-    freq: 37827,
-    raw: "RAGWEED",
-  },
-  {
-    freq: 37836,
-    raw: "PLAINER",
-  },
-  {
-    freq: 37838,
-    raw: "WEEK-OLD",
-    word: "WEEKOLD",
-  },
-  {
-    freq: 37839,
-    raw: "BRINGER",
-  },
-  {
-    freq: 37849,
-    raw: "SOPPING",
-  },
-  {
-    freq: 37857,
-    raw: "TEN-HOUR",
-    word: "TENHOUR",
-  },
-  {
-    freq: 37869,
-    raw: "BREADED",
-  },
-  {
-    freq: 37870,
-    raw: "BRUSHED",
-  },
-  {
-    freq: 37874,
-    raw: "JAILING",
-  },
-  {
-    freq: 37877,
-    raw: "TREMOLO",
-  },
-  {
-    freq: 37881,
-    raw: "CROCHET",
-  },
-  {
-    freq: 37888,
-    raw: "SHIATSU",
-  },
-  {
-    freq: 37929,
-    raw: "MANIKIN",
-  },
-  {
-    freq: 37933,
-    raw: "REMOVED",
-  },
-  {
-    freq: 37936,
-    raw: "SAINTED",
-  },
-  {
-    freq: 37938,
-    raw: "ELYSIAN",
-  },
-  {
-    freq: 37947,
-    raw: "BEJESUS",
-  },
-  {
-    freq: 37959,
-    raw: "WALLABY",
-  },
-  {
-    freq: 37960,
-    raw: "EGOTIST",
-  },
-  {
-    freq: 37973,
-    raw: "GROPING",
-  },
-  {
-    freq: 37981,
-    raw: "BACILLI",
-  },
-  {
-    freq: 37982,
-    raw: "METERED",
-  },
-  {
-    freq: 37988,
-    raw: "MOODILY",
-  },
-  {
-    freq: 37990,
-    raw: "NONSKID",
-  },
-  {
-    freq: 37998,
-    raw: "PUCKISH",
-  },
-  {
-    freq: 38001,
-    raw: "NUTCASE",
-  },
-  {
-    freq: 38005,
-    raw: "SIGN-OFF",
-    word: "SIGNOFF",
-  },
-  {
-    freq: 38018,
-    raw: "PAGEBOY",
-  },
-  {
-    freq: 38019,
-    raw: "CEVICHE",
-  },
-  {
-    freq: 38021,
-    raw: "FONTINA",
-  },
-  {
-    freq: 38022,
-    raw: "COWHAND",
-  },
-  {
-    freq: 38030,
-    raw: "CIRCLET",
-  },
-  {
-    freq: 38038,
-    raw: "TEACH-IN",
-    word: "TEACHIN",
-  },
-  {
-    freq: 38042,
-    raw: "PIMENTO",
-  },
-  {
-    freq: 38051,
-    raw: "OUTCROP",
-  },
-  {
-    freq: 38099,
-    raw: "BAUXITE",
-  },
-  {
-    freq: 38110,
-    raw: "CALUMNY",
-  },
-  {
-    freq: 38122,
-    raw: "ROUGHEN",
-  },
-  {
-    freq: 38124,
-    raw: "ELASTIN",
-  },
-  {
-    freq: 38131,
-    raw: "HYPOXIC",
-  },
-  {
-    freq: 38150,
-    raw: "GENTIAN",
-  },
-  {
-    freq: 38168,
-    raw: "WASTING",
-  },
-  {
-    freq: 38180,
-    raw: "GRIPPER",
-  },
-  {
-    freq: 38186,
-    raw: "CLINKER",
-  },
-  {
-    freq: 38188,
-    raw: "OSMOTIC",
-  },
-  {
-    freq: 38205,
-    raw: "MONTANE",
-  },
-  {
-    freq: 38209,
-    raw: "TRIBUNE",
-  },
-  {
-    freq: 38210,
-    raw: "RAIN-FED",
-    word: "RAINFED",
-  },
-  {
-    freq: 38211,
-    raw: "MAFIOSO",
-  },
-  {
-    freq: 38226,
-    raw: "CHAINED",
-  },
-  {
-    freq: 38231,
-    raw: "SUASION",
-  },
-  {
-    freq: 38240,
-    raw: "BISMUTH",
-  },
-  {
-    freq: 38247,
-    raw: "SCROOGE",
-  },
-  {
-    freq: 38249,
-    raw: "SIX-LANE",
-    word: "SIXLANE",
-  },
-  {
-    freq: 38259,
-    raw: "TRIDENT",
-  },
-  {
-    freq: 38264,
-    raw: "WAVELET",
-  },
-  {
-    freq: 38269,
-    raw: "EMBARGO",
-  },
-  {
-    freq: 38278,
-    raw: "CRIOLLO",
-  },
-  {
-    freq: 38280,
-    raw: "HANDSAW",
-  },
-  {
-    freq: 38293,
-    raw: "CAPABLY",
-  },
-  {
-    freq: 38301,
-    raw: "SPRAYED",
-  },
-  {
-    freq: 38317,
-    raw: "ROCKING",
-  },
-  {
-    freq: 38320,
-    raw: "FRIABLE",
-  },
-  {
-    freq: 38321,
-    raw: "LONGBOW",
-  },
-  {
-    freq: 38324,
-    raw: "JOLTING",
-  },
-  {
-    freq: 38353,
-    raw: "SNUGGLE",
-  },
-  {
-    freq: 38362,
-    raw: "PANTING",
-  },
-  {
-    freq: 38365,
-    raw: "RESTAGE",
-  },
-  {
-    freq: 38366,
-    raw: "ALYSSUM",
-  },
-  {
-    freq: 38377,
-    raw: "DIPTYCH",
-  },
-  {
-    freq: 38384,
-    raw: "MOORING",
-  },
-  {
-    freq: 38388,
-    raw: "ARAMAIC",
-  },
-  {
-    freq: 38390,
-    raw: "WIRETAP",
-  },
-  {
-    freq: 38395,
-    raw: "COGNATE",
-  },
-  {
-    freq: 38398,
-    raw: "GAINING",
-  },
-  {
-    freq: 38404,
-    raw: "CUNNING",
-  },
-  {
-    freq: 38422,
-    raw: "FOX-TROT",
-    word: "FOXTROT",
-  },
-  {
-    freq: 38427,
-    raw: "ENGORGE",
-  },
-  {
-    freq: 38432,
-    raw: "GUMSHOE",
-  },
-  {
-    freq: 38436,
-    raw: "GRANTOR",
-  },
-  {
-    freq: 38443,
-    raw: "HAUTEUR",
-  },
-  {
-    freq: 38445,
-    raw: "OUTSOLE",
-  },
-  {
-    freq: 38446,
-    raw: "AILERON",
-  },
-  {
-    freq: 38459,
-    raw: "CODLING",
-  },
-  {
-    freq: 38467,
-    raw: "HOARDER",
-  },
-  {
-    freq: 38474,
-    raw: "OPEN-PIT",
-    word: "OPENPIT",
-  },
-  {
-    freq: 38479,
-    raw: "BOARDED",
-  },
-  {
-    freq: 38481,
-    raw: "ROLL-OFF",
-    word: "ROLLOFF",
-  },
-  {
-    freq: 38498,
-    raw: "ICE-BLUE",
-    word: "ICEBLUE",
-  },
-  {
-    freq: 38502,
-    raw: "UNMIXED",
-  },
-  {
-    freq: 38510,
-    raw: "RETITLE",
-  },
-  {
-    freq: 38513,
-    raw: "AGONIST",
-  },
-  {
-    freq: 38514,
-    raw: "TIMPANI",
-  },
-  {
-    freq: 38529,
-    raw: "ELISION",
-  },
-  {
-    freq: 38537,
-    raw: "LOCKEAN",
-  },
-  {
-    freq: 38538,
-    raw: "CRAFTER",
-  },
-  {
-    freq: 38540,
-    raw: "CRUSTAL",
-  },
-  {
-    freq: 38548,
-    raw: "LUCIDLY",
-  },
-  {
-    freq: 38551,
-    raw: "PUSTULE",
-  },
-  {
-    freq: 38562,
-    raw: "CARRIED",
-  },
-  {
-    freq: 38573,
-    raw: "GROOVED",
-  },
-  {
-    freq: 38601,
-    raw: "MACAQUE",
-  },
-  {
-    freq: 38619,
-    raw: "UNMANLY",
-  },
-  {
-    freq: 38622,
-    raw: "SKITTLE",
-  },
-  {
-    freq: 38649,
-    raw: "THITHER",
-  },
-  {
-    freq: 38659,
-    raw: "POOLING",
-  },
-  {
-    freq: 38673,
-    raw: "KICK-ASS",
-    word: "KICKASS",
-  },
-  {
-    freq: 38693,
-    raw: "MUDHOLE",
-  },
-  {
-    freq: 38702,
-    raw: "EXEGETE",
-  },
-  {
-    freq: 38729,
-    raw: "SHOW-OFF",
-    word: "SHOWOFF",
-  },
-  {
-    freq: 38735,
-    raw: "LAMPREY",
-  },
-  {
-    freq: 38750,
-    raw: "COAXING",
-  },
-  {
-    freq: 38764,
-    raw: "SKIWEAR",
-  },
-  {
-    freq: 38765,
-    raw: "NORMING",
-  },
-  {
-    freq: 38774,
-    raw: "SLITHER",
-  },
-  {
-    freq: 38777,
-    raw: "COSSACK",
-  },
-  {
-    freq: 38778,
-    raw: "FANTAIL",
-  },
-  {
-    freq: 38780,
-    raw: "GET-WELL",
-    word: "GETWELL",
-  },
-  {
-    freq: 38784,
-    raw: "OAXACAN",
-  },
-  {
-    freq: 38792,
-    raw: "CURTAIN",
-  },
-  {
-    freq: 38799,
-    raw: "THUMPER",
-  },
-  {
-    freq: 38804,
-    raw: "SOPPING",
-  },
-  {
-    freq: 38813,
-    raw: "WINDING",
-  },
-  {
-    freq: 38823,
-    raw: "SLOUCHY",
-  },
-  {
-    freq: 38829,
-    raw: "CRESTED",
-  },
-  {
-    freq: 38832,
-    raw: "TROUPER",
-  },
-  {
-    freq: 38833,
-    raw: "GORDIAN",
-  },
-  {
-    freq: 38843,
-    raw: "STAMMER",
-  },
-  {
-    freq: 38845,
-    raw: "TOWPATH",
-  },
-  {
-    freq: 38854,
-    raw: "SLEEKLY",
-  },
-  {
-    freq: 38860,
-    raw: "MENDING",
-  },
-  {
-    freq: 38862,
-    raw: "XEROXED",
-  },
-  {
-    freq: 38865,
-    raw: "EIGHTHS",
-  },
-  {
-    freq: 38876,
-    raw: "BETOKEN",
-  },
-  {
-    freq: 38890,
-    raw: "TINTING",
-  },
-  {
-    freq: 38896,
-    raw: "ONE-MILE",
-    word: "ONEMILE",
-  },
-  {
-    freq: 38897,
-    raw: "BOONIES",
-  },
-  {
-    freq: 38899,
-    raw: "MUDDIED",
-  },
-  {
-    freq: 38901,
-    raw: "HONKING",
-  },
-  {
-    freq: 38910,
-    raw: "WASTAGE",
-  },
-  {
-    freq: 38914,
-    raw: "SLICKLY",
-  },
-  {
-    freq: 38918,
-    raw: "VAULTER",
-  },
-  {
-    freq: 38923,
-    raw: "GIGABIT",
-  },
-  {
-    freq: 38933,
-    raw: "T-SHAPED",
-    word: "TSHAPED",
-  },
-  {
-    freq: 38934,
-    raw: "STUCK-UP",
-    word: "STUCKUP",
-  },
-  {
-    freq: 38940,
-    raw: "MOLDING",
-  },
-  {
-    freq: 38948,
-    raw: "NANOBOT",
-  },
-  {
-    freq: 38951,
-    raw: "FULL-FAT",
-    word: "FULLFAT",
-  },
-  {
-    freq: 38955,
-    raw: "JEERING",
-  },
-  {
-    freq: 38958,
-    raw: "EROSIVE",
-  },
-  {
-    freq: 38967,
-    raw: "RETREAD",
-  },
-  {
-    freq: 38968,
-    raw: "GUSHING",
-  },
-  {
-    freq: 38976,
-    raw: "PRELOAD",
-  },
-  {
-    freq: 38978,
-    raw: "PALADIN",
-  },
-  {
-    freq: 38987,
-    raw: "GIARDIA",
-  },
-  {
-    freq: 38992,
-    raw: "SNOOKER",
-  },
-  {
-    freq: 38996,
-    raw: "BIG-SHOT",
-    word: "BIGSHOT",
-  },
-  {
-    freq: 39001,
-    raw: "TWO-DISC",
-    word: "TWODISC",
-  },
-  {
-    freq: 39002,
-    raw: "STUBBLY",
-  },
-  {
-    freq: 39007,
-    raw: "CHASING",
-  },
-  {
-    freq: 39008,
-    raw: "AIRBASE",
-  },
-  {
-    freq: 39009,
-    raw: "WHOOPEE",
-  },
-  {
-    freq: 39017,
-    raw: "WOOLENS",
-  },
-  {
-    freq: 39019,
-    raw: "FLOUNCE",
-  },
-  {
-    freq: 39031,
-    raw: "POTHEAD",
-  },
-  {
-    freq: 39033,
-    raw: "OBLIGED",
-  },
-  {
-    freq: 39035,
-    raw: "SAMOVAR",
-  },
-  {
-    freq: 39050,
-    raw: "CIRCLED",
-  },
-  {
-    freq: 39055,
-    raw: "STATISM",
-  },
-  {
-    freq: 39059,
-    raw: "SHIVERY",
-  },
-  {
-    freq: 39060,
-    raw: "IMPIOUS",
-  },
-  {
-    freq: 39066,
-    raw: "SEEDBED",
-  },
-  {
-    freq: 39074,
-    raw: "SUB-ZERO",
-    word: "SUBZERO",
-  },
-  {
-    freq: 39079,
-    raw: "UNTAXED",
-  },
-  {
-    freq: 39090,
-    raw: "TOP-LINE",
-    word: "TOPLINE",
-  },
-  {
-    freq: 39102,
-    raw: "PHASE-IN",
-    word: "PHASEIN",
-  },
-  {
-    freq: 39108,
-    raw: "HEDONIC",
-  },
-  {
-    freq: 39111,
-    raw: "MASSING",
-  },
-  {
-    freq: 39124,
-    raw: "NEW-HOME",
-    word: "NEWHOME",
-  },
-  {
-    freq: 39125,
-    raw: "OUTWORK",
-  },
-  {
-    freq: 39156,
-    raw: "DRIZZLY",
-  },
-  {
-    freq: 39173,
-    raw: "PECCARY",
-  },
-  {
-    freq: 39184,
-    raw: "HAYSEED",
-  },
-  {
-    freq: 39246,
-    raw: "GRANDEE",
-  },
-  {
-    freq: 39250,
-    raw: "CALCITE",
-  },
-  {
-    freq: 39269,
-    raw: "VOICING",
-  },
-  {
-    freq: 39274,
-    raw: "AFFABLY",
-  },
-  {
-    freq: 39275,
-    raw: "IMPUTED",
-  },
-  {
-    freq: 39283,
-    raw: "WIDE-SET",
-    word: "WIDESET",
-  },
-  {
-    freq: 39286,
-    raw: "TUSSOCK",
-  },
-  {
-    freq: 39297,
-    raw: "MISCAST",
-  },
-  {
-    freq: 39299,
-    raw: "FADDISH",
-  },
-  {
-    freq: 39302,
-    raw: "CANNULA",
-  },
-  {
-    freq: 39315,
-    raw: "REIFIED",
-  },
-  {
-    freq: 39333,
-    raw: "FILLING",
-  },
-  {
-    freq: 39334,
-    raw: "APE-LIKE",
-    word: "APELIKE",
-  },
-  {
-    freq: 39352,
-    raw: "FRILLED",
-  },
-  {
-    freq: 39354,
-    raw: "KILOTON",
-  },
-  {
-    freq: 39356,
-    raw: "HIGH-DEF",
-    word: "HIGHDEF",
-  },
-  {
-    freq: 39362,
-    raw: "PLUCKED",
-  },
-  {
-    freq: 39368,
-    raw: "PIPETTE",
-  },
-  {
-    freq: 39369,
-    raw: "STOICAL",
-  },
-  {
-    freq: 39379,
-    raw: "VESICLE",
-  },
-  {
-    freq: 39382,
-    raw: "HOSANNA",
-  },
-  {
-    freq: 39386,
-    raw: "ENTRAIN",
-  },
-  {
-    freq: 39404,
-    raw: "UPENDED",
-  },
-  {
-    freq: 39419,
-    raw: "INDUCER",
-  },
-  {
-    freq: 39424,
-    raw: "YES-OR-NO",
-    word: "YESORNO",
-  },
-  {
-    freq: 39435,
-    raw: "PITEOUS",
-  },
-  {
-    freq: 39475,
-    raw: "SPANGLE",
-  },
-  {
-    freq: 39507,
-    raw: "STRIVER",
-  },
-  {
-    freq: 39509,
-    raw: "ALERTLY",
-  },
-  {
-    freq: 39511,
-    raw: "PRATTLE",
-  },
-  {
-    freq: 39514,
-    raw: "SPLOTCH",
-  },
-  {
-    freq: 39526,
-    raw: "RUN-TIME",
-    word: "RUNTIME",
-  },
-  {
-    freq: 39530,
-    raw: "WHIPSAW",
-  },
-  {
-    freq: 39531,
-    raw: "ONE-NOTE",
-    word: "ONENOTE",
-  },
-  {
-    freq: 39584,
-    raw: "TWO-YARD",
-    word: "TWOYARD",
-  },
-  {
-    freq: 39587,
-    raw: "MISRULE",
-  },
-  {
-    freq: 39603,
-    raw: "DYSPNEA",
-  },
-  {
-    freq: 39604,
-    raw: "REVILED",
-  },
-  {
-    freq: 39615,
-    raw: "BOOMLET",
-  },
-  {
-    freq: 39616,
-    raw: "MEDEVAC",
-  },
-  {
-    freq: 39650,
-    raw: "REGRESS",
-  },
-  {
-    freq: 39652,
-    raw: "ADJUDGE",
-  },
-  {
-    freq: 39657,
-    raw: "ANTIQUE",
-  },
-  {
-    freq: 39659,
-    raw: "DECKING",
-  },
-  {
-    freq: 39686,
-    raw: "PERLITE",
-  },
-  {
-    freq: 39692,
-    raw: "DIALING",
-  },
-  {
-    freq: 39700,
-    raw: "FEUDING",
-  },
-  {
-    freq: 39701,
-    raw: "HALF-WIT",
-    word: "HALFWIT",
-  },
-  {
-    freq: 39703,
-    raw: "HONKING",
-  },
-  {
-    freq: 39710,
-    raw: "NEBULAR",
-  },
-  {
-    freq: 39715,
-    raw: "CRUMPLE",
-  },
-  {
-    freq: 39718,
-    raw: "BANDGAP",
-  },
-  {
-    freq: 39730,
-    raw: "REVALUE",
-  },
-  {
-    freq: 39732,
-    raw: "CELADON",
-  },
-  {
-    freq: 39739,
-    raw: "SCULPIN",
-  },
-  {
-    freq: 39745,
-    raw: "DECRYPT",
-  },
-  {
-    freq: 39746,
-    raw: "HATLESS",
-  },
-  {
-    freq: 39748,
-    raw: "THEREON",
-  },
-  {
-    freq: 39752,
-    raw: "BLOODED",
-  },
-  {
-    freq: 39764,
-    raw: "TAGLINE",
-  },
-  {
-    freq: 39773,
-    raw: "DIETING",
-  },
-  {
-    freq: 39775,
-    raw: "CLEANED",
-  },
-  {
-    freq: 39785,
-    raw: "OSSUARY",
-  },
-  {
-    freq: 39790,
-    raw: "BOLLOCK",
-  },
-  {
-    freq: 39819,
-    raw: "THROW-IN",
-    word: "THROWIN",
-  },
-  {
-    freq: 39826,
-    raw: "TWO-SHOT",
-    word: "TWOSHOT",
-  },
-  {
-    freq: 39845,
-    raw: "UMPTEEN",
-  },
-  {
-    freq: 39855,
-    raw: "SNARLED",
-  },
-  {
-    freq: 39861,
-    raw: "GLEANER",
-  },
-  {
-    freq: 39866,
-    raw: "EXCISED",
-  },
-  {
-    freq: 39893,
-    raw: "TOOLING",
-  },
-  {
-    freq: 39896,
-    raw: "ODDNESS",
-  },
-  {
-    freq: 39897,
-    raw: "STUMPED",
-  },
-  {
-    freq: 39916,
-    raw: "STAYING",
-  },
-  {
-    freq: 39919,
-    raw: "INGRESS",
-  },
-  {
-    freq: 39926,
-    raw: "MANACLE",
-  },
-  {
-    freq: 39927,
-    raw: "SAFE-SEX",
-    word: "SAFESEX",
-  },
-  {
-    freq: 39928,
-    raw: "RIPTIDE",
-  },
-  {
-    freq: 39952,
-    raw: "GRACKLE",
-  },
-  {
-    freq: 39958,
-    raw: "SCORNED",
-  },
-  {
-    freq: 39967,
-    raw: "CHERVIL",
-  },
-  {
-    freq: 39982,
-    raw: "SNAKING",
-  },
-  {
-    freq: 39990,
-    raw: "WIDENED",
-  },
-  {
-    freq: 39998,
-    raw: "TOSTADA",
-  },
-  {
-    freq: 39999,
-    raw: "ENTENTE",
-  },
-  {
-    freq: 40000,
-    raw: "SANDMAN",
-  },
-  {
-    freq: 40003,
-    raw: "SALTINE",
-  },
-  {
-    freq: 40007,
-    raw: "FEE-ONLY",
-    word: "FEEONLY",
-  },
-  {
-    freq: 40008,
-    raw: "FORMING",
-  },
-  {
-    freq: 40018,
-    raw: "CAPPING",
-  },
-  {
-    freq: 40020,
-    raw: "SOONEST",
-  },
-  {
-    freq: 40031,
-    raw: "CHAPATI",
-  },
-  {
-    freq: 40046,
-    raw: "GESTATE",
-  },
-  {
-    freq: 40092,
-    raw: "UNSPENT",
-  },
-  {
-    freq: 40097,
-    raw: "EXHALED",
-  },
-  {
-    freq: 40098,
-    raw: "BATSMAN",
-  },
-  {
-    freq: 40105,
-    raw: "POLLACK",
-  },
-  {
-    freq: 40119,
-    raw: "ANODYNE",
-  },
-  {
-    freq: 40121,
-    raw: "BLATHER",
-  },
-  {
-    freq: 40152,
-    raw: "GUMDROP",
-  },
-  {
-    freq: 40158,
-    raw: "COOK-OFF",
-    word: "COOKOFF",
-  },
-  {
-    freq: 40190,
-    raw: "ANGOLAN",
-  },
-  {
-    freq: 40196,
-    raw: "TIPSTER",
-  },
-  {
-    freq: 40201,
-    raw: "CRIMPED",
-  },
-  {
-    freq: 40207,
-    raw: "BIRDING",
-  },
-  {
-    freq: 40211,
-    raw: "THORIUM",
-  },
-  {
-    freq: 40219,
-    raw: "LOW-RATE",
-    word: "LOWRATE",
-  },
-  {
-    freq: 40245,
-    raw: "CODICIL",
-  },
-  {
-    freq: 40256,
-    raw: "TEARING",
-  },
-  {
-    freq: 40262,
-    raw: "PRESSER",
-  },
-  {
-    freq: 40280,
-    raw: "BEEPING",
-  },
-  {
-    freq: 40283,
-    raw: "NITRIDE",
-  },
-  {
-    freq: 40284,
-    raw: "KEENING",
-  },
-  {
-    freq: 40287,
-    raw: "DOGSLED",
-  },
-  {
-    freq: 40295,
-    raw: "CRUMPET",
-  },
-  {
-    freq: 40298,
-    raw: "HUSKILY",
-  },
-  {
-    freq: 40303,
-    raw: "UNITIVE",
-  },
-  {
-    freq: 40321,
-    raw: "SCISSOR",
-  },
-  {
-    freq: 40324,
-    raw: "WADDING",
-  },
-  {
-    freq: 40326,
-    raw: "PEERAGE",
-  },
-  {
-    freq: 40331,
-    raw: "HYDRIDE",
-  },
-  {
-    freq: 40338,
-    raw: "SNOWCAT",
-  },
-  {
-    freq: 40343,
-    raw: "DABBLER",
-  },
-  {
-    freq: 40361,
-    raw: "SNORING",
-  },
-  {
-    freq: 40379,
-    raw: "EYEDROP",
-  },
-  {
-    freq: 40386,
-    raw: "GAME-DAY",
-    word: "GAMEDAY",
-  },
-  {
-    freq: 40387,
-    raw: "MALLEUS",
-  },
-  {
-    freq: 40389,
-    raw: "CULTISH",
-  },
-  {
-    freq: 40394,
-    raw: "HARD-ASS",
-    word: "HARDASS",
-  },
-  {
-    freq: 40398,
-    raw: "TWO-PLUS",
-    word: "TWOPLUS",
-  },
-  {
-    freq: 40400,
-    raw: "WELL-CUT",
-    word: "WELLCUT",
-  },
-  {
-    freq: 40405,
-    raw: "COWPOKE",
-  },
-  {
-    freq: 40440,
-    raw: "KEYLESS",
-  },
-  {
-    freq: 40445,
-    raw: "NARWHAL",
-  },
-  {
-    freq: 40468,
-    raw: "NEW-WAVE",
-    word: "NEWWAVE",
-  },
-  {
-    freq: 40473,
-    raw: "WOLFISH",
-  },
-  {
-    freq: 40478,
-    raw: "SKIPPER",
-  },
-  {
-    freq: 40499,
-    raw: "MEERKAT",
-  },
-  {
-    freq: 40500,
-    raw: "SQUINCH",
-  },
-  {
-    freq: 40501,
-    raw: "IRONIST",
-  },
-  {
-    freq: 40506,
-    raw: "FREESIA",
-  },
-  {
-    freq: 40508,
-    raw: "TRAMWAY",
-  },
-  {
-    freq: 40518,
-    raw: "TAG-TEAM",
-    word: "TAGTEAM",
-  },
-  {
-    freq: 40519,
-    raw: "TRANCHE",
-  },
-  {
-    freq: 40520,
-    raw: "ACETONE",
-  },
-  {
-    freq: 40523,
-    raw: "SHUT-OFF",
-    word: "SHUTOFF",
-  },
-  {
-    freq: 40530,
-    raw: "SCHTICK",
-  },
-  {
-    freq: 40532,
-    raw: "GRATING",
-  },
-  {
-    freq: 40536,
-    raw: "KERATIN",
-  },
-  {
-    freq: 40560,
-    raw: "E-MAILER",
-    word: "EMAILER",
-  },
-  {
-    freq: 40564,
-    raw: "SHUTOFF",
-  },
-  {
-    freq: 40568,
-    raw: "EMERITA",
-  },
-  {
-    freq: 40571,
-    raw: "FIXABLE",
-  },
-  {
-    freq: 40587,
-    raw: "IGNEOUS",
-  },
-  {
-    freq: 40609,
-    raw: "OBVERSE",
-  },
-  {
-    freq: 40614,
-    raw: "DELPHIC",
-  },
-  {
-    freq: 40619,
-    raw: "JERKILY",
-  },
-  {
-    freq: 40621,
-    raw: "ISCHIAL",
-  },
-  {
-    freq: 40644,
-    raw: "CATBIRD",
-  },
-  {
-    freq: 40648,
-    raw: "CRUDITY",
-  },
-  {
-    freq: 40650,
-    raw: "BAR-CODE",
-    word: "BARCODE",
-  },
-  {
-    freq: 40679,
-    raw: "CHICKEN",
-  },
-  {
-    freq: 40684,
-    raw: "BRIEFER",
-  },
-  {
-    freq: 40693,
-    raw: "DENUDED",
-  },
-  {
-    freq: 40703,
-    raw: "RELAXER",
-  },
-  {
-    freq: 40707,
-    raw: "GAYNESS",
-  },
-  {
-    freq: 40710,
-    raw: "GESSOED",
-  },
-  {
-    freq: 40723,
-    raw: "RUBY-RED",
-    word: "RUBYRED",
-  },
-  {
-    freq: 40728,
-    raw: "DUCTILE",
-  },
-  {
-    freq: 40736,
-    raw: "PRECOOK",
-  },
-  {
-    freq: 40739,
-    raw: "UNFUSSY",
-  },
-  {
-    freq: 40746,
-    raw: "SHYSTER",
-  },
-  {
-    freq: 40752,
-    raw: "ZAMBIAN",
-  },
-  {
-    freq: 40761,
-    raw: "GUINEAN",
-  },
-  {
-    freq: 40783,
-    raw: "MINSTER",
-  },
-  {
-    freq: 40784,
-    raw: "NON-SLIP",
-    word: "NONSLIP",
-  },
-  {
-    freq: 40797,
-    raw: "PILLOWY",
-  },
-  {
-    freq: 40801,
-    raw: "FULL-OUT",
-    word: "FULLOUT",
-  },
-  {
-    freq: 40815,
-    raw: "HOBBLED",
-  },
-  {
-    freq: 40823,
-    raw: "BURMESE",
-  },
-  {
-    freq: 40828,
-    raw: "CROAKER",
-  },
-  {
-    freq: 40829,
-    raw: "CITRATE",
-  },
-  {
-    freq: 40839,
-    raw: "PLOWING",
-  },
-  {
-    freq: 40840,
-    raw: "FROGMAN",
-  },
-  {
-    freq: 40854,
-    raw: "DARK-SKY",
-    word: "DARKSKY",
-  },
-  {
-    freq: 40859,
-    raw: "WEB-LIKE",
-    word: "WEBLIKE",
-  },
-  {
-    freq: 40863,
-    raw: "SKINNER",
-  },
-  {
-    freq: 40866,
-    raw: "INGRATE",
-  },
-  {
-    freq: 40875,
-    raw: "ANTONYM",
-  },
-  {
-    freq: 40879,
-    raw: "UNIFIER",
-  },
-  {
-    freq: 40926,
-    raw: "LANTANA",
-  },
-  {
-    freq: 40930,
-    raw: "CHORTLE",
-  },
-  {
-    freq: 40934,
-    raw: "SAD-EYED",
-    word: "SADEYED",
-  },
-  {
-    freq: 40942,
-    raw: "SQUINTY",
-  },
-  {
-    freq: 40945,
-    raw: "RESTYLE",
-  },
-  {
-    freq: 40949,
-    raw: "BIG-BANG",
-    word: "BIGBANG",
-  },
-  {
-    freq: 40962,
-    raw: "SHOVING",
-  },
-  {
-    freq: 40971,
-    raw: "BOOSTED",
-  },
-  {
-    freq: 40985,
-    raw: "EMITTED",
-  },
-  {
-    freq: 40987,
-    raw: "BITUMEN",
-  },
-  {
-    freq: 40995,
-    raw: "VIOLIST",
-  },
-  {
-    freq: 41007,
-    raw: "BURDOCK",
-  },
-  {
-    freq: 41008,
-    raw: "TIE-DOWN",
-    word: "TIEDOWN",
-  },
-  {
-    freq: 41012,
-    raw: "BABYISH",
-  },
-  {
-    freq: 41026,
-    raw: "THAWING",
-  },
-  {
-    freq: 41027,
-    raw: "BARONET",
-  },
-  {
-    freq: 41029,
-    raw: "PAPOOSE",
-  },
-  {
-    freq: 41030,
-    raw: "FRAYING",
-  },
-  {
-    freq: 41043,
-    raw: "ONE-LANE",
-    word: "ONELANE",
-  },
-  {
-    freq: 41049,
-    raw: "BLEEDER",
-  },
-  {
-    freq: 41073,
-    raw: "NUMBING",
-  },
-  {
-    freq: 41075,
-    raw: "UPSILON",
-  },
-  {
-    freq: 41088,
-    raw: "OXIDANT",
-  },
-  {
-    freq: 41095,
-    raw: "RAINOUT",
-  },
-  {
-    freq: 41111,
-    raw: "PASTURE",
-  },
-  {
-    freq: 41117,
-    raw: "AUTOPSY",
-  },
-  {
-    freq: 41124,
-    raw: "ANAEMIA",
-  },
-  {
-    freq: 41127,
-    raw: "DIMMING",
-  },
-  {
-    freq: 41156,
-    raw: "FANZINE",
-  },
-  {
-    freq: 41158,
-    raw: "MACRAME",
-  },
-  {
-    freq: 41178,
-    raw: "RED-WINE",
-    word: "REDWINE",
-  },
-  {
-    freq: 41199,
-    raw: "LOFTILY",
-  },
-  {
-    freq: 41212,
-    raw: "TWINKIE",
-  },
-  {
-    freq: 41214,
-    raw: "EARFLAP",
-  },
-  {
-    freq: 41234,
-    raw: "JAWBONE",
-  },
-  {
-    freq: 41251,
-    raw: "CRAWDAD",
-  },
-  {
-    freq: 41253,
-    raw: "CANASTA",
-  },
-  {
-    freq: 41265,
-    raw: "SIX-PACK",
-    word: "SIXPACK",
-  },
-  {
-    freq: 41268,
-    raw: "DANCING",
-  },
-  {
-    freq: 41270,
-    raw: "DOE-EYED",
-    word: "DOEEYED",
-  },
-  {
-    freq: 41286,
-    raw: "PUZZLER",
-  },
-  {
-    freq: 41287,
-    raw: "PALAVER",
-  },
-  {
-    freq: 41296,
-    raw: "LEFTIST",
-  },
-  {
-    freq: 41305,
-    raw: "HABITUE",
-  },
-  {
-    freq: 41308,
-    raw: "PSALTER",
-  },
-  {
-    freq: 41309,
-    raw: "GARROTE",
-  },
-  {
-    freq: 41320,
-    raw: "NESTLED",
-  },
-  {
-    freq: 41321,
-    raw: "TWITTER",
-  },
-  {
-    freq: 41328,
-    raw: "CANDIDA",
-  },
-  {
-    freq: 41335,
-    raw: "FLUTING",
-  },
-  {
-    freq: 41343,
-    raw: "UPSLOPE",
-  },
-  {
-    freq: 41352,
-    raw: "MADDING",
-  },
-  {
-    freq: 41353,
-    raw: "TWINKLY",
-  },
-  {
-    freq: 41357,
-    raw: "ASOCIAL",
-  },
-  {
-    freq: 41367,
-    raw: "NEXT-DAY",
-    word: "NEXTDAY",
-  },
-  {
-    freq: 41377,
-    raw: "ADENOID",
-  },
-  {
-    freq: 41379,
-    raw: "HURTING",
-  },
-  {
-    freq: 41401,
-    raw: "DRAPING",
-  },
-  {
-    freq: 41422,
-    raw: "PRE-POST",
-    word: "PREPOST",
-  },
-  {
-    freq: 41425,
-    raw: "KATYDID",
-  },
-  {
-    freq: 41434,
-    raw: "FATBACK",
-  },
-  {
-    freq: 41443,
-    raw: "HITTITE",
-  },
-  {
-    freq: 41448,
-    raw: "REDRAFT",
-  },
-  {
-    freq: 41464,
-    raw: "SPINOFF",
-  },
-  {
-    freq: 41483,
-    raw: "MITOTIC",
-  },
-  {
-    freq: 41493,
-    raw: "ANIMIST",
-  },
-  {
-    freq: 41497,
-    raw: "WINKING",
-  },
-  {
-    freq: 41517,
-    raw: "ON-THE-GO",
-    word: "ONTHEGO",
-  },
-  {
-    freq: 41520,
-    raw: "GAMEBOY",
-  },
-  {
-    freq: 41537,
-    raw: "MANDREL",
-  },
-  {
-    freq: 41540,
-    raw: "GALETTE",
-  },
-  {
-    freq: 41544,
-    raw: "JUJITSU",
-  },
-  {
-    freq: 41553,
-    raw: "SIGHING",
-  },
-  {
-    freq: 41575,
-    raw: "WORSTED",
-  },
-  {
-    freq: 41582,
-    raw: "WEBPAGE",
-  },
-  {
-    freq: 41595,
-    raw: "BARISTA",
-  },
-  {
-    freq: 41602,
-    raw: "STICK-ON",
-    word: "STICKON",
-  },
-  {
-    freq: 41611,
-    raw: "BASTING",
-  },
-  {
-    freq: 41618,
-    raw: "BETTING",
-  },
-  {
-    freq: 41642,
-    raw: "PARSING",
-  },
-  {
-    freq: 41668,
-    raw: "PUERILE",
-  },
-  {
-    freq: 41680,
-    raw: "HELLION",
-  },
-  {
-    freq: 41702,
-    raw: "SUNDECK",
-  },
-  {
-    freq: 41713,
-    raw: "MENFOLK",
-  },
-  {
-    freq: 41717,
-    raw: "MAULING",
-  },
-  {
-    freq: 41723,
-    raw: "PAROLED",
-  },
-  {
-    freq: 41728,
-    raw: "ALUMINA",
-  },
-  {
-    freq: 41729,
-    raw: "CHOOSER",
-  },
-  {
-    freq: 41741,
-    raw: "TABASCO",
-  },
-  {
-    freq: 41747,
-    raw: "HOT-SHOT",
-    word: "HOTSHOT",
-  },
-  {
-    freq: 41755,
-    raw: "SEMI-PRO",
-    word: "SEMIPRO",
-  },
-  {
-    freq: 41770,
-    raw: "ADAPTOR",
-  },
-  {
-    freq: 41775,
-    raw: "SULFITE",
-  },
-  {
-    freq: 41778,
-    raw: "ZAIREAN",
-  },
-  {
-    freq: 41788,
-    raw: "WISE-GUY",
-    word: "WISEGUY",
-  },
-  {
-    freq: 41807,
-    raw: "INKBLOT",
-  },
-  {
-    freq: 41826,
-    raw: "TIGRESS",
-  },
-  {
-    freq: 41830,
-    raw: "APHASIA",
-  },
-  {
-    freq: 41848,
-    raw: "EMPTILY",
-  },
-  {
-    freq: 41853,
-    raw: "CIGARET",
-  },
-  {
-    freq: 41864,
-    raw: "COMLINK",
-  },
-  {
-    freq: 41872,
-    raw: "BUMPING",
-  },
-  {
-    freq: 41882,
-    raw: "PUSHPIN",
-  },
-  {
-    freq: 41889,
-    raw: "TROMMEL",
-  },
-  {
-    freq: 41891,
-    raw: "NOTATED",
-  },
-  {
-    freq: 41897,
-    raw: "PARDNER",
-  },
-  {
-    freq: 41903,
-    raw: "STONILY",
-  },
-  {
-    freq: 41907,
-    raw: "NASTILY",
-  },
-  {
-    freq: 41929,
-    raw: "GREASER",
-  },
-  {
-    freq: 41942,
-    raw: "TSARIST",
-  },
-  {
-    freq: 41968,
-    raw: "FAWNING",
-  },
-  {
-    freq: 41975,
-    raw: "SMARTEN",
-  },
-  {
-    freq: 41988,
-    raw: "TROLLER",
-  },
-  {
-    freq: 41990,
-    raw: "POMPANO",
-  },
-  {
-    freq: 41997,
-    raw: "GODHEAD",
-  },
-  {
-    freq: 42001,
-    raw: "ADENOID",
-  },
-  {
-    freq: 42003,
-    raw: "REDOUND",
-  },
-  {
-    freq: 42009,
-    raw: "FERMION",
-  },
-  {
-    freq: 42036,
-    raw: "BLOWJOB",
-  },
-  {
-    freq: 42045,
-    raw: "SCARILY",
-  },
-  {
-    freq: 42050,
-    raw: "FLUMMOX",
-  },
-  {
-    freq: 42064,
-    raw: "NATO-LED",
-    word: "NATOLED",
-  },
-  {
-    freq: 42076,
-    raw: "ANIMISM",
-  },
-  {
-    freq: 42083,
-    raw: "GEM-LIKE",
-    word: "GEMLIKE",
-  },
-  {
-    freq: 42090,
-    raw: "MAXILLA",
-  },
-  {
-    freq: 42093,
-    raw: "BRASHLY",
-  },
-  {
-    freq: 42097,
-    raw: "RATTLED",
-  },
-  {
-    freq: 42098,
-    raw: "DIALING",
-  },
-  {
-    freq: 42106,
-    raw: "AMYLOID",
-  },
-  {
-    freq: 42122,
-    raw: "ACIDIFY",
-  },
-  {
-    freq: 42127,
-    raw: "STARING",
-  },
-  {
-    freq: 42130,
-    raw: "COGENCY",
-  },
-  {
-    freq: 42131,
-    raw: "ALLEGRO",
-  },
-  {
-    freq: 42137,
-    raw: "SCOURGE",
-  },
-  {
-    freq: 42157,
-    raw: "SPINDLE",
-  },
-  {
-    freq: 42177,
-    raw: "TWO-ACRE",
-    word: "TWOACRE",
-  },
-  {
-    freq: 42178,
-    raw: "SLURPEE",
-  },
-  {
-    freq: 42181,
-    raw: "CHEERIO",
-  },
-  {
-    freq: 42186,
-    raw: "MAWKISH",
-  },
-  {
-    freq: 42189,
-    raw: "JAYWALK",
-  },
-  {
-    freq: 42195,
-    raw: "ONE-FOOT",
-    word: "ONEFOOT",
-  },
-  {
-    freq: 42196,
-    raw: "JODHPUR",
-  },
-  {
-    freq: 42200,
-    raw: "TOWBOAT",
-  },
-  {
-    freq: 42201,
-    raw: "AURORAL",
-  },
-  {
-    freq: 42211,
-    raw: "VERBOSE",
-  },
-  {
-    freq: 42217,
-    raw: "DREIDEL",
-  },
-  {
-    freq: 42219,
-    raw: "CHEROOT",
-  },
-  {
-    freq: 42227,
-    raw: "COCKNEY",
-  },
-  {
-    freq: 42241,
-    raw: "BLUE-SKY",
-    word: "BLUESKY",
-  },
-  {
-    freq: 42247,
-    raw: "LINGUAL",
-  },
-  {
-    freq: 42251,
-    raw: "PERIGEE",
-  },
-  {
-    freq: 42252,
-    raw: "JACUZZI",
-  },
-  {
-    freq: 42279,
-    raw: "HOPLITE",
-  },
-  {
-    freq: 42280,
-    raw: "EPIGRAM",
-  },
-  {
-    freq: 42290,
-    raw: "MESSILY",
-  },
-  {
-    freq: 42302,
-    raw: "CHARNEL",
-  },
-  {
-    freq: 42308,
-    raw: "TRIPPER",
-  },
-  {
-    freq: 42313,
-    raw: "OPEN-END",
-    word: "OPENEND",
-  },
-  {
-    freq: 42321,
-    raw: "HASSOCK",
-  },
-  {
-    freq: 42324,
-    raw: "DEBAUCH",
-  },
-  {
-    freq: 42341,
-    raw: "COLONIC",
-  },
-  {
-    freq: 42349,
-    raw: "SMASHER",
-  },
-  {
-    freq: 42376,
-    raw: "AFFINAL",
-  },
-  {
-    freq: 42380,
-    raw: "DOGLIKE",
-  },
-  {
-    freq: 42392,
-    raw: "NACELLE",
-  },
-  {
-    freq: 42404,
-    raw: "PRE-RACE",
-    word: "PRERACE",
-  },
-  {
-    freq: 42421,
-    raw: "SCRIBAL",
-  },
-  {
-    freq: 42423,
-    raw: "WON-LOST",
-    word: "WONLOST",
-  },
-  {
-    freq: 42425,
-    raw: "EXPIATE",
-  },
-  {
-    freq: 42427,
-    raw: "CRUELER",
-  },
-  {
-    freq: 42430,
-    raw: "CANNILY",
-  },
-  {
-    freq: 42433,
-    raw: "GUINEAN",
-  },
-  {
-    freq: 42437,
-    raw: "GRANDAD",
-  },
-  {
-    freq: 42443,
-    raw: "IGNORED",
-  },
-  {
-    freq: 42449,
-    raw: "TREADLE",
-  },
-  {
-    freq: 42454,
-    raw: "FLEXING",
-  },
-  {
-    freq: 42465,
-    raw: "WHITELY",
-  },
-  {
-    freq: 42475,
-    raw: "S-SHAPED",
-    word: "SSHAPED",
-  },
-  {
-    freq: 42482,
-    raw: "BODY-FAT",
-    word: "BODYFAT",
-  },
-  {
-    freq: 42486,
-    raw: "SKI-AREA",
-    word: "SKIAREA",
-  },
-  {
-    freq: 42497,
-    raw: "LENSING",
-  },
-  {
-    freq: 42535,
-    raw: "UTOPIAN",
-  },
-  {
-    freq: 42553,
-    raw: "TWINING",
-  },
-  {
-    freq: 42562,
-    raw: "HIJINKS",
-  },
-  {
-    freq: 42564,
-    raw: "SOLIDER",
-  },
-  {
-    freq: 42567,
-    raw: "LACKING",
-  },
-  {
-    freq: 42583,
-    raw: "GLUTEAL",
-  },
-  {
-    freq: 42584,
-    raw: "REPROOF",
-  },
-  {
-    freq: 42585,
-    raw: "RISIBLE",
-  },
-  {
-    freq: 42586,
-    raw: "CUCKOLD",
-  },
-  {
-    freq: 42611,
-    raw: "CONTOUR",
-  },
-  {
-    freq: 42615,
-    raw: "COIFFED",
-  },
-  {
-    freq: 42617,
-    raw: "SICKBED",
-  },
-  {
-    freq: 42638,
-    raw: "CARAVEL",
-  },
-  {
-    freq: 42648,
-    raw: "ONE-LINE",
-    word: "ONELINE",
-  },
-  {
-    freq: 42651,
-    raw: "ULULATE",
-  },
-  {
-    freq: 42653,
-    raw: "BANGING",
-  },
-  {
-    freq: 42659,
-    raw: "EYE-HAND",
-    word: "EYEHAND",
-  },
-  {
-    freq: 42668,
-    raw: "TINTYPE",
-  },
-  {
-    freq: 42671,
-    raw: "DEEP-FRY",
-    word: "DEEPFRY",
-  },
-  {
-    freq: 42686,
-    raw: "LIPLESS",
-  },
-  {
-    freq: 42690,
-    raw: "TAGGING",
-  },
-  {
-    freq: 42736,
-    raw: "DIRTBAG",
-  },
-  {
-    freq: 42742,
-    raw: "SAME-AGE",
-    word: "SAMEAGE",
-  },
-  {
-    freq: 42749,
-    raw: "EYEBALL",
-  },
-  {
-    freq: 42750,
-    raw: "HOSTILE",
-  },
-  {
-    freq: 42758,
-    raw: "RAPPING",
-  },
-  {
-    freq: 42767,
-    raw: "SUBTEND",
-  },
-  {
-    freq: 42770,
-    raw: "SOOTHER",
-  },
-  {
-    freq: 42778,
-    raw: "STOP-GAP",
-    word: "STOPGAP",
-  },
-  {
-    freq: 42789,
-    raw: "TUNABLE",
-  },
-  {
-    freq: 42790,
-    raw: "THIAMIN",
-  },
-  {
-    freq: 42817,
-    raw: "UNQUIET",
-  },
-  {
-    freq: 42824,
-    raw: "ADEPTLY",
-  },
-  {
-    freq: 42826,
-    raw: "TIMBALE",
-  },
-  {
-    freq: 42837,
-    raw: "TREACLE",
-  },
-  {
-    freq: 42842,
-    raw: "RESHOOT",
-  },
-  {
-    freq: 42847,
-    raw: "MOANING",
-  },
-  {
-    freq: 42864,
-    raw: "KACHINA",
-  },
-  {
-    freq: 42877,
-    raw: "HUFFING",
-  },
-  {
-    freq: 42878,
-    raw: "BEDSORE",
-  },
-  {
-    freq: 42905,
-    raw: "COGNATE",
-  },
-  {
-    freq: 42907,
-    raw: "FONDANT",
-  },
-  {
-    freq: 42910,
-    raw: "HEAVE-HO",
-    word: "HEAVEHO",
-  },
-  {
-    freq: 42912,
-    raw: "NATTILY",
-  },
-  {
-    freq: 42913,
-    raw: "WHOOPEE",
-  },
-  {
-    freq: 42919,
-    raw: "HOSTING",
-  },
-  {
-    freq: 42921,
-    raw: "HARBOUR",
-  },
-  {
-    freq: 42938,
-    raw: "ANNULUS",
-  },
-  {
-    freq: 42945,
-    raw: "PIPED-IN",
-    word: "PIPEDIN",
-  },
-  {
-    freq: 42952,
-    raw: "CUCKOLD",
-  },
-  {
-    freq: 42953,
-    raw: "LOCKING",
-  },
-  {
-    freq: 42960,
-    raw: "BOUNCED",
-  },
-  {
-    freq: 42989,
-    raw: "PURLOIN",
-  },
-  {
-    freq: 42997,
-    raw: "DIPLOID",
-  },
-  {
-    freq: 43005,
-    raw: "PRO-BUSH",
-    word: "PROBUSH",
-  },
-  {
-    freq: 43006,
-    raw: "TWO-LANE",
-    word: "TWOLANE",
-  },
-  {
-    freq: 43007,
-    raw: "FRAME-UP",
-    word: "FRAMEUP",
-  },
-  {
-    freq: 43017,
-    raw: "EJECTOR",
-  },
-  {
-    freq: 43020,
-    raw: "NULLITY",
-  },
-  {
-    freq: 43027,
-    raw: "PURRING",
-  },
-  {
-    freq: 43030,
-    raw: "RUSHING",
-  },
-  {
-    freq: 43046,
-    raw: "OMICRON",
-  },
-  {
-    freq: 43054,
-    raw: "FLEDGED",
-  },
-  {
-    freq: 43055,
-    raw: "SPIKING",
-  },
-  {
-    freq: 43058,
-    raw: "BOY-GIRL",
-    word: "BOYGIRL",
-  },
-  {
-    freq: 43066,
-    raw: "PILLORY",
-  },
-  {
-    freq: 43072,
-    raw: "OILSKIN",
-  },
-  {
-    freq: 43073,
-    raw: "GNAWING",
-  },
-  {
-    freq: 43081,
-    raw: "TWO-LINE",
-    word: "TWOLINE",
-  },
-  {
-    freq: 43105,
-    raw: "BLINKER",
-  },
-  {
-    freq: 43111,
-    raw: "FESTOON",
-  },
-  {
-    freq: 43117,
-    raw: "MADRASA",
-  },
-  {
-    freq: 43124,
-    raw: "DRAFTED",
-  },
-  {
-    freq: 43125,
-    raw: "DARK-RED",
-    word: "DARKRED",
-  },
-  {
-    freq: 43128,
-    raw: "BUNCHED",
-  },
-  {
-    freq: 43132,
-    raw: "MARABOU",
-  },
-  {
-    freq: 43136,
-    raw: "HOEDOWN",
-  },
-  {
-    freq: 43143,
-    raw: "VITTLES",
-  },
-  {
-    freq: 43157,
-    raw: "NAPHTHA",
-  },
-  {
-    freq: 43165,
-    raw: "DISTAFF",
-  },
-  {
-    freq: 43184,
-    raw: "LAUGHER",
-  },
-  {
-    freq: 43187,
-    raw: "SEEDPOD",
-  },
-  {
-    freq: 43190,
-    raw: "PUSHING",
-  },
-  {
-    freq: 43200,
-    raw: "TRIPLEX",
-  },
-  {
-    freq: 43212,
-    raw: "COPEPOD",
-  },
-  {
-    freq: 43216,
-    raw: "DEFROCK",
-  },
-  {
-    freq: 43219,
-    raw: "WASTREL",
-  },
-  {
-    freq: 43228,
-    raw: "KLEZMER",
-  },
-  {
-    freq: 43243,
-    raw: "THINNED",
-  },
-  {
-    freq: 43268,
-    raw: "CAR-FREE",
-    word: "CARFREE",
-  },
-  {
-    freq: 43286,
-    raw: "PEEPING",
-  },
-  {
-    freq: 43288,
-    raw: "STRIATE",
-  },
-  {
-    freq: 43290,
-    raw: "TOY-LIKE",
-    word: "TOYLIKE",
-  },
-  {
-    freq: 43318,
-    raw: "AEROGEL",
-  },
-  {
-    freq: 43323,
-    raw: "SUBHEAD",
-  },
-  {
-    freq: 43328,
-    raw: "SKEETER",
-  },
-  {
-    freq: 43332,
-    raw: "HELLCAT",
-  },
-  {
-    freq: 43333,
-    raw: "WHIPPET",
-  },
-  {
-    freq: 43349,
-    raw: "DULLARD",
-  },
-  {
-    freq: 43350,
-    raw: "SPANNER",
-  },
-  {
-    freq: 43360,
-    raw: "EXITING",
-  },
-  {
-    freq: 43364,
-    raw: "SLITTED",
-  },
-  {
-    freq: 43371,
-    raw: "PLAITED",
-  },
-  {
-    freq: 43375,
-    raw: "TOO-LONG",
-    word: "TOOLONG",
-  },
-  {
-    freq: 43379,
-    raw: "GENOESE",
-  },
-  {
-    freq: 43383,
-    raw: "ARAMAIC",
-  },
-  {
-    freq: 43406,
-    raw: "HOPPING",
-  },
-  {
-    freq: 43413,
-    raw: "LEONINE",
-  },
-  {
-    freq: 43441,
-    raw: "UNREADY",
-  },
-  {
-    freq: 43445,
-    raw: "NODULAR",
-  },
-  {
-    freq: 43454,
-    raw: "GAMELAN",
-  },
-  {
-    freq: 43460,
-    raw: "SWATTER",
-  },
-  {
-    freq: 43462,
-    raw: "TOPKNOT",
-  },
-  {
-    freq: 43463,
-    raw: "GRAFTED",
-  },
-  {
-    freq: 43477,
-    raw: "FOUR-BAR",
-    word: "FOURBAR",
-  },
-  {
-    freq: 43482,
-    raw: "MOUNDED",
-  },
-  {
-    freq: 43489,
-    raw: "FOR-SALE",
-    word: "FORSALE",
-  },
-  {
-    freq: 43492,
-    raw: "DAZZLER",
-  },
-  {
-    freq: 43493,
-    raw: "FISH-EYE",
-    word: "FISHEYE",
-  },
-  {
-    freq: 43512,
-    raw: "RUTTING",
-  },
-  {
-    freq: 43531,
-    raw: "CALVING",
-  },
-  {
-    freq: 43536,
-    raw: "BATTLER",
-  },
-  {
-    freq: 43539,
-    raw: "OVERAGE",
-  },
-  {
-    freq: 43549,
-    raw: "NEW-LOOK",
-    word: "NEWLOOK",
-  },
-  {
-    freq: 43568,
-    raw: "CRABBED",
-  },
-  {
-    freq: 43576,
-    raw: "SIX-YARD",
-    word: "SIXYARD",
-  },
-  {
-    freq: 43604,
-    raw: "JAMMIES",
-  },
-  {
-    freq: 43618,
-    raw: "AIRDROP",
-  },
-  {
-    freq: 43624,
-    raw: "COSTING",
-  },
-  {
-    freq: 43625,
-    raw: "SOPHIST",
-  },
-  {
-    freq: 43640,
-    raw: "HIGH-LOW",
-    word: "HIGHLOW",
-  },
-  {
-    freq: 43647,
-    raw: "FRISKET",
-  },
-  {
-    freq: 43649,
-    raw: "HALYARD",
-  },
-  {
-    freq: 43656,
-    raw: "OSSICLE",
-  },
-  {
-    freq: 43659,
-    raw: "MILLAGE",
-  },
-  {
-    freq: 43682,
-    raw: "CURBING",
-  },
-  {
-    freq: 43715,
-    raw: "CHAPEAU",
-  },
-  {
-    freq: 43754,
-    raw: "CORN-FED",
-    word: "CORNFED",
-  },
-  {
-    freq: 43755,
-    raw: "STONING",
-  },
-  {
-    freq: 43761,
-    raw: "DASHIKI",
-  },
-  {
-    freq: 43783,
-    raw: "CHADIAN",
-  },
-  {
-    freq: 43787,
-    raw: "SANDING",
-  },
-  {
-    freq: 43804,
-    raw: "SHINGLE",
-  },
-  {
-    freq: 43813,
-    raw: "ANDIRON",
-  },
-  {
-    freq: 43815,
-    raw: "MEIOSIS",
-  },
-  {
-    freq: 43849,
-    raw: "ZIP-LOCK",
-    word: "ZIPLOCK",
-  },
-  {
-    freq: 43856,
-    raw: "FORBEAR",
-  },
-  {
-    freq: 43859,
-    raw: "WISEASS",
-  },
-  {
-    freq: 43877,
-    raw: "TACHYON",
-  },
-  {
-    freq: 43885,
-    raw: "OXIDASE",
-  },
-  {
-    freq: 43888,
-    raw: "GOSHAWK",
-  },
-  {
-    freq: 43889,
-    raw: "MESTIZA",
-  },
-  {
-    freq: 43891,
-    raw: "HOMONYM",
-  },
-  {
-    freq: 43894,
-    raw: "GASSING",
-  },
-  {
-    freq: 43909,
-    raw: "HOPPING",
-  },
-  {
-    freq: 43918,
-    raw: "PEA-SIZE",
-    word: "PEASIZE",
-  },
-  {
-    freq: 43919,
-    raw: "SPITTER",
-  },
-  {
-    freq: 43921,
-    raw: "IVORIAN",
-  },
-  {
-    freq: 43925,
-    raw: "ALL-OVER",
-    word: "ALLOVER",
-  },
-  {
-    freq: 43928,
-    raw: "ONE-ACRE",
-    word: "ONEACRE",
-  },
-  {
-    freq: 43929,
-    raw: "SWIZZLE",
-  },
-  {
-    freq: 43938,
-    raw: "EXCIMER",
-  },
-  {
-    freq: 43944,
-    raw: "SUPREMO",
-  },
-  {
-    freq: 43946,
-    raw: "AVIDITY",
-  },
-  {
-    freq: 43947,
-    raw: "BEASTIE",
-  },
-  {
-    freq: 43952,
-    raw: "INBOARD",
-  },
-  {
-    freq: 43966,
-    raw: "LEFTISM",
-  },
-  {
-    freq: 43967,
-    raw: "LIGNITE",
-  },
-  {
-    freq: 43968,
-    raw: "CORKAGE",
-  },
-  {
-    freq: 43977,
-    raw: "PLUGGED",
-  },
-  {
-    freq: 43986,
-    raw: "SWIDDEN",
-  },
-  {
-    freq: 44013,
-    raw: "NOISOME",
-  },
-  {
-    freq: 44021,
-    raw: "CONDYLE",
-  },
-  {
-    freq: 44027,
-    raw: "PROSODY",
-  },
-  {
-    freq: 44030,
-    raw: "ANTI-HIV",
-    word: "ANTIHIV",
-  },
-  {
-    freq: 44041,
-    raw: "SCUTTLE",
-  },
-  {
-    freq: 44061,
-    raw: "SUCKING",
-  },
-  {
-    freq: 44082,
-    raw: "CULOTTE",
-  },
-  {
-    freq: 44095,
-    raw: "WARLOCK",
-  },
-  {
-    freq: 44114,
-    raw: "SEDATED",
-  },
-  {
-    freq: 44119,
-    raw: "WILTING",
-  },
-  {
-    freq: 44120,
-    raw: "RABIDLY",
-  },
-  {
-    freq: 44128,
-    raw: "FEMORIS",
-  },
-  {
-    freq: 44129,
-    raw: "JARRING",
-  },
-  {
-    freq: 44137,
-    raw: "GRANITA",
-  },
-  {
-    freq: 44141,
-    raw: "FLOORED",
-  },
-  {
-    freq: 44146,
-    raw: "JELLIED",
-  },
-  {
-    freq: 44159,
-    raw: "F-SERIES",
-    word: "FSERIES",
-  },
-  {
-    freq: 44163,
-    raw: "PAROTID",
-  },
-  {
-    freq: 44185,
-    raw: "CAMP-OUT",
-    word: "CAMPOUT",
-  },
-  {
-    freq: 44191,
-    raw: "NON-FOOD",
-    word: "NONFOOD",
-  },
-  {
-    freq: 44193,
-    raw: "NON-FARM",
-    word: "NONFARM",
-  },
-  {
-    freq: 44195,
-    raw: "MONKISH",
-  },
-  {
-    freq: 44211,
-    raw: "SCIATIC",
-  },
-  {
-    freq: 44227,
-    raw: "BULKING",
-  },
-  {
-    freq: 44251,
-    raw: "VARIATE",
-  },
-  {
-    freq: 44257,
-    raw: "REAMING",
-  },
-  {
-    freq: 44273,
-    raw: "DEICTIC",
-  },
-  {
-    freq: 44280,
-    raw: "FIVE-WAY",
-    word: "FIVEWAY",
-  },
-  {
-    freq: 44288,
-    raw: "FOUR-CAR",
-    word: "FOURCAR",
-  },
-  {
-    freq: 44290,
-    raw: "HAULING",
-  },
-  {
-    freq: 44309,
-    raw: "LOW-LIFE",
-    word: "LOWLIFE",
-  },
-  {
-    freq: 44327,
-    raw: "GAMBIAN",
-  },
-  {
-    freq: 44330,
-    raw: "HIBACHI",
-  },
-  {
-    freq: 44374,
-    raw: "ASTRIDE",
-  },
-  {
-    freq: 44380,
-    raw: "WIELDER",
-  },
-  {
-    freq: 44382,
-    raw: "FLUNKIE",
-  },
-  {
-    freq: 44387,
-    raw: "WIRE-RIM",
-    word: "WIRERIM",
-  },
-  {
-    freq: 44389,
-    raw: "DOUGHTY",
-  },
-  {
-    freq: 44405,
-    raw: "SIGMOID",
-  },
-  {
-    freq: 44421,
-    raw: "POETESS",
-  },
-  {
-    freq: 44422,
-    raw: "OFF-FARM",
-    word: "OFFFARM",
-  },
-  {
-    freq: 44431,
-    raw: "FIBROID",
-  },
-  {
-    freq: 44454,
-    raw: "SHE-WOLF",
-    word: "SHEWOLF",
-  },
-  {
-    freq: 44457,
-    raw: "QURANIC",
-  },
-  {
-    freq: 44503,
-    raw: "GRIPING",
-  },
-  {
-    freq: 44509,
-    raw: "ANGERED",
-  },
-  {
-    freq: 44522,
-    raw: "LAYAWAY",
-  },
-  {
-    freq: 44523,
-    raw: "PATENCY",
-  },
-  {
-    freq: 44528,
-    raw: "SPOTLIT",
-  },
-  {
-    freq: 44533,
-    raw: "AGGRESS",
-  },
-  {
-    freq: 44537,
-    raw: "SULLIED",
-  },
-  {
-    freq: 44545,
-    raw: "COJONES",
-  },
-  {
-    freq: 44551,
-    raw: "ATAVISM",
-  },
-  {
-    freq: 44579,
-    raw: "OTOLITH",
-  },
-  {
-    freq: 44583,
-    raw: "NO-TRADE",
-    word: "NOTRADE",
-  },
-  {
-    freq: 44599,
-    raw: "CHIGGER",
-  },
-  {
-    freq: 44614,
-    raw: "CALZONE",
-  },
-  {
-    freq: 44638,
-    raw: "OFF-AXIS",
-    word: "OFFAXIS",
-  },
-  {
-    freq: 44657,
-    raw: "EJECTED",
-  },
-  {
-    freq: 44661,
-    raw: "UPSTAGE",
-  },
-  {
-    freq: 44665,
-    raw: "GLOTTAL",
-  },
-  {
-    freq: 44668,
-    raw: "SHAPE-UP",
-    word: "SHAPEUP",
-  },
-  {
-    freq: 44670,
-    raw: "SYNCOPE",
-  },
-  {
-    freq: 44679,
-    raw: "STEWARD",
-  },
-  {
-    freq: 44683,
-    raw: "HALF-LIT",
-    word: "HALFLIT",
-  },
-  {
-    freq: 44692,
-    raw: "QUEENLY",
-  },
-  {
-    freq: 44700,
-    raw: "TWEETER",
-  },
-  {
-    freq: 44710,
-    raw: "EYEHOLE",
-  },
-  {
-    freq: 44716,
-    raw: "ALL-AGES",
-    word: "ALLAGES",
-  },
-  {
-    freq: 44718,
-    raw: "NON-GAAP",
-    word: "NONGAAP",
-  },
-  {
-    freq: 44731,
-    raw: "TRUNDLE",
-  },
-  {
-    freq: 44743,
-    raw: "APTNESS",
-  },
-  {
-    freq: 44752,
-    raw: "PHONE-IN",
-    word: "PHONEIN",
-  },
-  {
-    freq: 44755,
-    raw: "KOKANEE",
-  },
-  {
-    freq: 44763,
-    raw: "EARNEST",
-  },
-  {
-    freq: 44764,
-    raw: "UNSTRAP",
-  },
-  {
-    freq: 44770,
-    raw: "KEENING",
-  },
-  {
-    freq: 44784,
-    raw: "BUMBLER",
-  },
-  {
-    freq: 44790,
-    raw: "UNFIRED",
-  },
-  {
-    freq: 44797,
-    raw: "SCABIES",
-  },
-  {
-    freq: 44809,
-    raw: "Y-SHAPED",
-    word: "YSHAPED",
-  },
-  {
-    freq: 44825,
-    raw: "HIGH-TAX",
-    word: "HIGHTAX",
-  },
-  {
-    freq: 44827,
-    raw: "STYMIED",
-  },
-  {
-    freq: 44830,
-    raw: "TOLLING",
-  },
-  {
-    freq: 44836,
-    raw: "DAZEDLY",
-  },
-  {
-    freq: 44848,
-    raw: "DUNKING",
-  },
-  {
-    freq: 44849,
-    raw: "DOGGONE",
-  },
-  {
-    freq: 44868,
-    raw: "EXIGENT",
-  },
-  {
-    freq: 44890,
-    raw: "CHURCHY",
-  },
-  {
-    freq: 44892,
-    raw: "INEPTLY",
-  },
-  {
-    freq: 44908,
-    raw: "OUSTING",
-  },
-  {
-    freq: 44910,
-    raw: "MITOSIS",
-  },
-  {
-    freq: 44912,
-    raw: "PRIMULA",
-  },
-  {
-    freq: 44917,
-    raw: "DOGFISH",
-  },
-  {
-    freq: 44932,
-    raw: "HATCHED",
-  },
-  {
-    freq: 44933,
-    raw: "PETTING",
-  },
-  {
-    freq: 44953,
-    raw: "RIVETED",
-  },
-  {
-    freq: 44968,
-    raw: "DILATOR",
-  },
-  {
-    freq: 44981,
-    raw: "BEATIFY",
-  },
-  {
-    freq: 45022,
-    raw: "STYGIAN",
-  },
-  {
-    freq: 45026,
-    raw: "TUGGING",
-  },
-  {
-    freq: 45034,
-    raw: "BOBBING",
-  },
-  {
-    freq: 45053,
-    raw: "JEERING",
-  },
-  {
-    freq: 45058,
-    raw: "LEASHED",
-  },
-  {
-    freq: 45095,
-    raw: "CHANTER",
-  },
-  {
-    freq: 45105,
-    raw: "SHOUTER",
-  },
-  {
-    freq: 45120,
-    raw: "PAST-DUE",
-    word: "PASTDUE",
-  },
-  {
-    freq: 45121,
-    raw: "SCALDED",
-  },
-  {
-    freq: 45129,
-    raw: "STRIDER",
-  },
-  {
-    freq: 45131,
-    raw: "DECIDER",
-  },
-  {
-    freq: 45133,
-    raw: "BOBSLED",
-  },
-  {
-    freq: 45159,
-    raw: "DREDGED",
-  },
-  {
-    freq: 45165,
-    raw: "SINLESS",
-  },
-  {
-    freq: 45169,
-    raw: "FIREPIT",
-  },
-  {
-    freq: 45176,
-    raw: "THOMIST",
-  },
-  {
-    freq: 45181,
-    raw: "DRIVE-UP",
-    word: "DRIVEUP",
-  },
-  {
-    freq: 45193,
-    raw: "CAMPION",
-  },
-  {
-    freq: 45224,
-    raw: "JONQUIL",
-  },
-  {
-    freq: 45244,
-    raw: "POPOVER",
-  },
-  {
-    freq: 45262,
-    raw: "FOLK-ART",
-    word: "FOLKART",
-  },
-  {
-    freq: 45270,
-    raw: "TAVERNA",
-  },
-  {
-    freq: 45272,
-    raw: "DRAINER",
-  },
-  {
-    freq: 45274,
-    raw: "WISHING",
-  },
-  {
-    freq: 45309,
-    raw: "RECUSAL",
-  },
-  {
-    freq: 45311,
-    raw: "CREW-CUT",
-    word: "CREWCUT",
-  },
-  {
-    freq: 45316,
-    raw: "NEON-LIT",
-    word: "NEONLIT",
-  },
-  {
-    freq: 45331,
-    raw: "SNIDELY",
-  },
-  {
-    freq: 45350,
-    raw: "CARMINE",
-  },
-  {
-    freq: 45383,
-    raw: "FAN-LIKE",
-    word: "FANLIKE",
-  },
-  {
-    freq: 45384,
-    raw: "WINDBAG",
-  },
-  {
-    freq: 45391,
-    raw: "BRIMMED",
-  },
-  {
-    freq: 45407,
-    raw: "FERRULE",
-  },
-  {
-    freq: 45410,
-    raw: "FLITTER",
-  },
-  {
-    freq: 45413,
-    raw: "FLUVIAL",
-  },
-  {
-    freq: 45419,
-    raw: "FADE-OUT",
-    word: "FADEOUT",
-  },
-  {
-    freq: 45440,
-    raw: "LOCATED",
-  },
-  {
-    freq: 45446,
-    raw: "EXCUSED",
-  },
-  {
-    freq: 45448,
-    raw: "SETTING",
-  },
-  {
-    freq: 45465,
-    raw: "LEPROUS",
-  },
-  {
-    freq: 45467,
-    raw: "FLAGGED",
-  },
-  {
-    freq: 45495,
-    raw: "DEIFIED",
-  },
-  {
-    freq: 45501,
-    raw: "STOCKED",
-  },
-  {
-    freq: 45522,
-    raw: "CAR-POOL",
-    word: "CARPOOL",
-  },
-  {
-    freq: 45523,
-    raw: "MISNAME",
-  },
-  {
-    freq: 45531,
-    raw: "US-OWNED",
-    word: "USOWNED",
-  },
-  {
-    freq: 45553,
-    raw: "RAIMENT",
-  },
-  {
-    freq: 45562,
-    raw: "FOOTPAD",
-  },
-  {
-    freq: 45572,
-    raw: "PORTION",
-  },
-  {
-    freq: 45582,
-    raw: "SLOSHED",
-  },
-  {
-    freq: 45589,
-    raw: "AIR-BONE",
-    word: "AIRBONE",
-  },
-  {
-    freq: 45591,
-    raw: "HARICOT",
-  },
-  {
-    freq: 45594,
-    raw: "CALIBRE",
-  },
-  {
-    freq: 45603,
-    raw: "TYMPANI",
-  },
-  {
-    freq: 45616,
-    raw: "ITERATE",
-  },
-  {
-    freq: 45626,
-    raw: "LEVELED",
-  },
-  {
-    freq: 45641,
-    raw: "REAMING",
-  },
-  {
-    freq: 45653,
-    raw: "PREFORM",
-  },
-  {
-    freq: 45657,
-    raw: "MEDDLER",
-  },
-  {
-    freq: 45667,
-    raw: "PARLOUS",
-  },
-  {
-    freq: 45672,
-    raw: "SEEDING",
-  },
-  {
-    freq: 45681,
-    raw: "OLD-LADY",
-    word: "OLDLADY",
-  },
-  {
-    freq: 45686,
-    raw: "NARTHEX",
-  },
-  {
-    freq: 45695,
-    raw: "DENYING",
-  },
-  {
-    freq: 45699,
-    raw: "RUMMAGE",
-  },
-  {
-    freq: 45703,
-    raw: "KLEZMER",
-  },
-  {
-    freq: 45736,
-    raw: "PURPURA",
-  },
-  {
-    freq: 45740,
-    raw: "CHINTZY",
-  },
-  {
-    freq: 45763,
-    raw: "RED-MEAT",
-    word: "REDMEAT",
-  },
-  {
-    freq: 45773,
-    raw: "POTTING",
-  },
-  {
-    freq: 45798,
-    raw: "LAMINAR",
-  },
-  {
-    freq: 45813,
-    raw: "HOTNESS",
-  },
-  {
-    freq: 45819,
-    raw: "SULKILY",
-  },
-  {
-    freq: 45822,
-    raw: "PLODDER",
-  },
-  {
-    freq: 45833,
-    raw: "VACUITY",
-  },
-  {
-    freq: 45848,
-    raw: "SHELVED",
-  },
-  {
-    freq: 45852,
-    raw: "HAND-CUT",
-    word: "HANDCUT",
-  },
-  {
-    freq: 45863,
-    raw: "BAITING",
-  },
-  {
-    freq: 45864,
-    raw: "FARTING",
-  },
-  {
-    freq: 45871,
-    raw: "WETTING",
-  },
-  {
-    freq: 45879,
-    raw: "DAYBOOK",
-  },
-  {
-    freq: 45880,
-    raw: "PLUGGER",
-  },
-  {
-    freq: 45881,
-    raw: "BOMBLET",
-  },
-  {
-    freq: 45895,
-    raw: "POP-ROCK",
-    word: "POPROCK",
-  },
-  {
-    freq: 45898,
-    raw: "MONOMER",
-  },
-  {
-    freq: 45909,
-    raw: "BIFOCAL",
-  },
-  {
-    freq: 45933,
-    raw: "CRASSLY",
-  },
-  {
-    freq: 45941,
-    raw: "CARRYIN",
-  },
-  {
-    freq: 45963,
-    raw: "JIMMIES",
-  },
-  {
-    freq: 45979,
-    raw: "NASALLY",
-  },
-  {
-    freq: 45983,
-    raw: "OXALATE",
-  },
-  {
-    freq: 46002,
-    raw: "GASPING",
-  },
-  {
-    freq: 46003,
-    raw: "DUMBASS",
-  },
-  {
-    freq: 46024,
-    raw: "CONDUCE",
-  },
-  {
-    freq: 46032,
-    raw: "PETRIFY",
-  },
-  {
-    freq: 46039,
-    raw: "FAIENCE",
-  },
-  {
-    freq: 46047,
-    raw: "INDEXED",
-  },
-  {
-    freq: 46064,
-    raw: "BLUSHER",
-  },
-  {
-    freq: 46066,
-    raw: "PRUDERY",
-  },
-  {
-    freq: 46068,
-    raw: "KEISTER",
-  },
-  {
-    freq: 46081,
-    raw: "EMPIRIC",
-  },
-  {
-    freq: 46093,
-    raw: "THAWING",
-  },
-  {
-    freq: 46101,
-    raw: "THRUWAY",
-  },
-  {
-    freq: 46104,
-    raw: "CAUTERY",
-  },
-  {
-    freq: 46110,
-    raw: "X-FACTOR",
-    word: "XFACTOR",
-  },
-  {
-    freq: 46125,
-    raw: "ON-SCENE",
-    word: "ONSCENE",
-  },
-  {
-    freq: 46133,
-    raw: "PERCEPT",
-  },
-  {
-    freq: 46147,
-    raw: "PUFFERY",
-  },
-  {
-    freq: 46152,
-    raw: "POST-MAO",
-    word: "POSTMAO",
-  },
-  {
-    freq: 46156,
-    raw: "PARVENU",
-  },
-  {
-    freq: 46170,
-    raw: "PUSH-OFF",
-    word: "PUSHOFF",
-  },
-  {
-    freq: 46173,
-    raw: "E-TAILER",
-    word: "ETAILER",
-  },
-  {
-    freq: 46176,
-    raw: "LAMBENT",
-  },
-  {
-    freq: 46177,
-    raw: "PLOTTED",
-  },
-  {
-    freq: 46182,
-    raw: "REDLINE",
-  },
-  {
-    freq: 46189,
-    raw: "END-ZONE",
-    word: "ENDZONE",
-  },
-  {
-    freq: 46194,
-    raw: "GASOHOL",
-  },
-  {
-    freq: 46198,
-    raw: "CURVING",
-  },
-  {
-    freq: 46208,
-    raw: "MEDULLA",
-  },
-  {
-    freq: 46216,
-    raw: "EMPANEL",
-  },
-  {
-    freq: 46236,
-    raw: "DRONING",
-  },
-  {
-    freq: 46243,
-    raw: "NOSEGAY",
-  },
-  {
-    freq: 46265,
-    raw: "HOSTING",
-  },
-  {
-    freq: 46286,
-    raw: "EXCRETA",
-  },
-  {
-    freq: 46288,
-    raw: "OVERAWE",
-  },
-  {
-    freq: 46304,
-    raw: "DUALIST",
-  },
-  {
-    freq: 46312,
-    raw: "BROMINE",
-  },
-  {
-    freq: 46339,
-    raw: "LOCKJAW",
-  },
-  {
-    freq: 46349,
-    raw: "TOURING",
-  },
-  {
-    freq: 46351,
-    raw: "HARPOON",
-  },
-  {
-    freq: 46363,
-    raw: "JOYRIDE",
-  },
-  {
-    freq: 46371,
-    raw: "TANGENT",
-  },
-  {
-    freq: 46378,
-    raw: "SHOVING",
-  },
-  {
-    freq: 46379,
-    raw: "ADVISEE",
-  },
-  {
-    freq: 46383,
-    raw: "TAMARIN",
-  },
-  {
-    freq: 46387,
-    raw: "CORDITE",
-  },
-  {
-    freq: 46402,
-    raw: "FLANKER",
-  },
-  {
-    freq: 46406,
-    raw: "STYRENE",
-  },
-  {
-    freq: 46415,
-    raw: "LEAD-OFF",
-    word: "LEADOFF",
-  },
-  {
-    freq: 46416,
-    raw: "TEN-WEEK",
-    word: "TENWEEK",
-  },
-  {
-    freq: 46437,
-    raw: "BUGBEAR",
-  },
-  {
-    freq: 46440,
-    raw: "VENTURI",
-  },
-  {
-    freq: 46448,
-    raw: "DATABLE",
-  },
-  {
-    freq: 46451,
-    raw: "ROTIFER",
-  },
-  {
-    freq: 46452,
-    raw: "WOLFMAN",
-  },
-  {
-    freq: 46454,
-    raw: "LAMPLIT",
-  },
-  {
-    freq: 46461,
-    raw: "FISH-OIL",
-    word: "FISHOIL",
-  },
-  {
-    freq: 46502,
-    raw: "DIGOXIN",
-  },
-  {
-    freq: 46509,
-    raw: "NEEDIER",
-  },
-  {
-    freq: 46516,
-    raw: "PORKPIE",
-  },
-  {
-    freq: 46528,
-    raw: "STUMPER",
-  },
-  {
-    freq: 46534,
-    raw: "DENTURE",
-  },
-  {
-    freq: 46542,
-    raw: "OPEN-TOP",
-    word: "OPENTOP",
-  },
-  {
-    freq: 46561,
-    raw: "LATERAL",
-  },
-  {
-    freq: 46565,
-    raw: "CITRUSY",
-  },
-  {
-    freq: 46576,
-    raw: "LUDDITE",
-  },
-  {
-    freq: 46589,
-    raw: "TOPSPIN",
-  },
-  {
-    freq: 46594,
-    raw: "ARMHOLE",
-  },
-  {
-    freq: 46598,
-    raw: "WINE-RED",
-    word: "WINERED",
-  },
-  {
-    freq: 46602,
-    raw: "GOOD-GUY",
-    word: "GOODGUY",
-  },
-  {
-    freq: 46614,
-    raw: "PRO-NAZI",
-    word: "PRONAZI",
-  },
-  {
-    freq: 46626,
-    raw: "FIVE-TEN",
-    word: "FIVETEN",
-  },
-  {
-    freq: 46633,
-    raw: "DWARFED",
-  },
-  {
-    freq: 46637,
-    raw: "COYNESS",
-  },
-  {
-    freq: 46640,
-    raw: "PAID-FOR",
-    word: "PAIDFOR",
-  },
-  {
-    freq: 46645,
-    raw: "CRAVING",
-  },
-  {
-    freq: 46670,
-    raw: "YELPING",
-  },
-  {
-    freq: 46672,
-    raw: "TEAMING",
-  },
-  {
-    freq: 46690,
-    raw: "INDEXER",
-  },
-  {
-    freq: 46699,
-    raw: "CURSING",
-  },
-  {
-    freq: 46705,
-    raw: "SNAPPED",
-  },
-  {
-    freq: 46709,
-    raw: "ASTILBE",
-  },
-  {
-    freq: 46722,
-    raw: "METONYM",
-  },
-  {
-    freq: 46724,
-    raw: "MINIMUS",
-  },
-  {
-    freq: 46727,
-    raw: "PITYING",
-  },
-  {
-    freq: 46728,
-    raw: "APROPOS",
-  },
-  {
-    freq: 46755,
-    raw: "NO-STICK",
-    word: "NOSTICK",
-  },
-  {
-    freq: 46771,
-    raw: "CAROTID",
-  },
-  {
-    freq: 46772,
-    raw: "HURRY-UP",
-    word: "HURRYUP",
-  },
-  {
-    freq: 46774,
-    raw: "DRY-LAND",
-    word: "DRYLAND",
-  },
-  {
-    freq: 46780,
-    raw: "PUTREFY",
-  },
-  {
-    freq: 46790,
-    raw: "NETBALL",
-  },
-  {
-    freq: 46794,
-    raw: "SIX-MILE",
-    word: "SIXMILE",
-  },
-  {
-    freq: 46804,
-    raw: "PLANKED",
-  },
-  {
-    freq: 46805,
-    raw: "BYRONIC",
-  },
-  {
-    freq: 46811,
-    raw: "BILIARY",
-  },
-  {
-    freq: 46813,
-    raw: "FARSIDE",
-  },
-  {
-    freq: 46820,
-    raw: "CENTRIC",
-  },
-  {
-    freq: 46822,
-    raw: "FOULING",
-  },
-  {
-    freq: 46825,
-    raw: "WIGGLER",
-  },
-  {
-    freq: 46834,
-    raw: "ANTACID",
-  },
-  {
-    freq: 46862,
-    raw: "BAGGING",
-  },
-  {
-    freq: 46891,
-    raw: "HALF-CUP",
-    word: "HALFCUP",
-  },
-  {
-    freq: 46892,
-    raw: "SUAVELY",
-  },
-  {
-    freq: 46897,
-    raw: "RATHOLE",
-  },
-  {
-    freq: 46899,
-    raw: "DEATHLY",
-  },
-  {
-    freq: 46901,
-    raw: "CARWASH",
-  },
-  {
-    freq: 46913,
-    raw: "POSITED",
-  },
-  {
-    freq: 46916,
-    raw: "PISSING",
-  },
-  {
-    freq: 46921,
-    raw: "BIMODAL",
-  },
-  {
-    freq: 46934,
-    raw: "FLUSTER",
-  },
-  {
-    freq: 46939,
-    raw: "CARPING",
-  },
-  {
-    freq: 46945,
-    raw: "SQUELCH",
-  },
-  {
-    freq: 46955,
-    raw: "SUBMENU",
-  },
-  {
-    freq: 46957,
-    raw: "RIFLERY",
-  },
-  {
-    freq: 46974,
-    raw: "SAUNTER",
-  },
-  {
-    freq: 46976,
-    raw: "KENOSIS",
-  },
-  {
-    freq: 46977,
-    raw: "IGNITER",
-  },
-  {
-    freq: 47007,
-    raw: "ROILING",
-  },
-  {
-    freq: 47015,
-    raw: "SNOOKER",
-  },
-  {
-    freq: 47026,
-    raw: "RED-ROCK",
-    word: "REDROCK",
-  },
-  {
-    freq: 47029,
-    raw: "CUBICAL",
-  },
-  {
-    freq: 47057,
-    raw: "GUILDER",
-  },
-  {
-    freq: 47063,
-    raw: "ROBBING",
-  },
-  {
-    freq: 47086,
-    raw: "PARESIS",
-  },
-  {
-    freq: 47090,
-    raw: "TROTTER",
-  },
-  {
-    freq: 47091,
-    raw: "ANDANTE",
-  },
-  {
-    freq: 47094,
-    raw: "INCUBUS",
-  },
-  {
-    freq: 47147,
-    raw: "NIOBIUM",
-  },
-  {
-    freq: 47149,
-    raw: "DIE-CAST",
-    word: "DIECAST",
-  },
-  {
-    freq: 47169,
-    raw: "HYPED-UP",
-    word: "HYPEDUP",
-  },
-  {
-    freq: 47182,
-    raw: "HARISSA",
-  },
-  {
-    freq: 47192,
-    raw: "SMOLDER",
-  },
-  {
-    freq: 47195,
-    raw: "POPPING",
-  },
-  {
-    freq: 47207,
-    raw: "POUTING",
-  },
-  {
-    freq: 47211,
-    raw: "MATTOCK",
-  },
-  {
-    freq: 47215,
-    raw: "POLECAT",
-  },
-  {
-    freq: 47235,
-    raw: "BASKING",
-  },
-  {
-    freq: 47236,
-    raw: "TREATER",
-  },
-  {
-    freq: 47244,
-    raw: "PIETISM",
-  },
-  {
-    freq: 47252,
-    raw: "BRAYING",
-  },
-  {
-    freq: 47269,
-    raw: "COARSEN",
-  },
-  {
-    freq: 47295,
-    raw: "BAD-NEWS",
-    word: "BADNEWS",
-  },
-  {
-    freq: 47297,
-    raw: "MULLEIN",
-  },
-  {
-    freq: 47300,
-    raw: "SIMPLEX",
-  },
-  {
-    freq: 47309,
-    raw: "GRIDDLE",
-  },
-  {
-    freq: 47317,
-    raw: "APRONED",
-  },
-  {
-    freq: 47324,
-    raw: "PETIOLE",
-  },
-  {
-    freq: 47326,
-    raw: "TEST-BAN",
-    word: "TESTBAN",
-  },
-  {
-    freq: 47327,
-    raw: "CHORDAL",
-  },
-  {
-    freq: 47356,
-    raw: "STAPLED",
-  },
-  {
-    freq: 47375,
-    raw: "SQUIRMY",
-  },
-  {
-    freq: 47380,
-    raw: "PLEDGED",
-  },
-  {
-    freq: 47387,
-    raw: "DEFINER",
-  },
-  {
-    freq: 47390,
-    raw: "COLLIER",
-  },
-  {
-    freq: 47399,
-    raw: "DECODED",
-  },
-  {
-    freq: 47416,
-    raw: "FARRIER",
-  },
-  {
-    freq: 47425,
-    raw: "FIXATOR",
-  },
-  {
-    freq: 47433,
-    raw: "BROODER",
-  },
-  {
-    freq: 47434,
-    raw: "ODDMENT",
-  },
-  {
-    freq: 47436,
-    raw: "CURTSEY",
-  },
-  {
-    freq: 47466,
-    raw: "OFF-GRID",
-    word: "OFFGRID",
-  },
-  {
-    freq: 47476,
-    raw: "RIDDLED",
-  },
-  {
-    freq: 47494,
-    raw: "RETOUCH",
-  },
-  {
-    freq: 47511,
-    raw: "BANDBOX",
-  },
-  {
-    freq: 47543,
-    raw: "MULLION",
-  },
-  {
-    freq: 47546,
-    raw: "HITTITE",
-  },
-  {
-    freq: 47548,
-    raw: "JIGGING",
-  },
-  {
-    freq: 47554,
-    raw: "SUNWARD",
-  },
-  {
-    freq: 47567,
-    raw: "DODGING",
-  },
-  {
-    freq: 47568,
-    raw: "PURRING",
-  },
-  {
-    freq: 47594,
-    raw: "DRAGOON",
-  },
-  {
-    freq: 47600,
-    raw: "TAPROOM",
-  },
-  {
-    freq: 47603,
-    raw: "GUTTING",
-  },
-  {
-    freq: 47605,
-    raw: "WATERED",
-  },
-  {
-    freq: 47612,
-    raw: "GINGERY",
-  },
-  {
-    freq: 47630,
-    raw: "CZARIST",
-  },
-  {
-    freq: 47651,
-    raw: "GAS-RICH",
-    word: "GASRICH",
-  },
-  {
-    freq: 47673,
-    raw: "KILLJOY",
-  },
-  {
-    freq: 47676,
-    raw: "CONNING",
-  },
-  {
-    freq: 47679,
-    raw: "STEWPOT",
-  },
-  {
-    freq: 47685,
-    raw: "CALCIFY",
-  },
-  {
-    freq: 47686,
-    raw: "FOPPISH",
-  },
-  {
-    freq: 47691,
-    raw: "CHROMED",
-  },
-  {
-    freq: 47697,
-    raw: "BIG-DEAL",
-    word: "BIGDEAL",
-  },
-  {
-    freq: 47730,
-    raw: "CAESURA",
-  },
-  {
-    freq: 47733,
-    raw: "INFARCT",
-  },
-  {
-    freq: 47740,
-    raw: "THOMIST",
-  },
-  {
-    freq: 47747,
-    raw: "CICHLID",
-  },
-  {
-    freq: 47753,
-    raw: "TICKLER",
-  },
-  {
-    freq: 47799,
-    raw: "PUNJABI",
-  },
-  {
-    freq: 47806,
-    raw: "GUNBELT",
-  },
-  {
-    freq: 47810,
-    raw: "BURKEAN",
-  },
-  {
-    freq: 47821,
-    raw: "ROOTING",
-  },
-  {
-    freq: 47826,
-    raw: "PARTYER",
-  },
-  {
-    freq: 47848,
-    raw: "CAVED-IN",
-    word: "CAVEDIN",
-  },
-  {
-    freq: 47860,
-    raw: "SICKBAY",
-  },
-  {
-    freq: 47863,
-    raw: "KRYPTON",
-  },
-  {
-    freq: 47883,
-    raw: "IMPIETY",
-  },
-  {
-    freq: 47915,
-    raw: "NON-CASH",
-    word: "NONCASH",
-  },
-  {
-    freq: 47922,
-    raw: "SNAGGED",
-  },
-  {
-    freq: 47929,
-    raw: "FRUITED",
-  },
-  {
-    freq: 47936,
-    raw: "WARPING",
-  },
-  {
-    freq: 47942,
-    raw: "INVADED",
-  },
-  {
-    freq: 47965,
-    raw: "RAIDING",
-  },
-  {
-    freq: 47972,
-    raw: "CALICHE",
-  },
-  {
-    freq: 47991,
-    raw: "GAUDILY",
-  },
-  {
-    freq: 47993,
-    raw: "ART-DECO",
-    word: "ARTDECO",
-  },
-  {
-    freq: 48016,
-    raw: "BOWLINE",
-  },
-  {
-    freq: 48017,
-    raw: "KOLKHOZ",
-  },
-  {
-    freq: 48036,
-    raw: "TONIEST",
-  },
-  {
-    freq: 48043,
-    raw: "FURRIER",
-  },
-  {
-    freq: 48060,
-    raw: "MILFOIL",
-  },
-  {
-    freq: 48065,
-    raw: "SACKFUL",
-  },
-  {
-    freq: 48077,
-    raw: "PEACOAT",
-  },
-  {
-    freq: 48098,
-    raw: "LOUTISH",
-  },
-  {
-    freq: 48105,
-    raw: "TEN-FOUR",
-    word: "TENFOUR",
-  },
-  {
-    freq: 48107,
-    raw: "UNITARD",
-  },
-  {
-    freq: 48114,
-    raw: "PICKOFF",
-  },
-  {
-    freq: 48126,
-    raw: "PISSANT",
-  },
-  {
-    freq: 48188,
-    raw: "WINDAGE",
-  },
-  {
-    freq: 48202,
-    raw: "GOUGING",
-  },
-  {
-    freq: 48232,
-    raw: "MANSARD",
-  },
-  {
-    freq: 48233,
-    raw: "BUG-FREE",
-    word: "BUGFREE",
-  },
-  {
-    freq: 48238,
-    raw: "MAN-LIKE",
-    word: "MANLIKE",
-  },
-  {
-    freq: 48240,
-    raw: "ONE-DISH",
-    word: "ONEDISH",
-  },
-  {
-    freq: 48243,
-    raw: "CREEDAL",
-  },
-  {
-    freq: 48263,
-    raw: "PSYCHED",
-  },
-  {
-    freq: 48269,
-    raw: "DEMOTED",
-  },
-  {
-    freq: 48274,
-    raw: "GILDING",
-  },
-  {
-    freq: 48287,
-    raw: "FOUR-RUN",
-    word: "FOURRUN",
-  },
-  {
-    freq: 48291,
-    raw: "PILSNER",
-  },
-  {
-    freq: 48300,
-    raw: "BLACKLY",
-  },
-  {
-    freq: 48303,
-    raw: "LUMPISH",
-  },
-  {
-    freq: 48332,
-    raw: "DEWDROP",
-  },
-  {
-    freq: 48344,
-    raw: "RHENISH",
-  },
-  {
-    freq: 48357,
-    raw: "ONE-SHOT",
-    word: "ONESHOT",
-  },
-  {
-    freq: 48368,
-    raw: "UNSAVED",
-  },
-  {
-    freq: 48379,
-    raw: "VERDURE",
-  },
-  {
-    freq: 48386,
-    raw: "PINKING",
-  },
-  {
-    freq: 48387,
-    raw: "REEKING",
-  },
-  {
-    freq: 48391,
-    raw: "SHEARED",
-  },
-  {
-    freq: 48413,
-    raw: "SCHERZO",
-  },
-  {
-    freq: 48415,
-    raw: "TWO-SHOT",
-    word: "TWOSHOT",
-  },
-  {
-    freq: 48424,
-    raw: "PABULUM",
-  },
-  {
-    freq: 48429,
-    raw: "UNFIXED",
-  },
-  {
-    freq: 48439,
-    raw: "LECHERY",
-  },
-  {
-    freq: 48441,
-    raw: "SPARELY",
-  },
-  {
-    freq: 48475,
-    raw: "PARTITA",
-  },
-  {
-    freq: 48523,
-    raw: "STILLED",
-  },
-  {
-    freq: 48563,
-    raw: "INANELY",
-  },
-  {
-    freq: 48569,
-    raw: "LACTASE",
-  },
-  {
-    freq: 48582,
-    raw: "MOONLET",
-  },
-  {
-    freq: 48588,
-    raw: "SHUCKED",
-  },
-  {
-    freq: 48601,
-    raw: "MAYPOLE",
-  },
-  {
-    freq: 48610,
-    raw: "DINGBAT",
-  },
-  {
-    freq: 48617,
-    raw: "DARKISH",
-  },
-  {
-    freq: 48618,
-    raw: "SOJOURN",
-  },
-  {
-    freq: 48623,
-    raw: "MINICAM",
-  },
-  {
-    freq: 48633,
-    raw: "CARSICK",
-  },
-  {
-    freq: 48646,
-    raw: "VERMEIL",
-  },
-  {
-    freq: 48657,
-    raw: "INCOMER",
-  },
-  {
-    freq: 48669,
-    raw: "KEYCARD",
-  },
-  {
-    freq: 48675,
-    raw: "DISHPAN",
-  },
-  {
-    freq: 48677,
-    raw: "LAID-OUT",
-    word: "LAIDOUT",
-  },
-  {
-    freq: 48690,
-    raw: "GUSTING",
-  },
-  {
-    freq: 48692,
-    raw: "FIRED-UP",
-    word: "FIREDUP",
-  },
-  {
-    freq: 48703,
-    raw: "RUST-RED",
-    word: "RUSTRED",
-  },
-  {
-    freq: 48705,
-    raw: "LISSOME",
-  },
-  {
-    freq: 48723,
-    raw: "EXOGAMY",
-  },
-  {
-    freq: 48736,
-    raw: "DECADAL",
-  },
-  {
-    freq: 48744,
-    raw: "ALCALDE",
-  },
-  {
-    freq: 48745,
-    raw: "DERECHO",
-  },
-  {
-    freq: 48755,
-    raw: "PARBOIL",
-  },
-  {
-    freq: 48765,
-    raw: "RIPENED",
-  },
-  {
-    freq: 48796,
-    raw: "CROWING",
-  },
-  {
-    freq: 48797,
-    raw: "REBUILD",
-  },
-  {
-    freq: 48803,
-    raw: "OFFSIDE",
-  },
-  {
-    freq: 48817,
-    raw: "ADENINE",
-  },
-  {
-    freq: 48834,
-    raw: "BOHEMIA",
-  },
-  {
-    freq: 48836,
-    raw: "NICE-GUY",
-    word: "NICEGUY",
-  },
-  {
-    freq: 48861,
-    raw: "ARRAYED",
-  },
-  {
-    freq: 48867,
-    raw: "SOAKING",
-  },
-  {
-    freq: 48870,
-    raw: "SEIZING",
-  },
-  {
-    freq: 48872,
-    raw: "AIRCREW",
-  },
-  {
-    freq: 48889,
-    raw: "SCAMPER",
-  },
-  {
-    freq: 48900,
-    raw: "OBTRUDE",
-  },
-  {
-    freq: 48910,
-    raw: "TWIRLER",
-  },
-  {
-    freq: 48925,
-    raw: "HIGHBOY",
-  },
-  {
-    freq: 48929,
-    raw: "QUERIDA",
-  },
-  {
-    freq: 48936,
-    raw: "EIDETIC",
-  },
-  {
-    freq: 48942,
-    raw: "FRESHET",
-  },
-  {
-    freq: 48967,
-    raw: "PLEURAL",
-  },
-  {
-    freq: 48972,
-    raw: "NO-SWEAT",
-    word: "NOSWEAT",
-  },
-  {
-    freq: 48982,
-    raw: "SHEERLY",
-  },
-  {
-    freq: 48983,
-    raw: "ORGANDY",
-  },
-  {
-    freq: 48985,
-    raw: "BOW-TIED",
-    word: "BOWTIED",
-  },
-  {
-    freq: 48991,
-    raw: "ICE-CUBE",
-    word: "ICECUBE",
-  },
-  {
-    freq: 48995,
-    raw: "WIN-LOSS",
-    word: "WINLOSS",
-  },
-  {
-    freq: 48999,
-    raw: "ATTUNED",
-  },
-  {
-    freq: 49026,
-    raw: "ROUNDER",
-  },
-  {
-    freq: 49037,
-    raw: "SERRIED",
-  },
-  {
-    freq: 49043,
-    raw: "CATALPA",
-  },
-  {
-    freq: 49054,
-    raw: "PELTING",
-  },
-  {
-    freq: 49086,
-    raw: "WIDE-LEG",
-    word: "WIDELEG",
-  },
-  {
-    freq: 49088,
-    raw: "DIOPTER",
-  },
-  {
-    freq: 49090,
-    raw: "VEILING",
-  },
-  {
-    freq: 49116,
-    raw: "KA-CHING",
-    word: "KACHING",
-  },
-  {
-    freq: 49121,
-    raw: "KNEADED",
-  },
-  {
-    freq: 49123,
-    raw: "HUMORAL",
-  },
-  {
-    freq: 49129,
-    raw: "LARGISH",
-  },
-  {
-    freq: 49154,
-    raw: "ACTINIC",
-  },
-  {
-    freq: 49168,
-    raw: "JERKING",
-  },
-  {
-    freq: 49232,
-    raw: "OLIVINE",
-  },
-  {
-    freq: 49234,
-    raw: "WHORLED",
-  },
-  {
-    freq: 49236,
-    raw: "SIX-TEAM",
-    word: "SIXTEAM",
-  },
-  {
-    freq: 49240,
-    raw: "GOSLING",
-  },
-  {
-    freq: 49257,
-    raw: "LENSING",
-  },
-  {
-    freq: 49259,
-    raw: "CURTSEY",
-  },
-  {
-    freq: 49270,
-    raw: "CHANSON",
-  },
-  {
-    freq: 49275,
-    raw: "PHOTO-OP",
-    word: "PHOTOOP",
-  },
-  {
-    freq: 49277,
-    raw: "HIP-DEEP",
-    word: "HIPDEEP",
-  },
-  {
-    freq: 49278,
-    raw: "ECHOING",
-  },
-  {
-    freq: 49295,
-    raw: "LIQUIFY",
-  },
-  {
-    freq: 49298,
-    raw: "SAVVIER",
-  },
-  {
-    freq: 49311,
-    raw: "LAMBING",
-  },
-  {
-    freq: 49324,
-    raw: "DRUG-USE",
-    word: "DRUGUSE",
-  },
-  {
-    freq: 49342,
-    raw: "GLYCINE",
-  },
-  {
-    freq: 49358,
-    raw: "BENCHED",
-  },
-  {
-    freq: 49362,
-    raw: "PEDICAB",
-  },
-  {
-    freq: 49363,
-    raw: "MOOCHER",
-  },
-  {
-    freq: 49377,
-    raw: "FIXATED",
-  },
-  {
-    freq: 49390,
-    raw: "BLINKER",
-  },
-  {
-    freq: 49393,
-    raw: "JILLION",
-  },
-  {
-    freq: 49395,
-    raw: "FLAKING",
-  },
-  {
-    freq: 49415,
-    raw: "AMPOULE",
-  },
-  {
-    freq: 49418,
-    raw: "PLOWMAN",
-  },
-  {
-    freq: 49420,
-    raw: "REORDER",
-  },
-  {
-    freq: 49427,
-    raw: "JARHEAD",
-  },
-  {
-    freq: 49432,
-    raw: "OFT-TOLD",
-    word: "OFTTOLD",
-  },
-  {
-    freq: 49436,
-    raw: "SEA-LANE",
-    word: "SEALANE",
-  },
-  {
-    freq: 49444,
-    raw: "SLAMMED",
-  },
-  {
-    freq: 49454,
-    raw: "OARLOCK",
-  },
-  {
-    freq: 49464,
-    raw: "AMOEBIC",
-  },
-  {
-    freq: 49465,
-    raw: "BREAK-IN",
-    word: "BREAKIN",
-  },
-  {
-    freq: 49469,
-    raw: "INDWELL",
-  },
-  {
-    freq: 49481,
-    raw: "MESHING",
-  },
-  {
-    freq: 49489,
-    raw: "UPRIVER",
-  },
-  {
-    freq: 49499,
-    raw: "DUDGEON",
-  },
-  {
-    freq: 49508,
-    raw: "VERNIER",
-  },
-  {
-    freq: 49526,
-    raw: "TWO-DEEP",
-    word: "TWODEEP",
-  },
-  {
-    freq: 49528,
-    raw: "GLUTTED",
-  },
-  {
-    freq: 49533,
-    raw: "MAIMING",
-  },
-  {
-    freq: 49547,
-    raw: "CITY-RUN",
-    word: "CITYRUN",
-  },
-  {
-    freq: 49551,
-    raw: "MEN-ONLY",
-    word: "MENONLY",
-  },
-  {
-    freq: 49554,
-    raw: "SEALIFT",
-  },
-  {
-    freq: 49555,
-    raw: "CROFTER",
-  },
-  {
-    freq: 49556,
-    raw: "DEEP-FAT",
-    word: "DEEPFAT",
-  },
-  {
-    freq: 49559,
-    raw: "FUELING",
-  },
-  {
-    freq: 49569,
-    raw: "LINGCOD",
-  },
-  {
-    freq: 49577,
-    raw: "CADENZA",
-  },
-  {
-    freq: 49591,
-    raw: "DAZZLED",
-  },
-  {
-    freq: 49593,
-    raw: "YAPPING",
-  },
-  {
-    freq: 49615,
-    raw: "GROPING",
-  },
-  {
-    freq: 49616,
-    raw: "LATE-DAY",
-    word: "LATEDAY",
-  },
-  {
-    freq: 49618,
-    raw: "DEEP-RED",
-    word: "DEEPRED",
-  },
-  {
-    freq: 49619,
-    raw: "C-SHAPED",
-    word: "CSHAPED",
-  },
-  {
-    freq: 49621,
-    raw: "ECLOGUE",
-  },
-  {
-    freq: 49627,
-    raw: "NAPPING",
-  },
-  {
-    freq: 49649,
-    raw: "DEFROST",
-  },
-  {
-    freq: 49654,
-    raw: "LURIDLY",
-  },
-  {
-    freq: 49665,
-    raw: "AUTOMAT",
-  },
-  {
-    freq: 49666,
-    raw: "FAT-FREE",
-    word: "FATFREE",
-  },
-  {
-    freq: 49667,
-    raw: "PUSHROD",
-  },
-  {
-    freq: 49676,
-    raw: "CHIPSET",
-  },
-  {
-    freq: 49682,
-    raw: "AVOIDED",
-  },
-  {
-    freq: 49697,
-    raw: "GHERKIN",
-  },
-  {
-    freq: 49705,
-    raw: "BANNOCK",
-  },
-  {
-    freq: 49710,
-    raw: "BIAXIAL",
-  },
-  {
-    freq: 49779,
-    raw: "PIEBALD",
-  },
-  {
-    freq: 49781,
-    raw: "RIMROCK",
-  },
-  {
-    freq: 49786,
-    raw: "GLOTTIS",
-  },
-  {
-    freq: 49806,
-    raw: "DRILLED",
-  },
-  {
-    freq: 49816,
-    raw: "WRESTLE",
-  },
-  {
-    freq: 49824,
-    raw: "SKILFUL",
-  },
-  {
-    freq: 49828,
-    raw: "FIZZING",
-  },
-  {
-    freq: 49834,
-    raw: "SCUPPER",
-  },
-  {
-    freq: 49859,
-    raw: "GRIDDED",
-  },
-  {
-    freq: 49866,
-    raw: "GROUPED",
-  },
-  {
-    freq: 49867,
-    raw: "RED-ZONE",
-    word: "REDZONE",
-  },
-  {
-    freq: 49871,
-    raw: "HYDROPS",
-  },
-  {
-    freq: 49889,
-    raw: "SUBPART",
-  },
-  {
-    freq: 49893,
-    raw: "CONVOKE",
-  },
-  {
-    freq: 49897,
-    raw: "DEMOTIC",
-  },
-  {
-    freq: 49900,
-    raw: "SCARIFY",
-  },
-  {
-    freq: 49919,
-    raw: "LANOLIN",
-  },
-  {
-    freq: 49930,
-    raw: "SMACKER",
-  },
-  {
-    freq: 49932,
-    raw: "SHOWIER",
-  },
-  {
-    freq: 49936,
-    raw: "OVERFED",
-  },
-  {
-    freq: 49938,
-    raw: "PLAYACT",
-  },
-  {
-    freq: 49966,
-    raw: "DESCANT",
-  },
-  {
-    freq: 49979,
-    raw: "ARABICA",
-  },
-  {
-    freq: 49997,
-    raw: "KNEELER",
-  },
-  {
-    freq: 50014,
-    raw: "SKIMMED",
-  },
-  {
-    freq: 50016,
-    raw: "UNCTION",
-  },
-  {
-    freq: 50040,
-    raw: "CHIMING",
-  },
-  {
-    freq: 50051,
-    raw: "INDRAWN",
-  },
-  {
-    freq: 50055,
-    raw: "HUGGING",
-  },
-  {
-    freq: 50068,
-    raw: "WHOO-HOO",
-    word: "WHOOHOO",
-  },
-  {
-    freq: 50078,
-    raw: "MAJORLY",
-  },
-  {
-    freq: 50091,
-    raw: "SHYLOCK",
-  },
-  {
-    freq: 50095,
-    raw: "EXUDATE",
-  },
-  {
-    freq: 50107,
-    raw: "KID-SIZE",
-    word: "KIDSIZE",
-  },
-  {
-    freq: 50115,
-    raw: "HOG-TIED",
-    word: "HOGTIED",
-  },
-  {
-    freq: 50124,
-    raw: "BOWLFUL",
-  },
-  {
-    freq: 50134,
-    raw: "SIX-ITEM",
-    word: "SIXITEM",
-  },
-  {
-    freq: 50139,
-    raw: "BURSTER",
-  },
-  {
-    freq: 50144,
-    raw: "ON-TRACK",
-    word: "ONTRACK",
-  },
-  {
-    freq: 50145,
-    raw: "VISCOSE",
-  },
-  {
-    freq: 50147,
-    raw: "LIMITER",
-  },
-  {
-    freq: 50157,
-    raw: "WOOZILY",
-  },
-  {
-    freq: 50159,
-    raw: "MIMICRY",
-  },
-  {
-    freq: 50167,
-    raw: "TENDING",
-  },
-  {
-    freq: 50168,
-    raw: "OUTRACE",
-  },
-  {
-    freq: 50182,
-    raw: "CARMINE",
-  },
-  {
-    freq: 50184,
-    raw: "STANDER",
-  },
-  {
-    freq: 50189,
-    raw: "GADWALL",
-  },
-  {
-    freq: 50191,
-    raw: "MAGNETO",
-  },
-  {
-    freq: 50199,
-    raw: "SIX-PLUS",
-    word: "SIXPLUS",
-  },
-  {
-    freq: 50202,
-    raw: "TWADDLE",
-  },
-  {
-    freq: 50219,
-    raw: "CUIRASS",
-  },
-  {
-    freq: 50237,
-    raw: "HACKNEY",
-  },
-  {
-    freq: 50247,
-    raw: "RECENCY",
-  },
-  {
-    freq: 50249,
-    raw: "FLYTRAP",
-  },
-  {
-    freq: 50278,
-    raw: "WALK-OFF",
-    word: "WALKOFF",
-  },
-  {
-    freq: 50286,
-    raw: "TALONED",
-  },
-  {
-    freq: 50290,
-    raw: "HIGH-KEY",
-    word: "HIGHKEY",
-  },
-  {
-    freq: 50296,
-    raw: "ANALYTE",
-  },
-  {
-    freq: 50302,
-    raw: "LOW-BALL",
-    word: "LOWBALL",
-  },
-  {
-    freq: 50332,
-    raw: "TROLLOP",
-  },
-  {
-    freq: 50338,
-    raw: "WOOLLEN",
-  },
-  {
-    freq: 50342,
-    raw: "SNUFFLE",
-  },
-  {
-    freq: 50353,
-    raw: "ENSUITE",
-  },
-  {
-    freq: 50367,
-    raw: "TOO-HIGH",
-    word: "TOOHIGH",
-  },
-  {
-    freq: 50374,
-    raw: "FANCIED",
-  },
-  {
-    freq: 50375,
-    raw: "FUNNILY",
-  },
-  {
-    freq: 50400,
-    raw: "CUSSING",
-  },
-  {
-    freq: 50413,
-    raw: "HALF-TON",
-    word: "HALFTON",
-  },
-  {
-    freq: 50418,
-    raw: "PRE-SHOW",
-    word: "PRESHOW",
-  },
-  {
-    freq: 50421,
-    raw: "BEST-RUN",
-    word: "BESTRUN",
-  },
-  {
-    freq: 50443,
-    raw: "CATSUIT",
-  },
-  {
-    freq: 50447,
-    raw: "AVOIDER",
-  },
-  {
-    freq: 50451,
-    raw: "BAGASSE",
-  },
-  {
-    freq: 50462,
-    raw: "FORE-AFT",
-    word: "FOREAFT",
-  },
-  {
-    freq: 50472,
-    raw: "GUANINE",
-  },
-  {
-    freq: 50474,
-    raw: "SARACEN",
-  },
-  {
-    freq: 50480,
-    raw: "WAXWING",
-  },
-  {
-    freq: 50493,
-    raw: "COLTISH",
-  },
-  {
-    freq: 50507,
-    raw: "PIMPLED",
-  },
-  {
-    freq: 50529,
-    raw: "SLYNESS",
-  },
-  {
-    freq: 50570,
-    raw: "PETROUS",
-  },
-  {
-    freq: 50575,
-    raw: "BIKEWAY",
-  },
-  {
-    freq: 50583,
-    raw: "BEAR-HUG",
-    word: "BEARHUG",
-  },
-  {
-    freq: 50587,
-    raw: "BIOCIDE",
-  },
-  {
-    freq: 50588,
-    raw: "KENTISH",
-  },
-  {
-    freq: 50605,
-    raw: "RIFLING",
-  },
-  {
-    freq: 50609,
-    raw: "ROSACEA",
-  },
-  {
-    freq: 50633,
-    raw: "MOCKING",
-  },
-  {
-    freq: 50662,
-    raw: "ITCHING",
-  },
-  {
-    freq: 50674,
-    raw: "DELOUSE",
-  },
-  {
-    freq: 50690,
-    raw: "PUPFISH",
-  },
-  {
-    freq: 50698,
-    raw: "OILSEED",
-  },
-  {
-    freq: 50706,
-    raw: "HARELIP",
-  },
-  {
-    freq: 50727,
-    raw: "LOW-RISE",
-    word: "LOWRISE",
-  },
-  {
-    freq: 50729,
-    raw: "HATBAND",
-  },
-  {
-    freq: 50748,
-    raw: "SHELLAC",
-  },
-  {
-    freq: 50751,
-    raw: "SIX-FOUR",
-    word: "SIXFOUR",
-  },
-  {
-    freq: 50759,
-    raw: "HALF-CUP",
-    word: "HALFCUP",
-  },
-  {
-    freq: 50768,
-    raw: "GLUTEAL",
-  },
-  {
-    freq: 50779,
-    raw: "MALAYAN",
-  },
-  {
-    freq: 50793,
-    raw: "HUFFILY",
-  },
-  {
-    freq: 50813,
-    raw: "OUTFALL",
-  },
-  {
-    freq: 50819,
-    raw: "SCEPTRE",
-  },
-  {
-    freq: 50833,
-    raw: "BLAMING",
-  },
-  {
-    freq: 50852,
-    raw: "FUNNEST",
-  },
-  {
-    freq: 50858,
-    raw: "AFFAIRE",
-  },
-  {
-    freq: 50862,
-    raw: "RESPIRE",
-  },
-  {
-    freq: 50867,
-    raw: "TOTALED",
-  },
-  {
-    freq: 50872,
-    raw: "MAZURKA",
-  },
-  {
-    freq: 50876,
-    raw: "NYMPHET",
-  },
-  {
-    freq: 50919,
-    raw: "TITLIST",
-  },
-  {
-    freq: 50926,
-    raw: "IN-PLACE",
-    word: "INPLACE",
-  },
-  {
-    freq: 50935,
-    raw: "UNCLASP",
-  },
-  {
-    freq: 50940,
-    raw: "BANEFUL",
-  },
-  {
-    freq: 50941,
-    raw: "FARRAGO",
-  },
-  {
-    freq: 50942,
-    raw: "CASHIER",
-  },
-  {
-    freq: 50974,
-    raw: "SLICKED",
-  },
-  {
-    freq: 50977,
-    raw: "SIX-TERM",
-    word: "SIXTERM",
-  },
-  {
-    freq: 51007,
-    raw: "GAWKING",
-  },
-  {
-    freq: 51008,
-    raw: "HALF-MAD",
-    word: "HALFMAD",
-  },
-  {
-    freq: 51013,
-    raw: "SIFTING",
-  },
-  {
-    freq: 51019,
-    raw: "ROOTLET",
-  },
-  {
-    freq: 51024,
-    raw: "HAULING",
-  },
-  {
-    freq: 51079,
-    raw: "CHICEST",
-  },
-  {
-    freq: 51085,
-    raw: "SALTBOX",
-  },
-  {
-    freq: 51091,
-    raw: "FEDERAL",
-  },
-  {
-    freq: 51098,
-    raw: "PRELIMS",
-  },
-  {
-    freq: 51103,
-    raw: "TREFOIL",
-  },
-  {
-    freq: 51111,
-    raw: "STYLOID",
-  },
-  {
-    freq: 51153,
-    raw: "TWINNED",
-  },
-  {
-    freq: 51157,
-    raw: "LASHING",
-  },
-  {
-    freq: 51171,
-    raw: "GOADING",
-  },
-  {
-    freq: 51172,
-    raw: "ONE-HAND",
-    word: "ONEHAND",
-  },
-  {
-    freq: 51186,
-    raw: "RENDING",
-  },
-  {
-    freq: 51192,
-    raw: "VISORED",
-  },
-  {
-    freq: 51203,
-    raw: "PRONGED",
-  },
-  {
-    freq: 51256,
-    raw: "SENSATE",
-  },
-  {
-    freq: 51259,
-    raw: "TACTUAL",
-  },
-  {
-    freq: 51260,
-    raw: "MUTAGEN",
-  },
-  {
-    freq: 51281,
-    raw: "BLARNEY",
-  },
-  {
-    freq: 51317,
-    raw: "REFUSED",
-  },
-  {
-    freq: 51319,
-    raw: "TRAVAIL",
-  },
-  {
-    freq: 51333,
-    raw: "FIRELIT",
-  },
-  {
-    freq: 51345,
-    raw: "HOGBACK",
-  },
-  {
-    freq: 51348,
-    raw: "ROCK-ART",
-    word: "ROCKART",
-  },
-  {
-    freq: 51362,
-    raw: "ALIGNED",
-  },
-  {
-    freq: 51394,
-    raw: "CRIMSON",
-  },
-  {
-    freq: 51409,
-    raw: "SAD-SACK",
-    word: "SADSACK",
-  },
-  {
-    freq: 51411,
-    raw: "WAGGING",
-  },
-  {
-    freq: 51424,
-    raw: "BIG-BASS",
-    word: "BIGBASS",
-  },
-  {
-    freq: 51455,
-    raw: "TRIPLED",
-  },
-  {
-    freq: 51465,
-    raw: "FORKFUL",
-  },
-  {
-    freq: 51496,
-    raw: "FLANGED",
-  },
-  {
-    freq: 51498,
-    raw: "NUMERAL",
-  },
-  {
-    freq: 51509,
-    raw: "KISS-OFF",
-    word: "KISSOFF",
-  },
-  {
-    freq: 51510,
-    raw: "SHALLOW",
-  },
-  {
-    freq: 51515,
-    raw: "BOLLARD",
-  },
-  {
-    freq: 51526,
-    raw: "TANNING",
-  },
-  {
-    freq: 51549,
-    raw: "CASH-OUT",
-    word: "CASHOUT",
-  },
-  {
-    freq: 51551,
-    raw: "TOOLING",
-  },
-  {
-    freq: 51554,
-    raw: "STRIDOR",
-  },
-  {
-    freq: 51556,
-    raw: "FIBULAR",
-  },
-  {
-    freq: 51562,
-    raw: "DUCKING",
-  },
-  {
-    freq: 51586,
-    raw: "STACKER",
-  },
-  {
-    freq: 51595,
-    raw: "CATARRH",
-  },
-  {
-    freq: 51597,
-    raw: "EPITOPE",
-  },
-  {
-    freq: 51599,
-    raw: "ACEQUIA",
-  },
-  {
-    freq: 51602,
-    raw: "PURPORT",
-  },
-  {
-    freq: 51615,
-    raw: "FUSSILY",
-  },
-  {
-    freq: 51621,
-    raw: "PEONAGE",
-  },
-  {
-    freq: 51622,
-    raw: "EARWORM",
-  },
-  {
-    freq: 51628,
-    raw: "YARDARM",
-  },
-  {
-    freq: 51632,
-    raw: "GUN-FREE",
-    word: "GUNFREE",
-  },
-  {
-    freq: 51644,
-    raw: "LEGHORN",
-  },
-  {
-    freq: 51649,
-    raw: "PITBULL",
-  },
-  {
-    freq: 51666,
-    raw: "TIE-DOWN",
-    word: "TIEDOWN",
-  },
-  {
-    freq: 51669,
-    raw: "PILED-UP",
-    word: "PILEDUP",
-  },
-  {
-    freq: 51673,
-    raw: "HOTFOOT",
-  },
-  {
-    freq: 51681,
-    raw: "BAWLING",
-  },
-  {
-    freq: 51690,
-    raw: "FUZZILY",
-  },
-  {
-    freq: 51694,
-    raw: "STARTLE",
-  },
-  {
-    freq: 51696,
-    raw: "WINTERY",
-  },
-  {
-    freq: 51716,
-    raw: "BRALESS",
-  },
-  {
-    freq: 51718,
-    raw: "UNWIRED",
-  },
-  {
-    freq: 51724,
-    raw: "PETRINE",
-  },
-  {
-    freq: 51731,
-    raw: "YAPPING",
-  },
-  {
-    freq: 51740,
-    raw: "BOUNDER",
-  },
-  {
-    freq: 51741,
-    raw: "ONLIEST",
-  },
-  {
-    freq: 51761,
-    raw: "SALTINE",
-  },
-  {
-    freq: 51769,
-    raw: "SAPIENT",
-  },
-  {
-    freq: 51788,
-    raw: "SULKING",
-  },
-  {
-    freq: 51795,
-    raw: "BIG-CITY",
-    word: "BIGCITY",
-  },
-  {
-    freq: 51799,
-    raw: "TOWLINE",
-  },
-  {
-    freq: 51800,
-    raw: "ESTROUS",
-  },
-  {
-    freq: 51805,
-    raw: "UP-AND-UP",
-    word: "UPANDUP",
-  },
-  {
-    freq: 51809,
-    raw: "SURCOAT",
-  },
-  {
-    freq: 51812,
-    raw: "PERCALE",
-  },
-  {
-    freq: 51824,
-    raw: "CALLOUS",
-  },
-  {
-    freq: 51830,
-    raw: "PASSIVE",
-  },
-  {
-    freq: 51831,
-    raw: "FIVE-RUN",
-    word: "FIVERUN",
-  },
-  {
-    freq: 51839,
-    raw: "WRIGGLE",
-  },
-  {
-    freq: 51845,
-    raw: "TORCHED",
-  },
-  {
-    freq: 51852,
-    raw: "LAMBADA",
-  },
-  {
-    freq: 51862,
-    raw: "PUCKERY",
-  },
-  {
-    freq: 51891,
-    raw: "COAL-BED",
-    word: "COALBED",
-  },
-  {
-    freq: 51894,
-    raw: "WEANING",
-  },
-  {
-    freq: 51907,
-    raw: "SLEEVED",
-  },
-  {
-    freq: 51915,
-    raw: "DIGITAL",
-  },
-  {
-    freq: 51921,
-    raw: "SANDPIT",
-  },
-  {
-    freq: 51950,
-    raw: "SCRUPLE",
-  },
-  {
-    freq: 51952,
-    raw: "DUELIST",
-  },
-  {
-    freq: 51963,
-    raw: "APPARAT",
-  },
-  {
-    freq: 51964,
-    raw: "GESTAPO",
-  },
-  {
-    freq: 51983,
-    raw: "SPARING",
-  },
-  {
-    freq: 51993,
-    raw: "TURKISH",
-  },
-  {
-    freq: 51996,
-    raw: "RED-CLAY",
-    word: "REDCLAY",
-  },
-  {
-    freq: 51999,
-    raw: "SKIRTED",
-  },
-  {
-    freq: 52003,
-    raw: "PIGGISH",
-  },
-  {
-    freq: 52010,
-    raw: "MUDFLOW",
-  },
-  {
-    freq: 52034,
-    raw: "SCOFFER",
-  },
-  {
-    freq: 52041,
-    raw: "RED-TILE",
-    word: "REDTILE",
-  },
-  {
-    freq: 52049,
-    raw: "DEBAUCH",
-  },
-  {
-    freq: 52055,
-    raw: "PARTIAL",
-  },
-  {
-    freq: 52058,
-    raw: "LOUNGER",
-  },
-  {
-    freq: 52073,
-    raw: "WINKING",
-  },
-  {
-    freq: 52074,
-    raw: "TRAVOIS",
-  },
-  {
-    freq: 52075,
-    raw: "IODIZED",
-  },
-  {
-    freq: 52096,
-    raw: "ORBITAL",
-  },
-  {
-    freq: 52120,
-    raw: "DUMB-ASS",
-    word: "DUMBASS",
-  },
-  {
-    freq: 52147,
-    raw: "ADRENAL",
-  },
-  {
-    freq: 52164,
-    raw: "YELLING",
-  },
-  {
-    freq: 52184,
-    raw: "MITERED",
-  },
-  {
-    freq: 52185,
-    raw: "SAPONIN",
-  },
-  {
-    freq: 52213,
-    raw: "AMATORY",
-  },
-  {
-    freq: 52216,
-    raw: "TILTING",
-  },
-  {
-    freq: 52218,
-    raw: "PUNTING",
-  },
-  {
-    freq: 52228,
-    raw: "GLASSED",
-  },
-  {
-    freq: 52247,
-    raw: "AGNATIC",
-  },
-  {
-    freq: 52255,
-    raw: "TOLLING",
-  },
-  {
-    freq: 52257,
-    raw: "GAZETTE",
-  },
-  {
-    freq: 52259,
-    raw: "HOMBURG",
-  },
-  {
-    freq: 52266,
-    raw: "NON-CORE",
-    word: "NONCORE",
-  },
-  {
-    freq: 52268,
-    raw: "BITTERN",
-  },
-  {
-    freq: 52273,
-    raw: "OFFSIDE",
-  },
-  {
-    freq: 52288,
-    raw: "ROUNDEL",
-  },
-  {
-    freq: 52300,
-    raw: "SIX-ROOM",
-    word: "SIXROOM",
-  },
-  {
-    freq: 52315,
-    raw: "IMAGING",
-  },
-  {
-    freq: 52316,
-    raw: "CHARTED",
-  },
-  {
-    freq: 52326,
-    raw: "KIDSKIN",
-  },
-  {
-    freq: 52339,
-    raw: "BIAS-CUT",
-    word: "BIASCUT",
-  },
-  {
-    freq: 52343,
-    raw: "FELLING",
-  },
-  {
-    freq: 52357,
-    raw: "DELTOID",
-  },
-  {
-    freq: 52358,
-    raw: "SHIFTED",
-  },
-  {
-    freq: 52393,
-    raw: "BUSTARD",
-  },
-  {
-    freq: 52410,
-    raw: "CHANTEY",
-  },
-  {
-    freq: 52411,
-    raw: "JAZZMAN",
-  },
-  {
-    freq: 52414,
-    raw: "NO-SEE-UM",
-    word: "NOSEEUM",
-  },
-  {
-    freq: 52438,
-    raw: "DUOPOLY",
-  },
-  {
-    freq: 52443,
-    raw: "EX-MAYOR",
-    word: "EXMAYOR",
-  },
-  {
-    freq: 52458,
-    raw: "PALSIED",
-  },
-  {
-    freq: 52471,
-    raw: "ANNEXED",
-  },
-  {
-    freq: 52473,
-    raw: "DUKEDOM",
-  },
-  {
-    freq: 52483,
-    raw: "CRULLER",
-  },
-  {
-    freq: 52484,
-    raw: "OIL-WELL",
-    word: "OILWELL",
-  },
-  {
-    freq: 52494,
-    raw: "GLOTTIC",
-  },
-  {
-    freq: 52519,
-    raw: "FLEXURE",
-  },
-  {
-    freq: 52523,
-    raw: "SAURIAN",
-  },
-  {
-    freq: 52548,
-    raw: "NUTTIER",
-  },
-  {
-    freq: 52576,
-    raw: "PREBAKE",
-  },
-  {
-    freq: 52578,
-    raw: "PATTING",
-  },
-  {
-    freq: 52581,
-    raw: "STAUNCH",
-  },
-  {
-    freq: 52589,
-    raw: "MISTIME",
-  },
-  {
-    freq: 52602,
-    raw: "ROLL-TOP",
-    word: "ROLLTOP",
-  },
-  {
-    freq: 52606,
-    raw: "DOUSING",
-  },
-  {
-    freq: 52625,
-    raw: "JACKDAW",
-  },
-  {
-    freq: 52638,
-    raw: "FRAT-BOY",
-    word: "FRATBOY",
-  },
-  {
-    freq: 52661,
-    raw: "BUZZ-CUT",
-    word: "BUZZCUT",
-  },
-  {
-    freq: 52664,
-    raw: "GASPING",
-  },
-  {
-    freq: 52674,
-    raw: "FLEABAG",
-  },
-  {
-    freq: 52690,
-    raw: "BONHEUR",
-  },
-  {
-    freq: 52692,
-    raw: "LOAFING",
-  },
-  {
-    freq: 52695,
-    raw: "SCOOPER",
-  },
-  {
-    freq: 52697,
-    raw: "AMOROSO",
-  },
-  {
-    freq: 52722,
-    raw: "ATTABOY",
-  },
-  {
-    freq: 52745,
-    raw: "BUZZSAW",
-  },
-  {
-    freq: 52754,
-    raw: "HAREDIM",
-  },
-  {
-    freq: 52755,
-    raw: "PIGWEED",
-  },
-  {
-    freq: 52842,
-    raw: "HELI-SKI",
-    word: "HELISKI",
-  },
-  {
-    freq: 52845,
-    raw: "GUESSER",
-  },
-  {
-    freq: 52858,
-    raw: "CINCHED",
-  },
-  {
-    freq: 52865,
-    raw: "TEN-PAGE",
-    word: "TENPAGE",
-  },
-  {
-    freq: 52872,
-    raw: "BASHING",
-  },
-  {
-    freq: 52881,
-    raw: "JUMP-OFF",
-    word: "JUMPOFF",
-  },
-  {
-    freq: 52885,
-    raw: "JANGLED",
-  },
-  {
-    freq: 52889,
-    raw: "VOLUBLY",
-  },
-  {
-    freq: 52902,
-    raw: "HAPLOID",
-  },
-  {
-    freq: 52903,
-    raw: "LINOCUT",
-  },
-  {
-    freq: 52916,
-    raw: "FAIRING",
-  },
-  {
-    freq: 52917,
-    raw: "DIPLOID",
-  },
-  {
-    freq: 52934,
-    raw: "ANT-LIKE",
-    word: "ANTLIKE",
-  },
-  {
-    freq: 52936,
-    raw: "CORDAGE",
-  },
-  {
-    freq: 52953,
-    raw: "LOBULAR",
-  },
-  {
-    freq: 52956,
-    raw: "ROTATED",
-  },
-  {
-    freq: 52957,
-    raw: "WEEDBED",
-  },
-  {
-    freq: 52973,
-    raw: "REDBIRD",
-  },
-  {
-    freq: 52979,
-    raw: "ALERTED",
-  },
-  {
-    freq: 52984,
-    raw: "MEZUZAH",
-  },
-  {
-    freq: 52985,
-    raw: "ASSAYER",
-  },
-  {
-    freq: 52996,
-    raw: "BIONICS",
-  },
-  {
-    freq: 52999,
-    raw: "MOORISH",
-  },
-  {
-    freq: 53000,
-    raw: "LUMBAGO",
-  },
-  {
-    freq: 53025,
-    raw: "UNLACED",
-  },
-  {
-    freq: 53033,
-    raw: "SKEWING",
-  },
-  {
-    freq: 53049,
-    raw: "JOYCEAN",
-  },
-  {
-    freq: 53055,
-    raw: "GRIFFON",
-  },
-  {
-    freq: 53058,
-    raw: "AXIALLY",
-  },
-  {
-    freq: 53059,
-    raw: "LAYETTE",
-  },
-  {
-    freq: 53062,
-    raw: "PACHUCO",
-  },
-  {
-    freq: 53070,
-    raw: "CUTWORM",
-  },
-  {
-    freq: 53093,
-    raw: "ODORANT",
-  },
-  {
-    freq: 53108,
-    raw: "NONBANK",
-  },
-  {
-    freq: 53109,
-    raw: "GUSHING",
-  },
-  {
-    freq: 53143,
-    raw: "STARRED",
-  },
-  {
-    freq: 53159,
-    raw: "TWO-A-DAY",
-    word: "TWOADAY",
-  },
-  {
-    freq: 53171,
-    raw: "TEN-MILE",
-    word: "TENMILE",
-  },
-  {
-    freq: 53187,
-    raw: "MUMMIFY",
-  },
-  {
-    freq: 53195,
-    raw: "BABBITT",
-  },
-  {
-    freq: 53200,
-    raw: "THREE-CD",
-    word: "THREECD",
-  },
-  {
-    freq: 53210,
-    raw: "HALBERD",
-  },
-  {
-    freq: 53216,
-    raw: "DOPPLER",
-  },
-  {
-    freq: 53225,
-    raw: "TOUGHIE",
-  },
-  {
-    freq: 53231,
-    raw: "GUYLINE",
-  },
-  {
-    freq: 53237,
-    raw: "CHUTZPA",
-  },
-  {
-    freq: 53242,
-    raw: "BIOCHIP",
-  },
-  {
-    freq: 53245,
-    raw: "KENOTIC",
-  },
-  {
-    freq: 53260,
-    raw: "MEDEVAC",
-  },
-  {
-    freq: 53265,
-    raw: "PRO-BONO",
-    word: "PROBONO",
-  },
-  {
-    freq: 53279,
-    raw: "NIBBLER",
-  },
-  {
-    freq: 53282,
-    raw: "PHLEGMY",
-  },
-  {
-    freq: 53298,
-    raw: "GREENLY",
-  },
-  {
-    freq: 53304,
-    raw: "REGNANT",
-  },
-  {
-    freq: 53315,
-    raw: "RACE-DAY",
-    word: "RACEDAY",
-  },
-  {
-    freq: 53332,
-    raw: "GEWGAWS",
-  },
-  {
-    freq: 53334,
-    raw: "FUDGING",
-  },
-  {
-    freq: 53338,
-    raw: "EPICURE",
-  },
-  {
-    freq: 53351,
-    raw: "BUY-SELL",
-    word: "BUYSELL",
-  },
-  {
-    freq: 53359,
-    raw: "DREDGER",
-  },
-  {
-    freq: 53360,
-    raw: "OSSEOUS",
-  },
-  {
-    freq: 53362,
-    raw: "ROBUSTA",
-  },
-  {
-    freq: 53366,
-    raw: "WETWARE",
-  },
-  {
-    freq: 53383,
-    raw: "ALL-CITY",
-    word: "ALLCITY",
-  },
-  {
-    freq: 53384,
-    raw: "PHAETON",
-  },
-  {
-    freq: 53416,
-    raw: "FLYLEAF",
-  },
-  {
-    freq: 53422,
-    raw: "NAIVETY",
-  },
-  {
-    freq: 53431,
-    raw: "LULLING",
-  },
-  {
-    freq: 53432,
-    raw: "GAGGING",
-  },
-  {
-    freq: 53435,
-    raw: "SIX-SEAT",
-    word: "SIXSEAT",
-  },
-  {
-    freq: 53437,
-    raw: "STOPPER",
-  },
-  {
-    freq: 53462,
-    raw: "SYSTOLE",
-  },
-  {
-    freq: 53477,
-    raw: "SPLIT-UP",
-    word: "SPLITUP",
-  },
-  {
-    freq: 53483,
-    raw: "DUBBING",
-  },
-  {
-    freq: 53487,
-    raw: "CHIMING",
-  },
-  {
-    freq: 53502,
-    raw: "ETHMOID",
-  },
-  {
-    freq: 53508,
-    raw: "SPLICER",
-  },
-  {
-    freq: 53527,
-    raw: "TERPENE",
-  },
-  {
-    freq: 53550,
-    raw: "TANKINI",
-  },
-  {
-    freq: 53555,
-    raw: "TOPONYM",
-  },
-  {
-    freq: 53566,
-    raw: "CHURNED",
-  },
-  {
-    freq: 53572,
-    raw: "SCROTAL",
-  },
-  {
-    freq: 53580,
-    raw: "THREADY",
-  },
-  {
-    freq: 53584,
-    raw: "JOLLITY",
-  },
-  {
-    freq: 53602,
-    raw: "JERK-OFF",
-    word: "JERKOFF",
-  },
-  {
-    freq: 53607,
-    raw: "ROMULAN",
-  },
-  {
-    freq: 53627,
-    raw: "HAND-FED",
-    word: "HANDFED",
-  },
-  {
-    freq: 53637,
-    raw: "COILING",
-  },
-  {
-    freq: 53640,
-    raw: "NINE-MAN",
-    word: "NINEMAN",
-  },
-  {
-    freq: 53642,
-    raw: "NO-PLACE",
-    word: "NOPLACE",
-  },
-  {
-    freq: 53659,
-    raw: "TONNEAU",
-  },
-  {
-    freq: 53666,
-    raw: "PLEADER",
-  },
-  {
-    freq: 53708,
-    raw: "UNTIMED",
-  },
-  {
-    freq: 53718,
-    raw: "BRINDLE",
-  },
-  {
-    freq: 53721,
-    raw: "QUAVERY",
-  },
-  {
-    freq: 53731,
-    raw: "FEN-PHEN",
-    word: "FENPHEN",
-  },
-  {
-    freq: 53741,
-    raw: "REVENGE",
-  },
-  {
-    freq: 53743,
-    raw: "REELING",
-  },
-  {
-    freq: 53764,
-    raw: "SICHUAN",
-  },
-  {
-    freq: 53766,
-    raw: "YOGHURT",
-  },
-  {
-    freq: 53769,
-    raw: "TRADE-UP",
-    word: "TRADEUP",
-  },
-  {
-    freq: 53775,
-    raw: "ROULADE",
-  },
-  {
-    freq: 53779,
-    raw: "SPILLER",
-  },
-  {
-    freq: 53780,
-    raw: "FULNESS",
-  },
-  {
-    freq: 53787,
-    raw: "LOW-BORN",
-    word: "LOWBORN",
-  },
-  {
-    freq: 53795,
-    raw: "TOUGHLY",
-  },
-  {
-    freq: 53819,
-    raw: "POST-NEW",
-    word: "POSTNEW",
-  },
-  {
-    freq: 53823,
-    raw: "BEATING",
-  },
-  {
-    freq: 53844,
-    raw: "COWSHED",
-  },
-  {
-    freq: 53851,
-    raw: "SESSILE",
-  },
-  {
-    freq: 53859,
-    raw: "YIN-YANG",
-    word: "YINYANG",
-  },
-  {
-    freq: 53877,
-    raw: "NEATNIK",
-  },
-  {
-    freq: 53902,
-    raw: "PASTING",
-  },
-  {
-    freq: 53911,
-    raw: "LOW-BROW",
-    word: "LOWBROW",
-  },
-  {
-    freq: 53927,
-    raw: "GALUMPH",
-  },
-  {
-    freq: 53929,
-    raw: "BAT-LIKE",
-    word: "BATLIKE",
-  },
-  {
-    freq: 53958,
-    raw: "WON-LOSS",
-    word: "WONLOSS",
-  },
-  {
-    freq: 53959,
-    raw: "AQUAVIT",
-  },
-  {
-    freq: 53970,
-    raw: "FOOTSIE",
-  },
-  {
-    freq: 53974,
-    raw: "MAN-SIZE",
-    word: "MANSIZE",
-  },
-  {
-    freq: 53976,
-    raw: "PAISANO",
-  },
-  {
-    freq: 53977,
-    raw: "CATMINT",
-  },
-  {
-    freq: 53979,
-    raw: "RIPCORD",
-  },
-  {
-    freq: 53990,
-    raw: "PROTIST",
-  },
-  {
-    freq: 54000,
-    raw: "SAMSARA",
-  },
-  {
-    freq: 54002,
-    raw: "BI-LEVEL",
-    word: "BILEVEL",
-  },
-  {
-    freq: 54017,
-    raw: "YTTRIUM",
-  },
-  {
-    freq: 54023,
-    raw: "AIRSICK",
-  },
-  {
-    freq: 54027,
-    raw: "FUEL-AIR",
-    word: "FUELAIR",
-  },
-  {
-    freq: 54041,
-    raw: "GRIEVED",
-  },
-  {
-    freq: 54042,
-    raw: "QUEERLY",
-  },
-  {
-    freq: 54045,
-    raw: "KNURLED",
-  },
-  {
-    freq: 54052,
-    raw: "WELLING",
-  },
-  {
-    freq: 54096,
-    raw: "WAXWORK",
-  },
-  {
-    freq: 54103,
-    raw: "FAMILAR",
-  },
-  {
-    freq: 54111,
-    raw: "NEBBISH",
-  },
-  {
-    freq: 54112,
-    raw: "CLANGOR",
-  },
-  {
-    freq: 54114,
-    raw: "TEN-INCH",
-    word: "TENINCH",
-  },
-  {
-    freq: 54132,
-    raw: "BLARING",
-  },
-  {
-    freq: 54135,
-    raw: "AEOLIAN",
-  },
-  {
-    freq: 54150,
-    raw: "SKYHOOK",
-  },
-  {
-    freq: 54159,
-    raw: "BUNDLER",
-  },
-  {
-    freq: 54168,
-    raw: "BLOW-DRY",
-    word: "BLOWDRY",
-  },
-  {
-    freq: 54170,
-    raw: "SUNWARD",
-  },
-  {
-    freq: 54176,
-    raw: "EQUABLY",
-  },
-  {
-    freq: 54194,
-    raw: "QUIETEN",
-  },
-  {
-    freq: 54236,
-    raw: "PENSION",
-  },
-  {
-    freq: 54237,
-    raw: "WASPISH",
-  },
-  {
-    freq: 54266,
-    raw: "SNOOPER",
-  },
-  {
-    freq: 54274,
-    raw: "TOXEMIA",
-  },
-  {
-    freq: 54289,
-    raw: "UMBRIAN",
-  },
-  {
-    freq: 54310,
-    raw: "MYOCYTE",
-  },
-  {
-    freq: 54311,
-    raw: "SLED-DOG",
-    word: "SLEDDOG",
-  },
-  {
-    freq: 54313,
-    raw: "CAPELIN",
-  },
-  {
-    freq: 54317,
-    raw: "DAVIDIC",
-  },
-  {
-    freq: 54318,
-    raw: "MORTISE",
-  },
-  {
-    freq: 54351,
-    raw: "ALT-ROCK",
-    word: "ALTROCK",
-  },
-  {
-    freq: 54364,
-    raw: "CARFARE",
-  },
-  {
-    freq: 54374,
-    raw: "ROOSTED",
-  },
-  {
-    freq: 54376,
-    raw: "FAUVISM",
-  },
-  {
-    freq: 54380,
-    raw: "HEMMING",
-  },
-  {
-    freq: 54423,
-    raw: "CLAVIER",
-  },
-  {
-    freq: 54425,
-    raw: "EQUABLE",
-  },
-  {
-    freq: 54433,
-    raw: "DISPORT",
-  },
-  {
-    freq: 54449,
-    raw: "SCRUNCH",
-  },
-  {
-    freq: 54454,
-    raw: "WHAT-ALL",
-    word: "WHATALL",
-  },
-  {
-    freq: 54472,
-    raw: "SILTING",
-  },
-  {
-    freq: 54485,
-    raw: "PAPILLA",
-  },
-  {
-    freq: 54494,
-    raw: "AMPED-UP",
-    word: "AMPEDUP",
-  },
-  {
-    freq: 54496,
-    raw: "PERKILY",
-  },
-  {
-    freq: 54499,
-    raw: "NON-ZERO",
-    word: "NONZERO",
-  },
-  {
-    freq: 54505,
-    raw: "ABRADED",
-  },
-  {
-    freq: 54509,
-    raw: "EXHUMED",
-  },
-  {
-    freq: 54516,
-    raw: "CORRIDA",
-  },
-  {
-    freq: 54519,
-    raw: "ALEWIFE",
-  },
-  {
-    freq: 54523,
-    raw: "BUNGLER",
-  },
-  {
-    freq: 54547,
-    raw: "UKELELE",
-  },
-  {
-    freq: 54552,
-    raw: "PLANING",
-  },
-  {
-    freq: 54553,
-    raw: "COW-LIKE",
-    word: "COWLIKE",
-  },
-  {
-    freq: 54566,
-    raw: "OVERDUB",
-  },
-  {
-    freq: 54571,
-    raw: "PACKRAT",
-  },
-  {
-    freq: 54594,
-    raw: "HAND-DUG",
-    word: "HANDDUG",
-  },
-  {
-    freq: 54596,
-    raw: "NOIR-ISH",
-    word: "NOIRISH",
-  },
-  {
-    freq: 54623,
-    raw: "VOLTAIC",
-  },
-  {
-    freq: 54626,
-    raw: "VENDING",
-  },
-  {
-    freq: 54627,
-    raw: "DEMESNE",
-  },
-  {
-    freq: 54633,
-    raw: "CHAYOTE",
-  },
-  {
-    freq: 54634,
-    raw: "JAYBIRD",
-  },
-  {
-    freq: 54653,
-    raw: "GAMBOGE",
-  },
-  {
-    freq: 54675,
-    raw: "MATURED",
-  },
-  {
-    freq: 54702,
-    raw: "COLLOID",
-  },
-  {
-    freq: 54728,
-    raw: "MIDLAND",
-  },
-  {
-    freq: 54756,
-    raw: "CRYONIC",
-  },
-  {
-    freq: 54764,
-    raw: "EPIGONE",
-  },
-  {
-    freq: 54770,
-    raw: "SULTANA",
-  },
-  {
-    freq: 54779,
-    raw: "RHODIUM",
-  },
-  {
-    freq: 54813,
-    raw: "SOPHISM",
-  },
-  {
-    freq: 54847,
-    raw: "FUMBLED",
-  },
-  {
-    freq: 54852,
-    raw: "OFT-USED",
-    word: "OFTUSED",
-  },
-  {
-    freq: 54864,
-    raw: "FIVE-SIX",
-    word: "FIVESIX",
-  },
-  {
-    freq: 54873,
-    raw: "EVICTED",
-  },
-  {
-    freq: 54890,
-    raw: "FOXTAIL",
-  },
-  {
-    freq: 54907,
-    raw: "LUNETTE",
-  },
-  {
-    freq: 54912,
-    raw: "SYNCHRO",
-  },
-  {
-    freq: 54932,
-    raw: "POTTAGE",
-  },
-  {
-    freq: 54935,
-    raw: "SHEARER",
-  },
-  {
-    freq: 54939,
-    raw: "ASCITES",
-  },
-  {
-    freq: 54940,
-    raw: "RUSTING",
-  },
-  {
-    freq: 54948,
-    raw: "PAT-DOWN",
-    word: "PATDOWN",
-  },
-  {
-    freq: 54949,
-    raw: "STROMAL",
-  },
-  {
-    freq: 54950,
-    raw: "FLAT-TAX",
-    word: "FLATTAX",
-  },
-  {
-    freq: 54958,
-    raw: "URANIAN",
-  },
-  {
-    freq: 54975,
-    raw: "SABAYON",
-  },
-  {
-    freq: 54995,
-    raw: "SOILING",
-  },
-  {
-    freq: 55006,
-    raw: "TOWHEAD",
-  },
-  {
-    freq: 55008,
-    raw: "BENGALI",
-  },
-  {
-    freq: 55010,
-    raw: "QUIVERY",
-  },
-  {
-    freq: 55041,
-    raw: "TAR-LIKE",
-    word: "TARLIKE",
-  },
-  {
-    freq: 55048,
-    raw: "EPITAXY",
-  },
-  {
-    freq: 55055,
-    raw: "EERIEST",
-  },
-  {
-    freq: 55060,
-    raw: "PG-RATED",
-    word: "PGRATED",
-  },
-  {
-    freq: 55062,
-    raw: "TWO-PAGE",
-    word: "TWOPAGE",
-  },
-  {
-    freq: 55068,
-    raw: "DERIDED",
-  },
-  {
-    freq: 55078,
-    raw: "PUDDLED",
-  },
-  {
-    freq: 55079,
-    raw: "OBVERSE",
-  },
-  {
-    freq: 55088,
-    raw: "TAILFIN",
-  },
-  {
-    freq: 55098,
-    raw: "LIQUIDY",
-  },
-  {
-    freq: 55105,
-    raw: "HOOKING",
-  },
-  {
-    freq: 55106,
-    raw: "PALOOKA",
-  },
-  {
-    freq: 55111,
-    raw: "CRICOID",
-  },
-  {
-    freq: 55112,
-    raw: "ATRESIA",
-  },
-  {
-    freq: 55116,
-    raw: "THYMINE",
-  },
-  {
-    freq: 55118,
-    raw: "NIBLICK",
-  },
-  {
-    freq: 55121,
-    raw: "FASCIAL",
-  },
-  {
-    freq: 55122,
-    raw: "GUANACO",
-  },
-  {
-    freq: 55123,
-    raw: "POWER-ON",
-    word: "POWERON",
-  },
-  {
-    freq: 55154,
-    raw: "WINGNUT",
-  },
-  {
-    freq: 55165,
-    raw: "JUNKMAN",
-  },
-  {
-    freq: 55174,
-    raw: "SHITTER",
-  },
-  {
-    freq: 55195,
-    raw: "CRUZADO",
-  },
-  {
-    freq: 55203,
-    raw: "DEISTIC",
-  },
-  {
-    freq: 55213,
-    raw: "EYESHOT",
-  },
-  {
-    freq: 55214,
-    raw: "COCKING",
-  },
-  {
-    freq: 55229,
-    raw: "CODDLED",
-  },
-  {
-    freq: 55235,
-    raw: "FRAZZLE",
-  },
-  {
-    freq: 55245,
-    raw: "CZARINA",
-  },
-  {
-    freq: 55249,
-    raw: "RAT-A-TAT",
-    word: "RATATAT",
-  },
-  {
-    freq: 55250,
-    raw: "COLOBUS",
-  },
-  {
-    freq: 55255,
-    raw: "GONADAL",
-  },
-  {
-    freq: 55257,
-    raw: "STOCKER",
-  },
-  {
-    freq: 55270,
-    raw: "BULBLET",
-  },
-  {
-    freq: 55271,
-    raw: "KNOWING",
-  },
-  {
-    freq: 55275,
-    raw: "BRECCIA",
-  },
-  {
-    freq: 55309,
-    raw: "MIASMIC",
-  },
-  {
-    freq: 55320,
-    raw: "VALUING",
-  },
-  {
-    freq: 55321,
-    raw: "UNSWEPT",
-  },
-  {
-    freq: 55338,
-    raw: "TAX-RATE",
-    word: "TAXRATE",
-  },
-  {
-    freq: 55354,
-    raw: "SESTINA",
-  },
-  {
-    freq: 55356,
-    raw: "UNPAGED",
-  },
-  {
-    freq: 55365,
-    raw: "PINGING",
-  },
-  {
-    freq: 55403,
-    raw: "MEGA-HIT",
-    word: "MEGAHIT",
-  },
-  {
-    freq: 55417,
-    raw: "MURKILY",
-  },
-  {
-    freq: 55437,
-    raw: "BUGGING",
-  },
-  {
-    freq: 55445,
-    raw: "MUGSHOT",
-  },
-  {
-    freq: 55458,
-    raw: "SIGHING",
-  },
-  {
-    freq: 55469,
-    raw: "CEILIDH",
-  },
-  {
-    freq: 55483,
-    raw: "DAYS-OLD",
-    word: "DAYSOLD",
-  },
-  {
-    freq: 55488,
-    raw: "TILLING",
-  },
-  {
-    freq: 55510,
-    raw: "SOUPCON",
-  },
-  {
-    freq: 55530,
-    raw: "CHLORAL",
-  },
-  {
-    freq: 55531,
-    raw: "GOLIATH",
-  },
-  {
-    freq: 55563,
-    raw: "CENTRUM",
-  },
-  {
-    freq: 55575,
-    raw: "MISTING",
-  },
-  {
-    freq: 55583,
-    raw: "FAWNING",
-  },
-  {
-    freq: 55608,
-    raw: "BABBLER",
-  },
-  {
-    freq: 55610,
-    raw: "CARLESS",
-  },
-  {
-    freq: 55619,
-    raw: "PIT-BULL",
-    word: "PITBULL",
-  },
-  {
-    freq: 55626,
-    raw: "MYALGIA",
-  },
-  {
-    freq: 55661,
-    raw: "FLAT-TOP",
-    word: "FLATTOP",
-  },
-  {
-    freq: 55686,
-    raw: "COMBING",
-  },
-  {
-    freq: 55689,
-    raw: "WHEREON",
-  },
-  {
-    freq: 55690,
-    raw: "LEGIBLY",
-  },
-  {
-    freq: 55693,
-    raw: "ALIQUOT",
-  },
-  {
-    freq: 55702,
-    raw: "LIDLESS",
-  },
-  {
-    freq: 55713,
-    raw: "APHASIC",
-  },
-  {
-    freq: 55737,
-    raw: "REDBONE",
-  },
-  {
-    freq: 55744,
-    raw: "FLYBALL",
-  },
-  {
-    freq: 55749,
-    raw: "GODHOOD",
-  },
-  {
-    freq: 55779,
-    raw: "TERNARY",
-  },
-  {
-    freq: 55785,
-    raw: "NONPOOR",
-  },
-  {
-    freq: 55800,
-    raw: "LAW-LIKE",
-    word: "LAWLIKE",
-  },
-  {
-    freq: 55841,
-    raw: "PUNNING",
-  },
-  {
-    freq: 55862,
-    raw: "POP-EYED",
-    word: "POPEYED",
-  },
-  {
-    freq: 55876,
-    raw: "UPSWEEP",
-  },
-  {
-    freq: 55881,
-    raw: "SEA-BLUE",
-    word: "SEABLUE",
-  },
-  {
-    freq: 55884,
-    raw: "HARD-HAT",
-    word: "HARDHAT",
-  },
-  {
-    freq: 55886,
-    raw: "FOUR-WAY",
-    word: "FOURWAY",
-  },
-  {
-    freq: 55893,
-    raw: "CHAMFER",
-  },
-  {
-    freq: 55904,
-    raw: "IMPALED",
-  },
-  {
-    freq: 55964,
-    raw: "NON-BANK",
-    word: "NONBANK",
-  },
-  {
-    freq: 55967,
-    raw: "DRIFTED",
-  },
-  {
-    freq: 55969,
-    raw: "GULPING",
-  },
-  {
-    freq: 55985,
-    raw: "PINGING",
-  },
-  {
-    freq: 55989,
-    raw: "YARDMAN",
-  },
-  {
-    freq: 55991,
-    raw: "TITLING",
-  },
-  {
-    freq: 56003,
-    raw: "CLUMPED",
-  },
-  {
-    freq: 56008,
-    raw: "LOST-WAX",
-    word: "LOSTWAX",
-  },
-  {
-    freq: 56020,
-    raw: "DEBOUCH",
-  },
-  {
-    freq: 56031,
-    raw: "ZESTFUL",
-  },
-  {
-    freq: 56035,
-    raw: "OLDNESS",
-  },
-  {
-    freq: 56038,
-    raw: "AWAITED",
-  },
-  {
-    freq: 56047,
-    raw: "STIPPLE",
-  },
-  {
-    freq: 56066,
-    raw: "GODSELF",
-  },
-  {
-    freq: 56067,
-    raw: "TWONESS",
-  },
-  {
-    freq: 56077,
-    raw: "CLOTURE",
-  },
-  {
-    freq: 56081,
-    raw: "SAWBUCK",
-  },
-  {
-    freq: 56085,
-    raw: "WASHRAG",
-  },
-  {
-    freq: 56104,
-    raw: "TEMPTER",
-  },
-  {
-    freq: 56116,
-    raw: "MOLTING",
-  },
-  {
-    freq: 56120,
-    raw: "X-SHAPED",
-    word: "XSHAPED",
-  },
-  {
-    freq: 56134,
-    raw: "UNCURED",
-  },
-  {
-    freq: 56136,
-    raw: "ICINESS",
-  },
-  {
-    freq: 56138,
-    raw: "ART-FILM",
-    word: "ARTFILM",
-  },
-  {
-    freq: 56142,
-    raw: "VANLOAD",
-  },
-  {
-    freq: 56146,
-    raw: "SHUNNED",
-  },
-  {
-    freq: 56156,
-    raw: "SIX-STEP",
-    word: "SIXSTEP",
-  },
-  {
-    freq: 56157,
-    raw: "RE-ELECT",
-    word: "REELECT",
-  },
-  {
-    freq: 56161,
-    raw: "RAVELED",
-  },
-  {
-    freq: 56164,
-    raw: "COULOMB",
-  },
-  {
-    freq: 56175,
-    raw: "ZERO-GEE",
-    word: "ZEROGEE",
-  },
-  {
-    freq: 56201,
-    raw: "BIVOUAC",
-  },
-  {
-    freq: 56202,
-    raw: "FETLOCK",
-  },
-  {
-    freq: 56212,
-    raw: "PROBING",
-  },
-  {
-    freq: 56218,
-    raw: "HIGH-ART",
-    word: "HIGHART",
-  },
-  {
-    freq: 56226,
-    raw: "SURFEIT",
-  },
-  {
-    freq: 56242,
-    raw: "MANILLA",
-  },
-  {
-    freq: 56255,
-    raw: "BUSH-ERA",
-    word: "BUSHERA",
-  },
-  {
-    freq: 56256,
-    raw: "RINSING",
-  },
-  {
-    freq: 56279,
-    raw: "GEL-LIKE",
-    word: "GELLIKE",
-  },
-  {
-    freq: 56290,
-    raw: "LITHELY",
-  },
-  {
-    freq: 56301,
-    raw: "BENZINE",
-  },
-  {
-    freq: 56306,
-    raw: "ISCHIUM",
-  },
-  {
-    freq: 56308,
-    raw: "LOCKNUT",
-  },
-  {
-    freq: 56324,
-    raw: "HALF-BAD",
-    word: "HALFBAD",
-  },
-  {
-    freq: 56339,
-    raw: "PURSUED",
-  },
-  {
-    freq: 56340,
-    raw: "MILDEWY",
-  },
-  {
-    freq: 56353,
-    raw: "WAGGISH",
-  },
-  {
-    freq: 56369,
-    raw: "MAHONIA",
-  },
-  {
-    freq: 56388,
-    raw: "WIDGEON",
-  },
-  {
-    freq: 56394,
-    raw: "LINNEAN",
-  },
-  {
-    freq: 56414,
-    raw: "UNLEVEL",
-  },
-  {
-    freq: 56416,
-    raw: "TEPIDLY",
-  },
-  {
-    freq: 56429,
-    raw: "SAPWOOD",
-  },
-  {
-    freq: 56461,
-    raw: "GALLANT",
-  },
-  {
-    freq: 56462,
-    raw: "BILAYER",
-  },
-  {
-    freq: 56468,
-    raw: "BASILAR",
-  },
-  {
-    freq: 56470,
-    raw: "SPHERIC",
-  },
-  {
-    freq: 56472,
-    raw: "TWO-POLE",
-    word: "TWOPOLE",
-  },
-  {
-    freq: 56474,
-    raw: "BOOT-CUT",
-    word: "BOOTCUT",
-  },
-  {
-    freq: 56516,
-    raw: "TANKFUL",
-  },
-  {
-    freq: 56536,
-    raw: "GUT-SHOT",
-    word: "GUTSHOT",
-  },
-  {
-    freq: 56555,
-    raw: "PIG-LIKE",
-    word: "PIGLIKE",
-  },
-  {
-    freq: 56581,
-    raw: "CONCUSS",
-  },
-  {
-    freq: 56585,
-    raw: "PALMFUL",
-  },
-  {
-    freq: 56587,
-    raw: "TOP-FOUR",
-    word: "TOPFOUR",
-  },
-  {
-    freq: 56590,
-    raw: "TAIL-END",
-    word: "TAILEND",
-  },
-  {
-    freq: 56596,
-    raw: "SCEPTIC",
-  },
-  {
-    freq: 56598,
-    raw: "REVOKED",
-  },
-  {
-    freq: 56608,
-    raw: "SPICULE",
-  },
-  {
-    freq: 56623,
-    raw: "BANDEAU",
-  },
-  {
-    freq: 56643,
-    raw: "DOT-CORN",
-    word: "DOTCORN",
-  },
-  {
-    freq: 56650,
-    raw: "LINDANE",
-  },
-  {
-    freq: 56655,
-    raw: "SPUMONI",
-  },
-  {
-    freq: 56659,
-    raw: "PRO-ARAB",
-    word: "PROARAB",
-  },
-  {
-    freq: 56678,
-    raw: "TRYPSIN",
-  },
-  {
-    freq: 56680,
-    raw: "LOCATER",
-  },
-  {
-    freq: 56689,
-    raw: "CANONIC",
-  },
-  {
-    freq: 56700,
-    raw: "RED-BLUE",
-    word: "REDBLUE",
-  },
-  {
-    freq: 56706,
-    raw: "FISTULA",
-  },
-  {
-    freq: 56708,
-    raw: "SKI-TOWN",
-    word: "SKITOWN",
-  },
-  {
-    freq: 56714,
-    raw: "LOW-LOAD",
-    word: "LOWLOAD",
-  },
-  {
-    freq: 56729,
-    raw: "YELLOWY",
-  },
-  {
-    freq: 56736,
-    raw: "DOESKIN",
-  },
-  {
-    freq: 56748,
-    raw: "STROPHE",
-  },
-  {
-    freq: 56750,
-    raw: "APLENTY",
-  },
-  {
-    freq: 56758,
-    raw: "RED-FLAG",
-    word: "REDFLAG",
-  },
-  {
-    freq: 56766,
-    raw: "GRAB-BAG",
-    word: "GRABBAG",
-  },
-  {
-    freq: 56769,
-    raw: "V-NECKED",
-    word: "VNECKED",
-  },
-  {
-    freq: 56775,
-    raw: "SIX-HOUR",
-    word: "SIXHOUR",
-  },
-  {
-    freq: 56779,
-    raw: "PER-UNIT",
-    word: "PERUNIT",
-  },
-  {
-    freq: 56788,
-    raw: "LOW-TIDE",
-    word: "LOWTIDE",
-  },
-  {
-    freq: 56811,
-    raw: "BLOW-OFF",
-    word: "BLOWOFF",
-  },
-  {
-    freq: 56812,
-    raw: "PUNKISH",
-  },
-  {
-    freq: 56818,
-    raw: "PASSKEY",
-  },
-  {
-    freq: 56825,
-    raw: "BAWLING",
-  },
-  {
-    freq: 56840,
-    raw: "MUNCHER",
-  },
-  {
-    freq: 56841,
-    raw: "SOUNDED",
-  },
-  {
-    freq: 56848,
-    raw: "DOLTISH",
-  },
-  {
-    freq: 56874,
-    raw: "TRODDEN",
-  },
-  {
-    freq: 56877,
-    raw: "ERASING",
-  },
-  {
-    freq: 56879,
-    raw: "ONEIRIC",
-  },
-  {
-    freq: 56900,
-    raw: "NAGGING",
-  },
-  {
-    freq: 56922,
-    raw: "RECLAIM",
-  },
-  {
-    freq: 56923,
-    raw: "TAURINE",
-  },
-  {
-    freq: 56924,
-    raw: "PLENARY",
-  },
-  {
-    freq: 56947,
-    raw: "DUSTING",
-  },
-  {
-    freq: 56948,
-    raw: "DURABLY",
-  },
-  {
-    freq: 57012,
-    raw: "SERB-LED",
-    word: "SERBLED",
-  },
-  {
-    freq: 57104,
-    raw: "TESTBED",
-  },
-  {
-    freq: 57106,
-    raw: "IRONMAN",
-  },
-  {
-    freq: 57110,
-    raw: "MOISTLY",
-  },
-  {
-    freq: 57130,
-    raw: "AIR-FUEL",
-    word: "AIRFUEL",
-  },
-  {
-    freq: 57136,
-    raw: "CAR-BOMB",
-    word: "CARBOMB",
-  },
-  {
-    freq: 57156,
-    raw: "SKITTER",
-  },
-  {
-    freq: 57162,
-    raw: "EARLESS",
-  },
-  {
-    freq: 57180,
-    raw: "TALLISH",
-  },
-  {
-    freq: 57181,
-    raw: "CUSHIER",
-  },
-  {
-    freq: 57188,
-    raw: "ART-ROCK",
-    word: "ARTROCK",
-  },
-  {
-    freq: 57191,
-    raw: "TONGUED",
-  },
-  {
-    freq: 57205,
-    raw: "STUN-GUN",
-    word: "STUNGUN",
-  },
-  {
-    freq: 57228,
-    raw: "LENSMAN",
-  },
-  {
-    freq: 57230,
-    raw: "PEEP-TOE",
-    word: "PEEPTOE",
-  },
-  {
-    freq: 57237,
-    raw: "CAPSTAN",
-  },
-  {
-    freq: 57243,
-    raw: "DEADMAN",
-  },
-  {
-    freq: 57254,
-    raw: "BAGGING",
-  },
-  {
-    freq: 57260,
-    raw: "FERMATA",
-  },
-  {
-    freq: 57263,
-    raw: "GLOSSED",
-  },
-  {
-    freq: 57265,
-    raw: "FUELING",
-  },
-  {
-    freq: 57269,
-    raw: "RADIO-TV",
-    word: "RADIOTV",
-  },
-  {
-    freq: 57286,
-    raw: "RAPPING",
-  },
-  {
-    freq: 57296,
-    raw: "YELPING",
-  },
-  {
-    freq: 57320,
-    raw: "ONE-WEEK",
-    word: "ONEWEEK",
-  },
-  {
-    freq: 57337,
-    raw: "TWO-BOOK",
-    word: "TWOBOOK",
-  },
-  {
-    freq: 57349,
-    raw: "RE-ROUTE",
-    word: "REROUTE",
-  },
-  {
-    freq: 57409,
-    raw: "MILLING",
-  },
-  {
-    freq: 57434,
-    raw: "BIG-FIRM",
-    word: "BIGFIRM",
-  },
-  {
-    freq: 57436,
-    raw: "WING-TIP",
-    word: "WINGTIP",
-  },
-  {
-    freq: 57455,
-    raw: "FATHEAD",
-  },
-  {
-    freq: 57461,
-    raw: "CASHBOX",
-  },
-  {
-    freq: 57471,
-    raw: "DIVISOR",
-  },
-  {
-    freq: 57472,
-    raw: "TWO-BACK",
-    word: "TWOBACK",
-  },
-  {
-    freq: 57480,
-    raw: "MALANGA",
-  },
-  {
-    freq: 57485,
-    raw: "WEB-ONLY",
-    word: "WEBONLY",
-  },
-  {
-    freq: 57509,
-    raw: "SHAFTED",
-  },
-  {
-    freq: 57510,
-    raw: "STUBBED",
-  },
-  {
-    freq: 57512,
-    raw: "WHIPPER",
-  },
-  {
-    freq: 57516,
-    raw: "HARPING",
-  },
-  {
-    freq: 57552,
-    raw: "STABBED",
-  },
-  {
-    freq: 57562,
-    raw: "OUTWORN",
-  },
-  {
-    freq: 57583,
-    raw: "UNALIKE",
-  },
-  {
-    freq: 57587,
-    raw: "EX-LOVER",
-    word: "EXLOVER",
-  },
-  {
-    freq: 57595,
-    raw: "EX-MODEL",
-    word: "EXMODEL",
-  },
-  {
-    freq: 57600,
-    raw: "WEASELY",
-  },
-  {
-    freq: 57621,
-    raw: "COQUINA",
-  },
-  {
-    freq: 57622,
-    raw: "REDWARE",
-  },
-  {
-    freq: 57625,
-    raw: "BIRDING",
-  },
-  {
-    freq: 57626,
-    raw: "MEDICAL",
-  },
-  {
-    freq: 57633,
-    raw: "SOURING",
-  },
-  {
-    freq: 57646,
-    raw: "FARMBOY",
-  },
-  {
-    freq: 57683,
-    raw: "PARATHA",
-  },
-  {
-    freq: 57708,
-    raw: "BRONCHI",
-  },
-  {
-    freq: 57724,
-    raw: "PUNK-POP",
-    word: "PUNKPOP",
-  },
-  {
-    freq: 57731,
-    raw: "SCHNOZZ",
-  },
-  {
-    freq: 57740,
-    raw: "SIX-ACRE",
-    word: "SIXACRE",
-  },
-  {
-    freq: 57759,
-    raw: "HOT-WIRE",
-    word: "HOTWIRE",
-  },
-  {
-    freq: 57764,
-    raw: "VULPINE",
-  },
-  {
-    freq: 57776,
-    raw: "BRIMFUL",
-  },
-  {
-    freq: 57783,
-    raw: "WRITE-IN",
-    word: "WRITEIN",
-  },
-  {
-    freq: 57792,
-    raw: "ALL-CASH",
-    word: "ALLCASH",
-  },
-  {
-    freq: 57795,
-    raw: "FELLATE",
-  },
-  {
-    freq: 57802,
-    raw: "BUGGING",
-  },
-  {
-    freq: 57809,
-    raw: "TOPSAIL",
-  },
-  {
-    freq: 57817,
-    raw: "ICEFALL",
-  },
-  {
-    freq: 57843,
-    raw: "AGAROSE",
-  },
-  {
-    freq: 57853,
-    raw: "FOUR-PLY",
-    word: "FOURPLY",
-  },
-  {
-    freq: 57855,
-    raw: "ZEOLITE",
-  },
-  {
-    freq: 57862,
-    raw: "BIG-BUCK",
-    word: "BIGBUCK",
-  },
-  {
-    freq: 57863,
-    raw: "SKYWALK",
-  },
-  {
-    freq: 57864,
-    raw: "LONG-ARM",
-    word: "LONGARM",
-  },
-  {
-    freq: 57867,
-    raw: "JUST-WAR",
-    word: "JUSTWAR",
-  },
-  {
-    freq: 57875,
-    raw: "SLIPWAY",
-  },
-  {
-    freq: 57885,
-    raw: "DOMINUS",
-  },
-  {
-    freq: 57891,
-    raw: "HAFNIUM",
-  },
-  {
-    freq: 57908,
-    raw: "GRYPHON",
-  },
-  {
-    freq: 57937,
-    raw: "TONSURE",
-  },
-  {
-    freq: 57946,
-    raw: "NEGRESS",
-  },
-  {
-    freq: 57975,
-    raw: "MISHEAR",
-  },
-  {
-    freq: 58011,
-    raw: "INSTATE",
-  },
-  {
-    freq: 58020,
-    raw: "FLOCKED",
-  },
-  {
-    freq: 58021,
-    raw: "ORGANDY",
-  },
-  {
-    freq: 58043,
-    raw: "LEVATOR",
-  },
-  {
-    freq: 58050,
-    raw: "DIPSHIT",
-  },
-  {
-    freq: 58054,
-    raw: "FLUENCE",
-  },
-  {
-    freq: 58073,
-    raw: "KETOSIS",
-  },
-  {
-    freq: 58118,
-    raw: "NON-WORK",
-    word: "NONWORK",
-  },
-  {
-    freq: 58120,
-    raw: "UPSTAGE",
-  },
-  {
-    freq: 58123,
-    raw: "FURBALL",
-  },
-  {
-    freq: 58141,
-    raw: "BACKING",
-  },
-  {
-    freq: 58163,
-    raw: "TIEBACK",
-  },
-  {
-    freq: 58167,
-    raw: "SLATHER",
-  },
-  {
-    freq: 58189,
-    raw: "MOTIVIC",
-  },
-  {
-    freq: 58195,
-    raw: "MOTORIC",
-  },
-  {
-    freq: 58207,
-    raw: "CORDIAL",
-  },
-  {
-    freq: 58214,
-    raw: "SNIGGER",
-  },
-  {
-    freq: 58236,
-    raw: "FUSTIAN",
-  },
-  {
-    freq: 58239,
-    raw: "BLOWGUN",
-  },
-  {
-    freq: 58244,
-    raw: "DIPOLAR",
-  },
-  {
-    freq: 58248,
-    raw: "BUGLING",
-  },
-  {
-    freq: 58253,
-    raw: "QUEUING",
-  },
-  {
-    freq: 58260,
-    raw: "KNOBBIE",
-  },
-  {
-    freq: 58266,
-    raw: "DOGFOOD",
-  },
-  {
-    freq: 58274,
-    raw: "HIP-HIGH",
-    word: "HIPHIGH",
-  },
-  {
-    freq: 58291,
-    raw: "AMHARIC",
-  },
-  {
-    freq: 58296,
-    raw: "DOG-FOOD",
-    word: "DOGFOOD",
-  },
-  {
-    freq: 58297,
-    raw: "LEG-HOLD",
-    word: "LEGHOLD",
-  },
-  {
-    freq: 58303,
-    raw: "GET-RICH",
-    word: "GETRICH",
-  },
-  {
-    freq: 58328,
-    raw: "LEGATEE",
-  },
-  {
-    freq: 58329,
-    raw: "SPADING",
-  },
-  {
-    freq: 58366,
-    raw: "TRAMMEL",
-  },
-  {
-    freq: 58372,
-    raw: "CAMBIUM",
-  },
-  {
-    freq: 58375,
-    raw: "PERFUSE",
-  },
-  {
-    freq: 58376,
-    raw: "RAZORED",
-  },
-  {
-    freq: 58378,
-    raw: "TWO-ITEM",
-    word: "TWOITEM",
-  },
-  {
-    freq: 58392,
-    raw: "RIVETER",
-  },
-  {
-    freq: 58419,
-    raw: "GAMEDAY",
-  },
-  {
-    freq: 58421,
-    raw: "HOT-GLUE",
-    word: "HOTGLUE",
-  },
-  {
-    freq: 58423,
-    raw: "FUEHRER",
-  },
-  {
-    freq: 58431,
-    raw: "HASSLED",
-  },
-  {
-    freq: 58468,
-    raw: "DECEASE",
-  },
-  {
-    freq: 58475,
-    raw: "LUMINOL",
-  },
-  {
-    freq: 58481,
-    raw: "DEWEYAN",
-  },
-  {
-    freq: 58494,
-    raw: "LIMEADE",
-  },
-  {
-    freq: 58500,
-    raw: "VERVAIN",
-  },
-  {
-    freq: 58506,
-    raw: "CILIATE",
-  },
-  {
-    freq: 58519,
-    raw: "SCOURED",
-  },
-  {
-    freq: 58550,
-    raw: "ONANISM",
-  },
-  {
-    freq: 58556,
-    raw: "DE-ICING",
-    word: "DEICING",
-  },
-  {
-    freq: 58557,
-    raw: "TINWARE",
-  },
-  {
-    freq: 58560,
-    raw: "CLUBBED",
-  },
-  {
-    freq: 58573,
-    raw: "OTALGIA",
-  },
-  {
-    freq: 58574,
-    raw: "CLASPER",
-  },
-  {
-    freq: 58597,
-    raw: "BLOCK-IN",
-    word: "BLOCKIN",
-  },
-  {
-    freq: 58611,
-    raw: "BIBELOT",
-  },
-  {
-    freq: 58619,
-    raw: "ENTERAL",
-  },
-  {
-    freq: 58620,
-    raw: "SPARKER",
-  },
-  {
-    freq: 58627,
-    raw: "KEY-RING",
-    word: "KEYRING",
-  },
-  {
-    freq: 58642,
-    raw: "ETHERIC",
-  },
-  {
-    freq: 58643,
-    raw: "JUNGIAN",
-  },
-  {
-    freq: 58648,
-    raw: "BOY-BAND",
-    word: "BOYBAND",
-  },
-  {
-    freq: 58652,
-    raw: "WOODBOX",
-  },
-  {
-    freq: 58662,
-    raw: "TAMBOUR",
-  },
-  {
-    freq: 58668,
-    raw: "URAEMIC",
-  },
-  {
-    freq: 58678,
-    raw: "F-SERIES",
-    word: "FSERIES",
-  },
-  {
-    freq: 58679,
-    raw: "ATOMISM",
-  },
-  {
-    freq: 58682,
-    raw: "BIASING",
-  },
-  {
-    freq: 58685,
-    raw: "EQUERRY",
-  },
-  {
-    freq: 58700,
-    raw: "E-FILING",
-    word: "EFILING",
-  },
-  {
-    freq: 58721,
-    raw: "WAR-ROOM",
-    word: "WARROOM",
-  },
-  {
-    freq: 58726,
-    raw: "OAKWOOD",
-  },
-  {
-    freq: 58737,
-    raw: "UNOILED",
-  },
-  {
-    freq: 58761,
-    raw: "DESK-TOP",
-    word: "DESKTOP",
-  },
-  {
-    freq: 58767,
-    raw: "PALFREY",
-  },
-  {
-    freq: 58769,
-    raw: "LYING-IN",
-    word: "LYINGIN",
-  },
-  {
-    freq: 58798,
-    raw: "MINICAR",
-  },
-  {
-    freq: 58807,
-    raw: "FLIP-TOP",
-    word: "FLIPTOP",
-  },
-  {
-    freq: 58820,
-    raw: "CREW-CAB",
-    word: "CREWCAB",
-  },
-  {
-    freq: 58839,
-    raw: "FOWLING",
-  },
-  {
-    freq: 58841,
-    raw: "TRISMUS",
-  },
-  {
-    freq: 58850,
-    raw: "STANDEE",
-  },
-  {
-    freq: 58854,
-    raw: "ACONITE",
-  },
-  {
-    freq: 58862,
-    raw: "HAPTICS",
-  },
-  {
-    freq: 58878,
-    raw: "TANK-TOP",
-    word: "TANKTOP",
-  },
-  {
-    freq: 58887,
-    raw: "ALL-BEEF",
-    word: "ALLBEEF",
-  },
-  {
-    freq: 58903,
-    raw: "TOKAMAK",
-  },
-  {
-    freq: 58911,
-    raw: "DIEBACK",
-  },
-  {
-    freq: 58923,
-    raw: "QUILLED",
-  },
-  {
-    freq: 58924,
-    raw: "GUARANA",
-  },
-  {
-    freq: 58925,
-    raw: "OVIDIAN",
-  },
-  {
-    freq: 58940,
-    raw: "THROW-UP",
-    word: "THROWUP",
-  },
-  {
-    freq: 58941,
-    raw: "CRISPED",
-  },
-  {
-    freq: 58945,
-    raw: "J-SHAPED",
-    word: "JSHAPED",
-  },
-  {
-    freq: 58972,
-    raw: "FIVE-HIT",
-    word: "FIVEHIT",
-  },
-  {
-    freq: 58988,
-    raw: "PENAEID",
-  },
-  {
-    freq: 59013,
-    raw: "CLOGGER",
-  },
-  {
-    freq: 59046,
-    raw: "GRAVLAX",
-  },
-  {
-    freq: 59053,
-    raw: "SACCULE",
-  },
-  {
-    freq: 59054,
-    raw: "NUCLIDE",
-  },
-  {
-    freq: 59057,
-    raw: "ICEPICK",
-  },
-  {
-    freq: 59059,
-    raw: "SUNYATA",
-  },
-  {
-    freq: 59067,
-    raw: "NEW-PLAY",
-    word: "NEWPLAY",
-  },
-  {
-    freq: 59073,
-    raw: "CHAMFER",
-  },
-  {
-    freq: 59107,
-    raw: "AMPULLA",
-  },
-  {
-    freq: 59108,
-    raw: "PRE-SHOT",
-    word: "PRESHOT",
-  },
-  {
-    freq: 59134,
-    raw: "PHASING",
-  },
-  {
-    freq: 59136,
-    raw: "OXIDANT",
-  },
-  {
-    freq: 59150,
-    raw: "X-LINKED",
-    word: "XLINKED",
-  },
-  {
-    freq: 59154,
-    raw: "BIOTYPE",
-  },
-  {
-    freq: 59165,
-    raw: "INFANTA",
-  },
-  {
-    freq: 59169,
-    raw: "HAULAGE",
-  },
-  {
-    freq: 59175,
-    raw: "MOPPING",
-  },
-  {
-    freq: 59192,
-    raw: "RAW-MILK",
-    word: "RAWMILK",
-  },
-  {
-    freq: 59199,
-    raw: "KEROGEN",
-  },
-  {
-    freq: 59219,
-    raw: "ESTRIOL",
-  },
-  {
-    freq: 59226,
-    raw: "PRE-SALE",
-    word: "PRESALE",
-  },
-  {
-    freq: 59237,
-    raw: "SHALLOP",
-  },
-  {
-    freq: 59249,
-    raw: "CUTWORK",
-  },
-  {
-    freq: 59260,
-    raw: "DUELING",
-  },
-  {
-    freq: 59282,
-    raw: "CERUMEN",
-  },
-  {
-    freq: 59293,
-    raw: "ANAEMIC",
-  },
-  {
-    freq: 59299,
-    raw: "INGRAIN",
-  },
-  {
-    freq: 59317,
-    raw: "CORACLE",
-  },
-  {
-    freq: 59318,
-    raw: "SUMPTER",
-  },
-  {
-    freq: 59346,
-    raw: "STEARIC",
-  },
-  {
-    freq: 59363,
-    raw: "SWABIAN",
-  },
-  {
-    freq: 59376,
-    raw: "RELATOR",
-  },
-  {
-    freq: 59391,
-    raw: "CILIARY",
-  },
-  {
-    freq: 59406,
-    raw: "BACKSAW",
-  },
-  {
-    freq: 59420,
-    raw: "CORDOBA",
-  },
-  {
-    freq: 59423,
-    raw: "BEDRAIL",
-  },
-  {
-    freq: 59426,
-    raw: "LOGWOOD",
-  },
-  {
-    freq: 59433,
-    raw: "PEDICLE",
-  },
-  {
-    freq: 59441,
-    raw: "ANTI-ART",
-    word: "ANTIART",
-  },
-  {
-    freq: 59449,
-    raw: "SPINOUS",
-  },
-  {
-    freq: 59452,
-    raw: "DEFOCUS",
-  },
-  {
-    freq: 59463,
-    raw: "SUNBIRD",
-  },
-  {
-    freq: 59482,
-    raw: "DIGICAM",
-  },
-  {
-    freq: 59490,
-    raw: "YIELDER",
-  },
-  {
-    freq: 59500,
-    raw: "CROSIER",
-  },
-  {
-    freq: 59501,
-    raw: "POSTERN",
-  },
-  {
-    freq: 59508,
-    raw: "BAITING",
-  },
-  {
-    freq: 59518,
-    raw: "DISJOIN",
-  },
-  {
-    freq: 59529,
-    raw: "CORNEUM",
-  },
-  {
-    freq: 59535,
-    raw: "EXPLANT",
-  },
-  {
-    freq: 59553,
-    raw: "PINNACE",
-  },
-  {
-    freq: 59570,
-    raw: "SCRYING",
-  },
-  {
-    freq: 59572,
-    raw: "STATIVE",
-  },
-  {
-    freq: 59580,
-    raw: "ADELGID",
-  },
-  {
-    freq: 59592,
-    raw: "BONESET",
-  },
-  {
-    freq: 59595,
-    raw: "SPANKER",
-  },
-  {
-    freq: 59599,
-    raw: "ROUILLE",
-  },
-  {
-    freq: 59606,
-    raw: "ADINKRA",
-  },
-  {
-    freq: 59608,
-    raw: "CARIOCA",
-  },
-  {
-    freq: 59626,
-    raw: "PICTISH",
-  },
-  {
-    freq: 59631,
-    raw: "OFF-TIME",
-    word: "OFFTIME",
-  },
-  {
-    freq: 59635,
-    raw: "BENTHOS",
-  },
-  {
-    freq: 59662,
-    raw: "SPLENIC",
-  },
-  {
-    freq: 59675,
-    raw: "AURICLE",
-  },
-  {
-    freq: 59739,
-    raw: "HISTONE",
-  },
-  {
-    freq: 59743,
-    raw: "EYEWALL",
-  },
-  {
-    freq: 59758,
-    raw: "DO-RIGHT",
-    word: "DORIGHT",
-  },
-  {
-    freq: 59761,
-    raw: "SCOTOMA",
-  },
-  {
-    freq: 59773,
-    raw: "SOLIDUS",
-  },
-  {
-    freq: 59819,
-    raw: "SPINNEY",
-  },
-  {
-    freq: 59832,
-    raw: "BOOKMAN",
-  },
-  {
-    freq: 59844,
-    raw: "STERNAL",
-  },
-  {
-    freq: 59855,
-    raw: "BLEEPER",
-  },
-  {
-    freq: 59857,
-    raw: "URAEMIA",
-  },
-  {
-    freq: 59861,
-    raw: "SYNODIC",
-  },
-  {
-    freq: 59875,
-    raw: "FORMANT",
-  },
-  {
-    freq: 59887,
-    raw: "PICADOR",
-  },
-  {
-    freq: 59894,
-    raw: "PIG-IRON",
-    word: "PIGIRON",
-  },
-  {
-    freq: 59897,
-    raw: "LAB-MADE",
-    word: "LABMADE",
-  },
-  {
-    freq: 59900,
-    raw: "ESTRONE",
-  },
-  {
-    freq: 59901,
-    raw: "AGENTRY",
-  },
-  {
-    freq: 59902,
-    raw: "LAND-SEA",
-    word: "LANDSEA",
-  },
-  {
-    freq: 59908,
-    raw: "BERRIED",
-  },
-  {
-    freq: 59920,
-    raw: "JADEITE",
-  },
-  {
-    freq: 59927,
-    raw: "PROLINE",
   },
 ];
 
@@ -250837,6 +220314,30552 @@ const twentytwo: Answer[] = [
   },
 ];
 
+const seven: Answer[] = [
+  {
+    freq: 66,
+    raw: "BECAUSE",
+  },
+  {
+    freq: 88,
+    raw: "THROUGH",
+  },
+  {
+    freq: 113,
+    raw: "BETWEEN",
+  },
+  {
+    freq: 118,
+    raw: "ANOTHER",
+  },
+  {
+    freq: 129,
+    raw: "STUDENT",
+  },
+  {
+    freq: 138,
+    raw: "COUNTRY",
+  },
+  {
+    freq: 143,
+    raw: "PROBLEM",
+  },
+  {
+    freq: 152,
+    raw: "AGAINST",
+  },
+  {
+    freq: 161,
+    raw: "COMPANY",
+  },
+  {
+    freq: 166,
+    raw: "PROGRAM",
+  },
+  {
+    freq: 183,
+    raw: "BELIEVE",
+  },
+  {
+    freq: 189,
+    raw: "WITHOUT",
+  },
+  {
+    freq: 193,
+    raw: "MILLION",
+  },
+  {
+    freq: 233,
+    raw: "PROVIDE",
+  },
+  {
+    freq: 234,
+    raw: "SERVICE",
+  },
+  {
+    freq: 255,
+    raw: "HOWEVER",
+  },
+  {
+    freq: 263,
+    raw: "INCLUDE",
+  },
+  {
+    freq: 281,
+    raw: "SEVERAL",
+  },
+  {
+    freq: 286,
+    raw: "NOTHING",
+  },
+  {
+    freq: 292,
+    raw: "WHETHER",
+  },
+  {
+    freq: 305,
+    raw: "ALREADY",
+  },
+  {
+    freq: 321,
+    raw: "HISTORY",
+  },
+  {
+    freq: 328,
+    raw: "MORNING",
+  },
+  {
+    freq: 338,
+    raw: "HIMSELF",
+  },
+  {
+    freq: 342,
+    raw: "TEACHER",
+  },
+  {
+    freq: 362,
+    raw: "PROCESS",
+  },
+  {
+    freq: 385,
+    raw: "COLLEGE",
+  },
+  {
+    freq: 389,
+    raw: "SOMEONE",
+  },
+  {
+    freq: 400,
+    raw: "SUGGEST",
+  },
+  {
+    freq: 402,
+    raw: "CONTROL",
+  },
+  {
+    freq: 405,
+    raw: "PERHAPS",
+  },
+  {
+    freq: 416,
+    raw: "REQUIRE",
+  },
+  {
+    freq: 439,
+    raw: "FINALLY",
+  },
+  {
+    freq: 449,
+    raw: "EXPLAIN",
+  },
+  {
+    freq: 453,
+    raw: "DEVELOP",
+  },
+  {
+    freq: 462,
+    raw: "FEDERAL",
+  },
+  {
+    freq: 466,
+    raw: "RECEIVE",
+  },
+  {
+    freq: 476,
+    raw: "SOCIETY",
+  },
+  {
+    freq: 477,
+    raw: "BECAUSE",
+  },
+  {
+    freq: 489,
+    raw: "SPECIAL",
+  },
+  {
+    freq: 493,
+    raw: "SUPPORT",
+  },
+  {
+    freq: 503,
+    raw: "PROJECT",
+  },
+  {
+    freq: 511,
+    raw: "PRODUCE",
+  },
+  {
+    freq: 531,
+    raw: "PICTURE",
+  },
+  {
+    freq: 538,
+    raw: "PRODUCT",
+  },
+  {
+    freq: 541,
+    raw: "PATIENT",
+  },
+  {
+    freq: 546,
+    raw: "CERTAIN",
+  },
+  {
+    freq: 551,
+    raw: "SUPPORT",
+  },
+  {
+    freq: 574,
+    raw: "CENTURY",
+  },
+  {
+    freq: 580,
+    raw: "CULTURE",
+  },
+  {
+    freq: 581,
+    raw: "BILLION",
+  },
+  {
+    freq: 583,
+    raw: "BROTHER",
+  },
+  {
+    freq: 585,
+    raw: "REALIZE",
+  },
+  {
+    freq: 590,
+    raw: "HUNDRED",
+  },
+  {
+    freq: 606,
+    raw: "HUSBAND",
+  },
+  {
+    freq: 614,
+    raw: "ECONOMY",
+  },
+  {
+    freq: 615,
+    raw: "MEDICAL",
+  },
+  {
+    freq: 621,
+    raw: "CURRENT",
+  },
+  {
+    freq: 625,
+    raw: "INVOLVE",
+  },
+  {
+    freq: 626,
+    raw: "DEFENSE",
+  },
+  {
+    freq: 639,
+    raw: "SUBJECT",
+  },
+  {
+    freq: 640,
+    raw: "OFFICER",
+  },
+  {
+    freq: 641,
+    raw: "PRIVATE",
+  },
+  {
+    freq: 648,
+    raw: "QUICKLY",
+  },
+  {
+    freq: 658,
+    raw: "FOREIGN",
+  },
+  {
+    freq: 683,
+    raw: "NATURAL",
+  },
+  {
+    freq: 685,
+    raw: "CONCERN",
+  },
+  {
+    freq: 688,
+    raw: "SIMILAR",
+  },
+  {
+    freq: 692,
+    raw: "USUALLY",
+  },
+  {
+    freq: 699,
+    raw: "ARTICLE",
+  },
+  {
+    freq: 710,
+    raw: "DESPITE",
+  },
+  {
+    freq: 711,
+    raw: "CENTRAL",
+  },
+  {
+    freq: 716,
+    raw: "EXACTLY",
+  },
+  {
+    freq: 717,
+    raw: "PROTECT",
+  },
+  {
+    freq: 723,
+    raw: "SERIOUS",
+  },
+  {
+    freq: 728,
+    raw: "THOUGHT",
+  },
+  {
+    freq: 732,
+    raw: "QUALITY",
+  },
+  {
+    freq: 740,
+    raw: "MEETING",
+  },
+  {
+    freq: 742,
+    raw: "PREPARE",
+  },
+  {
+    freq: 743,
+    raw: "DISEASE",
+  },
+  {
+    freq: 745,
+    raw: "SUCCESS",
+  },
+  {
+    freq: 751,
+    raw: "ABILITY",
+  },
+  {
+    freq: 760,
+    raw: "HERSELF",
+  },
+  {
+    freq: 772,
+    raw: "GENERAL",
+  },
+  {
+    freq: 773,
+    raw: "FEELING",
+  },
+  {
+    freq: 775,
+    raw: "MESSAGE",
+  },
+  {
+    freq: 778,
+    raw: "OUTSIDE",
+  },
+  {
+    freq: 781,
+    raw: "BENEFIT",
+  },
+  {
+    freq: 784,
+    raw: "FORWARD",
+  },
+  {
+    freq: 786,
+    raw: "PRESENT",
+  },
+  {
+    freq: 787,
+    raw: "SECTION",
+  },
+  {
+    freq: 798,
+    raw: "COMPARE",
+  },
+  {
+    freq: 808,
+    raw: "STATION",
+  },
+  {
+    freq: 813,
+    raw: "CLEARLY",
+  },
+  {
+    freq: 814,
+    raw: "DISCUSS",
+  },
+  {
+    freq: 819,
+    raw: "EXAMPLE",
+  },
+  {
+    freq: 826,
+    raw: "VARIOUS",
+  },
+  {
+    freq: 844,
+    raw: "MANAGER",
+  },
+  {
+    freq: 849,
+    raw: "NETWORK",
+  },
+  {
+    freq: 856,
+    raw: "SCIENCE",
+  },
+  {
+    freq: 876,
+    raw: "IMAGINE",
+  },
+  {
+    freq: 877,
+    raw: "TONIGHT",
+  },
+  {
+    freq: 886,
+    raw: "RESPOND",
+  },
+  {
+    freq: 890,
+    raw: "POPULAR",
+  },
+  {
+    freq: 897,
+    raw: "CONTAIN",
+  },
+  {
+    freq: 901,
+    raw: "CONTROL",
+  },
+  {
+    freq: 907,
+    raw: "MEASURE",
+  },
+  {
+    freq: 919,
+    raw: "PERFORM",
+  },
+  {
+    freq: 927,
+    raw: "EVENING",
+  },
+  {
+    freq: 937,
+    raw: "MENTION",
+  },
+  {
+    freq: 947,
+    raw: "TROUBLE",
+  },
+  {
+    freq: 960,
+    raw: "INSTEAD",
+  },
+  {
+    freq: 961,
+    raw: "IMPROVE",
+  },
+  {
+    freq: 969,
+    raw: "SOLDIER",
+  },
+  {
+    freq: 970,
+    raw: "REFLECT",
+  },
+  {
+    freq: 980,
+    raw: "PURPOSE",
+  },
+  {
+    freq: 981,
+    raw: "SURFACE",
+  },
+  {
+    freq: 983,
+    raw: "PATTERN",
+  },
+  {
+    freq: 988,
+    raw: "MACHINE",
+  },
+  {
+    freq: 994,
+    raw: "ADDRESS",
+  },
+  {
+    freq: 998,
+    raw: "REALITY",
+  },
+  {
+    freq: 1014,
+    raw: "PARTNER",
+  },
+  {
+    freq: 1017,
+    raw: "KITCHEN",
+  },
+  {
+    freq: 1027,
+    raw: "CAPITAL",
+  },
+  {
+    freq: 1031,
+    raw: "INSTEAD",
+  },
+  {
+    freq: 1037,
+    raw: "ACCOUNT",
+  },
+  {
+    freq: 1045,
+    raw: "WESTERN",
+  },
+  {
+    freq: 1049,
+    raw: "PREVENT",
+  },
+  {
+    freq: 1050,
+    raw: "CITIZEN",
+  },
+  {
+    freq: 1061,
+    raw: "MISSION",
+  },
+  {
+    freq: 1081,
+    raw: "PUBLISH",
+  },
+  {
+    freq: 1085,
+    raw: "RELEASE",
+  },
+  {
+    freq: 1089,
+    raw: "OPINION",
+  },
+  {
+    freq: 1095,
+    raw: "VERSION",
+  },
+  {
+    freq: 1106,
+    raw: "SPECIES",
+  },
+  {
+    freq: 1113,
+    raw: "FREEDOM",
+  },
+  {
+    freq: 1117,
+    raw: "ACHIEVE",
+  },
+  {
+    freq: 1123,
+    raw: "CONCEPT",
+  },
+  {
+    freq: 1125,
+    raw: "PERFECT",
+  },
+  {
+    freq: 1127,
+    raw: "CONDUCT",
+  },
+  {
+    freq: 1130,
+    raw: "EXAMINE",
+  },
+  {
+    freq: 1136,
+    raw: "VARIETY",
+  },
+  {
+    freq: 1141,
+    raw: "NUCLEAR",
+  },
+  {
+    freq: 1147,
+    raw: "REPLACE",
+  },
+  {
+    freq: 1148,
+    raw: "BRITISH",
+  },
+  {
+    freq: 1155,
+    raw: "FEATURE",
+  },
+  {
+    freq: 1157,
+    raw: "WEEKEND",
+  },
+  {
+    freq: 1167,
+    raw: "AFRICAN",
+  },
+  {
+    freq: 1176,
+    raw: "THROUGH",
+  },
+  {
+    freq: 1178,
+    raw: "ELEMENT",
+  },
+  {
+    freq: 1182,
+    raw: "CHINESE",
+  },
+  {
+    freq: 1192,
+    raw: "ATTEMPT",
+  },
+  {
+    freq: 1211,
+    raw: "VILLAGE",
+  },
+  {
+    freq: 1238,
+    raw: "EXPRESS",
+  },
+  {
+    freq: 1240,
+    raw: "WILLING",
+  },
+  {
+    freq: 1254,
+    raw: "DELIVER",
+  },
+  {
+    freq: 1259,
+    raw: "VEHICLE",
+  },
+  {
+    freq: 1260,
+    raw: "OBSERVE",
+  },
+  {
+    freq: 1265,
+    raw: "AVERAGE",
+  },
+  {
+    freq: 1275,
+    raw: "OPERATE",
+  },
+  {
+    freq: 1284,
+    raw: "COLLECT",
+  },
+  {
+    freq: 1294,
+    raw: "PROMOTE",
+  },
+  {
+    freq: 1296,
+    raw: "PRESENT",
+  },
+  {
+    freq: 1308,
+    raw: "SURVIVE",
+  },
+  {
+    freq: 1326,
+    raw: "FAILURE",
+  },
+  {
+    freq: 1329,
+    raw: "COMMENT",
+  },
+  {
+    freq: 1336,
+    raw: "REGULAR",
+  },
+  {
+    freq: 1343,
+    raw: "MEASURE",
+  },
+  {
+    freq: 1346,
+    raw: "ANYBODY",
+  },
+  {
+    freq: 1367,
+    raw: "QUARTER",
+  },
+  {
+    freq: 1379,
+    raw: "GROWING",
+  },
+  {
+    freq: 1384,
+    raw: "DESTROY",
+  },
+  {
+    freq: 1393,
+    raw: "CONTEXT",
+  },
+  {
+    freq: 1396,
+    raw: "MISTAKE",
+  },
+  {
+    freq: 1400,
+    raw: "CLOTHES",
+  },
+  {
+    freq: 1404,
+    raw: "PROMISE",
+  },
+  {
+    freq: 1413,
+    raw: "AVERAGE",
+  },
+  {
+    freq: 1414,
+    raw: "COMBINE",
+  },
+  {
+    freq: 1429,
+    raw: "VICTORY",
+  },
+  {
+    freq: 1434,
+    raw: "HEALTHY",
+  },
+  {
+    freq: 1443,
+    raw: "FINDING",
+  },
+  {
+    freq: 1447,
+    raw: "CONTACT",
+  },
+  {
+    freq: 1448,
+    raw: "JUSTICE",
+  },
+  {
+    freq: 1470,
+    raw: "EASTERN",
+  },
+  {
+    freq: 1471,
+    raw: "PRIMARY",
+  },
+  {
+    freq: 1490,
+    raw: "PLASTIC",
+  },
+  {
+    freq: 1495,
+    raw: "WRITING",
+  },
+  {
+    freq: 1502,
+    raw: "THEATER",
+  },
+  {
+    freq: 1505,
+    raw: "CHICKEN",
+  },
+  {
+    freq: 1511,
+    raw: "SESSION",
+  },
+  {
+    freq: 1512,
+    raw: "WELCOME",
+  },
+  {
+    freq: 1521,
+    raw: "RESPECT",
+  },
+  {
+    freq: 1529,
+    raw: "RUSSIAN",
+  },
+  {
+    freq: 1547,
+    raw: "STRANGE",
+  },
+  {
+    freq: 1548,
+    raw: "READING",
+  },
+  {
+    freq: 1561,
+    raw: "EXPLORE",
+  },
+  {
+    freq: 1565,
+    raw: "COMPLEX",
+  },
+  {
+    freq: 1567,
+    raw: "ATHLETE",
+  },
+  {
+    freq: 1575,
+    raw: "MEANING",
+  },
+  {
+    freq: 1577,
+    raw: "MARRIED",
+  },
+  {
+    freq: 1580,
+    raw: "PREDICT",
+  },
+  {
+    freq: 1581,
+    raw: "WEATHER",
+  },
+  {
+    freq: 1585,
+    raw: "SUPREME",
+  },
+  {
+    freq: 1598,
+    raw: "BALANCE",
+  },
+  {
+    freq: 1602,
+    raw: "ATTEMPT",
+  },
+  {
+    freq: 1603,
+    raw: "CONNECT",
+  },
+  {
+    freq: 1617,
+    raw: "SOMEHOW",
+  },
+  {
+    freq: 1640,
+    raw: "ANALYST",
+  },
+  {
+    freq: 1647,
+    raw: "LARGELY",
+  },
+  {
+    freq: 1649,
+    raw: "REVENUE",
+  },
+  {
+    freq: 1654,
+    raw: "PACKAGE",
+  },
+  {
+    freq: 1658,
+    raw: "OBVIOUS",
+  },
+  {
+    freq: 1663,
+    raw: "ANYMORE",
+  },
+  {
+    freq: 1664,
+    raw: "PROPOSE",
+  },
+  {
+    freq: 1668,
+    raw: "VISITOR",
+  },
+  {
+    freq: 1681,
+    raw: "HEARING",
+  },
+  {
+    freq: 1682,
+    raw: "TRAFFIC",
+  },
+  {
+    freq: 1685,
+    raw: "CAPTURE",
+  },
+  {
+    freq: 1698,
+    raw: "FEATURE",
+  },
+  {
+    freq: 1703,
+    raw: "CONTENT",
+  },
+  {
+    freq: 1707,
+    raw: "DECLARE",
+  },
+  {
+    freq: 1708,
+    raw: "OUTSIDE",
+  },
+  {
+    freq: 1713,
+    raw: "SETTING",
+  },
+  {
+    freq: 1718,
+    raw: "OUTCOME",
+  },
+  {
+    freq: 1736,
+    raw: "AIRPORT",
+  },
+  {
+    freq: 1753,
+    raw: "ENGLISH",
+  },
+  {
+    freq: 1761,
+    raw: "NEITHER",
+  },
+  {
+    freq: 1764,
+    raw: "SURGERY",
+  },
+  {
+    freq: 1765,
+    raw: "CORRECT",
+  },
+  {
+    freq: 1777,
+    raw: "ADDRESS",
+  },
+  {
+    freq: 1788,
+    raw: "ANCIENT",
+  },
+  {
+    freq: 1791,
+    raw: "SILENCE",
+  },
+  {
+    freq: 1806,
+    raw: "TYPICAL",
+  },
+  {
+    freq: 1822,
+    raw: "CONFIRM",
+  },
+  {
+    freq: 1838,
+    raw: "ATTRACT",
+  },
+  {
+    freq: 1840,
+    raw: "BEDROOM",
+  },
+  {
+    freq: 1874,
+    raw: "ENGLISH",
+  },
+  {
+    freq: 1880,
+    raw: "ACCOUNT",
+  },
+  {
+    freq: 1882,
+    raw: "TOTALLY",
+  },
+  {
+    freq: 1886,
+    raw: "STRETCH",
+  },
+  {
+    freq: 1893,
+    raw: "FASHION",
+  },
+  {
+    freq: 1904,
+    raw: "WELFARE",
+  },
+  {
+    freq: 1911,
+    raw: "OPENING",
+  },
+  {
+    freq: 1912,
+    raw: "OVERALL",
+  },
+  {
+    freq: 1914,
+    raw: "INITIAL",
+  },
+  {
+    freq: 1923,
+    raw: "CAREFUL",
+  },
+  {
+    freq: 1934,
+    raw: "HOLIDAY",
+  },
+  {
+    freq: 1941,
+    raw: "WITNESS",
+  },
+  {
+    freq: 1948,
+    raw: "BENEATH",
+  },
+  {
+    freq: 1953,
+    raw: "LIMITED",
+  },
+  {
+    freq: 1956,
+    raw: "FACULTY",
+  },
+  {
+    freq: 1964,
+    raw: "LIBERAL",
+  },
+  {
+    freq: 1967,
+    raw: "MASSIVE",
+  },
+  {
+    freq: 1971,
+    raw: "DECLINE",
+  },
+  {
+    freq: 1973,
+    raw: "PROMISE",
+  },
+  {
+    freq: 1975,
+    raw: "TOWARDS",
+  },
+  {
+    freq: 1990,
+    raw: "SUCCEED",
+  },
+  {
+    freq: 1994,
+    raw: "FISHING",
+  },
+  {
+    freq: 2009,
+    raw: "UNUSUAL",
+  },
+  {
+    freq: 2010,
+    raw: "CLOSELY",
+  },
+  {
+    freq: 2025,
+    raw: "APPROVE",
+  },
+  {
+    freq: 2027,
+    raw: "OUTSIDE",
+  },
+  {
+    freq: 2035,
+    raw: "ACQUIRE",
+  },
+  {
+    freq: 2037,
+    raw: "COMPETE",
+  },
+  {
+    freq: 2043,
+    raw: "ILLEGAL",
+  },
+  {
+    freq: 2053,
+    raw: "FOREVER",
+  },
+  {
+    freq: 2056,
+    raw: "ISRAELI",
+  },
+  {
+    freq: 2064,
+    raw: "DISPLAY",
+  },
+  {
+    freq: 2069,
+    raw: "MUSICAL",
+  },
+  {
+    freq: 2072,
+    raw: "SUSPECT",
+  },
+  {
+    freq: 2073,
+    raw: "SCHOLAR",
+  },
+  {
+    freq: 2074,
+    raw: "WARNING",
+  },
+  {
+    freq: 2075,
+    raw: "CLIMATE",
+  },
+  {
+    freq: 2078,
+    raw: "PAYMENT",
+  },
+  {
+    freq: 2088,
+    raw: "REQUEST",
+  },
+  {
+    freq: 2089,
+    raw: "EMOTION",
+  },
+  {
+    freq: 2101,
+    raw: "AIRLINE",
+  },
+  {
+    freq: 2102,
+    raw: "LIBRARY",
+  },
+  {
+    freq: 2104,
+    raw: "RECOVER",
+  },
+  {
+    freq: 2105,
+    raw: "FACTORY",
+  },
+  {
+    freq: 2110,
+    raw: "EXPENSE",
+  },
+  {
+    freq: 2114,
+    raw: "FUNDING",
+  },
+  {
+    freq: 2115,
+    raw: "THERAPY",
+  },
+  {
+    freq: 2120,
+    raw: "HOUSING",
+  },
+  {
+    freq: 2131,
+    raw: "VIOLENT",
+  },
+  {
+    freq: 2134,
+    raw: "SUPPOSE",
+  },
+  {
+    freq: 2149,
+    raw: "WEDDING",
+  },
+  {
+    freq: 2151,
+    raw: "PORTION",
+  },
+  {
+    freq: 2155,
+    raw: "ABANDON",
+  },
+  {
+    freq: 2160,
+    raw: "TENSION",
+  },
+  {
+    freq: 2161,
+    raw: "DISPLAY",
+  },
+  {
+    freq: 2162,
+    raw: "LEADING",
+  },
+  {
+    freq: 2164,
+    raw: "CONSIST",
+  },
+  {
+    freq: 2165,
+    raw: "ALCOHOL",
+  },
+  {
+    freq: 2174,
+    raw: "RELEASE",
+  },
+  {
+    freq: 2178,
+    raw: "SPANISH",
+  },
+  {
+    freq: 2184,
+    raw: "PASSAGE",
+  },
+  {
+    freq: 2190,
+    raw: "ARRANGE",
+  },
+  {
+    freq: 2198,
+    raw: "DESERVE",
+  },
+  {
+    freq: 2207,
+    raw: "BENEFIT",
+  },
+  {
+    freq: 2216,
+    raw: "RESOLVE",
+  },
+  {
+    freq: 2219,
+    raw: "PRESENT",
+  },
+  {
+    freq: 2222,
+    raw: "MEXICAN",
+  },
+  {
+    freq: 2223,
+    raw: "SYMPTOM",
+  },
+  {
+    freq: 2224,
+    raw: "CONTACT",
+  },
+  {
+    freq: 2238,
+    raw: "BREATHE",
+  },
+  {
+    freq: 2248,
+    raw: "SUICIDE",
+  },
+  {
+    freq: 2257,
+    raw: "PASSION",
+  },
+  {
+    freq: 2267,
+    raw: "AMAZING",
+  },
+  {
+    freq: 2268,
+    raw: "INTENSE",
+  },
+  {
+    freq: 2269,
+    raw: "ADVANCE",
+  },
+  {
+    freq: 2272,
+    raw: "INSPIRE",
+  },
+  {
+    freq: 2276,
+    raw: "ILLNESS",
+  },
+  {
+    freq: 2277,
+    raw: "VISIBLE",
+  },
+  {
+    freq: 2289,
+    raw: "ANALYZE",
+  },
+  {
+    freq: 2290,
+    raw: "ANOTHER",
+  },
+  {
+    freq: 2295,
+    raw: "PARKING",
+  },
+  {
+    freq: 2304,
+    raw: "ENHANCE",
+  },
+  {
+    freq: 2305,
+    raw: "MYSTERY",
+  },
+  {
+    freq: 2306,
+    raw: "POVERTY",
+  },
+  {
+    freq: 2323,
+    raw: "MONITOR",
+  },
+  {
+    freq: 2330,
+    raw: "DIGITAL",
+  },
+  {
+    freq: 2337,
+    raw: "HEAVILY",
+  },
+  {
+    freq: 2341,
+    raw: "MISSILE",
+  },
+  {
+    freq: 2343,
+    raw: "EQUALLY",
+  },
+  {
+    freq: 2352,
+    raw: "COMMAND",
+  },
+  {
+    freq: 2364,
+    raw: "VETERAN",
+  },
+  {
+    freq: 2367,
+    raw: "CAPABLE",
+  },
+  {
+    freq: 2368,
+    raw: "NERVOUS",
+  },
+  {
+    freq: 2369,
+    raw: "TOURIST",
+  },
+  {
+    freq: 2372,
+    raw: "CRUCIAL",
+  },
+  {
+    freq: 2378,
+    raw: "DEFICIT",
+  },
+  {
+    freq: 2384,
+    raw: "JOURNEY",
+  },
+  {
+    freq: 2388,
+    raw: "MIXTURE",
+  },
+  {
+    freq: 2421,
+    raw: "WHISPER",
+  },
+  {
+    freq: 2442,
+    raw: "ANXIETY",
+  },
+  {
+    freq: 2448,
+    raw: "EMBRACE",
+  },
+  {
+    freq: 2476,
+    raw: "TESTING",
+  },
+  {
+    freq: 2478,
+    raw: "STOMACH",
+  },
+  {
+    freq: 2480,
+    raw: "INSTALL",
+  },
+  {
+    freq: 2490,
+    raw: "CONCERT",
+  },
+  {
+    freq: 2493,
+    raw: "CHANNEL",
+  },
+  {
+    freq: 2494,
+    raw: "EXTREME",
+  },
+  {
+    freq: 2496,
+    raw: "DRAWING",
+  },
+  {
+    freq: 2498,
+    raw: "PROTEIN",
+  },
+  {
+    freq: 2499,
+    raw: "ABSENCE",
+  },
+  {
+    freq: 2502,
+    raw: "RAPIDLY",
+  },
+  {
+    freq: 2504,
+    raw: "COMMENT",
+  },
+  {
+    freq: 2510,
+    raw: "SPEAKER",
+  },
+  {
+    freq: 2518,
+    raw: "RESTORE",
+  },
+  {
+    freq: 2528,
+    raw: "QUIETLY",
+  },
+  {
+    freq: 2536,
+    raw: "GENERAL",
+  },
+  {
+    freq: 2553,
+    raw: "UTILITY",
+  },
+  {
+    freq: 2558,
+    raw: "HIGHWAY",
+  },
+  {
+    freq: 2560,
+    raw: "ROUTINE",
+  },
+  {
+    freq: 2571,
+    raw: "ISLAMIC",
+  },
+  {
+    freq: 2574,
+    raw: "REFUGEE",
+  },
+  {
+    freq: 2584,
+    raw: "BARRIER",
+  },
+  {
+    freq: 2591,
+    raw: "CLASSIC",
+  },
+  {
+    freq: 2605,
+    raw: "DISTANT",
+  },
+  {
+    freq: 2612,
+    raw: "ITALIAN",
+  },
+  {
+    freq: 2616,
+    raw: "CEILING",
+  },
+  {
+    freq: 2632,
+    raw: "ROUGHLY",
+  },
+  {
+    freq: 2635,
+    raw: "LAWSUIT",
+  },
+  {
+    freq: 2642,
+    raw: "CHAMBER",
+  },
+  {
+    freq: 2651,
+    raw: "PROFILE",
+  },
+  {
+    freq: 2655,
+    raw: "PENALTY",
+  },
+  {
+    freq: 2657,
+    raw: "ADVANCE",
+  },
+  {
+    freq: 2667,
+    raw: "CABINET",
+  },
+  {
+    freq: 2671,
+    raw: "PROCEED",
+  },
+  {
+    freq: 2677,
+    raw: "FORTUNE",
+  },
+  {
+    freq: 2679,
+    raw: "DISPUTE",
+  },
+  {
+    freq: 2695,
+    raw: "ADVISER",
+  },
+  {
+    freq: 2696,
+    raw: "GENETIC",
+  },
+  {
+    freq: 2706,
+    raw: "WHEREAS",
+  },
+  {
+    freq: 2711,
+    raw: "OLYMPIC",
+  },
+  {
+    freq: 2720,
+    raw: "PROCESS",
+  },
+  {
+    freq: 2721,
+    raw: "DECLINE",
+  },
+  {
+    freq: 2737,
+    raw: "FICTION",
+  },
+  {
+    freq: 2739,
+    raw: "BALANCE",
+  },
+  {
+    freq: 2744,
+    raw: "SENATOR",
+  },
+  {
+    freq: 2747,
+    raw: "HUNTING",
+  },
+  {
+    freq: 2755,
+    raw: "JOURNAL",
+  },
+  {
+    freq: 2762,
+    raw: "GENERAL",
+  },
+  {
+    freq: 2765,
+    raw: "TESTIFY",
+  },
+  {
+    freq: 2775,
+    raw: "FOUNDER",
+  },
+  {
+    freq: 2777,
+    raw: "DISMISS",
+  },
+  {
+    freq: 2783,
+    raw: "FINANCE",
+  },
+  {
+    freq: 2787,
+    raw: "RESPECT",
+  },
+  {
+    freq: 2788,
+    raw: "DIVERSE",
+  },
+  {
+    freq: 2794,
+    raw: "WORKING",
+  },
+  {
+    freq: 2800,
+    raw: "UNKNOWN",
+  },
+  {
+    freq: 2803,
+    raw: "OFFENSE",
+  },
+  {
+    freq: 2805,
+    raw: "COUNTER",
+  },
+  {
+    freq: 2809,
+    raw: "JUSTIFY",
+  },
+  {
+    freq: 2810,
+    raw: "PROTEST",
+  },
+  {
+    freq: 2815,
+    raw: "INSIGHT",
+  },
+  {
+    freq: 2817,
+    raw: "POSSESS",
+  },
+  {
+    freq: 2821,
+    raw: "EPISODE",
+  },
+  {
+    freq: 2828,
+    raw: "SHORTLY",
+  },
+  {
+    freq: 2835,
+    raw: "ASSAULT",
+  },
+  {
+    freq: 2847,
+    raw: "LICENSE",
+  },
+  {
+    freq: 2849,
+    raw: "SHELTER",
+  },
+  {
+    freq: 2858,
+    raw: "TRAGEDY",
+  },
+  {
+    freq: 2860,
+    raw: "FUNERAL",
+  },
+  {
+    freq: 2866,
+    raw: "SQUEEZE",
+  },
+  {
+    freq: 2870,
+    raw: "CONVERT",
+  },
+  {
+    freq: 2880,
+    raw: "PRETEND",
+  },
+  {
+    freq: 2882,
+    raw: "ELDERLY",
+  },
+  {
+    freq: 2884,
+    raw: "VIOLATE",
+  },
+  {
+    freq: 2892,
+    raw: "NEITHER",
+  },
+  {
+    freq: 2897,
+    raw: "SEGMENT",
+  },
+  {
+    freq: 2899,
+    raw: "NOWHERE",
+  },
+  {
+    freq: 2903,
+    raw: "COMFORT",
+  },
+  {
+    freq: 2904,
+    raw: "RADICAL",
+  },
+  {
+    freq: 2916,
+    raw: "STORAGE",
+  },
+  {
+    freq: 2918,
+    raw: "LEATHER",
+  },
+  {
+    freq: 2930,
+    raw: "COUNCIL",
+  },
+  {
+    freq: 2941,
+    raw: "FANTASY",
+  },
+  {
+    freq: 2946,
+    raw: "GESTURE",
+  },
+  {
+    freq: 2947,
+    raw: "ONGOING",
+  },
+  {
+    freq: 2952,
+    raw: "WITNESS",
+  },
+  {
+    freq: 2953,
+    raw: "CHAPTER",
+  },
+  {
+    freq: 2955,
+    raw: "DIVORCE",
+  },
+  {
+    freq: 2963,
+    raw: "SUSTAIN",
+  },
+  {
+    freq: 2972,
+    raw: "FIFTEEN",
+  },
+  {
+    freq: 2978,
+    raw: "SATISFY",
+  },
+  {
+    freq: 2979,
+    raw: "BRIEFLY",
+  },
+  {
+    freq: 2983,
+    raw: "CONSUME",
+  },
+  {
+    freq: 2987,
+    raw: "TOBACCO",
+  },
+  {
+    freq: 2989,
+    raw: "BESIDES",
+  },
+  {
+    freq: 2991,
+    raw: "WEALTHY",
+  },
+  {
+    freq: 3004,
+    raw: "FIGHTER",
+  },
+  {
+    freq: 3009,
+    raw: "EDUCATE",
+  },
+  {
+    freq: 3010,
+    raw: "PAINFUL",
+  },
+  {
+    freq: 3019,
+    raw: "UNIFORM",
+  },
+  {
+    freq: 3025,
+    raw: "QUALIFY",
+  },
+  {
+    freq: 3028,
+    raw: "SCANDAL",
+  },
+  {
+    freq: 3029,
+    raw: "HELPFUL",
+  },
+  {
+    freq: 3030,
+    raw: "IMPRESS",
+  },
+  {
+    freq: 3035,
+    raw: "PRIVACY",
+  },
+  {
+    freq: 3037,
+    raw: "CONTEST",
+  },
+  {
+    freq: 3045,
+    raw: "ORGANIC",
+  },
+  {
+    freq: 3062,
+    raw: "BOMBING",
+  },
+  {
+    freq: 3071,
+    raw: "SUSPECT",
+  },
+  {
+    freq: 3081,
+    raw: "EXPLODE",
+  },
+  {
+    freq: 3084,
+    raw: "HANDFUL",
+  },
+  {
+    freq: 3087,
+    raw: "CURIOUS",
+  },
+  {
+    freq: 3088,
+    raw: "HORIZON",
+  },
+  {
+    freq: 3092,
+    raw: "REQUEST",
+  },
+  {
+    freq: 3116,
+    raw: "UNDERGO",
+  },
+  {
+    freq: 3130,
+    raw: "EDITION",
+  },
+  {
+    freq: 3139,
+    raw: "COMPLEX",
+  },
+  {
+    freq: 3148,
+    raw: "APPOINT",
+  },
+  {
+    freq: 3170,
+    raw: "BATTERY",
+  },
+  {
+    freq: 3171,
+    raw: "ARRIVAL",
+  },
+  {
+    freq: 3177,
+    raw: "CLUSTER",
+  },
+  {
+    freq: 3198,
+    raw: "HABITAT",
+  },
+  {
+    freq: 3213,
+    raw: "ACTRESS",
+  },
+  {
+    freq: 3227,
+    raw: "CORRECT",
+  },
+  {
+    freq: 3229,
+    raw: "RUNNING",
+  },
+  {
+    freq: 3237,
+    raw: "WORRIED",
+  },
+  {
+    freq: 3239,
+    raw: "PORTRAY",
+  },
+  {
+    freq: 3246,
+    raw: "COOKING",
+  },
+  {
+    freq: 3247,
+    raw: "CARRIER",
+  },
+  {
+    freq: 3255,
+    raw: "MIRACLE",
+  },
+  {
+    freq: 3259,
+    raw: "KILLING",
+  },
+  {
+    freq: 3263,
+    raw: "CHARITY",
+  },
+  {
+    freq: 3270,
+    raw: "VENTURE",
+  },
+  {
+    freq: 3277,
+    raw: "GROCERY",
+  },
+  {
+    freq: 3279,
+    raw: "EXHIBIT",
+  },
+  {
+    freq: 3282,
+    raw: "BLANKET",
+  },
+  {
+    freq: 3291,
+    raw: "RECRUIT",
+  },
+  {
+    freq: 3299,
+    raw: "PAINTER",
+  },
+  {
+    freq: 3301,
+    raw: "COURAGE",
+  },
+  {
+    freq: 3317,
+    raw: "FORMULA",
+  },
+  {
+    freq: 3324,
+    raw: "CAPTAIN",
+  },
+  {
+    freq: 3331,
+    raw: "GALLERY",
+  },
+  {
+    freq: 3334,
+    raw: "FITNESS",
+  },
+  {
+    freq: 3344,
+    raw: "INQUIRY",
+  },
+  {
+    freq: 3357,
+    raw: "COMPOSE",
+  },
+  {
+    freq: 3369,
+    raw: "RELATED",
+  },
+  {
+    freq: 3374,
+    raw: "LIGHTLY",
+  },
+  {
+    freq: 3386,
+    raw: "TRADING",
+  },
+  {
+    freq: 3387,
+    raw: "CONCERN",
+  },
+  {
+    freq: 3391,
+    raw: "SURGEON",
+  },
+  {
+    freq: 3395,
+    raw: "PHYSICS",
+  },
+  {
+    freq: 3396,
+    raw: "COUNSEL",
+  },
+  {
+    freq: 3404,
+    raw: "EXCITED",
+  },
+  {
+    freq: 3414,
+    raw: "GREATLY",
+  },
+  {
+    freq: 3416,
+    raw: "SERVING",
+  },
+  {
+    freq: 3426,
+    raw: "PLEASED",
+  },
+  {
+    freq: 3428,
+    raw: "FINANCE",
+  },
+  {
+    freq: 3431,
+    raw: "SPONSOR",
+  },
+  {
+    freq: 3432,
+    raw: "ETHICAL",
+  },
+  {
+    freq: 3443,
+    raw: "ENTITLE",
+  },
+  {
+    freq: 3444,
+    raw: "EVIDENT",
+  },
+  {
+    freq: 3446,
+    raw: "ESSENCE",
+  },
+  {
+    freq: 3448,
+    raw: "EXCLUDE",
+  },
+  {
+    freq: 3456,
+    raw: "PITCHER",
+  },
+  {
+    freq: 3474,
+    raw: "PATIENT",
+  },
+  {
+    freq: 3476,
+    raw: "REVERSE",
+  },
+  {
+    freq: 3478,
+    raw: "MISSING",
+  },
+  {
+    freq: 3487,
+    raw: "STRETCH",
+  },
+  {
+    freq: 3497,
+    raw: "CONFUSE",
+  },
+  {
+    freq: 3499,
+    raw: "MONTHLY",
+  },
+  {
+    freq: 3505,
+    raw: "LECTURE",
+  },
+  {
+    freq: 3516,
+    raw: "SWALLOW",
+  },
+  {
+    freq: 3526,
+    raw: "ENFORCE",
+  },
+  {
+    freq: 3533,
+    raw: "CONTEND",
+  },
+  {
+    freq: 3536,
+    raw: "FRANKLY",
+  },
+  {
+    freq: 3540,
+    raw: "HALLWAY",
+  },
+  {
+    freq: 3546,
+    raw: "MONSTER",
+  },
+  {
+    freq: 3547,
+    raw: "PROTEST",
+  },
+  {
+    freq: 3555,
+    raw: "CRYSTAL",
+  },
+  {
+    freq: 3562,
+    raw: "WRITTEN",
+  },
+  {
+    freq: 3572,
+    raw: "CONSULT",
+  },
+  {
+    freq: 3576,
+    raw: "FORGIVE",
+  },
+  {
+    freq: 3581,
+    raw: "PROJECT",
+  },
+  {
+    freq: 3584,
+    raw: "MAXIMUM",
+  },
+  {
+    freq: 3588,
+    raw: "WARRIOR",
+  },
+  {
+    freq: 3595,
+    raw: "OUTDOOR",
+  },
+  {
+    freq: 3604,
+    raw: "CURTAIN",
+  },
+  {
+    freq: 3605,
+    raw: "MONITOR",
+  },
+  {
+    freq: 3611,
+    raw: "SUBJECT",
+  },
+  {
+    freq: 3612,
+    raw: "PLAYOFF",
+  },
+  {
+    freq: 3614,
+    raw: "MINIMUM",
+  },
+  {
+    freq: 3615,
+    raw: "WALKING",
+  },
+  {
+    freq: 3623,
+    raw: "EXECUTE",
+  },
+  {
+    freq: 3626,
+    raw: "AVERAGE",
+  },
+  {
+    freq: 3629,
+    raw: "WELCOME",
+  },
+  {
+    freq: 3635,
+    raw: "CHRONIC",
+  },
+  {
+    freq: 3647,
+    raw: "TRIGGER",
+  },
+  {
+    freq: 3651,
+    raw: "RETIRED",
+  },
+  {
+    freq: 3657,
+    raw: "VIRTUAL",
+  },
+  {
+    freq: 3660,
+    raw: "CONVICT",
+  },
+  {
+    freq: 3670,
+    raw: "LANDING",
+  },
+  {
+    freq: 3672,
+    raw: "CONDUCT",
+  },
+  {
+    freq: 3694,
+    raw: "DRIVING",
+  },
+  {
+    freq: 3697,
+    raw: "VITAMIN",
+  },
+  {
+    freq: 3704,
+    raw: "ENDLESS",
+  },
+  {
+    freq: 3706,
+    raw: "MANDATE",
+  },
+  {
+    freq: 3722,
+    raw: "RESERVE",
+  },
+  {
+    freq: 3730,
+    raw: "GENUINE",
+  },
+  {
+    freq: 3737,
+    raw: "SCATTER",
+  },
+  {
+    freq: 3747,
+    raw: "RELIEVE",
+  },
+  {
+    freq: 3759,
+    raw: "SUSPEND",
+  },
+  {
+    freq: 3769,
+    raw: "PENSION",
+  },
+  {
+    freq: 3774,
+    raw: "REBUILD",
+  },
+  {
+    freq: 3794,
+    raw: "SHUTTLE",
+  },
+  {
+    freq: 3805,
+    raw: "EXHIBIT",
+  },
+  {
+    freq: 3810,
+    raw: "PRECISE",
+  },
+  {
+    freq: 3811,
+    raw: "ANXIOUS",
+  },
+  {
+    freq: 3819,
+    raw: "LIBERTY",
+  },
+  {
+    freq: 3844,
+    raw: "PRIMARY",
+  },
+  {
+    freq: 3848,
+    raw: "PROGRAM",
+  },
+  {
+    freq: 3850,
+    raw: "DOORWAY",
+  },
+  {
+    freq: 3852,
+    raw: "TEENAGE",
+  },
+  {
+    freq: 3857,
+    raw: "PURSUIT",
+  },
+  {
+    freq: 3864,
+    raw: "ISRAELI",
+  },
+  {
+    freq: 3868,
+    raw: "ENDORSE",
+  },
+  {
+    freq: 3873,
+    raw: "OVERALL",
+  },
+  {
+    freq: 3875,
+    raw: "THEREBY",
+  },
+  {
+    freq: 3886,
+    raw: "PICTURE",
+  },
+  {
+    freq: 3892,
+    raw: "SHARPLY",
+  },
+  {
+    freq: 3919,
+    raw: "GARBAGE",
+  },
+  {
+    freq: 3923,
+    raw: "SERVANT",
+  },
+  {
+    freq: 3927,
+    raw: "ELEGANT",
+  },
+  {
+    freq: 3935,
+    raw: "CONFESS",
+  },
+  {
+    freq: 3937,
+    raw: "STARTER",
+  },
+  {
+    freq: 3938,
+    raw: "BANKING",
+  },
+  {
+    freq: 3941,
+    raw: "GRAVITY",
+  },
+  {
+    freq: 3948,
+    raw: "ISOLATE",
+  },
+  {
+    freq: 3957,
+    raw: "HOSTAGE",
+  },
+  {
+    freq: 3963,
+    raw: "DYNAMIC",
+  },
+  {
+    freq: 3977,
+    raw: "CONTENT",
+  },
+  {
+    freq: 3980,
+    raw: "RUSSIAN",
+  },
+  {
+    freq: 3982,
+    raw: "COMMAND",
+  },
+  {
+    freq: 3986,
+    raw: "STUMBLE",
+  },
+  {
+    freq: 3991,
+    raw: "DESCEND",
+  },
+  {
+    freq: 3998,
+    raw: "READILY",
+  },
+  {
+    freq: 4001,
+    raw: "ROMANCE",
+  },
+  {
+    freq: 4009,
+    raw: "CIRCUIT",
+  },
+  {
+    freq: 4024,
+    raw: "RESERVE",
+  },
+  {
+    freq: 4025,
+    raw: "COASTAL",
+  },
+  {
+    freq: 4027,
+    raw: "BURNING",
+  },
+  {
+    freq: 4030,
+    raw: "DIAMOND",
+  },
+  {
+    freq: 4041,
+    raw: "OVERSEE",
+  },
+  {
+    freq: 4048,
+    raw: "TRAILER",
+  },
+  {
+    freq: 4063,
+    raw: "LOYALTY",
+  },
+  {
+    freq: 4067,
+    raw: "NOMINEE",
+  },
+  {
+    freq: 4077,
+    raw: "ALLEGED",
+  },
+  {
+    freq: 4086,
+    raw: "DIGNITY",
+  },
+  {
+    freq: 4093,
+    raw: "TIGHTLY",
+  },
+  {
+    freq: 4096,
+    raw: "SEVENTH",
+  },
+  {
+    freq: 4105,
+    raw: "DILEMMA",
+  },
+  {
+    freq: 4110,
+    raw: "SHALLOW",
+  },
+  {
+    freq: 4115,
+    raw: "STADIUM",
+  },
+  {
+    freq: 4125,
+    raw: "CONDEMN",
+  },
+  {
+    freq: 4139,
+    raw: "COSTUME",
+  },
+  {
+    freq: 4140,
+    raw: "STATUTE",
+  },
+  {
+    freq: 4142,
+    raw: "CARTOON",
+  },
+  {
+    freq: 4144,
+    raw: "BESIDES",
+  },
+  {
+    freq: 4150,
+    raw: "HOSTILE",
+  },
+  {
+    freq: 4160,
+    raw: "VACCINE",
+  },
+  {
+    freq: 4162,
+    raw: "OPPOSED",
+  },
+  {
+    freq: 4174,
+    raw: "JEWELRY",
+  },
+  {
+    freq: 4179,
+    raw: "CONCEDE",
+  },
+  {
+    freq: 4206,
+    raw: "SECULAR",
+  },
+  {
+    freq: 4208,
+    raw: "DIVORCE",
+  },
+  {
+    freq: 4210,
+    raw: "NEUTRAL",
+  },
+  {
+    freq: 4213,
+    raw: "BIOLOGY",
+  },
+  {
+    freq: 4229,
+    raw: "WHOEVER",
+  },
+  {
+    freq: 4235,
+    raw: "VERDICT",
+  },
+  {
+    freq: 4242,
+    raw: "SUBSIDY",
+  },
+  {
+    freq: 4254,
+    raw: "RESPECT",
+  },
+  {
+    freq: 4255,
+    raw: "UTILIZE",
+  },
+  {
+    freq: 4260,
+    raw: "DESSERT",
+  },
+  {
+    freq: 4290,
+    raw: "ROLLING",
+  },
+  {
+    freq: 4305,
+    raw: "MINIMAL",
+  },
+  {
+    freq: 4307,
+    raw: "COCAINE",
+  },
+  {
+    freq: 4329,
+    raw: "SIBLING",
+  },
+  {
+    freq: 4343,
+    raw: "PASSING",
+  },
+  {
+    freq: 4344,
+    raw: "PERSIST",
+  },
+  {
+    freq: 4359,
+    raw: "BICYCLE",
+  },
+  {
+    freq: 4367,
+    raw: "EXPLOIT",
+  },
+  {
+    freq: 4376,
+    raw: "MINIMUM",
+  },
+  {
+    freq: 4379,
+    raw: "CHARTER",
+  },
+  {
+    freq: 4384,
+    raw: "CONSENT",
+  },
+  {
+    freq: 4397,
+    raw: "WORKOUT",
+  },
+  {
+    freq: 4405,
+    raw: "COUNTER",
+  },
+  {
+    freq: 4407,
+    raw: "TEXTURE",
+  },
+  {
+    freq: 4410,
+    raw: "HORMONE",
+  },
+  {
+    freq: 4416,
+    raw: "CUSTODY",
+  },
+  {
+    freq: 4423,
+    raw: "OUTLINE",
+  },
+  {
+    freq: 4426,
+    raw: "UNCOVER",
+  },
+  {
+    freq: 4437,
+    raw: "CATALOG",
+  },
+  {
+    freq: 4445,
+    raw: "SOMEDAY",
+  },
+  {
+    freq: 4447,
+    raw: "INSTANT",
+  },
+  {
+    freq: 4452,
+    raw: "TRAINER",
+  },
+  {
+    freq: 4460,
+    raw: "EYEBROW",
+  },
+  {
+    freq: 4466,
+    raw: "INHERIT",
+  },
+  {
+    freq: 4467,
+    raw: "PIONEER",
+  },
+  {
+    freq: 4481,
+    raw: "KINGDOM",
+  },
+  {
+    freq: 4486,
+    raw: "TERRAIN",
+  },
+  {
+    freq: 4494,
+    raw: "PLANNER",
+  },
+  {
+    freq: 4497,
+    raw: "CLOSEST",
+  },
+  {
+    freq: 4506,
+    raw: "DENSITY",
+  },
+  {
+    freq: 4519,
+    raw: "PERSIAN",
+  },
+  {
+    freq: 4524,
+    raw: "FEATHER",
+  },
+  {
+    freq: 4529,
+    raw: "TIGHTEN",
+  },
+  {
+    freq: 4540,
+    raw: "PARTIAL",
+  },
+  {
+    freq: 4543,
+    raw: "BUILDER",
+  },
+  {
+    freq: 4549,
+    raw: "GLIMPSE",
+  },
+  {
+    freq: 4550,
+    raw: "PREMISE",
+  },
+  {
+    freq: 4558,
+    raw: "LEGALLY",
+  },
+  {
+    freq: 4560,
+    raw: "DISTURB",
+  },
+  {
+    freq: 4564,
+    raw: "LOGICAL",
+  },
+  {
+    freq: 4570,
+    raw: "SLAVERY",
+  },
+  {
+    freq: 4572,
+    raw: "LIBERAL",
+  },
+  {
+    freq: 4579,
+    raw: "MINERAL",
+  },
+  {
+    freq: 4583,
+    raw: "HALFWAY",
+  },
+  {
+    freq: 4607,
+    raw: "SPONSOR",
+  },
+  {
+    freq: 4625,
+    raw: "FUCKING",
+  },
+  {
+    freq: 4628,
+    raw: "AUCTION",
+  },
+  {
+    freq: 4634,
+    raw: "TRIUMPH",
+  },
+  {
+    freq: 4640,
+    raw: "SCRATCH",
+  },
+  {
+    freq: 4665,
+    raw: "HARMONY",
+  },
+  {
+    freq: 4671,
+    raw: "RUNNING",
+  },
+  {
+    freq: 4672,
+    raw: "INSTANT",
+  },
+  {
+    freq: 4676,
+    raw: "PEASANT",
+  },
+  {
+    freq: 4688,
+    raw: "DEPOSIT",
+  },
+  {
+    freq: 4691,
+    raw: "IMPULSE",
+  },
+  {
+    freq: 4702,
+    raw: "TROUBLE",
+  },
+  {
+    freq: 4704,
+    raw: "HAPPILY",
+  },
+  {
+    freq: 4705,
+    raw: "DANCING",
+  },
+  {
+    freq: 4707,
+    raw: "REMOVAL",
+  },
+  {
+    freq: 4713,
+    raw: "UNHAPPY",
+  },
+  {
+    freq: 4717,
+    raw: "TOURISM",
+  },
+  {
+    freq: 4729,
+    raw: "FRAGILE",
+  },
+  {
+    freq: 4730,
+    raw: "EXHAUST",
+  },
+  {
+    freq: 4735,
+    raw: "CROWDED",
+  },
+  {
+    freq: 4738,
+    raw: "PREVAIL",
+  },
+  {
+    freq: 4754,
+    raw: "MENTION",
+  },
+  {
+    freq: 4758,
+    raw: "MANSION",
+  },
+  {
+    freq: 4762,
+    raw: "COTTAGE",
+  },
+  {
+    freq: 4771,
+    raw: "BALLOON",
+  },
+  {
+    freq: 4784,
+    raw: "RETREAT",
+  },
+  {
+    freq: 4786,
+    raw: "SWEATER",
+  },
+  {
+    freq: 4792,
+    raw: "VETERAN",
+  },
+  {
+    freq: 4797,
+    raw: "PREMIUM",
+  },
+  {
+    freq: 4803,
+    raw: "FATIGUE",
+  },
+  {
+    freq: 4818,
+    raw: "PROVOKE",
+  },
+  {
+    freq: 4837,
+    raw: "HARVEST",
+  },
+  {
+    freq: 4857,
+    raw: "TRANSIT",
+  },
+  {
+    freq: 4858,
+    raw: "SPECIFY",
+  },
+  {
+    freq: 4860,
+    raw: "SEMINAR",
+  },
+  {
+    freq: 4889,
+    raw: "DELIGHT",
+  },
+  {
+    freq: 4902,
+    raw: "SKILLED",
+  },
+  {
+    freq: 4916,
+    raw: "SUMMARY",
+  },
+  {
+    freq: 4932,
+    raw: "DICTATE",
+  },
+  {
+    freq: 4933,
+    raw: "HARVEST",
+  },
+  {
+    freq: 4939,
+    raw: "LAUNDRY",
+  },
+  {
+    freq: 4943,
+    raw: "APOLOGY",
+  },
+  {
+    freq: 4946,
+    raw: "BELOVED",
+  },
+  {
+    freq: 4949,
+    raw: "WEBSITE",
+  },
+  {
+    freq: 4950,
+    raw: "CHOPPED",
+  },
+  {
+    freq: 4952,
+    raw: "TRIBUTE",
+  },
+  {
+    freq: 4955,
+    raw: "SMOKING",
+  },
+  {
+    freq: 4956,
+    raw: "BIZARRE",
+  },
+  {
+    freq: 4961,
+    raw: "BARGAIN",
+  },
+  {
+    freq: 4971,
+    raw: "EXTRACT",
+  },
+  {
+    freq: 4994,
+    raw: "AWKWARD",
+  },
+  {
+    freq: 4996,
+    raw: "IRANIAN",
+  },
+  {
+    freq: 5000,
+    raw: "MILITIA",
+  },
+  {
+    freq: 5018,
+    raw: "SHERIFF",
+  },
+  {
+    freq: 5033,
+    raw: "INSPECT",
+  },
+  {
+    freq: 5038,
+    raw: "CLASSIC",
+  },
+  {
+    freq: 5041,
+    raw: "RANKING",
+  },
+  {
+    freq: 5053,
+    raw: "CLARIFY",
+  },
+  {
+    freq: 5066,
+    raw: "NEGLECT",
+  },
+  {
+    freq: 5069,
+    raw: "WARFARE",
+  },
+  {
+    freq: 5081,
+    raw: "LEARNER",
+  },
+  {
+    freq: 5089,
+    raw: "CREATOR",
+  },
+  {
+    freq: 5110,
+    raw: "FARMING",
+  },
+  {
+    freq: 5111,
+    raw: "VINEGAR",
+  },
+  {
+    freq: 5121,
+    raw: "HOPEFUL",
+  },
+  {
+    freq: 5137,
+    raw: "DEVOTED",
+  },
+  {
+    freq: 5143,
+    raw: "WARMING",
+  },
+  {
+    freq: 5145,
+    raw: "BETWEEN",
+  },
+  {
+    freq: 5147,
+    raw: "COLORED",
+  },
+  {
+    freq: 5149,
+    raw: "RETREAT",
+  },
+  {
+    freq: 5153,
+    raw: "CONCEAL",
+  },
+  {
+    freq: 5162,
+    raw: "HEALING",
+  },
+  {
+    freq: 5167,
+    raw: "DESTINY",
+  },
+  {
+    freq: 5178,
+    raw: "OUTLINE",
+  },
+  {
+    freq: 5195,
+    raw: "MIGRANT",
+  },
+  {
+    freq: 5202,
+    raw: "IMAGERY",
+  },
+  {
+    freq: 5241,
+    raw: "TRIGGER",
+  },
+  {
+    freq: 5242,
+    raw: "TREMBLE",
+  },
+  {
+    freq: 5245,
+    raw: "ITALIAN",
+  },
+  {
+    freq: 5247,
+    raw: "VENTURE",
+  },
+  {
+    freq: 5259,
+    raw: "NURSING",
+  },
+  {
+    freq: 5274,
+    raw: "NOTABLY",
+  },
+  {
+    freq: 5281,
+    raw: "TORTURE",
+  },
+  {
+    freq: 5289,
+    raw: "REVENGE",
+  },
+  {
+    freq: 5291,
+    raw: "UNCLEAR",
+  },
+  {
+    freq: 5295,
+    raw: "CAUTION",
+  },
+  {
+    freq: 5298,
+    raw: "COMPILE",
+  },
+  {
+    freq: 5302,
+    raw: "NOTABLE",
+  },
+  {
+    freq: 5318,
+    raw: "DISRUPT",
+  },
+  {
+    freq: 5326,
+    raw: "REMAINS",
+  },
+  {
+    freq: 5335,
+    raw: "SIXTEEN",
+  },
+  {
+    freq: 5336,
+    raw: "HOLDING",
+  },
+  {
+    freq: 5340,
+    raw: "COMFORT",
+  },
+  {
+    freq: 5345,
+    raw: "INSIDER",
+  },
+  {
+    freq: 5348,
+    raw: "CONFINE",
+  },
+  {
+    freq: 5356,
+    raw: "PAYROLL",
+  },
+  {
+    freq: 5357,
+    raw: "FRESHLY",
+  },
+  {
+    freq: 5360,
+    raw: "WINNING",
+  },
+  {
+    freq: 5364,
+    raw: "DROUGHT",
+  },
+  {
+    freq: 5384,
+    raw: "ELECTED",
+  },
+  {
+    freq: 5385,
+    raw: "VANILLA",
+  },
+  {
+    freq: 5387,
+    raw: "WOUNDED",
+  },
+  {
+    freq: 5390,
+    raw: "SHOTGUN",
+  },
+  {
+    freq: 5392,
+    raw: "GRAPHIC",
+  },
+  {
+    freq: 5417,
+    raw: "POSTURE",
+  },
+  {
+    freq: 5427,
+    raw: "DISCARD",
+  },
+  {
+    freq: 5428,
+    raw: "REVIVAL",
+  },
+  {
+    freq: 5438,
+    raw: "DESPAIR",
+  },
+  {
+    freq: 5442,
+    raw: "FULFILL",
+  },
+  {
+    freq: 5454,
+    raw: "CLARITY",
+  },
+  {
+    freq: 5466,
+    raw: "SHATTER",
+  },
+  {
+    freq: 5467,
+    raw: "DESCENT",
+  },
+  {
+    freq: 5468,
+    raw: "STARTLE",
+  },
+  {
+    freq: 5476,
+    raw: "SUBJECT",
+  },
+  {
+    freq: 5482,
+    raw: "CUTTING",
+  },
+  {
+    freq: 5496,
+    raw: "MISTAKE",
+  },
+  {
+    freq: 5498,
+    raw: "RECOUNT",
+  },
+  {
+    freq: 5503,
+    raw: "SETTLER",
+  },
+  {
+    freq: 5511,
+    raw: "OPTICAL",
+  },
+  {
+    freq: 5520,
+    raw: "SADNESS",
+  },
+  {
+    freq: 5531,
+    raw: "INJURED",
+  },
+  {
+    freq: 5547,
+    raw: "NURTURE",
+  },
+  {
+    freq: 5550,
+    raw: "RESERVE",
+  },
+  {
+    freq: 5558,
+    raw: "FURIOUS",
+  },
+  {
+    freq: 5572,
+    raw: "TURKISH",
+  },
+  {
+    freq: 5586,
+    raw: "UTTERLY",
+  },
+  {
+    freq: 5594,
+    raw: "GOODBYE",
+  },
+  {
+    freq: 5600,
+    raw: "MAGICAL",
+  },
+  {
+    freq: 5612,
+    raw: "ACADEMY",
+  },
+  {
+    freq: 5622,
+    raw: "PRECEDE",
+  },
+  {
+    freq: 5629,
+    raw: "NURSING",
+  },
+  {
+    freq: 5633,
+    raw: "CALCIUM",
+  },
+  {
+    freq: 5634,
+    raw: "QUANTUM",
+  },
+  {
+    freq: 5639,
+    raw: "TEXTILE",
+  },
+  {
+    freq: 5644,
+    raw: "ETERNAL",
+  },
+  {
+    freq: 5647,
+    raw: "PLANNED",
+  },
+  {
+    freq: 5648,
+    raw: "CURRENT",
+  },
+  {
+    freq: 5650,
+    raw: "NURSERY",
+  },
+  {
+    freq: 5660,
+    raw: "FACTION",
+  },
+  {
+    freq: 5662,
+    raw: "SKILLET",
+  },
+  {
+    freq: 5664,
+    raw: "IMMENSE",
+  },
+  {
+    freq: 5670,
+    raw: "ASHAMED",
+  },
+  {
+    freq: 5678,
+    raw: "USELESS",
+  },
+  {
+    freq: 5690,
+    raw: "LISTING",
+  },
+  {
+    freq: 5699,
+    raw: "SHOCKED",
+  },
+  {
+    freq: 5702,
+    raw: "PASSIVE",
+  },
+  {
+    freq: 5706,
+    raw: "OUTRAGE",
+  },
+  {
+    freq: 5734,
+    raw: "DIOXIDE",
+  },
+  {
+    freq: 5744,
+    raw: "APPLAUD",
+  },
+  {
+    freq: 5753,
+    raw: "EMBASSY",
+  },
+  {
+    freq: 5762,
+    raw: "PRESUME",
+  },
+  {
+    freq: 5766,
+    raw: "NEAREST",
+  },
+  {
+    freq: 5771,
+    raw: "ANTIQUE",
+  },
+  {
+    freq: 5790,
+    raw: "WHISPER",
+  },
+  {
+    freq: 5796,
+    raw: "CLOSURE",
+  },
+  {
+    freq: 5807,
+    raw: "FOOLISH",
+  },
+  {
+    freq: 5811,
+    raw: "SMOKING",
+  },
+  {
+    freq: 5814,
+    raw: "WETLAND",
+  },
+  {
+    freq: 5819,
+    raw: "AMATEUR",
+  },
+  {
+    freq: 5823,
+    raw: "BALCONY",
+  },
+  {
+    freq: 5827,
+    raw: "CLOSING",
+  },
+  {
+    freq: 5830,
+    raw: "RECYCLE",
+  },
+  {
+    freq: 5832,
+    raw: "WORSHIP",
+  },
+  {
+    freq: 5833,
+    raw: "HARMFUL",
+  },
+  {
+    freq: 5834,
+    raw: "TORTURE",
+  },
+  {
+    freq: 5842,
+    raw: "TUITION",
+  },
+  {
+    freq: 5854,
+    raw: "TERRIFY",
+  },
+  {
+    freq: 5859,
+    raw: "GRAPHIC",
+  },
+  {
+    freq: 5876,
+    raw: "CORRUPT",
+  },
+  {
+    freq: 5879,
+    raw: "OBSCURE",
+  },
+  {
+    freq: 5889,
+    raw: "OUTLOOK",
+  },
+  {
+    freq: 5895,
+    raw: "SPATIAL",
+  },
+  {
+    freq: 5897,
+    raw: "VARYING",
+  },
+  {
+    freq: 5898,
+    raw: "CLEANUP",
+  },
+  {
+    freq: 5901,
+    raw: "PRINTER",
+  },
+  {
+    freq: 5905,
+    raw: "LOCALLY",
+  },
+  {
+    freq: 5912,
+    raw: "REBOUND",
+  },
+  {
+    freq: 5923,
+    raw: "ADVISOR",
+  },
+  {
+    freq: 5926,
+    raw: "FOOTAGE",
+  },
+  {
+    freq: 5941,
+    raw: "ANALOGY",
+  },
+  {
+    freq: 5944,
+    raw: "TODDLER",
+  },
+  {
+    freq: 5954,
+    raw: "MAXIMUM",
+  },
+  {
+    freq: 5956,
+    raw: "UPGRADE",
+  },
+  {
+    freq: 5957,
+    raw: "POSTWAR",
+  },
+  {
+    freq: 5959,
+    raw: "EROSION",
+  },
+  {
+    freq: 5962,
+    raw: "REFUSAL",
+  },
+  {
+    freq: 5966,
+    raw: "LICENSE",
+  },
+  {
+    freq: 5970,
+    raw: "UNAWARE",
+  },
+  {
+    freq: 5988,
+    raw: "GOOD-BYE",
+    word: "GOODBYE",
+  },
+  {
+    freq: 5994,
+    raw: "CURATOR",
+  },
+  {
+    freq: 5995,
+    raw: "OVERALL",
+  },
+  {
+    freq: 6003,
+    raw: "FISHERY",
+  },
+  {
+    freq: 6018,
+    raw: "BEATING",
+  },
+  {
+    freq: 6022,
+    raw: "UNIFORM",
+  },
+  {
+    freq: 6029,
+    raw: "WARRANT",
+  },
+  {
+    freq: 6038,
+    raw: "STAFFER",
+  },
+  {
+    freq: 6042,
+    raw: "ROBBERY",
+  },
+  {
+    freq: 6052,
+    raw: "ELEVATE",
+  },
+  {
+    freq: 6057,
+    raw: "LOTTERY",
+  },
+  {
+    freq: 6060,
+    raw: "SHOPPER",
+  },
+  {
+    freq: 6061,
+    raw: "LENGTHY",
+  },
+  {
+    freq: 6064,
+    raw: "REDUCED",
+  },
+  {
+    freq: 6067,
+    raw: "HEATING",
+  },
+  {
+    freq: 6082,
+    raw: "INHABIT",
+  },
+  {
+    freq: 6088,
+    raw: "EXCERPT",
+  },
+  {
+    freq: 6092,
+    raw: "INSURER",
+  },
+  {
+    freq: 6095,
+    raw: "WARRANT",
+  },
+  {
+    freq: 6097,
+    raw: "REUNION",
+  },
+  {
+    freq: 6108,
+    raw: "WAITING",
+  },
+  {
+    freq: 6116,
+    raw: "ALL-STAR",
+    word: "ALLSTAR",
+  },
+  {
+    freq: 6128,
+    raw: "MUSTARD",
+  },
+  {
+    freq: 6137,
+    raw: "RELAXED",
+  },
+  {
+    freq: 6145,
+    raw: "GARMENT",
+  },
+  {
+    freq: 6151,
+    raw: "TRUSTEE",
+  },
+  {
+    freq: 6161,
+    raw: "AFRICAN",
+  },
+  {
+    freq: 6162,
+    raw: "PYRAMID",
+  },
+  {
+    freq: 6170,
+    raw: "PROUDLY",
+  },
+  {
+    freq: 6175,
+    raw: "FREEWAY",
+  },
+  {
+    freq: 6182,
+    raw: "PUMPKIN",
+  },
+  {
+    freq: 6183,
+    raw: "IMITATE",
+  },
+  {
+    freq: 6189,
+    raw: "COMPOST",
+  },
+  {
+    freq: 6200,
+    raw: "BROADLY",
+  },
+  {
+    freq: 6225,
+    raw: "HONESTY",
+  },
+  {
+    freq: 6231,
+    raw: "FEARFUL",
+  },
+  {
+    freq: 6232,
+    raw: "SAUSAGE",
+  },
+  {
+    freq: 6236,
+    raw: "DEPRIVE",
+  },
+  {
+    freq: 6237,
+    raw: "COMPACT",
+  },
+  {
+    freq: 6241,
+    raw: "EMPOWER",
+  },
+  {
+    freq: 6246,
+    raw: "LOBSTER",
+  },
+  {
+    freq: 6249,
+    raw: "TURNING",
+  },
+  {
+    freq: 6253,
+    raw: "ARTWORK",
+  },
+  {
+    freq: 6254,
+    raw: "LASTING",
+  },
+  {
+    freq: 6259,
+    raw: "RENEWED",
+  },
+  {
+    freq: 6277,
+    raw: "SURPLUS",
+  },
+  {
+    freq: 6280,
+    raw: "MARITAL",
+  },
+  {
+    freq: 6281,
+    raw: "VICIOUS",
+  },
+  {
+    freq: 6286,
+    raw: "CAUTION",
+  },
+  {
+    freq: 6301,
+    raw: "FASHION",
+  },
+  {
+    freq: 6304,
+    raw: "LEISURE",
+  },
+  {
+    freq: 6311,
+    raw: "SCRATCH",
+  },
+  {
+    freq: 6315,
+    raw: "BASTARD",
+  },
+  {
+    freq: 6318,
+    raw: "DESIRED",
+  },
+  {
+    freq: 6333,
+    raw: "EXCLAIM",
+  },
+  {
+    freq: 6337,
+    raw: "DENTIST",
+  },
+  {
+    freq: 6343,
+    raw: "ADVERSE",
+  },
+  {
+    freq: 6353,
+    raw: "REACTOR",
+  },
+  {
+    freq: 6357,
+    raw: "VOLCANO",
+  },
+  {
+    freq: 6358,
+    raw: "JEALOUS",
+  },
+  {
+    freq: 6366,
+    raw: "PASTURE",
+  },
+  {
+    freq: 6370,
+    raw: "CHUCKLE",
+  },
+  {
+    freq: 6373,
+    raw: "AWESOME",
+  },
+  {
+    freq: 6374,
+    raw: "LESBIAN",
+  },
+  {
+    freq: 6391,
+    raw: "EMBARGO",
+  },
+  {
+    freq: 6396,
+    raw: "IMPLANT",
+  },
+  {
+    freq: 6398,
+    raw: "ANTIQUE",
+  },
+  {
+    freq: 6401,
+    raw: "VINTAGE",
+  },
+  {
+    freq: 6404,
+    raw: "DIETARY",
+  },
+  {
+    freq: 6414,
+    raw: "URGENCY",
+  },
+  {
+    freq: 6434,
+    raw: "REMNANT",
+  },
+  {
+    freq: 6436,
+    raw: "MORALLY",
+  },
+  {
+    freq: 6440,
+    raw: "SITUATE",
+  },
+  {
+    freq: 6441,
+    raw: "GUIDING",
+  },
+  {
+    freq: 6443,
+    raw: "CUISINE",
+  },
+  {
+    freq: 6445,
+    raw: "THINKER",
+  },
+  {
+    freq: 6447,
+    raw: "WRESTLE",
+  },
+  {
+    freq: 6461,
+    raw: "DARLING",
+  },
+  {
+    freq: 6465,
+    raw: "ECOLOGY",
+  },
+  {
+    freq: 6471,
+    raw: "TERRACE",
+  },
+  {
+    freq: 6478,
+    raw: "BLOSSOM",
+  },
+  {
+    freq: 6479,
+    raw: "SMILING",
+  },
+  {
+    freq: 6486,
+    raw: "GENERIC",
+  },
+  {
+    freq: 6496,
+    raw: "APPLIED",
+  },
+  {
+    freq: 6505,
+    raw: "WHISTLE",
+  },
+  {
+    freq: 6521,
+    raw: "INFLICT",
+  },
+  {
+    freq: 6528,
+    raw: "TWO-YEAR",
+    word: "TWOYEAR",
+  },
+  {
+    freq: 6532,
+    raw: "SINGING",
+  },
+  {
+    freq: 6544,
+    raw: "RENEWAL",
+  },
+  {
+    freq: 6545,
+    raw: "TURMOIL",
+  },
+  {
+    freq: 6546,
+    raw: "PAINTED",
+  },
+  {
+    freq: 6547,
+    raw: "MIGRATE",
+  },
+  {
+    freq: 6558,
+    raw: "ARCHIVE",
+  },
+  {
+    freq: 6560,
+    raw: "RECEIPT",
+  },
+  {
+    freq: 6566,
+    raw: "SWEDISH",
+  },
+  {
+    freq: 6573,
+    raw: "LESBIAN",
+  },
+  {
+    freq: 6592,
+    raw: "TRACTOR",
+  },
+  {
+    freq: 6600,
+    raw: "BOSNIAN",
+  },
+  {
+    freq: 6603,
+    raw: "PATHWAY",
+  },
+  {
+    freq: 6607,
+    raw: "MADNESS",
+  },
+  {
+    freq: 6611,
+    raw: "CLEANER",
+  },
+  {
+    freq: 6622,
+    raw: "SLENDER",
+  },
+  {
+    freq: 6633,
+    raw: "LETTUCE",
+  },
+  {
+    freq: 6636,
+    raw: "PERFUME",
+  },
+  {
+    freq: 6641,
+    raw: "RIVALRY",
+  },
+  {
+    freq: 6642,
+    raw: "FIREARM",
+  },
+  {
+    freq: 6658,
+    raw: "BROADEN",
+  },
+  {
+    freq: 6664,
+    raw: "PARSLEY",
+  },
+  {
+    freq: 6666,
+    raw: "DISTORT",
+  },
+  {
+    freq: 6670,
+    raw: "RADICAL",
+  },
+  {
+    freq: 6680,
+    raw: "GODDESS",
+  },
+  {
+    freq: 6687,
+    raw: "PASSING",
+  },
+  {
+    freq: 6708,
+    raw: "SERVICE",
+  },
+  {
+    freq: 6723,
+    raw: "TALKING",
+  },
+  {
+    freq: 6732,
+    raw: "INQUIRE",
+  },
+  {
+    freq: 6734,
+    raw: "DEPOSIT",
+  },
+  {
+    freq: 6735,
+    raw: "SIGNIFY",
+  },
+  {
+    freq: 6738,
+    raw: "BOLSTER",
+  },
+  {
+    freq: 6743,
+    raw: "VIBRANT",
+  },
+  {
+    freq: 6752,
+    raw: "SHOOTER",
+  },
+  {
+    freq: 6753,
+    raw: "SCORING",
+  },
+  {
+    freq: 6755,
+    raw: "STICKER",
+  },
+  {
+    freq: 6766,
+    raw: "BEARING",
+  },
+  {
+    freq: 6783,
+    raw: "CONQUER",
+  },
+  {
+    freq: 6791,
+    raw: "HEALING",
+  },
+  {
+    freq: 6805,
+    raw: "WELCOME",
+  },
+  {
+    freq: 6808,
+    raw: "FASTEST",
+  },
+  {
+    freq: 6821,
+    raw: "FORWARD",
+  },
+  {
+    freq: 6823,
+    raw: "PARADOX",
+  },
+  {
+    freq: 6829,
+    raw: "PRESIDE",
+  },
+  {
+    freq: 6844,
+    raw: "GRADUAL",
+  },
+  {
+    freq: 6857,
+    raw: "PENDING",
+  },
+  {
+    freq: 6859,
+    raw: "NEGLECT",
+  },
+  {
+    freq: 6860,
+    raw: "COCONUT",
+  },
+  {
+    freq: 6861,
+    raw: "DISLIKE",
+  },
+  {
+    freq: 6866,
+    raw: "SEAFOOD",
+  },
+  {
+    freq: 6868,
+    raw: "GRANITE",
+  },
+  {
+    freq: 6875,
+    raw: "VIEWING",
+  },
+  {
+    freq: 6879,
+    raw: "DESKTOP",
+  },
+  {
+    freq: 6890,
+    raw: "INDULGE",
+  },
+  {
+    freq: 6894,
+    raw: "INTERIM",
+  },
+  {
+    freq: 6895,
+    raw: "PRAIRIE",
+  },
+  {
+    freq: 6909,
+    raw: "SURPASS",
+  },
+  {
+    freq: 6918,
+    raw: "COMMUTE",
+  },
+  {
+    freq: 6926,
+    raw: "SINCERE",
+  },
+  {
+    freq: 6944,
+    raw: "CUSHION",
+  },
+  {
+    freq: 6947,
+    raw: "VAGUELY",
+  },
+  {
+    freq: 6949,
+    raw: "ONE-TIME",
+    word: "ONETIME",
+  },
+  {
+    freq: 6953,
+    raw: "DISPOSE",
+  },
+  {
+    freq: 6955,
+    raw: "IMAGING",
+  },
+  {
+    freq: 6960,
+    raw: "DESTINE",
+  },
+  {
+    freq: 6962,
+    raw: "ROYALTY",
+  },
+  {
+    freq: 6970,
+    raw: "LOOSELY",
+  },
+  {
+    freq: 6972,
+    raw: "RECRUIT",
+  },
+  {
+    freq: 6979,
+    raw: "GESTURE",
+  },
+  {
+    freq: 6984,
+    raw: "ELUSIVE",
+  },
+  {
+    freq: 6993,
+    raw: "LABORER",
+  },
+  {
+    freq: 6998,
+    raw: "NUCLEUS",
+  },
+  {
+    freq: 7001,
+    raw: "TALIBAN",
+  },
+  {
+    freq: 7003,
+    raw: "BUFFALO",
+  },
+  {
+    freq: 7006,
+    raw: "TORNADO",
+  },
+  {
+    freq: 7012,
+    raw: "CONFORM",
+  },
+  {
+    freq: 7028,
+    raw: "EARRING",
+  },
+  {
+    freq: 7037,
+    raw: "CABBAGE",
+  },
+  {
+    freq: 7049,
+    raw: "BOULDER",
+  },
+  {
+    freq: 7051,
+    raw: "PRODUCE",
+  },
+  {
+    freq: 7055,
+    raw: "OBSCURE",
+  },
+  {
+    freq: 7057,
+    raw: "EARNEST",
+  },
+  {
+    freq: 7059,
+    raw: "OPTIMAL",
+  },
+  {
+    freq: 7060,
+    raw: "CLOSING",
+  },
+  {
+    freq: 7078,
+    raw: "WHISKEY",
+  },
+  {
+    freq: 7080,
+    raw: "GRILLED",
+  },
+  {
+    freq: 7093,
+    raw: "FIXTURE",
+  },
+  {
+    freq: 7095,
+    raw: "CRUMBLE",
+  },
+  {
+    freq: 7096,
+    raw: "VAMPIRE",
+  },
+  {
+    freq: 7099,
+    raw: "CERTIFY",
+  },
+  {
+    freq: 7107,
+    raw: "MASSAGE",
+  },
+  {
+    freq: 7109,
+    raw: "CYNICAL",
+  },
+  {
+    freq: 7117,
+    raw: "EMPEROR",
+  },
+  {
+    freq: 7127,
+    raw: "DEEPEST",
+  },
+  {
+    freq: 7132,
+    raw: "WHISTLE",
+  },
+  {
+    freq: 7139,
+    raw: "SELLING",
+  },
+  {
+    freq: 7153,
+    raw: "SURFACE",
+  },
+  {
+    freq: 7161,
+    raw: "POTTERY",
+  },
+  {
+    freq: 7173,
+    raw: "ASSAULT",
+  },
+  {
+    freq: 7176,
+    raw: "EXPOSED",
+  },
+  {
+    freq: 7182,
+    raw: "ANTENNA",
+  },
+  {
+    freq: 7183,
+    raw: "PRINTED",
+  },
+  {
+    freq: 7193,
+    raw: "SECRECY",
+  },
+  {
+    freq: 7194,
+    raw: "ABUSIVE",
+  },
+  {
+    freq: 7208,
+    raw: "DAYTIME",
+  },
+  {
+    freq: 7211,
+    raw: "THERMAL",
+  },
+  {
+    freq: 7215,
+    raw: "SILENCE",
+  },
+  {
+    freq: 7225,
+    raw: "COCKPIT",
+  },
+  {
+    freq: 7229,
+    raw: "OBESITY",
+  },
+  {
+    freq: 7235,
+    raw: "STATION",
+  },
+  {
+    freq: 7237,
+    raw: "INNINGS",
+  },
+  {
+    freq: 7238,
+    raw: "REALISM",
+  },
+  {
+    freq: 7249,
+    raw: "SPINACH",
+  },
+  {
+    freq: 7252,
+    raw: "SWIFTLY",
+  },
+  {
+    freq: 7268,
+    raw: "ALL-TIME",
+    word: "ALLTIME",
+  },
+  {
+    freq: 7273,
+    raw: "WORSHIP",
+  },
+  {
+    freq: 7277,
+    raw: "WOULD-BE",
+    word: "WOULDBE",
+  },
+  {
+    freq: 7278,
+    raw: "BAPTIST",
+  },
+  {
+    freq: 7281,
+    raw: "PLATTER",
+  },
+  {
+    freq: 7287,
+    raw: "ALLERGY",
+  },
+  {
+    freq: 7291,
+    raw: "EXTRACT",
+  },
+  {
+    freq: 7302,
+    raw: "RETIREE",
+  },
+  {
+    freq: 7306,
+    raw: "FREEZER",
+  },
+  {
+    freq: 7312,
+    raw: "VOUCHER",
+  },
+  {
+    freq: 7321,
+    raw: "FILLING",
+  },
+  {
+    freq: 7326,
+    raw: "ORCHARD",
+  },
+  {
+    freq: 7331,
+    raw: "AUDITOR",
+  },
+  {
+    freq: 7344,
+    raw: "UNIFIED",
+  },
+  {
+    freq: 7346,
+    raw: "TURBINE",
+  },
+  {
+    freq: 7349,
+    raw: "SHINING",
+  },
+  {
+    freq: 7350,
+    raw: "MANKIND",
+  },
+  {
+    freq: 7352,
+    raw: "SERBIAN",
+  },
+  {
+    freq: 7354,
+    raw: "REVERSE",
+  },
+  {
+    freq: 7355,
+    raw: "BAGGAGE",
+  },
+  {
+    freq: 7367,
+    raw: "SETBACK",
+  },
+  {
+    freq: 7373,
+    raw: "MANDATE",
+  },
+  {
+    freq: 7379,
+    raw: "CRUSADE",
+  },
+  {
+    freq: 7382,
+    raw: "SUNRISE",
+  },
+  {
+    freq: 7388,
+    raw: "PUZZLED",
+  },
+  {
+    freq: 7393,
+    raw: "DIAGRAM",
+  },
+  {
+    freq: 7399,
+    raw: "PANCAKE",
+  },
+  {
+    freq: 7401,
+    raw: "LUGGAGE",
+  },
+  {
+    freq: 7403,
+    raw: "FURNISH",
+  },
+  {
+    freq: 7413,
+    raw: "FOLIAGE",
+  },
+  {
+    freq: 7416,
+    raw: "UNLEASH",
+  },
+  {
+    freq: 7439,
+    raw: "MEDIATE",
+  },
+  {
+    freq: 7442,
+    raw: "SEIZURE",
+  },
+  {
+    freq: 7443,
+    raw: "SIGNING",
+  },
+  {
+    freq: 7454,
+    raw: "PALETTE",
+  },
+  {
+    freq: 7455,
+    raw: "SELFISH",
+  },
+  {
+    freq: 7457,
+    raw: "BUILT-IN",
+    word: "BUILTIN",
+  },
+  {
+    freq: 7464,
+    raw: "REVOLVE",
+  },
+  {
+    freq: 7469,
+    raw: "ARSENAL",
+  },
+  {
+    freq: 7474,
+    raw: "INHIBIT",
+  },
+  {
+    freq: 7475,
+    raw: "REVERSE",
+  },
+  {
+    freq: 7479,
+    raw: "ALUMNUS",
+  },
+  {
+    freq: 7481,
+    raw: "CHAOTIC",
+  },
+  {
+    freq: 7485,
+    raw: "DEFAULT",
+  },
+  {
+    freq: 7495,
+    raw: "COMRADE",
+  },
+  {
+    freq: 7497,
+    raw: "RAINBOW",
+  },
+  {
+    freq: 7502,
+    raw: "CAMPING",
+  },
+  {
+    freq: 7506,
+    raw: "FLATTEN",
+  },
+  {
+    freq: 7507,
+    raw: "GLOWING",
+  },
+  {
+    freq: 7515,
+    raw: "FRANTIC",
+  },
+  {
+    freq: 7524,
+    raw: "RECLAIM",
+  },
+  {
+    freq: 7526,
+    raw: "CATCHER",
+  },
+  {
+    freq: 7530,
+    raw: "FERTILE",
+  },
+  {
+    freq: 7531,
+    raw: "EMBRACE",
+  },
+  {
+    freq: 7537,
+    raw: "DISGUST",
+  },
+  {
+    freq: 7539,
+    raw: "EXTREME",
+  },
+  {
+    freq: 7543,
+    raw: "EAGERLY",
+  },
+  {
+    freq: 7544,
+    raw: "MEXICAN",
+  },
+  {
+    freq: 7546,
+    raw: "RANCHER",
+  },
+  {
+    freq: 7552,
+    raw: "CAPSULE",
+  },
+  {
+    freq: 7560,
+    raw: "UPRIGHT",
+  },
+  {
+    freq: 7562,
+    raw: "ABOLISH",
+  },
+  {
+    freq: 7574,
+    raw: "HANDS-ON",
+    word: "HANDSON",
+  },
+  {
+    freq: 7587,
+    raw: "SITTING",
+  },
+  {
+    freq: 7589,
+    raw: "PROPHET",
+  },
+  {
+    freq: 7602,
+    raw: "PERSONA",
+  },
+  {
+    freq: 7605,
+    raw: "PREVIEW",
+  },
+  {
+    freq: 7606,
+    raw: "ENLARGE",
+  },
+  {
+    freq: 7615,
+    raw: "COLONEL",
+  },
+  {
+    freq: 7622,
+    raw: "CRUISER",
+  },
+  {
+    freq: 7633,
+    raw: "CAPTURE",
+  },
+  {
+    freq: 7656,
+    raw: "RESIDUE",
+  },
+  {
+    freq: 7658,
+    raw: "SHORTEN",
+  },
+  {
+    freq: 7665,
+    raw: "EMPATHY",
+  },
+  {
+    freq: 7668,
+    raw: "COLLIDE",
+  },
+  {
+    freq: 7673,
+    raw: "MASTERY",
+  },
+  {
+    freq: 7678,
+    raw: "ONESELF",
+  },
+  {
+    freq: 7679,
+    raw: "DUBIOUS",
+  },
+  {
+    freq: 7690,
+    raw: "ECLIPSE",
+  },
+  {
+    freq: 7693,
+    raw: "LOADING",
+  },
+  {
+    freq: 7695,
+    raw: "FORESEE",
+  },
+  {
+    freq: 7697,
+    raw: "PREMIER",
+  },
+  {
+    freq: 7699,
+    raw: "BRACKET",
+  },
+  {
+    freq: 7706,
+    raw: "POULTRY",
+  },
+  {
+    freq: 7709,
+    raw: "REWRITE",
+  },
+  {
+    freq: 7712,
+    raw: "RIGHTLY",
+  },
+  {
+    freq: 7715,
+    raw: "CRACKER",
+  },
+  {
+    freq: 7728,
+    raw: "AMATEUR",
+  },
+  {
+    freq: 7734,
+    raw: "RAILING",
+  },
+  {
+    freq: 7754,
+    raw: "BREAKUP",
+  },
+  {
+    freq: 7755,
+    raw: "BOILING",
+  },
+  {
+    freq: 7759,
+    raw: "LINKAGE",
+  },
+  {
+    freq: 7762,
+    raw: "PLUMMET",
+  },
+  {
+    freq: 7779,
+    raw: "WARTIME",
+  },
+  {
+    freq: 7782,
+    raw: "REFINED",
+  },
+  {
+    freq: 7789,
+    raw: "LITERAL",
+  },
+  {
+    freq: 7794,
+    raw: "DISCERN",
+  },
+  {
+    freq: 7799,
+    raw: "SOLICIT",
+  },
+  {
+    freq: 7807,
+    raw: "STAGGER",
+  },
+  {
+    freq: 7811,
+    raw: "CONJURE",
+  },
+  {
+    freq: 7814,
+    raw: "PERFECT",
+  },
+  {
+    freq: 7818,
+    raw: "TRAINED",
+  },
+  {
+    freq: 7828,
+    raw: "ORDERLY",
+  },
+  {
+    freq: 7833,
+    raw: "BUILDUP",
+  },
+  {
+    freq: 7843,
+    raw: "NEWBORN",
+  },
+  {
+    freq: 7852,
+    raw: "COUNSEL",
+  },
+  {
+    freq: 7859,
+    raw: "INITIAL",
+  },
+  {
+    freq: 7866,
+    raw: "AUTOPSY",
+  },
+  {
+    freq: 7873,
+    raw: "SHUFFLE",
+  },
+  {
+    freq: 7874,
+    raw: "RETHINK",
+  },
+  {
+    freq: 7879,
+    raw: "KURDISH",
+  },
+  {
+    freq: 7881,
+    raw: "URANIUM",
+  },
+  {
+    freq: 7891,
+    raw: "CERAMIC",
+  },
+  {
+    freq: 7900,
+    raw: "CONVENE",
+  },
+  {
+    freq: 7901,
+    raw: "ROASTED",
+  },
+  {
+    freq: 7903,
+    raw: "WRINKLE",
+  },
+  {
+    freq: 7904,
+    raw: "PSYCHIC",
+  },
+  {
+    freq: 7905,
+    raw: "AMONGST",
+  },
+  {
+    freq: 7908,
+    raw: "COMPUTE",
+  },
+  {
+    freq: 7922,
+    raw: "ASPIRIN",
+  },
+  {
+    freq: 7923,
+    raw: "REBOUND",
+  },
+  {
+    freq: 7933,
+    raw: "ONSTAGE",
+  },
+  {
+    freq: 7939,
+    raw: "DISPUTE",
+  },
+  {
+    freq: 7943,
+    raw: "IDEALLY",
+  },
+  {
+    freq: 7950,
+    raw: "HELPING",
+  },
+  {
+    freq: 7954,
+    raw: "CHANNEL",
+  },
+  {
+    freq: 7957,
+    raw: "LECTURE",
+  },
+  {
+    freq: 7961,
+    raw: "GLACIER",
+  },
+  {
+    freq: 7963,
+    raw: "POLLING",
+  },
+  {
+    freq: 7975,
+    raw: "SUCCUMB",
+  },
+  {
+    freq: 7976,
+    raw: "SEVENTY",
+  },
+  {
+    freq: 7980,
+    raw: "STATURE",
+  },
+  {
+    freq: 7982,
+    raw: "FOREARM",
+  },
+  {
+    freq: 7987,
+    raw: "GRENADE",
+  },
+  {
+    freq: 7988,
+    raw: "SHUDDER",
+  },
+  {
+    freq: 7990,
+    raw: "STELLAR",
+  },
+  {
+    freq: 7997,
+    raw: "REGIMEN",
+  },
+  {
+    freq: 7998,
+    raw: "GODDAMN",
+  },
+  {
+    freq: 8005,
+    raw: "CONTOUR",
+  },
+  {
+    freq: 8014,
+    raw: "MERCURY",
+  },
+  {
+    freq: 8017,
+    raw: "CONFIDE",
+  },
+  {
+    freq: 8022,
+    raw: "REVISIT",
+  },
+  {
+    freq: 8026,
+    raw: "WORKING",
+  },
+  {
+    freq: 8031,
+    raw: "CASTING",
+  },
+  {
+    freq: 8033,
+    raw: "REVISED",
+  },
+  {
+    freq: 8035,
+    raw: "BOWLING",
+  },
+  {
+    freq: 8039,
+    raw: "VILLAIN",
+  },
+  {
+    freq: 8040,
+    raw: "DURABLE",
+  },
+  {
+    freq: 8049,
+    raw: "COMPASS",
+  },
+  {
+    freq: 8052,
+    raw: "NOVELTY",
+  },
+  {
+    freq: 8056,
+    raw: "MARTIAL",
+  },
+  {
+    freq: 8060,
+    raw: "DROPOUT",
+  },
+  {
+    freq: 8103,
+    raw: "TURNOUT",
+  },
+  {
+    freq: 8105,
+    raw: "TWISTED",
+  },
+  {
+    freq: 8117,
+    raw: "CARDIAC",
+  },
+  {
+    freq: 8133,
+    raw: "FLUTTER",
+  },
+  {
+    freq: 8136,
+    raw: "FLICKER",
+  },
+  {
+    freq: 8142,
+    raw: "BLESSED",
+  },
+  {
+    freq: 8160,
+    raw: "BISCUIT",
+  },
+  {
+    freq: 8162,
+    raw: "ANGRILY",
+  },
+  {
+    freq: 8183,
+    raw: "THUNDER",
+  },
+  {
+    freq: 8187,
+    raw: "WITHOUT",
+  },
+  {
+    freq: 8190,
+    raw: "IMMERSE",
+  },
+  {
+    freq: 8196,
+    raw: "PREHEAT",
+  },
+  {
+    freq: 8213,
+    raw: "DRASTIC",
+  },
+  {
+    freq: 8221,
+    raw: "STRIPED",
+  },
+  {
+    freq: 8233,
+    raw: "DOLPHIN",
+  },
+  {
+    freq: 8239,
+    raw: "LONGING",
+  },
+  {
+    freq: 8240,
+    raw: "BOOSTER",
+  },
+  {
+    freq: 8241,
+    raw: "INDOORS",
+  },
+  {
+    freq: 8247,
+    raw: "SWIMMER",
+  },
+  {
+    freq: 8248,
+    raw: "SCENERY",
+  },
+  {
+    freq: 8250,
+    raw: "PIVOTAL",
+  },
+  {
+    freq: 8256,
+    raw: "ANATOMY",
+  },
+  {
+    freq: 8258,
+    raw: "DISSENT",
+  },
+  {
+    freq: 8263,
+    raw: "DRUNKEN",
+  },
+  {
+    freq: 8271,
+    raw: "LUCKILY",
+  },
+  {
+    freq: 8277,
+    raw: "TRIVIAL",
+  },
+  {
+    freq: 8281,
+    raw: "SCANNER",
+  },
+  {
+    freq: 8282,
+    raw: "PRICING",
+  },
+  {
+    freq: 8284,
+    raw: "EXPANSE",
+  },
+  {
+    freq: 8293,
+    raw: "GOURMET",
+  },
+  {
+    freq: 8297,
+    raw: "CYCLING",
+  },
+  {
+    freq: 8298,
+    raw: "START-UP",
+    word: "STARTUP",
+  },
+  {
+    freq: 8301,
+    raw: "AQUATIC",
+  },
+  {
+    freq: 8304,
+    raw: "LIGHTER",
+  },
+  {
+    freq: 8306,
+    raw: "LIAISON",
+  },
+  {
+    freq: 8317,
+    raw: "TROOPER",
+  },
+  {
+    freq: 8321,
+    raw: "CLUSTER",
+  },
+  {
+    freq: 8322,
+    raw: "CARVING",
+  },
+  {
+    freq: 8331,
+    raw: "ARMORED",
+  },
+  {
+    freq: 8338,
+    raw: "PLASTER",
+  },
+  {
+    freq: 8341,
+    raw: "SHELTER",
+  },
+  {
+    freq: 8349,
+    raw: "PROSPER",
+  },
+  {
+    freq: 8350,
+    raw: "PIANIST",
+  },
+  {
+    freq: 8362,
+    raw: "DIVIDED",
+  },
+  {
+    freq: 8376,
+    raw: "UPSCALE",
+  },
+  {
+    freq: 8394,
+    raw: "BACKING",
+  },
+  {
+    freq: 8395,
+    raw: "PLAYING",
+  },
+  {
+    freq: 8397,
+    raw: "SHARPEN",
+  },
+  {
+    freq: 8399,
+    raw: "CROOKED",
+  },
+  {
+    freq: 8401,
+    raw: "ASPHALT",
+  },
+  {
+    freq: 8411,
+    raw: "WEEKDAY",
+  },
+  {
+    freq: 8421,
+    raw: "CHIMNEY",
+  },
+  {
+    freq: 8422,
+    raw: "LATERAL",
+  },
+  {
+    freq: 8435,
+    raw: "AWFULLY",
+  },
+  {
+    freq: 8436,
+    raw: "CRUELTY",
+  },
+  {
+    freq: 8437,
+    raw: "LANTERN",
+  },
+  {
+    freq: 8438,
+    raw: "PLATEAU",
+  },
+  {
+    freq: 8442,
+    raw: "HEROINE",
+  },
+  {
+    freq: 8454,
+    raw: "GRAPPLE",
+  },
+  {
+    freq: 8467,
+    raw: "GRAMMAR",
+  },
+  {
+    freq: 8469,
+    raw: "RAILWAY",
+  },
+  {
+    freq: 8479,
+    raw: "OMINOUS",
+  },
+  {
+    freq: 8482,
+    raw: "CRICKET",
+  },
+  {
+    freq: 8488,
+    raw: "DECEIVE",
+  },
+  {
+    freq: 8489,
+    raw: "COATING",
+  },
+  {
+    freq: 8491,
+    raw: "ETHANOL",
+  },
+  {
+    freq: 8505,
+    raw: "PRESENT",
+  },
+  {
+    freq: 8511,
+    raw: "ANGUISH",
+  },
+  {
+    freq: 8521,
+    raw: "BUTCHER",
+  },
+  {
+    freq: 8540,
+    raw: "DEGRADE",
+  },
+  {
+    freq: 8542,
+    raw: "DRUMMER",
+  },
+  {
+    freq: 8544,
+    raw: "LOW-COST",
+    word: "LOWCOST",
+  },
+  {
+    freq: 8545,
+    raw: "PLAYFUL",
+  },
+  {
+    freq: 8554,
+    raw: "DIPLOMA",
+  },
+  {
+    freq: 8560,
+    raw: "ENCLOSE",
+  },
+  {
+    freq: 8575,
+    raw: "CRUSHED",
+  },
+  {
+    freq: 8578,
+    raw: "HAIRCUT",
+  },
+  {
+    freq: 8587,
+    raw: "THICKEN",
+  },
+  {
+    freq: 8591,
+    raw: "SENSORY",
+  },
+  {
+    freq: 8598,
+    raw: "RADIATE",
+  },
+  {
+    freq: 8599,
+    raw: "WHEREBY",
+  },
+  {
+    freq: 8601,
+    raw: "DRESSER",
+  },
+  {
+    freq: 8612,
+    raw: "CONTEST",
+  },
+  {
+    freq: 8616,
+    raw: "BOYCOTT",
+  },
+  {
+    freq: 8618,
+    raw: "REFEREE",
+  },
+  {
+    freq: 8620,
+    raw: "PUDDING",
+  },
+  {
+    freq: 8636,
+    raw: "DELIGHT",
+  },
+  {
+    freq: 8639,
+    raw: "BARGAIN",
+  },
+  {
+    freq: 8644,
+    raw: "DAMAGED",
+  },
+  {
+    freq: 8645,
+    raw: "RESOLVE",
+  },
+  {
+    freq: 8659,
+    raw: "EXHAUST",
+  },
+  {
+    freq: 8662,
+    raw: "GRUMBLE",
+  },
+  {
+    freq: 8670,
+    raw: "FREIGHT",
+  },
+  {
+    freq: 8680,
+    raw: "PRIVATE",
+  },
+  {
+    freq: 8686,
+    raw: "LIGHTEN",
+  },
+  {
+    freq: 8692,
+    raw: "ROOFTOP",
+  },
+  {
+    freq: 8693,
+    raw: "SIZABLE",
+  },
+  {
+    freq: 8701,
+    raw: "CAVALRY",
+  },
+  {
+    freq: 8703,
+    raw: "CATFISH",
+  },
+  {
+    freq: 8705,
+    raw: "OUTWARD",
+  },
+  {
+    freq: 8717,
+    raw: "MUSICAL",
+  },
+  {
+    freq: 8718,
+    raw: "SEATING",
+  },
+  {
+    freq: 8726,
+    raw: "CLIMBER",
+  },
+  {
+    freq: 8729,
+    raw: "PACKAGE",
+  },
+  {
+    freq: 8744,
+    raw: "STUFFED",
+  },
+  {
+    freq: 8750,
+    raw: "MONARCH",
+  },
+  {
+    freq: 8758,
+    raw: "GROWN-UP",
+    word: "GROWNUP",
+  },
+  {
+    freq: 8760,
+    raw: "LENDING",
+  },
+  {
+    freq: 8761,
+    raw: "NOSTRIL",
+  },
+  {
+    freq: 8766,
+    raw: "ANNOYED",
+  },
+  {
+    freq: 8772,
+    raw: "CHERISH",
+  },
+  {
+    freq: 8773,
+    raw: "UNRAVEL",
+  },
+  {
+    freq: 8780,
+    raw: "SMUGGLE",
+  },
+  {
+    freq: 8782,
+    raw: "MISLEAD",
+  },
+  {
+    freq: 8783,
+    raw: "BOREDOM",
+  },
+  {
+    freq: 8791,
+    raw: "PREMIUM",
+  },
+  {
+    freq: 8793,
+    raw: "EMANATE",
+  },
+  {
+    freq: 8807,
+    raw: "BAPTIST",
+  },
+  {
+    freq: 8813,
+    raw: "GLIMPSE",
+  },
+  {
+    freq: 8817,
+    raw: "RAMPANT",
+  },
+  {
+    freq: 8825,
+    raw: "STYLISH",
+  },
+  {
+    freq: 8829,
+    raw: "TABLOID",
+  },
+  {
+    freq: 8836,
+    raw: "AILMENT",
+  },
+  {
+    freq: 8837,
+    raw: "GUNFIRE",
+  },
+  {
+    freq: 8841,
+    raw: "REUNITE",
+  },
+  {
+    freq: 8843,
+    raw: "UPGRADE",
+  },
+  {
+    freq: 8880,
+    raw: "ILLICIT",
+  },
+  {
+    freq: 8886,
+    raw: "AEROBIC",
+  },
+  {
+    freq: 8887,
+    raw: "SKEPTIC",
+  },
+  {
+    freq: 8895,
+    raw: "SLIPPER",
+  },
+  {
+    freq: 8896,
+    raw: "SAME-SEX",
+    word: "SAMESEX",
+  },
+  {
+    freq: 8903,
+    raw: "HANDGUN",
+  },
+  {
+    freq: 8911,
+    raw: "SUBSIDE",
+  },
+  {
+    freq: 8915,
+    raw: "BASEMAN",
+  },
+  {
+    freq: 8929,
+    raw: "BILLING",
+  },
+  {
+    freq: 8939,
+    raw: "MUNDANE",
+  },
+  {
+    freq: 8942,
+    raw: "PRUDENT",
+  },
+  {
+    freq: 8956,
+    raw: "NIGHTLY",
+  },
+  {
+    freq: 8961,
+    raw: "POPCORN",
+  },
+  {
+    freq: 8962,
+    raw: "TALIBAN",
+  },
+  {
+    freq: 8980,
+    raw: "STUNNED",
+  },
+  {
+    freq: 8987,
+    raw: "TRICKLE",
+  },
+  {
+    freq: 8989,
+    raw: "INFLATE",
+  },
+  {
+    freq: 8994,
+    raw: "OVERLAP",
+  },
+  {
+    freq: 8997,
+    raw: "HANDLER",
+  },
+  {
+    freq: 9001,
+    raw: "CULPRIT",
+  },
+  {
+    freq: 9002,
+    raw: "IN-DEPTH",
+    word: "INDEPTH",
+  },
+  {
+    freq: 9006,
+    raw: "ANOMALY",
+  },
+  {
+    freq: 9007,
+    raw: "VARIANT",
+  },
+  {
+    freq: 9013,
+    raw: "WATCHER",
+  },
+  {
+    freq: 9015,
+    raw: "KINSHIP",
+  },
+  {
+    freq: 9019,
+    raw: "BLENDER",
+  },
+  {
+    freq: 9029,
+    raw: "JOINTLY",
+  },
+  {
+    freq: 9032,
+    raw: "MACHINE",
+  },
+  {
+    freq: 9036,
+    raw: "SALVAGE",
+  },
+  {
+    freq: 9037,
+    raw: "BEDSIDE",
+  },
+  {
+    freq: 9056,
+    raw: "SOYBEAN",
+  },
+  {
+    freq: 9062,
+    raw: "PLYWOOD",
+  },
+  {
+    freq: 9064,
+    raw: "TRUMPET",
+  },
+  {
+    freq: 9069,
+    raw: "HIGH-END",
+    word: "HIGHEND",
+  },
+  {
+    freq: 9074,
+    raw: "APPAREL",
+  },
+  {
+    freq: 9079,
+    raw: "GUNSHOT",
+  },
+  {
+    freq: 9082,
+    raw: "FUCKING",
+  },
+  {
+    freq: 9087,
+    raw: "WASHING",
+  },
+  {
+    freq: 9102,
+    raw: "FACTUAL",
+  },
+  {
+    freq: 9107,
+    raw: "WAITING",
+  },
+  {
+    freq: 9111,
+    raw: "MIND-SET",
+    word: "MINDSET",
+  },
+  {
+    freq: 9115,
+    raw: "PAJAMAS",
+  },
+  {
+    freq: 9133,
+    raw: "CALLING",
+  },
+  {
+    freq: 9135,
+    raw: "MAILBOX",
+  },
+  {
+    freq: 9136,
+    raw: "VANTAGE",
+  },
+  {
+    freq: 9143,
+    raw: "SHUTTER",
+  },
+  {
+    freq: 9148,
+    raw: "DESPISE",
+  },
+  {
+    freq: 9157,
+    raw: "EMULATE",
+  },
+  {
+    freq: 9159,
+    raw: "LOGGING",
+  },
+  {
+    freq: 9160,
+    raw: "BLADDER",
+  },
+  {
+    freq: 9161,
+    raw: "REFRAIN",
+  },
+  {
+    freq: 9165,
+    raw: "KNUCKLE",
+  },
+  {
+    freq: 9167,
+    raw: "POINTED",
+  },
+  {
+    freq: 9169,
+    raw: "PILGRIM",
+  },
+  {
+    freq: 9173,
+    raw: "CURTAIL",
+  },
+  {
+    freq: 9174,
+    raw: "AMUSING",
+  },
+  {
+    freq: 9179,
+    raw: "LINEAGE",
+  },
+  {
+    freq: 9180,
+    raw: "BOOMING",
+  },
+  {
+    freq: 9191,
+    raw: "BANQUET",
+  },
+  {
+    freq: 9205,
+    raw: "FIREMAN",
+  },
+  {
+    freq: 9224,
+    raw: "BOUQUET",
+  },
+  {
+    freq: 9225,
+    raw: "PIONEER",
+  },
+  {
+    freq: 9226,
+    raw: "ANTHRAX",
+  },
+  {
+    freq: 9233,
+    raw: "ENCLAVE",
+  },
+  {
+    freq: 9234,
+    raw: "LIFTING",
+  },
+  {
+    freq: 9237,
+    raw: "LEFTIST",
+  },
+  {
+    freq: 9238,
+    raw: "FURNACE",
+  },
+  {
+    freq: 9239,
+    raw: "PIGMENT",
+  },
+  {
+    freq: 9249,
+    raw: "AUGMENT",
+  },
+  {
+    freq: 9253,
+    raw: "CAPTION",
+  },
+  {
+    freq: 9254,
+    raw: "BINDING",
+  },
+  {
+    freq: 9258,
+    raw: "RAISING",
+  },
+  {
+    freq: 9264,
+    raw: "INSULIN",
+  },
+  {
+    freq: 9269,
+    raw: "FALLOUT",
+  },
+  {
+    freq: 9273,
+    raw: "MALARIA",
+  },
+  {
+    freq: 9278,
+    raw: "ONE-YEAR",
+    word: "ONEYEAR",
+  },
+  {
+    freq: 9289,
+    raw: "CRAMPED",
+  },
+  {
+    freq: 9298,
+    raw: "CONSOLE",
+  },
+  {
+    freq: 9326,
+    raw: "CHEMIST",
+  },
+  {
+    freq: 9343,
+    raw: "SLIDING",
+  },
+  {
+    freq: 9349,
+    raw: "POLLUTE",
+  },
+  {
+    freq: 9352,
+    raw: "MARTIAN",
+  },
+  {
+    freq: 9355,
+    raw: "OUTPOST",
+  },
+  {
+    freq: 9359,
+    raw: "COVERED",
+  },
+  {
+    freq: 9364,
+    raw: "BEDTIME",
+  },
+  {
+    freq: 9366,
+    raw: "HAITIAN",
+  },
+  {
+    freq: 9367,
+    raw: "CAPTIVE",
+  },
+  {
+    freq: 9371,
+    raw: "IRANIAN",
+  },
+  {
+    freq: 9372,
+    raw: "TEXTUAL",
+  },
+  {
+    freq: 9384,
+    raw: "REPRINT",
+  },
+  {
+    freq: 9406,
+    raw: "LINEMAN",
+  },
+  {
+    freq: 9408,
+    raw: "REPLICA",
+  },
+  {
+    freq: 9425,
+    raw: "BRIGADE",
+  },
+  {
+    freq: 9437,
+    raw: "SUFFICE",
+  },
+  {
+    freq: 9440,
+    raw: "ARTISAN",
+  },
+  {
+    freq: 9452,
+    raw: "CRACKED",
+  },
+  {
+    freq: 9464,
+    raw: "HASTILY",
+  },
+  {
+    freq: 9465,
+    raw: "EDITING",
+  },
+  {
+    freq: 9470,
+    raw: "CONSOLE",
+  },
+  {
+    freq: 9474,
+    raw: "MASSAGE",
+  },
+  {
+    freq: 9490,
+    raw: "TYRANNY",
+  },
+  {
+    freq: 9492,
+    raw: "BREADTH",
+  },
+  {
+    freq: 9493,
+    raw: "VIVIDLY",
+  },
+  {
+    freq: 9498,
+    raw: "STERILE",
+  },
+  {
+    freq: 9501,
+    raw: "EXTINCT",
+  },
+  {
+    freq: 9504,
+    raw: "IMPETUS",
+  },
+  {
+    freq: 9510,
+    raw: "ONE-HALF",
+    word: "ONEHALF",
+  },
+  {
+    freq: 9512,
+    raw: "WEATHER",
+  },
+  {
+    freq: 9514,
+    raw: "GORILLA",
+  },
+  {
+    freq: 9518,
+    raw: "ASSHOLE",
+  },
+  {
+    freq: 9519,
+    raw: "CLONING",
+  },
+  {
+    freq: 9522,
+    raw: "HANGING",
+  },
+  {
+    freq: 9529,
+    raw: "RESHAPE",
+  },
+  {
+    freq: 9533,
+    raw: "ACCUSED",
+  },
+  {
+    freq: 9542,
+    raw: "PLATOON",
+  },
+  {
+    freq: 9549,
+    raw: "PLACEBO",
+  },
+  {
+    freq: 9551,
+    raw: "CRIPPLE",
+  },
+  {
+    freq: 9556,
+    raw: "FOOTING",
+  },
+  {
+    freq: 9558,
+    raw: "MAN-MADE",
+    word: "MANMADE",
+  },
+  {
+    freq: 9559,
+    raw: "SALIENT",
+  },
+  {
+    freq: 9561,
+    raw: "CARCASS",
+  },
+  {
+    freq: 9565,
+    raw: "SOLVING",
+  },
+  {
+    freq: 9573,
+    raw: "ECSTASY",
+  },
+  {
+    freq: 9579,
+    raw: "BANDAGE",
+  },
+  {
+    freq: 9581,
+    raw: "FAIRWAY",
+  },
+  {
+    freq: 9601,
+    raw: "PROLONG",
+  },
+  {
+    freq: 9623,
+    raw: "GARNISH",
+  },
+  {
+    freq: 9631,
+    raw: "TANGLED",
+  },
+  {
+    freq: 9668,
+    raw: "SKYLINE",
+  },
+  {
+    freq: 9679,
+    raw: "PAGEANT",
+  },
+  {
+    freq: 9723,
+    raw: "MAILING",
+  },
+  {
+    freq: 9726,
+    raw: "MAGNIFY",
+  },
+  {
+    freq: 9728,
+    raw: "ADMIRER",
+  },
+  {
+    freq: 9743,
+    raw: "PLAINLY",
+  },
+  {
+    freq: 9749,
+    raw: "DEFLECT",
+  },
+  {
+    freq: 9753,
+    raw: "AMPLIFY",
+  },
+  {
+    freq: 9762,
+    raw: "HORRIFY",
+  },
+  {
+    freq: 9783,
+    raw: "DEFIANT",
+  },
+  {
+    freq: 9784,
+    raw: "SWOLLEN",
+  },
+  {
+    freq: 9793,
+    raw: "AFFLICT",
+  },
+  {
+    freq: 9805,
+    raw: "SOARING",
+  },
+  {
+    freq: 9806,
+    raw: "CYCLIST",
+  },
+  {
+    freq: 9807,
+    raw: "MANAGED",
+  },
+  {
+    freq: 9814,
+    raw: "DISDAIN",
+  },
+  {
+    freq: 9818,
+    raw: "CONVERT",
+  },
+  {
+    freq: 9827,
+    raw: "VIBRATE",
+  },
+  {
+    freq: 9832,
+    raw: "MINIVAN",
+  },
+  {
+    freq: 9840,
+    raw: "COASTER",
+  },
+  {
+    freq: 9842,
+    raw: "FAINTLY",
+  },
+  {
+    freq: 9848,
+    raw: "AROUSAL",
+  },
+  {
+    freq: 9850,
+    raw: "MILEAGE",
+  },
+  {
+    freq: 9851,
+    raw: "BROWSER",
+  },
+  {
+    freq: 9854,
+    raw: "CLOSE-UP",
+    word: "CLOSEUP",
+  },
+  {
+    freq: 9858,
+    raw: "STAINED",
+  },
+  {
+    freq: 9871,
+    raw: "BEARDED",
+  },
+  {
+    freq: 9873,
+    raw: "SHADOWY",
+  },
+  {
+    freq: 9874,
+    raw: "ABDOMEN",
+  },
+  {
+    freq: 9895,
+    raw: "RADIANT",
+  },
+  {
+    freq: 9896,
+    raw: "ORBITAL",
+  },
+  {
+    freq: 9907,
+    raw: "SILICON",
+  },
+  {
+    freq: 9910,
+    raw: "BONDING",
+  },
+  {
+    freq: 9916,
+    raw: "IMMORAL",
+  },
+  {
+    freq: 9923,
+    raw: "STIFFEN",
+  },
+  {
+    freq: 9924,
+    raw: "VOLTAGE",
+  },
+  {
+    freq: 9930,
+    raw: "HEADING",
+  },
+  {
+    freq: 9931,
+    raw: "BATHTUB",
+  },
+  {
+    freq: 9933,
+    raw: "HARNESS",
+  },
+  {
+    freq: 9938,
+    raw: "DRIZZLE",
+  },
+  {
+    freq: 9939,
+    raw: "WALKWAY",
+  },
+  {
+    freq: 9945,
+    raw: "VISIBLY",
+  },
+  {
+    freq: 9954,
+    raw: "ENSUING",
+  },
+  {
+    freq: 9956,
+    raw: "DIOCESE",
+  },
+  {
+    freq: 9961,
+    raw: "BIDDING",
+  },
+  {
+    freq: 9963,
+    raw: "OBSCENE",
+  },
+  {
+    freq: 9969,
+    raw: "INVADER",
+  },
+  {
+    freq: 10003,
+    raw: "WARHEAD",
+  },
+  {
+    freq: 10028,
+    raw: "HARNESS",
+  },
+  {
+    freq: 10049,
+    raw: "INSOFAR",
+  },
+  {
+    freq: 10090,
+    raw: "ROUNDED",
+  },
+  {
+    freq: 10095,
+    raw: "FAVORED",
+  },
+  {
+    freq: 10105,
+    raw: "ALTERED",
+  },
+  {
+    freq: 10107,
+    raw: "FLATTER",
+  },
+  {
+    freq: 10112,
+    raw: "MARKING",
+  },
+  {
+    freq: 10119,
+    raw: "REALIST",
+  },
+  {
+    freq: 10123,
+    raw: "SHOWING",
+  },
+  {
+    freq: 10129,
+    raw: "RUNAWAY",
+  },
+  {
+    freq: 10131,
+    raw: "COEXIST",
+  },
+  {
+    freq: 10132,
+    raw: "ANTI-WAR",
+    word: "ANTIWAR",
+  },
+  {
+    freq: 10138,
+    raw: "TRAITOR",
+  },
+  {
+    freq: 10141,
+    raw: "ESPOUSE",
+  },
+  {
+    freq: 10145,
+    raw: "CHOPPER",
+  },
+  {
+    freq: 10150,
+    raw: "OVERLAP",
+  },
+  {
+    freq: 10163,
+    raw: "ICEBERG",
+  },
+  {
+    freq: 10167,
+    raw: "MIDTOWN",
+  },
+  {
+    freq: 10185,
+    raw: "FLOWING",
+  },
+  {
+    freq: 10195,
+    raw: "STYLING",
+  },
+  {
+    freq: 10196,
+    raw: "GATEWAY",
+  },
+  {
+    freq: 10204,
+    raw: "SAILING",
+  },
+  {
+    freq: 10209,
+    raw: "IMPLANT",
+  },
+  {
+    freq: 10222,
+    raw: "SPOTTED",
+  },
+  {
+    freq: 10237,
+    raw: "ANGULAR",
+  },
+  {
+    freq: 10247,
+    raw: "RINGING",
+  },
+  {
+    freq: 10252,
+    raw: "MARXIST",
+  },
+  {
+    freq: 10254,
+    raw: "TWO-HOUR",
+    word: "TWOHOUR",
+  },
+  {
+    freq: 10261,
+    raw: "SHAMPOO",
+  },
+  {
+    freq: 10265,
+    raw: "SENSUAL",
+  },
+  {
+    freq: 10266,
+    raw: "FITTING",
+  },
+  {
+    freq: 10283,
+    raw: "WINDING",
+  },
+  {
+    freq: 10288,
+    raw: "IN-HOUSE",
+    word: "INHOUSE",
+  },
+  {
+    freq: 10294,
+    raw: "ROBOTIC",
+  },
+  {
+    freq: 10296,
+    raw: "FESTIVE",
+  },
+  {
+    freq: 10305,
+    raw: "MICROBE",
+  },
+  {
+    freq: 10307,
+    raw: "ENGAGED",
+  },
+  {
+    freq: 10317,
+    raw: "FOLDING",
+  },
+  {
+    freq: 10330,
+    raw: "PROFILE",
+  },
+  {
+    freq: 10332,
+    raw: "RE-ELECT",
+    word: "REELECT",
+  },
+  {
+    freq: 10336,
+    raw: "NEUTRON",
+  },
+  {
+    freq: 10343,
+    raw: "INTRUDE",
+  },
+  {
+    freq: 10345,
+    raw: "MAPPING",
+  },
+  {
+    freq: 10359,
+    raw: "EARTHLY",
+  },
+  {
+    freq: 10365,
+    raw: "UPRIGHT",
+  },
+  {
+    freq: 10375,
+    raw: "DEPLETE",
+  },
+  {
+    freq: 10376,
+    raw: "MARTINI",
+  },
+  {
+    freq: 10395,
+    raw: "CARAVAN",
+  },
+  {
+    freq: 10399,
+    raw: "GAMBLER",
+  },
+  {
+    freq: 10404,
+    raw: "BRITTLE",
+  },
+  {
+    freq: 10420,
+    raw: "DAYCARE",
+  },
+  {
+    freq: 10424,
+    raw: "NOURISH",
+  },
+  {
+    freq: 10436,
+    raw: "DRINKER",
+  },
+  {
+    freq: 10440,
+    raw: "BARRAGE",
+  },
+  {
+    freq: 10459,
+    raw: "BAILOUT",
+  },
+  {
+    freq: 10464,
+    raw: "VACANCY",
+  },
+  {
+    freq: 10465,
+    raw: "IMPRINT",
+  },
+  {
+    freq: 10475,
+    raw: "PACKING",
+  },
+  {
+    freq: 10480,
+    raw: "POLYMER",
+  },
+  {
+    freq: 10489,
+    raw: "APRICOT",
+  },
+  {
+    freq: 10493,
+    raw: "HERRING",
+  },
+  {
+    freq: 10497,
+    raw: "THIRSTY",
+  },
+  {
+    freq: 10506,
+    raw: "HOSPICE",
+  },
+  {
+    freq: 10510,
+    raw: "SCARLET",
+  },
+  {
+    freq: 10513,
+    raw: "HOSTESS",
+  },
+  {
+    freq: 10519,
+    raw: "TELLING",
+  },
+  {
+    freq: 10527,
+    raw: "PROFESS",
+  },
+  {
+    freq: 10542,
+    raw: "AUDIBLE",
+  },
+  {
+    freq: 10551,
+    raw: "YEAR-OLD",
+    word: "YEAROLD",
+  },
+  {
+    freq: 10565,
+    raw: "AVOCADO",
+  },
+  {
+    freq: 10567,
+    raw: "GETAWAY",
+  },
+  {
+    freq: 10571,
+    raw: "SUBLIME",
+  },
+  {
+    freq: 10572,
+    raw: "TRUSTED",
+  },
+  {
+    freq: 10585,
+    raw: "DECENCY",
+  },
+  {
+    freq: 10595,
+    raw: "BELGIAN",
+  },
+  {
+    freq: 10597,
+    raw: "CHATTER",
+  },
+  {
+    freq: 10606,
+    raw: "HANGING",
+  },
+  {
+    freq: 10609,
+    raw: "ENTRUST",
+  },
+  {
+    freq: 10613,
+    raw: "CUTBACK",
+  },
+  {
+    freq: 10627,
+    raw: "BIOMASS",
+  },
+  {
+    freq: 10635,
+    raw: "NARRATE",
+  },
+  {
+    freq: 10654,
+    raw: "GLISTEN",
+  },
+  {
+    freq: 10662,
+    raw: "MELTING",
+  },
+  {
+    freq: 10663,
+    raw: "EXCERPT",
+  },
+  {
+    freq: 10664,
+    raw: "TAKEOFF",
+  },
+  {
+    freq: 10668,
+    raw: "REMORSE",
+  },
+  {
+    freq: 10670,
+    raw: "CUBICLE",
+  },
+  {
+    freq: 10680,
+    raw: "LOOKOUT",
+  },
+  {
+    freq: 10693,
+    raw: "BATTING",
+  },
+  {
+    freq: 10699,
+    raw: "TEDIOUS",
+  },
+  {
+    freq: 10728,
+    raw: "KUWAITI",
+  },
+  {
+    freq: 10730,
+    raw: "REPTILE",
+  },
+  {
+    freq: 10732,
+    raw: "HALFWAY",
+  },
+  {
+    freq: 10737,
+    raw: "SURREAL",
+  },
+  {
+    freq: 10738,
+    raw: "HOLDING",
+  },
+  {
+    freq: 10740,
+    raw: "CLEANSE",
+  },
+  {
+    freq: 10742,
+    raw: "COMPACT",
+  },
+  {
+    freq: 10743,
+    raw: "ADOPTED",
+  },
+  {
+    freq: 10748,
+    raw: "COMMEND",
+  },
+  {
+    freq: 10749,
+    raw: "SURPLUS",
+  },
+  {
+    freq: 10752,
+    raw: "DYNASTY",
+  },
+  {
+    freq: 10754,
+    raw: "CORONER",
+  },
+  {
+    freq: 10756,
+    raw: "ECLIPSE",
+  },
+  {
+    freq: 10763,
+    raw: "AMNESTY",
+  },
+  {
+    freq: 10796,
+    raw: "STEWARD",
+  },
+  {
+    freq: 10803,
+    raw: "SPARKLE",
+  },
+  {
+    freq: 10806,
+    raw: "BIPOLAR",
+  },
+  {
+    freq: 10822,
+    raw: "COVER-UP",
+    word: "COVERUP",
+  },
+  {
+    freq: 10823,
+    raw: "BOOKLET",
+  },
+  {
+    freq: 10829,
+    raw: "FOCUSED",
+  },
+  {
+    freq: 10839,
+    raw: "ERRATIC",
+  },
+  {
+    freq: 10850,
+    raw: "SYRINGE",
+  },
+  {
+    freq: 10856,
+    raw: "POINTER",
+  },
+  {
+    freq: 10858,
+    raw: "ENVELOP",
+  },
+  {
+    freq: 10861,
+    raw: "SPECIAL",
+  },
+  {
+    freq: 10869,
+    raw: "SQUEEZE",
+  },
+  {
+    freq: 10877,
+    raw: "BREEDER",
+  },
+  {
+    freq: 10893,
+    raw: "ROADWAY",
+  },
+  {
+    freq: 10894,
+    raw: "WRAPPER",
+  },
+  {
+    freq: 10899,
+    raw: "UNEARTH",
+  },
+  {
+    freq: 10902,
+    raw: "CALIBER",
+  },
+  {
+    freq: 10910,
+    raw: "UPDATED",
+  },
+  {
+    freq: 10920,
+    raw: "FEEDING",
+  },
+  {
+    freq: 10922,
+    raw: "WORLDLY",
+  },
+  {
+    freq: 10931,
+    raw: "DIALECT",
+  },
+  {
+    freq: 10932,
+    raw: "VARSITY",
+  },
+  {
+    freq: 10938,
+    raw: "SHARING",
+  },
+  {
+    freq: 10944,
+    raw: "DWINDLE",
+  },
+  {
+    freq: 10948,
+    raw: "REJOICE",
+  },
+  {
+    freq: 10958,
+    raw: "UNEQUAL",
+  },
+  {
+    freq: 10967,
+    raw: "SLEEPER",
+  },
+  {
+    freq: 10995,
+    raw: "NOMINAL",
+  },
+  {
+    freq: 10998,
+    raw: "FRONTAL",
+  },
+  {
+    freq: 11000,
+    raw: "BLATANT",
+  },
+  {
+    freq: 11011,
+    raw: "FANATIC",
+  },
+  {
+    freq: 11012,
+    raw: "ROUTINE",
+  },
+  {
+    freq: 11016,
+    raw: "UPSTATE",
+  },
+  {
+    freq: 11029,
+    raw: "DWELLER",
+  },
+  {
+    freq: 11031,
+    raw: "HYGIENE",
+  },
+  {
+    freq: 11032,
+    raw: "MINDFUL",
+  },
+  {
+    freq: 11036,
+    raw: "MUSSELS",
+  },
+  {
+    freq: 11039,
+    raw: "DEBACLE",
+  },
+  {
+    freq: 11056,
+    raw: "LEARNED",
+  },
+  {
+    freq: 11062,
+    raw: "REGULAR",
+  },
+  {
+    freq: 11077,
+    raw: "FIELDER",
+  },
+  {
+    freq: 11080,
+    raw: "GRIMACE",
+  },
+  {
+    freq: 11107,
+    raw: "BOTTLED",
+  },
+  {
+    freq: 11119,
+    raw: "CHUCKLE",
+  },
+  {
+    freq: 11124,
+    raw: "ASCRIBE",
+  },
+  {
+    freq: 11127,
+    raw: "UNCANNY",
+  },
+  {
+    freq: 11140,
+    raw: "SMOTHER",
+  },
+  {
+    freq: 11147,
+    raw: "MARSHAL",
+  },
+  {
+    freq: 11149,
+    raw: "TRAINEE",
+  },
+  {
+    freq: 11152,
+    raw: "HIDEOUS",
+  },
+  {
+    freq: 11153,
+    raw: "INFANCY",
+  },
+  {
+    freq: 11154,
+    raw: "TSUNAMI",
+  },
+  {
+    freq: 11160,
+    raw: "EYEBALL",
+  },
+  {
+    freq: 11163,
+    raw: "OATMEAL",
+  },
+  {
+    freq: 11176,
+    raw: "REMARRY",
+  },
+  {
+    freq: 11178,
+    raw: "CHANGED",
+  },
+  {
+    freq: 11180,
+    raw: "FOREMAN",
+  },
+  {
+    freq: 11184,
+    raw: "FITTING",
+  },
+  {
+    freq: 11193,
+    raw: "OVERDUE",
+  },
+  {
+    freq: 11207,
+    raw: "TELLING",
+  },
+  {
+    freq: 11208,
+    raw: "UPWARDS",
+  },
+  {
+    freq: 11210,
+    raw: "UNNAMED",
+  },
+  {
+    freq: 11215,
+    raw: "SIDEBAR",
+  },
+  {
+    freq: 11216,
+    raw: "PARTNER",
+  },
+  {
+    freq: 11227,
+    raw: "DISABLE",
+  },
+  {
+    freq: 11242,
+    raw: "OPTIMUM",
+  },
+  {
+    freq: 11244,
+    raw: "PITFALL",
+  },
+  {
+    freq: 11247,
+    raw: "MAMMOTH",
+  },
+  {
+    freq: 11258,
+    raw: "CHIEFLY",
+  },
+  {
+    freq: 11266,
+    raw: "THICKET",
+  },
+  {
+    freq: 11271,
+    raw: "PROWESS",
+  },
+  {
+    freq: 11274,
+    raw: "BURGLAR",
+  },
+  {
+    freq: 11287,
+    raw: "SHALLOT",
+  },
+  {
+    freq: 11291,
+    raw: "BRISTLE",
+  },
+  {
+    freq: 11292,
+    raw: "SWEETIE",
+  },
+  {
+    freq: 11317,
+    raw: "CAPTIVE",
+  },
+  {
+    freq: 11319,
+    raw: "TENUOUS",
+  },
+  {
+    freq: 11325,
+    raw: "FALLING",
+  },
+  {
+    freq: 11326,
+    raw: "CHATTER",
+  },
+  {
+    freq: 11335,
+    raw: "EMINENT",
+  },
+  {
+    freq: 11344,
+    raw: "SHINGLE",
+  },
+  {
+    freq: 11347,
+    raw: "COLLAGE",
+  },
+  {
+    freq: 11351,
+    raw: "BIOTECH",
+  },
+  {
+    freq: 11360,
+    raw: "GARNISH",
+  },
+  {
+    freq: 11364,
+    raw: "BEDDING",
+  },
+  {
+    freq: 11366,
+    raw: "PASTIME",
+  },
+  {
+    freq: 11381,
+    raw: "BLISTER",
+  },
+  {
+    freq: 11400,
+    raw: "ARABIAN",
+  },
+  {
+    freq: 11403,
+    raw: "SPUTTER",
+  },
+  {
+    freq: 11405,
+    raw: "GRANDMA",
+  },
+  {
+    freq: 11407,
+    raw: "QUARREL",
+  },
+  {
+    freq: 11408,
+    raw: "CERTAIN",
+  },
+  {
+    freq: 11410,
+    raw: "METHANE",
+  },
+  {
+    freq: 11419,
+    raw: "TOPPING",
+  },
+  {
+    freq: 11426,
+    raw: "PERJURY",
+  },
+  {
+    freq: 11431,
+    raw: "CONDONE",
+  },
+  {
+    freq: 11438,
+    raw: "SUBDUED",
+  },
+  {
+    freq: 11441,
+    raw: "CASHIER",
+  },
+  {
+    freq: 11444,
+    raw: "BLOATED",
+  },
+  {
+    freq: 11449,
+    raw: "HEADSET",
+  },
+  {
+    freq: 11450,
+    raw: "SEISMIC",
+  },
+  {
+    freq: 11456,
+    raw: "BLOSSOM",
+  },
+  {
+    freq: 11469,
+    raw: "FURTHER",
+  },
+  {
+    freq: 11475,
+    raw: "GHOSTLY",
+  },
+  {
+    freq: 11477,
+    raw: "STYLIST",
+  },
+  {
+    freq: 11481,
+    raw: "ADAMANT",
+  },
+  {
+    freq: 11483,
+    raw: "OVERRUN",
+  },
+  {
+    freq: 11484,
+    raw: "BOYCOTT",
+  },
+  {
+    freq: 11488,
+    raw: "CONVENT",
+  },
+  {
+    freq: 11519,
+    raw: "QUARTET",
+  },
+  {
+    freq: 11531,
+    raw: "TRAMPLE",
+  },
+  {
+    freq: 11556,
+    raw: "WRONGLY",
+  },
+  {
+    freq: 11562,
+    raw: "RUMMAGE",
+  },
+  {
+    freq: 11570,
+    raw: "JANITOR",
+  },
+  {
+    freq: 11576,
+    raw: "PURPORT",
+  },
+  {
+    freq: 11585,
+    raw: "PRO-LIFE",
+    word: "PROLIFE",
+  },
+  {
+    freq: 11589,
+    raw: "REMODEL",
+  },
+  {
+    freq: 11594,
+    raw: "PRIMATE",
+  },
+  {
+    freq: 11596,
+    raw: "ANARCHY",
+  },
+  {
+    freq: 11607,
+    raw: "QUICKER",
+  },
+  {
+    freq: 11627,
+    raw: "SEMINAL",
+  },
+  {
+    freq: 11629,
+    raw: "TABLOID",
+  },
+  {
+    freq: 11637,
+    raw: "ACUTELY",
+  },
+  {
+    freq: 11640,
+    raw: "CONSENT",
+  },
+  {
+    freq: 11644,
+    raw: "SUBVERT",
+  },
+  {
+    freq: 11655,
+    raw: "CHINESE",
+  },
+  {
+    freq: 11662,
+    raw: "DEPRESS",
+  },
+  {
+    freq: 11663,
+    raw: "TRICKLE",
+  },
+  {
+    freq: 11665,
+    raw: "QUICKEN",
+  },
+  {
+    freq: 11668,
+    raw: "CRACKLE",
+  },
+  {
+    freq: 11676,
+    raw: "STATELY",
+  },
+  {
+    freq: 11690,
+    raw: "GEOLOGY",
+  },
+  {
+    freq: 11702,
+    raw: "LITURGY",
+  },
+  {
+    freq: 11718,
+    raw: "BRISKLY",
+  },
+  {
+    freq: 11728,
+    raw: "DORMANT",
+  },
+  {
+    freq: 11730,
+    raw: "BIG-TIME",
+    word: "BIGTIME",
+  },
+  {
+    freq: 11738,
+    raw: "TRIUMPH",
+  },
+  {
+    freq: 11739,
+    raw: "PRETEST",
+  },
+  {
+    freq: 11740,
+    raw: "TWO-WEEK",
+    word: "TWOWEEK",
+  },
+  {
+    freq: 11742,
+    raw: "SPARKLE",
+  },
+  {
+    freq: 11743,
+    raw: "TOASTED",
+  },
+  {
+    freq: 11744,
+    raw: "CARNAGE",
+  },
+  {
+    freq: 11748,
+    raw: "REBIRTH",
+  },
+  {
+    freq: 11780,
+    raw: "UTOPIAN",
+  },
+  {
+    freq: 11788,
+    raw: "EXPLOIT",
+  },
+  {
+    freq: 11801,
+    raw: "OREGANO",
+  },
+  {
+    freq: 11811,
+    raw: "ROOSTER",
+  },
+  {
+    freq: 11813,
+    raw: "TOPICAL",
+  },
+  {
+    freq: 11834,
+    raw: "SOLVENT",
+  },
+  {
+    freq: 11846,
+    raw: "CASCADE",
+  },
+  {
+    freq: 11847,
+    raw: "RESCUER",
+  },
+  {
+    freq: 11855,
+    raw: "BAPTISM",
+  },
+  {
+    freq: 11856,
+    raw: "PENGUIN",
+  },
+  {
+    freq: 11862,
+    raw: "BUDDING",
+  },
+  {
+    freq: 11873,
+    raw: "TOURING",
+  },
+  {
+    freq: 11889,
+    raw: "SINKING",
+  },
+  {
+    freq: 11891,
+    raw: "SOLIDLY",
+  },
+  {
+    freq: 11893,
+    raw: "UNHEARD",
+  },
+  {
+    freq: 11897,
+    raw: "PLANTER",
+  },
+  {
+    freq: 11906,
+    raw: "SERPENT",
+  },
+  {
+    freq: 11921,
+    raw: "STAUNCH",
+  },
+  {
+    freq: 11922,
+    raw: "OUTWARD",
+  },
+  {
+    freq: 11923,
+    raw: "GLUCOSE",
+  },
+  {
+    freq: 11927,
+    raw: "STAGING",
+  },
+  {
+    freq: 11949,
+    raw: "KETCHUP",
+  },
+  {
+    freq: 11951,
+    raw: "MATCHUP",
+  },
+  {
+    freq: 11960,
+    raw: "HARSHLY",
+  },
+  {
+    freq: 11966,
+    raw: "BOURBON",
+  },
+  {
+    freq: 11967,
+    raw: "BRUISED",
+  },
+  {
+    freq: 11971,
+    raw: "FRAUGHT",
+  },
+  {
+    freq: 11978,
+    raw: "DRIBBLE",
+  },
+  {
+    freq: 11988,
+    raw: "TORRENT",
+  },
+  {
+    freq: 12003,
+    raw: "NITRATE",
+  },
+  {
+    freq: 12004,
+    raw: "PLASTER",
+  },
+  {
+    freq: 12009,
+    raw: "DREAMER",
+  },
+  {
+    freq: 12014,
+    raw: "CONVICT",
+  },
+  {
+    freq: 12027,
+    raw: "MIDWIFE",
+  },
+  {
+    freq: 12029,
+    raw: "CHILEAN",
+  },
+  {
+    freq: 12035,
+    raw: "ELASTIC",
+  },
+  {
+    freq: 12045,
+    raw: "BREAKER",
+  },
+  {
+    freq: 12051,
+    raw: "DENSELY",
+  },
+  {
+    freq: 12055,
+    raw: "HANDBAG",
+  },
+  {
+    freq: 12059,
+    raw: "HEROISM",
+  },
+  {
+    freq: 12078,
+    raw: "MANHOOD",
+  },
+  {
+    freq: 12082,
+    raw: "ADJUNCT",
+  },
+  {
+    freq: 12083,
+    raw: "TURNING",
+  },
+  {
+    freq: 12086,
+    raw: "CRUMPLE",
+  },
+  {
+    freq: 12092,
+    raw: "DISLIKE",
+  },
+  {
+    freq: 12094,
+    raw: "TERMITE",
+  },
+  {
+    freq: 12102,
+    raw: "FENCING",
+  },
+  {
+    freq: 12107,
+    raw: "PRELUDE",
+  },
+  {
+    freq: 12108,
+    raw: "GLITTER",
+  },
+  {
+    freq: 12110,
+    raw: "REDWOOD",
+  },
+  {
+    freq: 12112,
+    raw: "DISSECT",
+  },
+  {
+    freq: 12113,
+    raw: "MODESTY",
+  },
+  {
+    freq: 12129,
+    raw: "ALASKAN",
+  },
+  {
+    freq: 12138,
+    raw: "SILVERY",
+  },
+  {
+    freq: 12140,
+    raw: "RE-ENTER",
+    word: "REENTER",
+  },
+  {
+    freq: 12141,
+    raw: "BOROUGH",
+  },
+  {
+    freq: 12143,
+    raw: "TIBETAN",
+  },
+  {
+    freq: 12144,
+    raw: "RESTING",
+  },
+  {
+    freq: 12162,
+    raw: "LOOMING",
+  },
+  {
+    freq: 12172,
+    raw: "BULLPEN",
+  },
+  {
+    freq: 12173,
+    raw: "GROSSLY",
+  },
+  {
+    freq: 12174,
+    raw: "STRATUM",
+  },
+  {
+    freq: 12188,
+    raw: "LEOPARD",
+  },
+  {
+    freq: 12190,
+    raw: "SCREECH",
+  },
+  {
+    freq: 12202,
+    raw: "CHILLED",
+  },
+  {
+    freq: 12204,
+    raw: "FLANNEL",
+  },
+  {
+    freq: 12220,
+    raw: "RUSHING",
+  },
+  {
+    freq: 12225,
+    raw: "PROBING",
+  },
+  {
+    freq: 12226,
+    raw: "RECITAL",
+  },
+  {
+    freq: 12234,
+    raw: "WARSHIP",
+  },
+  {
+    freq: 12243,
+    raw: "INCENSE",
+  },
+  {
+    freq: 12265,
+    raw: "PLUMBER",
+  },
+  {
+    freq: 12278,
+    raw: "WHEREIN",
+  },
+  {
+    freq: 12288,
+    raw: "INSTILL",
+  },
+  {
+    freq: 12290,
+    raw: "PUMPING",
+  },
+  {
+    freq: 12295,
+    raw: "TORMENT",
+  },
+  {
+    freq: 12302,
+    raw: "MUFFLED",
+  },
+  {
+    freq: 12309,
+    raw: "ASHTRAY",
+  },
+  {
+    freq: 12319,
+    raw: "PERVADE",
+  },
+  {
+    freq: 12324,
+    raw: "EXPRESS",
+  },
+  {
+    freq: 12330,
+    raw: "CONDUIT",
+  },
+  {
+    freq: 12331,
+    raw: "SEEMING",
+  },
+  {
+    freq: 12335,
+    raw: "HANDOUT",
+  },
+  {
+    freq: 12345,
+    raw: "ENDEMIC",
+  },
+  {
+    freq: 12346,
+    raw: "RAPPORT",
+  },
+  {
+    freq: 12359,
+    raw: "TWO-TIME",
+    word: "TWOTIME",
+  },
+  {
+    freq: 12362,
+    raw: "DEVOTEE",
+  },
+  {
+    freq: 12369,
+    raw: "PATRIOT",
+  },
+  {
+    freq: 12401,
+    raw: "CLUTTER",
+  },
+  {
+    freq: 12411,
+    raw: "MARSHAL",
+  },
+  {
+    freq: 12417,
+    raw: "AGITATE",
+  },
+  {
+    freq: 12422,
+    raw: "BLUNTLY",
+  },
+  {
+    freq: 12423,
+    raw: "TROLLEY",
+  },
+  {
+    freq: 12431,
+    raw: "NONSTOP",
+  },
+  {
+    freq: 12435,
+    raw: "UNDRESS",
+  },
+  {
+    freq: 12451,
+    raw: "FLICKER",
+  },
+  {
+    freq: 12463,
+    raw: "CRIMSON",
+  },
+  {
+    freq: 12471,
+    raw: "EARMARK",
+  },
+  {
+    freq: 12473,
+    raw: "FINNISH",
+  },
+  {
+    freq: 12479,
+    raw: "ASSURED",
+  },
+  {
+    freq: 12485,
+    raw: "CADENCE",
+  },
+  {
+    freq: 12493,
+    raw: "WARLORD",
+  },
+  {
+    freq: 12497,
+    raw: "PERTAIN",
+  },
+  {
+    freq: 12503,
+    raw: "GLITTER",
+  },
+  {
+    freq: 12511,
+    raw: "BURNOUT",
+  },
+  {
+    freq: 12524,
+    raw: "KICKOFF",
+  },
+  {
+    freq: 12535,
+    raw: "SEASIDE",
+  },
+  {
+    freq: 12547,
+    raw: "WEAVING",
+  },
+  {
+    freq: 12571,
+    raw: "ALRIGHT",
+  },
+  {
+    freq: 12573,
+    raw: "PENDING",
+  },
+  {
+    freq: 12575,
+    raw: "COVETED",
+  },
+  {
+    freq: 12577,
+    raw: "ENGRAVE",
+  },
+  {
+    freq: 12585,
+    raw: "HAUNTED",
+  },
+  {
+    freq: 12592,
+    raw: "FARAWAY",
+  },
+  {
+    freq: 12593,
+    raw: "POURING",
+  },
+  {
+    freq: 12599,
+    raw: "RACCOON",
+  },
+  {
+    freq: 12602,
+    raw: "ADMIRAL",
+  },
+  {
+    freq: 12603,
+    raw: "BRAVERY",
+  },
+  {
+    freq: 12604,
+    raw: "PRICKLY",
+  },
+  {
+    freq: 12605,
+    raw: "PANTIES",
+  },
+  {
+    freq: 12619,
+    raw: "BOYHOOD",
+  },
+  {
+    freq: 12626,
+    raw: "WORDING",
+  },
+  {
+    freq: 12634,
+    raw: "TASTING",
+  },
+  {
+    freq: 12642,
+    raw: "AMBIENT",
+  },
+  {
+    freq: 12646,
+    raw: "UNARMED",
+  },
+  {
+    freq: 12649,
+    raw: "CRAVING",
+  },
+  {
+    freq: 12657,
+    raw: "MOUNTED",
+  },
+  {
+    freq: 12658,
+    raw: "PAIRING",
+  },
+  {
+    freq: 12660,
+    raw: "REFRESH",
+  },
+  {
+    freq: 12666,
+    raw: "REDDISH",
+  },
+  {
+    freq: 12667,
+    raw: "SCALLOP",
+  },
+  {
+    freq: 12671,
+    raw: "DIFFUSE",
+  },
+  {
+    freq: 12676,
+    raw: "DELAYED",
+  },
+  {
+    freq: 12683,
+    raw: "THYROID",
+  },
+  {
+    freq: 12687,
+    raw: "EMERALD",
+  },
+  {
+    freq: 12688,
+    raw: "FALSELY",
+  },
+  {
+    freq: 12689,
+    raw: "SWALLOW",
+  },
+  {
+    freq: 12697,
+    raw: "DISSENT",
+  },
+  {
+    freq: 12710,
+    raw: "CONCOCT",
+  },
+  {
+    freq: 12712,
+    raw: "FATEFUL",
+  },
+  {
+    freq: 12721,
+    raw: "ANIMATE",
+  },
+  {
+    freq: 12731,
+    raw: "ACCLAIM",
+  },
+  {
+    freq: 12735,
+    raw: "APPEASE",
+  },
+  {
+    freq: 12738,
+    raw: "LOOTING",
+  },
+  {
+    freq: 12739,
+    raw: "CORRUPT",
+  },
+  {
+    freq: 12744,
+    raw: "BLINDLY",
+  },
+  {
+    freq: 12751,
+    raw: "ARDUOUS",
+  },
+  {
+    freq: 12767,
+    raw: "STEALTH",
+  },
+  {
+    freq: 12786,
+    raw: "GOODIES",
+  },
+  {
+    freq: 12798,
+    raw: "BEDROCK",
+  },
+  {
+    freq: 12801,
+    raw: "AMMONIA",
+  },
+  {
+    freq: 12810,
+    raw: "GLIMMER",
+  },
+  {
+    freq: 12818,
+    raw: "STEROID",
+  },
+  {
+    freq: 12827,
+    raw: "DRAINED",
+  },
+  {
+    freq: 12834,
+    raw: "THUNDER",
+  },
+  {
+    freq: 12837,
+    raw: "THEREOF",
+  },
+  {
+    freq: 12849,
+    raw: "TANTRUM",
+  },
+  {
+    freq: 12868,
+    raw: "TAXABLE",
+  },
+  {
+    freq: 12891,
+    raw: "SWEETLY",
+  },
+  {
+    freq: 12894,
+    raw: "PUBERTY",
+  },
+  {
+    freq: 12904,
+    raw: "ACCUSER",
+  },
+  {
+    freq: 12909,
+    raw: "KNOWING",
+  },
+  {
+    freq: 12912,
+    raw: "TWELFTH",
+  },
+  {
+    freq: 12916,
+    raw: "UNNERVE",
+  },
+  {
+    freq: 12926,
+    raw: "ATHEIST",
+  },
+  {
+    freq: 12933,
+    raw: "GLARING",
+  },
+  {
+    freq: 12936,
+    raw: "STAGGER",
+  },
+  {
+    freq: 12942,
+    raw: "CASCADE",
+  },
+  {
+    freq: 12949,
+    raw: "CLAMBER",
+  },
+  {
+    freq: 12958,
+    raw: "FORFEIT",
+  },
+  {
+    freq: 12964,
+    raw: "NAUGHTY",
+  },
+  {
+    freq: 12978,
+    raw: "UTENSIL",
+  },
+  {
+    freq: 12980,
+    raw: "FLAMING",
+  },
+  {
+    freq: 12983,
+    raw: "OVERTLY",
+  },
+  {
+    freq: 12990,
+    raw: "IMPASSE",
+  },
+  {
+    freq: 12997,
+    raw: "START-UP",
+    word: "STARTUP",
+  },
+  {
+    freq: 13001,
+    raw: "BATHING",
+  },
+  {
+    freq: 13002,
+    raw: "AUCTION",
+  },
+  {
+    freq: 13006,
+    raw: "CHECKUP",
+  },
+  {
+    freq: 13031,
+    raw: "INCLINE",
+  },
+  {
+    freq: 13042,
+    raw: "SCUTTLE",
+  },
+  {
+    freq: 13048,
+    raw: "VAGINAL",
+  },
+  {
+    freq: 13058,
+    raw: "MOURNER",
+  },
+  {
+    freq: 13060,
+    raw: "WHIPPED",
+  },
+  {
+    freq: 13071,
+    raw: "WORKMAN",
+  },
+  {
+    freq: 13082,
+    raw: "BONFIRE",
+  },
+  {
+    freq: 13084,
+    raw: "FORTIFY",
+  },
+  {
+    freq: 13087,
+    raw: "ACREAGE",
+  },
+  {
+    freq: 13090,
+    raw: "ARSENIC",
+  },
+  {
+    freq: 13095,
+    raw: "EQUATOR",
+  },
+  {
+    freq: 13097,
+    raw: "PRIMACY",
+  },
+  {
+    freq: 13104,
+    raw: "BABY-SIT",
+    word: "BABYSIT",
+  },
+  {
+    freq: 13106,
+    raw: "TWINKLE",
+  },
+  {
+    freq: 13112,
+    raw: "ACRYLIC",
+  },
+  {
+    freq: 13126,
+    raw: "ANALYSE",
+  },
+  {
+    freq: 13128,
+    raw: "ALGEBRA",
+  },
+  {
+    freq: 13134,
+    raw: "GIMMICK",
+  },
+  {
+    freq: 13140,
+    raw: "ASTOUND",
+  },
+  {
+    freq: 13144,
+    raw: "MEANDER",
+  },
+  {
+    freq: 13148,
+    raw: "PITIFUL",
+  },
+  {
+    freq: 13151,
+    raw: "CUNNING",
+  },
+  {
+    freq: 13159,
+    raw: "LOWLAND",
+  },
+  {
+    freq: 13161,
+    raw: "CYPRESS",
+  },
+  {
+    freq: 13162,
+    raw: "STAMINA",
+  },
+  {
+    freq: 13163,
+    raw: "GRIZZLY",
+  },
+  {
+    freq: 13174,
+    raw: "BAPTIZE",
+  },
+  {
+    freq: 13175,
+    raw: "ROCKING",
+  },
+  {
+    freq: 13177,
+    raw: "ACRYLIC",
+  },
+  {
+    freq: 13186,
+    raw: "JUMPING",
+  },
+  {
+    freq: 13189,
+    raw: "CAYENNE",
+  },
+  {
+    freq: 13191,
+    raw: "TRUCKER",
+  },
+  {
+    freq: 13193,
+    raw: "ANNUITY",
+  },
+  {
+    freq: 13197,
+    raw: "SIX-YEAR",
+    word: "SIXYEAR",
+  },
+  {
+    freq: 13203,
+    raw: "REFRAIN",
+  },
+  {
+    freq: 13232,
+    raw: "LAYERED",
+  },
+  {
+    freq: 13237,
+    raw: "MIDLIFE",
+  },
+  {
+    freq: 13238,
+    raw: "GRAZING",
+  },
+  {
+    freq: 13244,
+    raw: "DRIVING",
+  },
+  {
+    freq: 13249,
+    raw: "STEAMED",
+  },
+  {
+    freq: 13264,
+    raw: "RAUCOUS",
+  },
+  {
+    freq: 13270,
+    raw: "FASCIST",
+  },
+  {
+    freq: 13276,
+    raw: "TREASON",
+  },
+  {
+    freq: 13278,
+    raw: "THEREIN",
+  },
+  {
+    freq: 13282,
+    raw: "PARABLE",
+  },
+  {
+    freq: 13285,
+    raw: "SPIN-OFF",
+    word: "SPINOFF",
+  },
+  {
+    freq: 13286,
+    raw: "DROPLET",
+  },
+  {
+    freq: 13288,
+    raw: "PROVERB",
+  },
+  {
+    freq: 13296,
+    raw: "JOURNEY",
+  },
+  {
+    freq: 13302,
+    raw: "RESPITE",
+  },
+  {
+    freq: 13311,
+    raw: "LODGING",
+  },
+  {
+    freq: 13314,
+    raw: "INERTIA",
+  },
+  {
+    freq: 13320,
+    raw: "BROTHEL",
+  },
+  {
+    freq: 13327,
+    raw: "HOLSTER",
+  },
+  {
+    freq: 13332,
+    raw: "CO-OWNER",
+    word: "COOWNER",
+  },
+  {
+    freq: 13340,
+    raw: "VULTURE",
+  },
+  {
+    freq: 13341,
+    raw: "TORPEDO",
+  },
+  {
+    freq: 13349,
+    raw: "BIGOTRY",
+  },
+  {
+    freq: 13350,
+    raw: "HAITIAN",
+  },
+  {
+    freq: 13351,
+    raw: "DIGGING",
+  },
+  {
+    freq: 13353,
+    raw: "NAGGING",
+  },
+  {
+    freq: 13356,
+    raw: "AUSPICE",
+  },
+  {
+    freq: 13362,
+    raw: "WARRING",
+  },
+  {
+    freq: 13364,
+    raw: "RESTART",
+  },
+  {
+    freq: 13369,
+    raw: "CARIBOU",
+  },
+  {
+    freq: 13370,
+    raw: "OPPRESS",
+  },
+  {
+    freq: 13382,
+    raw: "REPRESS",
+  },
+  {
+    freq: 13383,
+    raw: "TABLEAU",
+  },
+  {
+    freq: 13387,
+    raw: "PUNGENT",
+  },
+  {
+    freq: 13392,
+    raw: "TRILOGY",
+  },
+  {
+    freq: 13396,
+    raw: "STARDOM",
+  },
+  {
+    freq: 13399,
+    raw: "BOMBARD",
+  },
+  {
+    freq: 13410,
+    raw: "GRINDER",
+  },
+  {
+    freq: 13421,
+    raw: "TRUMPET",
+  },
+  {
+    freq: 13427,
+    raw: "SCOOTER",
+  },
+  {
+    freq: 13429,
+    raw: "MARQUEE",
+  },
+  {
+    freq: 13431,
+    raw: "KISSING",
+  },
+  {
+    freq: 13436,
+    raw: "GRAVELY",
+  },
+  {
+    freq: 13442,
+    raw: "LIGHTED",
+  },
+  {
+    freq: 13446,
+    raw: "COURIER",
+  },
+  {
+    freq: 13448,
+    raw: "LYRICAL",
+  },
+  {
+    freq: 13451,
+    raw: "EVASION",
+  },
+  {
+    freq: 13459,
+    raw: "OVATION",
+  },
+  {
+    freq: 13473,
+    raw: "WEAKEST",
+  },
+  {
+    freq: 13478,
+    raw: "FEEDING",
+  },
+  {
+    freq: 13481,
+    raw: "ARCHAIC",
+  },
+  {
+    freq: 13483,
+    raw: "VESTIGE",
+  },
+  {
+    freq: 13490,
+    raw: "COMPOST",
+  },
+  {
+    freq: 13508,
+    raw: "STIFFLY",
+  },
+  {
+    freq: 13512,
+    raw: "FAILING",
+  },
+  {
+    freq: 13527,
+    raw: "CADMIUM",
+  },
+  {
+    freq: 13531,
+    raw: "WRINKLE",
+  },
+  {
+    freq: 13552,
+    raw: "FLUENCY",
+  },
+  {
+    freq: 13555,
+    raw: "CLUTTER",
+  },
+  {
+    freq: 13556,
+    raw: "REPLETE",
+  },
+  {
+    freq: 13561,
+    raw: "BLUNDER",
+  },
+  {
+    freq: 13566,
+    raw: "EYELASH",
+  },
+  {
+    freq: 13567,
+    raw: "CUSTARD",
+  },
+  {
+    freq: 13569,
+    raw: "SEAWEED",
+  },
+  {
+    freq: 13570,
+    raw: "FORWARD",
+  },
+  {
+    freq: 13572,
+    raw: "MEMENTO",
+  },
+  {
+    freq: 13576,
+    raw: "STAND-UP",
+    word: "STANDUP",
+  },
+  {
+    freq: 13587,
+    raw: "LAND-USE",
+    word: "LANDUSE",
+  },
+  {
+    freq: 13590,
+    raw: "ELITIST",
+  },
+  {
+    freq: 13595,
+    raw: "BENEATH",
+  },
+  {
+    freq: 13612,
+    raw: "NONSTOP",
+  },
+  {
+    freq: 13628,
+    raw: "NASCENT",
+  },
+  {
+    freq: 13635,
+    raw: "FANFARE",
+  },
+  {
+    freq: 13644,
+    raw: "TROPICS",
+  },
+  {
+    freq: 13648,
+    raw: "ROTTING",
+  },
+  {
+    freq: 13655,
+    raw: "PREFACE",
+  },
+  {
+    freq: 13659,
+    raw: "SHUDDER",
+  },
+  {
+    freq: 13670,
+    raw: "BRIBERY",
+  },
+  {
+    freq: 13671,
+    raw: "POSTAGE",
+  },
+  {
+    freq: 13676,
+    raw: "IMPLIED",
+  },
+  {
+    freq: 13687,
+    raw: "PROCURE",
+  },
+  {
+    freq: 13700,
+    raw: "ESTUARY",
+  },
+  {
+    freq: 13710,
+    raw: "STEAMER",
+  },
+  {
+    freq: 13714,
+    raw: "PENDANT",
+  },
+  {
+    freq: 13724,
+    raw: "KNOW-HOW",
+    word: "KNOWHOW",
+  },
+  {
+    freq: 13741,
+    raw: "FASCISM",
+  },
+  {
+    freq: 13748,
+    raw: "GUARDED",
+  },
+  {
+    freq: 13767,
+    raw: "HONORED",
+  },
+  {
+    freq: 13775,
+    raw: "JUNIPER",
+  },
+  {
+    freq: 13784,
+    raw: "CHEAPLY",
+  },
+  {
+    freq: 13791,
+    raw: "DIFFUSE",
+  },
+  {
+    freq: 13795,
+    raw: "CHASSIS",
+  },
+  {
+    freq: 13807,
+    raw: "BINDING",
+  },
+  {
+    freq: 13809,
+    raw: "SPATULA",
+  },
+  {
+    freq: 13810,
+    raw: "PENNANT",
+  },
+  {
+    freq: 13816,
+    raw: "HOTLINE",
+  },
+  {
+    freq: 13818,
+    raw: "GROWN-UP",
+    word: "GROWNUP",
+  },
+  {
+    freq: 13830,
+    raw: "PRETEXT",
+  },
+  {
+    freq: 13834,
+    raw: "RUN-DOWN",
+    word: "RUNDOWN",
+  },
+  {
+    freq: 13838,
+    raw: "AQUIFER",
+  },
+  {
+    freq: 13843,
+    raw: "LOWERED",
+  },
+  {
+    freq: 13845,
+    raw: "SARCASM",
+  },
+  {
+    freq: 13857,
+    raw: "DREADED",
+  },
+  {
+    freq: 13865,
+    raw: "VERANDA",
+  },
+  {
+    freq: 13874,
+    raw: "POTENCY",
+  },
+  {
+    freq: 13881,
+    raw: "WORKDAY",
+  },
+  {
+    freq: 13884,
+    raw: "FINESSE",
+  },
+  {
+    freq: 13885,
+    raw: "SURMISE",
+  },
+  {
+    freq: 13887,
+    raw: "ACRONYM",
+  },
+  {
+    freq: 13902,
+    raw: "HILLTOP",
+  },
+  {
+    freq: 13904,
+    raw: "FORWARD",
+  },
+  {
+    freq: 13911,
+    raw: "DROP-OFF",
+    word: "DROPOFF",
+  },
+  {
+    freq: 13918,
+    raw: "JEWELER",
+  },
+  {
+    freq: 13919,
+    raw: "DESPAIR",
+  },
+  {
+    freq: 13930,
+    raw: "FIANCEE",
+  },
+  {
+    freq: 13933,
+    raw: "TAX-FREE",
+    word: "TAXFREE",
+  },
+  {
+    freq: 13941,
+    raw: "OLD-TIME",
+    word: "OLDTIME",
+  },
+  {
+    freq: 13942,
+    raw: "OCEANIC",
+  },
+  {
+    freq: 13964,
+    raw: "STRIKER",
+  },
+  {
+    freq: 13965,
+    raw: "MELODIC",
+  },
+  {
+    freq: 13984,
+    raw: "GLORIFY",
+  },
+  {
+    freq: 13988,
+    raw: "DEFINED",
+  },
+  {
+    freq: 14002,
+    raw: "LEAFLET",
+  },
+  {
+    freq: 14006,
+    raw: "COOLING",
+  },
+  {
+    freq: 14009,
+    raw: "POSTING",
+  },
+  {
+    freq: 14012,
+    raw: "PADDING",
+  },
+  {
+    freq: 14025,
+    raw: "ADAPTER",
+  },
+  {
+    freq: 14026,
+    raw: "DEFLATE",
+  },
+  {
+    freq: 14029,
+    raw: "CREVICE",
+  },
+  {
+    freq: 14036,
+    raw: "CLATTER",
+  },
+  {
+    freq: 14039,
+    raw: "TARNISH",
+  },
+  {
+    freq: 14040,
+    raw: "BROWNIE",
+  },
+  {
+    freq: 14049,
+    raw: "JUMPING",
+  },
+  {
+    freq: 14051,
+    raw: "TAKE-OUT",
+    word: "TAKEOUT",
+  },
+  {
+    freq: 14057,
+    raw: "PARTING",
+  },
+  {
+    freq: 14070,
+    raw: "OUTGROW",
+  },
+  {
+    freq: 14073,
+    raw: "UNLUCKY",
+  },
+  {
+    freq: 14074,
+    raw: "CRITTER",
+  },
+  {
+    freq: 14087,
+    raw: "CUSHION",
+  },
+  {
+    freq: 14114,
+    raw: "PAYBACK",
+  },
+  {
+    freq: 14115,
+    raw: "TORMENT",
+  },
+  {
+    freq: 14117,
+    raw: "RETRACE",
+  },
+  {
+    freq: 14122,
+    raw: "SLOPING",
+  },
+  {
+    freq: 14123,
+    raw: "FRECKLE",
+  },
+  {
+    freq: 14124,
+    raw: "DIVULGE",
+  },
+  {
+    freq: 14126,
+    raw: "IMPLORE",
+  },
+  {
+    freq: 14128,
+    raw: "RECOUNT",
+  },
+  {
+    freq: 14129,
+    raw: "AUSTERE",
+  },
+  {
+    freq: 14138,
+    raw: "WRIGGLE",
+  },
+  {
+    freq: 14149,
+    raw: "TIME-OUT",
+    word: "TIMEOUT",
+  },
+  {
+    freq: 14165,
+    raw: "BLOCKER",
+  },
+  {
+    freq: 14169,
+    raw: "PREDATE",
+  },
+  {
+    freq: 14184,
+    raw: "LOOKING",
+  },
+  {
+    freq: 14186,
+    raw: "SNUGGLE",
+  },
+  {
+    freq: 14195,
+    raw: "TEEMING",
+  },
+  {
+    freq: 14198,
+    raw: "TEQUILA",
+  },
+  {
+    freq: 14202,
+    raw: "GRIZZLY",
+  },
+  {
+    freq: 14205,
+    raw: "WHISKER",
+  },
+  {
+    freq: 14206,
+    raw: "CRUNCHY",
+  },
+  {
+    freq: 14207,
+    raw: "DEVIATE",
+  },
+  {
+    freq: 14208,
+    raw: "MASCARA",
+  },
+  {
+    freq: 14234,
+    raw: "ALARMED",
+  },
+  {
+    freq: 14245,
+    raw: "IDYLLIC",
+  },
+  {
+    freq: 14250,
+    raw: "ABSTAIN",
+  },
+  {
+    freq: 14256,
+    raw: "KEYNOTE",
+  },
+  {
+    freq: 14270,
+    raw: "DIVERGE",
+  },
+  {
+    freq: 14271,
+    raw: "TACTILE",
+  },
+  {
+    freq: 14278,
+    raw: "WANTING",
+  },
+  {
+    freq: 14281,
+    raw: "SKATING",
+  },
+  {
+    freq: 14283,
+    raw: "MASKING",
+  },
+  {
+    freq: 14286,
+    raw: "DISBAND",
+  },
+  {
+    freq: 14287,
+    raw: "DEVALUE",
+  },
+  {
+    freq: 14288,
+    raw: "BONANZA",
+  },
+  {
+    freq: 14292,
+    raw: "MOCKERY",
+  },
+  {
+    freq: 14309,
+    raw: "COOLING",
+  },
+  {
+    freq: 14310,
+    raw: "IMPEACH",
+  },
+  {
+    freq: 14324,
+    raw: "WEARILY",
+  },
+  {
+    freq: 14326,
+    raw: "PRECEPT",
+  },
+  {
+    freq: 14329,
+    raw: "CHOLERA",
+  },
+  {
+    freq: 14330,
+    raw: "RETRACT",
+  },
+  {
+    freq: 14340,
+    raw: "POTHOLE",
+  },
+  {
+    freq: 14345,
+    raw: "WEIGHTY",
+  },
+  {
+    freq: 14346,
+    raw: "ONE-HOUR",
+    word: "ONEHOUR",
+  },
+  {
+    freq: 14366,
+    raw: "HAMMOCK",
+  },
+  {
+    freq: 14381,
+    raw: "RUPTURE",
+  },
+  {
+    freq: 14387,
+    raw: "INFLAME",
+  },
+  {
+    freq: 14399,
+    raw: "BRAVADO",
+  },
+  {
+    freq: 14404,
+    raw: "OPEN-AIR",
+    word: "OPENAIR",
+  },
+  {
+    freq: 14412,
+    raw: "SCREECH",
+  },
+  {
+    freq: 14417,
+    raw: "DEPLORE",
+  },
+  {
+    freq: 14422,
+    raw: "OUTLIVE",
+  },
+  {
+    freq: 14431,
+    raw: "WHIMPER",
+  },
+  {
+    freq: 14432,
+    raw: "GENITAL",
+  },
+  {
+    freq: 14448,
+    raw: "BLANKET",
+  },
+  {
+    freq: 14457,
+    raw: "WILLFUL",
+  },
+  {
+    freq: 14473,
+    raw: "BASTION",
+  },
+  {
+    freq: 14479,
+    raw: "FLORIST",
+  },
+  {
+    freq: 14480,
+    raw: "GLACIAL",
+  },
+  {
+    freq: 14489,
+    raw: "OUTCAST",
+  },
+  {
+    freq: 14491,
+    raw: "REGROUP",
+  },
+  {
+    freq: 14510,
+    raw: "BRAVELY",
+  },
+  {
+    freq: 14526,
+    raw: "WISHFUL",
+  },
+  {
+    freq: 14540,
+    raw: "CONTENT",
+  },
+  {
+    freq: 14547,
+    raw: "SOPRANO",
+  },
+  {
+    freq: 14553,
+    raw: "ENTRANT",
+  },
+  {
+    freq: 14558,
+    raw: "BREWING",
+  },
+  {
+    freq: 14559,
+    raw: "TRAFFIC",
+  },
+  {
+    freq: 14561,
+    raw: "FERVENT",
+  },
+  {
+    freq: 14567,
+    raw: "SPARROW",
+  },
+  {
+    freq: 14569,
+    raw: "SLITHER",
+  },
+  {
+    freq: 14572,
+    raw: "GHASTLY",
+  },
+  {
+    freq: 14574,
+    raw: "PROTEGE",
+  },
+  {
+    freq: 14582,
+    raw: "COMMUNE",
+  },
+  {
+    freq: 14586,
+    raw: "MARXISM",
+  },
+  {
+    freq: 14587,
+    raw: "SAWDUST",
+  },
+  {
+    freq: 14594,
+    raw: "APOSTLE",
+  },
+  {
+    freq: 14599,
+    raw: "SNAPPER",
+  },
+  {
+    freq: 14604,
+    raw: "PREEMPT",
+  },
+  {
+    freq: 14613,
+    raw: "WIDOWED",
+  },
+  {
+    freq: 14614,
+    raw: "NETWORK",
+  },
+  {
+    freq: 14634,
+    raw: "LABELED",
+  },
+  {
+    freq: 14643,
+    raw: "HAPLESS",
+  },
+  {
+    freq: 14659,
+    raw: "FOUR-DAY",
+    word: "FOURDAY",
+  },
+  {
+    freq: 14663,
+    raw: "MAJESTY",
+  },
+  {
+    freq: 14664,
+    raw: "WAYWARD",
+  },
+  {
+    freq: 14688,
+    raw: "VERTIGO",
+  },
+  {
+    freq: 14702,
+    raw: "BARRING",
+  },
+  {
+    freq: 14703,
+    raw: "PRODIGY",
+  },
+  {
+    freq: 14713,
+    raw: "MOCKING",
+  },
+  {
+    freq: 14728,
+    raw: "LUNATIC",
+  },
+  {
+    freq: 14742,
+    raw: "SEARING",
+  },
+  {
+    freq: 14755,
+    raw: "AIRLOCK",
+  },
+  {
+    freq: 14775,
+    raw: "STAMMER",
+  },
+  {
+    freq: 14783,
+    raw: "REVERIE",
+  },
+  {
+    freq: 14788,
+    raw: "INROADS",
+  },
+  {
+    freq: 14804,
+    raw: "CHARRED",
+  },
+  {
+    freq: 14810,
+    raw: "RICKETY",
+  },
+  {
+    freq: 14812,
+    raw: "STUTTER",
+  },
+  {
+    freq: 14814,
+    raw: "RECTIFY",
+  },
+  {
+    freq: 14815,
+    raw: "RUPTURE",
+  },
+  {
+    freq: 14821,
+    raw: "PAYLOAD",
+  },
+  {
+    freq: 14831,
+    raw: "DETRACT",
+  },
+  {
+    freq: 14832,
+    raw: "MIDTERM",
+  },
+  {
+    freq: 14834,
+    raw: "CARAMEL",
+  },
+  {
+    freq: 14841,
+    raw: "OVARIAN",
+  },
+  {
+    freq: 14848,
+    raw: "LEAKAGE",
+  },
+  {
+    freq: 14849,
+    raw: "FATALLY",
+  },
+  {
+    freq: 14874,
+    raw: "BALDING",
+  },
+  {
+    freq: 14879,
+    raw: "QUARREL",
+  },
+  {
+    freq: 14881,
+    raw: "FAILING",
+  },
+  {
+    freq: 14884,
+    raw: "SHIMMER",
+  },
+  {
+    freq: 14889,
+    raw: "STUBBLE",
+  },
+  {
+    freq: 14892,
+    raw: "MAYORAL",
+  },
+  {
+    freq: 14901,
+    raw: "CORDIAL",
+  },
+  {
+    freq: 14925,
+    raw: "CHICKEN",
+  },
+  {
+    freq: 14930,
+    raw: "JUKEBOX",
+  },
+  {
+    freq: 14933,
+    raw: "BRISTLE",
+  },
+  {
+    freq: 14943,
+    raw: "BOOKING",
+  },
+  {
+    freq: 14946,
+    raw: "BACKLOG",
+  },
+  {
+    freq: 14952,
+    raw: "CRYPTIC",
+  },
+  {
+    freq: 14957,
+    raw: "SOMATIC",
+  },
+  {
+    freq: 14961,
+    raw: "PARCHED",
+  },
+  {
+    freq: 14967,
+    raw: "HATEFUL",
+  },
+  {
+    freq: 14976,
+    raw: "INFIELD",
+  },
+  {
+    freq: 14987,
+    raw: "CALLING",
+  },
+  {
+    freq: 14993,
+    raw: "ROARING",
+  },
+  {
+    freq: 14997,
+    raw: "FORSAKE",
+  },
+  {
+    freq: 15027,
+    raw: "NESTING",
+  },
+  {
+    freq: 15043,
+    raw: "DEVIANT",
+  },
+  {
+    freq: 15048,
+    raw: "NETTING",
+  },
+  {
+    freq: 15051,
+    raw: "MODULAR",
+  },
+  {
+    freq: 15060,
+    raw: "CHECKER",
+  },
+  {
+    freq: 15077,
+    raw: "SOLOIST",
+  },
+  {
+    freq: 15105,
+    raw: "PRIVATE",
+  },
+  {
+    freq: 15114,
+    raw: "JOBLESS",
+  },
+  {
+    freq: 15120,
+    raw: "LIKABLE",
+  },
+  {
+    freq: 15155,
+    raw: "EDIFICE",
+  },
+  {
+    freq: 15164,
+    raw: "COUTURE",
+  },
+  {
+    freq: 15165,
+    raw: "FIVE-DAY",
+    word: "FIVEDAY",
+  },
+  {
+    freq: 15173,
+    raw: "OUTSIDE",
+  },
+  {
+    freq: 15178,
+    raw: "SWEETEN",
+  },
+  {
+    freq: 15179,
+    raw: "ODYSSEY",
+  },
+  {
+    freq: 15185,
+    raw: "PULLOUT",
+  },
+  {
+    freq: 15190,
+    raw: "SCOURGE",
+  },
+  {
+    freq: 15192,
+    raw: "COMICAL",
+  },
+  {
+    freq: 15198,
+    raw: "DUMPING",
+  },
+  {
+    freq: 15207,
+    raw: "BLANKLY",
+  },
+  {
+    freq: 15210,
+    raw: "CRIMSON",
+  },
+  {
+    freq: 15213,
+    raw: "EPITHET",
+  },
+  {
+    freq: 15227,
+    raw: "DOORMAN",
+  },
+  {
+    freq: 15232,
+    raw: "SHYNESS",
+  },
+  {
+    freq: 15234,
+    raw: "OVERLAY",
+  },
+  {
+    freq: 15238,
+    raw: "ENSLAVE",
+  },
+  {
+    freq: 15239,
+    raw: "DISCORD",
+  },
+  {
+    freq: 15264,
+    raw: "AGILITY",
+  },
+  {
+    freq: 15275,
+    raw: "HOWLING",
+  },
+  {
+    freq: 15279,
+    raw: "FAT-FREE",
+    word: "FATFREE",
+  },
+  {
+    freq: 15283,
+    raw: "SMOLDER",
+  },
+  {
+    freq: 15295,
+    raw: "WALLEYE",
+  },
+  {
+    freq: 15301,
+    raw: "BALLAST",
+  },
+  {
+    freq: 15310,
+    raw: "FOUNDER",
+  },
+  {
+    freq: 15315,
+    raw: "GRADING",
+  },
+  {
+    freq: 15319,
+    raw: "SWAGGER",
+  },
+  {
+    freq: 15322,
+    raw: "UP-FRONT",
+    word: "UPFRONT",
+  },
+  {
+    freq: 15324,
+    raw: "PREVIEW",
+  },
+  {
+    freq: 15326,
+    raw: "ETCHING",
+  },
+  {
+    freq: 15347,
+    raw: "SAUNTER",
+  },
+  {
+    freq: 15352,
+    raw: "SYNERGY",
+  },
+  {
+    freq: 15365,
+    raw: "MASONRY",
+  },
+  {
+    freq: 15366,
+    raw: "SPANISH",
+  },
+  {
+    freq: 15371,
+    raw: "CAPITOL",
+  },
+  {
+    freq: 15377,
+    raw: "CHARTER",
+  },
+  {
+    freq: 15385,
+    raw: "BESIEGE",
+  },
+  {
+    freq: 15393,
+    raw: "BLOCKED",
+  },
+  {
+    freq: 15397,
+    raw: "ROUNDUP",
+  },
+  {
+    freq: 15401,
+    raw: "THICKLY",
+  },
+  {
+    freq: 15403,
+    raw: "PROPANE",
+  },
+  {
+    freq: 15408,
+    raw: "ZIONIST",
+  },
+  {
+    freq: 15418,
+    raw: "SUBTEST",
+  },
+  {
+    freq: 15433,
+    raw: "JOGGING",
+  },
+  {
+    freq: 15448,
+    raw: "FALLACY",
+  },
+  {
+    freq: 15450,
+    raw: "ARBITER",
+  },
+  {
+    freq: 15456,
+    raw: "FORLORN",
+  },
+  {
+    freq: 15458,
+    raw: "RUBBISH",
+  },
+  {
+    freq: 15459,
+    raw: "OBLIQUE",
+  },
+  {
+    freq: 15467,
+    raw: "BAYONET",
+  },
+  {
+    freq: 15468,
+    raw: "FROSTED",
+  },
+  {
+    freq: 15469,
+    raw: "TOASTER",
+  },
+  {
+    freq: 15476,
+    raw: "AMNESIA",
+  },
+  {
+    freq: 15491,
+    raw: "SCAMPER",
+  },
+  {
+    freq: 15492,
+    raw: "DRAPERY",
+  },
+  {
+    freq: 15497,
+    raw: "OUTPACE",
+  },
+  {
+    freq: 15500,
+    raw: "RAMPAGE",
+  },
+  {
+    freq: 15532,
+    raw: "NOMADIC",
+  },
+  {
+    freq: 15537,
+    raw: "SECRETE",
+  },
+  {
+    freq: 15543,
+    raw: "CRACKLE",
+  },
+  {
+    freq: 15550,
+    raw: "HUSTLER",
+  },
+  {
+    freq: 15553,
+    raw: "MISSTEP",
+  },
+  {
+    freq: 15559,
+    raw: "FLEEING",
+  },
+  {
+    freq: 15574,
+    raw: "PAPRIKA",
+  },
+  {
+    freq: 15576,
+    raw: "CALMING",
+  },
+  {
+    freq: 15577,
+    raw: "TRUFFLE",
+  },
+  {
+    freq: 15578,
+    raw: "MID-SIZE",
+    word: "MIDSIZE",
+  },
+  {
+    freq: 15579,
+    raw: "WHITTLE",
+  },
+  {
+    freq: 15583,
+    raw: "LATTICE",
+  },
+  {
+    freq: 15591,
+    raw: "SPINNER",
+  },
+  {
+    freq: 15594,
+    raw: "STIPEND",
+  },
+  {
+    freq: 15597,
+    raw: "SPOILED",
+  },
+  {
+    freq: 15603,
+    raw: "GREASED",
+  },
+  {
+    freq: 15604,
+    raw: "TICKING",
+  },
+  {
+    freq: 15606,
+    raw: "BAND-AID",
+    word: "BANDAID",
+  },
+  {
+    freq: 15607,
+    raw: "RUNAWAY",
+  },
+  {
+    freq: 15610,
+    raw: "REDHEAD",
+  },
+  {
+    freq: 15611,
+    raw: "QUARTER",
+  },
+  {
+    freq: 15622,
+    raw: "URINATE",
+  },
+  {
+    freq: 15629,
+    raw: "BOATING",
+  },
+  {
+    freq: 15636,
+    raw: "SCALPEL",
+  },
+  {
+    freq: 15648,
+    raw: "PREMIER",
+  },
+  {
+    freq: 15657,
+    raw: "SALVAGE",
+  },
+  {
+    freq: 15672,
+    raw: "MOISTEN",
+  },
+  {
+    freq: 15685,
+    raw: "SUBSUME",
+  },
+  {
+    freq: 15687,
+    raw: "BREWERY",
+  },
+  {
+    freq: 15692,
+    raw: "OFFBEAT",
+  },
+  {
+    freq: 15697,
+    raw: "VARNISH",
+  },
+  {
+    freq: 15704,
+    raw: "KINETIC",
+  },
+  {
+    freq: 15711,
+    raw: "SATANIC",
+  },
+  {
+    freq: 15712,
+    raw: "HEINOUS",
+  },
+  {
+    freq: 15718,
+    raw: "SKIPPER",
+  },
+  {
+    freq: 15719,
+    raw: "POACHER",
+  },
+  {
+    freq: 15736,
+    raw: "BLAZING",
+  },
+  {
+    freq: 15744,
+    raw: "BLACKEN",
+  },
+  {
+    freq: 15787,
+    raw: "RETRAIN",
+  },
+  {
+    freq: 15789,
+    raw: "ENLIVEN",
+  },
+  {
+    freq: 15793,
+    raw: "SLAYING",
+  },
+  {
+    freq: 15806,
+    raw: "LOVABLE",
+  },
+  {
+    freq: 15808,
+    raw: "BUOYANT",
+  },
+  {
+    freq: 15815,
+    raw: "CHARGED",
+  },
+  {
+    freq: 15823,
+    raw: "CENSURE",
+  },
+  {
+    freq: 15832,
+    raw: "NEWBORN",
+  },
+  {
+    freq: 15837,
+    raw: "WISTFUL",
+  },
+  {
+    freq: 15849,
+    raw: "MOTTLED",
+  },
+  {
+    freq: 15866,
+    raw: "SUCTION",
+  },
+  {
+    freq: 15871,
+    raw: "TREETOP",
+  },
+  {
+    freq: 15878,
+    raw: "ISOTOPE",
+  },
+  {
+    freq: 15879,
+    raw: "FISSURE",
+  },
+  {
+    freq: 15881,
+    raw: "ALFALFA",
+  },
+  {
+    freq: 15896,
+    raw: "PERPLEX",
+  },
+  {
+    freq: 15898,
+    raw: "INTERIM",
+  },
+  {
+    freq: 15904,
+    raw: "PHANTOM",
+  },
+  {
+    freq: 15906,
+    raw: "WELDING",
+  },
+  {
+    freq: 15908,
+    raw: "ENVIOUS",
+  },
+  {
+    freq: 15921,
+    raw: "COLOGNE",
+  },
+  {
+    freq: 15926,
+    raw: "MALAISE",
+  },
+  {
+    freq: 15927,
+    raw: "GNARLED",
+  },
+  {
+    freq: 15930,
+    raw: "NOXIOUS",
+  },
+  {
+    freq: 15931,
+    raw: "SHAKING",
+  },
+  {
+    freq: 15935,
+    raw: "DEFUNCT",
+  },
+  {
+    freq: 15937,
+    raw: "AEROSOL",
+  },
+  {
+    freq: 15943,
+    raw: "UPSTART",
+  },
+  {
+    freq: 15945,
+    raw: "ONEROUS",
+  },
+  {
+    freq: 15947,
+    raw: "AGONIZE",
+  },
+  {
+    freq: 15951,
+    raw: "NEMESIS",
+  },
+  {
+    freq: 15954,
+    raw: "BICYCLE",
+  },
+  {
+    freq: 15958,
+    raw: "PEACOCK",
+  },
+  {
+    freq: 15969,
+    raw: "GIRAFFE",
+  },
+  {
+    freq: 15970,
+    raw: "SKYWARD",
+  },
+  {
+    freq: 15990,
+    raw: "LENTILS",
+  },
+  {
+    freq: 15999,
+    raw: "GARLAND",
+  },
+  {
+    freq: 16007,
+    raw: "OCTOPUS",
+  },
+  {
+    freq: 16011,
+    raw: "SARDINE",
+  },
+  {
+    freq: 16012,
+    raw: "BRAIDED",
+  },
+  {
+    freq: 16017,
+    raw: "CREATED",
+  },
+  {
+    freq: 16022,
+    raw: "PLACARD",
+  },
+  {
+    freq: 16027,
+    raw: "TOENAIL",
+  },
+  {
+    freq: 16031,
+    raw: "DISOBEY",
+  },
+  {
+    freq: 16042,
+    raw: "GOLFING",
+  },
+  {
+    freq: 16049,
+    raw: "TOUGHEN",
+  },
+  {
+    freq: 16051,
+    raw: "STERNLY",
+  },
+  {
+    freq: 16060,
+    raw: "BEMUSED",
+  },
+  {
+    freq: 16067,
+    raw: "INHUMAN",
+  },
+  {
+    freq: 16068,
+    raw: "NIGHTLY",
+  },
+  {
+    freq: 16069,
+    raw: "PROFFER",
+  },
+  {
+    freq: 16073,
+    raw: "SPACING",
+  },
+  {
+    freq: 16075,
+    raw: "PRE-DAWN",
+    word: "PREDAWN",
+  },
+  {
+    freq: 16076,
+    raw: "COMMONS",
+  },
+  {
+    freq: 16080,
+    raw: "CONSIGN",
+  },
+  {
+    freq: 16089,
+    raw: "HEADWAY",
+  },
+  {
+    freq: 16094,
+    raw: "LAUNDER",
+  },
+  {
+    freq: 16097,
+    raw: "TERRIER",
+  },
+  {
+    freq: 16098,
+    raw: "SOULFUL",
+  },
+  {
+    freq: 16100,
+    raw: "PARTAKE",
+  },
+  {
+    freq: 16104,
+    raw: "AVIATOR",
+  },
+  {
+    freq: 16107,
+    raw: "INKLING",
+  },
+  {
+    freq: 16109,
+    raw: "BROILER",
+  },
+  {
+    freq: 16112,
+    raw: "EMBROIL",
+  },
+  {
+    freq: 16113,
+    raw: "MONTAGE",
+  },
+  {
+    freq: 16117,
+    raw: "CLOSE-UP",
+    word: "CLOSEUP",
+  },
+  {
+    freq: 16124,
+    raw: "RELIANT",
+  },
+  {
+    freq: 16126,
+    raw: "WHALING",
+  },
+  {
+    freq: 16149,
+    raw: "SLUMBER",
+  },
+  {
+    freq: 16152,
+    raw: "CANTEEN",
+  },
+  {
+    freq: 16176,
+    raw: "ABIDING",
+  },
+  {
+    freq: 16195,
+    raw: "TENDRIL",
+  },
+  {
+    freq: 16197,
+    raw: "SEVERED",
+  },
+  {
+    freq: 16201,
+    raw: "AIRFARE",
+  },
+  {
+    freq: 16209,
+    raw: "RE-ENTRY",
+    word: "REENTRY",
+  },
+  {
+    freq: 16217,
+    raw: "STAMPED",
+  },
+  {
+    freq: 16223,
+    raw: "ORGANIC",
+  },
+  {
+    freq: 16233,
+    raw: "CURSORY",
+  },
+  {
+    freq: 16234,
+    raw: "ROOFING",
+  },
+  {
+    freq: 16239,
+    raw: "BUZZING",
+  },
+  {
+    freq: 16241,
+    raw: "SURNAME",
+  },
+  {
+    freq: 16247,
+    raw: "SAPLING",
+  },
+  {
+    freq: 16259,
+    raw: "CLATTER",
+  },
+  {
+    freq: 16266,
+    raw: "KIDDING",
+  },
+  {
+    freq: 16283,
+    raw: "DOGWOOD",
+  },
+  {
+    freq: 16285,
+    raw: "STACKED",
+  },
+  {
+    freq: 16286,
+    raw: "WIDOWER",
+  },
+  {
+    freq: 16292,
+    raw: "INVOICE",
+  },
+  {
+    freq: 16302,
+    raw: "LITHIUM",
+  },
+  {
+    freq: 16305,
+    raw: "SAMPLER",
+  },
+  {
+    freq: 16307,
+    raw: "DARLING",
+  },
+  {
+    freq: 16311,
+    raw: "POLENTA",
+  },
+  {
+    freq: 16318,
+    raw: "GENESIS",
+  },
+  {
+    freq: 16330,
+    raw: "DIE-HARD",
+    word: "DIEHARD",
+  },
+  {
+    freq: 16333,
+    raw: "DEFAULT",
+  },
+  {
+    freq: 16354,
+    raw: "GONDOLA",
+  },
+  {
+    freq: 16360,
+    raw: "AMIABLE",
+  },
+  {
+    freq: 16363,
+    raw: "ISSUING",
+  },
+  {
+    freq: 16374,
+    raw: "EPITOME",
+  },
+  {
+    freq: 16375,
+    raw: "PREMIER",
+  },
+  {
+    freq: 16378,
+    raw: "DEMONIC",
+  },
+  {
+    freq: 16384,
+    raw: "PRETZEL",
+  },
+  {
+    freq: 16387,
+    raw: "HURTFUL",
+  },
+  {
+    freq: 16394,
+    raw: "CHARIOT",
+  },
+  {
+    freq: 16395,
+    raw: "STEEPLY",
+  },
+  {
+    freq: 16401,
+    raw: "TREATED",
+  },
+  {
+    freq: 16408,
+    raw: "GRIMACE",
+  },
+  {
+    freq: 16417,
+    raw: "TRIPLET",
+  },
+  {
+    freq: 16421,
+    raw: "RECLINE",
+  },
+  {
+    freq: 16424,
+    raw: "MISREAD",
+  },
+  {
+    freq: 16425,
+    raw: "TOP-DOWN",
+    word: "TOPDOWN",
+  },
+  {
+    freq: 16442,
+    raw: "TRAPPER",
+  },
+  {
+    freq: 16447,
+    raw: "MACHETE",
+  },
+  {
+    freq: 16450,
+    raw: "PANACEA",
+  },
+  {
+    freq: 16454,
+    raw: "SOUNDLY",
+  },
+  {
+    freq: 16456,
+    raw: "ANCHOVY",
+  },
+  {
+    freq: 16461,
+    raw: "POWERED",
+  },
+  {
+    freq: 16472,
+    raw: "PREGAME",
+  },
+  {
+    freq: 16475,
+    raw: "CHEWING",
+  },
+  {
+    freq: 16479,
+    raw: "WEEPING",
+  },
+  {
+    freq: 16486,
+    raw: "ALRIGHT",
+  },
+  {
+    freq: 16488,
+    raw: "CO-WRITE",
+    word: "COWRITE",
+  },
+  {
+    freq: 16493,
+    raw: "PRUNING",
+  },
+  {
+    freq: 16494,
+    raw: "RELAPSE",
+  },
+  {
+    freq: 16495,
+    raw: "GENTEEL",
+  },
+  {
+    freq: 16497,
+    raw: "TWO-PART",
+    word: "TWOPART",
+  },
+  {
+    freq: 16502,
+    raw: "BURRITO",
+  },
+  {
+    freq: 16505,
+    raw: "UNDERLY",
+  },
+  {
+    freq: 16521,
+    raw: "BLOGGER",
+  },
+  {
+    freq: 16543,
+    raw: "CONCISE",
+  },
+  {
+    freq: 16546,
+    raw: "ZEALOUS",
+  },
+  {
+    freq: 16547,
+    raw: "HANGOUT",
+  },
+  {
+    freq: 16564,
+    raw: "PLUNDER",
+  },
+  {
+    freq: 16565,
+    raw: "CATERER",
+  },
+  {
+    freq: 16568,
+    raw: "CAPITAL",
+  },
+  {
+    freq: 16579,
+    raw: "SKETCHY",
+  },
+  {
+    freq: 16581,
+    raw: "STUDIED",
+  },
+  {
+    freq: 16603,
+    raw: "SELLOUT",
+  },
+  {
+    freq: 16604,
+    raw: "SUNDOWN",
+  },
+  {
+    freq: 16613,
+    raw: "SMARTLY",
+  },
+  {
+    freq: 16614,
+    raw: "ASSUMED",
+  },
+  {
+    freq: 16620,
+    raw: "LEXICON",
+  },
+  {
+    freq: 16623,
+    raw: "MOLDING",
+  },
+  {
+    freq: 16624,
+    raw: "CUTTING",
+  },
+  {
+    freq: 16644,
+    raw: "OFF-ROAD",
+    word: "OFFROAD",
+  },
+  {
+    freq: 16652,
+    raw: "BASSIST",
+  },
+  {
+    freq: 16657,
+    raw: "JASMINE",
+  },
+  {
+    freq: 16666,
+    raw: "TEASING",
+  },
+  {
+    freq: 16672,
+    raw: "LEAGUER",
+  },
+  {
+    freq: 16673,
+    raw: "TELECOM",
+  },
+  {
+    freq: 16678,
+    raw: "LENIENT",
+  },
+  {
+    freq: 16679,
+    raw: "PLACATE",
+  },
+  {
+    freq: 16684,
+    raw: "ENGROSS",
+  },
+  {
+    freq: 16703,
+    raw: "SUBTEXT",
+  },
+  {
+    freq: 16717,
+    raw: "KUWAITI",
+  },
+  {
+    freq: 16719,
+    raw: "RIGIDLY",
+  },
+  {
+    freq: 16730,
+    raw: "BALLOON",
+  },
+  {
+    freq: 16731,
+    raw: "CHAGRIN",
+  },
+  {
+    freq: 16737,
+    raw: "RE-ENACT",
+    word: "REENACT",
+  },
+  {
+    freq: 16740,
+    raw: "RESCIND",
+  },
+  {
+    freq: 16742,
+    raw: "VINTAGE",
+  },
+  {
+    freq: 16751,
+    raw: "DICTATE",
+  },
+  {
+    freq: 16754,
+    raw: "TAINTED",
+  },
+  {
+    freq: 16756,
+    raw: "POETICS",
+  },
+  {
+    freq: 16762,
+    raw: "TASTING",
+  },
+  {
+    freq: 16763,
+    raw: "TRACKER",
+  },
+  {
+    freq: 16769,
+    raw: "NOISILY",
+  },
+  {
+    freq: 16770,
+    raw: "SHRIVEL",
+  },
+  {
+    freq: 16771,
+    raw: "IMPRINT",
+  },
+  {
+    freq: 16772,
+    raw: "GYMNAST",
+  },
+  {
+    freq: 16777,
+    raw: "BAROQUE",
+  },
+  {
+    freq: 16780,
+    raw: "LEAVING",
+  },
+  {
+    freq: 16782,
+    raw: "CATWALK",
+  },
+  {
+    freq: 16799,
+    raw: "ERODING",
+  },
+  {
+    freq: 16805,
+    raw: "SOJOURN",
+  },
+  {
+    freq: 16808,
+    raw: "BONDAGE",
+  },
+  {
+    freq: 16820,
+    raw: "DUALITY",
+  },
+  {
+    freq: 16821,
+    raw: "HITTING",
+  },
+  {
+    freq: 16837,
+    raw: "STARKLY",
+  },
+  {
+    freq: 16841,
+    raw: "AFFABLE",
+  },
+  {
+    freq: 16843,
+    raw: "AT-LARGE",
+    word: "ATLARGE",
+  },
+  {
+    freq: 16848,
+    raw: "AL-QAEDA",
+    word: "ALQAEDA",
+  },
+  {
+    freq: 16849,
+    raw: "SHUTTLE",
+  },
+  {
+    freq: 16855,
+    raw: "URINARY",
+  },
+  {
+    freq: 16866,
+    raw: "COMPACT",
+  },
+  {
+    freq: 16873,
+    raw: "TRAPPED",
+  },
+  {
+    freq: 16880,
+    raw: "FALSIFY",
+  },
+  {
+    freq: 16881,
+    raw: "MAGNATE",
+  },
+  {
+    freq: 16883,
+    raw: "AFFRONT",
+  },
+  {
+    freq: 16894,
+    raw: "CHECHEN",
+  },
+  {
+    freq: 16896,
+    raw: "GELATIN",
+  },
+  {
+    freq: 16908,
+    raw: "CLEANLY",
+  },
+  {
+    freq: 16915,
+    raw: "CREWMAN",
+  },
+  {
+    freq: 16917,
+    raw: "SETTLED",
+  },
+  {
+    freq: 16929,
+    raw: "RISOTTO",
+  },
+  {
+    freq: 16930,
+    raw: "DIGGING",
+  },
+  {
+    freq: 16944,
+    raw: "ROUSING",
+  },
+  {
+    freq: 16948,
+    raw: "EARSHOT",
+  },
+  {
+    freq: 16954,
+    raw: "STIR-FRY",
+    word: "STIRFRY",
+  },
+  {
+    freq: 16960,
+    raw: "CO-CHAIR",
+    word: "COCHAIR",
+  },
+  {
+    freq: 16966,
+    raw: "RAPTURE",
+  },
+  {
+    freq: 16976,
+    raw: "ORDERED",
+  },
+  {
+    freq: 16983,
+    raw: "RUNDOWN",
+  },
+  {
+    freq: 16994,
+    raw: "CONIFER",
+  },
+  {
+    freq: 17009,
+    raw: "ABANDON",
+  },
+  {
+    freq: 17019,
+    raw: "SNIPPET",
+  },
+  {
+    freq: 17039,
+    raw: "READOUT",
+  },
+  {
+    freq: 17045,
+    raw: "TOPLESS",
+  },
+  {
+    freq: 17047,
+    raw: "MILLING",
+  },
+  {
+    freq: 17057,
+    raw: "MOBSTER",
+  },
+  {
+    freq: 17059,
+    raw: "DEAD-END",
+    word: "DEADEND",
+  },
+  {
+    freq: 17064,
+    raw: "ABREAST",
+  },
+  {
+    freq: 17074,
+    raw: "BETTING",
+  },
+  {
+    freq: 17078,
+    raw: "EXPOUND",
+  },
+  {
+    freq: 17083,
+    raw: "FIREFLY",
+  },
+  {
+    freq: 17085,
+    raw: "ADJOURN",
+  },
+  {
+    freq: 17090,
+    raw: "SAFFRON",
+  },
+  {
+    freq: 17102,
+    raw: "VALIANT",
+  },
+  {
+    freq: 17103,
+    raw: "SLUGGER",
+  },
+  {
+    freq: 17108,
+    raw: "REPRINT",
+  },
+  {
+    freq: 17110,
+    raw: "GRANDPA",
+  },
+  {
+    freq: 17121,
+    raw: "CALLOUS",
+  },
+  {
+    freq: 17129,
+    raw: "OUTFLOW",
+  },
+  {
+    freq: 17131,
+    raw: "FORGERY",
+  },
+  {
+    freq: 17144,
+    raw: "EVASIVE",
+  },
+  {
+    freq: 17157,
+    raw: "STORIED",
+  },
+  {
+    freq: 17167,
+    raw: "CUPCAKE",
+  },
+  {
+    freq: 17175,
+    raw: "BULLISH",
+  },
+  {
+    freq: 17187,
+    raw: "MONSOON",
+  },
+  {
+    freq: 17194,
+    raw: "MAMMOTH",
+  },
+  {
+    freq: 17198,
+    raw: "RHUBARB",
+  },
+  {
+    freq: 17218,
+    raw: "TWINKLE",
+  },
+  {
+    freq: 17236,
+    raw: "SKITTER",
+  },
+  {
+    freq: 17243,
+    raw: "TEARFUL",
+  },
+  {
+    freq: 17248,
+    raw: "BUTCHER",
+  },
+  {
+    freq: 17249,
+    raw: "JACKPOT",
+  },
+  {
+    freq: 17257,
+    raw: "INVERSE",
+  },
+  {
+    freq: 17265,
+    raw: "BIG-CITY",
+    word: "BIGCITY",
+  },
+  {
+    freq: 17266,
+    raw: "PANTHER",
+  },
+  {
+    freq: 17267,
+    raw: "ENRAGED",
+  },
+  {
+    freq: 17268,
+    raw: "LEASING",
+  },
+  {
+    freq: 17272,
+    raw: "PEDDLER",
+  },
+  {
+    freq: 17273,
+    raw: "REDRESS",
+  },
+  {
+    freq: 17275,
+    raw: "DRIVE-IN",
+    word: "DRIVEIN",
+  },
+  {
+    freq: 17277,
+    raw: "OPULENT",
+  },
+  {
+    freq: 17315,
+    raw: "SUMMONS",
+  },
+  {
+    freq: 17318,
+    raw: "PAUCITY",
+  },
+  {
+    freq: 17323,
+    raw: "REVERED",
+  },
+  {
+    freq: 17326,
+    raw: "STANDBY",
+  },
+  {
+    freq: 17334,
+    raw: "BREAK-IN",
+    word: "BREAKIN",
+  },
+  {
+    freq: 17345,
+    raw: "CADAVER",
+  },
+  {
+    freq: 17349,
+    raw: "KARAOKE",
+  },
+  {
+    freq: 17383,
+    raw: "GRAZING",
+  },
+  {
+    freq: 17386,
+    raw: "ASSUAGE",
+  },
+  {
+    freq: 17394,
+    raw: "RESTATE",
+  },
+  {
+    freq: 17415,
+    raw: "ECHELON",
+  },
+  {
+    freq: 17416,
+    raw: "SUNBURN",
+  },
+  {
+    freq: 17423,
+    raw: "PENANCE",
+  },
+  {
+    freq: 17424,
+    raw: "ONE-ROOM",
+    word: "ONEROOM",
+  },
+  {
+    freq: 17425,
+    raw: "EARMARK",
+  },
+  {
+    freq: 17444,
+    raw: "ADORING",
+  },
+  {
+    freq: 17448,
+    raw: "FLOODED",
+  },
+  {
+    freq: 17452,
+    raw: "NUANCED",
+  },
+  {
+    freq: 17459,
+    raw: "EXALTED",
+  },
+  {
+    freq: 17475,
+    raw: "BOUNCER",
+  },
+  {
+    freq: 17480,
+    raw: "SQUEAKY",
+  },
+  {
+    freq: 17487,
+    raw: "NAIVETE",
+  },
+  {
+    freq: 17493,
+    raw: "PLAYING",
+  },
+  {
+    freq: 17495,
+    raw: "FIBROUS",
+  },
+  {
+    freq: 17496,
+    raw: "LASAGNA",
+  },
+  {
+    freq: 17500,
+    raw: "OUTLAST",
+  },
+  {
+    freq: 17503,
+    raw: "SCRUFFY",
+  },
+  {
+    freq: 17506,
+    raw: "BEGGING",
+  },
+  {
+    freq: 17516,
+    raw: "SCENTED",
+  },
+  {
+    freq: 17525,
+    raw: "MOVABLE",
+  },
+  {
+    freq: 17527,
+    raw: "SAGGING",
+  },
+  {
+    freq: 17531,
+    raw: "UNITARY",
+  },
+  {
+    freq: 17533,
+    raw: "SIX-PACK",
+    word: "SIXPACK",
+  },
+  {
+    freq: 17535,
+    raw: "SCRAWNY",
+  },
+  {
+    freq: 17536,
+    raw: "TRELLIS",
+  },
+  {
+    freq: 17546,
+    raw: "GOBBLER",
+  },
+  {
+    freq: 17561,
+    raw: "SENSING",
+  },
+  {
+    freq: 17565,
+    raw: "PROGENY",
+  },
+  {
+    freq: 17566,
+    raw: "PRONOUN",
+  },
+  {
+    freq: 17568,
+    raw: "RIOTING",
+  },
+  {
+    freq: 17571,
+    raw: "ORBITER",
+  },
+  {
+    freq: 17573,
+    raw: "JITTERY",
+  },
+  {
+    freq: 17574,
+    raw: "SATCHEL",
+  },
+  {
+    freq: 17576,
+    raw: "STUNTED",
+  },
+  {
+    freq: 17580,
+    raw: "AMPUTEE",
+  },
+  {
+    freq: 17585,
+    raw: "BLOWOUT",
+  },
+  {
+    freq: 17594,
+    raw: "TOPSOIL",
+  },
+  {
+    freq: 17604,
+    raw: "STALKER",
+  },
+  {
+    freq: 17623,
+    raw: "SYNONYM",
+  },
+  {
+    freq: 17630,
+    raw: "ENTWINE",
+  },
+  {
+    freq: 17632,
+    raw: "REGRESS",
+  },
+  {
+    freq: 17637,
+    raw: "ANTIGEN",
+  },
+  {
+    freq: 17663,
+    raw: "VENISON",
+  },
+  {
+    freq: 17669,
+    raw: "INCENSE",
+  },
+  {
+    freq: 17688,
+    raw: "DRIVE-BY",
+    word: "DRIVEBY",
+  },
+  {
+    freq: 17724,
+    raw: "TUBULAR",
+  },
+  {
+    freq: 17726,
+    raw: "HALIBUT",
+  },
+  {
+    freq: 17730,
+    raw: "ALCHEMY",
+  },
+  {
+    freq: 17737,
+    raw: "SPILLED",
+  },
+  {
+    freq: 17744,
+    raw: "GRATING",
+  },
+  {
+    freq: 17753,
+    raw: "POMPOUS",
+  },
+  {
+    freq: 17756,
+    raw: "NECKTIE",
+  },
+  {
+    freq: 17761,
+    raw: "ABSOLVE",
+  },
+  {
+    freq: 17765,
+    raw: "NULLIFY",
+  },
+  {
+    freq: 17766,
+    raw: "CRUCIFY",
+  },
+  {
+    freq: 17768,
+    raw: "UTERINE",
+  },
+  {
+    freq: 17769,
+    raw: "WEDLOCK",
+  },
+  {
+    freq: 17771,
+    raw: "DOCKING",
+  },
+  {
+    freq: 17774,
+    raw: "RAFTING",
+  },
+  {
+    freq: 17777,
+    raw: "MATINEE",
+  },
+  {
+    freq: 17783,
+    raw: "WEEPING",
+  },
+  {
+    freq: 17786,
+    raw: "THROUGH",
+  },
+  {
+    freq: 17789,
+    raw: "GALLANT",
+  },
+  {
+    freq: 17791,
+    raw: "DECORUM",
+  },
+  {
+    freq: 17803,
+    raw: "PURSUER",
+  },
+  {
+    freq: 17807,
+    raw: "LIQUEUR",
+  },
+  {
+    freq: 17813,
+    raw: "SUFFUSE",
+  },
+  {
+    freq: 17814,
+    raw: "SHIMMER",
+  },
+  {
+    freq: 17818,
+    raw: "LAWLESS",
+  },
+  {
+    freq: 17826,
+    raw: "AMALGAM",
+  },
+  {
+    freq: 17832,
+    raw: "THERMOS",
+  },
+  {
+    freq: 17834,
+    raw: "TUMBLER",
+  },
+  {
+    freq: 17835,
+    raw: "VELVETY",
+  },
+  {
+    freq: 17838,
+    raw: "SHUFFLE",
+  },
+  {
+    freq: 17845,
+    raw: "LOW-WAGE",
+    word: "LOWWAGE",
+  },
+  {
+    freq: 17851,
+    raw: "FRAILTY",
+  },
+  {
+    freq: 17858,
+    raw: "MAESTRO",
+  },
+  {
+    freq: 17876,
+    raw: "DUNGEON",
+  },
+  {
+    freq: 17884,
+    raw: "SPOUSAL",
+  },
+  {
+    freq: 17896,
+    raw: "HULKING",
+  },
+  {
+    freq: 17901,
+    raw: "THEOREM",
+  },
+  {
+    freq: 17902,
+    raw: "MAXIMAL",
+  },
+  {
+    freq: 17916,
+    raw: "CO-PILOT",
+    word: "COPILOT",
+  },
+  {
+    freq: 17917,
+    raw: "FLOURED",
+  },
+  {
+    freq: 17925,
+    raw: "CABARET",
+  },
+  {
+    freq: 17927,
+    raw: "SHALLOW",
+  },
+  {
+    freq: 17932,
+    raw: "PEPTIDE",
+  },
+  {
+    freq: 17935,
+    raw: "DEFRAUD",
+  },
+  {
+    freq: 17940,
+    raw: "GODDAMN",
+  },
+  {
+    freq: 17945,
+    raw: "COURTLY",
+  },
+  {
+    freq: 17953,
+    raw: "SUBSIST",
+  },
+  {
+    freq: 17961,
+    raw: "CHEDDAR",
+  },
+  {
+    freq: 17967,
+    raw: "LOCKOUT",
+  },
+  {
+    freq: 18000,
+    raw: "SHAPING",
+  },
+  {
+    freq: 18014,
+    raw: "RUMPLED",
+  },
+  {
+    freq: 18015,
+    raw: "SHAPING",
+  },
+  {
+    freq: 18039,
+    raw: "TOOLBOX",
+  },
+  {
+    freq: 18058,
+    raw: "MONIKER",
+  },
+  {
+    freq: 18068,
+    raw: "UNICORN",
+  },
+  {
+    freq: 18094,
+    raw: "REDNECK",
+  },
+  {
+    freq: 18096,
+    raw: "FILMING",
+  },
+  {
+    freq: 18111,
+    raw: "HEARSAY",
+  },
+  {
+    freq: 18112,
+    raw: "RAVAGES",
+  },
+  {
+    freq: 18113,
+    raw: "IDIOTIC",
+  },
+  {
+    freq: 18122,
+    raw: "SHACKLE",
+  },
+  {
+    freq: 18127,
+    raw: "COPIOUS",
+  },
+  {
+    freq: 18131,
+    raw: "RICOTTA",
+  },
+  {
+    freq: 18136,
+    raw: "KEYWORD",
+  },
+  {
+    freq: 18139,
+    raw: "TEN-YEAR",
+    word: "TENYEAR",
+  },
+  {
+    freq: 18141,
+    raw: "THISTLE",
+  },
+  {
+    freq: 18159,
+    raw: "CANNING",
+  },
+  {
+    freq: 18164,
+    raw: "DISAVOW",
+  },
+  {
+    freq: 18173,
+    raw: "FLUTTER",
+  },
+  {
+    freq: 18175,
+    raw: "SORCERY",
+  },
+  {
+    freq: 18179,
+    raw: "CONTORT",
+  },
+  {
+    freq: 18183,
+    raw: "INGRAIN",
+  },
+  {
+    freq: 18184,
+    raw: "SMASHED",
+  },
+  {
+    freq: 18190,
+    raw: "WAYSIDE",
+  },
+  {
+    freq: 18195,
+    raw: "MATCHED",
+  },
+  {
+    freq: 18196,
+    raw: "WARMING",
+  },
+  {
+    freq: 18201,
+    raw: "SAVANNA",
+  },
+  {
+    freq: 18212,
+    raw: "HEMLOCK",
+  },
+  {
+    freq: 18219,
+    raw: "CHIFFON",
+  },
+  {
+    freq: 18223,
+    raw: "ENCHANT",
+  },
+  {
+    freq: 18228,
+    raw: "ACIDITY",
+  },
+  {
+    freq: 18234,
+    raw: "ENTHUSE",
+  },
+  {
+    freq: 18247,
+    raw: "INVALID",
+  },
+  {
+    freq: 18254,
+    raw: "LACQUER",
+  },
+  {
+    freq: 18260,
+    raw: "HOLDOUT",
+  },
+  {
+    freq: 18266,
+    raw: "MARCHER",
+  },
+  {
+    freq: 18267,
+    raw: "WANNABE",
+  },
+  {
+    freq: 18275,
+    raw: "IMPERIL",
+  },
+  {
+    freq: 18288,
+    raw: "PURVIEW",
+  },
+  {
+    freq: 18294,
+    raw: "LULLABY",
+  },
+  {
+    freq: 18296,
+    raw: "SLATHER",
+  },
+  {
+    freq: 18298,
+    raw: "SHACKLE",
+  },
+  {
+    freq: 18304,
+    raw: "PICKLED",
+  },
+  {
+    freq: 18312,
+    raw: "SHIFTER",
+  },
+  {
+    freq: 18325,
+    raw: "REDNESS",
+  },
+  {
+    freq: 18329,
+    raw: "BUTTERY",
+  },
+  {
+    freq: 18331,
+    raw: "TWO-LANE",
+    word: "TWOLANE",
+  },
+  {
+    freq: 18338,
+    raw: "TWOFOLD",
+  },
+  {
+    freq: 18339,
+    raw: "MISDEED",
+  },
+  {
+    freq: 18341,
+    raw: "ELATION",
+  },
+  {
+    freq: 18345,
+    raw: "ANCIENT",
+  },
+  {
+    freq: 18346,
+    raw: "JITTERS",
+  },
+  {
+    freq: 18347,
+    raw: "BLURRED",
+  },
+  {
+    freq: 18349,
+    raw: "BLEMISH",
+  },
+  {
+    freq: 18354,
+    raw: "SANDBAG",
+  },
+  {
+    freq: 18360,
+    raw: "DRYNESS",
+  },
+  {
+    freq: 18363,
+    raw: "IMPLODE",
+  },
+  {
+    freq: 18374,
+    raw: "POLEMIC",
+  },
+  {
+    freq: 18375,
+    raw: "WROUGHT",
+  },
+  {
+    freq: 18393,
+    raw: "DENIZEN",
+  },
+  {
+    freq: 18403,
+    raw: "COBBLER",
+  },
+  {
+    freq: 18404,
+    raw: "TRAVAIL",
+  },
+  {
+    freq: 18408,
+    raw: "HERETIC",
+  },
+  {
+    freq: 18410,
+    raw: "CONNOTE",
+  },
+  {
+    freq: 18413,
+    raw: "ANGELIC",
+  },
+  {
+    freq: 18434,
+    raw: "PROFANE",
+  },
+  {
+    freq: 18442,
+    raw: "BIG-NAME",
+    word: "BIGNAME",
+  },
+  {
+    freq: 18450,
+    raw: "DEADPAN",
+  },
+  {
+    freq: 18453,
+    raw: "FESTOON",
+  },
+  {
+    freq: 18465,
+    raw: "UPTIGHT",
+  },
+  {
+    freq: 18473,
+    raw: "BLENDED",
+  },
+  {
+    freq: 18476,
+    raw: "CYANIDE",
+  },
+  {
+    freq: 18481,
+    raw: "PHANTOM",
+  },
+  {
+    freq: 18484,
+    raw: "TRANSOM",
+  },
+  {
+    freq: 18493,
+    raw: "NOTEPAD",
+  },
+  {
+    freq: 18501,
+    raw: "FERMENT",
+  },
+  {
+    freq: 18506,
+    raw: "E-MAILED",
+    word: "EMAILED",
+  },
+  {
+    freq: 18509,
+    raw: "MERMAID",
+  },
+  {
+    freq: 18517,
+    raw: "CHIPPED",
+  },
+  {
+    freq: 18518,
+    raw: "STOPPER",
+  },
+  {
+    freq: 18523,
+    raw: "PEELING",
+  },
+  {
+    freq: 18533,
+    raw: "SHUTOUT",
+  },
+  {
+    freq: 18551,
+    raw: "TRINKET",
+  },
+  {
+    freq: 18553,
+    raw: "DISDAIN",
+  },
+  {
+    freq: 18566,
+    raw: "PREPAID",
+  },
+  {
+    freq: 18569,
+    raw: "CONCEIT",
+  },
+  {
+    freq: 18576,
+    raw: "GRATIFY",
+  },
+  {
+    freq: 18594,
+    raw: "YIDDISH",
+  },
+  {
+    freq: 18597,
+    raw: "MYSTIFY",
+  },
+  {
+    freq: 18618,
+    raw: "HATCHET",
+  },
+  {
+    freq: 18624,
+    raw: "INSULAR",
+  },
+  {
+    freq: 18629,
+    raw: "BELATED",
+  },
+  {
+    freq: 18630,
+    raw: "INFIDEL",
+  },
+  {
+    freq: 18636,
+    raw: "DRIZZLE",
+  },
+  {
+    freq: 18641,
+    raw: "OVERLAY",
+  },
+  {
+    freq: 18644,
+    raw: "HALTING",
+  },
+  {
+    freq: 18649,
+    raw: "CURRANT",
+  },
+  {
+    freq: 18658,
+    raw: "OVEREAT",
+  },
+  {
+    freq: 18663,
+    raw: "CRUELLY",
+  },
+  {
+    freq: 18686,
+    raw: "BEEHIVE",
+  },
+  {
+    freq: 18688,
+    raw: "CARRY-ON",
+    word: "CARRYON",
+  },
+  {
+    freq: 18692,
+    raw: "MAGENTA",
+  },
+  {
+    freq: 18693,
+    raw: "LEGGING",
+  },
+  {
+    freq: 18702,
+    raw: "WINDROW",
+  },
+  {
+    freq: 18710,
+    raw: "RAVIOLI",
+  },
+  {
+    freq: 18719,
+    raw: "BEQUEST",
+  },
+  {
+    freq: 18720,
+    raw: "REPAINT",
+  },
+  {
+    freq: 18721,
+    raw: "FURTIVE",
+  },
+  {
+    freq: 18722,
+    raw: "DASHING",
+  },
+  {
+    freq: 18727,
+    raw: "ALL-STAR",
+    word: "ALLSTAR",
+  },
+  {
+    freq: 18744,
+    raw: "LOW-TECH",
+    word: "LOWTECH",
+  },
+  {
+    freq: 18745,
+    raw: "OFF-DUTY",
+    word: "OFFDUTY",
+  },
+  {
+    freq: 18753,
+    raw: "MEASLES",
+  },
+  {
+    freq: 18766,
+    raw: "CYCLONE",
+  },
+  {
+    freq: 18768,
+    raw: "WORN-OUT",
+    word: "WORNOUT",
+  },
+  {
+    freq: 18773,
+    raw: "GROUPIE",
+  },
+  {
+    freq: 18775,
+    raw: "STEEPLE",
+  },
+  {
+    freq: 18787,
+    raw: "CO-FOUND",
+    word: "COFOUND",
+  },
+  {
+    freq: 18808,
+    raw: "EARTHEN",
+  },
+  {
+    freq: 18816,
+    raw: "RANSACK",
+  },
+  {
+    freq: 18820,
+    raw: "UPRIVER",
+  },
+  {
+    freq: 18855,
+    raw: "HUMANLY",
+  },
+  {
+    freq: 18857,
+    raw: "SCRUNCH",
+  },
+  {
+    freq: 18872,
+    raw: "BOARDER",
+  },
+  {
+    freq: 18882,
+    raw: "CRUDELY",
+  },
+  {
+    freq: 18918,
+    raw: "UNSCREW",
+  },
+  {
+    freq: 18922,
+    raw: "SNORKEL",
+  },
+  {
+    freq: 18923,
+    raw: "NEWSMAN",
+  },
+  {
+    freq: 18936,
+    raw: "SPINDLE",
+  },
+  {
+    freq: 18942,
+    raw: "CHEATER",
+  },
+  {
+    freq: 18951,
+    raw: "SNOWMAN",
+  },
+  {
+    freq: 18957,
+    raw: "SPINDLY",
+  },
+  {
+    freq: 18963,
+    raw: "ARUGULA",
+  },
+  {
+    freq: 18968,
+    raw: "HANDSET",
+  },
+  {
+    freq: 18974,
+    raw: "BRACKET",
+  },
+  {
+    freq: 18975,
+    raw: "BULGING",
+  },
+  {
+    freq: 18977,
+    raw: "TRAWLER",
+  },
+  {
+    freq: 18981,
+    raw: "HELLISH",
+  },
+  {
+    freq: 18982,
+    raw: "ASCETIC",
+  },
+  {
+    freq: 18988,
+    raw: "PLEATED",
+  },
+  {
+    freq: 18993,
+    raw: "DEVOLVE",
+  },
+  {
+    freq: 19004,
+    raw: "MANHUNT",
+  },
+  {
+    freq: 19008,
+    raw: "FOUNDRY",
+  },
+  {
+    freq: 19011,
+    raw: "MORTIFY",
+  },
+  {
+    freq: 19017,
+    raw: "REPULSE",
+  },
+  {
+    freq: 19022,
+    raw: "SIX-WEEK",
+    word: "SIXWEEK",
+  },
+  {
+    freq: 19027,
+    raw: "BOTCHED",
+  },
+  {
+    freq: 19052,
+    raw: "HURRIED",
+  },
+  {
+    freq: 19053,
+    raw: "LEANING",
+  },
+  {
+    freq: 19065,
+    raw: "GASEOUS",
+  },
+  {
+    freq: 19068,
+    raw: "WELL-OFF",
+    word: "WELLOFF",
+  },
+  {
+    freq: 19073,
+    raw: "DEVIOUS",
+  },
+  {
+    freq: 19075,
+    raw: "SOUFFLE",
+  },
+  {
+    freq: 19085,
+    raw: "WRECKED",
+  },
+  {
+    freq: 19086,
+    raw: "PUFFING",
+  },
+  {
+    freq: 19087,
+    raw: "CROPPED",
+  },
+  {
+    freq: 19106,
+    raw: "CURLING",
+  },
+  {
+    freq: 19107,
+    raw: "CRIPPLE",
+  },
+  {
+    freq: 19137,
+    raw: "STAND-IN",
+    word: "STANDIN",
+  },
+  {
+    freq: 19141,
+    raw: "CURVING",
+  },
+  {
+    freq: 19147,
+    raw: "PAYABLE",
+  },
+  {
+    freq: 19159,
+    raw: "MOONLIT",
+  },
+  {
+    freq: 19160,
+    raw: "BOSNIAN",
+  },
+  {
+    freq: 19167,
+    raw: "ANGLING",
+  },
+  {
+    freq: 19175,
+    raw: "SCARRED",
+  },
+  {
+    freq: 19178,
+    raw: "TITANIC",
+  },
+  {
+    freq: 19184,
+    raw: "VERDANT",
+  },
+  {
+    freq: 19190,
+    raw: "UNKNOWN",
+  },
+  {
+    freq: 19194,
+    raw: "NOVELLA",
+  },
+  {
+    freq: 19202,
+    raw: "ASTRIDE",
+  },
+  {
+    freq: 19204,
+    raw: "WIRETAP",
+  },
+  {
+    freq: 19214,
+    raw: "BANDAGE",
+  },
+  {
+    freq: 19233,
+    raw: "VISUALS",
+  },
+  {
+    freq: 19262,
+    raw: "IDOLIZE",
+  },
+  {
+    freq: 19270,
+    raw: "ARCHWAY",
+  },
+  {
+    freq: 19281,
+    raw: "CHARGER",
+  },
+  {
+    freq: 19283,
+    raw: "FLIPPER",
+  },
+  {
+    freq: 19286,
+    raw: "FRESHEN",
+  },
+  {
+    freq: 19298,
+    raw: "CHARADE",
+  },
+  {
+    freq: 19302,
+    raw: "ITALICS",
+  },
+  {
+    freq: 19305,
+    raw: "IMPINGE",
+  },
+  {
+    freq: 19307,
+    raw: "ILLEGAL",
+  },
+  {
+    freq: 19318,
+    raw: "ACCLAIM",
+  },
+  {
+    freq: 19327,
+    raw: "PORTEND",
+  },
+  {
+    freq: 19329,
+    raw: "SPLURGE",
+  },
+  {
+    freq: 19344,
+    raw: "HOTSHOT",
+  },
+  {
+    freq: 19350,
+    raw: "CENSURE",
+  },
+  {
+    freq: 19351,
+    raw: "STRINGY",
+  },
+  {
+    freq: 19360,
+    raw: "DIVIDER",
+  },
+  {
+    freq: 19365,
+    raw: "RUBBERY",
+  },
+  {
+    freq: 19373,
+    raw: "CAUSTIC",
+  },
+  {
+    freq: 19383,
+    raw: "FLUSHED",
+  },
+  {
+    freq: 19385,
+    raw: "VITALLY",
+  },
+  {
+    freq: 19405,
+    raw: "EVOLVED",
+  },
+  {
+    freq: 19413,
+    raw: "OSTRICH",
+  },
+  {
+    freq: 19417,
+    raw: "LONG-AGO",
+    word: "LONGAGO",
+  },
+  {
+    freq: 19419,
+    raw: "ABYSMAL",
+  },
+  {
+    freq: 19422,
+    raw: "SOLUBLE",
+  },
+  {
+    freq: 19424,
+    raw: "HIDEOUT",
+  },
+  {
+    freq: 19425,
+    raw: "LIVABLE",
+  },
+  {
+    freq: 19428,
+    raw: "SEAGULL",
+  },
+  {
+    freq: 19432,
+    raw: "MERRILY",
+  },
+  {
+    freq: 19435,
+    raw: "TENURED",
+  },
+  {
+    freq: 19439,
+    raw: "SQUELCH",
+  },
+  {
+    freq: 19459,
+    raw: "MIDWEEK",
+  },
+  {
+    freq: 19471,
+    raw: "ONE-STOP",
+    word: "ONESTOP",
+  },
+  {
+    freq: 19472,
+    raw: "PHALANX",
+  },
+  {
+    freq: 19473,
+    raw: "HOPEFUL",
+  },
+  {
+    freq: 19479,
+    raw: "DEEP-SEA",
+    word: "DEEPSEA",
+  },
+  {
+    freq: 19487,
+    raw: "MACABRE",
+  },
+  {
+    freq: 19494,
+    raw: "STAND-UP",
+    word: "STANDUP",
+  },
+  {
+    freq: 19495,
+    raw: "YIDDISH",
+  },
+  {
+    freq: 19501,
+    raw: "FISTFUL",
+  },
+  {
+    freq: 19506,
+    raw: "SIGHTED",
+  },
+  {
+    freq: 19518,
+    raw: "REVELER",
+  },
+  {
+    freq: 19526,
+    raw: "CHUTNEY",
+  },
+  {
+    freq: 19546,
+    raw: "LATENCY",
+  },
+  {
+    freq: 19566,
+    raw: "FLOWERY",
+  },
+  {
+    freq: 19568,
+    raw: "PLOTTER",
+  },
+  {
+    freq: 19576,
+    raw: "DUALISM",
+  },
+  {
+    freq: 19591,
+    raw: "TEASING",
+  },
+  {
+    freq: 19593,
+    raw: "CHEETAH",
+  },
+  {
+    freq: 19595,
+    raw: "MUFFLER",
+  },
+  {
+    freq: 19597,
+    raw: "OFFERED",
+  },
+  {
+    freq: 19598,
+    raw: "REPLANT",
+  },
+  {
+    freq: 19604,
+    raw: "MIMETIC",
+  },
+  {
+    freq: 19605,
+    raw: "SPATTER",
+  },
+  {
+    freq: 19618,
+    raw: "PENSIVE",
+  },
+  {
+    freq: 19620,
+    raw: "ORATORY",
+  },
+  {
+    freq: 19629,
+    raw: "UNKEMPT",
+  },
+  {
+    freq: 19632,
+    raw: "LANGUID",
+  },
+  {
+    freq: 19635,
+    raw: "MINUTIA",
+  },
+  {
+    freq: 19642,
+    raw: "POWDERY",
+  },
+  {
+    freq: 19643,
+    raw: "FATIGUE",
+  },
+  {
+    freq: 19645,
+    raw: "SHEATHE",
+  },
+  {
+    freq: 19647,
+    raw: "STALLED",
+  },
+  {
+    freq: 19656,
+    raw: "ARMREST",
+  },
+  {
+    freq: 19661,
+    raw: "CUTICLE",
+  },
+  {
+    freq: 19668,
+    raw: "SHAKE-UP",
+    word: "SHAKEUP",
+  },
+  {
+    freq: 19685,
+    raw: "CRISPLY",
+  },
+  {
+    freq: 19687,
+    raw: "SO-AND-SO",
+    word: "SOANDSO",
+  },
+  {
+    freq: 19689,
+    raw: "SLICKER",
+  },
+  {
+    freq: 19701,
+    raw: "SCUFFLE",
+  },
+  {
+    freq: 19709,
+    raw: "CLIPPER",
+  },
+  {
+    freq: 19714,
+    raw: "TALKING",
+  },
+  {
+    freq: 19715,
+    raw: "PILINGS",
+  },
+  {
+    freq: 19724,
+    raw: "HAVE-NOT",
+    word: "HAVENOT",
+  },
+  {
+    freq: 19727,
+    raw: "PINCHED",
+  },
+  {
+    freq: 19729,
+    raw: "ODDBALL",
+  },
+  {
+    freq: 19731,
+    raw: "NURTURE",
+  },
+  {
+    freq: 19741,
+    raw: "CHECKED",
+  },
+  {
+    freq: 19746,
+    raw: "CREMATE",
+  },
+  {
+    freq: 19756,
+    raw: "YARDAGE",
+  },
+  {
+    freq: 19761,
+    raw: "KINDRED",
+  },
+  {
+    freq: 19764,
+    raw: "WEARING",
+  },
+  {
+    freq: 19780,
+    raw: "NEWNESS",
+  },
+  {
+    freq: 19798,
+    raw: "REALTOR",
+  },
+  {
+    freq: 19799,
+    raw: "ORDERLY",
+  },
+  {
+    freq: 19805,
+    raw: "GLIMMER",
+  },
+  {
+    freq: 19821,
+    raw: "ZIONIST",
+  },
+  {
+    freq: 19832,
+    raw: "SHAVING",
+  },
+  {
+    freq: 19839,
+    raw: "GIRLISH",
+  },
+  {
+    freq: 19849,
+    raw: "OVERUSE",
+  },
+  {
+    freq: 19859,
+    raw: "FLEMISH",
+  },
+  {
+    freq: 19860,
+    raw: "YEAR-END",
+    word: "YEAREND",
+  },
+  {
+    freq: 19869,
+    raw: "SNICKER",
+  },
+  {
+    freq: 19873,
+    raw: "AMOROUS",
+  },
+  {
+    freq: 19878,
+    raw: "SPENDER",
+  },
+  {
+    freq: 19881,
+    raw: "PICKING",
+  },
+  {
+    freq: 19887,
+    raw: "SANDBOX",
+  },
+  {
+    freq: 19889,
+    raw: "PANICKY",
+  },
+  {
+    freq: 19890,
+    raw: "STIRRUP",
+  },
+  {
+    freq: 19901,
+    raw: "SCALING",
+  },
+  {
+    freq: 19911,
+    raw: "REDRESS",
+  },
+  {
+    freq: 19928,
+    raw: "INFERNO",
+  },
+  {
+    freq: 19933,
+    raw: "FLEXION",
+  },
+  {
+    freq: 19936,
+    raw: "MAILMAN",
+  },
+  {
+    freq: 19938,
+    raw: "ECHOING",
+  },
+  {
+    freq: 19945,
+    raw: "REGALIA",
+  },
+  {
+    freq: 19947,
+    raw: "GASTRIC",
+  },
+  {
+    freq: 19953,
+    raw: "REBUILT",
+  },
+  {
+    freq: 19964,
+    raw: "WAR-TORN",
+    word: "WARTORN",
+  },
+  {
+    freq: 19967,
+    raw: "FRAMING",
+  },
+  {
+    freq: 19981,
+    raw: "BULWARK",
+  },
+  {
+    freq: 19982,
+    raw: "CRINKLE",
+  },
+  {
+    freq: 19991,
+    raw: "THYROID",
+  },
+  {
+    freq: 19992,
+    raw: "INVALID",
+  },
+  {
+    freq: 20008,
+    raw: "MANATEE",
+  },
+  {
+    freq: 20018,
+    raw: "KEEPING",
+  },
+  {
+    freq: 20024,
+    raw: "SHAPELY",
+  },
+  {
+    freq: 20033,
+    raw: "RIGGING",
+  },
+  {
+    freq: 20041,
+    raw: "CHOWDER",
+  },
+  {
+    freq: 20042,
+    raw: "BUCOLIC",
+  },
+  {
+    freq: 20045,
+    raw: "BULIMIA",
+  },
+  {
+    freq: 20052,
+    raw: "REMATCH",
+  },
+  {
+    freq: 20058,
+    raw: "TWO-FOLD",
+    word: "TWOFOLD",
+  },
+  {
+    freq: 20067,
+    raw: "PROVOST",
+  },
+  {
+    freq: 20073,
+    raw: "NUMERAL",
+  },
+  {
+    freq: 20075,
+    raw: "MARXIST",
+  },
+  {
+    freq: 20079,
+    raw: "EVACUEE",
+  },
+  {
+    freq: 20084,
+    raw: "ARCHIVE",
+  },
+  {
+    freq: 20090,
+    raw: "RESOUND",
+  },
+  {
+    freq: 20108,
+    raw: "SUBJECT",
+  },
+  {
+    freq: 20120,
+    raw: "HANDILY",
+  },
+  {
+    freq: 20121,
+    raw: "AIRFLOW",
+  },
+  {
+    freq: 20128,
+    raw: "KNOTTED",
+  },
+  {
+    freq: 20138,
+    raw: "ESCAPED",
+  },
+  {
+    freq: 20143,
+    raw: "PARAGON",
+  },
+  {
+    freq: 20147,
+    raw: "MALLARD",
+  },
+  {
+    freq: 20152,
+    raw: "DUTIFUL",
+  },
+  {
+    freq: 20153,
+    raw: "UPSWING",
+  },
+  {
+    freq: 20157,
+    raw: "HEIRESS",
+  },
+  {
+    freq: 20164,
+    raw: "HAMSTER",
+  },
+  {
+    freq: 20172,
+    raw: "MERGING",
+  },
+  {
+    freq: 20196,
+    raw: "MUDDLED",
+  },
+  {
+    freq: 20209,
+    raw: "REARING",
+  },
+  {
+    freq: 20218,
+    raw: "BLUNDER",
+  },
+  {
+    freq: 20230,
+    raw: "PROSAIC",
+  },
+  {
+    freq: 20232,
+    raw: "ACROBAT",
+  },
+  {
+    freq: 20233,
+    raw: "SIX-FOOT",
+    word: "SIXFOOT",
+  },
+  {
+    freq: 20243,
+    raw: "ABSCESS",
+  },
+  {
+    freq: 20255,
+    raw: "STEPSON",
+  },
+  {
+    freq: 20264,
+    raw: "SNIFFLE",
+  },
+  {
+    freq: 20276,
+    raw: "OUTCROP",
+  },
+  {
+    freq: 20296,
+    raw: "SUNSPOT",
+  },
+  {
+    freq: 20305,
+    raw: "CORRODE",
+  },
+  {
+    freq: 20308,
+    raw: "HARD-WON",
+    word: "HARDWON",
+  },
+  {
+    freq: 20313,
+    raw: "COPYCAT",
+  },
+  {
+    freq: 20322,
+    raw: "BULBOUS",
+  },
+  {
+    freq: 20325,
+    raw: "REISSUE",
+  },
+  {
+    freq: 20328,
+    raw: "NAIVELY",
+  },
+  {
+    freq: 20334,
+    raw: "BEDEVIL",
+  },
+  {
+    freq: 20343,
+    raw: "PRESSED",
+  },
+  {
+    freq: 20360,
+    raw: "CALORIC",
+  },
+  {
+    freq: 20368,
+    raw: "CHECK-IN",
+    word: "CHECKIN",
+  },
+  {
+    freq: 20374,
+    raw: "BROCADE",
+  },
+  {
+    freq: 20379,
+    raw: "SHADING",
+  },
+  {
+    freq: 20389,
+    raw: "ELASTIC",
+  },
+  {
+    freq: 20393,
+    raw: "AIRLIFT",
+  },
+  {
+    freq: 20405,
+    raw: "CRAPPIE",
+  },
+  {
+    freq: 20409,
+    raw: "ENCRUST",
+  },
+  {
+    freq: 20424,
+    raw: "SAWMILL",
+  },
+  {
+    freq: 20430,
+    raw: "WHIMPER",
+  },
+  {
+    freq: 20431,
+    raw: "ARCHERY",
+  },
+  {
+    freq: 20432,
+    raw: "BEAMING",
+  },
+  {
+    freq: 20439,
+    raw: "ROTUNDA",
+  },
+  {
+    freq: 20441,
+    raw: "FISSION",
+  },
+  {
+    freq: 20448,
+    raw: "HAUGHTY",
+  },
+  {
+    freq: 20459,
+    raw: "THIRDLY",
+  },
+  {
+    freq: 20460,
+    raw: "BIOFUEL",
+  },
+  {
+    freq: 20462,
+    raw: "WALKMAN",
+  },
+  {
+    freq: 20463,
+    raw: "MESTIZO",
+  },
+  {
+    freq: 20469,
+    raw: "VENDING",
+  },
+  {
+    freq: 20471,
+    raw: "PHONICS",
+  },
+  {
+    freq: 20486,
+    raw: "TACITLY",
+  },
+  {
+    freq: 20501,
+    raw: "ATHEISM",
+  },
+  {
+    freq: 20506,
+    raw: "VAULTED",
+  },
+  {
+    freq: 20511,
+    raw: "ALL-MALE",
+    word: "ALLMALE",
+  },
+  {
+    freq: 20512,
+    raw: "STOPPED",
+  },
+  {
+    freq: 20529,
+    raw: "CONICAL",
+  },
+  {
+    freq: 20531,
+    raw: "CHATEAU",
+  },
+  {
+    freq: 20534,
+    raw: "CHANGER",
+  },
+  {
+    freq: 20536,
+    raw: "BACKLIT",
+  },
+  {
+    freq: 20541,
+    raw: "PRETEND",
+  },
+  {
+    freq: 20548,
+    raw: "QUILTED",
+  },
+  {
+    freq: 20558,
+    raw: "ELITISM",
+  },
+  {
+    freq: 20559,
+    raw: "BRISKET",
+  },
+  {
+    freq: 20560,
+    raw: "INVITED",
+  },
+  {
+    freq: 20563,
+    raw: "DRIFTER",
+  },
+  {
+    freq: 20564,
+    raw: "DISGUST",
+  },
+  {
+    freq: 20565,
+    raw: "SQUALID",
+  },
+  {
+    freq: 20573,
+    raw: "PERVERT",
+  },
+  {
+    freq: 20580,
+    raw: "INNARDS",
+  },
+  {
+    freq: 20597,
+    raw: "GUNSHIP",
+  },
+  {
+    freq: 20599,
+    raw: "SNICKER",
+  },
+  {
+    freq: 20600,
+    raw: "LATRINE",
+  },
+  {
+    freq: 20602,
+    raw: "MANGLED",
+  },
+  {
+    freq: 20627,
+    raw: "REALIGN",
+  },
+  {
+    freq: 20636,
+    raw: "VAUNTED",
+  },
+  {
+    freq: 20647,
+    raw: "GRANOLA",
+  },
+  {
+    freq: 20659,
+    raw: "SPANIEL",
+  },
+  {
+    freq: 20677,
+    raw: "PLANTED",
+  },
+  {
+    freq: 20682,
+    raw: "CATCH-22",
+    word: "CATCH22",
+  },
+  {
+    freq: 20685,
+    raw: "RESTFUL",
+  },
+  {
+    freq: 20694,
+    raw: "ENTROPY",
+  },
+  {
+    freq: 20695,
+    raw: "QUIBBLE",
+  },
+  {
+    freq: 20705,
+    raw: "BALONEY",
+  },
+  {
+    freq: 20707,
+    raw: "REVIVED",
+  },
+  {
+    freq: 20727,
+    raw: "DEBRIEF",
+  },
+  {
+    freq: 20735,
+    raw: "TRACING",
+  },
+  {
+    freq: 20743,
+    raw: "STARLET",
+  },
+  {
+    freq: 20745,
+    raw: "SINUOUS",
+  },
+  {
+    freq: 20746,
+    raw: "HARRIED",
+  },
+  {
+    freq: 20754,
+    raw: "DICTION",
+  },
+  {
+    freq: 20759,
+    raw: "KLEENEX",
+  },
+  {
+    freq: 20765,
+    raw: "ROUNDLY",
+  },
+  {
+    freq: 20772,
+    raw: "CHARMER",
+  },
+  {
+    freq: 20777,
+    raw: "SAINTLY",
+  },
+  {
+    freq: 20781,
+    raw: "MODICUM",
+  },
+  {
+    freq: 20782,
+    raw: "SANDBAR",
+  },
+  {
+    freq: 20785,
+    raw: "ABORTED",
+  },
+  {
+    freq: 20804,
+    raw: "CHICANO",
+  },
+  {
+    freq: 20829,
+    raw: "TIBETAN",
+  },
+  {
+    freq: 20830,
+    raw: "ATROPHY",
+  },
+  {
+    freq: 20839,
+    raw: "BRAISED",
+  },
+  {
+    freq: 20843,
+    raw: "HYDRANT",
+  },
+  {
+    freq: 20855,
+    raw: "LEGIBLE",
+  },
+  {
+    freq: 20863,
+    raw: "UNDOING",
+  },
+  {
+    freq: 20864,
+    raw: "SLANTED",
+  },
+  {
+    freq: 20868,
+    raw: "BULLDOG",
+  },
+  {
+    freq: 20871,
+    raw: "VISCOUS",
+  },
+  {
+    freq: 20874,
+    raw: "EPITAPH",
+  },
+  {
+    freq: 20878,
+    raw: "RAMPART",
+  },
+  {
+    freq: 20888,
+    raw: "ROWBOAT",
+  },
+  {
+    freq: 20903,
+    raw: "ZILLION",
+  },
+  {
+    freq: 20905,
+    raw: "HAGGARD",
+  },
+  {
+    freq: 20912,
+    raw: "SHOWBIZ",
+  },
+  {
+    freq: 20916,
+    raw: "COMBINE",
+  },
+  {
+    freq: 20920,
+    raw: "UNMOVED",
+  },
+  {
+    freq: 20921,
+    raw: "DRUGGED",
+  },
+  {
+    freq: 20944,
+    raw: "SULFATE",
+  },
+  {
+    freq: 20948,
+    raw: "PULSATE",
+  },
+  {
+    freq: 20959,
+    raw: "PELICAN",
+  },
+  {
+    freq: 20964,
+    raw: "BAILIFF",
+  },
+  {
+    freq: 20966,
+    raw: "HIGH-FAT",
+    word: "HIGHFAT",
+  },
+  {
+    freq: 20967,
+    raw: "KINGPIN",
+  },
+  {
+    freq: 20975,
+    raw: "KEYHOLE",
+  },
+  {
+    freq: 20976,
+    raw: "ROOMFUL",
+  },
+  {
+    freq: 20983,
+    raw: "TRICEPS",
+  },
+  {
+    freq: 20984,
+    raw: "LETDOWN",
+  },
+  {
+    freq: 20993,
+    raw: "DOUBTER",
+  },
+  {
+    freq: 20997,
+    raw: "CAROTID",
+  },
+  {
+    freq: 21001,
+    raw: "SQUALOR",
+  },
+  {
+    freq: 21002,
+    raw: "MITZVAH",
+  },
+  {
+    freq: 21011,
+    raw: "CLARION",
+  },
+  {
+    freq: 21012,
+    raw: "DONATED",
+  },
+  {
+    freq: 21013,
+    raw: "HICKORY",
+  },
+  {
+    freq: 21017,
+    raw: "RACQUET",
+  },
+  {
+    freq: 21019,
+    raw: "CHEVRON",
+  },
+  {
+    freq: 21021,
+    raw: "PINBALL",
+  },
+  {
+    freq: 21026,
+    raw: "CLOBBER",
+  },
+  {
+    freq: 21044,
+    raw: "FASCIST",
+  },
+  {
+    freq: 21045,
+    raw: "CROSSED",
+  },
+  {
+    freq: 21054,
+    raw: "FICTIVE",
+  },
+  {
+    freq: 21057,
+    raw: "PRETEEN",
+  },
+  {
+    freq: 21078,
+    raw: "LONG-RUN",
+    word: "LONGRUN",
+  },
+  {
+    freq: 21081,
+    raw: "ON-BOARD",
+    word: "ONBOARD",
+  },
+  {
+    freq: 21089,
+    raw: "THROWER",
+  },
+  {
+    freq: 21100,
+    raw: "OIL-RICH",
+    word: "OILRICH",
+  },
+  {
+    freq: 21109,
+    raw: "SOLD-OUT",
+    word: "SOLDOUT",
+  },
+  {
+    freq: 21112,
+    raw: "INSHORE",
+  },
+  {
+    freq: 21114,
+    raw: "SURGING",
+  },
+  {
+    freq: 21115,
+    raw: "LECTERN",
+  },
+  {
+    freq: 21116,
+    raw: "THROATY",
+  },
+  {
+    freq: 21122,
+    raw: "SUBTYPE",
+  },
+  {
+    freq: 21124,
+    raw: "CONSORT",
+  },
+  {
+    freq: 21139,
+    raw: "UNAIDED",
+  },
+  {
+    freq: 21150,
+    raw: "SWEEPER",
+  },
+  {
+    freq: 21153,
+    raw: "RUFFLED",
+  },
+  {
+    freq: 21157,
+    raw: "CORNICE",
+  },
+  {
+    freq: 21170,
+    raw: "DOSSIER",
+  },
+  {
+    freq: 21181,
+    raw: "SULFIDE",
+  },
+  {
+    freq: 21185,
+    raw: "BREVITY",
+  },
+  {
+    freq: 21190,
+    raw: "SPOTTER",
+  },
+  {
+    freq: 21199,
+    raw: "BUZZARD",
+  },
+  {
+    freq: 21203,
+    raw: "PETUNIA",
+  },
+  {
+    freq: 21210,
+    raw: "PREMISE",
+  },
+  {
+    freq: 21213,
+    raw: "HEAVING",
+  },
+  {
+    freq: 21230,
+    raw: "UPSTAGE",
+  },
+  {
+    freq: 21247,
+    raw: "ELECTOR",
+  },
+  {
+    freq: 21251,
+    raw: "COMEDIC",
+  },
+  {
+    freq: 21254,
+    raw: "ATTACHE",
+  },
+  {
+    freq: 21280,
+    raw: "GODSEND",
+  },
+  {
+    freq: 21282,
+    raw: "FLATBED",
+  },
+  {
+    freq: 21284,
+    raw: "UPSURGE",
+  },
+  {
+    freq: 21287,
+    raw: "HONOREE",
+  },
+  {
+    freq: 21290,
+    raw: "CITADEL",
+  },
+  {
+    freq: 21291,
+    raw: "OMNIBUS",
+  },
+  {
+    freq: 21294,
+    raw: "POSTMAN",
+  },
+  {
+    freq: 21300,
+    raw: "PRESAGE",
+  },
+  {
+    freq: 21311,
+    raw: "GANGSTA",
+  },
+  {
+    freq: 21313,
+    raw: "CONCAVE",
+  },
+  {
+    freq: 21326,
+    raw: "DRYWALL",
+  },
+  {
+    freq: 21342,
+    raw: "DIPPING",
+  },
+  {
+    freq: 21347,
+    raw: "RETINAL",
+  },
+  {
+    freq: 21350,
+    raw: "SPOILER",
+  },
+  {
+    freq: 21353,
+    raw: "GERMANE",
+  },
+  {
+    freq: 21355,
+    raw: "ALIMONY",
+  },
+  {
+    freq: 21357,
+    raw: "BARBELL",
+  },
+  {
+    freq: 21363,
+    raw: "MANHOLE",
+  },
+  {
+    freq: 21378,
+    raw: "ANDROID",
+  },
+  {
+    freq: 21397,
+    raw: "WARBLER",
+  },
+  {
+    freq: 21398,
+    raw: "EARLOBE",
+  },
+  {
+    freq: 21402,
+    raw: "DEATHLY",
+  },
+  {
+    freq: 21403,
+    raw: "CRANIAL",
+  },
+  {
+    freq: 21407,
+    raw: "BELGIAN",
+  },
+  {
+    freq: 21410,
+    raw: "STUMBLE",
+  },
+  {
+    freq: 21435,
+    raw: "WEBBING",
+  },
+  {
+    freq: 21437,
+    raw: "FACE-OFF",
+    word: "FACEOFF",
+  },
+  {
+    freq: 21448,
+    raw: "EARDRUM",
+  },
+  {
+    freq: 21466,
+    raw: "DEEP-SKY",
+    word: "DEEPSKY",
+  },
+  {
+    freq: 21468,
+    raw: "UPSTATE",
+  },
+  {
+    freq: 21477,
+    raw: "CROQUET",
+  },
+  {
+    freq: 21479,
+    raw: "PROBATE",
+  },
+  {
+    freq: 21486,
+    raw: "SPATTER",
+  },
+  {
+    freq: 21505,
+    raw: "CELLIST",
+  },
+  {
+    freq: 21507,
+    raw: "GRANDLY",
+  },
+  {
+    freq: 21510,
+    raw: "CROWBAR",
+  },
+  {
+    freq: 21511,
+    raw: "SELL-OFF",
+    word: "SELLOFF",
+  },
+  {
+    freq: 21523,
+    raw: "SCRAPPY",
+  },
+  {
+    freq: 21533,
+    raw: "CAPSIZE",
+  },
+  {
+    freq: 21538,
+    raw: "MOORING",
+  },
+  {
+    freq: 21557,
+    raw: "LOW-RISK",
+    word: "LOWRISK",
+  },
+  {
+    freq: 21565,
+    raw: "AGROUND",
+  },
+  {
+    freq: 21577,
+    raw: "OVERUSE",
+  },
+  {
+    freq: 21584,
+    raw: "CLEAVER",
+  },
+  {
+    freq: 21586,
+    raw: "NO-FAULT",
+    word: "NOFAULT",
+  },
+  {
+    freq: 21592,
+    raw: "ZERO-SUM",
+    word: "ZEROSUM",
+  },
+  {
+    freq: 21609,
+    raw: "TADPOLE",
+  },
+  {
+    freq: 21620,
+    raw: "BURNISH",
+  },
+  {
+    freq: 21623,
+    raw: "ARMOIRE",
+  },
+  {
+    freq: 21624,
+    raw: "RELAPSE",
+  },
+  {
+    freq: 21637,
+    raw: "BLISTER",
+  },
+  {
+    freq: 21642,
+    raw: "FRIGATE",
+  },
+  {
+    freq: 21653,
+    raw: "ACOLYTE",
+  },
+  {
+    freq: 21671,
+    raw: "MILKING",
+  },
+  {
+    freq: 21673,
+    raw: "HIPSTER",
+  },
+  {
+    freq: 21680,
+    raw: "IN-STATE",
+    word: "INSTATE",
+  },
+  {
+    freq: 21681,
+    raw: "STENCIL",
+  },
+  {
+    freq: 21689,
+    raw: "YAWNING",
+  },
+  {
+    freq: 21691,
+    raw: "EXCRETE",
+  },
+  {
+    freq: 21693,
+    raw: "GLEEFUL",
+  },
+  {
+    freq: 21710,
+    raw: "UNPAVED",
+  },
+  {
+    freq: 21724,
+    raw: "TWISTER",
+  },
+  {
+    freq: 21731,
+    raw: "DISCARD",
+  },
+  {
+    freq: 21733,
+    raw: "OBVIATE",
+  },
+  {
+    freq: 21735,
+    raw: "MASONIC",
+  },
+  {
+    freq: 21740,
+    raw: "IRONING",
+  },
+  {
+    freq: 21746,
+    raw: "BRAMBLE",
+  },
+  {
+    freq: 21775,
+    raw: "MARBLED",
+  },
+  {
+    freq: 21780,
+    raw: "INSURED",
+  },
+  {
+    freq: 21781,
+    raw: "SLANDER",
+  },
+  {
+    freq: 21785,
+    raw: "FRINGED",
+  },
+  {
+    freq: 21789,
+    raw: "HAIRPIN",
+  },
+  {
+    freq: 21795,
+    raw: "SORGHUM",
+  },
+  {
+    freq: 21800,
+    raw: "KNEECAP",
+  },
+  {
+    freq: 21812,
+    raw: "REQUIEM",
+  },
+  {
+    freq: 21832,
+    raw: "POTLUCK",
+  },
+  {
+    freq: 21842,
+    raw: "WHINING",
+  },
+  {
+    freq: 21860,
+    raw: "HALOGEN",
+  },
+  {
+    freq: 21865,
+    raw: "DRIBBLE",
+  },
+  {
+    freq: 21871,
+    raw: "GRIDDLE",
+  },
+  {
+    freq: 21876,
+    raw: "STENCIL",
+  },
+  {
+    freq: 21881,
+    raw: "BACKHOE",
+  },
+  {
+    freq: 21887,
+    raw: "OBELISK",
+  },
+  {
+    freq: 21891,
+    raw: "REGARDS",
+  },
+  {
+    freq: 21892,
+    raw: "PHARAOH",
+  },
+  {
+    freq: 21902,
+    raw: "FIGURAL",
+  },
+  {
+    freq: 21909,
+    raw: "FLUSTER",
+  },
+  {
+    freq: 21910,
+    raw: "TURNOFF",
+  },
+  {
+    freq: 21916,
+    raw: "KIBBUTZ",
+  },
+  {
+    freq: 21919,
+    raw: "WHATNOT",
+  },
+  {
+    freq: 21925,
+    raw: "UNCLEAN",
+  },
+  {
+    freq: 21926,
+    raw: "HYDRATE",
+  },
+  {
+    freq: 21928,
+    raw: "TRAIPSE",
+  },
+  {
+    freq: 21936,
+    raw: "PANOPLY",
+  },
+  {
+    freq: 21941,
+    raw: "SIAMESE",
+  },
+  {
+    freq: 21945,
+    raw: "PERSIAN",
+  },
+  {
+    freq: 21947,
+    raw: "GRANULE",
+  },
+  {
+    freq: 21972,
+    raw: "CHALICE",
+  },
+  {
+    freq: 21980,
+    raw: "PARSNIP",
+  },
+  {
+    freq: 21986,
+    raw: "GINSENG",
+  },
+  {
+    freq: 21992,
+    raw: "HEARTEN",
+  },
+  {
+    freq: 21999,
+    raw: "TRUNDLE",
+  },
+  {
+    freq: 22002,
+    raw: "ROSETTE",
+  },
+  {
+    freq: 22012,
+    raw: "OVERPAY",
+  },
+  {
+    freq: 22024,
+    raw: "BUNDLED",
+  },
+  {
+    freq: 22032,
+    raw: "GALLOWS",
+  },
+  {
+    freq: 22035,
+    raw: "FIRSTLY",
+  },
+  {
+    freq: 22036,
+    raw: "MARTIAN",
+  },
+  {
+    freq: 22042,
+    raw: "ESCAPEE",
+  },
+  {
+    freq: 22062,
+    raw: "BOXWOOD",
+  },
+  {
+    freq: 22077,
+    raw: "POSTURE",
+  },
+  {
+    freq: 22078,
+    raw: "CROUTON",
+  },
+  {
+    freq: 22081,
+    raw: "OFF-LINE",
+    word: "OFFLINE",
+  },
+  {
+    freq: 22101,
+    raw: "AIRLIFT",
+  },
+  {
+    freq: 22115,
+    raw: "SANCTUM",
+  },
+  {
+    freq: 22119,
+    raw: "WRANGLE",
+  },
+  {
+    freq: 22130,
+    raw: "DAMNING",
+  },
+  {
+    freq: 22146,
+    raw: "CATCH-UP",
+    word: "CATCHUP",
+  },
+  {
+    freq: 22147,
+    raw: "PLENARY",
+  },
+  {
+    freq: 22158,
+    raw: "PIERCED",
+  },
+  {
+    freq: 22159,
+    raw: "WRAPPED",
+  },
+  {
+    freq: 22170,
+    raw: "NIRVANA",
+  },
+  {
+    freq: 22171,
+    raw: "OVERRUN",
+  },
+  {
+    freq: 22176,
+    raw: "FOAMING",
+  },
+  {
+    freq: 22180,
+    raw: "HASIDIC",
+  },
+  {
+    freq: 22198,
+    raw: "FOLDING",
+  },
+  {
+    freq: 22199,
+    raw: "GOUACHE",
+  },
+  {
+    freq: 22200,
+    raw: "PREFACE",
+  },
+  {
+    freq: 22204,
+    raw: "PLIABLE",
+  },
+  {
+    freq: 22205,
+    raw: "ONENESS",
+  },
+  {
+    freq: 22209,
+    raw: "SHOWMAN",
+  },
+  {
+    freq: 22220,
+    raw: "POTABLE",
+  },
+  {
+    freq: 22221,
+    raw: "LEADOFF",
+  },
+  {
+    freq: 22233,
+    raw: "AIMLESS",
+  },
+  {
+    freq: 22240,
+    raw: "FREEBIE",
+  },
+  {
+    freq: 22259,
+    raw: "ADMIRED",
+  },
+  {
+    freq: 22278,
+    raw: "SHIPPER",
+  },
+  {
+    freq: 22286,
+    raw: "REPRISE",
+  },
+  {
+    freq: 22291,
+    raw: "IMPOSED",
+  },
+  {
+    freq: 22293,
+    raw: "RIVULET",
+  },
+  {
+    freq: 22308,
+    raw: "ELLIPSE",
+  },
+  {
+    freq: 22312,
+    raw: "COSSACK",
+  },
+  {
+    freq: 22315,
+    raw: "SMELTER",
+  },
+  {
+    freq: 22328,
+    raw: "SEAPORT",
+  },
+  {
+    freq: 22329,
+    raw: "SEABIRD",
+  },
+  {
+    freq: 22335,
+    raw: "SOBERLY",
+  },
+  {
+    freq: 22338,
+    raw: "SPARTAN",
+  },
+  {
+    freq: 22341,
+    raw: "PANACHE",
+  },
+  {
+    freq: 22342,
+    raw: "FINICKY",
+  },
+  {
+    freq: 22348,
+    raw: "BESEECH",
+  },
+  {
+    freq: 22355,
+    raw: "RECLUSE",
+  },
+  {
+    freq: 22367,
+    raw: "PLACING",
+  },
+  {
+    freq: 22368,
+    raw: "CRAWLER",
+  },
+  {
+    freq: 22369,
+    raw: "JAVELIN",
+  },
+  {
+    freq: 22372,
+    raw: "HELLUVA",
+  },
+  {
+    freq: 22386,
+    raw: "PILLAGE",
+  },
+  {
+    freq: 22387,
+    raw: "SIT-DOWN",
+    word: "SITDOWN",
+  },
+  {
+    freq: 22393,
+    raw: "PADDOCK",
+  },
+  {
+    freq: 22416,
+    raw: "RUINOUS",
+  },
+  {
+    freq: 22418,
+    raw: "SAMURAI",
+  },
+  {
+    freq: 22420,
+    raw: "ENCRYPT",
+  },
+  {
+    freq: 22421,
+    raw: "SIX-HOUR",
+    word: "SIXHOUR",
+  },
+  {
+    freq: 22423,
+    raw: "PORTICO",
+  },
+  {
+    freq: 22433,
+    raw: "BAFFLED",
+  },
+  {
+    freq: 22472,
+    raw: "STRIPER",
+  },
+  {
+    freq: 22474,
+    raw: "TATTERS",
+  },
+  {
+    freq: 22486,
+    raw: "MISSIVE",
+  },
+  {
+    freq: 22504,
+    raw: "BIGOTED",
+  },
+  {
+    freq: 22507,
+    raw: "COOLANT",
+  },
+  {
+    freq: 22520,
+    raw: "AGELESS",
+  },
+  {
+    freq: 22526,
+    raw: "SKY-HIGH",
+    word: "SKYHIGH",
+  },
+  {
+    freq: 22529,
+    raw: "JUDGING",
+  },
+  {
+    freq: 22534,
+    raw: "FRACTAL",
+  },
+  {
+    freq: 22537,
+    raw: "WETNESS",
+  },
+  {
+    freq: 22544,
+    raw: "ANTI-GAY",
+    word: "ANTIGAY",
+  },
+  {
+    freq: 22546,
+    raw: "LAID-OFF",
+    word: "LAIDOFF",
+  },
+  {
+    freq: 22562,
+    raw: "CRUMBLY",
+  },
+  {
+    freq: 22567,
+    raw: "STANDBY",
+  },
+  {
+    freq: 22573,
+    raw: "DIORAMA",
+  },
+  {
+    freq: 22601,
+    raw: "PHALLIC",
+  },
+  {
+    freq: 22608,
+    raw: "BARROOM",
+  },
+  {
+    freq: 22613,
+    raw: "SPLASHY",
+  },
+  {
+    freq: 22614,
+    raw: "HEROICS",
+  },
+  {
+    freq: 22626,
+    raw: "INCLINE",
+  },
+  {
+    freq: 22641,
+    raw: "WEIRDLY",
+  },
+  {
+    freq: 22655,
+    raw: "GLAZING",
+  },
+  {
+    freq: 22672,
+    raw: "SHOCKER",
+  },
+  {
+    freq: 22680,
+    raw: "BURMESE",
+  },
+  {
+    freq: 22688,
+    raw: "QUINTET",
+  },
+  {
+    freq: 22689,
+    raw: "CARRION",
+  },
+  {
+    freq: 22691,
+    raw: "ONE-WEEK",
+    word: "ONEWEEK",
+  },
+  {
+    freq: 22696,
+    raw: "OUTLIER",
+  },
+  {
+    freq: 22711,
+    raw: "HEADMAN",
+  },
+  {
+    freq: 22715,
+    raw: "PORTENT",
+  },
+  {
+    freq: 22728,
+    raw: "ACADEME",
+  },
+  {
+    freq: 22729,
+    raw: "LARCENY",
+  },
+  {
+    freq: 22739,
+    raw: "PINKISH",
+  },
+  {
+    freq: 22743,
+    raw: "LUNATIC",
+  },
+  {
+    freq: 22745,
+    raw: "BLUSTER",
+  },
+  {
+    freq: 22749,
+    raw: "ROUTING",
+  },
+  {
+    freq: 22750,
+    raw: "ROLLOUT",
+  },
+  {
+    freq: 22757,
+    raw: "BENZENE",
+  },
+  {
+    freq: 22764,
+    raw: "BETWEEN",
+  },
+  {
+    freq: 22765,
+    raw: "ONE-EYED",
+    word: "ONEEYED",
+  },
+  {
+    freq: 22767,
+    raw: "RESTIVE",
+  },
+  {
+    freq: 22770,
+    raw: "PLAYBOY",
+  },
+  {
+    freq: 22774,
+    raw: "STARVED",
+  },
+  {
+    freq: 22777,
+    raw: "BAGPIPE",
+  },
+  {
+    freq: 22787,
+    raw: "AMENDED",
+  },
+  {
+    freq: 22790,
+    raw: "SLACKEN",
+  },
+  {
+    freq: 22801,
+    raw: "FLARE-UP",
+    word: "FLAREUP",
+  },
+  {
+    freq: 22807,
+    raw: "THRIFTY",
+  },
+  {
+    freq: 22820,
+    raw: "INHALER",
+  },
+  {
+    freq: 22832,
+    raw: "REMOVER",
+  },
+  {
+    freq: 22839,
+    raw: "MONTHLY",
+  },
+  {
+    freq: 22857,
+    raw: "MOLLIFY",
+  },
+  {
+    freq: 22862,
+    raw: "NOTABLE",
+  },
+  {
+    freq: 22875,
+    raw: "WALKOUT",
+  },
+  {
+    freq: 22881,
+    raw: "TIMIDLY",
+  },
+  {
+    freq: 22882,
+    raw: "RATCHET",
+  },
+  {
+    freq: 22883,
+    raw: "SCRAPER",
+  },
+  {
+    freq: 22909,
+    raw: "UNSOUND",
+  },
+  {
+    freq: 22911,
+    raw: "PITCHED",
+  },
+  {
+    freq: 22917,
+    raw: "BRANDED",
+  },
+  {
+    freq: 22918,
+    raw: "ANEMONE",
+  },
+  {
+    freq: 22928,
+    raw: "SYNAPSE",
+  },
+  {
+    freq: 22944,
+    raw: "MARINER",
+  },
+  {
+    freq: 22966,
+    raw: "MESSIAH",
+  },
+  {
+    freq: 22989,
+    raw: "NEO-NAZI",
+    word: "NEONAZI",
+  },
+  {
+    freq: 22994,
+    raw: "AL-QAIDA",
+    word: "ALQAIDA",
+  },
+  {
+    freq: 23027,
+    raw: "REPRISE",
+  },
+  {
+    freq: 23038,
+    raw: "FUCHSIA",
+  },
+  {
+    freq: 23040,
+    raw: "CHIMERA",
+  },
+  {
+    freq: 23044,
+    raw: "SENDING",
+  },
+  {
+    freq: 23060,
+    raw: "BUYBACK",
+  },
+  {
+    freq: 23072,
+    raw: "DEFENCE",
+  },
+  {
+    freq: 23082,
+    raw: "PARASOL",
+  },
+  {
+    freq: 23085,
+    raw: "PADLOCK",
+  },
+  {
+    freq: 23091,
+    raw: "GODLIKE",
+  },
+  {
+    freq: 23100,
+    raw: "MENORAH",
+  },
+  {
+    freq: 23101,
+    raw: "BROMIDE",
+  },
+  {
+    freq: 23124,
+    raw: "HAWKISH",
+  },
+  {
+    freq: 23128,
+    raw: "TAFFETA",
+  },
+  {
+    freq: 23153,
+    raw: "CHORTLE",
+  },
+  {
+    freq: 23156,
+    raw: "PARKWAY",
+  },
+  {
+    freq: 23163,
+    raw: "REORDER",
+  },
+  {
+    freq: 23171,
+    raw: "GRAYING",
+  },
+  {
+    freq: 23180,
+    raw: "BOTANIC",
+  },
+  {
+    freq: 23182,
+    raw: "BELOVED",
+  },
+  {
+    freq: 23186,
+    raw: "REFINER",
+  },
+  {
+    freq: 23191,
+    raw: "U-SHAPED",
+    word: "USHAPED",
+  },
+  {
+    freq: 23196,
+    raw: "ZOOLOGY",
+  },
+  {
+    freq: 23205,
+    raw: "JUGGLER",
+  },
+  {
+    freq: 23206,
+    raw: "PLUMAGE",
+  },
+  {
+    freq: 23210,
+    raw: "UNTAMED",
+  },
+  {
+    freq: 23224,
+    raw: "BLOTTER",
+  },
+  {
+    freq: 23234,
+    raw: "TAPERED",
+  },
+  {
+    freq: 23247,
+    raw: "SORTING",
+  },
+  {
+    freq: 23253,
+    raw: "NUMERIC",
+  },
+  {
+    freq: 23256,
+    raw: "BRUSQUE",
+  },
+  {
+    freq: 23266,
+    raw: "BEELINE",
+  },
+  {
+    freq: 23269,
+    raw: "MUCOSAL",
+  },
+  {
+    freq: 23274,
+    raw: "TYPHOON",
+  },
+  {
+    freq: 23285,
+    raw: "FRECKLE",
+  },
+  {
+    freq: 23288,
+    raw: "DIVINER",
+  },
+  {
+    freq: 23293,
+    raw: "DROPPED",
+  },
+  {
+    freq: 23333,
+    raw: "KINSMAN",
+  },
+  {
+    freq: 23337,
+    raw: "PERTURB",
+  },
+  {
+    freq: 23338,
+    raw: "OXIDIZE",
+  },
+  {
+    freq: 23339,
+    raw: "FRITTER",
+  },
+  {
+    freq: 23359,
+    raw: "FERMENT",
+  },
+  {
+    freq: 23382,
+    raw: "OLD-LINE",
+    word: "OLDLINE",
+  },
+  {
+    freq: 23389,
+    raw: "TENFOLD",
+  },
+  {
+    freq: 23393,
+    raw: "HARPOON",
+  },
+  {
+    freq: 23404,
+    raw: "OFFHAND",
+  },
+  {
+    freq: 23413,
+    raw: "PARAPET",
+  },
+  {
+    freq: 23414,
+    raw: "TETANUS",
+  },
+  {
+    freq: 23433,
+    raw: "WOODCUT",
+  },
+  {
+    freq: 23440,
+    raw: "TRESTLE",
+  },
+  {
+    freq: 23447,
+    raw: "RECTORY",
+  },
+  {
+    freq: 23454,
+    raw: "SQUISHY",
+  },
+  {
+    freq: 23462,
+    raw: "CRAZILY",
+  },
+  {
+    freq: 23468,
+    raw: "LEPROSY",
+  },
+  {
+    freq: 23469,
+    raw: "OFFENCE",
+  },
+  {
+    freq: 23471,
+    raw: "SECONDS",
+  },
+  {
+    freq: 23474,
+    raw: "TROUNCE",
+  },
+  {
+    freq: 23489,
+    raw: "SLANDER",
+  },
+  {
+    freq: 23493,
+    raw: "TOURNEY",
+  },
+  {
+    freq: 23507,
+    raw: "AIRLESS",
+  },
+  {
+    freq: 23509,
+    raw: "BUSLOAD",
+  },
+  {
+    freq: 23510,
+    raw: "EXPUNGE",
+  },
+  {
+    freq: 23511,
+    raw: "UP-FRONT",
+    word: "UPFRONT",
+  },
+  {
+    freq: 23518,
+    raw: "CISTERN",
+  },
+  {
+    freq: 23519,
+    raw: "SHAVING",
+  },
+  {
+    freq: 23520,
+    raw: "RELEARN",
+  },
+  {
+    freq: 23521,
+    raw: "MOLLUSK",
+  },
+  {
+    freq: 23522,
+    raw: "COUPLET",
+  },
+  {
+    freq: 23525,
+    raw: "PATTERN",
+  },
+  {
+    freq: 23526,
+    raw: "SPRINGY",
+  },
+  {
+    freq: 23527,
+    raw: "CAVEMAN",
+  },
+  {
+    freq: 23536,
+    raw: "WOMANLY",
+  },
+  {
+    freq: 23546,
+    raw: "PELAGIC",
+  },
+  {
+    freq: 23547,
+    raw: "CATTAIL",
+  },
+  {
+    freq: 23551,
+    raw: "WHEELED",
+  },
+  {
+    freq: 23555,
+    raw: "CRUSADE",
+  },
+  {
+    freq: 23569,
+    raw: "GO-AHEAD",
+    word: "GOAHEAD",
+  },
+  {
+    freq: 23584,
+    raw: "MIMICRY",
+  },
+  {
+    freq: 23591,
+    raw: "NATURAL",
+  },
+  {
+    freq: 23592,
+    raw: "REFRACT",
+  },
+  {
+    freq: 23594,
+    raw: "POACHED",
+  },
+  {
+    freq: 23595,
+    raw: "ERASURE",
+  },
+  {
+    freq: 23599,
+    raw: "SPLOTCH",
+  },
+  {
+    freq: 23604,
+    raw: "DAPPLED",
+  },
+  {
+    freq: 23620,
+    raw: "CONJOIN",
+  },
+  {
+    freq: 23635,
+    raw: "CULVERT",
+  },
+  {
+    freq: 23636,
+    raw: "DRESSED",
+  },
+  {
+    freq: 23648,
+    raw: "PRICKLE",
+  },
+  {
+    freq: 23668,
+    raw: "SPANDEX",
+  },
+  {
+    freq: 23687,
+    raw: "BUNTING",
+  },
+  {
+    freq: 23693,
+    raw: "OTTOMAN",
+  },
+  {
+    freq: 23696,
+    raw: "GODLESS",
+  },
+  {
+    freq: 23697,
+    raw: "BESPEAK",
+  },
+  {
+    freq: 23710,
+    raw: "METRICS",
+  },
+  {
+    freq: 23711,
+    raw: "TAXICAB",
+  },
+  {
+    freq: 23716,
+    raw: "DETENTE",
+  },
+  {
+    freq: 23725,
+    raw: "SWINDLE",
+  },
+  {
+    freq: 23728,
+    raw: "STARCHY",
+  },
+  {
+    freq: 23733,
+    raw: "LEXICAL",
+  },
+  {
+    freq: 23737,
+    raw: "BOMBARD",
+  },
+  {
+    freq: 23739,
+    raw: "CONGEAL",
+  },
+  {
+    freq: 23744,
+    raw: "DIMPLED",
+  },
+  {
+    freq: 23745,
+    raw: "CHIPPER",
+  },
+  {
+    freq: 23748,
+    raw: "CHINOOK",
+  },
+  {
+    freq: 23759,
+    raw: "ROMANCE",
+  },
+  {
+    freq: 23761,
+    raw: "CALIPER",
+  },
+  {
+    freq: 23765,
+    raw: "CLIPPED",
+  },
+  {
+    freq: 23770,
+    raw: "QUICKIE",
+  },
+  {
+    freq: 23771,
+    raw: "HOMINID",
+  },
+  {
+    freq: 23773,
+    raw: "TEMPEST",
+  },
+  {
+    freq: 23780,
+    raw: "HALF-DAY",
+    word: "HALFDAY",
+  },
+  {
+    freq: 23786,
+    raw: "TONNAGE",
+  },
+  {
+    freq: 23789,
+    raw: "TWO-ROOM",
+    word: "TWOROOM",
+  },
+  {
+    freq: 23796,
+    raw: "LOCATOR",
+  },
+  {
+    freq: 23815,
+    raw: "MULATTO",
+  },
+  {
+    freq: 23828,
+    raw: "DUCHESS",
+  },
+  {
+    freq: 23837,
+    raw: "SEEKING",
+  },
+  {
+    freq: 23846,
+    raw: "BEESWAX",
+  },
+  {
+    freq: 23847,
+    raw: "SHOEBOX",
+  },
+  {
+    freq: 23850,
+    raw: "CHEATED",
+  },
+  {
+    freq: 23875,
+    raw: "FIGMENT",
+  },
+  {
+    freq: 23880,
+    raw: "OPENING",
+  },
+  {
+    freq: 23887,
+    raw: "EMOTIVE",
+  },
+  {
+    freq: 23891,
+    raw: "SIRLOIN",
+  },
+  {
+    freq: 23896,
+    raw: "ERUDITE",
+  },
+  {
+    freq: 23897,
+    raw: "OPACITY",
+  },
+  {
+    freq: 23898,
+    raw: "CUTLERY",
+  },
+  {
+    freq: 23906,
+    raw: "UNHINGE",
+  },
+  {
+    freq: 23913,
+    raw: "RATTLER",
+  },
+  {
+    freq: 23921,
+    raw: "DEPOSED",
+  },
+  {
+    freq: 23929,
+    raw: "JEWELED",
+  },
+  {
+    freq: 23930,
+    raw: "ORIFICE",
+  },
+  {
+    freq: 23940,
+    raw: "TRAPEZE",
+  },
+  {
+    freq: 23943,
+    raw: "SUSPECT",
+  },
+  {
+    freq: 23954,
+    raw: "SKIMMER",
+  },
+  {
+    freq: 23956,
+    raw: "BENDING",
+  },
+  {
+    freq: 23971,
+    raw: "BLASTED",
+  },
+  {
+    freq: 23975,
+    raw: "STINGER",
+  },
+  {
+    freq: 23979,
+    raw: "DECIDED",
+  },
+  {
+    freq: 23998,
+    raw: "CATALAN",
+  },
+  {
+    freq: 23999,
+    raw: "HAYWIRE",
+  },
+  {
+    freq: 24009,
+    raw: "WINLESS",
+  },
+  {
+    freq: 24012,
+    raw: "PHONEME",
+  },
+  {
+    freq: 24017,
+    raw: "ADRENAL",
+  },
+  {
+    freq: 24025,
+    raw: "CLOYING",
+  },
+  {
+    freq: 24027,
+    raw: "WARLIKE",
+  },
+  {
+    freq: 24028,
+    raw: "ANASAZI",
+  },
+  {
+    freq: 24031,
+    raw: "GAZELLE",
+  },
+  {
+    freq: 24035,
+    raw: "DRAFTEE",
+  },
+  {
+    freq: 24036,
+    raw: "PAROTID",
+  },
+  {
+    freq: 24043,
+    raw: "ENSNARE",
+  },
+  {
+    freq: 24054,
+    raw: "CLOGGED",
+  },
+  {
+    freq: 24087,
+    raw: "BEHOOVE",
+  },
+  {
+    freq: 24095,
+    raw: "TAPPING",
+  },
+  {
+    freq: 24096,
+    raw: "PODCAST",
+  },
+  {
+    freq: 24105,
+    raw: "JACKASS",
+  },
+  {
+    freq: 24116,
+    raw: "ALMANAC",
+  },
+  {
+    freq: 24126,
+    raw: "PADDLER",
+  },
+  {
+    freq: 24133,
+    raw: "BRUTISH",
+  },
+  {
+    freq: 24148,
+    raw: "FOXHOLE",
+  },
+  {
+    freq: 24160,
+    raw: "PLATING",
+  },
+  {
+    freq: 24170,
+    raw: "ONSHORE",
+  },
+  {
+    freq: 24171,
+    raw: "EYESORE",
+  },
+  {
+    freq: 24180,
+    raw: "PONTIFF",
+  },
+  {
+    freq: 24185,
+    raw: "DILUTED",
+  },
+  {
+    freq: 24186,
+    raw: "ORATION",
+  },
+  {
+    freq: 24206,
+    raw: "HOODLUM",
+  },
+  {
+    freq: 24222,
+    raw: "MINARET",
+  },
+  {
+    freq: 24225,
+    raw: "LACTOSE",
+  },
+  {
+    freq: 24231,
+    raw: "FIEFDOM",
+  },
+  {
+    freq: 24240,
+    raw: "AIRTIME",
+  },
+  {
+    freq: 24253,
+    raw: "EQUINOX",
+  },
+  {
+    freq: 24257,
+    raw: "HECKLER",
+  },
+  {
+    freq: 24281,
+    raw: "BEWITCH",
+  },
+  {
+    freq: 24291,
+    raw: "JARRING",
+  },
+  {
+    freq: 24318,
+    raw: "WHOPPER",
+  },
+  {
+    freq: 24340,
+    raw: "TORPEDO",
+  },
+  {
+    freq: 24347,
+    raw: "STERNUM",
+  },
+  {
+    freq: 24358,
+    raw: "HOLIDAY",
+  },
+  {
+    freq: 24364,
+    raw: "KLINGON",
+  },
+  {
+    freq: 24366,
+    raw: "SUMMONS",
+  },
+  {
+    freq: 24378,
+    raw: "SPYWARE",
+  },
+  {
+    freq: 24382,
+    raw: "SEGMENT",
+  },
+  {
+    freq: 24388,
+    raw: "GUNWALE",
+  },
+  {
+    freq: 24396,
+    raw: "LAMBAST",
+  },
+  {
+    freq: 24400,
+    raw: "LEOTARD",
+  },
+  {
+    freq: 24423,
+    raw: "BASHFUL",
+  },
+  {
+    freq: 24432,
+    raw: "AMIABLY",
+  },
+  {
+    freq: 24433,
+    raw: "PROVISO",
+  },
+  {
+    freq: 24434,
+    raw: "COLLARD",
+  },
+  {
+    freq: 24450,
+    raw: "DIPPING",
+  },
+  {
+    freq: 24455,
+    raw: "GRAYISH",
+  },
+  {
+    freq: 24461,
+    raw: "CURABLE",
+  },
+  {
+    freq: 24471,
+    raw: "PLUNDER",
+  },
+  {
+    freq: 24479,
+    raw: "RESTOCK",
+  },
+  {
+    freq: 24490,
+    raw: "AVENGER",
+  },
+  {
+    freq: 24503,
+    raw: "COWGIRL",
+  },
+  {
+    freq: 24515,
+    raw: "REVELRY",
+  },
+  {
+    freq: 24522,
+    raw: "LOZENGE",
+  },
+  {
+    freq: 24541,
+    raw: "BOTTLER",
+  },
+  {
+    freq: 24549,
+    raw: "FLOATER",
+  },
+  {
+    freq: 24556,
+    raw: "TRANSIT",
+  },
+  {
+    freq: 24564,
+    raw: "FIDDLER",
+  },
+  {
+    freq: 24565,
+    raw: "DERVISH",
+  },
+  {
+    freq: 24570,
+    raw: "BRACING",
+  },
+  {
+    freq: 24573,
+    raw: "YEAR-END",
+    word: "YEAREND",
+  },
+  {
+    freq: 24585,
+    raw: "JUMBLED",
+  },
+  {
+    freq: 24589,
+    raw: "ADAPTED",
+  },
+  {
+    freq: 24590,
+    raw: "BRONZED",
+  },
+  {
+    freq: 24592,
+    raw: "FOCUSER",
+  },
+  {
+    freq: 24595,
+    raw: "DEFROST",
+  },
+  {
+    freq: 24596,
+    raw: "REPUTED",
+  },
+  {
+    freq: 24605,
+    raw: "ADVANCE",
+  },
+  {
+    freq: 24606,
+    raw: "SISTINE",
+  },
+  {
+    freq: 24616,
+    raw: "CHARMED",
+  },
+  {
+    freq: 24620,
+    raw: "RAVAGED",
+  },
+  {
+    freq: 24622,
+    raw: "EARPLUG",
+  },
+  {
+    freq: 24623,
+    raw: "GARBLED",
+  },
+  {
+    freq: 24634,
+    raw: "DUSTING",
+  },
+  {
+    freq: 24645,
+    raw: "PRAYING",
+  },
+  {
+    freq: 24667,
+    raw: "TOOLBAR",
+  },
+  {
+    freq: 24668,
+    raw: "KNUCKLE",
+  },
+  {
+    freq: 24736,
+    raw: "WELL-LIT",
+    word: "WELLLIT",
+  },
+  {
+    freq: 24743,
+    raw: "SWADDLE",
+  },
+  {
+    freq: 24752,
+    raw: "COBBLED",
+  },
+  {
+    freq: 24754,
+    raw: "STUTTER",
+  },
+  {
+    freq: 24770,
+    raw: "SLUMBER",
+  },
+  {
+    freq: 24773,
+    raw: "COPYING",
+  },
+  {
+    freq: 24774,
+    raw: "SPARKLY",
+  },
+  {
+    freq: 24775,
+    raw: "HUNCHED",
+  },
+  {
+    freq: 24782,
+    raw: "ARRAIGN",
+  },
+  {
+    freq: 24786,
+    raw: "COTERIE",
+  },
+  {
+    freq: 24787,
+    raw: "CANNERY",
+  },
+  {
+    freq: 24788,
+    raw: "CASSAVA",
+  },
+  {
+    freq: 24798,
+    raw: "BROWNED",
+  },
+  {
+    freq: 24828,
+    raw: "CRANIUM",
+  },
+  {
+    freq: 24831,
+    raw: "FOOTMAN",
+  },
+  {
+    freq: 24832,
+    raw: "COSTUME",
+  },
+  {
+    freq: 24840,
+    raw: "ICE-COLD",
+    word: "ICECOLD",
+  },
+  {
+    freq: 24841,
+    raw: "GROUPER",
+  },
+  {
+    freq: 24845,
+    raw: "ROTATOR",
+  },
+  {
+    freq: 24857,
+    raw: "ONE-SHOT",
+    word: "ONESHOT",
+  },
+  {
+    freq: 24858,
+    raw: "CURSIVE",
+  },
+  {
+    freq: 24863,
+    raw: "ENABLER",
+  },
+  {
+    freq: 24865,
+    raw: "INDUCED",
+  },
+  {
+    freq: 24866,
+    raw: "RAUNCHY",
+  },
+  {
+    freq: 24869,
+    raw: "ROMAINE",
+  },
+  {
+    freq: 24877,
+    raw: "COMPORT",
+  },
+  {
+    freq: 24889,
+    raw: "CREAMED",
+  },
+  {
+    freq: 24891,
+    raw: "ACTUARY",
+  },
+  {
+    freq: 24892,
+    raw: "UNDATED",
+  },
+  {
+    freq: 24908,
+    raw: "CROONER",
+  },
+  {
+    freq: 24918,
+    raw: "LACONIC",
+  },
+  {
+    freq: 24929,
+    raw: "ALASKAN",
+  },
+  {
+    freq: 24941,
+    raw: "CORONAL",
+  },
+  {
+    freq: 24942,
+    raw: "FEMORAL",
+  },
+  {
+    freq: 24947,
+    raw: "ITEMIZE",
+  },
+  {
+    freq: 24952,
+    raw: "CHIPPER",
+  },
+  {
+    freq: 24956,
+    raw: "APPRISE",
+  },
+  {
+    freq: 24971,
+    raw: "ROARING",
+  },
+  {
+    freq: 24982,
+    raw: "COLLUDE",
+  },
+  {
+    freq: 24983,
+    raw: "GELDING",
+  },
+  {
+    freq: 25002,
+    raw: "INBOUND",
+  },
+  {
+    freq: 25005,
+    raw: "SCRUPLE",
+  },
+  {
+    freq: 25014,
+    raw: "CANDIED",
+  },
+  {
+    freq: 25027,
+    raw: "LIFTOFF",
+  },
+  {
+    freq: 25043,
+    raw: "SUBPLOT",
+  },
+  {
+    freq: 25078,
+    raw: "IN-CLASS",
+    word: "INCLASS",
+  },
+  {
+    freq: 25079,
+    raw: "MELANGE",
+  },
+  {
+    freq: 25082,
+    raw: "JOINING",
+  },
+  {
+    freq: 25092,
+    raw: "BARKING",
+  },
+  {
+    freq: 25095,
+    raw: "NITROUS",
+  },
+  {
+    freq: 25103,
+    raw: "VALENCE",
+  },
+  {
+    freq: 25112,
+    raw: "TRIMMER",
+  },
+  {
+    freq: 25113,
+    raw: "BOOTLEG",
+  },
+  {
+    freq: 25120,
+    raw: "ONWARDS",
+  },
+  {
+    freq: 25136,
+    raw: "RAGTIME",
+  },
+  {
+    freq: 25151,
+    raw: "IMPOUND",
+  },
+  {
+    freq: 25159,
+    raw: "PONTOON",
+  },
+  {
+    freq: 25162,
+    raw: "BUFFOON",
+  },
+  {
+    freq: 25164,
+    raw: "BEARISH",
+  },
+  {
+    freq: 25167,
+    raw: "LEMMING",
+  },
+  {
+    freq: 25177,
+    raw: "CALYPSO",
+  },
+  {
+    freq: 25178,
+    raw: "SIGNAGE",
+  },
+  {
+    freq: 25199,
+    raw: "GROWING",
+  },
+  {
+    freq: 25201,
+    raw: "PAISLEY",
+  },
+  {
+    freq: 25220,
+    raw: "PAPYRUS",
+  },
+  {
+    freq: 25226,
+    raw: "BOOKISH",
+  },
+  {
+    freq: 25236,
+    raw: "MIDRIFF",
+  },
+  {
+    freq: 25248,
+    raw: "DERANGE",
+  },
+  {
+    freq: 25258,
+    raw: "CENTAUR",
+  },
+  {
+    freq: 25265,
+    raw: "FANATIC",
+  },
+  {
+    freq: 25270,
+    raw: "KNITTED",
+  },
+  {
+    freq: 25271,
+    raw: "ISTHMUS",
+  },
+  {
+    freq: 25276,
+    raw: "SHAMPOO",
+  },
+  {
+    freq: 25278,
+    raw: "MOORISH",
+  },
+  {
+    freq: 25280,
+    raw: "DECODER",
+  },
+  {
+    freq: 25283,
+    raw: "KAYAKER",
+  },
+  {
+    freq: 25288,
+    raw: "L-SHAPED",
+    word: "LSHAPED",
+  },
+  {
+    freq: 25293,
+    raw: "BREATHY",
+  },
+  {
+    freq: 25295,
+    raw: "DISTILL",
+  },
+  {
+    freq: 25321,
+    raw: "BANDANA",
+  },
+  {
+    freq: 25325,
+    raw: "SEAWALL",
+  },
+  {
+    freq: 25338,
+    raw: "BASHING",
+  },
+  {
+    freq: 25340,
+    raw: "LAMPOON",
+  },
+  {
+    freq: 25367,
+    raw: "TUGBOAT",
+  },
+  {
+    freq: 25368,
+    raw: "USED-CAR",
+    word: "USEDCAR",
+  },
+  {
+    freq: 25369,
+    raw: "CARBINE",
+  },
+  {
+    freq: 25370,
+    raw: "ANGOLAN",
+  },
+  {
+    freq: 25382,
+    raw: "LOWDOWN",
+  },
+  {
+    freq: 25400,
+    raw: "HOMEBOY",
+  },
+  {
+    freq: 25415,
+    raw: "EMIRATE",
+  },
+  {
+    freq: 25420,
+    raw: "IBERIAN",
+  },
+  {
+    freq: 25421,
+    raw: "JACUZZI",
+  },
+  {
+    freq: 25434,
+    raw: "ASIATIC",
+  },
+  {
+    freq: 25463,
+    raw: "TRUANCY",
+  },
+  {
+    freq: 25468,
+    raw: "ASKANCE",
+  },
+  {
+    freq: 25474,
+    raw: "VICEROY",
+  },
+  {
+    freq: 25481,
+    raw: "SCREW-UP",
+    word: "SCREWUP",
+  },
+  {
+    freq: 25482,
+    raw: "GRANTEE",
+  },
+  {
+    freq: 25495,
+    raw: "HEATHEN",
+  },
+  {
+    freq: 25497,
+    raw: "SQUARED",
+  },
+  {
+    freq: 25501,
+    raw: "LINKING",
+  },
+  {
+    freq: 25502,
+    raw: "HISSING",
+  },
+  {
+    freq: 25524,
+    raw: "PIGTAIL",
+  },
+  {
+    freq: 25531,
+    raw: "DROWNED",
+  },
+  {
+    freq: 25535,
+    raw: "ATELIER",
+  },
+  {
+    freq: 25542,
+    raw: "LABORED",
+  },
+  {
+    freq: 25556,
+    raw: "CHOKING",
+  },
+  {
+    freq: 25564,
+    raw: "VOYAGER",
+  },
+  {
+    freq: 25589,
+    raw: "SOLDIER",
+  },
+  {
+    freq: 25596,
+    raw: "CREASED",
+  },
+  {
+    freq: 25604,
+    raw: "ACERBIC",
+  },
+  {
+    freq: 25607,
+    raw: "ANIMATE",
+  },
+  {
+    freq: 25612,
+    raw: "FOUR-WAY",
+    word: "FOURWAY",
+  },
+  {
+    freq: 25629,
+    raw: "BOOMING",
+  },
+  {
+    freq: 25636,
+    raw: "TWO-PAGE",
+    word: "TWOPAGE",
+  },
+  {
+    freq: 25637,
+    raw: "ADOPTEE",
+  },
+  {
+    freq: 25642,
+    raw: "INQUEST",
+  },
+  {
+    freq: 25650,
+    raw: "RINGLET",
+  },
+  {
+    freq: 25659,
+    raw: "SAGUARO",
+  },
+  {
+    freq: 25664,
+    raw: "GENOMIC",
+  },
+  {
+    freq: 25668,
+    raw: "DRAFTER",
+  },
+  {
+    freq: 25688,
+    raw: "OFF-SITE",
+    word: "OFFSITE",
+  },
+  {
+    freq: 25703,
+    raw: "TEMPERA",
+  },
+  {
+    freq: 25713,
+    raw: "THIMBLE",
+  },
+  {
+    freq: 25717,
+    raw: "SLEIGHT",
+  },
+  {
+    freq: 25727,
+    raw: "PINHEAD",
+  },
+  {
+    freq: 25728,
+    raw: "FRAMING",
+  },
+  {
+    freq: 25738,
+    raw: "BLUBBER",
+  },
+  {
+    freq: 25751,
+    raw: "ONE-PAGE",
+    word: "ONEPAGE",
+  },
+  {
+    freq: 25758,
+    raw: "VAGRANT",
+  },
+  {
+    freq: 25762,
+    raw: "RHYMING",
+  },
+  {
+    freq: 25794,
+    raw: "SHAKILY",
+  },
+  {
+    freq: 25825,
+    raw: "OUTSIZE",
+  },
+  {
+    freq: 25827,
+    raw: "DIMNESS",
+  },
+  {
+    freq: 25834,
+    raw: "VOCALLY",
+  },
+  {
+    freq: 25843,
+    raw: "OUTBACK",
+  },
+  {
+    freq: 25847,
+    raw: "V-SHAPED",
+    word: "VSHAPED",
+  },
+  {
+    freq: 25850,
+    raw: "FEATHER",
+  },
+  {
+    freq: 25858,
+    raw: "EMITTER",
+  },
+  {
+    freq: 25864,
+    raw: "MIMESIS",
+  },
+  {
+    freq: 25865,
+    raw: "SEEPAGE",
+  },
+  {
+    freq: 25867,
+    raw: "LIQUEFY",
+  },
+  {
+    freq: 25868,
+    raw: "TRINITY",
+  },
+  {
+    freq: 25878,
+    raw: "BANNING",
+  },
+  {
+    freq: 25879,
+    raw: "PYLORUS",
+  },
+  {
+    freq: 25882,
+    raw: "INTEGER",
+  },
+  {
+    freq: 25899,
+    raw: "QUILTER",
+  },
+  {
+    freq: 25915,
+    raw: "WHITISH",
+  },
+  {
+    freq: 25920,
+    raw: "BRISTLY",
+  },
+  {
+    freq: 25938,
+    raw: "RIOTOUS",
+  },
+  {
+    freq: 25949,
+    raw: "ENDGAME",
+  },
+  {
+    freq: 25957,
+    raw: "DIGRESS",
+  },
+  {
+    freq: 25973,
+    raw: "MALTESE",
+  },
+  {
+    freq: 25988,
+    raw: "UNTRUTH",
+  },
+  {
+    freq: 25989,
+    raw: "DEBATER",
+  },
+  {
+    freq: 26001,
+    raw: "ENQUIRY",
+  },
+  {
+    freq: 26005,
+    raw: "GESTALT",
+  },
+  {
+    freq: 26006,
+    raw: "GALLING",
+  },
+  {
+    freq: 26008,
+    raw: "BRACKEN",
+  },
+  {
+    freq: 26026,
+    raw: "PROFANE",
+  },
+  {
+    freq: 26027,
+    raw: "HANGMAN",
+  },
+  {
+    freq: 26029,
+    raw: "COOKERY",
+  },
+  {
+    freq: 26039,
+    raw: "ARCHING",
+  },
+  {
+    freq: 26045,
+    raw: "OMITTED",
+  },
+  {
+    freq: 26046,
+    raw: "EMPRESS",
+  },
+  {
+    freq: 26067,
+    raw: "OPPOSED",
+  },
+  {
+    freq: 26071,
+    raw: "PLAYPEN",
+  },
+  {
+    freq: 26082,
+    raw: "UNGODLY",
+  },
+  {
+    freq: 26083,
+    raw: "TACTFUL",
+  },
+  {
+    freq: 26092,
+    raw: "UNLOVED",
+  },
+  {
+    freq: 26102,
+    raw: "HOME-RUN",
+    word: "HOMERUN",
+  },
+  {
+    freq: 26104,
+    raw: "UNDYING",
+  },
+  {
+    freq: 26123,
+    raw: "POSTDOC",
+  },
+  {
+    freq: 26132,
+    raw: "AIRSHIP",
+  },
+  {
+    freq: 26139,
+    raw: "CLEARED",
+  },
+  {
+    freq: 26141,
+    raw: "COOKOUT",
+  },
+  {
+    freq: 26149,
+    raw: "SCUFFLE",
+  },
+  {
+    freq: 26157,
+    raw: "CATALAN",
+  },
+  {
+    freq: 26158,
+    raw: "TWO-STEP",
+    word: "TWOSTEP",
+  },
+  {
+    freq: 26162,
+    raw: "STOPGAP",
+  },
+  {
+    freq: 26178,
+    raw: "WORRIER",
+  },
+  {
+    freq: 26184,
+    raw: "PEPPERY",
+  },
+  {
+    freq: 26193,
+    raw: "ISOLATE",
+  },
+  {
+    freq: 26202,
+    raw: "REFEREE",
+  },
+  {
+    freq: 26207,
+    raw: "CREEPER",
+  },
+  {
+    freq: 26222,
+    raw: "STUNNER",
+  },
+  {
+    freq: 26223,
+    raw: "SKINNED",
+  },
+  {
+    freq: 26229,
+    raw: "MONGREL",
+  },
+  {
+    freq: 26231,
+    raw: "FEVERED",
+  },
+  {
+    freq: 26300,
+    raw: "PSYCHIC",
+  },
+  {
+    freq: 26301,
+    raw: "OSMOSIS",
+  },
+  {
+    freq: 26316,
+    raw: "DOORMAT",
+  },
+  {
+    freq: 26320,
+    raw: "TANGENT",
+  },
+  {
+    freq: 26324,
+    raw: "PUT-DOWN",
+    word: "PUTDOWN",
+  },
+  {
+    freq: 26328,
+    raw: "LATVIAN",
+  },
+  {
+    freq: 26330,
+    raw: "HANDOFF",
+  },
+  {
+    freq: 26341,
+    raw: "SECTION",
+  },
+  {
+    freq: 26344,
+    raw: "SPRAYER",
+  },
+  {
+    freq: 26372,
+    raw: "COMMODE",
+  },
+  {
+    freq: 26394,
+    raw: "VENTING",
+  },
+  {
+    freq: 26404,
+    raw: "TAPIOCA",
+  },
+  {
+    freq: 26408,
+    raw: "TWO-MILE",
+    word: "TWOMILE",
+  },
+  {
+    freq: 26410,
+    raw: "OFF-LOAD",
+    word: "OFFLOAD",
+  },
+  {
+    freq: 26420,
+    raw: "WESTERN",
+  },
+  {
+    freq: 26421,
+    raw: "WREATHE",
+  },
+  {
+    freq: 26426,
+    raw: "ACETATE",
+  },
+  {
+    freq: 26436,
+    raw: "SEALANT",
+  },
+  {
+    freq: 26441,
+    raw: "KNOCKER",
+  },
+  {
+    freq: 26444,
+    raw: "JUNGIAN",
+  },
+  {
+    freq: 26446,
+    raw: "FORCEPS",
+  },
+  {
+    freq: 26452,
+    raw: "DECIMAL",
+  },
+  {
+    freq: 26467,
+    raw: "CUT-RATE",
+    word: "CUTRATE",
+  },
+  {
+    freq: 26471,
+    raw: "DELIMIT",
+  },
+  {
+    freq: 26488,
+    raw: "HILLOCK",
+  },
+  {
+    freq: 26492,
+    raw: "REDFISH",
+  },
+  {
+    freq: 26494,
+    raw: "OPOSSUM",
+  },
+  {
+    freq: 26504,
+    raw: "TROPHIC",
+  },
+  {
+    freq: 26506,
+    raw: "LOWLIFE",
+  },
+  {
+    freq: 26513,
+    raw: "VITRIOL",
+  },
+  {
+    freq: 26516,
+    raw: "GROOMED",
+  },
+  {
+    freq: 26526,
+    raw: "COMPOTE",
+  },
+  {
+    freq: 26547,
+    raw: "ENCODER",
+  },
+  {
+    freq: 26549,
+    raw: "BIGHORN",
+  },
+  {
+    freq: 26559,
+    raw: "MOANING",
+  },
+  {
+    freq: 26566,
+    raw: "FLOTSAM",
+  },
+  {
+    freq: 26587,
+    raw: "SWARTHY",
+  },
+  {
+    freq: 26594,
+    raw: "WINSOME",
+  },
+  {
+    freq: 26599,
+    raw: "HADDOCK",
+  },
+  {
+    freq: 26615,
+    raw: "LOCKING",
+  },
+  {
+    freq: 26616,
+    raw: "FIDGETY",
+  },
+  {
+    freq: 26635,
+    raw: "WILLOWY",
+  },
+  {
+    freq: 26637,
+    raw: "WINGTIP",
+  },
+  {
+    freq: 26644,
+    raw: "HACKING",
+  },
+  {
+    freq: 26654,
+    raw: "AQUEOUS",
+  },
+  {
+    freq: 26660,
+    raw: "GRANARY",
+  },
+  {
+    freq: 26672,
+    raw: "FEIGNED",
+  },
+  {
+    freq: 26678,
+    raw: "CARAWAY",
+  },
+  {
+    freq: 26707,
+    raw: "CONSORT",
+  },
+  {
+    freq: 26714,
+    raw: "WILDCAT",
+  },
+  {
+    freq: 26718,
+    raw: "CUTAWAY",
+  },
+  {
+    freq: 26739,
+    raw: "ATHEIST",
+  },
+  {
+    freq: 26770,
+    raw: "BOLOGNA",
+  },
+  {
+    freq: 26786,
+    raw: "MUSKRAT",
+  },
+  {
+    freq: 26801,
+    raw: "JAMMING",
+  },
+  {
+    freq: 26813,
+    raw: "FULCRUM",
+  },
+  {
+    freq: 26814,
+    raw: "SPITTLE",
+  },
+  {
+    freq: 26834,
+    raw: "INSIPID",
+  },
+  {
+    freq: 26836,
+    raw: "MAUDLIN",
+  },
+  {
+    freq: 26844,
+    raw: "WATTAGE",
+  },
+  {
+    freq: 26859,
+    raw: "CARLOAD",
+  },
+  {
+    freq: 26870,
+    raw: "PHOENIX",
+  },
+  {
+    freq: 26874,
+    raw: "LAGGARD",
+  },
+  {
+    freq: 26875,
+    raw: "TOPMOST",
+  },
+  {
+    freq: 26876,
+    raw: "MODULUS",
+  },
+  {
+    freq: 26884,
+    raw: "SWAHILI",
+  },
+  {
+    freq: 26892,
+    raw: "APROPOS",
+  },
+  {
+    freq: 26895,
+    raw: "BLOWING",
+  },
+  {
+    freq: 26907,
+    raw: "PERFUME",
+  },
+  {
+    freq: 26912,
+    raw: "IONIZED",
+  },
+  {
+    freq: 26931,
+    raw: "SPLURGE",
+  },
+  {
+    freq: 26959,
+    raw: "TENSILE",
+  },
+  {
+    freq: 26963,
+    raw: "ADOPTER",
+  },
+  {
+    freq: 27002,
+    raw: "HIPBELT",
+  },
+  {
+    freq: 27003,
+    raw: "RUMORED",
+  },
+  {
+    freq: 27005,
+    raw: "EPOCHAL",
+  },
+  {
+    freq: 27008,
+    raw: "CHEAPEN",
+  },
+  {
+    freq: 27014,
+    raw: "LIONESS",
+  },
+  {
+    freq: 27016,
+    raw: "WHACKED",
+  },
+  {
+    freq: 27021,
+    raw: "SECURED",
+  },
+  {
+    freq: 27034,
+    raw: "LOGBOOK",
+  },
+  {
+    freq: 27037,
+    raw: "LOW-DOSE",
+    word: "LOWDOSE",
+  },
+  {
+    freq: 27044,
+    raw: "UNLATCH",
+  },
+  {
+    freq: 27049,
+    raw: "BANGING",
+  },
+  {
+    freq: 27054,
+    raw: "AQUATIC",
+  },
+  {
+    freq: 27063,
+    raw: "DRILLER",
+  },
+  {
+    freq: 27064,
+    raw: "RHIZOME",
+  },
+  {
+    freq: 27066,
+    raw: "SPAMMER",
+  },
+  {
+    freq: 27078,
+    raw: "JUBILEE",
+  },
+  {
+    freq: 27083,
+    raw: "IN-GROUP",
+    word: "INGROUP",
+  },
+  {
+    freq: 27085,
+    raw: "ORDINAL",
+  },
+  {
+    freq: 27093,
+    raw: "FISHNET",
+  },
+  {
+    freq: 27101,
+    raw: "RUBBING",
+  },
+  {
+    freq: 27116,
+    raw: "VARNISH",
+  },
+  {
+    freq: 27122,
+    raw: "CATHODE",
+  },
+  {
+    freq: 27128,
+    raw: "WIZENED",
+  },
+  {
+    freq: 27133,
+    raw: "SWAHILI",
+  },
+  {
+    freq: 27166,
+    raw: "RAMEKIN",
+  },
+  {
+    freq: 27190,
+    raw: "ROILING",
+  },
+  {
+    freq: 27202,
+    raw: "HUMMING",
+  },
+  {
+    freq: 27210,
+    raw: "BLANDLY",
+  },
+  {
+    freq: 27218,
+    raw: "NUMBING",
+  },
+  {
+    freq: 27222,
+    raw: "HUMMING",
+  },
+  {
+    freq: 27224,
+    raw: "QUITTER",
+  },
+  {
+    freq: 27229,
+    raw: "EPISTLE",
+  },
+  {
+    freq: 27234,
+    raw: "RUSTING",
+  },
+  {
+    freq: 27238,
+    raw: "UGANDAN",
+  },
+  {
+    freq: 27250,
+    raw: "CORNISH",
+  },
+  {
+    freq: 27256,
+    raw: "FLU-LIKE",
+    word: "FLULIKE",
+  },
+  {
+    freq: 27264,
+    raw: "SCRUBBY",
+  },
+  {
+    freq: 27270,
+    raw: "FORELEG",
+  },
+  {
+    freq: 27283,
+    raw: "MUGGING",
+  },
+  {
+    freq: 27287,
+    raw: "RETINUE",
+  },
+  {
+    freq: 27290,
+    raw: "GEARBOX",
+  },
+  {
+    freq: 27296,
+    raw: "SUNROOM",
+  },
+  {
+    freq: 27305,
+    raw: "BLUSTER",
+  },
+  {
+    freq: 27309,
+    raw: "ARMBAND",
+  },
+  {
+    freq: 27316,
+    raw: "OEDIPAL",
+  },
+  {
+    freq: 27327,
+    raw: "VINTNER",
+  },
+  {
+    freq: 27337,
+    raw: "HUMDRUM",
+  },
+  {
+    freq: 27361,
+    raw: "EXTRUDE",
+  },
+  {
+    freq: 27362,
+    raw: "PRELATE",
+  },
+  {
+    freq: 27366,
+    raw: "GANGWAY",
+  },
+  {
+    freq: 27371,
+    raw: "COHABIT",
+  },
+  {
+    freq: 27376,
+    raw: "LARGESS",
+  },
+  {
+    freq: 27380,
+    raw: "SWELTER",
+  },
+  {
+    freq: 27382,
+    raw: "PANELED",
+  },
+  {
+    freq: 27400,
+    raw: "AUDIBLY",
+  },
+  {
+    freq: 27401,
+    raw: "FOUR-MAN",
+    word: "FOURMAN",
+  },
+  {
+    freq: 27419,
+    raw: "EXPIRED",
+  },
+  {
+    freq: 27435,
+    raw: "CHILEAN",
+  },
+  {
+    freq: 27458,
+    raw: "PERUSAL",
+  },
+  {
+    freq: 27465,
+    raw: "SULPHUR",
+  },
+  {
+    freq: 27470,
+    raw: "DAY-LONG",
+    word: "DAYLONG",
+  },
+  {
+    freq: 27472,
+    raw: "FALSITY",
+  },
+  {
+    freq: 27484,
+    raw: "TERSELY",
+  },
+  {
+    freq: 27487,
+    raw: "WRECKER",
+  },
+  {
+    freq: 27493,
+    raw: "TWO-TERM",
+    word: "TWOTERM",
+  },
+  {
+    freq: 27500,
+    raw: "LINSEED",
+  },
+  {
+    freq: 27525,
+    raw: "SEND-OFF",
+    word: "SENDOFF",
+  },
+  {
+    freq: 27529,
+    raw: "BROILED",
+  },
+  {
+    freq: 27534,
+    raw: "PULSING",
+  },
+  {
+    freq: 27535,
+    raw: "PARQUET",
+  },
+  {
+    freq: 27543,
+    raw: "RETOUCH",
+  },
+  {
+    freq: 27566,
+    raw: "GRUMBLE",
+  },
+  {
+    freq: 27569,
+    raw: "BOLSTER",
+  },
+  {
+    freq: 27572,
+    raw: "FISSILE",
+  },
+  {
+    freq: 27577,
+    raw: "MELDING",
+  },
+  {
+    freq: 27578,
+    raw: "COPPERY",
+  },
+  {
+    freq: 27603,
+    raw: "GO-AHEAD",
+    word: "GOAHEAD",
+  },
+  {
+    freq: 27604,
+    raw: "DERRICK",
+  },
+  {
+    freq: 27605,
+    raw: "SUNBURN",
+  },
+  {
+    freq: 27616,
+    raw: "RAMBLER",
+  },
+  {
+    freq: 27624,
+    raw: "BEGUILE",
+  },
+  {
+    freq: 27630,
+    raw: "DRAUGHT",
+  },
+  {
+    freq: 27631,
+    raw: "HEATHEN",
+  },
+  {
+    freq: 27643,
+    raw: "CHAMOIS",
+  },
+  {
+    freq: 27645,
+    raw: "SATIRIC",
+  },
+  {
+    freq: 27650,
+    raw: "MODELER",
+  },
+  {
+    freq: 27657,
+    raw: "OVERTAX",
+  },
+  {
+    freq: 27661,
+    raw: "CONNIVE",
+  },
+  {
+    freq: 27680,
+    raw: "PRETEEN",
+  },
+  {
+    freq: 27689,
+    raw: "DECLAIM",
+  },
+  {
+    freq: 27701,
+    raw: "FLACCID",
+  },
+  {
+    freq: 27723,
+    raw: "HEMLINE",
+  },
+  {
+    freq: 27724,
+    raw: "COLITIS",
+  },
+  {
+    freq: 27728,
+    raw: "ANAGRAM",
+  },
+  {
+    freq: 27748,
+    raw: "HAS-BEEN",
+    word: "HASBEEN",
+  },
+  {
+    freq: 27755,
+    raw: "SMEARED",
+  },
+  {
+    freq: 27759,
+    raw: "RATCHET",
+  },
+  {
+    freq: 27774,
+    raw: "TRACHEA",
+  },
+  {
+    freq: 27780,
+    raw: "SWAYING",
+  },
+  {
+    freq: 27790,
+    raw: "ALSO-RAN",
+    word: "ALSORAN",
+  },
+  {
+    freq: 27812,
+    raw: "GUNNERY",
+  },
+  {
+    freq: 27813,
+    raw: "POPPING",
+  },
+  {
+    freq: 27816,
+    raw: "BURNING",
+  },
+  {
+    freq: 27821,
+    raw: "PERCHED",
+  },
+  {
+    freq: 27822,
+    raw: "INGENUE",
+  },
+  {
+    freq: 27827,
+    raw: "CRUSHER",
+  },
+  {
+    freq: 27828,
+    raw: "WASH-OUT",
+    word: "WASHOUT",
+  },
+  {
+    freq: 27829,
+    raw: "BEGONIA",
+  },
+  {
+    freq: 27836,
+    raw: "GINGHAM",
+  },
+  {
+    freq: 27838,
+    raw: "SCUFFED",
+  },
+  {
+    freq: 27842,
+    raw: "LEAPING",
+  },
+  {
+    freq: 27847,
+    raw: "BOUDOIR",
+  },
+  {
+    freq: 27857,
+    raw: "MONTHLY",
+  },
+  {
+    freq: 27859,
+    raw: "YESHIVA",
+  },
+  {
+    freq: 27863,
+    raw: "HERDING",
+  },
+  {
+    freq: 27865,
+    raw: "BENTHIC",
+  },
+  {
+    freq: 27867,
+    raw: "BELTWAY",
+  },
+  {
+    freq: 27871,
+    raw: "EROTICA",
+  },
+  {
+    freq: 27872,
+    raw: "ASUNDER",
+  },
+  {
+    freq: 27874,
+    raw: "ROLODEX",
+  },
+  {
+    freq: 27883,
+    raw: "BRAVURA",
+  },
+  {
+    freq: 27901,
+    raw: "LIMINAL",
+  },
+  {
+    freq: 27905,
+    raw: "PERVERT",
+  },
+  {
+    freq: 27918,
+    raw: "INCISOR",
+  },
+  {
+    freq: 27929,
+    raw: "SKY-BLUE",
+    word: "SKYBLUE",
+  },
+  {
+    freq: 27933,
+    raw: "DOUBLET",
+  },
+  {
+    freq: 27954,
+    raw: "DECAYED",
+  },
+  {
+    freq: 27961,
+    raw: "GLIDING",
+  },
+  {
+    freq: 27976,
+    raw: "QUIBBLE",
+  },
+  {
+    freq: 27980,
+    raw: "CRASHED",
+  },
+  {
+    freq: 27982,
+    raw: "ROMANCE",
+  },
+  {
+    freq: 27995,
+    raw: "SUNBEAM",
+  },
+  {
+    freq: 28002,
+    raw: "MINGLED",
+  },
+  {
+    freq: 28005,
+    raw: "HAYRIDE",
+  },
+  {
+    freq: 28009,
+    raw: "DOUBLED",
+  },
+  {
+    freq: 28010,
+    raw: "VACUOUS",
+  },
+  {
+    freq: 28018,
+    raw: "LAYOVER",
+  },
+  {
+    freq: 28026,
+    raw: "CLUNKER",
+  },
+  {
+    freq: 28033,
+    raw: "END-USER",
+    word: "ENDUSER",
+  },
+  {
+    freq: 28038,
+    raw: "DINETTE",
+  },
+  {
+    freq: 28046,
+    raw: "SWAGGER",
+  },
+  {
+    freq: 28052,
+    raw: "ARMLOAD",
+  },
+  {
+    freq: 28058,
+    raw: "LADYBUG",
+  },
+  {
+    freq: 28059,
+    raw: "ENNOBLE",
+  },
+  {
+    freq: 28076,
+    raw: "LURKING",
+  },
+  {
+    freq: 28077,
+    raw: "WHITHER",
+  },
+  {
+    freq: 28084,
+    raw: "GRUFFLY",
+  },
+  {
+    freq: 28088,
+    raw: "MATADOR",
+  },
+  {
+    freq: 28104,
+    raw: "SARCOMA",
+  },
+  {
+    freq: 28105,
+    raw: "TITULAR",
+  },
+  {
+    freq: 28112,
+    raw: "DIGNIFY",
+  },
+  {
+    freq: 28118,
+    raw: "MIDLINE",
+  },
+  {
+    freq: 28156,
+    raw: "SMOOTHY",
+  },
+  {
+    freq: 28173,
+    raw: "HALF-DAY",
+    word: "HALFDAY",
+  },
+  {
+    freq: 28185,
+    raw: "LOW-CARB",
+    word: "LOWCARB",
+  },
+  {
+    freq: 28186,
+    raw: "TILAPIA",
+  },
+  {
+    freq: 28194,
+    raw: "GUNBOAT",
+  },
+  {
+    freq: 28203,
+    raw: "TAILING",
+  },
+  {
+    freq: 28213,
+    raw: "BLOOMER",
+  },
+  {
+    freq: 28215,
+    raw: "RAGGEDY",
+  },
+  {
+    freq: 28225,
+    raw: "VARMINT",
+  },
+  {
+    freq: 28233,
+    raw: "ARTISTE",
+  },
+  {
+    freq: 28234,
+    raw: "POUNDER",
+  },
+  {
+    freq: 28236,
+    raw: "FOREARM",
+  },
+  {
+    freq: 28241,
+    raw: "TWOSOME",
+  },
+  {
+    freq: 28244,
+    raw: "PINHOLE",
+  },
+  {
+    freq: 28247,
+    raw: "RETRIAL",
+  },
+  {
+    freq: 28260,
+    raw: "CHORIZO",
+  },
+  {
+    freq: 28263,
+    raw: "FLAT-OUT",
+    word: "FLATOUT",
+  },
+  {
+    freq: 28283,
+    raw: "BARMAID",
+  },
+  {
+    freq: 28289,
+    raw: "CURRIED",
+  },
+  {
+    freq: 28292,
+    raw: "POLLOCK",
+  },
+  {
+    freq: 28294,
+    raw: "SNIFFLE",
+  },
+  {
+    freq: 28297,
+    raw: "MID-TERM",
+    word: "MIDTERM",
+  },
+  {
+    freq: 28315,
+    raw: "FORGING",
+  },
+  {
+    freq: 28317,
+    raw: "JUGULAR",
+  },
+  {
+    freq: 28323,
+    raw: "IN-STORE",
+    word: "INSTORE",
+  },
+  {
+    freq: 28331,
+    raw: "PHALLUS",
+  },
+  {
+    freq: 28351,
+    raw: "SEARING",
+  },
+  {
+    freq: 28365,
+    raw: "STUPEFY",
+  },
+  {
+    freq: 28381,
+    raw: "ANTACID",
+  },
+  {
+    freq: 28388,
+    raw: "ASEXUAL",
+  },
+  {
+    freq: 28394,
+    raw: "JUGULAR",
+  },
+  {
+    freq: 28399,
+    raw: "COERCED",
+  },
+  {
+    freq: 28403,
+    raw: "RIBBING",
+  },
+  {
+    freq: 28404,
+    raw: "SCUMBAG",
+  },
+  {
+    freq: 28415,
+    raw: "REALIST",
+  },
+  {
+    freq: 28430,
+    raw: "SPASTIC",
+  },
+  {
+    freq: 28436,
+    raw: "SNUFFLE",
+  },
+  {
+    freq: 28440,
+    raw: "SPIDERY",
+  },
+  {
+    freq: 28443,
+    raw: "SUNDIAL",
+  },
+  {
+    freq: 28444,
+    raw: "SERVILE",
+  },
+  {
+    freq: 28445,
+    raw: "DEEP-SET",
+    word: "DEEPSET",
+  },
+  {
+    freq: 28454,
+    raw: "PROTEAN",
+  },
+  {
+    freq: 28455,
+    raw: "SEQUOIA",
+  },
+  {
+    freq: 28475,
+    raw: "BOBSLED",
+  },
+  {
+    freq: 28481,
+    raw: "SCROTUM",
+  },
+  {
+    freq: 28492,
+    raw: "UNITING",
+  },
+  {
+    freq: 28494,
+    raw: "RUFFIAN",
+  },
+  {
+    freq: 28514,
+    raw: "GROOMER",
+  },
+  {
+    freq: 28518,
+    raw: "BUILT-UP",
+    word: "BUILTUP",
+  },
+  {
+    freq: 28532,
+    raw: "STEMMED",
+  },
+  {
+    freq: 28536,
+    raw: "ROASTER",
+  },
+  {
+    freq: 28540,
+    raw: "ANASAZI",
+  },
+  {
+    freq: 28555,
+    raw: "BLASTER",
+  },
+  {
+    freq: 28562,
+    raw: "MONSTER",
+  },
+  {
+    freq: 28571,
+    raw: "TOEHOLD",
+  },
+  {
+    freq: 28579,
+    raw: "ANTI-TAX",
+    word: "ANTITAX",
+  },
+  {
+    freq: 28580,
+    raw: "PILLBOX",
+  },
+  {
+    freq: 28597,
+    raw: "PAROLEE",
+  },
+  {
+    freq: 28607,
+    raw: "SEASICK",
+  },
+  {
+    freq: 28608,
+    raw: "ROOMING",
+  },
+  {
+    freq: 28615,
+    raw: "FRAZZLE",
+  },
+  {
+    freq: 28618,
+    raw: "TELL-ALL",
+    word: "TELLALL",
+  },
+  {
+    freq: 28619,
+    raw: "LIMPING",
+  },
+  {
+    freq: 28621,
+    raw: "CARPOOL",
+  },
+  {
+    freq: 28630,
+    raw: "WELL-FED",
+    word: "WELLFED",
+  },
+  {
+    freq: 28644,
+    raw: "REISSUE",
+  },
+  {
+    freq: 28652,
+    raw: "BRAKING",
+  },
+  {
+    freq: 28653,
+    raw: "NEO-NAZI",
+    word: "NEONAZI",
+  },
+  {
+    freq: 28656,
+    raw: "CLOTURE",
+  },
+  {
+    freq: 28660,
+    raw: "TACKLER",
+  },
+  {
+    freq: 28671,
+    raw: "HEPATIC",
+  },
+  {
+    freq: 28690,
+    raw: "DRIED-UP",
+    word: "DRIEDUP",
+  },
+  {
+    freq: 28698,
+    raw: "HARDTOP",
+  },
+  {
+    freq: 28701,
+    raw: "BARKING",
+  },
+  {
+    freq: 28705,
+    raw: "INFLECT",
+  },
+  {
+    freq: 28718,
+    raw: "MUSCLED",
+  },
+  {
+    freq: 28723,
+    raw: "COLLATE",
+  },
+  {
+    freq: 28724,
+    raw: "SEALING",
+  },
+  {
+    freq: 28756,
+    raw: "SURFEIT",
+  },
+  {
+    freq: 28761,
+    raw: "SUCKING",
+  },
+  {
+    freq: 28769,
+    raw: "ROYALLY",
+  },
+  {
+    freq: 28770,
+    raw: "HARRIER",
+  },
+  {
+    freq: 28781,
+    raw: "HONEYED",
+  },
+  {
+    freq: 28791,
+    raw: "DOWAGER",
+  },
+  {
+    freq: 28817,
+    raw: "UNTRIED",
+  },
+  {
+    freq: 28826,
+    raw: "TANNING",
+  },
+  {
+    freq: 28836,
+    raw: "LONGISH",
+  },
+  {
+    freq: 28837,
+    raw: "INCISED",
+  },
+  {
+    freq: 28842,
+    raw: "SUBUNIT",
+  },
+  {
+    freq: 28844,
+    raw: "RASPING",
+  },
+  {
+    freq: 28846,
+    raw: "SLOWING",
+  },
+  {
+    freq: 28851,
+    raw: "KICKING",
+  },
+  {
+    freq: 28853,
+    raw: "DRAGNET",
+  },
+  {
+    freq: 28877,
+    raw: "SHARING",
+  },
+  {
+    freq: 28887,
+    raw: "BALEFUL",
+  },
+  {
+    freq: 28904,
+    raw: "GLADDEN",
+  },
+  {
+    freq: 28913,
+    raw: "RAMPAGE",
+  },
+  {
+    freq: 28924,
+    raw: "PROVING",
+  },
+  {
+    freq: 28930,
+    raw: "TOP-TIER",
+    word: "TOPTIER",
+  },
+  {
+    freq: 28941,
+    raw: "PIRANHA",
+  },
+  {
+    freq: 28942,
+    raw: "OUTTAKE",
+  },
+  {
+    freq: 28949,
+    raw: "SLASHER",
+  },
+  {
+    freq: 28950,
+    raw: "TOPCOAT",
+  },
+  {
+    freq: 28954,
+    raw: "ITCHING",
+  },
+  {
+    freq: 28984,
+    raw: "FRISSON",
+  },
+  {
+    freq: 28985,
+    raw: "INEXACT",
+  },
+  {
+    freq: 28988,
+    raw: "SCALPER",
+  },
+  {
+    freq: 28993,
+    raw: "CRUSTED",
+  },
+  {
+    freq: 28998,
+    raw: "UPDRAFT",
+  },
+  {
+    freq: 29000,
+    raw: "TOP-FIVE",
+    word: "TOPFIVE",
+  },
+  {
+    freq: 29017,
+    raw: "CUTLASS",
+  },
+  {
+    freq: 29028,
+    raw: "CANTINA",
+  },
+  {
+    freq: 29031,
+    raw: "PACIFIC",
+  },
+  {
+    freq: 29034,
+    raw: "GREMLIN",
+  },
+  {
+    freq: 29046,
+    raw: "AFGHANI",
+  },
+  {
+    freq: 29052,
+    raw: "CRAMPON",
+  },
+  {
+    freq: 29065,
+    raw: "LAMPOON",
+  },
+  {
+    freq: 29077,
+    raw: "LAOTIAN",
+  },
+  {
+    freq: 29086,
+    raw: "LEAKING",
+  },
+  {
+    freq: 29087,
+    raw: "REDOUBT",
+  },
+  {
+    freq: 29092,
+    raw: "KANTIAN",
+  },
+  {
+    freq: 29107,
+    raw: "PUTTING",
+  },
+  {
+    freq: 29109,
+    raw: "BUSHMAN",
+  },
+  {
+    freq: 29110,
+    raw: "TOUCH-UP",
+    word: "TOUCHUP",
+  },
+  {
+    freq: 29128,
+    raw: "CALDERA",
+  },
+  {
+    freq: 29132,
+    raw: "LEGWORK",
+  },
+  {
+    freq: 29133,
+    raw: "PATCHED",
+  },
+  {
+    freq: 29142,
+    raw: "DARTING",
+  },
+  {
+    freq: 29154,
+    raw: "PULLING",
+  },
+  {
+    freq: 29166,
+    raw: "ELEGIAC",
+  },
+  {
+    freq: 29174,
+    raw: "WELL-RUN",
+    word: "WELLRUN",
+  },
+  {
+    freq: 29188,
+    raw: "SCEPTER",
+  },
+  {
+    freq: 29192,
+    raw: "CLICKER",
+  },
+  {
+    freq: 29193,
+    raw: "ABRIDGE",
+  },
+  {
+    freq: 29200,
+    raw: "POLYGON",
+  },
+  {
+    freq: 29222,
+    raw: "MASTOID",
+  },
+  {
+    freq: 29223,
+    raw: "PLUNGER",
+  },
+  {
+    freq: 29228,
+    raw: "ONE-WORD",
+    word: "ONEWORD",
+  },
+  {
+    freq: 29234,
+    raw: "SUNFISH",
+  },
+  {
+    freq: 29246,
+    raw: "SOAKING",
+  },
+  {
+    freq: 29249,
+    raw: "SUNROOF",
+  },
+  {
+    freq: 29252,
+    raw: "MILKMAN",
+  },
+  {
+    freq: 29271,
+    raw: "OFFHAND",
+  },
+  {
+    freq: 29282,
+    raw: "SCATTER",
+  },
+  {
+    freq: 29289,
+    raw: "FEEDLOT",
+  },
+  {
+    freq: 29290,
+    raw: "REMODEL",
+  },
+  {
+    freq: 29294,
+    raw: "LUMP-SUM",
+    word: "LUMPSUM",
+  },
+  {
+    freq: 29295,
+    raw: "HEADS-UP",
+    word: "HEADSUP",
+  },
+  {
+    freq: 29305,
+    raw: "CAPRICE",
+  },
+  {
+    freq: 29315,
+    raw: "BIPLANE",
+  },
+  {
+    freq: 29317,
+    raw: "CARBIDE",
+  },
+  {
+    freq: 29323,
+    raw: "SANDBAG",
+  },
+  {
+    freq: 29325,
+    raw: "DIETING",
+  },
+  {
+    freq: 29327,
+    raw: "MISFIRE",
+  },
+  {
+    freq: 29337,
+    raw: "SCHMUCK",
+  },
+  {
+    freq: 29348,
+    raw: "GENTILE",
+  },
+  {
+    freq: 29359,
+    raw: "BELLMAN",
+  },
+  {
+    freq: 29370,
+    raw: "TENFOLD",
+  },
+  {
+    freq: 29374,
+    raw: "UNLINED",
+  },
+  {
+    freq: 29379,
+    raw: "SMIDGEN",
+  },
+  {
+    freq: 29382,
+    raw: "PLEASER",
+  },
+  {
+    freq: 29426,
+    raw: "LACQUER",
+  },
+  {
+    freq: 29428,
+    raw: "FIBROID",
+  },
+  {
+    freq: 29435,
+    raw: "UMBRAGE",
+  },
+  {
+    freq: 29438,
+    raw: "CLAIMED",
+  },
+  {
+    freq: 29444,
+    raw: "BOATMAN",
+  },
+  {
+    freq: 29452,
+    raw: "BELLHOP",
+  },
+  {
+    freq: 29463,
+    raw: "LAGGING",
+  },
+  {
+    freq: 29484,
+    raw: "FATUOUS",
+  },
+  {
+    freq: 29485,
+    raw: "SPECTRE",
+  },
+  {
+    freq: 29490,
+    raw: "TOPIARY",
+  },
+  {
+    freq: 29496,
+    raw: "LOW-RENT",
+    word: "LOWRENT",
+  },
+  {
+    freq: 29497,
+    raw: "TENABLE",
+  },
+  {
+    freq: 29506,
+    raw: "TOUCHED",
+  },
+  {
+    freq: 29516,
+    raw: "PILLORY",
+  },
+  {
+    freq: 29518,
+    raw: "BANSHEE",
+  },
+  {
+    freq: 29539,
+    raw: "EPSILON",
+  },
+  {
+    freq: 29543,
+    raw: "REGATTA",
+  },
+  {
+    freq: 29551,
+    raw: "TWO-FOOT",
+    word: "TWOFOOT",
+  },
+  {
+    freq: 29561,
+    raw: "FRITTER",
+  },
+  {
+    freq: 29564,
+    raw: "AVARICE",
+  },
+  {
+    freq: 29572,
+    raw: "TWO-TIER",
+    word: "TWOTIER",
+  },
+  {
+    freq: 29581,
+    raw: "LUNGING",
+  },
+  {
+    freq: 29585,
+    raw: "CHORALE",
+  },
+  {
+    freq: 29586,
+    raw: "PROWLER",
+  },
+  {
+    freq: 29598,
+    raw: "BANDING",
+  },
+  {
+    freq: 29606,
+    raw: "ABALONE",
+  },
+  {
+    freq: 29632,
+    raw: "SEMITIC",
+  },
+  {
+    freq: 29642,
+    raw: "TOUSLED",
+  },
+  {
+    freq: 29648,
+    raw: "TREKKER",
+  },
+  {
+    freq: 29660,
+    raw: "PROFUSE",
+  },
+  {
+    freq: 29671,
+    raw: "RED-EYED",
+    word: "REDEYED",
+  },
+  {
+    freq: 29680,
+    raw: "JAWBONE",
+  },
+  {
+    freq: 29686,
+    raw: "SWINGER",
+  },
+  {
+    freq: 29712,
+    raw: "HUDDLED",
+  },
+  {
+    freq: 29714,
+    raw: "HEARKEN",
+  },
+  {
+    freq: 29718,
+    raw: "GROUCHY",
+  },
+  {
+    freq: 29729,
+    raw: "TENSELY",
+  },
+  {
+    freq: 29730,
+    raw: "VETTING",
+  },
+  {
+    freq: 29731,
+    raw: "WRITE-IN",
+    word: "WRITEIN",
+  },
+  {
+    freq: 29736,
+    raw: "NOONDAY",
+  },
+  {
+    freq: 29737,
+    raw: "BUNGLED",
+  },
+  {
+    freq: 29750,
+    raw: "ROADMAP",
+  },
+  {
+    freq: 29753,
+    raw: "CATLIKE",
+  },
+  {
+    freq: 29775,
+    raw: "YELLING",
+  },
+  {
+    freq: 29779,
+    raw: "PIQUANT",
+  },
+  {
+    freq: 29780,
+    raw: "BEASTLY",
+  },
+  {
+    freq: 29786,
+    raw: "TILLAGE",
+  },
+  {
+    freq: 29788,
+    raw: "OCCLUDE",
+  },
+  {
+    freq: 29790,
+    raw: "OUTSELL",
+  },
+  {
+    freq: 29794,
+    raw: "SICHUAN",
+  },
+  {
+    freq: 29800,
+    raw: "CUMULUS",
+  },
+  {
+    freq: 29817,
+    raw: "DELETED",
+  },
+  {
+    freq: 29821,
+    raw: "TOPSIDE",
+  },
+  {
+    freq: 29839,
+    raw: "GRECIAN",
+  },
+  {
+    freq: 29847,
+    raw: "PRICKLE",
+  },
+  {
+    freq: 29848,
+    raw: "SELTZER",
+  },
+  {
+    freq: 29863,
+    raw: "SEXLESS",
+  },
+  {
+    freq: 29865,
+    raw: "EGOTISM",
+  },
+  {
+    freq: 29881,
+    raw: "CODEINE",
+  },
+  {
+    freq: 29884,
+    raw: "DERIVED",
+  },
+  {
+    freq: 29907,
+    raw: "FLAPPER",
+  },
+  {
+    freq: 29924,
+    raw: "TWO-STEP",
+    word: "TWOSTEP",
+  },
+  {
+    freq: 29931,
+    raw: "TWO-INCH",
+    word: "TWOINCH",
+  },
+  {
+    freq: 29938,
+    raw: "KITSCHY",
+  },
+  {
+    freq: 29945,
+    raw: "UKULELE",
+  },
+  {
+    freq: 29946,
+    raw: "SOAPBOX",
+  },
+  {
+    freq: 29953,
+    raw: "NEUTRAL",
+  },
+  {
+    freq: 29958,
+    raw: "PORTAGE",
+  },
+  {
+    freq: 29962,
+    raw: "INVERSE",
+  },
+  {
+    freq: 29964,
+    raw: "MELANIN",
+  },
+  {
+    freq: 29997,
+    raw: "BOOKEND",
+  },
+  {
+    freq: 30001,
+    raw: "COAXIAL",
+  },
+  {
+    freq: 30014,
+    raw: "GROMMET",
+  },
+  {
+    freq: 30016,
+    raw: "FORAGER",
+  },
+  {
+    freq: 30017,
+    raw: "RAWHIDE",
+  },
+  {
+    freq: 30035,
+    raw: "THYSELF",
+  },
+  {
+    freq: 30038,
+    raw: "ORIGAMI",
+  },
+  {
+    freq: 30046,
+    raw: "CARPORT",
+  },
+  {
+    freq: 30047,
+    raw: "MISERLY",
+  },
+  {
+    freq: 30070,
+    raw: "SKYDIVE",
+  },
+  {
+    freq: 30077,
+    raw: "LEEWARD",
+  },
+  {
+    freq: 30090,
+    raw: "CAPTION",
+  },
+  {
+    freq: 30121,
+    raw: "FLIGHTY",
+  },
+  {
+    freq: 30134,
+    raw: "CARJACK",
+  },
+  {
+    freq: 30137,
+    raw: "PIZZAZZ",
+  },
+  {
+    freq: 30160,
+    raw: "CONCORD",
+  },
+  {
+    freq: 30168,
+    raw: "SURFING",
+  },
+  {
+    freq: 30173,
+    raw: "TORSION",
+  },
+  {
+    freq: 30181,
+    raw: "LOYALLY",
+  },
+  {
+    freq: 30182,
+    raw: "ROSEBUD",
+  },
+  {
+    freq: 30190,
+    raw: "ENTREAT",
+  },
+  {
+    freq: 30193,
+    raw: "SHAMBLE",
+  },
+  {
+    freq: 30195,
+    raw: "SHERBET",
+  },
+  {
+    freq: 30202,
+    raw: "CHAGRIN",
+  },
+  {
+    freq: 30209,
+    raw: "FIREBOX",
+  },
+  {
+    freq: 30213,
+    raw: "SHELLED",
+  },
+  {
+    freq: 30214,
+    raw: "FULL-DAY",
+    word: "FULLDAY",
+  },
+  {
+    freq: 30218,
+    raw: "SNIFFER",
+  },
+  {
+    freq: 30227,
+    raw: "JAWLINE",
+  },
+  {
+    freq: 30228,
+    raw: "TINFOIL",
+  },
+  {
+    freq: 30243,
+    raw: "VIBRATO",
+  },
+  {
+    freq: 30252,
+    raw: "CLAPPER",
+  },
+  {
+    freq: 30269,
+    raw: "KESTREL",
+  },
+  {
+    freq: 30300,
+    raw: "SEEDING",
+  },
+  {
+    freq: 30303,
+    raw: "SIX-GAME",
+    word: "SIXGAME",
+  },
+  {
+    freq: 30310,
+    raw: "PARODIC",
+  },
+  {
+    freq: 30312,
+    raw: "ACCRETE",
+  },
+  {
+    freq: 30328,
+    raw: "SLAMMER",
+  },
+  {
+    freq: 30331,
+    raw: "MORTISE",
+  },
+  {
+    freq: 30335,
+    raw: "TWIDDLE",
+  },
+  {
+    freq: 30336,
+    raw: "LUSTFUL",
+  },
+  {
+    freq: 30344,
+    raw: "SPEEDER",
+  },
+  {
+    freq: 30349,
+    raw: "FLYOVER",
+  },
+  {
+    freq: 30350,
+    raw: "DISROBE",
+  },
+  {
+    freq: 30351,
+    raw: "DATASET",
+  },
+  {
+    freq: 30368,
+    raw: "LILTING",
+  },
+  {
+    freq: 30374,
+    raw: "SLOWING",
+  },
+  {
+    freq: 30380,
+    raw: "HOTSPOT",
+  },
+  {
+    freq: 30382,
+    raw: "ABSCOND",
+  },
+  {
+    freq: 30398,
+    raw: "SURFING",
+  },
+  {
+    freq: 30402,
+    raw: "GIBBOUS",
+  },
+  {
+    freq: 30405,
+    raw: "GREETER",
+  },
+  {
+    freq: 30406,
+    raw: "SLACKER",
+  },
+  {
+    freq: 30408,
+    raw: "MUSTANG",
+  },
+  {
+    freq: 30424,
+    raw: "GO-ROUND",
+    word: "GOROUND",
+  },
+  {
+    freq: 30450,
+    raw: "BULLOCK",
+  },
+  {
+    freq: 30460,
+    raw: "WHEEDLE",
+  },
+  {
+    freq: 30464,
+    raw: "CACIQUE",
+  },
+  {
+    freq: 30465,
+    raw: "NIGHTIE",
+  },
+  {
+    freq: 30467,
+    raw: "IRIDIUM",
+  },
+  {
+    freq: 30488,
+    raw: "BEATNIK",
+  },
+  {
+    freq: 30490,
+    raw: "STREAKY",
+  },
+  {
+    freq: 30512,
+    raw: "FRETFUL",
+  },
+  {
+    freq: 30517,
+    raw: "JOYLESS",
+  },
+  {
+    freq: 30527,
+    raw: "REDCOAT",
+  },
+  {
+    freq: 30528,
+    raw: "ON-FIELD",
+    word: "ONFIELD",
+  },
+  {
+    freq: 30537,
+    raw: "QUININE",
+  },
+  {
+    freq: 30539,
+    raw: "CHATTEL",
+  },
+  {
+    freq: 30542,
+    raw: "MINIBUS",
+  },
+  {
+    freq: 30544,
+    raw: "RIPPING",
+  },
+  {
+    freq: 30559,
+    raw: "OUTRANK",
+  },
+  {
+    freq: 30567,
+    raw: "RETICLE",
+  },
+  {
+    freq: 30571,
+    raw: "TOILING",
+  },
+  {
+    freq: 30573,
+    raw: "WITLESS",
+  },
+  {
+    freq: 30575,
+    raw: "REDUCER",
+  },
+  {
+    freq: 30578,
+    raw: "COUPLER",
+  },
+  {
+    freq: 30579,
+    raw: "FANCIER",
+  },
+  {
+    freq: 30581,
+    raw: "DUAL-USE",
+    word: "DUALUSE",
+  },
+  {
+    freq: 30587,
+    raw: "GNAWING",
+  },
+  {
+    freq: 30592,
+    raw: "TWO-TONE",
+    word: "TWOTONE",
+  },
+  {
+    freq: 30594,
+    raw: "FOGHORN",
+  },
+  {
+    freq: 30599,
+    raw: "PETTING",
+  },
+  {
+    freq: 30601,
+    raw: "NINE-DAY",
+    word: "NINEDAY",
+  },
+  {
+    freq: 30604,
+    raw: "COUPLED",
+  },
+  {
+    freq: 30607,
+    raw: "FLUIDLY",
+  },
+  {
+    freq: 30616,
+    raw: "BEDPOST",
+  },
+  {
+    freq: 30638,
+    raw: "LOW-FARE",
+    word: "LOWFARE",
+  },
+  {
+    freq: 30642,
+    raw: "POLITIC",
+  },
+  {
+    freq: 30643,
+    raw: "COOKTOP",
+  },
+  {
+    freq: 30648,
+    raw: "SIT-DOWN",
+    word: "SITDOWN",
+  },
+  {
+    freq: 30650,
+    raw: "AUDITED",
+  },
+  {
+    freq: 30659,
+    raw: "EX-LOVER",
+    word: "EXLOVER",
+  },
+  {
+    freq: 30671,
+    raw: "CORSAGE",
+  },
+  {
+    freq: 30673,
+    raw: "HAND-EYE",
+    word: "HANDEYE",
+  },
+  {
+    freq: 30674,
+    raw: "BATHING",
+  },
+  {
+    freq: 30679,
+    raw: "COINAGE",
+  },
+  {
+    freq: 30693,
+    raw: "VOLUBLE",
+  },
+  {
+    freq: 30696,
+    raw: "HOMINID",
+  },
+  {
+    freq: 30703,
+    raw: "IN-VITRO",
+    word: "INVITRO",
+  },
+  {
+    freq: 30709,
+    raw: "RANTING",
+  },
+  {
+    freq: 30711,
+    raw: "BLEAKLY",
+  },
+  {
+    freq: 30718,
+    raw: "UNCOUTH",
+  },
+  {
+    freq: 30724,
+    raw: "CRUMBLE",
+  },
+  {
+    freq: 30728,
+    raw: "UP-CLOSE",
+    word: "UPCLOSE",
+  },
+  {
+    freq: 30745,
+    raw: "SNORING",
+  },
+  {
+    freq: 30749,
+    raw: "BRIOCHE",
+  },
+  {
+    freq: 30754,
+    raw: "INITIAL",
+  },
+  {
+    freq: 30757,
+    raw: "FALL-OFF",
+    word: "FALLOFF",
+  },
+  {
+    freq: 30770,
+    raw: "BULLION",
+  },
+  {
+    freq: 30782,
+    raw: "UNGLUED",
+  },
+  {
+    freq: 30785,
+    raw: "SPUTTER",
+  },
+  {
+    freq: 30803,
+    raw: "HYPOXIA",
+  },
+  {
+    freq: 30805,
+    raw: "GEARING",
+  },
+  {
+    freq: 30810,
+    raw: "IGNOBLE",
+  },
+  {
+    freq: 30811,
+    raw: "ELAPSED",
+  },
+  {
+    freq: 30826,
+    raw: "HALCYON",
+  },
+  {
+    freq: 30832,
+    raw: "MODELED",
+  },
+  {
+    freq: 30833,
+    raw: "SIX-TIME",
+    word: "SIXTIME",
+  },
+  {
+    freq: 30847,
+    raw: "PRATTLE",
+  },
+  {
+    freq: 30848,
+    raw: "DIURNAL",
+  },
+  {
+    freq: 30853,
+    raw: "BIGNESS",
+  },
+  {
+    freq: 30863,
+    raw: "WHINING",
+  },
+  {
+    freq: 30869,
+    raw: "DARESAY",
+  },
+  {
+    freq: 30870,
+    raw: "COLD-WAR",
+    word: "COLDWAR",
+  },
+  {
+    freq: 30872,
+    raw: "URETHRA",
+  },
+  {
+    freq: 30883,
+    raw: "UP-TEMPO",
+    word: "UPTEMPO",
+  },
+  {
+    freq: 30892,
+    raw: "STILTED",
+  },
+  {
+    freq: 30896,
+    raw: "NUPTIAL",
+  },
+  {
+    freq: 30903,
+    raw: "SWINDLE",
+  },
+  {
+    freq: 30908,
+    raw: "TWO-WORD",
+    word: "TWOWORD",
+  },
+  {
+    freq: 30923,
+    raw: "ROOKERY",
+  },
+  {
+    freq: 30942,
+    raw: "CRYBABY",
+  },
+  {
+    freq: 30948,
+    raw: "TWO-GAME",
+    word: "TWOGAME",
+  },
+  {
+    freq: 30953,
+    raw: "COUNTER",
+  },
+  {
+    freq: 30955,
+    raw: "TYPHOID",
+  },
+  {
+    freq: 30967,
+    raw: "BURGHER",
+  },
+  {
+    freq: 30975,
+    raw: "OCTAGON",
+  },
+  {
+    freq: 30976,
+    raw: "BURGEON",
+  },
+  {
+    freq: 30981,
+    raw: "CHICORY",
+  },
+  {
+    freq: 30985,
+    raw: "ELITIST",
+  },
+  {
+    freq: 30995,
+    raw: "FILBERT",
+  },
+  {
+    freq: 31015,
+    raw: "PERGOLA",
+  },
+  {
+    freq: 31018,
+    raw: "DRAGOON",
+  },
+  {
+    freq: 31019,
+    raw: "TIREDLY",
+  },
+  {
+    freq: 31022,
+    raw: "CAPTAIN",
+  },
+  {
+    freq: 31031,
+    raw: "LIONIZE",
+  },
+  {
+    freq: 31063,
+    raw: "HESSIAN",
+  },
+  {
+    freq: 31075,
+    raw: "GNOSTIC",
+  },
+  {
+    freq: 31076,
+    raw: "HISSING",
+  },
+  {
+    freq: 31088,
+    raw: "PUNJABI",
+  },
+  {
+    freq: 31101,
+    raw: "DUSTBIN",
+  },
+  {
+    freq: 31108,
+    raw: "MUTATED",
+  },
+  {
+    freq: 31109,
+    raw: "ORGANZA",
+  },
+  {
+    freq: 31113,
+    raw: "ROADBED",
+  },
+  {
+    freq: 31122,
+    raw: "STRUDEL",
+  },
+  {
+    freq: 31137,
+    raw: "EPHEDRA",
+  },
+  {
+    freq: 31141,
+    raw: "BLUBBER",
+  },
+  {
+    freq: 31144,
+    raw: "SUGARED",
+  },
+  {
+    freq: 31148,
+    raw: "DRYLAND",
+  },
+  {
+    freq: 31160,
+    raw: "CLICHED",
+  },
+  {
+    freq: 31162,
+    raw: "PADLOCK",
+  },
+  {
+    freq: 31164,
+    raw: "SUMMERY",
+  },
+  {
+    freq: 31167,
+    raw: "LOW-RISE",
+    word: "LOWRISE",
+  },
+  {
+    freq: 31174,
+    raw: "WAILING",
+  },
+  {
+    freq: 31184,
+    raw: "KICKING",
+  },
+  {
+    freq: 31193,
+    raw: "MARQUIS",
+  },
+  {
+    freq: 31196,
+    raw: "GALLEON",
+  },
+  {
+    freq: 31202,
+    raw: "SLOBBER",
+  },
+  {
+    freq: 31223,
+    raw: "SIX-INCH",
+    word: "SIXINCH",
+  },
+  {
+    freq: 31234,
+    raw: "CRIMEAN",
+  },
+  {
+    freq: 31237,
+    raw: "BRACING",
+  },
+  {
+    freq: 31253,
+    raw: "UNLEARN",
+  },
+  {
+    freq: 31273,
+    raw: "BEANBAG",
+  },
+  {
+    freq: 31280,
+    raw: "BUG-EYED",
+    word: "BUGEYED",
+  },
+  {
+    freq: 31285,
+    raw: "SIDECUT",
+  },
+  {
+    freq: 31286,
+    raw: "COMMUNE",
+  },
+  {
+    freq: 31287,
+    raw: "MONEYED",
+  },
+  {
+    freq: 31304,
+    raw: "BILLOWS",
+  },
+  {
+    freq: 31307,
+    raw: "CIVILLY",
+  },
+  {
+    freq: 31309,
+    raw: "PURITAN",
+  },
+  {
+    freq: 31330,
+    raw: "BOORISH",
+  },
+  {
+    freq: 31333,
+    raw: "BASMATI",
+  },
+  {
+    freq: 31337,
+    raw: "WEIGH-IN",
+    word: "WEIGHIN",
+  },
+  {
+    freq: 31348,
+    raw: "SEDUCER",
+  },
+  {
+    freq: 31352,
+    raw: "CASSOCK",
+  },
+  {
+    freq: 31367,
+    raw: "TEN-FOOT",
+    word: "TENFOOT",
+  },
+  {
+    freq: 31369,
+    raw: "VERBENA",
+  },
+  {
+    freq: 31372,
+    raw: "OFF-PEAK",
+    word: "OFFPEAK",
+  },
+  {
+    freq: 31387,
+    raw: "TANKARD",
+  },
+  {
+    freq: 31395,
+    raw: "OUTPLAY",
+  },
+  {
+    freq: 31401,
+    raw: "DECIMAL",
+  },
+  {
+    freq: 31407,
+    raw: "BLUEFIN",
+  },
+  {
+    freq: 31408,
+    raw: "FORCING",
+  },
+  {
+    freq: 31415,
+    raw: "PROBITY",
+  },
+  {
+    freq: 31416,
+    raw: "RACEWAY",
+  },
+  {
+    freq: 31417,
+    raw: "HUMBLED",
+  },
+  {
+    freq: 31418,
+    raw: "CAROUSE",
+  },
+  {
+    freq: 31435,
+    raw: "POTSHOT",
+  },
+  {
+    freq: 31437,
+    raw: "AZIMUTH",
+  },
+  {
+    freq: 31438,
+    raw: "MUTABLE",
+  },
+  {
+    freq: 31483,
+    raw: "ERECTOR",
+  },
+  {
+    freq: 31485,
+    raw: "BRUISER",
+  },
+  {
+    freq: 31489,
+    raw: "FOURTHS",
+  },
+  {
+    freq: 31492,
+    raw: "BEIGNET",
+  },
+  {
+    freq: 31495,
+    raw: "UROLOGY",
+  },
+  {
+    freq: 31496,
+    raw: "DROPPER",
+  },
+  {
+    freq: 31513,
+    raw: "WEB-SITE",
+    word: "WEBSITE",
+  },
+  {
+    freq: 31522,
+    raw: "BUMPKIN",
+  },
+  {
+    freq: 31524,
+    raw: "STEPPED",
+  },
+  {
+    freq: 31528,
+    raw: "TOPPING",
+  },
+  {
+    freq: 31534,
+    raw: "SOCKEYE",
+  },
+  {
+    freq: 31540,
+    raw: "KINDRED",
+  },
+  {
+    freq: 31547,
+    raw: "VIADUCT",
+  },
+  {
+    freq: 31556,
+    raw: "BILLOWY",
+  },
+  {
+    freq: 31562,
+    raw: "SASHIMI",
+  },
+  {
+    freq: 31566,
+    raw: "REUNIFY",
+  },
+  {
+    freq: 31567,
+    raw: "ZEN-LIKE",
+    word: "ZENLIKE",
+  },
+  {
+    freq: 31568,
+    raw: "DESPOIL",
+  },
+  {
+    freq: 31574,
+    raw: "ABASHED",
+  },
+  {
+    freq: 31585,
+    raw: "HOSIERY",
+  },
+  {
+    freq: 31592,
+    raw: "PERJURE",
+  },
+  {
+    freq: 31622,
+    raw: "HOTHEAD",
+  },
+  {
+    freq: 31635,
+    raw: "GAINFUL",
+  },
+  {
+    freq: 31637,
+    raw: "CATCALL",
+  },
+  {
+    freq: 31657,
+    raw: "STOOPED",
+  },
+  {
+    freq: 31666,
+    raw: "UNEATEN",
+  },
+  {
+    freq: 31687,
+    raw: "DEMIGOD",
+  },
+  {
+    freq: 31693,
+    raw: "LETTING",
+  },
+  {
+    freq: 31695,
+    raw: "ONE-YARD",
+    word: "ONEYARD",
+  },
+  {
+    freq: 31735,
+    raw: "CANTATA",
+  },
+  {
+    freq: 31742,
+    raw: "TERRINE",
+  },
+  {
+    freq: 31746,
+    raw: "MIXED-UP",
+    word: "MIXEDUP",
+  },
+  {
+    freq: 31755,
+    raw: "DISTEND",
+  },
+  {
+    freq: 31757,
+    raw: "GRAPPLE",
+  },
+  {
+    freq: 31759,
+    raw: "PREFECT",
+  },
+  {
+    freq: 31798,
+    raw: "CABLE-TV",
+    word: "CABLETV",
+  },
+  {
+    freq: 31803,
+    raw: "FLASHER",
+  },
+  {
+    freq: 31812,
+    raw: "AIRPLAY",
+  },
+  {
+    freq: 31832,
+    raw: "CAST-OFF",
+    word: "CASTOFF",
+  },
+  {
+    freq: 31835,
+    raw: "READMIT",
+  },
+  {
+    freq: 31857,
+    raw: "CRINKLY",
+  },
+  {
+    freq: 31904,
+    raw: "MESSAGE",
+  },
+  {
+    freq: 31915,
+    raw: "FREIGHT",
+  },
+  {
+    freq: 31916,
+    raw: "SNORKEL",
+  },
+  {
+    freq: 31927,
+    raw: "MUDFLAT",
+  },
+  {
+    freq: 31933,
+    raw: "DEPRAVE",
+  },
+  {
+    freq: 31943,
+    raw: "ROTTING",
+  },
+  {
+    freq: 31944,
+    raw: "WAILING",
+  },
+  {
+    freq: 31947,
+    raw: "PIRATED",
+  },
+  {
+    freq: 31953,
+    raw: "SLAVISH",
+  },
+  {
+    freq: 31961,
+    raw: "WRITE-UP",
+    word: "WRITEUP",
+  },
+  {
+    freq: 31969,
+    raw: "UPRIGHT",
+  },
+  {
+    freq: 31978,
+    raw: "RACECAR",
+  },
+  {
+    freq: 31988,
+    raw: "STAPLER",
+  },
+  {
+    freq: 31990,
+    raw: "TIE-DYED",
+    word: "TIEDYED",
+  },
+  {
+    freq: 31991,
+    raw: "HUSBAND",
+  },
+  {
+    freq: 32000,
+    raw: "CABOOSE",
+  },
+  {
+    freq: 32004,
+    raw: "HIGH-TOP",
+    word: "HIGHTOP",
+  },
+  {
+    freq: 32005,
+    raw: "DUELING",
+  },
+  {
+    freq: 32031,
+    raw: "PULLING",
+  },
+  {
+    freq: 32033,
+    raw: "MASTIFF",
+  },
+  {
+    freq: 32038,
+    raw: "BUILDUP",
+  },
+  {
+    freq: 32052,
+    raw: "MORONIC",
+  },
+  {
+    freq: 32054,
+    raw: "NATURAL",
+  },
+  {
+    freq: 32059,
+    raw: "BEDROLL",
+  },
+  {
+    freq: 32061,
+    raw: "NAMETAG",
+  },
+  {
+    freq: 32062,
+    raw: "ALL-NEWS",
+    word: "ALLNEWS",
+  },
+  {
+    freq: 32064,
+    raw: "BRIGHTS",
+  },
+  {
+    freq: 32070,
+    raw: "ATROPHY",
+  },
+  {
+    freq: 32106,
+    raw: "STEPPER",
+  },
+  {
+    freq: 32114,
+    raw: "HACKSAW",
+  },
+  {
+    freq: 32141,
+    raw: "TESTILY",
+  },
+  {
+    freq: 32150,
+    raw: "FIXEDLY",
+  },
+  {
+    freq: 32154,
+    raw: "FISTULA",
+  },
+  {
+    freq: 32161,
+    raw: "BULIMIC",
+  },
+  {
+    freq: 32170,
+    raw: "BORSCHT",
+  },
+  {
+    freq: 32182,
+    raw: "BOUNDED",
+  },
+  {
+    freq: 32192,
+    raw: "REAGENT",
+  },
+  {
+    freq: 32193,
+    raw: "BIPEDAL",
+  },
+  {
+    freq: 32205,
+    raw: "HARPIST",
+  },
+  {
+    freq: 32206,
+    raw: "DEBASED",
+  },
+  {
+    freq: 32209,
+    raw: "TRIMMED",
+  },
+  {
+    freq: 32212,
+    raw: "IRKSOME",
+  },
+  {
+    freq: 32217,
+    raw: "WHEELIE",
+  },
+  {
+    freq: 32220,
+    raw: "HEXAGON",
+  },
+  {
+    freq: 32222,
+    raw: "ANNULAR",
+  },
+  {
+    freq: 32229,
+    raw: "ZAMBIAN",
+  },
+  {
+    freq: 32231,
+    raw: "TYPHOID",
+  },
+  {
+    freq: 32243,
+    raw: "JUTTING",
+  },
+  {
+    freq: 32251,
+    raw: "WISEGUY",
+  },
+  {
+    freq: 32253,
+    raw: "BRAZIER",
+  },
+  {
+    freq: 32258,
+    raw: "TOOTHED",
+  },
+  {
+    freq: 32272,
+    raw: "TWITTER",
+  },
+  {
+    freq: 32276,
+    raw: "BUCKLED",
+  },
+  {
+    freq: 32280,
+    raw: "ANTHILL",
+  },
+  {
+    freq: 32285,
+    raw: "SHRUBBY",
+  },
+  {
+    freq: 32291,
+    raw: "BUBONIC",
+  },
+  {
+    freq: 32295,
+    raw: "TOOLKIT",
+  },
+  {
+    freq: 32299,
+    raw: "TRITIUM",
+  },
+  {
+    freq: 32314,
+    raw: "FARMING",
+  },
+  {
+    freq: 32317,
+    raw: "ENQUIRE",
+  },
+  {
+    freq: 32321,
+    raw: "LEGROOM",
+  },
+  {
+    freq: 32322,
+    raw: "HOMERIC",
+  },
+  {
+    freq: 32329,
+    raw: "AIRFOIL",
+  },
+  {
+    freq: 32335,
+    raw: "SPLAYED",
+  },
+  {
+    freq: 32340,
+    raw: "MAN-HOUR",
+    word: "MANHOUR",
+  },
+  {
+    freq: 32343,
+    raw: "NEAREST",
+  },
+  {
+    freq: 32344,
+    raw: "WETSUIT",
+  },
+  {
+    freq: 32349,
+    raw: "BELLBOY",
+  },
+  {
+    freq: 32365,
+    raw: "HUMMOCK",
+  },
+  {
+    freq: 32368,
+    raw: "HEARTED",
+  },
+  {
+    freq: 32370,
+    raw: "ACTUATE",
+  },
+  {
+    freq: 32373,
+    raw: "FIVE-MAN",
+    word: "FIVEMAN",
+  },
+  {
+    freq: 32374,
+    raw: "ONE-GAME",
+    word: "ONEGAME",
+  },
+  {
+    freq: 32393,
+    raw: "PARFAIT",
+  },
+  {
+    freq: 32395,
+    raw: "STOUTLY",
+  },
+  {
+    freq: 32410,
+    raw: "ALLOWED",
+  },
+  {
+    freq: 32416,
+    raw: "RESCUED",
+  },
+  {
+    freq: 32422,
+    raw: "FREEING",
+  },
+  {
+    freq: 32426,
+    raw: "CHECKER",
+  },
+  {
+    freq: 32427,
+    raw: "GLOBULE",
+  },
+  {
+    freq: 32428,
+    raw: "BRAKING",
+  },
+  {
+    freq: 32439,
+    raw: "HIPBONE",
+  },
+  {
+    freq: 32458,
+    raw: "DOLEFUL",
+  },
+  {
+    freq: 32481,
+    raw: "BRACERO",
+  },
+  {
+    freq: 32494,
+    raw: "FLUTIST",
+  },
+  {
+    freq: 32496,
+    raw: "STUDDED",
+  },
+  {
+    freq: 32523,
+    raw: "DAYPACK",
+  },
+  {
+    freq: 32531,
+    raw: "BIVOUAC",
+  },
+  {
+    freq: 32545,
+    raw: "SPELLER",
+  },
+  {
+    freq: 32549,
+    raw: "DAWNING",
+  },
+  {
+    freq: 32554,
+    raw: "COWBELL",
+  },
+  {
+    freq: 32559,
+    raw: "HUMIDOR",
+  },
+  {
+    freq: 32563,
+    raw: "NITRITE",
+  },
+  {
+    freq: 32567,
+    raw: "SUN-LIKE",
+    word: "SUNLIKE",
+  },
+  {
+    freq: 32573,
+    raw: "BOBBING",
+  },
+  {
+    freq: 32583,
+    raw: "SECLUDE",
+  },
+  {
+    freq: 32585,
+    raw: "VISCERA",
+  },
+  {
+    freq: 32593,
+    raw: "PRALINE",
+  },
+  {
+    freq: 32604,
+    raw: "MIDWEST",
+  },
+  {
+    freq: 32629,
+    raw: "WRINGER",
+  },
+  {
+    freq: 32651,
+    raw: "POST-HOC",
+    word: "POSTHOC",
+  },
+  {
+    freq: 32671,
+    raw: "MISTRAL",
+  },
+  {
+    freq: 32672,
+    raw: "FAR-AWAY",
+    word: "FARAWAY",
+  },
+  {
+    freq: 32679,
+    raw: "RIMLESS",
+  },
+  {
+    freq: 32686,
+    raw: "BONE-DRY",
+    word: "BONEDRY",
+  },
+  {
+    freq: 32687,
+    raw: "GUZZLER",
+  },
+  {
+    freq: 32696,
+    raw: "BRONZER",
+  },
+  {
+    freq: 32709,
+    raw: "NUCLEIC",
+  },
+  {
+    freq: 32710,
+    raw: "SATIATE",
+  },
+  {
+    freq: 32718,
+    raw: "TOTEMIC",
+  },
+  {
+    freq: 32719,
+    raw: "PLAUDIT",
+  },
+  {
+    freq: 32721,
+    raw: "UNDRESS",
+  },
+  {
+    freq: 32723,
+    raw: "COULOIR",
+  },
+  {
+    freq: 32724,
+    raw: "BLUNTED",
+  },
+  {
+    freq: 32733,
+    raw: "BUGABOO",
+  },
+  {
+    freq: 32743,
+    raw: "BOMBAST",
+  },
+  {
+    freq: 32749,
+    raw: "DAWNING",
+  },
+  {
+    freq: 32759,
+    raw: "COTTONY",
+  },
+  {
+    freq: 32766,
+    raw: "GUTLESS",
+  },
+  {
+    freq: 32767,
+    raw: "SEAWARD",
+  },
+  {
+    freq: 32768,
+    raw: "OBLIQUE",
+  },
+  {
+    freq: 32794,
+    raw: "TWITCHY",
+  },
+  {
+    freq: 32801,
+    raw: "FERROUS",
+  },
+  {
+    freq: 32803,
+    raw: "SMUDGED",
+  },
+  {
+    freq: 32806,
+    raw: "ADENOMA",
+  },
+  {
+    freq: 32807,
+    raw: "MORAINE",
+  },
+  {
+    freq: 32812,
+    raw: "COLLECT",
+  },
+  {
+    freq: 32819,
+    raw: "GLUTEUS",
+  },
+  {
+    freq: 32824,
+    raw: "LOW-FLOW",
+    word: "LOWFLOW",
+  },
+  {
+    freq: 32829,
+    raw: "FINE-ART",
+    word: "FINEART",
+  },
+  {
+    freq: 32843,
+    raw: "WALKING",
+  },
+  {
+    freq: 32844,
+    raw: "SUNBELT",
+  },
+  {
+    freq: 32854,
+    raw: "BESTIAL",
+  },
+  {
+    freq: 32858,
+    raw: "BEVELED",
+  },
+  {
+    freq: 32882,
+    raw: "LICENCE",
+  },
+  {
+    freq: 32883,
+    raw: "GLUTTON",
+  },
+  {
+    freq: 32888,
+    raw: "KINFOLK",
+  },
+  {
+    freq: 32891,
+    raw: "GIDDILY",
+  },
+  {
+    freq: 32894,
+    raw: "COLONIA",
+  },
+  {
+    freq: 32911,
+    raw: "BIG-PLAY",
+    word: "BIGPLAY",
+  },
+  {
+    freq: 32914,
+    raw: "SURMISE",
+  },
+  {
+    freq: 32930,
+    raw: "OPERAND",
+  },
+  {
+    freq: 32936,
+    raw: "SNIFTER",
+  },
+  {
+    freq: 32939,
+    raw: "BRAWLER",
+  },
+  {
+    freq: 32943,
+    raw: "INHALED",
+  },
+  {
+    freq: 32969,
+    raw: "DRUGGIE",
+  },
+  {
+    freq: 32975,
+    raw: "ROLLING",
+  },
+  {
+    freq: 32997,
+    raw: "PUSHING",
+  },
+  {
+    freq: 33009,
+    raw: "GALLIUM",
+  },
+  {
+    freq: 33023,
+    raw: "SHAMING",
+  },
+  {
+    freq: 33025,
+    raw: "ASININE",
+  },
+  {
+    freq: 33030,
+    raw: "TEMBLOR",
+  },
+  {
+    freq: 33031,
+    raw: "CHEMISE",
+  },
+  {
+    freq: 33044,
+    raw: "DIARIST",
+  },
+  {
+    freq: 33048,
+    raw: "CROWNED",
+  },
+  {
+    freq: 33056,
+    raw: "LACTATE",
+  },
+  {
+    freq: 33063,
+    raw: "DEMERIT",
+  },
+  {
+    freq: 33072,
+    raw: "DELUDED",
+  },
+  {
+    freq: 33074,
+    raw: "SHOUTED",
+  },
+  {
+    freq: 33082,
+    raw: "ISSUING",
+  },
+  {
+    freq: 33091,
+    raw: "FATNESS",
+  },
+  {
+    freq: 33094,
+    raw: "TESTING",
+  },
+  {
+    freq: 33104,
+    raw: "RESPITE",
+  },
+  {
+    freq: 33107,
+    raw: "TOPPLED",
+  },
+  {
+    freq: 33112,
+    raw: "CHASTEN",
+  },
+  {
+    freq: 33129,
+    raw: "CORNCOB",
+  },
+  {
+    freq: 33155,
+    raw: "TOOTSIE",
+  },
+  {
+    freq: 33157,
+    raw: "GRABBER",
+  },
+  {
+    freq: 33170,
+    raw: "CAMPHOR",
+  },
+  {
+    freq: 33171,
+    raw: "CHAFING",
+  },
+  {
+    freq: 33172,
+    raw: "LICKING",
+  },
+  {
+    freq: 33210,
+    raw: "STUFFER",
+  },
+  {
+    freq: 33220,
+    raw: "PROBATE",
+  },
+  {
+    freq: 33221,
+    raw: "TUMBLED",
+  },
+  {
+    freq: 33222,
+    raw: "FLOUNCE",
+  },
+  {
+    freq: 33227,
+    raw: "SAME-DAY",
+    word: "SAMEDAY",
+  },
+  {
+    freq: 33231,
+    raw: "SLURRED",
+  },
+  {
+    freq: 33239,
+    raw: "PAN-ARAB",
+    word: "PANARAB",
+  },
+  {
+    freq: 33249,
+    raw: "BIGFOOT",
+  },
+  {
+    freq: 33252,
+    raw: "SACKING",
+  },
+  {
+    freq: 33253,
+    raw: "INVEIGH",
+  },
+  {
+    freq: 33274,
+    raw: "LUDDITE",
+  },
+  {
+    freq: 33281,
+    raw: "MAILBAG",
+  },
+  {
+    freq: 33282,
+    raw: "NUNNERY",
+  },
+  {
+    freq: 33287,
+    raw: "FORFEIT",
+  },
+  {
+    freq: 33290,
+    raw: "TWO-DOOR",
+    word: "TWODOOR",
+  },
+  {
+    freq: 33291,
+    raw: "ACADIAN",
+  },
+  {
+    freq: 33301,
+    raw: "BRIGAND",
+  },
+  {
+    freq: 33302,
+    raw: "MANITOU",
+  },
+  {
+    freq: 33307,
+    raw: "UPBRAID",
+  },
+  {
+    freq: 33309,
+    raw: "MAMMARY",
+  },
+  {
+    freq: 33331,
+    raw: "PRIMING",
+  },
+  {
+    freq: 33332,
+    raw: "LOOPING",
+  },
+  {
+    freq: 33351,
+    raw: "BADNESS",
+  },
+  {
+    freq: 33354,
+    raw: "PALMTOP",
+  },
+  {
+    freq: 33391,
+    raw: "GENTILE",
+  },
+  {
+    freq: 33411,
+    raw: "MINIBAR",
+  },
+  {
+    freq: 33420,
+    raw: "LOW-MASS",
+    word: "LOWMASS",
+  },
+  {
+    freq: 33422,
+    raw: "VITIATE",
+  },
+  {
+    freq: 33424,
+    raw: "WOODLOT",
+  },
+  {
+    freq: 33432,
+    raw: "CAISSON",
+  },
+  {
+    freq: 33433,
+    raw: "PIGSKIN",
+  },
+  {
+    freq: 33436,
+    raw: "NON-ARAB",
+    word: "NONARAB",
+  },
+  {
+    freq: 33438,
+    raw: "COPYIST",
+  },
+  {
+    freq: 33439,
+    raw: "MISFIRE",
+  },
+  {
+    freq: 33451,
+    raw: "LOW-DOWN",
+    word: "LOWDOWN",
+  },
+  {
+    freq: 33453,
+    raw: "SAMPLED",
+  },
+  {
+    freq: 33477,
+    raw: "MALWARE",
+  },
+  {
+    freq: 33483,
+    raw: "HOMERUN",
+  },
+  {
+    freq: 33485,
+    raw: "BEADING",
+  },
+  {
+    freq: 33489,
+    raw: "AFFRONT",
+  },
+  {
+    freq: 33500,
+    raw: "CESSION",
+  },
+  {
+    freq: 33513,
+    raw: "UNBAKED",
+  },
+  {
+    freq: 33516,
+    raw: "BUSHING",
+  },
+  {
+    freq: 33521,
+    raw: "SUBSOIL",
+  },
+  {
+    freq: 33527,
+    raw: "BAZOOKA",
+  },
+  {
+    freq: 33531,
+    raw: "TENANCY",
+  },
+  {
+    freq: 33543,
+    raw: "TRADE-IN",
+    word: "TRADEIN",
+  },
+  {
+    freq: 33570,
+    raw: "MEGATON",
+  },
+  {
+    freq: 33585,
+    raw: "STIFLED",
+  },
+  {
+    freq: 33596,
+    raw: "TURNKEY",
+  },
+  {
+    freq: 33613,
+    raw: "KORANIC",
+  },
+  {
+    freq: 33618,
+    raw: "CLOTTED",
+  },
+  {
+    freq: 33619,
+    raw: "USURPER",
+  },
+  {
+    freq: 33620,
+    raw: "ATOMIZE",
+  },
+  {
+    freq: 33634,
+    raw: "UNRATED",
+  },
+  {
+    freq: 33640,
+    raw: "DEVILED",
+  },
+  {
+    freq: 33647,
+    raw: "OIL-FREE",
+    word: "OILFREE",
+  },
+  {
+    freq: 33658,
+    raw: "CHARISM",
+  },
+  {
+    freq: 33667,
+    raw: "INBOARD",
+  },
+  {
+    freq: 33683,
+    raw: "SALABLE",
+  },
+  {
+    freq: 33686,
+    raw: "BEACHED",
+  },
+  {
+    freq: 33700,
+    raw: "STEERER",
+  },
+  {
+    freq: 33702,
+    raw: "PIOUSLY",
+  },
+  {
+    freq: 33744,
+    raw: "MEANDER",
+  },
+  {
+    freq: 33752,
+    raw: "SHINDIG",
+  },
+  {
+    freq: 33764,
+    raw: "LOW-PAID",
+    word: "LOWPAID",
+  },
+  {
+    freq: 33765,
+    raw: "VALANCE",
+  },
+  {
+    freq: 33766,
+    raw: "DAMMING",
+  },
+  {
+    freq: 33768,
+    raw: "FOREPAW",
+  },
+  {
+    freq: 33772,
+    raw: "BLOOPER",
+  },
+  {
+    freq: 33774,
+    raw: "SOUNDER",
+  },
+  {
+    freq: 33778,
+    raw: "PURPOSE",
+  },
+  {
+    freq: 33796,
+    raw: "SLICING",
+  },
+  {
+    freq: 33807,
+    raw: "LUSTILY",
+  },
+  {
+    freq: 33809,
+    raw: "EARACHE",
+  },
+  {
+    freq: 33814,
+    raw: "WANNA-BE",
+    word: "WANNABE",
+  },
+  {
+    freq: 33826,
+    raw: "SCANNED",
+  },
+  {
+    freq: 33829,
+    raw: "BLEMISH",
+  },
+  {
+    freq: 33832,
+    raw: "PALATAL",
+  },
+  {
+    freq: 33841,
+    raw: "EPAULET",
+  },
+  {
+    freq: 33843,
+    raw: "SLIMMER",
+  },
+  {
+    freq: 33845,
+    raw: "SPOOKED",
+  },
+  {
+    freq: 33851,
+    raw: "REGALLY",
+  },
+  {
+    freq: 33860,
+    raw: "CHILLER",
+  },
+  {
+    freq: 33863,
+    raw: "HELICAL",
+  },
+  {
+    freq: 33873,
+    raw: "ONE-TERM",
+    word: "ONETERM",
+  },
+  {
+    freq: 33888,
+    raw: "MATTING",
+  },
+  {
+    freq: 33902,
+    raw: "AIRBOAT",
+  },
+  {
+    freq: 33919,
+    raw: "DISUSED",
+  },
+  {
+    freq: 33930,
+    raw: "SIGNORA",
+  },
+  {
+    freq: 33934,
+    raw: "COWLING",
+  },
+  {
+    freq: 33936,
+    raw: "EGGHEAD",
+  },
+  {
+    freq: 33944,
+    raw: "FASTING",
+  },
+  {
+    freq: 33979,
+    raw: "HURDLER",
+  },
+  {
+    freq: 33984,
+    raw: "BOOTLEG",
+  },
+  {
+    freq: 33987,
+    raw: "FRISBEE",
+  },
+  {
+    freq: 34002,
+    raw: "BARRAGE",
+  },
+  {
+    freq: 34004,
+    raw: "LOBELIA",
+  },
+  {
+    freq: 34008,
+    raw: "CARLIKE",
+  },
+  {
+    freq: 34017,
+    raw: "STOWAGE",
+  },
+  {
+    freq: 34041,
+    raw: "OPERANT",
+  },
+  {
+    freq: 34050,
+    raw: "RANGING",
+  },
+  {
+    freq: 34054,
+    raw: "GRAYING",
+  },
+  {
+    freq: 34092,
+    raw: "GANTLET",
+  },
+  {
+    freq: 34095,
+    raw: "ANTI-GUN",
+    word: "ANTIGUN",
+  },
+  {
+    freq: 34107,
+    raw: "GOSSIPY",
+  },
+  {
+    freq: 34111,
+    raw: "INKWELL",
+  },
+  {
+    freq: 34119,
+    raw: "PERFIDY",
+  },
+  {
+    freq: 34121,
+    raw: "PUNCHER",
+  },
+  {
+    freq: 34133,
+    raw: "BIG-BAND",
+    word: "BIGBAND",
+  },
+  {
+    freq: 34136,
+    raw: "PREEMIE",
+  },
+  {
+    freq: 34140,
+    raw: "CLOAKED",
+  },
+  {
+    freq: 34141,
+    raw: "BOXLIKE",
+  },
+  {
+    freq: 34146,
+    raw: "UNASKED",
+  },
+  {
+    freq: 34171,
+    raw: "SCAMMER",
+  },
+  {
+    freq: 34186,
+    raw: "PROCTOR",
+  },
+  {
+    freq: 34201,
+    raw: "DILATED",
+  },
+  {
+    freq: 34203,
+    raw: "VALIDLY",
+  },
+  {
+    freq: 34210,
+    raw: "LOW-POST",
+    word: "LOWPOST",
+  },
+  {
+    freq: 34227,
+    raw: "FEBRILE",
+  },
+  {
+    freq: 34240,
+    raw: "NITPICK",
+  },
+  {
+    freq: 34243,
+    raw: "LEGLESS",
+  },
+  {
+    freq: 34253,
+    raw: "CO-OCCUR",
+    word: "COOCCUR",
+  },
+  {
+    freq: 34257,
+    raw: "BIOFILM",
+  },
+  {
+    freq: 34262,
+    raw: "FACTOID",
+  },
+  {
+    freq: 34281,
+    raw: "PHOTO-OP",
+    word: "PHOTOOP",
+  },
+  {
+    freq: 34284,
+    raw: "SHARPIE",
+  },
+  {
+    freq: 34286,
+    raw: "SOYMILK",
+  },
+  {
+    freq: 34302,
+    raw: "BUTTERY",
+  },
+  {
+    freq: 34316,
+    raw: "AERATED",
+  },
+  {
+    freq: 34366,
+    raw: "WRONGED",
+  },
+  {
+    freq: 34424,
+    raw: "DEVIANT",
+  },
+  {
+    freq: 34436,
+    raw: "SIDEMAN",
+  },
+  {
+    freq: 34446,
+    raw: "CABLING",
+  },
+  {
+    freq: 34467,
+    raw: "ACCRUED",
+  },
+  {
+    freq: 34473,
+    raw: "CULTIST",
+  },
+  {
+    freq: 34475,
+    raw: "USEABLE",
+  },
+  {
+    freq: 34484,
+    raw: "RAILCAR",
+  },
+  {
+    freq: 34485,
+    raw: "SANGRIA",
+  },
+  {
+    freq: 34488,
+    raw: "OARSMAN",
+  },
+  {
+    freq: 34513,
+    raw: "MID-TEEN",
+    word: "MIDTEEN",
+  },
+  {
+    freq: 34517,
+    raw: "ON-COURT",
+    word: "ONCOURT",
+  },
+  {
+    freq: 34527,
+    raw: "LANGUOR",
+  },
+  {
+    freq: 34528,
+    raw: "STEALER",
+  },
+  {
+    freq: 34536,
+    raw: "GIZZARD",
+  },
+  {
+    freq: 34545,
+    raw: "LEAKING",
+  },
+  {
+    freq: 34548,
+    raw: "TEAROOM",
+  },
+  {
+    freq: 34558,
+    raw: "VENTRAL",
+  },
+  {
+    freq: 34559,
+    raw: "BLOW-DRY",
+    word: "BLOWDRY",
+  },
+  {
+    freq: 34564,
+    raw: "BUCKING",
+  },
+  {
+    freq: 34571,
+    raw: "REGENCY",
+  },
+  {
+    freq: 34572,
+    raw: "POUNDED",
+  },
+  {
+    freq: 34575,
+    raw: "CANNOLI",
+  },
+  {
+    freq: 34580,
+    raw: "GRIZZLE",
+  },
+  {
+    freq: 34583,
+    raw: "SIX-FOLD",
+    word: "SIXFOLD",
+  },
+  {
+    freq: 34589,
+    raw: "STRAPPY",
+  },
+  {
+    freq: 34600,
+    raw: "SPECTER",
+  },
+  {
+    freq: 34609,
+    raw: "FINAGLE",
+  },
+  {
+    freq: 34614,
+    raw: "PANNIER",
+  },
+  {
+    freq: 34623,
+    raw: "WAHHABI",
+  },
+  {
+    freq: 34635,
+    raw: "RACE-CAR",
+    word: "RACECAR",
+  },
+  {
+    freq: 34638,
+    raw: "MARIMBA",
+  },
+  {
+    freq: 34644,
+    raw: "YEAR-AGO",
+    word: "YEARAGO",
+  },
+  {
+    freq: 34645,
+    raw: "SHRILLY",
+  },
+  {
+    freq: 34650,
+    raw: "EMPTIED",
+  },
+  {
+    freq: 34663,
+    raw: "SIX-PAGE",
+    word: "SIXPAGE",
+  },
+  {
+    freq: 34666,
+    raw: "DAYROOM",
+  },
+  {
+    freq: 34668,
+    raw: "CORNEAL",
+  },
+  {
+    freq: 34674,
+    raw: "JOCULAR",
+  },
+  {
+    freq: 34694,
+    raw: "PANTING",
+  },
+  {
+    freq: 34718,
+    raw: "CALDRON",
+  },
+  {
+    freq: 34720,
+    raw: "HIGH-TOP",
+    word: "HIGHTOP",
+  },
+  {
+    freq: 34732,
+    raw: "BANQUET",
+  },
+  {
+    freq: 34734,
+    raw: "INFIDEL",
+  },
+  {
+    freq: 34741,
+    raw: "WHITING",
+  },
+  {
+    freq: 34742,
+    raw: "SCRAPED",
+  },
+  {
+    freq: 34752,
+    raw: "NAKEDLY",
+  },
+  {
+    freq: 34761,
+    raw: "INGROWN",
+  },
+  {
+    freq: 34770,
+    raw: "ROGUISH",
+  },
+  {
+    freq: 34780,
+    raw: "UNCIVIL",
+  },
+  {
+    freq: 34794,
+    raw: "AIR-RAID",
+    word: "AIRRAID",
+  },
+  {
+    freq: 34795,
+    raw: "SHUTTER",
+  },
+  {
+    freq: 34797,
+    raw: "UGANDAN",
+  },
+  {
+    freq: 34801,
+    raw: "GRIFTER",
+  },
+  {
+    freq: 34804,
+    raw: "RAWNESS",
+  },
+  {
+    freq: 34810,
+    raw: "BLUNTLY",
+  },
+  {
+    freq: 34818,
+    raw: "OFF-YEAR",
+    word: "OFFYEAR",
+  },
+  {
+    freq: 34819,
+    raw: "INWARDS",
+  },
+  {
+    freq: 34829,
+    raw: "SCHEMER",
+  },
+  {
+    freq: 34834,
+    raw: "STIRRER",
+  },
+  {
+    freq: 34835,
+    raw: "CORONET",
+  },
+  {
+    freq: 34855,
+    raw: "FLESHLY",
+  },
+  {
+    freq: 34870,
+    raw: "AERATOR",
+  },
+  {
+    freq: 34873,
+    raw: "STARING",
+  },
+  {
+    freq: 34910,
+    raw: "FLARING",
+  },
+  {
+    freq: 34913,
+    raw: "HAYLOFT",
+  },
+  {
+    freq: 34934,
+    raw: "NEWSBOY",
+  },
+  {
+    freq: 34939,
+    raw: "COWLICK",
+  },
+  {
+    freq: 34940,
+    raw: "MACADAM",
+  },
+  {
+    freq: 34952,
+    raw: "IN-GROUP",
+    word: "INGROUP",
+  },
+  {
+    freq: 34953,
+    raw: "CHAPPED",
+  },
+  {
+    freq: 34954,
+    raw: "REPROVE",
+  },
+  {
+    freq: 34966,
+    raw: "BLATHER",
+  },
+  {
+    freq: 34970,
+    raw: "INVITEE",
+  },
+  {
+    freq: 34977,
+    raw: "SPECKLE",
+  },
+  {
+    freq: 34983,
+    raw: "KUMQUAT",
+  },
+  {
+    freq: 35014,
+    raw: "PEEVISH",
+  },
+  {
+    freq: 35015,
+    raw: "NODDING",
+  },
+  {
+    freq: 35019,
+    raw: "SNIGGER",
+  },
+  {
+    freq: 35020,
+    raw: "INSHORE",
+  },
+  {
+    freq: 35036,
+    raw: "PINTAIL",
+  },
+  {
+    freq: 35038,
+    raw: "COLORED",
+  },
+  {
+    freq: 35068,
+    raw: "BLOWN-UP",
+    word: "BLOWNUP",
+  },
+  {
+    freq: 35076,
+    raw: "PYRRHIC",
+  },
+  {
+    freq: 35077,
+    raw: "NOTCHED",
+  },
+  {
+    freq: 35081,
+    raw: "FINFISH",
+  },
+  {
+    freq: 35091,
+    raw: "ARTLESS",
+  },
+  {
+    freq: 35105,
+    raw: "ECTOPIC",
+  },
+  {
+    freq: 35110,
+    raw: "STINKER",
+  },
+  {
+    freq: 35113,
+    raw: "WEEDING",
+  },
+  {
+    freq: 35119,
+    raw: "RESTART",
+  },
+  {
+    freq: 35120,
+    raw: "ENCODED",
+  },
+  {
+    freq: 35131,
+    raw: "SHELLAC",
+  },
+  {
+    freq: 35137,
+    raw: "CLOUDED",
+  },
+  {
+    freq: 35154,
+    raw: "CROSSLY",
+  },
+  {
+    freq: 35158,
+    raw: "WITHERS",
+  },
+  {
+    freq: 35161,
+    raw: "BASSOON",
+  },
+  {
+    freq: 35171,
+    raw: "CRACK-UP",
+    word: "CRACKUP",
+  },
+  {
+    freq: 35178,
+    raw: "CYCLOPS",
+  },
+  {
+    freq: 35201,
+    raw: "UNSTUCK",
+  },
+  {
+    freq: 35219,
+    raw: "RIPPLED",
+  },
+  {
+    freq: 35222,
+    raw: "RENTIER",
+  },
+  {
+    freq: 35253,
+    raw: "WEBCAST",
+  },
+  {
+    freq: 35260,
+    raw: "DAUPHIN",
+  },
+  {
+    freq: 35268,
+    raw: "PATELLA",
+  },
+  {
+    freq: 35273,
+    raw: "LATVIAN",
+  },
+  {
+    freq: 35275,
+    raw: "UNBOUND",
+  },
+  {
+    freq: 35302,
+    raw: "PULSING",
+  },
+  {
+    freq: 35312,
+    raw: "REDLINE",
+  },
+  {
+    freq: 35313,
+    raw: "PEBBLED",
+  },
+  {
+    freq: 35317,
+    raw: "CAROLER",
+  },
+  {
+    freq: 35326,
+    raw: "CULLING",
+  },
+  {
+    freq: 35336,
+    raw: "CROPPER",
+  },
+  {
+    freq: 35340,
+    raw: "BUCKEYE",
+  },
+  {
+    freq: 35367,
+    raw: "REAR-END",
+    word: "REAREND",
+  },
+  {
+    freq: 35369,
+    raw: "PREMADE",
+  },
+  {
+    freq: 35370,
+    raw: "CORSAIR",
+  },
+  {
+    freq: 35377,
+    raw: "TASKBAR",
+  },
+  {
+    freq: 35383,
+    raw: "CANVASS",
+  },
+  {
+    freq: 35384,
+    raw: "SATIETY",
+  },
+  {
+    freq: 35387,
+    raw: "CZARIST",
+  },
+  {
+    freq: 35390,
+    raw: "SOBBING",
+  },
+  {
+    freq: 35397,
+    raw: "ALL-GIRL",
+    word: "ALLGIRL",
+  },
+  {
+    freq: 35398,
+    raw: "SUCROSE",
+  },
+  {
+    freq: 35407,
+    raw: "ALBUMIN",
+  },
+  {
+    freq: 35437,
+    raw: "VAQUERO",
+  },
+  {
+    freq: 35444,
+    raw: "COLICKY",
+  },
+  {
+    freq: 35445,
+    raw: "REMOUNT",
+  },
+  {
+    freq: 35446,
+    raw: "CLOTHED",
+  },
+  {
+    freq: 35448,
+    raw: "MASSEUR",
+  },
+  {
+    freq: 35454,
+    raw: "RICKETS",
+  },
+  {
+    freq: 35455,
+    raw: "STARLIT",
+  },
+  {
+    freq: 35458,
+    raw: "RHYMING",
+  },
+  {
+    freq: 35460,
+    raw: "DICKENS",
+  },
+  {
+    freq: 35465,
+    raw: "ASEPTIC",
+  },
+  {
+    freq: 35467,
+    raw: "NOTHING",
+  },
+  {
+    freq: 35468,
+    raw: "EYEWEAR",
+  },
+  {
+    freq: 35473,
+    raw: "WARTHOG",
+  },
+  {
+    freq: 35479,
+    raw: "SOBBING",
+  },
+  {
+    freq: 35481,
+    raw: "BLOTCHY",
+  },
+  {
+    freq: 35485,
+    raw: "CHOLINE",
+  },
+  {
+    freq: 35497,
+    raw: "CHEWING",
+  },
+  {
+    freq: 35501,
+    raw: "TEATIME",
+  },
+  {
+    freq: 35502,
+    raw: "SPAWNER",
+  },
+  {
+    freq: 35509,
+    raw: "WIPEOUT",
+  },
+  {
+    freq: 35521,
+    raw: "WITTILY",
+  },
+  {
+    freq: 35524,
+    raw: "DIAGRAM",
+  },
+  {
+    freq: 35532,
+    raw: "OFF-TASK",
+    word: "OFFTASK",
+  },
+  {
+    freq: 35544,
+    raw: "DOYENNE",
+  },
+  {
+    freq: 35546,
+    raw: "PIROGUE",
+  },
+  {
+    freq: 35548,
+    raw: "UNHITCH",
+  },
+  {
+    freq: 35551,
+    raw: "NUCLEON",
+  },
+  {
+    freq: 35562,
+    raw: "LOCKBOX",
+  },
+  {
+    freq: 35566,
+    raw: "CHALLAH",
+  },
+  {
+    freq: 35585,
+    raw: "DRONING",
+  },
+  {
+    freq: 35587,
+    raw: "NEUROMA",
+  },
+  {
+    freq: 35590,
+    raw: "NEEDFUL",
+  },
+  {
+    freq: 35598,
+    raw: "ENDOWED",
+  },
+  {
+    freq: 35634,
+    raw: "AIRMAIL",
+  },
+  {
+    freq: 35642,
+    raw: "PREQUEL",
+  },
+  {
+    freq: 35651,
+    raw: "TANNERY",
+  },
+  {
+    freq: 35657,
+    raw: "CHECHEN",
+  },
+  {
+    freq: 35663,
+    raw: "HEPARIN",
+  },
+  {
+    freq: 35683,
+    raw: "BIVALVE",
+  },
+  {
+    freq: 35688,
+    raw: "VEGETAL",
+  },
+  {
+    freq: 35697,
+    raw: "BETROTH",
+  },
+  {
+    freq: 35699,
+    raw: "LASHING",
+  },
+  {
+    freq: 35701,
+    raw: "BENGALI",
+  },
+  {
+    freq: 35712,
+    raw: "DELTOID",
+  },
+  {
+    freq: 35727,
+    raw: "TWO-SEAT",
+    word: "TWOSEAT",
+  },
+  {
+    freq: 35732,
+    raw: "WHEREOF",
+  },
+  {
+    freq: 35737,
+    raw: "VESPERS",
+  },
+  {
+    freq: 35738,
+    raw: "SEX-ROLE",
+    word: "SEXROLE",
+  },
+  {
+    freq: 35743,
+    raw: "WASHTUB",
+  },
+  {
+    freq: 35752,
+    raw: "HIPNESS",
+  },
+  {
+    freq: 35768,
+    raw: "AURALLY",
+  },
+  {
+    freq: 35772,
+    raw: "TILTING",
+  },
+  {
+    freq: 35778,
+    raw: "VACATED",
+  },
+  {
+    freq: 35779,
+    raw: "AROUSED",
+  },
+  {
+    freq: 35781,
+    raw: "SARACEN",
+  },
+  {
+    freq: 35782,
+    raw: "SYRINGE",
+  },
+  {
+    freq: 35788,
+    raw: "WINGMAN",
+  },
+  {
+    freq: 35803,
+    raw: "PLASMID",
+  },
+  {
+    freq: 35808,
+    raw: "GRISTLE",
+  },
+  {
+    freq: 35813,
+    raw: "GOULASH",
+  },
+  {
+    freq: 35814,
+    raw: "HARDHAT",
+  },
+  {
+    freq: 35830,
+    raw: "AMPHORA",
+  },
+  {
+    freq: 35831,
+    raw: "SANDLOT",
+  },
+  {
+    freq: 35841,
+    raw: "MENTHOL",
+  },
+  {
+    freq: 35856,
+    raw: "HOT-PINK",
+    word: "HOTPINK",
+  },
+  {
+    freq: 35859,
+    raw: "WARPATH",
+  },
+  {
+    freq: 35860,
+    raw: "BACK-END",
+    word: "BACKEND",
+  },
+  {
+    freq: 35874,
+    raw: "NEONATE",
+  },
+  {
+    freq: 35876,
+    raw: "WAKEFUL",
+  },
+  {
+    freq: 35884,
+    raw: "CURDLED",
+  },
+  {
+    freq: 35892,
+    raw: "RUBELLA",
+  },
+  {
+    freq: 35900,
+    raw: "HAIRNET",
+  },
+  {
+    freq: 35903,
+    raw: "CHIGNON",
+  },
+  {
+    freq: 35909,
+    raw: "STIPPLE",
+  },
+  {
+    freq: 35939,
+    raw: "DIZZILY",
+  },
+  {
+    freq: 35942,
+    raw: "MUEZZIN",
+  },
+  {
+    freq: 35946,
+    raw: "MYELOMA",
+  },
+  {
+    freq: 35947,
+    raw: "MESCLUN",
+  },
+  {
+    freq: 35951,
+    raw: "LANYARD",
+  },
+  {
+    freq: 35969,
+    raw: "REFRIED",
+  },
+  {
+    freq: 35984,
+    raw: "SPANGLE",
+  },
+  {
+    freq: 35989,
+    raw: "TRASHED",
+  },
+  {
+    freq: 36009,
+    raw: "UNCHECK",
+  },
+  {
+    freq: 36012,
+    raw: "EUGENIC",
+  },
+  {
+    freq: 36013,
+    raw: "COCHLEA",
+  },
+  {
+    freq: 36018,
+    raw: "SERFDOM",
+  },
+  {
+    freq: 36019,
+    raw: "CO-CHIEF",
+    word: "COCHIEF",
+  },
+  {
+    freq: 36020,
+    raw: "RIPOSTE",
+  },
+  {
+    freq: 36024,
+    raw: "TAXIWAY",
+  },
+  {
+    freq: 36029,
+    raw: "SHEBANG",
+  },
+  {
+    freq: 36040,
+    raw: "RETINOL",
+  },
+  {
+    freq: 36044,
+    raw: "CHANCEL",
+  },
+  {
+    freq: 36046,
+    raw: "FASTING",
+  },
+  {
+    freq: 36053,
+    raw: "HITLESS",
+  },
+  {
+    freq: 36069,
+    raw: "ENTERIC",
+  },
+  {
+    freq: 36076,
+    raw: "ABIOTIC",
+  },
+  {
+    freq: 36081,
+    raw: "HITCHES",
+  },
+  {
+    freq: 36082,
+    raw: "MANDALA",
+  },
+  {
+    freq: 36084,
+    raw: "ICE-FREE",
+    word: "ICEFREE",
+  },
+  {
+    freq: 36087,
+    raw: "CO-EQUAL",
+    word: "COEQUAL",
+  },
+  {
+    freq: 36088,
+    raw: "PUNCHED",
+  },
+  {
+    freq: 36092,
+    raw: "CARTOON",
+  },
+  {
+    freq: 36102,
+    raw: "SOLVENT",
+  },
+  {
+    freq: 36111,
+    raw: "BLINDED",
+  },
+  {
+    freq: 36119,
+    raw: "SHOW-OFF",
+    word: "SHOWOFF",
+  },
+  {
+    freq: 36121,
+    raw: "RENAMED",
+  },
+  {
+    freq: 36128,
+    raw: "SLATTED",
+  },
+  {
+    freq: 36155,
+    raw: "SIDECAR",
+  },
+  {
+    freq: 36157,
+    raw: "BOOMBOX",
+  },
+  {
+    freq: 36158,
+    raw: "QUR'ANIC",
+    word: "QURANIC",
+  },
+  {
+    freq: 36166,
+    raw: "LIVED-IN",
+    word: "LIVEDIN",
+  },
+  {
+    freq: 36191,
+    raw: "JOINERY",
+  },
+  {
+    freq: 36196,
+    raw: "OVULATE",
+  },
+  {
+    freq: 36211,
+    raw: "CANVASS",
+  },
+  {
+    freq: 36216,
+    raw: "PILLAGE",
+  },
+  {
+    freq: 36227,
+    raw: "PORCINE",
+  },
+  {
+    freq: 36230,
+    raw: "MANNISH",
+  },
+  {
+    freq: 36241,
+    raw: "PALPATE",
+  },
+  {
+    freq: 36251,
+    raw: "BOATMEN",
+  },
+  {
+    freq: 36252,
+    raw: "CODFISH",
+  },
+  {
+    freq: 36260,
+    raw: "FELT-TIP",
+    word: "FELTTIP",
+  },
+  {
+    freq: 36267,
+    raw: "PACKBAG",
+  },
+  {
+    freq: 36270,
+    raw: "MONOCLE",
+  },
+  {
+    freq: 36273,
+    raw: "COMBUST",
+  },
+  {
+    freq: 36274,
+    raw: "SUCTION",
+  },
+  {
+    freq: 36286,
+    raw: "HABITUS",
+  },
+  {
+    freq: 36291,
+    raw: "SCHLOCK",
+  },
+  {
+    freq: 36294,
+    raw: "LEERING",
+  },
+  {
+    freq: 36295,
+    raw: "LACTATE",
+  },
+  {
+    freq: 36298,
+    raw: "VESTING",
+  },
+  {
+    freq: 36302,
+    raw: "FACETED",
+  },
+  {
+    freq: 36305,
+    raw: "CRINKLE",
+  },
+  {
+    freq: 36318,
+    raw: "GUMBALL",
+  },
+  {
+    freq: 36322,
+    raw: "LAPPING",
+  },
+  {
+    freq: 36361,
+    raw: "SLOBBER",
+  },
+  {
+    freq: 36362,
+    raw: "PAUNCHY",
+  },
+  {
+    freq: 36383,
+    raw: "MUST-WIN",
+    word: "MUSTWIN",
+  },
+  {
+    freq: 36411,
+    raw: "GANACHE",
+  },
+  {
+    freq: 36413,
+    raw: "ARMORER",
+  },
+  {
+    freq: 36421,
+    raw: "TANTRIC",
+  },
+  {
+    freq: 36422,
+    raw: "AUSTRAL",
+  },
+  {
+    freq: 36425,
+    raw: "ROSEATE",
+  },
+  {
+    freq: 36428,
+    raw: "LEVELLY",
+  },
+  {
+    freq: 36430,
+    raw: "TITHING",
+  },
+  {
+    freq: 36441,
+    raw: "CORTEGE",
+  },
+  {
+    freq: 36451,
+    raw: "CHITTER",
+  },
+  {
+    freq: 36474,
+    raw: "BAKLAVA",
+  },
+  {
+    freq: 36489,
+    raw: "NOSTRUM",
+  },
+  {
+    freq: 36493,
+    raw: "INANITY",
+  },
+  {
+    freq: 36507,
+    raw: "FRACTAL",
+  },
+  {
+    freq: 36508,
+    raw: "AMYLOID",
+  },
+  {
+    freq: 36535,
+    raw: "GEE-WHIZ",
+    word: "GEEWHIZ",
+  },
+  {
+    freq: 36547,
+    raw: "BILIOUS",
+  },
+  {
+    freq: 36548,
+    raw: "SPURNED",
+  },
+  {
+    freq: 36549,
+    raw: "MARXIAN",
+  },
+  {
+    freq: 36565,
+    raw: "PANFISH",
+  },
+  {
+    freq: 36572,
+    raw: "PREACHY",
+  },
+  {
+    freq: 36574,
+    raw: "LEANING",
+  },
+  {
+    freq: 36575,
+    raw: "HOGWASH",
+  },
+  {
+    freq: 36577,
+    raw: "COWHIDE",
+  },
+  {
+    freq: 36582,
+    raw: "CHASING",
+  },
+  {
+    freq: 36608,
+    raw: "LOWBROW",
+  },
+  {
+    freq: 36620,
+    raw: "WICKING",
+  },
+  {
+    freq: 36621,
+    raw: "ODOROUS",
+  },
+  {
+    freq: 36629,
+    raw: "ONE-STEP",
+    word: "ONESTEP",
+  },
+  {
+    freq: 36642,
+    raw: "WRANGLE",
+  },
+  {
+    freq: 36645,
+    raw: "WETBACK",
+  },
+  {
+    freq: 36646,
+    raw: "EX-SLAVE",
+    word: "EXSLAVE",
+  },
+  {
+    freq: 36648,
+    raw: "DOGGONE",
+  },
+  {
+    freq: 36656,
+    raw: "SUNLESS",
+  },
+  {
+    freq: 36664,
+    raw: "DO-OR-DIE",
+    word: "DOORDIE",
+  },
+  {
+    freq: 36673,
+    raw: "SEAWARD",
+  },
+  {
+    freq: 36676,
+    raw: "LUNGFUL",
+  },
+  {
+    freq: 36678,
+    raw: "RUSTLER",
+  },
+  {
+    freq: 36691,
+    raw: "DUSTPAN",
+  },
+  {
+    freq: 36720,
+    raw: "ZAIRIAN",
+  },
+  {
+    freq: 36732,
+    raw: "BARKEEP",
+  },
+  {
+    freq: 36734,
+    raw: "CROCHET",
+  },
+  {
+    freq: 36741,
+    raw: "VAGRANT",
+  },
+  {
+    freq: 36746,
+    raw: "HUMERUS",
+  },
+  {
+    freq: 36751,
+    raw: "SCOOPED",
+  },
+  {
+    freq: 36755,
+    raw: "AVERTED",
+  },
+  {
+    freq: 36761,
+    raw: "SCRAPIE",
+  },
+  {
+    freq: 36768,
+    raw: "HIDALGO",
+  },
+  {
+    freq: 36776,
+    raw: "BIG-EYED",
+    word: "BIGEYED",
+  },
+  {
+    freq: 36782,
+    raw: "SLASHED",
+  },
+  {
+    freq: 36788,
+    raw: "OFF-RAMP",
+    word: "OFFRAMP",
+  },
+  {
+    freq: 36799,
+    raw: "MORDANT",
+  },
+  {
+    freq: 36800,
+    raw: "FEUDING",
+  },
+  {
+    freq: 36803,
+    raw: "CHAEBOL",
+  },
+  {
+    freq: 36805,
+    raw: "GUNPLAY",
+  },
+  {
+    freq: 36806,
+    raw: "SPECKLE",
+  },
+  {
+    freq: 36807,
+    raw: "OUTVOTE",
+  },
+  {
+    freq: 36815,
+    raw: "ROOTING",
+  },
+  {
+    freq: 36833,
+    raw: "OLDSTER",
+  },
+  {
+    freq: 36839,
+    raw: "COMFREY",
+  },
+  {
+    freq: 36844,
+    raw: "FULSOME",
+  },
+  {
+    freq: 36866,
+    raw: "MUDROOM",
+  },
+  {
+    freq: 36876,
+    raw: "SIXFOLD",
+  },
+  {
+    freq: 36880,
+    raw: "CREAMER",
+  },
+  {
+    freq: 36882,
+    raw: "FALAFEL",
+  },
+  {
+    freq: 36904,
+    raw: "MEDIGAP",
+  },
+  {
+    freq: 36907,
+    raw: "GRIFFIN",
+  },
+  {
+    freq: 36921,
+    raw: "AMBIENT",
+  },
+  {
+    freq: 36930,
+    raw: "TOPIARY",
+  },
+  {
+    freq: 36935,
+    raw: "FLYAWAY",
+  },
+  {
+    freq: 36939,
+    raw: "UNBOWED",
+  },
+  {
+    freq: 36940,
+    raw: "ROSTRUM",
+  },
+  {
+    freq: 36964,
+    raw: "BETWIXT",
+  },
+  {
+    freq: 36972,
+    raw: "RAFFISH",
+  },
+  {
+    freq: 37014,
+    raw: "JOYRIDE",
+  },
+  {
+    freq: 37022,
+    raw: "IMPASTO",
+  },
+  {
+    freq: 37063,
+    raw: "TACKING",
+  },
+  {
+    freq: 37065,
+    raw: "ACADIAN",
+  },
+  {
+    freq: 37072,
+    raw: "AUREOLE",
+  },
+  {
+    freq: 37081,
+    raw: "DRY-EYED",
+    word: "DRYEYED",
+  },
+  {
+    freq: 37113,
+    raw: "TABULAR",
+  },
+  {
+    freq: 37119,
+    raw: "ACCRUAL",
+  },
+  {
+    freq: 37133,
+    raw: "MANACLE",
+  },
+  {
+    freq: 37134,
+    raw: "PICKAXE",
+  },
+  {
+    freq: 37154,
+    raw: "CHOKING",
+  },
+  {
+    freq: 37165,
+    raw: "PHARYNX",
+  },
+  {
+    freq: 37167,
+    raw: "TRACKED",
+  },
+  {
+    freq: 37169,
+    raw: "AIRHEAD",
+  },
+  {
+    freq: 37189,
+    raw: "LAPPING",
+  },
+  {
+    freq: 37191,
+    raw: "MASTOID",
+  },
+  {
+    freq: 37197,
+    raw: "HYDRATE",
+  },
+  {
+    freq: 37202,
+    raw: "SLIPPED",
+  },
+  {
+    freq: 37209,
+    raw: "TOSSING",
+  },
+  {
+    freq: 37224,
+    raw: "WRINKLY",
+  },
+  {
+    freq: 37239,
+    raw: "PASCHAL",
+  },
+  {
+    freq: 37243,
+    raw: "CLAWING",
+  },
+  {
+    freq: 37252,
+    raw: "RETHINK",
+  },
+  {
+    freq: 37258,
+    raw: "KNITTER",
+  },
+  {
+    freq: 37259,
+    raw: "RUBDOWN",
+  },
+  {
+    freq: 37260,
+    raw: "TOLLWAY",
+  },
+  {
+    freq: 37272,
+    raw: "HITCHED",
+  },
+  {
+    freq: 37281,
+    raw: "SKYLARK",
+  },
+  {
+    freq: 37285,
+    raw: "PRUDISH",
+  },
+  {
+    freq: 37302,
+    raw: "SEXTANT",
+  },
+  {
+    freq: 37306,
+    raw: "ARMLESS",
+  },
+  {
+    freq: 37307,
+    raw: "SIX-PART",
+    word: "SIXPART",
+  },
+  {
+    freq: 37322,
+    raw: "GAINSAY",
+  },
+  {
+    freq: 37335,
+    raw: "OVERLIE",
+  },
+  {
+    freq: 37336,
+    raw: "BULRUSH",
+  },
+  {
+    freq: 37347,
+    raw: "TARTLET",
+  },
+  {
+    freq: 37359,
+    raw: "ETHMOID",
+  },
+  {
+    freq: 37370,
+    raw: "MUMBLED",
+  },
+  {
+    freq: 37374,
+    raw: "VITRINE",
+  },
+  {
+    freq: 37375,
+    raw: "PITTING",
+  },
+  {
+    freq: 37380,
+    raw: "RAIDING",
+  },
+  {
+    freq: 37382,
+    raw: "DISHRAG",
+  },
+  {
+    freq: 37395,
+    raw: "STEEPEN",
+  },
+  {
+    freq: 37432,
+    raw: "FORBEAR",
+  },
+  {
+    freq: 37449,
+    raw: "BLARING",
+  },
+  {
+    freq: 37463,
+    raw: "SINGLET",
+  },
+  {
+    freq: 37464,
+    raw: "HOOTING",
+  },
+  {
+    freq: 37472,
+    raw: "TAGGING",
+  },
+  {
+    freq: 37476,
+    raw: "HARDPAN",
+  },
+  {
+    freq: 37513,
+    raw: "EYELESS",
+  },
+  {
+    freq: 37526,
+    raw: "LASAGNE",
+  },
+  {
+    freq: 37527,
+    raw: "OVERTOP",
+  },
+  {
+    freq: 37531,
+    raw: "DRIZZLY",
+  },
+  {
+    freq: 37538,
+    raw: "BREWPUB",
+  },
+  {
+    freq: 37540,
+    raw: "ONE-VOTE",
+    word: "ONEVOTE",
+  },
+  {
+    freq: 37548,
+    raw: "PRECAST",
+  },
+  {
+    freq: 37562,
+    raw: "HELIPAD",
+  },
+  {
+    freq: 37595,
+    raw: "PINCERS",
+  },
+  {
+    freq: 37600,
+    raw: "TAPROOT",
+  },
+  {
+    freq: 37601,
+    raw: "PICCOLO",
+  },
+  {
+    freq: 37612,
+    raw: "QUAKING",
+  },
+  {
+    freq: 37615,
+    raw: "LEVELER",
+  },
+  {
+    freq: 37620,
+    raw: "TRIADIC",
+  },
+  {
+    freq: 37638,
+    raw: "UNFUNNY",
+  },
+  {
+    freq: 37648,
+    raw: "TEMPURA",
+  },
+  {
+    freq: 37659,
+    raw: "TRACERY",
+  },
+  {
+    freq: 37678,
+    raw: "EXCITON",
+  },
+  {
+    freq: 37683,
+    raw: "CRASHER",
+  },
+  {
+    freq: 37684,
+    raw: "SPEED-UP",
+    word: "SPEEDUP",
+  },
+  {
+    freq: 37688,
+    raw: "ENDNOTE",
+  },
+  {
+    freq: 37712,
+    raw: "TUNEFUL",
+  },
+  {
+    freq: 37715,
+    raw: "MISUSED",
+  },
+  {
+    freq: 37721,
+    raw: "DIMMING",
+  },
+  {
+    freq: 37736,
+    raw: "CLASPED",
+  },
+  {
+    freq: 37748,
+    raw: "SWAYING",
+  },
+  {
+    freq: 37758,
+    raw: "TANAGER",
+  },
+  {
+    freq: 37760,
+    raw: "THEN-NEW",
+    word: "THENNEW",
+  },
+  {
+    freq: 37767,
+    raw: "REOCCUR",
+  },
+  {
+    freq: 37777,
+    raw: "SCAPULA",
+  },
+  {
+    freq: 37797,
+    raw: "PURGING",
+  },
+  {
+    freq: 37800,
+    raw: "BEEPING",
+  },
+  {
+    freq: 37809,
+    raw: "THERETO",
+  },
+  {
+    freq: 37811,
+    raw: "ARIDITY",
+  },
+  {
+    freq: 37821,
+    raw: "COWBIRD",
+  },
+  {
+    freq: 37824,
+    raw: "HEDGING",
+  },
+  {
+    freq: 37826,
+    raw: "TOLUENE",
+  },
+  {
+    freq: 37827,
+    raw: "RAGWEED",
+  },
+  {
+    freq: 37836,
+    raw: "PLAINER",
+  },
+  {
+    freq: 37838,
+    raw: "WEEK-OLD",
+    word: "WEEKOLD",
+  },
+  {
+    freq: 37839,
+    raw: "BRINGER",
+  },
+  {
+    freq: 37849,
+    raw: "SOPPING",
+  },
+  {
+    freq: 37857,
+    raw: "TEN-HOUR",
+    word: "TENHOUR",
+  },
+  {
+    freq: 37869,
+    raw: "BREADED",
+  },
+  {
+    freq: 37870,
+    raw: "BRUSHED",
+  },
+  {
+    freq: 37874,
+    raw: "JAILING",
+  },
+  {
+    freq: 37877,
+    raw: "TREMOLO",
+  },
+  {
+    freq: 37881,
+    raw: "CROCHET",
+  },
+  {
+    freq: 37888,
+    raw: "SHIATSU",
+  },
+  {
+    freq: 37929,
+    raw: "MANIKIN",
+  },
+  {
+    freq: 37933,
+    raw: "REMOVED",
+  },
+  {
+    freq: 37936,
+    raw: "SAINTED",
+  },
+  {
+    freq: 37938,
+    raw: "ELYSIAN",
+  },
+  {
+    freq: 37947,
+    raw: "BEJESUS",
+  },
+  {
+    freq: 37959,
+    raw: "WALLABY",
+  },
+  {
+    freq: 37960,
+    raw: "EGOTIST",
+  },
+  {
+    freq: 37973,
+    raw: "GROPING",
+  },
+  {
+    freq: 37981,
+    raw: "BACILLI",
+  },
+  {
+    freq: 37982,
+    raw: "METERED",
+  },
+  {
+    freq: 37988,
+    raw: "MOODILY",
+  },
+  {
+    freq: 37990,
+    raw: "NONSKID",
+  },
+  {
+    freq: 37998,
+    raw: "PUCKISH",
+  },
+  {
+    freq: 38001,
+    raw: "NUTCASE",
+  },
+  {
+    freq: 38005,
+    raw: "SIGN-OFF",
+    word: "SIGNOFF",
+  },
+  {
+    freq: 38018,
+    raw: "PAGEBOY",
+  },
+  {
+    freq: 38019,
+    raw: "CEVICHE",
+  },
+  {
+    freq: 38021,
+    raw: "FONTINA",
+  },
+  {
+    freq: 38022,
+    raw: "COWHAND",
+  },
+  {
+    freq: 38030,
+    raw: "CIRCLET",
+  },
+  {
+    freq: 38038,
+    raw: "TEACH-IN",
+    word: "TEACHIN",
+  },
+  {
+    freq: 38042,
+    raw: "PIMENTO",
+  },
+  {
+    freq: 38051,
+    raw: "OUTCROP",
+  },
+  {
+    freq: 38099,
+    raw: "BAUXITE",
+  },
+  {
+    freq: 38110,
+    raw: "CALUMNY",
+  },
+  {
+    freq: 38122,
+    raw: "ROUGHEN",
+  },
+  {
+    freq: 38124,
+    raw: "ELASTIN",
+  },
+  {
+    freq: 38131,
+    raw: "HYPOXIC",
+  },
+  {
+    freq: 38150,
+    raw: "GENTIAN",
+  },
+  {
+    freq: 38168,
+    raw: "WASTING",
+  },
+  {
+    freq: 38180,
+    raw: "GRIPPER",
+  },
+  {
+    freq: 38186,
+    raw: "CLINKER",
+  },
+  {
+    freq: 38188,
+    raw: "OSMOTIC",
+  },
+  {
+    freq: 38205,
+    raw: "MONTANE",
+  },
+  {
+    freq: 38209,
+    raw: "TRIBUNE",
+  },
+  {
+    freq: 38210,
+    raw: "RAIN-FED",
+    word: "RAINFED",
+  },
+  {
+    freq: 38211,
+    raw: "MAFIOSO",
+  },
+  {
+    freq: 38226,
+    raw: "CHAINED",
+  },
+  {
+    freq: 38231,
+    raw: "SUASION",
+  },
+  {
+    freq: 38240,
+    raw: "BISMUTH",
+  },
+  {
+    freq: 38247,
+    raw: "SCROOGE",
+  },
+  {
+    freq: 38249,
+    raw: "SIX-LANE",
+    word: "SIXLANE",
+  },
+  {
+    freq: 38259,
+    raw: "TRIDENT",
+  },
+  {
+    freq: 38264,
+    raw: "WAVELET",
+  },
+  {
+    freq: 38269,
+    raw: "EMBARGO",
+  },
+  {
+    freq: 38278,
+    raw: "CRIOLLO",
+  },
+  {
+    freq: 38280,
+    raw: "HANDSAW",
+  },
+  {
+    freq: 38293,
+    raw: "CAPABLY",
+  },
+  {
+    freq: 38301,
+    raw: "SPRAYED",
+  },
+  {
+    freq: 38317,
+    raw: "ROCKING",
+  },
+  {
+    freq: 38320,
+    raw: "FRIABLE",
+  },
+  {
+    freq: 38321,
+    raw: "LONGBOW",
+  },
+  {
+    freq: 38324,
+    raw: "JOLTING",
+  },
+  {
+    freq: 38353,
+    raw: "SNUGGLE",
+  },
+  {
+    freq: 38362,
+    raw: "PANTING",
+  },
+  {
+    freq: 38365,
+    raw: "RESTAGE",
+  },
+  {
+    freq: 38366,
+    raw: "ALYSSUM",
+  },
+  {
+    freq: 38377,
+    raw: "DIPTYCH",
+  },
+  {
+    freq: 38384,
+    raw: "MOORING",
+  },
+  {
+    freq: 38388,
+    raw: "ARAMAIC",
+  },
+  {
+    freq: 38390,
+    raw: "WIRETAP",
+  },
+  {
+    freq: 38395,
+    raw: "COGNATE",
+  },
+  {
+    freq: 38398,
+    raw: "GAINING",
+  },
+  {
+    freq: 38404,
+    raw: "CUNNING",
+  },
+  {
+    freq: 38422,
+    raw: "FOX-TROT",
+    word: "FOXTROT",
+  },
+  {
+    freq: 38427,
+    raw: "ENGORGE",
+  },
+  {
+    freq: 38432,
+    raw: "GUMSHOE",
+  },
+  {
+    freq: 38436,
+    raw: "GRANTOR",
+  },
+  {
+    freq: 38443,
+    raw: "HAUTEUR",
+  },
+  {
+    freq: 38445,
+    raw: "OUTSOLE",
+  },
+  {
+    freq: 38446,
+    raw: "AILERON",
+  },
+  {
+    freq: 38459,
+    raw: "CODLING",
+  },
+  {
+    freq: 38467,
+    raw: "HOARDER",
+  },
+  {
+    freq: 38474,
+    raw: "OPEN-PIT",
+    word: "OPENPIT",
+  },
+  {
+    freq: 38479,
+    raw: "BOARDED",
+  },
+  {
+    freq: 38481,
+    raw: "ROLL-OFF",
+    word: "ROLLOFF",
+  },
+  {
+    freq: 38498,
+    raw: "ICE-BLUE",
+    word: "ICEBLUE",
+  },
+  {
+    freq: 38502,
+    raw: "UNMIXED",
+  },
+  {
+    freq: 38510,
+    raw: "RETITLE",
+  },
+  {
+    freq: 38513,
+    raw: "AGONIST",
+  },
+  {
+    freq: 38514,
+    raw: "TIMPANI",
+  },
+  {
+    freq: 38529,
+    raw: "ELISION",
+  },
+  {
+    freq: 38537,
+    raw: "LOCKEAN",
+  },
+  {
+    freq: 38538,
+    raw: "CRAFTER",
+  },
+  {
+    freq: 38540,
+    raw: "CRUSTAL",
+  },
+  {
+    freq: 38548,
+    raw: "LUCIDLY",
+  },
+  {
+    freq: 38551,
+    raw: "PUSTULE",
+  },
+  {
+    freq: 38562,
+    raw: "CARRIED",
+  },
+  {
+    freq: 38573,
+    raw: "GROOVED",
+  },
+  {
+    freq: 38601,
+    raw: "MACAQUE",
+  },
+  {
+    freq: 38619,
+    raw: "UNMANLY",
+  },
+  {
+    freq: 38622,
+    raw: "SKITTLE",
+  },
+  {
+    freq: 38649,
+    raw: "THITHER",
+  },
+  {
+    freq: 38659,
+    raw: "POOLING",
+  },
+  {
+    freq: 38673,
+    raw: "KICK-ASS",
+    word: "KICKASS",
+  },
+  {
+    freq: 38693,
+    raw: "MUDHOLE",
+  },
+  {
+    freq: 38702,
+    raw: "EXEGETE",
+  },
+  {
+    freq: 38729,
+    raw: "SHOW-OFF",
+    word: "SHOWOFF",
+  },
+  {
+    freq: 38735,
+    raw: "LAMPREY",
+  },
+  {
+    freq: 38750,
+    raw: "COAXING",
+  },
+  {
+    freq: 38764,
+    raw: "SKIWEAR",
+  },
+  {
+    freq: 38765,
+    raw: "NORMING",
+  },
+  {
+    freq: 38774,
+    raw: "SLITHER",
+  },
+  {
+    freq: 38777,
+    raw: "COSSACK",
+  },
+  {
+    freq: 38778,
+    raw: "FANTAIL",
+  },
+  {
+    freq: 38780,
+    raw: "GET-WELL",
+    word: "GETWELL",
+  },
+  {
+    freq: 38784,
+    raw: "OAXACAN",
+  },
+  {
+    freq: 38792,
+    raw: "CURTAIN",
+  },
+  {
+    freq: 38799,
+    raw: "THUMPER",
+  },
+  {
+    freq: 38804,
+    raw: "SOPPING",
+  },
+  {
+    freq: 38813,
+    raw: "WINDING",
+  },
+  {
+    freq: 38823,
+    raw: "SLOUCHY",
+  },
+  {
+    freq: 38829,
+    raw: "CRESTED",
+  },
+  {
+    freq: 38832,
+    raw: "TROUPER",
+  },
+  {
+    freq: 38833,
+    raw: "GORDIAN",
+  },
+  {
+    freq: 38843,
+    raw: "STAMMER",
+  },
+  {
+    freq: 38845,
+    raw: "TOWPATH",
+  },
+  {
+    freq: 38854,
+    raw: "SLEEKLY",
+  },
+  {
+    freq: 38860,
+    raw: "MENDING",
+  },
+  {
+    freq: 38862,
+    raw: "XEROXED",
+  },
+  {
+    freq: 38865,
+    raw: "EIGHTHS",
+  },
+  {
+    freq: 38876,
+    raw: "BETOKEN",
+  },
+  {
+    freq: 38890,
+    raw: "TINTING",
+  },
+  {
+    freq: 38896,
+    raw: "ONE-MILE",
+    word: "ONEMILE",
+  },
+  {
+    freq: 38897,
+    raw: "BOONIES",
+  },
+  {
+    freq: 38899,
+    raw: "MUDDIED",
+  },
+  {
+    freq: 38901,
+    raw: "HONKING",
+  },
+  {
+    freq: 38910,
+    raw: "WASTAGE",
+  },
+  {
+    freq: 38914,
+    raw: "SLICKLY",
+  },
+  {
+    freq: 38918,
+    raw: "VAULTER",
+  },
+  {
+    freq: 38923,
+    raw: "GIGABIT",
+  },
+  {
+    freq: 38933,
+    raw: "T-SHAPED",
+    word: "TSHAPED",
+  },
+  {
+    freq: 38934,
+    raw: "STUCK-UP",
+    word: "STUCKUP",
+  },
+  {
+    freq: 38940,
+    raw: "MOLDING",
+  },
+  {
+    freq: 38948,
+    raw: "NANOBOT",
+  },
+  {
+    freq: 38951,
+    raw: "FULL-FAT",
+    word: "FULLFAT",
+  },
+  {
+    freq: 38955,
+    raw: "JEERING",
+  },
+  {
+    freq: 38958,
+    raw: "EROSIVE",
+  },
+  {
+    freq: 38967,
+    raw: "RETREAD",
+  },
+  {
+    freq: 38968,
+    raw: "GUSHING",
+  },
+  {
+    freq: 38976,
+    raw: "PRELOAD",
+  },
+  {
+    freq: 38978,
+    raw: "PALADIN",
+  },
+  {
+    freq: 38987,
+    raw: "GIARDIA",
+  },
+  {
+    freq: 38992,
+    raw: "SNOOKER",
+  },
+  {
+    freq: 38996,
+    raw: "BIG-SHOT",
+    word: "BIGSHOT",
+  },
+  {
+    freq: 39001,
+    raw: "TWO-DISC",
+    word: "TWODISC",
+  },
+  {
+    freq: 39002,
+    raw: "STUBBLY",
+  },
+  {
+    freq: 39007,
+    raw: "CHASING",
+  },
+  {
+    freq: 39008,
+    raw: "AIRBASE",
+  },
+  {
+    freq: 39009,
+    raw: "WHOOPEE",
+  },
+  {
+    freq: 39017,
+    raw: "WOOLENS",
+  },
+  {
+    freq: 39019,
+    raw: "FLOUNCE",
+  },
+  {
+    freq: 39031,
+    raw: "POTHEAD",
+  },
+  {
+    freq: 39033,
+    raw: "OBLIGED",
+  },
+  {
+    freq: 39035,
+    raw: "SAMOVAR",
+  },
+  {
+    freq: 39050,
+    raw: "CIRCLED",
+  },
+  {
+    freq: 39055,
+    raw: "STATISM",
+  },
+  {
+    freq: 39059,
+    raw: "SHIVERY",
+  },
+  {
+    freq: 39060,
+    raw: "IMPIOUS",
+  },
+  {
+    freq: 39066,
+    raw: "SEEDBED",
+  },
+  {
+    freq: 39074,
+    raw: "SUB-ZERO",
+    word: "SUBZERO",
+  },
+  {
+    freq: 39079,
+    raw: "UNTAXED",
+  },
+  {
+    freq: 39090,
+    raw: "TOP-LINE",
+    word: "TOPLINE",
+  },
+  {
+    freq: 39102,
+    raw: "PHASE-IN",
+    word: "PHASEIN",
+  },
+  {
+    freq: 39108,
+    raw: "HEDONIC",
+  },
+  {
+    freq: 39111,
+    raw: "MASSING",
+  },
+  {
+    freq: 39124,
+    raw: "NEW-HOME",
+    word: "NEWHOME",
+  },
+  {
+    freq: 39125,
+    raw: "OUTWORK",
+  },
+  {
+    freq: 39156,
+    raw: "DRIZZLY",
+  },
+  {
+    freq: 39173,
+    raw: "PECCARY",
+  },
+  {
+    freq: 39184,
+    raw: "HAYSEED",
+  },
+  {
+    freq: 39246,
+    raw: "GRANDEE",
+  },
+  {
+    freq: 39250,
+    raw: "CALCITE",
+  },
+  {
+    freq: 39269,
+    raw: "VOICING",
+  },
+  {
+    freq: 39274,
+    raw: "AFFABLY",
+  },
+  {
+    freq: 39275,
+    raw: "IMPUTED",
+  },
+  {
+    freq: 39283,
+    raw: "WIDE-SET",
+    word: "WIDESET",
+  },
+  {
+    freq: 39286,
+    raw: "TUSSOCK",
+  },
+  {
+    freq: 39297,
+    raw: "MISCAST",
+  },
+  {
+    freq: 39299,
+    raw: "FADDISH",
+  },
+  {
+    freq: 39302,
+    raw: "CANNULA",
+  },
+  {
+    freq: 39315,
+    raw: "REIFIED",
+  },
+  {
+    freq: 39333,
+    raw: "FILLING",
+  },
+  {
+    freq: 39334,
+    raw: "APE-LIKE",
+    word: "APELIKE",
+  },
+  {
+    freq: 39352,
+    raw: "FRILLED",
+  },
+  {
+    freq: 39354,
+    raw: "KILOTON",
+  },
+  {
+    freq: 39356,
+    raw: "HIGH-DEF",
+    word: "HIGHDEF",
+  },
+  {
+    freq: 39362,
+    raw: "PLUCKED",
+  },
+  {
+    freq: 39368,
+    raw: "PIPETTE",
+  },
+  {
+    freq: 39369,
+    raw: "STOICAL",
+  },
+  {
+    freq: 39379,
+    raw: "VESICLE",
+  },
+  {
+    freq: 39382,
+    raw: "HOSANNA",
+  },
+  {
+    freq: 39386,
+    raw: "ENTRAIN",
+  },
+  {
+    freq: 39404,
+    raw: "UPENDED",
+  },
+  {
+    freq: 39419,
+    raw: "INDUCER",
+  },
+  {
+    freq: 39424,
+    raw: "YES-OR-NO",
+    word: "YESORNO",
+  },
+  {
+    freq: 39435,
+    raw: "PITEOUS",
+  },
+  {
+    freq: 39475,
+    raw: "SPANGLE",
+  },
+  {
+    freq: 39507,
+    raw: "STRIVER",
+  },
+  {
+    freq: 39509,
+    raw: "ALERTLY",
+  },
+  {
+    freq: 39511,
+    raw: "PRATTLE",
+  },
+  {
+    freq: 39514,
+    raw: "SPLOTCH",
+  },
+  {
+    freq: 39526,
+    raw: "RUN-TIME",
+    word: "RUNTIME",
+  },
+  {
+    freq: 39530,
+    raw: "WHIPSAW",
+  },
+  {
+    freq: 39531,
+    raw: "ONE-NOTE",
+    word: "ONENOTE",
+  },
+  {
+    freq: 39584,
+    raw: "TWO-YARD",
+    word: "TWOYARD",
+  },
+  {
+    freq: 39587,
+    raw: "MISRULE",
+  },
+  {
+    freq: 39603,
+    raw: "DYSPNEA",
+  },
+  {
+    freq: 39604,
+    raw: "REVILED",
+  },
+  {
+    freq: 39615,
+    raw: "BOOMLET",
+  },
+  {
+    freq: 39616,
+    raw: "MEDEVAC",
+  },
+  {
+    freq: 39650,
+    raw: "REGRESS",
+  },
+  {
+    freq: 39652,
+    raw: "ADJUDGE",
+  },
+  {
+    freq: 39657,
+    raw: "ANTIQUE",
+  },
+  {
+    freq: 39659,
+    raw: "DECKING",
+  },
+  {
+    freq: 39686,
+    raw: "PERLITE",
+  },
+  {
+    freq: 39692,
+    raw: "DIALING",
+  },
+  {
+    freq: 39700,
+    raw: "FEUDING",
+  },
+  {
+    freq: 39701,
+    raw: "HALF-WIT",
+    word: "HALFWIT",
+  },
+  {
+    freq: 39703,
+    raw: "HONKING",
+  },
+  {
+    freq: 39710,
+    raw: "NEBULAR",
+  },
+  {
+    freq: 39715,
+    raw: "CRUMPLE",
+  },
+  {
+    freq: 39718,
+    raw: "BANDGAP",
+  },
+  {
+    freq: 39730,
+    raw: "REVALUE",
+  },
+  {
+    freq: 39732,
+    raw: "CELADON",
+  },
+  {
+    freq: 39739,
+    raw: "SCULPIN",
+  },
+  {
+    freq: 39745,
+    raw: "DECRYPT",
+  },
+  {
+    freq: 39746,
+    raw: "HATLESS",
+  },
+  {
+    freq: 39748,
+    raw: "THEREON",
+  },
+  {
+    freq: 39752,
+    raw: "BLOODED",
+  },
+  {
+    freq: 39764,
+    raw: "TAGLINE",
+  },
+  {
+    freq: 39773,
+    raw: "DIETING",
+  },
+  {
+    freq: 39775,
+    raw: "CLEANED",
+  },
+  {
+    freq: 39785,
+    raw: "OSSUARY",
+  },
+  {
+    freq: 39790,
+    raw: "BOLLOCK",
+  },
+  {
+    freq: 39819,
+    raw: "THROW-IN",
+    word: "THROWIN",
+  },
+  {
+    freq: 39826,
+    raw: "TWO-SHOT",
+    word: "TWOSHOT",
+  },
+  {
+    freq: 39845,
+    raw: "UMPTEEN",
+  },
+  {
+    freq: 39855,
+    raw: "SNARLED",
+  },
+  {
+    freq: 39861,
+    raw: "GLEANER",
+  },
+  {
+    freq: 39866,
+    raw: "EXCISED",
+  },
+  {
+    freq: 39893,
+    raw: "TOOLING",
+  },
+  {
+    freq: 39896,
+    raw: "ODDNESS",
+  },
+  {
+    freq: 39897,
+    raw: "STUMPED",
+  },
+  {
+    freq: 39916,
+    raw: "STAYING",
+  },
+  {
+    freq: 39919,
+    raw: "INGRESS",
+  },
+  {
+    freq: 39926,
+    raw: "MANACLE",
+  },
+  {
+    freq: 39927,
+    raw: "SAFE-SEX",
+    word: "SAFESEX",
+  },
+  {
+    freq: 39928,
+    raw: "RIPTIDE",
+  },
+  {
+    freq: 39952,
+    raw: "GRACKLE",
+  },
+  {
+    freq: 39958,
+    raw: "SCORNED",
+  },
+  {
+    freq: 39967,
+    raw: "CHERVIL",
+  },
+  {
+    freq: 39982,
+    raw: "SNAKING",
+  },
+  {
+    freq: 39990,
+    raw: "WIDENED",
+  },
+  {
+    freq: 39998,
+    raw: "TOSTADA",
+  },
+  {
+    freq: 39999,
+    raw: "ENTENTE",
+  },
+  {
+    freq: 40000,
+    raw: "SANDMAN",
+  },
+  {
+    freq: 40003,
+    raw: "SALTINE",
+  },
+  {
+    freq: 40007,
+    raw: "FEE-ONLY",
+    word: "FEEONLY",
+  },
+  {
+    freq: 40008,
+    raw: "FORMING",
+  },
+  {
+    freq: 40018,
+    raw: "CAPPING",
+  },
+  {
+    freq: 40020,
+    raw: "SOONEST",
+  },
+  {
+    freq: 40031,
+    raw: "CHAPATI",
+  },
+  {
+    freq: 40046,
+    raw: "GESTATE",
+  },
+  {
+    freq: 40092,
+    raw: "UNSPENT",
+  },
+  {
+    freq: 40097,
+    raw: "EXHALED",
+  },
+  {
+    freq: 40098,
+    raw: "BATSMAN",
+  },
+  {
+    freq: 40105,
+    raw: "POLLACK",
+  },
+  {
+    freq: 40119,
+    raw: "ANODYNE",
+  },
+  {
+    freq: 40121,
+    raw: "BLATHER",
+  },
+  {
+    freq: 40152,
+    raw: "GUMDROP",
+  },
+  {
+    freq: 40158,
+    raw: "COOK-OFF",
+    word: "COOKOFF",
+  },
+  {
+    freq: 40190,
+    raw: "ANGOLAN",
+  },
+  {
+    freq: 40196,
+    raw: "TIPSTER",
+  },
+  {
+    freq: 40201,
+    raw: "CRIMPED",
+  },
+  {
+    freq: 40207,
+    raw: "BIRDING",
+  },
+  {
+    freq: 40211,
+    raw: "THORIUM",
+  },
+  {
+    freq: 40219,
+    raw: "LOW-RATE",
+    word: "LOWRATE",
+  },
+  {
+    freq: 40245,
+    raw: "CODICIL",
+  },
+  {
+    freq: 40256,
+    raw: "TEARING",
+  },
+  {
+    freq: 40262,
+    raw: "PRESSER",
+  },
+  {
+    freq: 40280,
+    raw: "BEEPING",
+  },
+  {
+    freq: 40283,
+    raw: "NITRIDE",
+  },
+  {
+    freq: 40284,
+    raw: "KEENING",
+  },
+  {
+    freq: 40287,
+    raw: "DOGSLED",
+  },
+  {
+    freq: 40295,
+    raw: "CRUMPET",
+  },
+  {
+    freq: 40298,
+    raw: "HUSKILY",
+  },
+  {
+    freq: 40303,
+    raw: "UNITIVE",
+  },
+  {
+    freq: 40321,
+    raw: "SCISSOR",
+  },
+  {
+    freq: 40324,
+    raw: "WADDING",
+  },
+  {
+    freq: 40326,
+    raw: "PEERAGE",
+  },
+  {
+    freq: 40331,
+    raw: "HYDRIDE",
+  },
+  {
+    freq: 40338,
+    raw: "SNOWCAT",
+  },
+  {
+    freq: 40343,
+    raw: "DABBLER",
+  },
+  {
+    freq: 40361,
+    raw: "SNORING",
+  },
+  {
+    freq: 40379,
+    raw: "EYEDROP",
+  },
+  {
+    freq: 40386,
+    raw: "GAME-DAY",
+    word: "GAMEDAY",
+  },
+  {
+    freq: 40387,
+    raw: "MALLEUS",
+  },
+  {
+    freq: 40389,
+    raw: "CULTISH",
+  },
+  {
+    freq: 40394,
+    raw: "HARD-ASS",
+    word: "HARDASS",
+  },
+  {
+    freq: 40398,
+    raw: "TWO-PLUS",
+    word: "TWOPLUS",
+  },
+  {
+    freq: 40400,
+    raw: "WELL-CUT",
+    word: "WELLCUT",
+  },
+  {
+    freq: 40405,
+    raw: "COWPOKE",
+  },
+  {
+    freq: 40440,
+    raw: "KEYLESS",
+  },
+  {
+    freq: 40445,
+    raw: "NARWHAL",
+  },
+  {
+    freq: 40468,
+    raw: "NEW-WAVE",
+    word: "NEWWAVE",
+  },
+  {
+    freq: 40473,
+    raw: "WOLFISH",
+  },
+  {
+    freq: 40478,
+    raw: "SKIPPER",
+  },
+  {
+    freq: 40499,
+    raw: "MEERKAT",
+  },
+  {
+    freq: 40500,
+    raw: "SQUINCH",
+  },
+  {
+    freq: 40501,
+    raw: "IRONIST",
+  },
+  {
+    freq: 40506,
+    raw: "FREESIA",
+  },
+  {
+    freq: 40508,
+    raw: "TRAMWAY",
+  },
+  {
+    freq: 40518,
+    raw: "TAG-TEAM",
+    word: "TAGTEAM",
+  },
+  {
+    freq: 40519,
+    raw: "TRANCHE",
+  },
+  {
+    freq: 40520,
+    raw: "ACETONE",
+  },
+  {
+    freq: 40523,
+    raw: "SHUT-OFF",
+    word: "SHUTOFF",
+  },
+  {
+    freq: 40530,
+    raw: "SCHTICK",
+  },
+  {
+    freq: 40532,
+    raw: "GRATING",
+  },
+  {
+    freq: 40536,
+    raw: "KERATIN",
+  },
+  {
+    freq: 40560,
+    raw: "E-MAILER",
+    word: "EMAILER",
+  },
+  {
+    freq: 40564,
+    raw: "SHUTOFF",
+  },
+  {
+    freq: 40568,
+    raw: "EMERITA",
+  },
+  {
+    freq: 40571,
+    raw: "FIXABLE",
+  },
+  {
+    freq: 40587,
+    raw: "IGNEOUS",
+  },
+  {
+    freq: 40609,
+    raw: "OBVERSE",
+  },
+  {
+    freq: 40614,
+    raw: "DELPHIC",
+  },
+  {
+    freq: 40619,
+    raw: "JERKILY",
+  },
+  {
+    freq: 40621,
+    raw: "ISCHIAL",
+  },
+  {
+    freq: 40644,
+    raw: "CATBIRD",
+  },
+  {
+    freq: 40648,
+    raw: "CRUDITY",
+  },
+  {
+    freq: 40650,
+    raw: "BAR-CODE",
+    word: "BARCODE",
+  },
+  {
+    freq: 40679,
+    raw: "CHICKEN",
+  },
+  {
+    freq: 40684,
+    raw: "BRIEFER",
+  },
+  {
+    freq: 40693,
+    raw: "DENUDED",
+  },
+  {
+    freq: 40703,
+    raw: "RELAXER",
+  },
+  {
+    freq: 40707,
+    raw: "GAYNESS",
+  },
+  {
+    freq: 40710,
+    raw: "GESSOED",
+  },
+  {
+    freq: 40723,
+    raw: "RUBY-RED",
+    word: "RUBYRED",
+  },
+  {
+    freq: 40728,
+    raw: "DUCTILE",
+  },
+  {
+    freq: 40736,
+    raw: "PRECOOK",
+  },
+  {
+    freq: 40739,
+    raw: "UNFUSSY",
+  },
+  {
+    freq: 40746,
+    raw: "SHYSTER",
+  },
+  {
+    freq: 40752,
+    raw: "ZAMBIAN",
+  },
+  {
+    freq: 40761,
+    raw: "GUINEAN",
+  },
+  {
+    freq: 40783,
+    raw: "MINSTER",
+  },
+  {
+    freq: 40784,
+    raw: "NON-SLIP",
+    word: "NONSLIP",
+  },
+  {
+    freq: 40797,
+    raw: "PILLOWY",
+  },
+  {
+    freq: 40801,
+    raw: "FULL-OUT",
+    word: "FULLOUT",
+  },
+  {
+    freq: 40815,
+    raw: "HOBBLED",
+  },
+  {
+    freq: 40823,
+    raw: "BURMESE",
+  },
+  {
+    freq: 40828,
+    raw: "CROAKER",
+  },
+  {
+    freq: 40829,
+    raw: "CITRATE",
+  },
+  {
+    freq: 40839,
+    raw: "PLOWING",
+  },
+  {
+    freq: 40840,
+    raw: "FROGMAN",
+  },
+  {
+    freq: 40854,
+    raw: "DARK-SKY",
+    word: "DARKSKY",
+  },
+  {
+    freq: 40859,
+    raw: "WEB-LIKE",
+    word: "WEBLIKE",
+  },
+  {
+    freq: 40863,
+    raw: "SKINNER",
+  },
+  {
+    freq: 40866,
+    raw: "INGRATE",
+  },
+  {
+    freq: 40875,
+    raw: "ANTONYM",
+  },
+  {
+    freq: 40879,
+    raw: "UNIFIER",
+  },
+  {
+    freq: 40926,
+    raw: "LANTANA",
+  },
+  {
+    freq: 40930,
+    raw: "CHORTLE",
+  },
+  {
+    freq: 40934,
+    raw: "SAD-EYED",
+    word: "SADEYED",
+  },
+  {
+    freq: 40942,
+    raw: "SQUINTY",
+  },
+  {
+    freq: 40945,
+    raw: "RESTYLE",
+  },
+  {
+    freq: 40949,
+    raw: "BIG-BANG",
+    word: "BIGBANG",
+  },
+  {
+    freq: 40962,
+    raw: "SHOVING",
+  },
+  {
+    freq: 40971,
+    raw: "BOOSTED",
+  },
+  {
+    freq: 40985,
+    raw: "EMITTED",
+  },
+  {
+    freq: 40987,
+    raw: "BITUMEN",
+  },
+  {
+    freq: 40995,
+    raw: "VIOLIST",
+  },
+  {
+    freq: 41007,
+    raw: "BURDOCK",
+  },
+  {
+    freq: 41008,
+    raw: "TIE-DOWN",
+    word: "TIEDOWN",
+  },
+  {
+    freq: 41012,
+    raw: "BABYISH",
+  },
+  {
+    freq: 41026,
+    raw: "THAWING",
+  },
+  {
+    freq: 41027,
+    raw: "BARONET",
+  },
+  {
+    freq: 41029,
+    raw: "PAPOOSE",
+  },
+  {
+    freq: 41030,
+    raw: "FRAYING",
+  },
+  {
+    freq: 41043,
+    raw: "ONE-LANE",
+    word: "ONELANE",
+  },
+  {
+    freq: 41049,
+    raw: "BLEEDER",
+  },
+  {
+    freq: 41073,
+    raw: "NUMBING",
+  },
+  {
+    freq: 41075,
+    raw: "UPSILON",
+  },
+  {
+    freq: 41088,
+    raw: "OXIDANT",
+  },
+  {
+    freq: 41095,
+    raw: "RAINOUT",
+  },
+  {
+    freq: 41111,
+    raw: "PASTURE",
+  },
+  {
+    freq: 41117,
+    raw: "AUTOPSY",
+  },
+  {
+    freq: 41124,
+    raw: "ANAEMIA",
+  },
+  {
+    freq: 41127,
+    raw: "DIMMING",
+  },
+  {
+    freq: 41156,
+    raw: "FANZINE",
+  },
+  {
+    freq: 41158,
+    raw: "MACRAME",
+  },
+  {
+    freq: 41178,
+    raw: "RED-WINE",
+    word: "REDWINE",
+  },
+  {
+    freq: 41199,
+    raw: "LOFTILY",
+  },
+  {
+    freq: 41212,
+    raw: "TWINKIE",
+  },
+  {
+    freq: 41214,
+    raw: "EARFLAP",
+  },
+  {
+    freq: 41234,
+    raw: "JAWBONE",
+  },
+  {
+    freq: 41251,
+    raw: "CRAWDAD",
+  },
+  {
+    freq: 41253,
+    raw: "CANASTA",
+  },
+  {
+    freq: 41265,
+    raw: "SIX-PACK",
+    word: "SIXPACK",
+  },
+  {
+    freq: 41268,
+    raw: "DANCING",
+  },
+  {
+    freq: 41270,
+    raw: "DOE-EYED",
+    word: "DOEEYED",
+  },
+  {
+    freq: 41286,
+    raw: "PUZZLER",
+  },
+  {
+    freq: 41287,
+    raw: "PALAVER",
+  },
+  {
+    freq: 41296,
+    raw: "LEFTIST",
+  },
+  {
+    freq: 41305,
+    raw: "HABITUE",
+  },
+  {
+    freq: 41308,
+    raw: "PSALTER",
+  },
+  {
+    freq: 41309,
+    raw: "GARROTE",
+  },
+  {
+    freq: 41320,
+    raw: "NESTLED",
+  },
+  {
+    freq: 41321,
+    raw: "TWITTER",
+  },
+  {
+    freq: 41328,
+    raw: "CANDIDA",
+  },
+  {
+    freq: 41335,
+    raw: "FLUTING",
+  },
+  {
+    freq: 41343,
+    raw: "UPSLOPE",
+  },
+  {
+    freq: 41352,
+    raw: "MADDING",
+  },
+  {
+    freq: 41353,
+    raw: "TWINKLY",
+  },
+  {
+    freq: 41357,
+    raw: "ASOCIAL",
+  },
+  {
+    freq: 41367,
+    raw: "NEXT-DAY",
+    word: "NEXTDAY",
+  },
+  {
+    freq: 41377,
+    raw: "ADENOID",
+  },
+  {
+    freq: 41379,
+    raw: "HURTING",
+  },
+  {
+    freq: 41401,
+    raw: "DRAPING",
+  },
+  {
+    freq: 41422,
+    raw: "PRE-POST",
+    word: "PREPOST",
+  },
+  {
+    freq: 41425,
+    raw: "KATYDID",
+  },
+  {
+    freq: 41434,
+    raw: "FATBACK",
+  },
+  {
+    freq: 41443,
+    raw: "HITTITE",
+  },
+  {
+    freq: 41448,
+    raw: "REDRAFT",
+  },
+  {
+    freq: 41464,
+    raw: "SPINOFF",
+  },
+  {
+    freq: 41483,
+    raw: "MITOTIC",
+  },
+  {
+    freq: 41493,
+    raw: "ANIMIST",
+  },
+  {
+    freq: 41497,
+    raw: "WINKING",
+  },
+  {
+    freq: 41517,
+    raw: "ON-THE-GO",
+    word: "ONTHEGO",
+  },
+  {
+    freq: 41520,
+    raw: "GAMEBOY",
+  },
+  {
+    freq: 41537,
+    raw: "MANDREL",
+  },
+  {
+    freq: 41540,
+    raw: "GALETTE",
+  },
+  {
+    freq: 41544,
+    raw: "JUJITSU",
+  },
+  {
+    freq: 41553,
+    raw: "SIGHING",
+  },
+  {
+    freq: 41575,
+    raw: "WORSTED",
+  },
+  {
+    freq: 41582,
+    raw: "WEBPAGE",
+  },
+  {
+    freq: 41595,
+    raw: "BARISTA",
+  },
+  {
+    freq: 41602,
+    raw: "STICK-ON",
+    word: "STICKON",
+  },
+  {
+    freq: 41611,
+    raw: "BASTING",
+  },
+  {
+    freq: 41618,
+    raw: "BETTING",
+  },
+  {
+    freq: 41642,
+    raw: "PARSING",
+  },
+  {
+    freq: 41668,
+    raw: "PUERILE",
+  },
+  {
+    freq: 41680,
+    raw: "HELLION",
+  },
+  {
+    freq: 41702,
+    raw: "SUNDECK",
+  },
+  {
+    freq: 41713,
+    raw: "MENFOLK",
+  },
+  {
+    freq: 41717,
+    raw: "MAULING",
+  },
+  {
+    freq: 41723,
+    raw: "PAROLED",
+  },
+  {
+    freq: 41728,
+    raw: "ALUMINA",
+  },
+  {
+    freq: 41729,
+    raw: "CHOOSER",
+  },
+  {
+    freq: 41741,
+    raw: "TABASCO",
+  },
+  {
+    freq: 41747,
+    raw: "HOT-SHOT",
+    word: "HOTSHOT",
+  },
+  {
+    freq: 41755,
+    raw: "SEMI-PRO",
+    word: "SEMIPRO",
+  },
+  {
+    freq: 41770,
+    raw: "ADAPTOR",
+  },
+  {
+    freq: 41775,
+    raw: "SULFITE",
+  },
+  {
+    freq: 41778,
+    raw: "ZAIREAN",
+  },
+  {
+    freq: 41788,
+    raw: "WISE-GUY",
+    word: "WISEGUY",
+  },
+  {
+    freq: 41807,
+    raw: "INKBLOT",
+  },
+  {
+    freq: 41826,
+    raw: "TIGRESS",
+  },
+  {
+    freq: 41830,
+    raw: "APHASIA",
+  },
+  {
+    freq: 41848,
+    raw: "EMPTILY",
+  },
+  {
+    freq: 41853,
+    raw: "CIGARET",
+  },
+  {
+    freq: 41864,
+    raw: "COMLINK",
+  },
+  {
+    freq: 41872,
+    raw: "BUMPING",
+  },
+  {
+    freq: 41882,
+    raw: "PUSHPIN",
+  },
+  {
+    freq: 41889,
+    raw: "TROMMEL",
+  },
+  {
+    freq: 41891,
+    raw: "NOTATED",
+  },
+  {
+    freq: 41897,
+    raw: "PARDNER",
+  },
+  {
+    freq: 41903,
+    raw: "STONILY",
+  },
+  {
+    freq: 41907,
+    raw: "NASTILY",
+  },
+  {
+    freq: 41929,
+    raw: "GREASER",
+  },
+  {
+    freq: 41942,
+    raw: "TSARIST",
+  },
+  {
+    freq: 41968,
+    raw: "FAWNING",
+  },
+  {
+    freq: 41975,
+    raw: "SMARTEN",
+  },
+  {
+    freq: 41988,
+    raw: "TROLLER",
+  },
+  {
+    freq: 41990,
+    raw: "POMPANO",
+  },
+  {
+    freq: 41997,
+    raw: "GODHEAD",
+  },
+  {
+    freq: 42001,
+    raw: "ADENOID",
+  },
+  {
+    freq: 42003,
+    raw: "REDOUND",
+  },
+  {
+    freq: 42009,
+    raw: "FERMION",
+  },
+  {
+    freq: 42036,
+    raw: "BLOWJOB",
+  },
+  {
+    freq: 42045,
+    raw: "SCARILY",
+  },
+  {
+    freq: 42050,
+    raw: "FLUMMOX",
+  },
+  {
+    freq: 42064,
+    raw: "NATO-LED",
+    word: "NATOLED",
+  },
+  {
+    freq: 42076,
+    raw: "ANIMISM",
+  },
+  {
+    freq: 42083,
+    raw: "GEM-LIKE",
+    word: "GEMLIKE",
+  },
+  {
+    freq: 42090,
+    raw: "MAXILLA",
+  },
+  {
+    freq: 42093,
+    raw: "BRASHLY",
+  },
+  {
+    freq: 42097,
+    raw: "RATTLED",
+  },
+  {
+    freq: 42098,
+    raw: "DIALING",
+  },
+  {
+    freq: 42106,
+    raw: "AMYLOID",
+  },
+  {
+    freq: 42122,
+    raw: "ACIDIFY",
+  },
+  {
+    freq: 42127,
+    raw: "STARING",
+  },
+  {
+    freq: 42130,
+    raw: "COGENCY",
+  },
+  {
+    freq: 42131,
+    raw: "ALLEGRO",
+  },
+  {
+    freq: 42137,
+    raw: "SCOURGE",
+  },
+  {
+    freq: 42157,
+    raw: "SPINDLE",
+  },
+  {
+    freq: 42177,
+    raw: "TWO-ACRE",
+    word: "TWOACRE",
+  },
+  {
+    freq: 42178,
+    raw: "SLURPEE",
+  },
+  {
+    freq: 42181,
+    raw: "CHEERIO",
+  },
+  {
+    freq: 42186,
+    raw: "MAWKISH",
+  },
+  {
+    freq: 42189,
+    raw: "JAYWALK",
+  },
+  {
+    freq: 42195,
+    raw: "ONE-FOOT",
+    word: "ONEFOOT",
+  },
+  {
+    freq: 42196,
+    raw: "JODHPUR",
+  },
+  {
+    freq: 42200,
+    raw: "TOWBOAT",
+  },
+  {
+    freq: 42201,
+    raw: "AURORAL",
+  },
+  {
+    freq: 42211,
+    raw: "VERBOSE",
+  },
+  {
+    freq: 42217,
+    raw: "DREIDEL",
+  },
+  {
+    freq: 42219,
+    raw: "CHEROOT",
+  },
+  {
+    freq: 42227,
+    raw: "COCKNEY",
+  },
+  {
+    freq: 42241,
+    raw: "BLUE-SKY",
+    word: "BLUESKY",
+  },
+  {
+    freq: 42247,
+    raw: "LINGUAL",
+  },
+  {
+    freq: 42251,
+    raw: "PERIGEE",
+  },
+  {
+    freq: 42252,
+    raw: "JACUZZI",
+  },
+  {
+    freq: 42279,
+    raw: "HOPLITE",
+  },
+  {
+    freq: 42280,
+    raw: "EPIGRAM",
+  },
+  {
+    freq: 42290,
+    raw: "MESSILY",
+  },
+  {
+    freq: 42302,
+    raw: "CHARNEL",
+  },
+  {
+    freq: 42308,
+    raw: "TRIPPER",
+  },
+  {
+    freq: 42313,
+    raw: "OPEN-END",
+    word: "OPENEND",
+  },
+  {
+    freq: 42321,
+    raw: "HASSOCK",
+  },
+  {
+    freq: 42324,
+    raw: "DEBAUCH",
+  },
+  {
+    freq: 42341,
+    raw: "COLONIC",
+  },
+  {
+    freq: 42349,
+    raw: "SMASHER",
+  },
+  {
+    freq: 42376,
+    raw: "AFFINAL",
+  },
+  {
+    freq: 42380,
+    raw: "DOGLIKE",
+  },
+  {
+    freq: 42392,
+    raw: "NACELLE",
+  },
+  {
+    freq: 42404,
+    raw: "PRE-RACE",
+    word: "PRERACE",
+  },
+  {
+    freq: 42421,
+    raw: "SCRIBAL",
+  },
+  {
+    freq: 42423,
+    raw: "WON-LOST",
+    word: "WONLOST",
+  },
+  {
+    freq: 42425,
+    raw: "EXPIATE",
+  },
+  {
+    freq: 42427,
+    raw: "CRUELER",
+  },
+  {
+    freq: 42430,
+    raw: "CANNILY",
+  },
+  {
+    freq: 42433,
+    raw: "GUINEAN",
+  },
+  {
+    freq: 42437,
+    raw: "GRANDAD",
+  },
+  {
+    freq: 42443,
+    raw: "IGNORED",
+  },
+  {
+    freq: 42449,
+    raw: "TREADLE",
+  },
+  {
+    freq: 42454,
+    raw: "FLEXING",
+  },
+  {
+    freq: 42465,
+    raw: "WHITELY",
+  },
+  {
+    freq: 42475,
+    raw: "S-SHAPED",
+    word: "SSHAPED",
+  },
+  {
+    freq: 42482,
+    raw: "BODY-FAT",
+    word: "BODYFAT",
+  },
+  {
+    freq: 42486,
+    raw: "SKI-AREA",
+    word: "SKIAREA",
+  },
+  {
+    freq: 42497,
+    raw: "LENSING",
+  },
+  {
+    freq: 42535,
+    raw: "UTOPIAN",
+  },
+  {
+    freq: 42553,
+    raw: "TWINING",
+  },
+  {
+    freq: 42562,
+    raw: "HIJINKS",
+  },
+  {
+    freq: 42564,
+    raw: "SOLIDER",
+  },
+  {
+    freq: 42567,
+    raw: "LACKING",
+  },
+  {
+    freq: 42583,
+    raw: "GLUTEAL",
+  },
+  {
+    freq: 42584,
+    raw: "REPROOF",
+  },
+  {
+    freq: 42585,
+    raw: "RISIBLE",
+  },
+  {
+    freq: 42586,
+    raw: "CUCKOLD",
+  },
+  {
+    freq: 42611,
+    raw: "CONTOUR",
+  },
+  {
+    freq: 42615,
+    raw: "COIFFED",
+  },
+  {
+    freq: 42617,
+    raw: "SICKBED",
+  },
+  {
+    freq: 42638,
+    raw: "CARAVEL",
+  },
+  {
+    freq: 42648,
+    raw: "ONE-LINE",
+    word: "ONELINE",
+  },
+  {
+    freq: 42651,
+    raw: "ULULATE",
+  },
+  {
+    freq: 42653,
+    raw: "BANGING",
+  },
+  {
+    freq: 42659,
+    raw: "EYE-HAND",
+    word: "EYEHAND",
+  },
+  {
+    freq: 42668,
+    raw: "TINTYPE",
+  },
+  {
+    freq: 42671,
+    raw: "DEEP-FRY",
+    word: "DEEPFRY",
+  },
+  {
+    freq: 42686,
+    raw: "LIPLESS",
+  },
+  {
+    freq: 42690,
+    raw: "TAGGING",
+  },
+  {
+    freq: 42736,
+    raw: "DIRTBAG",
+  },
+  {
+    freq: 42742,
+    raw: "SAME-AGE",
+    word: "SAMEAGE",
+  },
+  {
+    freq: 42749,
+    raw: "EYEBALL",
+  },
+  {
+    freq: 42750,
+    raw: "HOSTILE",
+  },
+  {
+    freq: 42758,
+    raw: "RAPPING",
+  },
+  {
+    freq: 42767,
+    raw: "SUBTEND",
+  },
+  {
+    freq: 42770,
+    raw: "SOOTHER",
+  },
+  {
+    freq: 42778,
+    raw: "STOP-GAP",
+    word: "STOPGAP",
+  },
+  {
+    freq: 42789,
+    raw: "TUNABLE",
+  },
+  {
+    freq: 42790,
+    raw: "THIAMIN",
+  },
+  {
+    freq: 42817,
+    raw: "UNQUIET",
+  },
+  {
+    freq: 42824,
+    raw: "ADEPTLY",
+  },
+  {
+    freq: 42826,
+    raw: "TIMBALE",
+  },
+  {
+    freq: 42837,
+    raw: "TREACLE",
+  },
+  {
+    freq: 42842,
+    raw: "RESHOOT",
+  },
+  {
+    freq: 42847,
+    raw: "MOANING",
+  },
+  {
+    freq: 42864,
+    raw: "KACHINA",
+  },
+  {
+    freq: 42877,
+    raw: "HUFFING",
+  },
+  {
+    freq: 42878,
+    raw: "BEDSORE",
+  },
+  {
+    freq: 42905,
+    raw: "COGNATE",
+  },
+  {
+    freq: 42907,
+    raw: "FONDANT",
+  },
+  {
+    freq: 42910,
+    raw: "HEAVE-HO",
+    word: "HEAVEHO",
+  },
+  {
+    freq: 42912,
+    raw: "NATTILY",
+  },
+  {
+    freq: 42913,
+    raw: "WHOOPEE",
+  },
+  {
+    freq: 42919,
+    raw: "HOSTING",
+  },
+  {
+    freq: 42921,
+    raw: "HARBOUR",
+  },
+  {
+    freq: 42938,
+    raw: "ANNULUS",
+  },
+  {
+    freq: 42945,
+    raw: "PIPED-IN",
+    word: "PIPEDIN",
+  },
+  {
+    freq: 42952,
+    raw: "CUCKOLD",
+  },
+  {
+    freq: 42953,
+    raw: "LOCKING",
+  },
+  {
+    freq: 42960,
+    raw: "BOUNCED",
+  },
+  {
+    freq: 42989,
+    raw: "PURLOIN",
+  },
+  {
+    freq: 42997,
+    raw: "DIPLOID",
+  },
+  {
+    freq: 43005,
+    raw: "PRO-BUSH",
+    word: "PROBUSH",
+  },
+  {
+    freq: 43006,
+    raw: "TWO-LANE",
+    word: "TWOLANE",
+  },
+  {
+    freq: 43007,
+    raw: "FRAME-UP",
+    word: "FRAMEUP",
+  },
+  {
+    freq: 43017,
+    raw: "EJECTOR",
+  },
+  {
+    freq: 43020,
+    raw: "NULLITY",
+  },
+  {
+    freq: 43027,
+    raw: "PURRING",
+  },
+  {
+    freq: 43030,
+    raw: "RUSHING",
+  },
+  {
+    freq: 43046,
+    raw: "OMICRON",
+  },
+  {
+    freq: 43054,
+    raw: "FLEDGED",
+  },
+  {
+    freq: 43055,
+    raw: "SPIKING",
+  },
+  {
+    freq: 43058,
+    raw: "BOY-GIRL",
+    word: "BOYGIRL",
+  },
+  {
+    freq: 43066,
+    raw: "PILLORY",
+  },
+  {
+    freq: 43072,
+    raw: "OILSKIN",
+  },
+  {
+    freq: 43073,
+    raw: "GNAWING",
+  },
+  {
+    freq: 43081,
+    raw: "TWO-LINE",
+    word: "TWOLINE",
+  },
+  {
+    freq: 43105,
+    raw: "BLINKER",
+  },
+  {
+    freq: 43111,
+    raw: "FESTOON",
+  },
+  {
+    freq: 43117,
+    raw: "MADRASA",
+  },
+  {
+    freq: 43124,
+    raw: "DRAFTED",
+  },
+  {
+    freq: 43125,
+    raw: "DARK-RED",
+    word: "DARKRED",
+  },
+  {
+    freq: 43128,
+    raw: "BUNCHED",
+  },
+  {
+    freq: 43132,
+    raw: "MARABOU",
+  },
+  {
+    freq: 43136,
+    raw: "HOEDOWN",
+  },
+  {
+    freq: 43143,
+    raw: "VITTLES",
+  },
+  {
+    freq: 43157,
+    raw: "NAPHTHA",
+  },
+  {
+    freq: 43165,
+    raw: "DISTAFF",
+  },
+  {
+    freq: 43184,
+    raw: "LAUGHER",
+  },
+  {
+    freq: 43187,
+    raw: "SEEDPOD",
+  },
+  {
+    freq: 43190,
+    raw: "PUSHING",
+  },
+  {
+    freq: 43200,
+    raw: "TRIPLEX",
+  },
+  {
+    freq: 43212,
+    raw: "COPEPOD",
+  },
+  {
+    freq: 43216,
+    raw: "DEFROCK",
+  },
+  {
+    freq: 43219,
+    raw: "WASTREL",
+  },
+  {
+    freq: 43228,
+    raw: "KLEZMER",
+  },
+  {
+    freq: 43243,
+    raw: "THINNED",
+  },
+  {
+    freq: 43268,
+    raw: "CAR-FREE",
+    word: "CARFREE",
+  },
+  {
+    freq: 43286,
+    raw: "PEEPING",
+  },
+  {
+    freq: 43288,
+    raw: "STRIATE",
+  },
+  {
+    freq: 43290,
+    raw: "TOY-LIKE",
+    word: "TOYLIKE",
+  },
+  {
+    freq: 43318,
+    raw: "AEROGEL",
+  },
+  {
+    freq: 43323,
+    raw: "SUBHEAD",
+  },
+  {
+    freq: 43328,
+    raw: "SKEETER",
+  },
+  {
+    freq: 43332,
+    raw: "HELLCAT",
+  },
+  {
+    freq: 43333,
+    raw: "WHIPPET",
+  },
+  {
+    freq: 43349,
+    raw: "DULLARD",
+  },
+  {
+    freq: 43350,
+    raw: "SPANNER",
+  },
+  {
+    freq: 43360,
+    raw: "EXITING",
+  },
+  {
+    freq: 43364,
+    raw: "SLITTED",
+  },
+  {
+    freq: 43371,
+    raw: "PLAITED",
+  },
+  {
+    freq: 43375,
+    raw: "TOO-LONG",
+    word: "TOOLONG",
+  },
+  {
+    freq: 43379,
+    raw: "GENOESE",
+  },
+  {
+    freq: 43383,
+    raw: "ARAMAIC",
+  },
+  {
+    freq: 43406,
+    raw: "HOPPING",
+  },
+  {
+    freq: 43413,
+    raw: "LEONINE",
+  },
+  {
+    freq: 43441,
+    raw: "UNREADY",
+  },
+  {
+    freq: 43445,
+    raw: "NODULAR",
+  },
+  {
+    freq: 43454,
+    raw: "GAMELAN",
+  },
+  {
+    freq: 43460,
+    raw: "SWATTER",
+  },
+  {
+    freq: 43462,
+    raw: "TOPKNOT",
+  },
+  {
+    freq: 43463,
+    raw: "GRAFTED",
+  },
+  {
+    freq: 43477,
+    raw: "FOUR-BAR",
+    word: "FOURBAR",
+  },
+  {
+    freq: 43482,
+    raw: "MOUNDED",
+  },
+  {
+    freq: 43489,
+    raw: "FOR-SALE",
+    word: "FORSALE",
+  },
+  {
+    freq: 43492,
+    raw: "DAZZLER",
+  },
+  {
+    freq: 43493,
+    raw: "FISH-EYE",
+    word: "FISHEYE",
+  },
+  {
+    freq: 43512,
+    raw: "RUTTING",
+  },
+  {
+    freq: 43531,
+    raw: "CALVING",
+  },
+  {
+    freq: 43536,
+    raw: "BATTLER",
+  },
+  {
+    freq: 43539,
+    raw: "OVERAGE",
+  },
+  {
+    freq: 43549,
+    raw: "NEW-LOOK",
+    word: "NEWLOOK",
+  },
+  {
+    freq: 43568,
+    raw: "CRABBED",
+  },
+  {
+    freq: 43576,
+    raw: "SIX-YARD",
+    word: "SIXYARD",
+  },
+  {
+    freq: 43604,
+    raw: "JAMMIES",
+  },
+  {
+    freq: 43618,
+    raw: "AIRDROP",
+  },
+  {
+    freq: 43624,
+    raw: "COSTING",
+  },
+  {
+    freq: 43625,
+    raw: "SOPHIST",
+  },
+  {
+    freq: 43640,
+    raw: "HIGH-LOW",
+    word: "HIGHLOW",
+  },
+  {
+    freq: 43647,
+    raw: "FRISKET",
+  },
+  {
+    freq: 43649,
+    raw: "HALYARD",
+  },
+  {
+    freq: 43656,
+    raw: "OSSICLE",
+  },
+  {
+    freq: 43659,
+    raw: "MILLAGE",
+  },
+  {
+    freq: 43682,
+    raw: "CURBING",
+  },
+  {
+    freq: 43715,
+    raw: "CHAPEAU",
+  },
+  {
+    freq: 43754,
+    raw: "CORN-FED",
+    word: "CORNFED",
+  },
+  {
+    freq: 43755,
+    raw: "STONING",
+  },
+  {
+    freq: 43761,
+    raw: "DASHIKI",
+  },
+  {
+    freq: 43783,
+    raw: "CHADIAN",
+  },
+  {
+    freq: 43787,
+    raw: "SANDING",
+  },
+  {
+    freq: 43804,
+    raw: "SHINGLE",
+  },
+  {
+    freq: 43813,
+    raw: "ANDIRON",
+  },
+  {
+    freq: 43815,
+    raw: "MEIOSIS",
+  },
+  {
+    freq: 43849,
+    raw: "ZIP-LOCK",
+    word: "ZIPLOCK",
+  },
+  {
+    freq: 43856,
+    raw: "FORBEAR",
+  },
+  {
+    freq: 43859,
+    raw: "WISEASS",
+  },
+  {
+    freq: 43877,
+    raw: "TACHYON",
+  },
+  {
+    freq: 43885,
+    raw: "OXIDASE",
+  },
+  {
+    freq: 43888,
+    raw: "GOSHAWK",
+  },
+  {
+    freq: 43889,
+    raw: "MESTIZA",
+  },
+  {
+    freq: 43891,
+    raw: "HOMONYM",
+  },
+  {
+    freq: 43894,
+    raw: "GASSING",
+  },
+  {
+    freq: 43909,
+    raw: "HOPPING",
+  },
+  {
+    freq: 43918,
+    raw: "PEA-SIZE",
+    word: "PEASIZE",
+  },
+  {
+    freq: 43919,
+    raw: "SPITTER",
+  },
+  {
+    freq: 43921,
+    raw: "IVORIAN",
+  },
+  {
+    freq: 43925,
+    raw: "ALL-OVER",
+    word: "ALLOVER",
+  },
+  {
+    freq: 43928,
+    raw: "ONE-ACRE",
+    word: "ONEACRE",
+  },
+  {
+    freq: 43929,
+    raw: "SWIZZLE",
+  },
+  {
+    freq: 43938,
+    raw: "EXCIMER",
+  },
+  {
+    freq: 43944,
+    raw: "SUPREMO",
+  },
+  {
+    freq: 43946,
+    raw: "AVIDITY",
+  },
+  {
+    freq: 43947,
+    raw: "BEASTIE",
+  },
+  {
+    freq: 43952,
+    raw: "INBOARD",
+  },
+  {
+    freq: 43966,
+    raw: "LEFTISM",
+  },
+  {
+    freq: 43967,
+    raw: "LIGNITE",
+  },
+  {
+    freq: 43968,
+    raw: "CORKAGE",
+  },
+  {
+    freq: 43977,
+    raw: "PLUGGED",
+  },
+  {
+    freq: 43986,
+    raw: "SWIDDEN",
+  },
+  {
+    freq: 44013,
+    raw: "NOISOME",
+  },
+  {
+    freq: 44021,
+    raw: "CONDYLE",
+  },
+  {
+    freq: 44027,
+    raw: "PROSODY",
+  },
+  {
+    freq: 44030,
+    raw: "ANTI-HIV",
+    word: "ANTIHIV",
+  },
+  {
+    freq: 44041,
+    raw: "SCUTTLE",
+  },
+  {
+    freq: 44061,
+    raw: "SUCKING",
+  },
+  {
+    freq: 44082,
+    raw: "CULOTTE",
+  },
+  {
+    freq: 44095,
+    raw: "WARLOCK",
+  },
+  {
+    freq: 44114,
+    raw: "SEDATED",
+  },
+  {
+    freq: 44119,
+    raw: "WILTING",
+  },
+  {
+    freq: 44120,
+    raw: "RABIDLY",
+  },
+  {
+    freq: 44128,
+    raw: "FEMORIS",
+  },
+  {
+    freq: 44129,
+    raw: "JARRING",
+  },
+  {
+    freq: 44137,
+    raw: "GRANITA",
+  },
+  {
+    freq: 44141,
+    raw: "FLOORED",
+  },
+  {
+    freq: 44146,
+    raw: "JELLIED",
+  },
+  {
+    freq: 44159,
+    raw: "F-SERIES",
+    word: "FSERIES",
+  },
+  {
+    freq: 44163,
+    raw: "PAROTID",
+  },
+  {
+    freq: 44185,
+    raw: "CAMP-OUT",
+    word: "CAMPOUT",
+  },
+  {
+    freq: 44191,
+    raw: "NON-FOOD",
+    word: "NONFOOD",
+  },
+  {
+    freq: 44193,
+    raw: "NON-FARM",
+    word: "NONFARM",
+  },
+  {
+    freq: 44195,
+    raw: "MONKISH",
+  },
+  {
+    freq: 44211,
+    raw: "SCIATIC",
+  },
+  {
+    freq: 44227,
+    raw: "BULKING",
+  },
+  {
+    freq: 44251,
+    raw: "VARIATE",
+  },
+  {
+    freq: 44257,
+    raw: "REAMING",
+  },
+  {
+    freq: 44273,
+    raw: "DEICTIC",
+  },
+  {
+    freq: 44280,
+    raw: "FIVE-WAY",
+    word: "FIVEWAY",
+  },
+  {
+    freq: 44288,
+    raw: "FOUR-CAR",
+    word: "FOURCAR",
+  },
+  {
+    freq: 44290,
+    raw: "HAULING",
+  },
+  {
+    freq: 44309,
+    raw: "LOW-LIFE",
+    word: "LOWLIFE",
+  },
+  {
+    freq: 44327,
+    raw: "GAMBIAN",
+  },
+  {
+    freq: 44330,
+    raw: "HIBACHI",
+  },
+  {
+    freq: 44374,
+    raw: "ASTRIDE",
+  },
+  {
+    freq: 44380,
+    raw: "WIELDER",
+  },
+  {
+    freq: 44382,
+    raw: "FLUNKIE",
+  },
+  {
+    freq: 44387,
+    raw: "WIRE-RIM",
+    word: "WIRERIM",
+  },
+  {
+    freq: 44389,
+    raw: "DOUGHTY",
+  },
+  {
+    freq: 44405,
+    raw: "SIGMOID",
+  },
+  {
+    freq: 44421,
+    raw: "POETESS",
+  },
+  {
+    freq: 44422,
+    raw: "OFF-FARM",
+    word: "OFFFARM",
+  },
+  {
+    freq: 44431,
+    raw: "FIBROID",
+  },
+  {
+    freq: 44454,
+    raw: "SHE-WOLF",
+    word: "SHEWOLF",
+  },
+  {
+    freq: 44457,
+    raw: "QURANIC",
+  },
+  {
+    freq: 44503,
+    raw: "GRIPING",
+  },
+  {
+    freq: 44509,
+    raw: "ANGERED",
+  },
+  {
+    freq: 44522,
+    raw: "LAYAWAY",
+  },
+  {
+    freq: 44523,
+    raw: "PATENCY",
+  },
+  {
+    freq: 44528,
+    raw: "SPOTLIT",
+  },
+  {
+    freq: 44533,
+    raw: "AGGRESS",
+  },
+  {
+    freq: 44537,
+    raw: "SULLIED",
+  },
+  {
+    freq: 44545,
+    raw: "COJONES",
+  },
+  {
+    freq: 44551,
+    raw: "ATAVISM",
+  },
+  {
+    freq: 44579,
+    raw: "OTOLITH",
+  },
+  {
+    freq: 44583,
+    raw: "NO-TRADE",
+    word: "NOTRADE",
+  },
+  {
+    freq: 44599,
+    raw: "CHIGGER",
+  },
+  {
+    freq: 44614,
+    raw: "CALZONE",
+  },
+  {
+    freq: 44638,
+    raw: "OFF-AXIS",
+    word: "OFFAXIS",
+  },
+  {
+    freq: 44657,
+    raw: "EJECTED",
+  },
+  {
+    freq: 44661,
+    raw: "UPSTAGE",
+  },
+  {
+    freq: 44665,
+    raw: "GLOTTAL",
+  },
+  {
+    freq: 44668,
+    raw: "SHAPE-UP",
+    word: "SHAPEUP",
+  },
+  {
+    freq: 44670,
+    raw: "SYNCOPE",
+  },
+  {
+    freq: 44679,
+    raw: "STEWARD",
+  },
+  {
+    freq: 44683,
+    raw: "HALF-LIT",
+    word: "HALFLIT",
+  },
+  {
+    freq: 44692,
+    raw: "QUEENLY",
+  },
+  {
+    freq: 44700,
+    raw: "TWEETER",
+  },
+  {
+    freq: 44710,
+    raw: "EYEHOLE",
+  },
+  {
+    freq: 44716,
+    raw: "ALL-AGES",
+    word: "ALLAGES",
+  },
+  {
+    freq: 44718,
+    raw: "NON-GAAP",
+    word: "NONGAAP",
+  },
+  {
+    freq: 44731,
+    raw: "TRUNDLE",
+  },
+  {
+    freq: 44743,
+    raw: "APTNESS",
+  },
+  {
+    freq: 44752,
+    raw: "PHONE-IN",
+    word: "PHONEIN",
+  },
+  {
+    freq: 44755,
+    raw: "KOKANEE",
+  },
+  {
+    freq: 44763,
+    raw: "EARNEST",
+  },
+  {
+    freq: 44764,
+    raw: "UNSTRAP",
+  },
+  {
+    freq: 44770,
+    raw: "KEENING",
+  },
+  {
+    freq: 44784,
+    raw: "BUMBLER",
+  },
+  {
+    freq: 44790,
+    raw: "UNFIRED",
+  },
+  {
+    freq: 44797,
+    raw: "SCABIES",
+  },
+  {
+    freq: 44809,
+    raw: "Y-SHAPED",
+    word: "YSHAPED",
+  },
+  {
+    freq: 44825,
+    raw: "HIGH-TAX",
+    word: "HIGHTAX",
+  },
+  {
+    freq: 44827,
+    raw: "STYMIED",
+  },
+  {
+    freq: 44830,
+    raw: "TOLLING",
+  },
+  {
+    freq: 44836,
+    raw: "DAZEDLY",
+  },
+  {
+    freq: 44848,
+    raw: "DUNKING",
+  },
+  {
+    freq: 44849,
+    raw: "DOGGONE",
+  },
+  {
+    freq: 44868,
+    raw: "EXIGENT",
+  },
+  {
+    freq: 44890,
+    raw: "CHURCHY",
+  },
+  {
+    freq: 44892,
+    raw: "INEPTLY",
+  },
+  {
+    freq: 44908,
+    raw: "OUSTING",
+  },
+  {
+    freq: 44910,
+    raw: "MITOSIS",
+  },
+  {
+    freq: 44912,
+    raw: "PRIMULA",
+  },
+  {
+    freq: 44917,
+    raw: "DOGFISH",
+  },
+  {
+    freq: 44932,
+    raw: "HATCHED",
+  },
+  {
+    freq: 44933,
+    raw: "PETTING",
+  },
+  {
+    freq: 44953,
+    raw: "RIVETED",
+  },
+  {
+    freq: 44968,
+    raw: "DILATOR",
+  },
+  {
+    freq: 44981,
+    raw: "BEATIFY",
+  },
+  {
+    freq: 45022,
+    raw: "STYGIAN",
+  },
+  {
+    freq: 45026,
+    raw: "TUGGING",
+  },
+  {
+    freq: 45034,
+    raw: "BOBBING",
+  },
+  {
+    freq: 45053,
+    raw: "JEERING",
+  },
+  {
+    freq: 45058,
+    raw: "LEASHED",
+  },
+  {
+    freq: 45095,
+    raw: "CHANTER",
+  },
+  {
+    freq: 45105,
+    raw: "SHOUTER",
+  },
+  {
+    freq: 45120,
+    raw: "PAST-DUE",
+    word: "PASTDUE",
+  },
+  {
+    freq: 45121,
+    raw: "SCALDED",
+  },
+  {
+    freq: 45129,
+    raw: "STRIDER",
+  },
+  {
+    freq: 45131,
+    raw: "DECIDER",
+  },
+  {
+    freq: 45133,
+    raw: "BOBSLED",
+  },
+  {
+    freq: 45159,
+    raw: "DREDGED",
+  },
+  {
+    freq: 45165,
+    raw: "SINLESS",
+  },
+  {
+    freq: 45169,
+    raw: "FIREPIT",
+  },
+  {
+    freq: 45176,
+    raw: "THOMIST",
+  },
+  {
+    freq: 45181,
+    raw: "DRIVE-UP",
+    word: "DRIVEUP",
+  },
+  {
+    freq: 45193,
+    raw: "CAMPION",
+  },
+  {
+    freq: 45224,
+    raw: "JONQUIL",
+  },
+  {
+    freq: 45244,
+    raw: "POPOVER",
+  },
+  {
+    freq: 45262,
+    raw: "FOLK-ART",
+    word: "FOLKART",
+  },
+  {
+    freq: 45270,
+    raw: "TAVERNA",
+  },
+  {
+    freq: 45272,
+    raw: "DRAINER",
+  },
+  {
+    freq: 45274,
+    raw: "WISHING",
+  },
+  {
+    freq: 45309,
+    raw: "RECUSAL",
+  },
+  {
+    freq: 45311,
+    raw: "CREW-CUT",
+    word: "CREWCUT",
+  },
+  {
+    freq: 45316,
+    raw: "NEON-LIT",
+    word: "NEONLIT",
+  },
+  {
+    freq: 45331,
+    raw: "SNIDELY",
+  },
+  {
+    freq: 45350,
+    raw: "CARMINE",
+  },
+  {
+    freq: 45383,
+    raw: "FAN-LIKE",
+    word: "FANLIKE",
+  },
+  {
+    freq: 45384,
+    raw: "WINDBAG",
+  },
+  {
+    freq: 45391,
+    raw: "BRIMMED",
+  },
+  {
+    freq: 45407,
+    raw: "FERRULE",
+  },
+  {
+    freq: 45410,
+    raw: "FLITTER",
+  },
+  {
+    freq: 45413,
+    raw: "FLUVIAL",
+  },
+  {
+    freq: 45419,
+    raw: "FADE-OUT",
+    word: "FADEOUT",
+  },
+  {
+    freq: 45440,
+    raw: "LOCATED",
+  },
+  {
+    freq: 45446,
+    raw: "EXCUSED",
+  },
+  {
+    freq: 45448,
+    raw: "SETTING",
+  },
+  {
+    freq: 45465,
+    raw: "LEPROUS",
+  },
+  {
+    freq: 45467,
+    raw: "FLAGGED",
+  },
+  {
+    freq: 45495,
+    raw: "DEIFIED",
+  },
+  {
+    freq: 45501,
+    raw: "STOCKED",
+  },
+  {
+    freq: 45522,
+    raw: "CAR-POOL",
+    word: "CARPOOL",
+  },
+  {
+    freq: 45523,
+    raw: "MISNAME",
+  },
+  {
+    freq: 45531,
+    raw: "US-OWNED",
+    word: "USOWNED",
+  },
+  {
+    freq: 45553,
+    raw: "RAIMENT",
+  },
+  {
+    freq: 45562,
+    raw: "FOOTPAD",
+  },
+  {
+    freq: 45572,
+    raw: "PORTION",
+  },
+  {
+    freq: 45582,
+    raw: "SLOSHED",
+  },
+  {
+    freq: 45589,
+    raw: "AIR-BONE",
+    word: "AIRBONE",
+  },
+  {
+    freq: 45591,
+    raw: "HARICOT",
+  },
+  {
+    freq: 45594,
+    raw: "CALIBRE",
+  },
+  {
+    freq: 45603,
+    raw: "TYMPANI",
+  },
+  {
+    freq: 45616,
+    raw: "ITERATE",
+  },
+  {
+    freq: 45626,
+    raw: "LEVELED",
+  },
+  {
+    freq: 45641,
+    raw: "REAMING",
+  },
+  {
+    freq: 45653,
+    raw: "PREFORM",
+  },
+  {
+    freq: 45657,
+    raw: "MEDDLER",
+  },
+  {
+    freq: 45667,
+    raw: "PARLOUS",
+  },
+  {
+    freq: 45672,
+    raw: "SEEDING",
+  },
+  {
+    freq: 45681,
+    raw: "OLD-LADY",
+    word: "OLDLADY",
+  },
+  {
+    freq: 45686,
+    raw: "NARTHEX",
+  },
+  {
+    freq: 45695,
+    raw: "DENYING",
+  },
+  {
+    freq: 45699,
+    raw: "RUMMAGE",
+  },
+  {
+    freq: 45703,
+    raw: "KLEZMER",
+  },
+  {
+    freq: 45736,
+    raw: "PURPURA",
+  },
+  {
+    freq: 45740,
+    raw: "CHINTZY",
+  },
+  {
+    freq: 45763,
+    raw: "RED-MEAT",
+    word: "REDMEAT",
+  },
+  {
+    freq: 45773,
+    raw: "POTTING",
+  },
+  {
+    freq: 45798,
+    raw: "LAMINAR",
+  },
+  {
+    freq: 45813,
+    raw: "HOTNESS",
+  },
+  {
+    freq: 45819,
+    raw: "SULKILY",
+  },
+  {
+    freq: 45822,
+    raw: "PLODDER",
+  },
+  {
+    freq: 45833,
+    raw: "VACUITY",
+  },
+  {
+    freq: 45848,
+    raw: "SHELVED",
+  },
+  {
+    freq: 45852,
+    raw: "HAND-CUT",
+    word: "HANDCUT",
+  },
+  {
+    freq: 45863,
+    raw: "BAITING",
+  },
+  {
+    freq: 45864,
+    raw: "FARTING",
+  },
+  {
+    freq: 45871,
+    raw: "WETTING",
+  },
+  {
+    freq: 45879,
+    raw: "DAYBOOK",
+  },
+  {
+    freq: 45880,
+    raw: "PLUGGER",
+  },
+  {
+    freq: 45881,
+    raw: "BOMBLET",
+  },
+  {
+    freq: 45895,
+    raw: "POP-ROCK",
+    word: "POPROCK",
+  },
+  {
+    freq: 45898,
+    raw: "MONOMER",
+  },
+  {
+    freq: 45909,
+    raw: "BIFOCAL",
+  },
+  {
+    freq: 45933,
+    raw: "CRASSLY",
+  },
+  {
+    freq: 45941,
+    raw: "CARRYIN",
+  },
+  {
+    freq: 45963,
+    raw: "JIMMIES",
+  },
+  {
+    freq: 45979,
+    raw: "NASALLY",
+  },
+  {
+    freq: 45983,
+    raw: "OXALATE",
+  },
+  {
+    freq: 46002,
+    raw: "GASPING",
+  },
+  {
+    freq: 46003,
+    raw: "DUMBASS",
+  },
+  {
+    freq: 46024,
+    raw: "CONDUCE",
+  },
+  {
+    freq: 46032,
+    raw: "PETRIFY",
+  },
+  {
+    freq: 46039,
+    raw: "FAIENCE",
+  },
+  {
+    freq: 46047,
+    raw: "INDEXED",
+  },
+  {
+    freq: 46064,
+    raw: "BLUSHER",
+  },
+  {
+    freq: 46066,
+    raw: "PRUDERY",
+  },
+  {
+    freq: 46068,
+    raw: "KEISTER",
+  },
+  {
+    freq: 46081,
+    raw: "EMPIRIC",
+  },
+  {
+    freq: 46093,
+    raw: "THAWING",
+  },
+  {
+    freq: 46101,
+    raw: "THRUWAY",
+  },
+  {
+    freq: 46104,
+    raw: "CAUTERY",
+  },
+  {
+    freq: 46110,
+    raw: "X-FACTOR",
+    word: "XFACTOR",
+  },
+  {
+    freq: 46125,
+    raw: "ON-SCENE",
+    word: "ONSCENE",
+  },
+  {
+    freq: 46133,
+    raw: "PERCEPT",
+  },
+  {
+    freq: 46147,
+    raw: "PUFFERY",
+  },
+  {
+    freq: 46152,
+    raw: "POST-MAO",
+    word: "POSTMAO",
+  },
+  {
+    freq: 46156,
+    raw: "PARVENU",
+  },
+  {
+    freq: 46170,
+    raw: "PUSH-OFF",
+    word: "PUSHOFF",
+  },
+  {
+    freq: 46173,
+    raw: "E-TAILER",
+    word: "ETAILER",
+  },
+  {
+    freq: 46176,
+    raw: "LAMBENT",
+  },
+  {
+    freq: 46177,
+    raw: "PLOTTED",
+  },
+  {
+    freq: 46182,
+    raw: "REDLINE",
+  },
+  {
+    freq: 46189,
+    raw: "END-ZONE",
+    word: "ENDZONE",
+  },
+  {
+    freq: 46194,
+    raw: "GASOHOL",
+  },
+  {
+    freq: 46198,
+    raw: "CURVING",
+  },
+  {
+    freq: 46208,
+    raw: "MEDULLA",
+  },
+  {
+    freq: 46216,
+    raw: "EMPANEL",
+  },
+  {
+    freq: 46236,
+    raw: "DRONING",
+  },
+  {
+    freq: 46243,
+    raw: "NOSEGAY",
+  },
+  {
+    freq: 46265,
+    raw: "HOSTING",
+  },
+  {
+    freq: 46286,
+    raw: "EXCRETA",
+  },
+  {
+    freq: 46288,
+    raw: "OVERAWE",
+  },
+  {
+    freq: 46304,
+    raw: "DUALIST",
+  },
+  {
+    freq: 46312,
+    raw: "BROMINE",
+  },
+  {
+    freq: 46339,
+    raw: "LOCKJAW",
+  },
+  {
+    freq: 46349,
+    raw: "TOURING",
+  },
+  {
+    freq: 46351,
+    raw: "HARPOON",
+  },
+  {
+    freq: 46363,
+    raw: "JOYRIDE",
+  },
+  {
+    freq: 46371,
+    raw: "TANGENT",
+  },
+  {
+    freq: 46378,
+    raw: "SHOVING",
+  },
+  {
+    freq: 46379,
+    raw: "ADVISEE",
+  },
+  {
+    freq: 46383,
+    raw: "TAMARIN",
+  },
+  {
+    freq: 46387,
+    raw: "CORDITE",
+  },
+  {
+    freq: 46402,
+    raw: "FLANKER",
+  },
+  {
+    freq: 46406,
+    raw: "STYRENE",
+  },
+  {
+    freq: 46415,
+    raw: "LEAD-OFF",
+    word: "LEADOFF",
+  },
+  {
+    freq: 46416,
+    raw: "TEN-WEEK",
+    word: "TENWEEK",
+  },
+  {
+    freq: 46437,
+    raw: "BUGBEAR",
+  },
+  {
+    freq: 46440,
+    raw: "VENTURI",
+  },
+  {
+    freq: 46448,
+    raw: "DATABLE",
+  },
+  {
+    freq: 46451,
+    raw: "ROTIFER",
+  },
+  {
+    freq: 46452,
+    raw: "WOLFMAN",
+  },
+  {
+    freq: 46454,
+    raw: "LAMPLIT",
+  },
+  {
+    freq: 46461,
+    raw: "FISH-OIL",
+    word: "FISHOIL",
+  },
+  {
+    freq: 46502,
+    raw: "DIGOXIN",
+  },
+  {
+    freq: 46509,
+    raw: "NEEDIER",
+  },
+  {
+    freq: 46516,
+    raw: "PORKPIE",
+  },
+  {
+    freq: 46528,
+    raw: "STUMPER",
+  },
+  {
+    freq: 46534,
+    raw: "DENTURE",
+  },
+  {
+    freq: 46542,
+    raw: "OPEN-TOP",
+    word: "OPENTOP",
+  },
+  {
+    freq: 46561,
+    raw: "LATERAL",
+  },
+  {
+    freq: 46565,
+    raw: "CITRUSY",
+  },
+  {
+    freq: 46576,
+    raw: "LUDDITE",
+  },
+  {
+    freq: 46589,
+    raw: "TOPSPIN",
+  },
+  {
+    freq: 46594,
+    raw: "ARMHOLE",
+  },
+  {
+    freq: 46598,
+    raw: "WINE-RED",
+    word: "WINERED",
+  },
+  {
+    freq: 46602,
+    raw: "GOOD-GUY",
+    word: "GOODGUY",
+  },
+  {
+    freq: 46614,
+    raw: "PRO-NAZI",
+    word: "PRONAZI",
+  },
+  {
+    freq: 46626,
+    raw: "FIVE-TEN",
+    word: "FIVETEN",
+  },
+  {
+    freq: 46633,
+    raw: "DWARFED",
+  },
+  {
+    freq: 46637,
+    raw: "COYNESS",
+  },
+  {
+    freq: 46640,
+    raw: "PAID-FOR",
+    word: "PAIDFOR",
+  },
+  {
+    freq: 46645,
+    raw: "CRAVING",
+  },
+  {
+    freq: 46670,
+    raw: "YELPING",
+  },
+  {
+    freq: 46672,
+    raw: "TEAMING",
+  },
+  {
+    freq: 46690,
+    raw: "INDEXER",
+  },
+  {
+    freq: 46699,
+    raw: "CURSING",
+  },
+  {
+    freq: 46705,
+    raw: "SNAPPED",
+  },
+  {
+    freq: 46709,
+    raw: "ASTILBE",
+  },
+  {
+    freq: 46722,
+    raw: "METONYM",
+  },
+  {
+    freq: 46724,
+    raw: "MINIMUS",
+  },
+  {
+    freq: 46727,
+    raw: "PITYING",
+  },
+  {
+    freq: 46728,
+    raw: "APROPOS",
+  },
+  {
+    freq: 46755,
+    raw: "NO-STICK",
+    word: "NOSTICK",
+  },
+  {
+    freq: 46771,
+    raw: "CAROTID",
+  },
+  {
+    freq: 46772,
+    raw: "HURRY-UP",
+    word: "HURRYUP",
+  },
+  {
+    freq: 46774,
+    raw: "DRY-LAND",
+    word: "DRYLAND",
+  },
+  {
+    freq: 46780,
+    raw: "PUTREFY",
+  },
+  {
+    freq: 46790,
+    raw: "NETBALL",
+  },
+  {
+    freq: 46794,
+    raw: "SIX-MILE",
+    word: "SIXMILE",
+  },
+  {
+    freq: 46804,
+    raw: "PLANKED",
+  },
+  {
+    freq: 46805,
+    raw: "BYRONIC",
+  },
+  {
+    freq: 46811,
+    raw: "BILIARY",
+  },
+  {
+    freq: 46813,
+    raw: "FARSIDE",
+  },
+  {
+    freq: 46820,
+    raw: "CENTRIC",
+  },
+  {
+    freq: 46822,
+    raw: "FOULING",
+  },
+  {
+    freq: 46825,
+    raw: "WIGGLER",
+  },
+  {
+    freq: 46834,
+    raw: "ANTACID",
+  },
+  {
+    freq: 46862,
+    raw: "BAGGING",
+  },
+  {
+    freq: 46891,
+    raw: "HALF-CUP",
+    word: "HALFCUP",
+  },
+  {
+    freq: 46892,
+    raw: "SUAVELY",
+  },
+  {
+    freq: 46897,
+    raw: "RATHOLE",
+  },
+  {
+    freq: 46899,
+    raw: "DEATHLY",
+  },
+  {
+    freq: 46901,
+    raw: "CARWASH",
+  },
+  {
+    freq: 46913,
+    raw: "POSITED",
+  },
+  {
+    freq: 46916,
+    raw: "PISSING",
+  },
+  {
+    freq: 46921,
+    raw: "BIMODAL",
+  },
+  {
+    freq: 46934,
+    raw: "FLUSTER",
+  },
+  {
+    freq: 46939,
+    raw: "CARPING",
+  },
+  {
+    freq: 46945,
+    raw: "SQUELCH",
+  },
+  {
+    freq: 46955,
+    raw: "SUBMENU",
+  },
+  {
+    freq: 46957,
+    raw: "RIFLERY",
+  },
+  {
+    freq: 46974,
+    raw: "SAUNTER",
+  },
+  {
+    freq: 46976,
+    raw: "KENOSIS",
+  },
+  {
+    freq: 46977,
+    raw: "IGNITER",
+  },
+  {
+    freq: 47007,
+    raw: "ROILING",
+  },
+  {
+    freq: 47015,
+    raw: "SNOOKER",
+  },
+  {
+    freq: 47026,
+    raw: "RED-ROCK",
+    word: "REDROCK",
+  },
+  {
+    freq: 47029,
+    raw: "CUBICAL",
+  },
+  {
+    freq: 47057,
+    raw: "GUILDER",
+  },
+  {
+    freq: 47063,
+    raw: "ROBBING",
+  },
+  {
+    freq: 47086,
+    raw: "PARESIS",
+  },
+  {
+    freq: 47090,
+    raw: "TROTTER",
+  },
+  {
+    freq: 47091,
+    raw: "ANDANTE",
+  },
+  {
+    freq: 47094,
+    raw: "INCUBUS",
+  },
+  {
+    freq: 47147,
+    raw: "NIOBIUM",
+  },
+  {
+    freq: 47149,
+    raw: "DIE-CAST",
+    word: "DIECAST",
+  },
+  {
+    freq: 47169,
+    raw: "HYPED-UP",
+    word: "HYPEDUP",
+  },
+  {
+    freq: 47182,
+    raw: "HARISSA",
+  },
+  {
+    freq: 47192,
+    raw: "SMOLDER",
+  },
+  {
+    freq: 47195,
+    raw: "POPPING",
+  },
+  {
+    freq: 47207,
+    raw: "POUTING",
+  },
+  {
+    freq: 47211,
+    raw: "MATTOCK",
+  },
+  {
+    freq: 47215,
+    raw: "POLECAT",
+  },
+  {
+    freq: 47235,
+    raw: "BASKING",
+  },
+  {
+    freq: 47236,
+    raw: "TREATER",
+  },
+  {
+    freq: 47244,
+    raw: "PIETISM",
+  },
+  {
+    freq: 47252,
+    raw: "BRAYING",
+  },
+  {
+    freq: 47269,
+    raw: "COARSEN",
+  },
+  {
+    freq: 47295,
+    raw: "BAD-NEWS",
+    word: "BADNEWS",
+  },
+  {
+    freq: 47297,
+    raw: "MULLEIN",
+  },
+  {
+    freq: 47300,
+    raw: "SIMPLEX",
+  },
+  {
+    freq: 47309,
+    raw: "GRIDDLE",
+  },
+  {
+    freq: 47317,
+    raw: "APRONED",
+  },
+  {
+    freq: 47324,
+    raw: "PETIOLE",
+  },
+  {
+    freq: 47326,
+    raw: "TEST-BAN",
+    word: "TESTBAN",
+  },
+  {
+    freq: 47327,
+    raw: "CHORDAL",
+  },
+  {
+    freq: 47356,
+    raw: "STAPLED",
+  },
+  {
+    freq: 47375,
+    raw: "SQUIRMY",
+  },
+  {
+    freq: 47380,
+    raw: "PLEDGED",
+  },
+  {
+    freq: 47387,
+    raw: "DEFINER",
+  },
+  {
+    freq: 47390,
+    raw: "COLLIER",
+  },
+  {
+    freq: 47399,
+    raw: "DECODED",
+  },
+  {
+    freq: 47416,
+    raw: "FARRIER",
+  },
+  {
+    freq: 47425,
+    raw: "FIXATOR",
+  },
+  {
+    freq: 47433,
+    raw: "BROODER",
+  },
+  {
+    freq: 47434,
+    raw: "ODDMENT",
+  },
+  {
+    freq: 47436,
+    raw: "CURTSEY",
+  },
+  {
+    freq: 47466,
+    raw: "OFF-GRID",
+    word: "OFFGRID",
+  },
+  {
+    freq: 47476,
+    raw: "RIDDLED",
+  },
+  {
+    freq: 47494,
+    raw: "RETOUCH",
+  },
+  {
+    freq: 47511,
+    raw: "BANDBOX",
+  },
+  {
+    freq: 47543,
+    raw: "MULLION",
+  },
+  {
+    freq: 47546,
+    raw: "HITTITE",
+  },
+  {
+    freq: 47548,
+    raw: "JIGGING",
+  },
+  {
+    freq: 47554,
+    raw: "SUNWARD",
+  },
+  {
+    freq: 47567,
+    raw: "DODGING",
+  },
+  {
+    freq: 47568,
+    raw: "PURRING",
+  },
+  {
+    freq: 47594,
+    raw: "DRAGOON",
+  },
+  {
+    freq: 47600,
+    raw: "TAPROOM",
+  },
+  {
+    freq: 47603,
+    raw: "GUTTING",
+  },
+  {
+    freq: 47605,
+    raw: "WATERED",
+  },
+  {
+    freq: 47612,
+    raw: "GINGERY",
+  },
+  {
+    freq: 47630,
+    raw: "CZARIST",
+  },
+  {
+    freq: 47651,
+    raw: "GAS-RICH",
+    word: "GASRICH",
+  },
+  {
+    freq: 47673,
+    raw: "KILLJOY",
+  },
+  {
+    freq: 47676,
+    raw: "CONNING",
+  },
+  {
+    freq: 47679,
+    raw: "STEWPOT",
+  },
+  {
+    freq: 47685,
+    raw: "CALCIFY",
+  },
+  {
+    freq: 47686,
+    raw: "FOPPISH",
+  },
+  {
+    freq: 47691,
+    raw: "CHROMED",
+  },
+  {
+    freq: 47697,
+    raw: "BIG-DEAL",
+    word: "BIGDEAL",
+  },
+  {
+    freq: 47730,
+    raw: "CAESURA",
+  },
+  {
+    freq: 47733,
+    raw: "INFARCT",
+  },
+  {
+    freq: 47740,
+    raw: "THOMIST",
+  },
+  {
+    freq: 47747,
+    raw: "CICHLID",
+  },
+  {
+    freq: 47753,
+    raw: "TICKLER",
+  },
+  {
+    freq: 47799,
+    raw: "PUNJABI",
+  },
+  {
+    freq: 47806,
+    raw: "GUNBELT",
+  },
+  {
+    freq: 47810,
+    raw: "BURKEAN",
+  },
+  {
+    freq: 47821,
+    raw: "ROOTING",
+  },
+  {
+    freq: 47826,
+    raw: "PARTYER",
+  },
+  {
+    freq: 47848,
+    raw: "CAVED-IN",
+    word: "CAVEDIN",
+  },
+  {
+    freq: 47860,
+    raw: "SICKBAY",
+  },
+  {
+    freq: 47863,
+    raw: "KRYPTON",
+  },
+  {
+    freq: 47883,
+    raw: "IMPIETY",
+  },
+  {
+    freq: 47915,
+    raw: "NON-CASH",
+    word: "NONCASH",
+  },
+  {
+    freq: 47922,
+    raw: "SNAGGED",
+  },
+  {
+    freq: 47929,
+    raw: "FRUITED",
+  },
+  {
+    freq: 47936,
+    raw: "WARPING",
+  },
+  {
+    freq: 47942,
+    raw: "INVADED",
+  },
+  {
+    freq: 47965,
+    raw: "RAIDING",
+  },
+  {
+    freq: 47972,
+    raw: "CALICHE",
+  },
+  {
+    freq: 47991,
+    raw: "GAUDILY",
+  },
+  {
+    freq: 47993,
+    raw: "ART-DECO",
+    word: "ARTDECO",
+  },
+  {
+    freq: 48016,
+    raw: "BOWLINE",
+  },
+  {
+    freq: 48017,
+    raw: "KOLKHOZ",
+  },
+  {
+    freq: 48036,
+    raw: "TONIEST",
+  },
+  {
+    freq: 48043,
+    raw: "FURRIER",
+  },
+  {
+    freq: 48060,
+    raw: "MILFOIL",
+  },
+  {
+    freq: 48065,
+    raw: "SACKFUL",
+  },
+  {
+    freq: 48077,
+    raw: "PEACOAT",
+  },
+  {
+    freq: 48098,
+    raw: "LOUTISH",
+  },
+  {
+    freq: 48105,
+    raw: "TEN-FOUR",
+    word: "TENFOUR",
+  },
+  {
+    freq: 48107,
+    raw: "UNITARD",
+  },
+  {
+    freq: 48114,
+    raw: "PICKOFF",
+  },
+  {
+    freq: 48126,
+    raw: "PISSANT",
+  },
+  {
+    freq: 48188,
+    raw: "WINDAGE",
+  },
+  {
+    freq: 48202,
+    raw: "GOUGING",
+  },
+  {
+    freq: 48232,
+    raw: "MANSARD",
+  },
+  {
+    freq: 48233,
+    raw: "BUG-FREE",
+    word: "BUGFREE",
+  },
+  {
+    freq: 48238,
+    raw: "MAN-LIKE",
+    word: "MANLIKE",
+  },
+  {
+    freq: 48240,
+    raw: "ONE-DISH",
+    word: "ONEDISH",
+  },
+  {
+    freq: 48243,
+    raw: "CREEDAL",
+  },
+  {
+    freq: 48263,
+    raw: "PSYCHED",
+  },
+  {
+    freq: 48269,
+    raw: "DEMOTED",
+  },
+  {
+    freq: 48274,
+    raw: "GILDING",
+  },
+  {
+    freq: 48287,
+    raw: "FOUR-RUN",
+    word: "FOURRUN",
+  },
+  {
+    freq: 48291,
+    raw: "PILSNER",
+  },
+  {
+    freq: 48300,
+    raw: "BLACKLY",
+  },
+  {
+    freq: 48303,
+    raw: "LUMPISH",
+  },
+  {
+    freq: 48332,
+    raw: "DEWDROP",
+  },
+  {
+    freq: 48344,
+    raw: "RHENISH",
+  },
+  {
+    freq: 48357,
+    raw: "ONE-SHOT",
+    word: "ONESHOT",
+  },
+  {
+    freq: 48368,
+    raw: "UNSAVED",
+  },
+  {
+    freq: 48379,
+    raw: "VERDURE",
+  },
+  {
+    freq: 48386,
+    raw: "PINKING",
+  },
+  {
+    freq: 48387,
+    raw: "REEKING",
+  },
+  {
+    freq: 48391,
+    raw: "SHEARED",
+  },
+  {
+    freq: 48413,
+    raw: "SCHERZO",
+  },
+  {
+    freq: 48415,
+    raw: "TWO-SHOT",
+    word: "TWOSHOT",
+  },
+  {
+    freq: 48424,
+    raw: "PABULUM",
+  },
+  {
+    freq: 48429,
+    raw: "UNFIXED",
+  },
+  {
+    freq: 48439,
+    raw: "LECHERY",
+  },
+  {
+    freq: 48441,
+    raw: "SPARELY",
+  },
+  {
+    freq: 48475,
+    raw: "PARTITA",
+  },
+  {
+    freq: 48523,
+    raw: "STILLED",
+  },
+  {
+    freq: 48563,
+    raw: "INANELY",
+  },
+  {
+    freq: 48569,
+    raw: "LACTASE",
+  },
+  {
+    freq: 48582,
+    raw: "MOONLET",
+  },
+  {
+    freq: 48588,
+    raw: "SHUCKED",
+  },
+  {
+    freq: 48601,
+    raw: "MAYPOLE",
+  },
+  {
+    freq: 48610,
+    raw: "DINGBAT",
+  },
+  {
+    freq: 48617,
+    raw: "DARKISH",
+  },
+  {
+    freq: 48618,
+    raw: "SOJOURN",
+  },
+  {
+    freq: 48623,
+    raw: "MINICAM",
+  },
+  {
+    freq: 48633,
+    raw: "CARSICK",
+  },
+  {
+    freq: 48646,
+    raw: "VERMEIL",
+  },
+  {
+    freq: 48657,
+    raw: "INCOMER",
+  },
+  {
+    freq: 48669,
+    raw: "KEYCARD",
+  },
+  {
+    freq: 48675,
+    raw: "DISHPAN",
+  },
+  {
+    freq: 48677,
+    raw: "LAID-OUT",
+    word: "LAIDOUT",
+  },
+  {
+    freq: 48690,
+    raw: "GUSTING",
+  },
+  {
+    freq: 48692,
+    raw: "FIRED-UP",
+    word: "FIREDUP",
+  },
+  {
+    freq: 48703,
+    raw: "RUST-RED",
+    word: "RUSTRED",
+  },
+  {
+    freq: 48705,
+    raw: "LISSOME",
+  },
+  {
+    freq: 48723,
+    raw: "EXOGAMY",
+  },
+  {
+    freq: 48736,
+    raw: "DECADAL",
+  },
+  {
+    freq: 48744,
+    raw: "ALCALDE",
+  },
+  {
+    freq: 48745,
+    raw: "DERECHO",
+  },
+  {
+    freq: 48755,
+    raw: "PARBOIL",
+  },
+  {
+    freq: 48765,
+    raw: "RIPENED",
+  },
+  {
+    freq: 48796,
+    raw: "CROWING",
+  },
+  {
+    freq: 48797,
+    raw: "REBUILD",
+  },
+  {
+    freq: 48803,
+    raw: "OFFSIDE",
+  },
+  {
+    freq: 48817,
+    raw: "ADENINE",
+  },
+  {
+    freq: 48834,
+    raw: "BOHEMIA",
+  },
+  {
+    freq: 48836,
+    raw: "NICE-GUY",
+    word: "NICEGUY",
+  },
+  {
+    freq: 48861,
+    raw: "ARRAYED",
+  },
+  {
+    freq: 48867,
+    raw: "SOAKING",
+  },
+  {
+    freq: 48870,
+    raw: "SEIZING",
+  },
+  {
+    freq: 48872,
+    raw: "AIRCREW",
+  },
+  {
+    freq: 48889,
+    raw: "SCAMPER",
+  },
+  {
+    freq: 48900,
+    raw: "OBTRUDE",
+  },
+  {
+    freq: 48910,
+    raw: "TWIRLER",
+  },
+  {
+    freq: 48925,
+    raw: "HIGHBOY",
+  },
+  {
+    freq: 48929,
+    raw: "QUERIDA",
+  },
+  {
+    freq: 48936,
+    raw: "EIDETIC",
+  },
+  {
+    freq: 48942,
+    raw: "FRESHET",
+  },
+  {
+    freq: 48967,
+    raw: "PLEURAL",
+  },
+  {
+    freq: 48972,
+    raw: "NO-SWEAT",
+    word: "NOSWEAT",
+  },
+  {
+    freq: 48982,
+    raw: "SHEERLY",
+  },
+  {
+    freq: 48983,
+    raw: "ORGANDY",
+  },
+  {
+    freq: 48985,
+    raw: "BOW-TIED",
+    word: "BOWTIED",
+  },
+  {
+    freq: 48991,
+    raw: "ICE-CUBE",
+    word: "ICECUBE",
+  },
+  {
+    freq: 48995,
+    raw: "WIN-LOSS",
+    word: "WINLOSS",
+  },
+  {
+    freq: 48999,
+    raw: "ATTUNED",
+  },
+  {
+    freq: 49026,
+    raw: "ROUNDER",
+  },
+  {
+    freq: 49037,
+    raw: "SERRIED",
+  },
+  {
+    freq: 49043,
+    raw: "CATALPA",
+  },
+  {
+    freq: 49054,
+    raw: "PELTING",
+  },
+  {
+    freq: 49086,
+    raw: "WIDE-LEG",
+    word: "WIDELEG",
+  },
+  {
+    freq: 49088,
+    raw: "DIOPTER",
+  },
+  {
+    freq: 49090,
+    raw: "VEILING",
+  },
+  {
+    freq: 49116,
+    raw: "KA-CHING",
+    word: "KACHING",
+  },
+  {
+    freq: 49121,
+    raw: "KNEADED",
+  },
+  {
+    freq: 49123,
+    raw: "HUMORAL",
+  },
+  {
+    freq: 49129,
+    raw: "LARGISH",
+  },
+  {
+    freq: 49154,
+    raw: "ACTINIC",
+  },
+  {
+    freq: 49168,
+    raw: "JERKING",
+  },
+  {
+    freq: 49232,
+    raw: "OLIVINE",
+  },
+  {
+    freq: 49234,
+    raw: "WHORLED",
+  },
+  {
+    freq: 49236,
+    raw: "SIX-TEAM",
+    word: "SIXTEAM",
+  },
+  {
+    freq: 49240,
+    raw: "GOSLING",
+  },
+  {
+    freq: 49257,
+    raw: "LENSING",
+  },
+  {
+    freq: 49259,
+    raw: "CURTSEY",
+  },
+  {
+    freq: 49270,
+    raw: "CHANSON",
+  },
+  {
+    freq: 49275,
+    raw: "PHOTO-OP",
+    word: "PHOTOOP",
+  },
+  {
+    freq: 49277,
+    raw: "HIP-DEEP",
+    word: "HIPDEEP",
+  },
+  {
+    freq: 49278,
+    raw: "ECHOING",
+  },
+  {
+    freq: 49295,
+    raw: "LIQUIFY",
+  },
+  {
+    freq: 49298,
+    raw: "SAVVIER",
+  },
+  {
+    freq: 49311,
+    raw: "LAMBING",
+  },
+  {
+    freq: 49324,
+    raw: "DRUG-USE",
+    word: "DRUGUSE",
+  },
+  {
+    freq: 49342,
+    raw: "GLYCINE",
+  },
+  {
+    freq: 49358,
+    raw: "BENCHED",
+  },
+  {
+    freq: 49362,
+    raw: "PEDICAB",
+  },
+  {
+    freq: 49363,
+    raw: "MOOCHER",
+  },
+  {
+    freq: 49377,
+    raw: "FIXATED",
+  },
+  {
+    freq: 49390,
+    raw: "BLINKER",
+  },
+  {
+    freq: 49393,
+    raw: "JILLION",
+  },
+  {
+    freq: 49395,
+    raw: "FLAKING",
+  },
+  {
+    freq: 49415,
+    raw: "AMPOULE",
+  },
+  {
+    freq: 49418,
+    raw: "PLOWMAN",
+  },
+  {
+    freq: 49420,
+    raw: "REORDER",
+  },
+  {
+    freq: 49427,
+    raw: "JARHEAD",
+  },
+  {
+    freq: 49432,
+    raw: "OFT-TOLD",
+    word: "OFTTOLD",
+  },
+  {
+    freq: 49436,
+    raw: "SEA-LANE",
+    word: "SEALANE",
+  },
+  {
+    freq: 49444,
+    raw: "SLAMMED",
+  },
+  {
+    freq: 49454,
+    raw: "OARLOCK",
+  },
+  {
+    freq: 49464,
+    raw: "AMOEBIC",
+  },
+  {
+    freq: 49465,
+    raw: "BREAK-IN",
+    word: "BREAKIN",
+  },
+  {
+    freq: 49469,
+    raw: "INDWELL",
+  },
+  {
+    freq: 49481,
+    raw: "MESHING",
+  },
+  {
+    freq: 49489,
+    raw: "UPRIVER",
+  },
+  {
+    freq: 49499,
+    raw: "DUDGEON",
+  },
+  {
+    freq: 49508,
+    raw: "VERNIER",
+  },
+  {
+    freq: 49526,
+    raw: "TWO-DEEP",
+    word: "TWODEEP",
+  },
+  {
+    freq: 49528,
+    raw: "GLUTTED",
+  },
+  {
+    freq: 49533,
+    raw: "MAIMING",
+  },
+  {
+    freq: 49547,
+    raw: "CITY-RUN",
+    word: "CITYRUN",
+  },
+  {
+    freq: 49551,
+    raw: "MEN-ONLY",
+    word: "MENONLY",
+  },
+  {
+    freq: 49554,
+    raw: "SEALIFT",
+  },
+  {
+    freq: 49555,
+    raw: "CROFTER",
+  },
+  {
+    freq: 49556,
+    raw: "DEEP-FAT",
+    word: "DEEPFAT",
+  },
+  {
+    freq: 49559,
+    raw: "FUELING",
+  },
+  {
+    freq: 49569,
+    raw: "LINGCOD",
+  },
+  {
+    freq: 49577,
+    raw: "CADENZA",
+  },
+  {
+    freq: 49591,
+    raw: "DAZZLED",
+  },
+  {
+    freq: 49593,
+    raw: "YAPPING",
+  },
+  {
+    freq: 49615,
+    raw: "GROPING",
+  },
+  {
+    freq: 49616,
+    raw: "LATE-DAY",
+    word: "LATEDAY",
+  },
+  {
+    freq: 49618,
+    raw: "DEEP-RED",
+    word: "DEEPRED",
+  },
+  {
+    freq: 49619,
+    raw: "C-SHAPED",
+    word: "CSHAPED",
+  },
+  {
+    freq: 49621,
+    raw: "ECLOGUE",
+  },
+  {
+    freq: 49627,
+    raw: "NAPPING",
+  },
+  {
+    freq: 49649,
+    raw: "DEFROST",
+  },
+  {
+    freq: 49654,
+    raw: "LURIDLY",
+  },
+  {
+    freq: 49665,
+    raw: "AUTOMAT",
+  },
+  {
+    freq: 49666,
+    raw: "FAT-FREE",
+    word: "FATFREE",
+  },
+  {
+    freq: 49667,
+    raw: "PUSHROD",
+  },
+  {
+    freq: 49676,
+    raw: "CHIPSET",
+  },
+  {
+    freq: 49682,
+    raw: "AVOIDED",
+  },
+  {
+    freq: 49697,
+    raw: "GHERKIN",
+  },
+  {
+    freq: 49705,
+    raw: "BANNOCK",
+  },
+  {
+    freq: 49710,
+    raw: "BIAXIAL",
+  },
+  {
+    freq: 49779,
+    raw: "PIEBALD",
+  },
+  {
+    freq: 49781,
+    raw: "RIMROCK",
+  },
+  {
+    freq: 49786,
+    raw: "GLOTTIS",
+  },
+  {
+    freq: 49806,
+    raw: "DRILLED",
+  },
+  {
+    freq: 49816,
+    raw: "WRESTLE",
+  },
+  {
+    freq: 49824,
+    raw: "SKILFUL",
+  },
+  {
+    freq: 49828,
+    raw: "FIZZING",
+  },
+  {
+    freq: 49834,
+    raw: "SCUPPER",
+  },
+  {
+    freq: 49859,
+    raw: "GRIDDED",
+  },
+  {
+    freq: 49866,
+    raw: "GROUPED",
+  },
+  {
+    freq: 49867,
+    raw: "RED-ZONE",
+    word: "REDZONE",
+  },
+  {
+    freq: 49871,
+    raw: "HYDROPS",
+  },
+  {
+    freq: 49889,
+    raw: "SUBPART",
+  },
+  {
+    freq: 49893,
+    raw: "CONVOKE",
+  },
+  {
+    freq: 49897,
+    raw: "DEMOTIC",
+  },
+  {
+    freq: 49900,
+    raw: "SCARIFY",
+  },
+  {
+    freq: 49919,
+    raw: "LANOLIN",
+  },
+  {
+    freq: 49930,
+    raw: "SMACKER",
+  },
+  {
+    freq: 49932,
+    raw: "SHOWIER",
+  },
+  {
+    freq: 49936,
+    raw: "OVERFED",
+  },
+  {
+    freq: 49938,
+    raw: "PLAYACT",
+  },
+  {
+    freq: 49966,
+    raw: "DESCANT",
+  },
+  {
+    freq: 49979,
+    raw: "ARABICA",
+  },
+  {
+    freq: 49997,
+    raw: "KNEELER",
+  },
+  {
+    freq: 50014,
+    raw: "SKIMMED",
+  },
+  {
+    freq: 50016,
+    raw: "UNCTION",
+  },
+  {
+    freq: 50040,
+    raw: "CHIMING",
+  },
+  {
+    freq: 50051,
+    raw: "INDRAWN",
+  },
+  {
+    freq: 50055,
+    raw: "HUGGING",
+  },
+  {
+    freq: 50068,
+    raw: "WHOO-HOO",
+    word: "WHOOHOO",
+  },
+  {
+    freq: 50078,
+    raw: "MAJORLY",
+  },
+  {
+    freq: 50091,
+    raw: "SHYLOCK",
+  },
+  {
+    freq: 50095,
+    raw: "EXUDATE",
+  },
+  {
+    freq: 50107,
+    raw: "KID-SIZE",
+    word: "KIDSIZE",
+  },
+  {
+    freq: 50115,
+    raw: "HOG-TIED",
+    word: "HOGTIED",
+  },
+  {
+    freq: 50124,
+    raw: "BOWLFUL",
+  },
+  {
+    freq: 50134,
+    raw: "SIX-ITEM",
+    word: "SIXITEM",
+  },
+  {
+    freq: 50139,
+    raw: "BURSTER",
+  },
+  {
+    freq: 50144,
+    raw: "ON-TRACK",
+    word: "ONTRACK",
+  },
+  {
+    freq: 50145,
+    raw: "VISCOSE",
+  },
+  {
+    freq: 50147,
+    raw: "LIMITER",
+  },
+  {
+    freq: 50157,
+    raw: "WOOZILY",
+  },
+  {
+    freq: 50159,
+    raw: "MIMICRY",
+  },
+  {
+    freq: 50167,
+    raw: "TENDING",
+  },
+  {
+    freq: 50168,
+    raw: "OUTRACE",
+  },
+  {
+    freq: 50182,
+    raw: "CARMINE",
+  },
+  {
+    freq: 50184,
+    raw: "STANDER",
+  },
+  {
+    freq: 50189,
+    raw: "GADWALL",
+  },
+  {
+    freq: 50191,
+    raw: "MAGNETO",
+  },
+  {
+    freq: 50199,
+    raw: "SIX-PLUS",
+    word: "SIXPLUS",
+  },
+  {
+    freq: 50202,
+    raw: "TWADDLE",
+  },
+  {
+    freq: 50219,
+    raw: "CUIRASS",
+  },
+  {
+    freq: 50237,
+    raw: "HACKNEY",
+  },
+  {
+    freq: 50247,
+    raw: "RECENCY",
+  },
+  {
+    freq: 50249,
+    raw: "FLYTRAP",
+  },
+  {
+    freq: 50278,
+    raw: "WALK-OFF",
+    word: "WALKOFF",
+  },
+  {
+    freq: 50286,
+    raw: "TALONED",
+  },
+  {
+    freq: 50290,
+    raw: "HIGH-KEY",
+    word: "HIGHKEY",
+  },
+  {
+    freq: 50296,
+    raw: "ANALYTE",
+  },
+  {
+    freq: 50302,
+    raw: "LOW-BALL",
+    word: "LOWBALL",
+  },
+  {
+    freq: 50332,
+    raw: "TROLLOP",
+  },
+  {
+    freq: 50338,
+    raw: "WOOLLEN",
+  },
+  {
+    freq: 50342,
+    raw: "SNUFFLE",
+  },
+  {
+    freq: 50353,
+    raw: "ENSUITE",
+  },
+  {
+    freq: 50367,
+    raw: "TOO-HIGH",
+    word: "TOOHIGH",
+  },
+  {
+    freq: 50374,
+    raw: "FANCIED",
+  },
+  {
+    freq: 50375,
+    raw: "FUNNILY",
+  },
+  {
+    freq: 50400,
+    raw: "CUSSING",
+  },
+  {
+    freq: 50413,
+    raw: "HALF-TON",
+    word: "HALFTON",
+  },
+  {
+    freq: 50418,
+    raw: "PRE-SHOW",
+    word: "PRESHOW",
+  },
+  {
+    freq: 50421,
+    raw: "BEST-RUN",
+    word: "BESTRUN",
+  },
+  {
+    freq: 50443,
+    raw: "CATSUIT",
+  },
+  {
+    freq: 50447,
+    raw: "AVOIDER",
+  },
+  {
+    freq: 50451,
+    raw: "BAGASSE",
+  },
+  {
+    freq: 50462,
+    raw: "FORE-AFT",
+    word: "FOREAFT",
+  },
+  {
+    freq: 50472,
+    raw: "GUANINE",
+  },
+  {
+    freq: 50474,
+    raw: "SARACEN",
+  },
+  {
+    freq: 50480,
+    raw: "WAXWING",
+  },
+  {
+    freq: 50493,
+    raw: "COLTISH",
+  },
+  {
+    freq: 50507,
+    raw: "PIMPLED",
+  },
+  {
+    freq: 50529,
+    raw: "SLYNESS",
+  },
+  {
+    freq: 50570,
+    raw: "PETROUS",
+  },
+  {
+    freq: 50575,
+    raw: "BIKEWAY",
+  },
+  {
+    freq: 50583,
+    raw: "BEAR-HUG",
+    word: "BEARHUG",
+  },
+  {
+    freq: 50587,
+    raw: "BIOCIDE",
+  },
+  {
+    freq: 50588,
+    raw: "KENTISH",
+  },
+  {
+    freq: 50605,
+    raw: "RIFLING",
+  },
+  {
+    freq: 50609,
+    raw: "ROSACEA",
+  },
+  {
+    freq: 50633,
+    raw: "MOCKING",
+  },
+  {
+    freq: 50662,
+    raw: "ITCHING",
+  },
+  {
+    freq: 50674,
+    raw: "DELOUSE",
+  },
+  {
+    freq: 50690,
+    raw: "PUPFISH",
+  },
+  {
+    freq: 50698,
+    raw: "OILSEED",
+  },
+  {
+    freq: 50706,
+    raw: "HARELIP",
+  },
+  {
+    freq: 50727,
+    raw: "LOW-RISE",
+    word: "LOWRISE",
+  },
+  {
+    freq: 50729,
+    raw: "HATBAND",
+  },
+  {
+    freq: 50748,
+    raw: "SHELLAC",
+  },
+  {
+    freq: 50751,
+    raw: "SIX-FOUR",
+    word: "SIXFOUR",
+  },
+  {
+    freq: 50759,
+    raw: "HALF-CUP",
+    word: "HALFCUP",
+  },
+  {
+    freq: 50768,
+    raw: "GLUTEAL",
+  },
+  {
+    freq: 50779,
+    raw: "MALAYAN",
+  },
+  {
+    freq: 50793,
+    raw: "HUFFILY",
+  },
+  {
+    freq: 50813,
+    raw: "OUTFALL",
+  },
+  {
+    freq: 50819,
+    raw: "SCEPTRE",
+  },
+  {
+    freq: 50833,
+    raw: "BLAMING",
+  },
+  {
+    freq: 50852,
+    raw: "FUNNEST",
+  },
+  {
+    freq: 50858,
+    raw: "AFFAIRE",
+  },
+  {
+    freq: 50862,
+    raw: "RESPIRE",
+  },
+  {
+    freq: 50867,
+    raw: "TOTALED",
+  },
+  {
+    freq: 50872,
+    raw: "MAZURKA",
+  },
+  {
+    freq: 50876,
+    raw: "NYMPHET",
+  },
+  {
+    freq: 50919,
+    raw: "TITLIST",
+  },
+  {
+    freq: 50926,
+    raw: "IN-PLACE",
+    word: "INPLACE",
+  },
+  {
+    freq: 50935,
+    raw: "UNCLASP",
+  },
+  {
+    freq: 50940,
+    raw: "BANEFUL",
+  },
+  {
+    freq: 50941,
+    raw: "FARRAGO",
+  },
+  {
+    freq: 50942,
+    raw: "CASHIER",
+  },
+  {
+    freq: 50974,
+    raw: "SLICKED",
+  },
+  {
+    freq: 50977,
+    raw: "SIX-TERM",
+    word: "SIXTERM",
+  },
+  {
+    freq: 51007,
+    raw: "GAWKING",
+  },
+  {
+    freq: 51008,
+    raw: "HALF-MAD",
+    word: "HALFMAD",
+  },
+  {
+    freq: 51013,
+    raw: "SIFTING",
+  },
+  {
+    freq: 51019,
+    raw: "ROOTLET",
+  },
+  {
+    freq: 51024,
+    raw: "HAULING",
+  },
+  {
+    freq: 51079,
+    raw: "CHICEST",
+  },
+  {
+    freq: 51085,
+    raw: "SALTBOX",
+  },
+  {
+    freq: 51091,
+    raw: "FEDERAL",
+  },
+  {
+    freq: 51098,
+    raw: "PRELIMS",
+  },
+  {
+    freq: 51103,
+    raw: "TREFOIL",
+  },
+  {
+    freq: 51111,
+    raw: "STYLOID",
+  },
+  {
+    freq: 51153,
+    raw: "TWINNED",
+  },
+  {
+    freq: 51157,
+    raw: "LASHING",
+  },
+  {
+    freq: 51171,
+    raw: "GOADING",
+  },
+  {
+    freq: 51172,
+    raw: "ONE-HAND",
+    word: "ONEHAND",
+  },
+  {
+    freq: 51186,
+    raw: "RENDING",
+  },
+  {
+    freq: 51192,
+    raw: "VISORED",
+  },
+  {
+    freq: 51203,
+    raw: "PRONGED",
+  },
+  {
+    freq: 51256,
+    raw: "SENSATE",
+  },
+  {
+    freq: 51259,
+    raw: "TACTUAL",
+  },
+  {
+    freq: 51260,
+    raw: "MUTAGEN",
+  },
+  {
+    freq: 51281,
+    raw: "BLARNEY",
+  },
+  {
+    freq: 51317,
+    raw: "REFUSED",
+  },
+  {
+    freq: 51319,
+    raw: "TRAVAIL",
+  },
+  {
+    freq: 51333,
+    raw: "FIRELIT",
+  },
+  {
+    freq: 51345,
+    raw: "HOGBACK",
+  },
+  {
+    freq: 51348,
+    raw: "ROCK-ART",
+    word: "ROCKART",
+  },
+  {
+    freq: 51362,
+    raw: "ALIGNED",
+  },
+  {
+    freq: 51394,
+    raw: "CRIMSON",
+  },
+  {
+    freq: 51409,
+    raw: "SAD-SACK",
+    word: "SADSACK",
+  },
+  {
+    freq: 51411,
+    raw: "WAGGING",
+  },
+  {
+    freq: 51424,
+    raw: "BIG-BASS",
+    word: "BIGBASS",
+  },
+  {
+    freq: 51455,
+    raw: "TRIPLED",
+  },
+  {
+    freq: 51465,
+    raw: "FORKFUL",
+  },
+  {
+    freq: 51496,
+    raw: "FLANGED",
+  },
+  {
+    freq: 51498,
+    raw: "NUMERAL",
+  },
+  {
+    freq: 51509,
+    raw: "KISS-OFF",
+    word: "KISSOFF",
+  },
+  {
+    freq: 51510,
+    raw: "SHALLOW",
+  },
+  {
+    freq: 51515,
+    raw: "BOLLARD",
+  },
+  {
+    freq: 51526,
+    raw: "TANNING",
+  },
+  {
+    freq: 51549,
+    raw: "CASH-OUT",
+    word: "CASHOUT",
+  },
+  {
+    freq: 51551,
+    raw: "TOOLING",
+  },
+  {
+    freq: 51554,
+    raw: "STRIDOR",
+  },
+  {
+    freq: 51556,
+    raw: "FIBULAR",
+  },
+  {
+    freq: 51562,
+    raw: "DUCKING",
+  },
+  {
+    freq: 51586,
+    raw: "STACKER",
+  },
+  {
+    freq: 51595,
+    raw: "CATARRH",
+  },
+  {
+    freq: 51597,
+    raw: "EPITOPE",
+  },
+  {
+    freq: 51599,
+    raw: "ACEQUIA",
+  },
+  {
+    freq: 51602,
+    raw: "PURPORT",
+  },
+  {
+    freq: 51615,
+    raw: "FUSSILY",
+  },
+  {
+    freq: 51621,
+    raw: "PEONAGE",
+  },
+  {
+    freq: 51622,
+    raw: "EARWORM",
+  },
+  {
+    freq: 51628,
+    raw: "YARDARM",
+  },
+  {
+    freq: 51632,
+    raw: "GUN-FREE",
+    word: "GUNFREE",
+  },
+  {
+    freq: 51644,
+    raw: "LEGHORN",
+  },
+  {
+    freq: 51649,
+    raw: "PITBULL",
+  },
+  {
+    freq: 51666,
+    raw: "TIE-DOWN",
+    word: "TIEDOWN",
+  },
+  {
+    freq: 51669,
+    raw: "PILED-UP",
+    word: "PILEDUP",
+  },
+  {
+    freq: 51673,
+    raw: "HOTFOOT",
+  },
+  {
+    freq: 51681,
+    raw: "BAWLING",
+  },
+  {
+    freq: 51690,
+    raw: "FUZZILY",
+  },
+  {
+    freq: 51694,
+    raw: "STARTLE",
+  },
+  {
+    freq: 51696,
+    raw: "WINTERY",
+  },
+  {
+    freq: 51716,
+    raw: "BRALESS",
+  },
+  {
+    freq: 51718,
+    raw: "UNWIRED",
+  },
+  {
+    freq: 51724,
+    raw: "PETRINE",
+  },
+  {
+    freq: 51731,
+    raw: "YAPPING",
+  },
+  {
+    freq: 51740,
+    raw: "BOUNDER",
+  },
+  {
+    freq: 51741,
+    raw: "ONLIEST",
+  },
+  {
+    freq: 51761,
+    raw: "SALTINE",
+  },
+  {
+    freq: 51769,
+    raw: "SAPIENT",
+  },
+  {
+    freq: 51788,
+    raw: "SULKING",
+  },
+  {
+    freq: 51795,
+    raw: "BIG-CITY",
+    word: "BIGCITY",
+  },
+  {
+    freq: 51799,
+    raw: "TOWLINE",
+  },
+  {
+    freq: 51800,
+    raw: "ESTROUS",
+  },
+  {
+    freq: 51805,
+    raw: "UP-AND-UP",
+    word: "UPANDUP",
+  },
+  {
+    freq: 51809,
+    raw: "SURCOAT",
+  },
+  {
+    freq: 51812,
+    raw: "PERCALE",
+  },
+  {
+    freq: 51824,
+    raw: "CALLOUS",
+  },
+  {
+    freq: 51830,
+    raw: "PASSIVE",
+  },
+  {
+    freq: 51831,
+    raw: "FIVE-RUN",
+    word: "FIVERUN",
+  },
+  {
+    freq: 51839,
+    raw: "WRIGGLE",
+  },
+  {
+    freq: 51845,
+    raw: "TORCHED",
+  },
+  {
+    freq: 51852,
+    raw: "LAMBADA",
+  },
+  {
+    freq: 51862,
+    raw: "PUCKERY",
+  },
+  {
+    freq: 51891,
+    raw: "COAL-BED",
+    word: "COALBED",
+  },
+  {
+    freq: 51894,
+    raw: "WEANING",
+  },
+  {
+    freq: 51907,
+    raw: "SLEEVED",
+  },
+  {
+    freq: 51915,
+    raw: "DIGITAL",
+  },
+  {
+    freq: 51921,
+    raw: "SANDPIT",
+  },
+  {
+    freq: 51950,
+    raw: "SCRUPLE",
+  },
+  {
+    freq: 51952,
+    raw: "DUELIST",
+  },
+  {
+    freq: 51963,
+    raw: "APPARAT",
+  },
+  {
+    freq: 51964,
+    raw: "GESTAPO",
+  },
+  {
+    freq: 51983,
+    raw: "SPARING",
+  },
+  {
+    freq: 51993,
+    raw: "TURKISH",
+  },
+  {
+    freq: 51996,
+    raw: "RED-CLAY",
+    word: "REDCLAY",
+  },
+  {
+    freq: 51999,
+    raw: "SKIRTED",
+  },
+  {
+    freq: 52003,
+    raw: "PIGGISH",
+  },
+  {
+    freq: 52010,
+    raw: "MUDFLOW",
+  },
+  {
+    freq: 52034,
+    raw: "SCOFFER",
+  },
+  {
+    freq: 52041,
+    raw: "RED-TILE",
+    word: "REDTILE",
+  },
+  {
+    freq: 52049,
+    raw: "DEBAUCH",
+  },
+  {
+    freq: 52055,
+    raw: "PARTIAL",
+  },
+  {
+    freq: 52058,
+    raw: "LOUNGER",
+  },
+  {
+    freq: 52073,
+    raw: "WINKING",
+  },
+  {
+    freq: 52074,
+    raw: "TRAVOIS",
+  },
+  {
+    freq: 52075,
+    raw: "IODIZED",
+  },
+  {
+    freq: 52096,
+    raw: "ORBITAL",
+  },
+  {
+    freq: 52120,
+    raw: "DUMB-ASS",
+    word: "DUMBASS",
+  },
+  {
+    freq: 52147,
+    raw: "ADRENAL",
+  },
+  {
+    freq: 52164,
+    raw: "YELLING",
+  },
+  {
+    freq: 52184,
+    raw: "MITERED",
+  },
+  {
+    freq: 52185,
+    raw: "SAPONIN",
+  },
+  {
+    freq: 52213,
+    raw: "AMATORY",
+  },
+  {
+    freq: 52216,
+    raw: "TILTING",
+  },
+  {
+    freq: 52218,
+    raw: "PUNTING",
+  },
+  {
+    freq: 52228,
+    raw: "GLASSED",
+  },
+  {
+    freq: 52247,
+    raw: "AGNATIC",
+  },
+  {
+    freq: 52255,
+    raw: "TOLLING",
+  },
+  {
+    freq: 52257,
+    raw: "GAZETTE",
+  },
+  {
+    freq: 52259,
+    raw: "HOMBURG",
+  },
+  {
+    freq: 52266,
+    raw: "NON-CORE",
+    word: "NONCORE",
+  },
+  {
+    freq: 52268,
+    raw: "BITTERN",
+  },
+  {
+    freq: 52273,
+    raw: "OFFSIDE",
+  },
+  {
+    freq: 52288,
+    raw: "ROUNDEL",
+  },
+  {
+    freq: 52300,
+    raw: "SIX-ROOM",
+    word: "SIXROOM",
+  },
+  {
+    freq: 52315,
+    raw: "IMAGING",
+  },
+  {
+    freq: 52316,
+    raw: "CHARTED",
+  },
+  {
+    freq: 52326,
+    raw: "KIDSKIN",
+  },
+  {
+    freq: 52339,
+    raw: "BIAS-CUT",
+    word: "BIASCUT",
+  },
+  {
+    freq: 52343,
+    raw: "FELLING",
+  },
+  {
+    freq: 52357,
+    raw: "DELTOID",
+  },
+  {
+    freq: 52358,
+    raw: "SHIFTED",
+  },
+  {
+    freq: 52393,
+    raw: "BUSTARD",
+  },
+  {
+    freq: 52410,
+    raw: "CHANTEY",
+  },
+  {
+    freq: 52411,
+    raw: "JAZZMAN",
+  },
+  {
+    freq: 52414,
+    raw: "NO-SEE-UM",
+    word: "NOSEEUM",
+  },
+  {
+    freq: 52438,
+    raw: "DUOPOLY",
+  },
+  {
+    freq: 52443,
+    raw: "EX-MAYOR",
+    word: "EXMAYOR",
+  },
+  {
+    freq: 52458,
+    raw: "PALSIED",
+  },
+  {
+    freq: 52471,
+    raw: "ANNEXED",
+  },
+  {
+    freq: 52473,
+    raw: "DUKEDOM",
+  },
+  {
+    freq: 52483,
+    raw: "CRULLER",
+  },
+  {
+    freq: 52484,
+    raw: "OIL-WELL",
+    word: "OILWELL",
+  },
+  {
+    freq: 52494,
+    raw: "GLOTTIC",
+  },
+  {
+    freq: 52519,
+    raw: "FLEXURE",
+  },
+  {
+    freq: 52523,
+    raw: "SAURIAN",
+  },
+  {
+    freq: 52548,
+    raw: "NUTTIER",
+  },
+  {
+    freq: 52576,
+    raw: "PREBAKE",
+  },
+  {
+    freq: 52578,
+    raw: "PATTING",
+  },
+  {
+    freq: 52581,
+    raw: "STAUNCH",
+  },
+  {
+    freq: 52589,
+    raw: "MISTIME",
+  },
+  {
+    freq: 52602,
+    raw: "ROLL-TOP",
+    word: "ROLLTOP",
+  },
+  {
+    freq: 52606,
+    raw: "DOUSING",
+  },
+  {
+    freq: 52625,
+    raw: "JACKDAW",
+  },
+  {
+    freq: 52638,
+    raw: "FRAT-BOY",
+    word: "FRATBOY",
+  },
+  {
+    freq: 52661,
+    raw: "BUZZ-CUT",
+    word: "BUZZCUT",
+  },
+  {
+    freq: 52664,
+    raw: "GASPING",
+  },
+  {
+    freq: 52674,
+    raw: "FLEABAG",
+  },
+  {
+    freq: 52690,
+    raw: "BONHEUR",
+  },
+  {
+    freq: 52692,
+    raw: "LOAFING",
+  },
+  {
+    freq: 52695,
+    raw: "SCOOPER",
+  },
+  {
+    freq: 52697,
+    raw: "AMOROSO",
+  },
+  {
+    freq: 52722,
+    raw: "ATTABOY",
+  },
+  {
+    freq: 52745,
+    raw: "BUZZSAW",
+  },
+  {
+    freq: 52754,
+    raw: "HAREDIM",
+  },
+  {
+    freq: 52755,
+    raw: "PIGWEED",
+  },
+  {
+    freq: 52842,
+    raw: "HELI-SKI",
+    word: "HELISKI",
+  },
+  {
+    freq: 52845,
+    raw: "GUESSER",
+  },
+  {
+    freq: 52858,
+    raw: "CINCHED",
+  },
+  {
+    freq: 52865,
+    raw: "TEN-PAGE",
+    word: "TENPAGE",
+  },
+  {
+    freq: 52872,
+    raw: "BASHING",
+  },
+  {
+    freq: 52881,
+    raw: "JUMP-OFF",
+    word: "JUMPOFF",
+  },
+  {
+    freq: 52885,
+    raw: "JANGLED",
+  },
+  {
+    freq: 52889,
+    raw: "VOLUBLY",
+  },
+  {
+    freq: 52902,
+    raw: "HAPLOID",
+  },
+  {
+    freq: 52903,
+    raw: "LINOCUT",
+  },
+  {
+    freq: 52916,
+    raw: "FAIRING",
+  },
+  {
+    freq: 52917,
+    raw: "DIPLOID",
+  },
+  {
+    freq: 52934,
+    raw: "ANT-LIKE",
+    word: "ANTLIKE",
+  },
+  {
+    freq: 52936,
+    raw: "CORDAGE",
+  },
+  {
+    freq: 52953,
+    raw: "LOBULAR",
+  },
+  {
+    freq: 52956,
+    raw: "ROTATED",
+  },
+  {
+    freq: 52957,
+    raw: "WEEDBED",
+  },
+  {
+    freq: 52973,
+    raw: "REDBIRD",
+  },
+  {
+    freq: 52979,
+    raw: "ALERTED",
+  },
+  {
+    freq: 52984,
+    raw: "MEZUZAH",
+  },
+  {
+    freq: 52985,
+    raw: "ASSAYER",
+  },
+  {
+    freq: 52996,
+    raw: "BIONICS",
+  },
+  {
+    freq: 52999,
+    raw: "MOORISH",
+  },
+  {
+    freq: 53000,
+    raw: "LUMBAGO",
+  },
+  {
+    freq: 53025,
+    raw: "UNLACED",
+  },
+  {
+    freq: 53033,
+    raw: "SKEWING",
+  },
+  {
+    freq: 53049,
+    raw: "JOYCEAN",
+  },
+  {
+    freq: 53055,
+    raw: "GRIFFON",
+  },
+  {
+    freq: 53058,
+    raw: "AXIALLY",
+  },
+  {
+    freq: 53059,
+    raw: "LAYETTE",
+  },
+  {
+    freq: 53062,
+    raw: "PACHUCO",
+  },
+  {
+    freq: 53070,
+    raw: "CUTWORM",
+  },
+  {
+    freq: 53093,
+    raw: "ODORANT",
+  },
+  {
+    freq: 53108,
+    raw: "NONBANK",
+  },
+  {
+    freq: 53109,
+    raw: "GUSHING",
+  },
+  {
+    freq: 53143,
+    raw: "STARRED",
+  },
+  {
+    freq: 53159,
+    raw: "TWO-A-DAY",
+    word: "TWOADAY",
+  },
+  {
+    freq: 53171,
+    raw: "TEN-MILE",
+    word: "TENMILE",
+  },
+  {
+    freq: 53187,
+    raw: "MUMMIFY",
+  },
+  {
+    freq: 53195,
+    raw: "BABBITT",
+  },
+  {
+    freq: 53200,
+    raw: "THREE-CD",
+    word: "THREECD",
+  },
+  {
+    freq: 53210,
+    raw: "HALBERD",
+  },
+  {
+    freq: 53216,
+    raw: "DOPPLER",
+  },
+  {
+    freq: 53225,
+    raw: "TOUGHIE",
+  },
+  {
+    freq: 53231,
+    raw: "GUYLINE",
+  },
+  {
+    freq: 53237,
+    raw: "CHUTZPA",
+  },
+  {
+    freq: 53242,
+    raw: "BIOCHIP",
+  },
+  {
+    freq: 53245,
+    raw: "KENOTIC",
+  },
+  {
+    freq: 53260,
+    raw: "MEDEVAC",
+  },
+  {
+    freq: 53265,
+    raw: "PRO-BONO",
+    word: "PROBONO",
+  },
+  {
+    freq: 53279,
+    raw: "NIBBLER",
+  },
+  {
+    freq: 53282,
+    raw: "PHLEGMY",
+  },
+  {
+    freq: 53298,
+    raw: "GREENLY",
+  },
+  {
+    freq: 53304,
+    raw: "REGNANT",
+  },
+  {
+    freq: 53315,
+    raw: "RACE-DAY",
+    word: "RACEDAY",
+  },
+  {
+    freq: 53332,
+    raw: "GEWGAWS",
+  },
+  {
+    freq: 53334,
+    raw: "FUDGING",
+  },
+  {
+    freq: 53338,
+    raw: "EPICURE",
+  },
+  {
+    freq: 53351,
+    raw: "BUY-SELL",
+    word: "BUYSELL",
+  },
+  {
+    freq: 53359,
+    raw: "DREDGER",
+  },
+  {
+    freq: 53360,
+    raw: "OSSEOUS",
+  },
+  {
+    freq: 53362,
+    raw: "ROBUSTA",
+  },
+  {
+    freq: 53366,
+    raw: "WETWARE",
+  },
+  {
+    freq: 53383,
+    raw: "ALL-CITY",
+    word: "ALLCITY",
+  },
+  {
+    freq: 53384,
+    raw: "PHAETON",
+  },
+  {
+    freq: 53416,
+    raw: "FLYLEAF",
+  },
+  {
+    freq: 53422,
+    raw: "NAIVETY",
+  },
+  {
+    freq: 53431,
+    raw: "LULLING",
+  },
+  {
+    freq: 53432,
+    raw: "GAGGING",
+  },
+  {
+    freq: 53435,
+    raw: "SIX-SEAT",
+    word: "SIXSEAT",
+  },
+  {
+    freq: 53437,
+    raw: "STOPPER",
+  },
+  {
+    freq: 53462,
+    raw: "SYSTOLE",
+  },
+  {
+    freq: 53477,
+    raw: "SPLIT-UP",
+    word: "SPLITUP",
+  },
+  {
+    freq: 53483,
+    raw: "DUBBING",
+  },
+  {
+    freq: 53487,
+    raw: "CHIMING",
+  },
+  {
+    freq: 53502,
+    raw: "ETHMOID",
+  },
+  {
+    freq: 53508,
+    raw: "SPLICER",
+  },
+  {
+    freq: 53527,
+    raw: "TERPENE",
+  },
+  {
+    freq: 53550,
+    raw: "TANKINI",
+  },
+  {
+    freq: 53555,
+    raw: "TOPONYM",
+  },
+  {
+    freq: 53566,
+    raw: "CHURNED",
+  },
+  {
+    freq: 53572,
+    raw: "SCROTAL",
+  },
+  {
+    freq: 53580,
+    raw: "THREADY",
+  },
+  {
+    freq: 53584,
+    raw: "JOLLITY",
+  },
+  {
+    freq: 53602,
+    raw: "JERK-OFF",
+    word: "JERKOFF",
+  },
+  {
+    freq: 53607,
+    raw: "ROMULAN",
+  },
+  {
+    freq: 53627,
+    raw: "HAND-FED",
+    word: "HANDFED",
+  },
+  {
+    freq: 53637,
+    raw: "COILING",
+  },
+  {
+    freq: 53640,
+    raw: "NINE-MAN",
+    word: "NINEMAN",
+  },
+  {
+    freq: 53642,
+    raw: "NO-PLACE",
+    word: "NOPLACE",
+  },
+  {
+    freq: 53659,
+    raw: "TONNEAU",
+  },
+  {
+    freq: 53666,
+    raw: "PLEADER",
+  },
+  {
+    freq: 53708,
+    raw: "UNTIMED",
+  },
+  {
+    freq: 53718,
+    raw: "BRINDLE",
+  },
+  {
+    freq: 53721,
+    raw: "QUAVERY",
+  },
+  {
+    freq: 53731,
+    raw: "FEN-PHEN",
+    word: "FENPHEN",
+  },
+  {
+    freq: 53741,
+    raw: "REVENGE",
+  },
+  {
+    freq: 53743,
+    raw: "REELING",
+  },
+  {
+    freq: 53764,
+    raw: "SICHUAN",
+  },
+  {
+    freq: 53766,
+    raw: "YOGHURT",
+  },
+  {
+    freq: 53769,
+    raw: "TRADE-UP",
+    word: "TRADEUP",
+  },
+  {
+    freq: 53775,
+    raw: "ROULADE",
+  },
+  {
+    freq: 53779,
+    raw: "SPILLER",
+  },
+  {
+    freq: 53780,
+    raw: "FULNESS",
+  },
+  {
+    freq: 53787,
+    raw: "LOW-BORN",
+    word: "LOWBORN",
+  },
+  {
+    freq: 53795,
+    raw: "TOUGHLY",
+  },
+  {
+    freq: 53819,
+    raw: "POST-NEW",
+    word: "POSTNEW",
+  },
+  {
+    freq: 53823,
+    raw: "BEATING",
+  },
+  {
+    freq: 53844,
+    raw: "COWSHED",
+  },
+  {
+    freq: 53851,
+    raw: "SESSILE",
+  },
+  {
+    freq: 53859,
+    raw: "YIN-YANG",
+    word: "YINYANG",
+  },
+  {
+    freq: 53877,
+    raw: "NEATNIK",
+  },
+  {
+    freq: 53902,
+    raw: "PASTING",
+  },
+  {
+    freq: 53911,
+    raw: "LOW-BROW",
+    word: "LOWBROW",
+  },
+  {
+    freq: 53927,
+    raw: "GALUMPH",
+  },
+  {
+    freq: 53929,
+    raw: "BAT-LIKE",
+    word: "BATLIKE",
+  },
+  {
+    freq: 53958,
+    raw: "WON-LOSS",
+    word: "WONLOSS",
+  },
+  {
+    freq: 53959,
+    raw: "AQUAVIT",
+  },
+  {
+    freq: 53970,
+    raw: "FOOTSIE",
+  },
+  {
+    freq: 53974,
+    raw: "MAN-SIZE",
+    word: "MANSIZE",
+  },
+  {
+    freq: 53976,
+    raw: "PAISANO",
+  },
+  {
+    freq: 53977,
+    raw: "CATMINT",
+  },
+  {
+    freq: 53979,
+    raw: "RIPCORD",
+  },
+  {
+    freq: 53990,
+    raw: "PROTIST",
+  },
+  {
+    freq: 54000,
+    raw: "SAMSARA",
+  },
+  {
+    freq: 54002,
+    raw: "BI-LEVEL",
+    word: "BILEVEL",
+  },
+  {
+    freq: 54017,
+    raw: "YTTRIUM",
+  },
+  {
+    freq: 54023,
+    raw: "AIRSICK",
+  },
+  {
+    freq: 54027,
+    raw: "FUEL-AIR",
+    word: "FUELAIR",
+  },
+  {
+    freq: 54041,
+    raw: "GRIEVED",
+  },
+  {
+    freq: 54042,
+    raw: "QUEERLY",
+  },
+  {
+    freq: 54045,
+    raw: "KNURLED",
+  },
+  {
+    freq: 54052,
+    raw: "WELLING",
+  },
+  {
+    freq: 54096,
+    raw: "WAXWORK",
+  },
+  {
+    freq: 54103,
+    raw: "FAMILAR",
+  },
+  {
+    freq: 54111,
+    raw: "NEBBISH",
+  },
+  {
+    freq: 54112,
+    raw: "CLANGOR",
+  },
+  {
+    freq: 54114,
+    raw: "TEN-INCH",
+    word: "TENINCH",
+  },
+  {
+    freq: 54132,
+    raw: "BLARING",
+  },
+  {
+    freq: 54135,
+    raw: "AEOLIAN",
+  },
+  {
+    freq: 54150,
+    raw: "SKYHOOK",
+  },
+  {
+    freq: 54159,
+    raw: "BUNDLER",
+  },
+  {
+    freq: 54168,
+    raw: "BLOW-DRY",
+    word: "BLOWDRY",
+  },
+  {
+    freq: 54170,
+    raw: "SUNWARD",
+  },
+  {
+    freq: 54176,
+    raw: "EQUABLY",
+  },
+  {
+    freq: 54194,
+    raw: "QUIETEN",
+  },
+  {
+    freq: 54236,
+    raw: "PENSION",
+  },
+  {
+    freq: 54237,
+    raw: "WASPISH",
+  },
+  {
+    freq: 54266,
+    raw: "SNOOPER",
+  },
+  {
+    freq: 54274,
+    raw: "TOXEMIA",
+  },
+  {
+    freq: 54289,
+    raw: "UMBRIAN",
+  },
+  {
+    freq: 54310,
+    raw: "MYOCYTE",
+  },
+  {
+    freq: 54311,
+    raw: "SLED-DOG",
+    word: "SLEDDOG",
+  },
+  {
+    freq: 54313,
+    raw: "CAPELIN",
+  },
+  {
+    freq: 54317,
+    raw: "DAVIDIC",
+  },
+  {
+    freq: 54318,
+    raw: "MORTISE",
+  },
+  {
+    freq: 54351,
+    raw: "ALT-ROCK",
+    word: "ALTROCK",
+  },
+  {
+    freq: 54364,
+    raw: "CARFARE",
+  },
+  {
+    freq: 54374,
+    raw: "ROOSTED",
+  },
+  {
+    freq: 54376,
+    raw: "FAUVISM",
+  },
+  {
+    freq: 54380,
+    raw: "HEMMING",
+  },
+  {
+    freq: 54423,
+    raw: "CLAVIER",
+  },
+  {
+    freq: 54425,
+    raw: "EQUABLE",
+  },
+  {
+    freq: 54433,
+    raw: "DISPORT",
+  },
+  {
+    freq: 54449,
+    raw: "SCRUNCH",
+  },
+  {
+    freq: 54454,
+    raw: "WHAT-ALL",
+    word: "WHATALL",
+  },
+  {
+    freq: 54472,
+    raw: "SILTING",
+  },
+  {
+    freq: 54485,
+    raw: "PAPILLA",
+  },
+  {
+    freq: 54494,
+    raw: "AMPED-UP",
+    word: "AMPEDUP",
+  },
+  {
+    freq: 54496,
+    raw: "PERKILY",
+  },
+  {
+    freq: 54499,
+    raw: "NON-ZERO",
+    word: "NONZERO",
+  },
+  {
+    freq: 54505,
+    raw: "ABRADED",
+  },
+  {
+    freq: 54509,
+    raw: "EXHUMED",
+  },
+  {
+    freq: 54516,
+    raw: "CORRIDA",
+  },
+  {
+    freq: 54519,
+    raw: "ALEWIFE",
+  },
+  {
+    freq: 54523,
+    raw: "BUNGLER",
+  },
+  {
+    freq: 54547,
+    raw: "UKELELE",
+  },
+  {
+    freq: 54552,
+    raw: "PLANING",
+  },
+  {
+    freq: 54553,
+    raw: "COW-LIKE",
+    word: "COWLIKE",
+  },
+  {
+    freq: 54566,
+    raw: "OVERDUB",
+  },
+  {
+    freq: 54571,
+    raw: "PACKRAT",
+  },
+  {
+    freq: 54594,
+    raw: "HAND-DUG",
+    word: "HANDDUG",
+  },
+  {
+    freq: 54596,
+    raw: "NOIR-ISH",
+    word: "NOIRISH",
+  },
+  {
+    freq: 54623,
+    raw: "VOLTAIC",
+  },
+  {
+    freq: 54626,
+    raw: "VENDING",
+  },
+  {
+    freq: 54627,
+    raw: "DEMESNE",
+  },
+  {
+    freq: 54633,
+    raw: "CHAYOTE",
+  },
+  {
+    freq: 54634,
+    raw: "JAYBIRD",
+  },
+  {
+    freq: 54653,
+    raw: "GAMBOGE",
+  },
+  {
+    freq: 54675,
+    raw: "MATURED",
+  },
+  {
+    freq: 54702,
+    raw: "COLLOID",
+  },
+  {
+    freq: 54728,
+    raw: "MIDLAND",
+  },
+  {
+    freq: 54756,
+    raw: "CRYONIC",
+  },
+  {
+    freq: 54764,
+    raw: "EPIGONE",
+  },
+  {
+    freq: 54770,
+    raw: "SULTANA",
+  },
+  {
+    freq: 54779,
+    raw: "RHODIUM",
+  },
+  {
+    freq: 54813,
+    raw: "SOPHISM",
+  },
+  {
+    freq: 54847,
+    raw: "FUMBLED",
+  },
+  {
+    freq: 54852,
+    raw: "OFT-USED",
+    word: "OFTUSED",
+  },
+  {
+    freq: 54864,
+    raw: "FIVE-SIX",
+    word: "FIVESIX",
+  },
+  {
+    freq: 54873,
+    raw: "EVICTED",
+  },
+  {
+    freq: 54890,
+    raw: "FOXTAIL",
+  },
+  {
+    freq: 54907,
+    raw: "LUNETTE",
+  },
+  {
+    freq: 54912,
+    raw: "SYNCHRO",
+  },
+  {
+    freq: 54932,
+    raw: "POTTAGE",
+  },
+  {
+    freq: 54935,
+    raw: "SHEARER",
+  },
+  {
+    freq: 54939,
+    raw: "ASCITES",
+  },
+  {
+    freq: 54940,
+    raw: "RUSTING",
+  },
+  {
+    freq: 54948,
+    raw: "PAT-DOWN",
+    word: "PATDOWN",
+  },
+  {
+    freq: 54949,
+    raw: "STROMAL",
+  },
+  {
+    freq: 54950,
+    raw: "FLAT-TAX",
+    word: "FLATTAX",
+  },
+  {
+    freq: 54958,
+    raw: "URANIAN",
+  },
+  {
+    freq: 54975,
+    raw: "SABAYON",
+  },
+  {
+    freq: 54995,
+    raw: "SOILING",
+  },
+  {
+    freq: 55006,
+    raw: "TOWHEAD",
+  },
+  {
+    freq: 55008,
+    raw: "BENGALI",
+  },
+  {
+    freq: 55010,
+    raw: "QUIVERY",
+  },
+  {
+    freq: 55041,
+    raw: "TAR-LIKE",
+    word: "TARLIKE",
+  },
+  {
+    freq: 55048,
+    raw: "EPITAXY",
+  },
+  {
+    freq: 55055,
+    raw: "EERIEST",
+  },
+  {
+    freq: 55060,
+    raw: "PG-RATED",
+    word: "PGRATED",
+  },
+  {
+    freq: 55062,
+    raw: "TWO-PAGE",
+    word: "TWOPAGE",
+  },
+  {
+    freq: 55068,
+    raw: "DERIDED",
+  },
+  {
+    freq: 55078,
+    raw: "PUDDLED",
+  },
+  {
+    freq: 55079,
+    raw: "OBVERSE",
+  },
+  {
+    freq: 55088,
+    raw: "TAILFIN",
+  },
+  {
+    freq: 55098,
+    raw: "LIQUIDY",
+  },
+  {
+    freq: 55105,
+    raw: "HOOKING",
+  },
+  {
+    freq: 55106,
+    raw: "PALOOKA",
+  },
+  {
+    freq: 55111,
+    raw: "CRICOID",
+  },
+  {
+    freq: 55112,
+    raw: "ATRESIA",
+  },
+  {
+    freq: 55116,
+    raw: "THYMINE",
+  },
+  {
+    freq: 55118,
+    raw: "NIBLICK",
+  },
+  {
+    freq: 55121,
+    raw: "FASCIAL",
+  },
+  {
+    freq: 55122,
+    raw: "GUANACO",
+  },
+  {
+    freq: 55123,
+    raw: "POWER-ON",
+    word: "POWERON",
+  },
+  {
+    freq: 55154,
+    raw: "WINGNUT",
+  },
+  {
+    freq: 55165,
+    raw: "JUNKMAN",
+  },
+  {
+    freq: 55174,
+    raw: "SHITTER",
+  },
+  {
+    freq: 55195,
+    raw: "CRUZADO",
+  },
+  {
+    freq: 55203,
+    raw: "DEISTIC",
+  },
+  {
+    freq: 55213,
+    raw: "EYESHOT",
+  },
+  {
+    freq: 55214,
+    raw: "COCKING",
+  },
+  {
+    freq: 55229,
+    raw: "CODDLED",
+  },
+  {
+    freq: 55235,
+    raw: "FRAZZLE",
+  },
+  {
+    freq: 55245,
+    raw: "CZARINA",
+  },
+  {
+    freq: 55249,
+    raw: "RAT-A-TAT",
+    word: "RATATAT",
+  },
+  {
+    freq: 55250,
+    raw: "COLOBUS",
+  },
+  {
+    freq: 55255,
+    raw: "GONADAL",
+  },
+  {
+    freq: 55257,
+    raw: "STOCKER",
+  },
+  {
+    freq: 55270,
+    raw: "BULBLET",
+  },
+  {
+    freq: 55271,
+    raw: "KNOWING",
+  },
+  {
+    freq: 55275,
+    raw: "BRECCIA",
+  },
+  {
+    freq: 55309,
+    raw: "MIASMIC",
+  },
+  {
+    freq: 55320,
+    raw: "VALUING",
+  },
+  {
+    freq: 55321,
+    raw: "UNSWEPT",
+  },
+  {
+    freq: 55338,
+    raw: "TAX-RATE",
+    word: "TAXRATE",
+  },
+  {
+    freq: 55354,
+    raw: "SESTINA",
+  },
+  {
+    freq: 55356,
+    raw: "UNPAGED",
+  },
+  {
+    freq: 55365,
+    raw: "PINGING",
+  },
+  {
+    freq: 55403,
+    raw: "MEGA-HIT",
+    word: "MEGAHIT",
+  },
+  {
+    freq: 55417,
+    raw: "MURKILY",
+  },
+  {
+    freq: 55437,
+    raw: "BUGGING",
+  },
+  {
+    freq: 55445,
+    raw: "MUGSHOT",
+  },
+  {
+    freq: 55458,
+    raw: "SIGHING",
+  },
+  {
+    freq: 55469,
+    raw: "CEILIDH",
+  },
+  {
+    freq: 55483,
+    raw: "DAYS-OLD",
+    word: "DAYSOLD",
+  },
+  {
+    freq: 55488,
+    raw: "TILLING",
+  },
+  {
+    freq: 55510,
+    raw: "SOUPCON",
+  },
+  {
+    freq: 55530,
+    raw: "CHLORAL",
+  },
+  {
+    freq: 55531,
+    raw: "GOLIATH",
+  },
+  {
+    freq: 55563,
+    raw: "CENTRUM",
+  },
+  {
+    freq: 55575,
+    raw: "MISTING",
+  },
+  {
+    freq: 55583,
+    raw: "FAWNING",
+  },
+  {
+    freq: 55608,
+    raw: "BABBLER",
+  },
+  {
+    freq: 55610,
+    raw: "CARLESS",
+  },
+  {
+    freq: 55619,
+    raw: "PIT-BULL",
+    word: "PITBULL",
+  },
+  {
+    freq: 55626,
+    raw: "MYALGIA",
+  },
+  {
+    freq: 55661,
+    raw: "FLAT-TOP",
+    word: "FLATTOP",
+  },
+  {
+    freq: 55686,
+    raw: "COMBING",
+  },
+  {
+    freq: 55689,
+    raw: "WHEREON",
+  },
+  {
+    freq: 55690,
+    raw: "LEGIBLY",
+  },
+  {
+    freq: 55693,
+    raw: "ALIQUOT",
+  },
+  {
+    freq: 55702,
+    raw: "LIDLESS",
+  },
+  {
+    freq: 55713,
+    raw: "APHASIC",
+  },
+  {
+    freq: 55737,
+    raw: "REDBONE",
+  },
+  {
+    freq: 55744,
+    raw: "FLYBALL",
+  },
+  {
+    freq: 55749,
+    raw: "GODHOOD",
+  },
+  {
+    freq: 55779,
+    raw: "TERNARY",
+  },
+  {
+    freq: 55785,
+    raw: "NONPOOR",
+  },
+  {
+    freq: 55800,
+    raw: "LAW-LIKE",
+    word: "LAWLIKE",
+  },
+  {
+    freq: 55841,
+    raw: "PUNNING",
+  },
+  {
+    freq: 55862,
+    raw: "POP-EYED",
+    word: "POPEYED",
+  },
+  {
+    freq: 55876,
+    raw: "UPSWEEP",
+  },
+  {
+    freq: 55881,
+    raw: "SEA-BLUE",
+    word: "SEABLUE",
+  },
+  {
+    freq: 55884,
+    raw: "HARD-HAT",
+    word: "HARDHAT",
+  },
+  {
+    freq: 55886,
+    raw: "FOUR-WAY",
+    word: "FOURWAY",
+  },
+  {
+    freq: 55893,
+    raw: "CHAMFER",
+  },
+  {
+    freq: 55904,
+    raw: "IMPALED",
+  },
+  {
+    freq: 55964,
+    raw: "NON-BANK",
+    word: "NONBANK",
+  },
+  {
+    freq: 55967,
+    raw: "DRIFTED",
+  },
+  {
+    freq: 55969,
+    raw: "GULPING",
+  },
+  {
+    freq: 55985,
+    raw: "PINGING",
+  },
+  {
+    freq: 55989,
+    raw: "YARDMAN",
+  },
+  {
+    freq: 55991,
+    raw: "TITLING",
+  },
+  {
+    freq: 56003,
+    raw: "CLUMPED",
+  },
+  {
+    freq: 56008,
+    raw: "LOST-WAX",
+    word: "LOSTWAX",
+  },
+  {
+    freq: 56020,
+    raw: "DEBOUCH",
+  },
+  {
+    freq: 56031,
+    raw: "ZESTFUL",
+  },
+  {
+    freq: 56035,
+    raw: "OLDNESS",
+  },
+  {
+    freq: 56038,
+    raw: "AWAITED",
+  },
+  {
+    freq: 56047,
+    raw: "STIPPLE",
+  },
+  {
+    freq: 56066,
+    raw: "GODSELF",
+  },
+  {
+    freq: 56067,
+    raw: "TWONESS",
+  },
+  {
+    freq: 56077,
+    raw: "CLOTURE",
+  },
+  {
+    freq: 56081,
+    raw: "SAWBUCK",
+  },
+  {
+    freq: 56085,
+    raw: "WASHRAG",
+  },
+  {
+    freq: 56104,
+    raw: "TEMPTER",
+  },
+  {
+    freq: 56116,
+    raw: "MOLTING",
+  },
+  {
+    freq: 56120,
+    raw: "X-SHAPED",
+    word: "XSHAPED",
+  },
+  {
+    freq: 56134,
+    raw: "UNCURED",
+  },
+  {
+    freq: 56136,
+    raw: "ICINESS",
+  },
+  {
+    freq: 56138,
+    raw: "ART-FILM",
+    word: "ARTFILM",
+  },
+  {
+    freq: 56142,
+    raw: "VANLOAD",
+  },
+  {
+    freq: 56146,
+    raw: "SHUNNED",
+  },
+  {
+    freq: 56156,
+    raw: "SIX-STEP",
+    word: "SIXSTEP",
+  },
+  {
+    freq: 56157,
+    raw: "RE-ELECT",
+    word: "REELECT",
+  },
+  {
+    freq: 56161,
+    raw: "RAVELED",
+  },
+  {
+    freq: 56164,
+    raw: "COULOMB",
+  },
+  {
+    freq: 56175,
+    raw: "ZERO-GEE",
+    word: "ZEROGEE",
+  },
+  {
+    freq: 56201,
+    raw: "BIVOUAC",
+  },
+  {
+    freq: 56202,
+    raw: "FETLOCK",
+  },
+  {
+    freq: 56212,
+    raw: "PROBING",
+  },
+  {
+    freq: 56218,
+    raw: "HIGH-ART",
+    word: "HIGHART",
+  },
+  {
+    freq: 56226,
+    raw: "SURFEIT",
+  },
+  {
+    freq: 56242,
+    raw: "MANILLA",
+  },
+  {
+    freq: 56255,
+    raw: "BUSH-ERA",
+    word: "BUSHERA",
+  },
+  {
+    freq: 56256,
+    raw: "RINSING",
+  },
+  {
+    freq: 56279,
+    raw: "GEL-LIKE",
+    word: "GELLIKE",
+  },
+  {
+    freq: 56290,
+    raw: "LITHELY",
+  },
+  {
+    freq: 56301,
+    raw: "BENZINE",
+  },
+  {
+    freq: 56306,
+    raw: "ISCHIUM",
+  },
+  {
+    freq: 56308,
+    raw: "LOCKNUT",
+  },
+  {
+    freq: 56324,
+    raw: "HALF-BAD",
+    word: "HALFBAD",
+  },
+  {
+    freq: 56339,
+    raw: "PURSUED",
+  },
+  {
+    freq: 56340,
+    raw: "MILDEWY",
+  },
+  {
+    freq: 56353,
+    raw: "WAGGISH",
+  },
+  {
+    freq: 56369,
+    raw: "MAHONIA",
+  },
+  {
+    freq: 56388,
+    raw: "WIDGEON",
+  },
+  {
+    freq: 56394,
+    raw: "LINNEAN",
+  },
+  {
+    freq: 56414,
+    raw: "UNLEVEL",
+  },
+  {
+    freq: 56416,
+    raw: "TEPIDLY",
+  },
+  {
+    freq: 56429,
+    raw: "SAPWOOD",
+  },
+  {
+    freq: 56461,
+    raw: "GALLANT",
+  },
+  {
+    freq: 56462,
+    raw: "BILAYER",
+  },
+  {
+    freq: 56468,
+    raw: "BASILAR",
+  },
+  {
+    freq: 56470,
+    raw: "SPHERIC",
+  },
+  {
+    freq: 56472,
+    raw: "TWO-POLE",
+    word: "TWOPOLE",
+  },
+  {
+    freq: 56474,
+    raw: "BOOT-CUT",
+    word: "BOOTCUT",
+  },
+  {
+    freq: 56516,
+    raw: "TANKFUL",
+  },
+  {
+    freq: 56536,
+    raw: "GUT-SHOT",
+    word: "GUTSHOT",
+  },
+  {
+    freq: 56555,
+    raw: "PIG-LIKE",
+    word: "PIGLIKE",
+  },
+  {
+    freq: 56581,
+    raw: "CONCUSS",
+  },
+  {
+    freq: 56585,
+    raw: "PALMFUL",
+  },
+  {
+    freq: 56587,
+    raw: "TOP-FOUR",
+    word: "TOPFOUR",
+  },
+  {
+    freq: 56590,
+    raw: "TAIL-END",
+    word: "TAILEND",
+  },
+  {
+    freq: 56596,
+    raw: "SCEPTIC",
+  },
+  {
+    freq: 56598,
+    raw: "REVOKED",
+  },
+  {
+    freq: 56608,
+    raw: "SPICULE",
+  },
+  {
+    freq: 56623,
+    raw: "BANDEAU",
+  },
+  {
+    freq: 56643,
+    raw: "DOT-CORN",
+    word: "DOTCORN",
+  },
+  {
+    freq: 56650,
+    raw: "LINDANE",
+  },
+  {
+    freq: 56655,
+    raw: "SPUMONI",
+  },
+  {
+    freq: 56659,
+    raw: "PRO-ARAB",
+    word: "PROARAB",
+  },
+  {
+    freq: 56678,
+    raw: "TRYPSIN",
+  },
+  {
+    freq: 56680,
+    raw: "LOCATER",
+  },
+  {
+    freq: 56689,
+    raw: "CANONIC",
+  },
+  {
+    freq: 56700,
+    raw: "RED-BLUE",
+    word: "REDBLUE",
+  },
+  {
+    freq: 56706,
+    raw: "FISTULA",
+  },
+  {
+    freq: 56708,
+    raw: "SKI-TOWN",
+    word: "SKITOWN",
+  },
+  {
+    freq: 56714,
+    raw: "LOW-LOAD",
+    word: "LOWLOAD",
+  },
+  {
+    freq: 56729,
+    raw: "YELLOWY",
+  },
+  {
+    freq: 56736,
+    raw: "DOESKIN",
+  },
+  {
+    freq: 56748,
+    raw: "STROPHE",
+  },
+  {
+    freq: 56750,
+    raw: "APLENTY",
+  },
+  {
+    freq: 56758,
+    raw: "RED-FLAG",
+    word: "REDFLAG",
+  },
+  {
+    freq: 56766,
+    raw: "GRAB-BAG",
+    word: "GRABBAG",
+  },
+  {
+    freq: 56769,
+    raw: "V-NECKED",
+    word: "VNECKED",
+  },
+  {
+    freq: 56775,
+    raw: "SIX-HOUR",
+    word: "SIXHOUR",
+  },
+  {
+    freq: 56779,
+    raw: "PER-UNIT",
+    word: "PERUNIT",
+  },
+  {
+    freq: 56788,
+    raw: "LOW-TIDE",
+    word: "LOWTIDE",
+  },
+  {
+    freq: 56811,
+    raw: "BLOW-OFF",
+    word: "BLOWOFF",
+  },
+  {
+    freq: 56812,
+    raw: "PUNKISH",
+  },
+  {
+    freq: 56818,
+    raw: "PASSKEY",
+  },
+  {
+    freq: 56825,
+    raw: "BAWLING",
+  },
+  {
+    freq: 56840,
+    raw: "MUNCHER",
+  },
+  {
+    freq: 56841,
+    raw: "SOUNDED",
+  },
+  {
+    freq: 56848,
+    raw: "DOLTISH",
+  },
+  {
+    freq: 56874,
+    raw: "TRODDEN",
+  },
+  {
+    freq: 56877,
+    raw: "ERASING",
+  },
+  {
+    freq: 56879,
+    raw: "ONEIRIC",
+  },
+  {
+    freq: 56900,
+    raw: "NAGGING",
+  },
+  {
+    freq: 56922,
+    raw: "RECLAIM",
+  },
+  {
+    freq: 56923,
+    raw: "TAURINE",
+  },
+  {
+    freq: 56924,
+    raw: "PLENARY",
+  },
+  {
+    freq: 56947,
+    raw: "DUSTING",
+  },
+  {
+    freq: 56948,
+    raw: "DURABLY",
+  },
+  {
+    freq: 57012,
+    raw: "SERB-LED",
+    word: "SERBLED",
+  },
+  {
+    freq: 57104,
+    raw: "TESTBED",
+  },
+  {
+    freq: 57106,
+    raw: "IRONMAN",
+  },
+  {
+    freq: 57110,
+    raw: "MOISTLY",
+  },
+  {
+    freq: 57130,
+    raw: "AIR-FUEL",
+    word: "AIRFUEL",
+  },
+  {
+    freq: 57136,
+    raw: "CAR-BOMB",
+    word: "CARBOMB",
+  },
+  {
+    freq: 57156,
+    raw: "SKITTER",
+  },
+  {
+    freq: 57162,
+    raw: "EARLESS",
+  },
+  {
+    freq: 57180,
+    raw: "TALLISH",
+  },
+  {
+    freq: 57181,
+    raw: "CUSHIER",
+  },
+  {
+    freq: 57188,
+    raw: "ART-ROCK",
+    word: "ARTROCK",
+  },
+  {
+    freq: 57191,
+    raw: "TONGUED",
+  },
+  {
+    freq: 57205,
+    raw: "STUN-GUN",
+    word: "STUNGUN",
+  },
+  {
+    freq: 57228,
+    raw: "LENSMAN",
+  },
+  {
+    freq: 57230,
+    raw: "PEEP-TOE",
+    word: "PEEPTOE",
+  },
+  {
+    freq: 57237,
+    raw: "CAPSTAN",
+  },
+  {
+    freq: 57243,
+    raw: "DEADMAN",
+  },
+  {
+    freq: 57254,
+    raw: "BAGGING",
+  },
+  {
+    freq: 57260,
+    raw: "FERMATA",
+  },
+  {
+    freq: 57263,
+    raw: "GLOSSED",
+  },
+  {
+    freq: 57265,
+    raw: "FUELING",
+  },
+  {
+    freq: 57269,
+    raw: "RADIO-TV",
+    word: "RADIOTV",
+  },
+  {
+    freq: 57286,
+    raw: "RAPPING",
+  },
+  {
+    freq: 57296,
+    raw: "YELPING",
+  },
+  {
+    freq: 57320,
+    raw: "ONE-WEEK",
+    word: "ONEWEEK",
+  },
+  {
+    freq: 57337,
+    raw: "TWO-BOOK",
+    word: "TWOBOOK",
+  },
+  {
+    freq: 57349,
+    raw: "RE-ROUTE",
+    word: "REROUTE",
+  },
+  {
+    freq: 57409,
+    raw: "MILLING",
+  },
+  {
+    freq: 57434,
+    raw: "BIG-FIRM",
+    word: "BIGFIRM",
+  },
+  {
+    freq: 57436,
+    raw: "WING-TIP",
+    word: "WINGTIP",
+  },
+  {
+    freq: 57455,
+    raw: "FATHEAD",
+  },
+  {
+    freq: 57461,
+    raw: "CASHBOX",
+  },
+  {
+    freq: 57471,
+    raw: "DIVISOR",
+  },
+  {
+    freq: 57472,
+    raw: "TWO-BACK",
+    word: "TWOBACK",
+  },
+  {
+    freq: 57480,
+    raw: "MALANGA",
+  },
+  {
+    freq: 57485,
+    raw: "WEB-ONLY",
+    word: "WEBONLY",
+  },
+  {
+    freq: 57509,
+    raw: "SHAFTED",
+  },
+  {
+    freq: 57510,
+    raw: "STUBBED",
+  },
+  {
+    freq: 57512,
+    raw: "WHIPPER",
+  },
+  {
+    freq: 57516,
+    raw: "HARPING",
+  },
+  {
+    freq: 57552,
+    raw: "STABBED",
+  },
+  {
+    freq: 57562,
+    raw: "OUTWORN",
+  },
+  {
+    freq: 57583,
+    raw: "UNALIKE",
+  },
+  {
+    freq: 57587,
+    raw: "EX-LOVER",
+    word: "EXLOVER",
+  },
+  {
+    freq: 57595,
+    raw: "EX-MODEL",
+    word: "EXMODEL",
+  },
+  {
+    freq: 57600,
+    raw: "WEASELY",
+  },
+  {
+    freq: 57621,
+    raw: "COQUINA",
+  },
+  {
+    freq: 57622,
+    raw: "REDWARE",
+  },
+  {
+    freq: 57625,
+    raw: "BIRDING",
+  },
+  {
+    freq: 57626,
+    raw: "MEDICAL",
+  },
+  {
+    freq: 57633,
+    raw: "SOURING",
+  },
+  {
+    freq: 57646,
+    raw: "FARMBOY",
+  },
+  {
+    freq: 57683,
+    raw: "PARATHA",
+  },
+  {
+    freq: 57708,
+    raw: "BRONCHI",
+  },
+  {
+    freq: 57724,
+    raw: "PUNK-POP",
+    word: "PUNKPOP",
+  },
+  {
+    freq: 57731,
+    raw: "SCHNOZZ",
+  },
+  {
+    freq: 57740,
+    raw: "SIX-ACRE",
+    word: "SIXACRE",
+  },
+  {
+    freq: 57759,
+    raw: "HOT-WIRE",
+    word: "HOTWIRE",
+  },
+  {
+    freq: 57764,
+    raw: "VULPINE",
+  },
+  {
+    freq: 57776,
+    raw: "BRIMFUL",
+  },
+  {
+    freq: 57783,
+    raw: "WRITE-IN",
+    word: "WRITEIN",
+  },
+  {
+    freq: 57792,
+    raw: "ALL-CASH",
+    word: "ALLCASH",
+  },
+  {
+    freq: 57795,
+    raw: "FELLATE",
+  },
+  {
+    freq: 57802,
+    raw: "BUGGING",
+  },
+  {
+    freq: 57809,
+    raw: "TOPSAIL",
+  },
+  {
+    freq: 57817,
+    raw: "ICEFALL",
+  },
+  {
+    freq: 57843,
+    raw: "AGAROSE",
+  },
+  {
+    freq: 57853,
+    raw: "FOUR-PLY",
+    word: "FOURPLY",
+  },
+  {
+    freq: 57855,
+    raw: "ZEOLITE",
+  },
+  {
+    freq: 57862,
+    raw: "BIG-BUCK",
+    word: "BIGBUCK",
+  },
+  {
+    freq: 57863,
+    raw: "SKYWALK",
+  },
+  {
+    freq: 57864,
+    raw: "LONG-ARM",
+    word: "LONGARM",
+  },
+  {
+    freq: 57867,
+    raw: "JUST-WAR",
+    word: "JUSTWAR",
+  },
+  {
+    freq: 57875,
+    raw: "SLIPWAY",
+  },
+  {
+    freq: 57885,
+    raw: "DOMINUS",
+  },
+  {
+    freq: 57891,
+    raw: "HAFNIUM",
+  },
+  {
+    freq: 57908,
+    raw: "GRYPHON",
+  },
+  {
+    freq: 57937,
+    raw: "TONSURE",
+  },
+  {
+    freq: 57946,
+    raw: "NEGRESS",
+  },
+  {
+    freq: 57975,
+    raw: "MISHEAR",
+  },
+  {
+    freq: 58011,
+    raw: "INSTATE",
+  },
+  {
+    freq: 58020,
+    raw: "FLOCKED",
+  },
+  {
+    freq: 58021,
+    raw: "ORGANDY",
+  },
+  {
+    freq: 58043,
+    raw: "LEVATOR",
+  },
+  {
+    freq: 58050,
+    raw: "DIPSHIT",
+  },
+  {
+    freq: 58054,
+    raw: "FLUENCE",
+  },
+  {
+    freq: 58073,
+    raw: "KETOSIS",
+  },
+  {
+    freq: 58118,
+    raw: "NON-WORK",
+    word: "NONWORK",
+  },
+  {
+    freq: 58120,
+    raw: "UPSTAGE",
+  },
+  {
+    freq: 58123,
+    raw: "FURBALL",
+  },
+  {
+    freq: 58141,
+    raw: "BACKING",
+  },
+  {
+    freq: 58163,
+    raw: "TIEBACK",
+  },
+  {
+    freq: 58167,
+    raw: "SLATHER",
+  },
+  {
+    freq: 58189,
+    raw: "MOTIVIC",
+  },
+  {
+    freq: 58195,
+    raw: "MOTORIC",
+  },
+  {
+    freq: 58207,
+    raw: "CORDIAL",
+  },
+  {
+    freq: 58214,
+    raw: "SNIGGER",
+  },
+  {
+    freq: 58236,
+    raw: "FUSTIAN",
+  },
+  {
+    freq: 58239,
+    raw: "BLOWGUN",
+  },
+  {
+    freq: 58244,
+    raw: "DIPOLAR",
+  },
+  {
+    freq: 58248,
+    raw: "BUGLING",
+  },
+  {
+    freq: 58253,
+    raw: "QUEUING",
+  },
+  {
+    freq: 58260,
+    raw: "KNOBBIE",
+  },
+  {
+    freq: 58266,
+    raw: "DOGFOOD",
+  },
+  {
+    freq: 58274,
+    raw: "HIP-HIGH",
+    word: "HIPHIGH",
+  },
+  {
+    freq: 58291,
+    raw: "AMHARIC",
+  },
+  {
+    freq: 58296,
+    raw: "DOG-FOOD",
+    word: "DOGFOOD",
+  },
+  {
+    freq: 58297,
+    raw: "LEG-HOLD",
+    word: "LEGHOLD",
+  },
+  {
+    freq: 58303,
+    raw: "GET-RICH",
+    word: "GETRICH",
+  },
+  {
+    freq: 58328,
+    raw: "LEGATEE",
+  },
+  {
+    freq: 58329,
+    raw: "SPADING",
+  },
+  {
+    freq: 58366,
+    raw: "TRAMMEL",
+  },
+  {
+    freq: 58372,
+    raw: "CAMBIUM",
+  },
+  {
+    freq: 58375,
+    raw: "PERFUSE",
+  },
+  {
+    freq: 58376,
+    raw: "RAZORED",
+  },
+  {
+    freq: 58378,
+    raw: "TWO-ITEM",
+    word: "TWOITEM",
+  },
+  {
+    freq: 58392,
+    raw: "RIVETER",
+  },
+  {
+    freq: 58419,
+    raw: "GAMEDAY",
+  },
+  {
+    freq: 58421,
+    raw: "HOT-GLUE",
+    word: "HOTGLUE",
+  },
+  {
+    freq: 58423,
+    raw: "FUEHRER",
+  },
+  {
+    freq: 58431,
+    raw: "HASSLED",
+  },
+  {
+    freq: 58468,
+    raw: "DECEASE",
+  },
+  {
+    freq: 58475,
+    raw: "LUMINOL",
+  },
+  {
+    freq: 58481,
+    raw: "DEWEYAN",
+  },
+  {
+    freq: 58494,
+    raw: "LIMEADE",
+  },
+  {
+    freq: 58500,
+    raw: "VERVAIN",
+  },
+  {
+    freq: 58506,
+    raw: "CILIATE",
+  },
+  {
+    freq: 58519,
+    raw: "SCOURED",
+  },
+  {
+    freq: 58550,
+    raw: "ONANISM",
+  },
+  {
+    freq: 58556,
+    raw: "DE-ICING",
+    word: "DEICING",
+  },
+  {
+    freq: 58557,
+    raw: "TINWARE",
+  },
+  {
+    freq: 58560,
+    raw: "CLUBBED",
+  },
+  {
+    freq: 58573,
+    raw: "OTALGIA",
+  },
+  {
+    freq: 58574,
+    raw: "CLASPER",
+  },
+  {
+    freq: 58597,
+    raw: "BLOCK-IN",
+    word: "BLOCKIN",
+  },
+  {
+    freq: 58611,
+    raw: "BIBELOT",
+  },
+  {
+    freq: 58619,
+    raw: "ENTERAL",
+  },
+  {
+    freq: 58620,
+    raw: "SPARKER",
+  },
+  {
+    freq: 58627,
+    raw: "KEY-RING",
+    word: "KEYRING",
+  },
+  {
+    freq: 58642,
+    raw: "ETHERIC",
+  },
+  {
+    freq: 58643,
+    raw: "JUNGIAN",
+  },
+  {
+    freq: 58648,
+    raw: "BOY-BAND",
+    word: "BOYBAND",
+  },
+  {
+    freq: 58652,
+    raw: "WOODBOX",
+  },
+  {
+    freq: 58662,
+    raw: "TAMBOUR",
+  },
+  {
+    freq: 58668,
+    raw: "URAEMIC",
+  },
+  {
+    freq: 58678,
+    raw: "F-SERIES",
+    word: "FSERIES",
+  },
+  {
+    freq: 58679,
+    raw: "ATOMISM",
+  },
+  {
+    freq: 58682,
+    raw: "BIASING",
+  },
+  {
+    freq: 58685,
+    raw: "EQUERRY",
+  },
+  {
+    freq: 58700,
+    raw: "E-FILING",
+    word: "EFILING",
+  },
+  {
+    freq: 58721,
+    raw: "WAR-ROOM",
+    word: "WARROOM",
+  },
+  {
+    freq: 58726,
+    raw: "OAKWOOD",
+  },
+  {
+    freq: 58737,
+    raw: "UNOILED",
+  },
+  {
+    freq: 58761,
+    raw: "DESK-TOP",
+    word: "DESKTOP",
+  },
+  {
+    freq: 58767,
+    raw: "PALFREY",
+  },
+  {
+    freq: 58769,
+    raw: "LYING-IN",
+    word: "LYINGIN",
+  },
+  {
+    freq: 58798,
+    raw: "MINICAR",
+  },
+  {
+    freq: 58807,
+    raw: "FLIP-TOP",
+    word: "FLIPTOP",
+  },
+  {
+    freq: 58820,
+    raw: "CREW-CAB",
+    word: "CREWCAB",
+  },
+  {
+    freq: 58839,
+    raw: "FOWLING",
+  },
+  {
+    freq: 58841,
+    raw: "TRISMUS",
+  },
+  {
+    freq: 58850,
+    raw: "STANDEE",
+  },
+  {
+    freq: 58854,
+    raw: "ACONITE",
+  },
+  {
+    freq: 58862,
+    raw: "HAPTICS",
+  },
+  {
+    freq: 58878,
+    raw: "TANK-TOP",
+    word: "TANKTOP",
+  },
+  {
+    freq: 58887,
+    raw: "ALL-BEEF",
+    word: "ALLBEEF",
+  },
+  {
+    freq: 58903,
+    raw: "TOKAMAK",
+  },
+  {
+    freq: 58911,
+    raw: "DIEBACK",
+  },
+  {
+    freq: 58923,
+    raw: "QUILLED",
+  },
+  {
+    freq: 58924,
+    raw: "GUARANA",
+  },
+  {
+    freq: 58925,
+    raw: "OVIDIAN",
+  },
+  {
+    freq: 58940,
+    raw: "THROW-UP",
+    word: "THROWUP",
+  },
+  {
+    freq: 58941,
+    raw: "CRISPED",
+  },
+  {
+    freq: 58945,
+    raw: "J-SHAPED",
+    word: "JSHAPED",
+  },
+  {
+    freq: 58972,
+    raw: "FIVE-HIT",
+    word: "FIVEHIT",
+  },
+  {
+    freq: 58988,
+    raw: "PENAEID",
+  },
+  {
+    freq: 59013,
+    raw: "CLOGGER",
+  },
+  {
+    freq: 59046,
+    raw: "GRAVLAX",
+  },
+  {
+    freq: 59053,
+    raw: "SACCULE",
+  },
+  {
+    freq: 59054,
+    raw: "NUCLIDE",
+  },
+  {
+    freq: 59057,
+    raw: "ICEPICK",
+  },
+  {
+    freq: 59059,
+    raw: "SUNYATA",
+  },
+  {
+    freq: 59067,
+    raw: "NEW-PLAY",
+    word: "NEWPLAY",
+  },
+  {
+    freq: 59073,
+    raw: "CHAMFER",
+  },
+  {
+    freq: 59107,
+    raw: "AMPULLA",
+  },
+  {
+    freq: 59108,
+    raw: "PRE-SHOT",
+    word: "PRESHOT",
+  },
+  {
+    freq: 59134,
+    raw: "PHASING",
+  },
+  {
+    freq: 59136,
+    raw: "OXIDANT",
+  },
+  {
+    freq: 59150,
+    raw: "X-LINKED",
+    word: "XLINKED",
+  },
+  {
+    freq: 59154,
+    raw: "BIOTYPE",
+  },
+  {
+    freq: 59165,
+    raw: "INFANTA",
+  },
+  {
+    freq: 59169,
+    raw: "HAULAGE",
+  },
+  {
+    freq: 59175,
+    raw: "MOPPING",
+  },
+  {
+    freq: 59192,
+    raw: "RAW-MILK",
+    word: "RAWMILK",
+  },
+  {
+    freq: 59199,
+    raw: "KEROGEN",
+  },
+  {
+    freq: 59219,
+    raw: "ESTRIOL",
+  },
+  {
+    freq: 59226,
+    raw: "PRE-SALE",
+    word: "PRESALE",
+  },
+  {
+    freq: 59237,
+    raw: "SHALLOP",
+  },
+  {
+    freq: 59249,
+    raw: "CUTWORK",
+  },
+  {
+    freq: 59260,
+    raw: "DUELING",
+  },
+  {
+    freq: 59282,
+    raw: "CERUMEN",
+  },
+  {
+    freq: 59293,
+    raw: "ANAEMIC",
+  },
+  {
+    freq: 59299,
+    raw: "INGRAIN",
+  },
+  {
+    freq: 59317,
+    raw: "CORACLE",
+  },
+  {
+    freq: 59318,
+    raw: "SUMPTER",
+  },
+  {
+    freq: 59346,
+    raw: "STEARIC",
+  },
+  {
+    freq: 59363,
+    raw: "SWABIAN",
+  },
+  {
+    freq: 59376,
+    raw: "RELATOR",
+  },
+  {
+    freq: 59391,
+    raw: "CILIARY",
+  },
+  {
+    freq: 59406,
+    raw: "BACKSAW",
+  },
+  {
+    freq: 59420,
+    raw: "CORDOBA",
+  },
+  {
+    freq: 59423,
+    raw: "BEDRAIL",
+  },
+  {
+    freq: 59426,
+    raw: "LOGWOOD",
+  },
+  {
+    freq: 59433,
+    raw: "PEDICLE",
+  },
+  {
+    freq: 59441,
+    raw: "ANTI-ART",
+    word: "ANTIART",
+  },
+  {
+    freq: 59449,
+    raw: "SPINOUS",
+  },
+  {
+    freq: 59452,
+    raw: "DEFOCUS",
+  },
+  {
+    freq: 59463,
+    raw: "SUNBIRD",
+  },
+  {
+    freq: 59482,
+    raw: "DIGICAM",
+  },
+  {
+    freq: 59490,
+    raw: "YIELDER",
+  },
+  {
+    freq: 59500,
+    raw: "CROSIER",
+  },
+  {
+    freq: 59501,
+    raw: "POSTERN",
+  },
+  {
+    freq: 59508,
+    raw: "BAITING",
+  },
+  {
+    freq: 59518,
+    raw: "DISJOIN",
+  },
+  {
+    freq: 59529,
+    raw: "CORNEUM",
+  },
+  {
+    freq: 59535,
+    raw: "EXPLANT",
+  },
+  {
+    freq: 59553,
+    raw: "PINNACE",
+  },
+  {
+    freq: 59570,
+    raw: "SCRYING",
+  },
+  {
+    freq: 59572,
+    raw: "STATIVE",
+  },
+  {
+    freq: 59580,
+    raw: "ADELGID",
+  },
+  {
+    freq: 59592,
+    raw: "BONESET",
+  },
+  {
+    freq: 59595,
+    raw: "SPANKER",
+  },
+  {
+    freq: 59599,
+    raw: "ROUILLE",
+  },
+  {
+    freq: 59606,
+    raw: "ADINKRA",
+  },
+  {
+    freq: 59608,
+    raw: "CARIOCA",
+  },
+  {
+    freq: 59626,
+    raw: "PICTISH",
+  },
+  {
+    freq: 59631,
+    raw: "OFF-TIME",
+    word: "OFFTIME",
+  },
+  {
+    freq: 59635,
+    raw: "BENTHOS",
+  },
+  {
+    freq: 59662,
+    raw: "SPLENIC",
+  },
+  {
+    freq: 59675,
+    raw: "AURICLE",
+  },
+  {
+    freq: 59739,
+    raw: "HISTONE",
+  },
+  {
+    freq: 59743,
+    raw: "EYEWALL",
+  },
+  {
+    freq: 59758,
+    raw: "DO-RIGHT",
+    word: "DORIGHT",
+  },
+  {
+    freq: 59761,
+    raw: "SCOTOMA",
+  },
+  {
+    freq: 59773,
+    raw: "SOLIDUS",
+  },
+  {
+    freq: 59819,
+    raw: "SPINNEY",
+  },
+  {
+    freq: 59832,
+    raw: "BOOKMAN",
+  },
+  {
+    freq: 59844,
+    raw: "STERNAL",
+  },
+  {
+    freq: 59855,
+    raw: "BLEEPER",
+  },
+  {
+    freq: 59857,
+    raw: "URAEMIA",
+  },
+  {
+    freq: 59861,
+    raw: "SYNODIC",
+  },
+  {
+    freq: 59875,
+    raw: "FORMANT",
+  },
+  {
+    freq: 59887,
+    raw: "PICADOR",
+  },
+  {
+    freq: 59894,
+    raw: "PIG-IRON",
+    word: "PIGIRON",
+  },
+  {
+    freq: 59897,
+    raw: "LAB-MADE",
+    word: "LABMADE",
+  },
+  {
+    freq: 59900,
+    raw: "ESTRONE",
+  },
+  {
+    freq: 59901,
+    raw: "AGENTRY",
+  },
+  {
+    freq: 59902,
+    raw: "LAND-SEA",
+    word: "LANDSEA",
+  },
+  {
+    freq: 59908,
+    raw: "BERRIED",
+  },
+  {
+    freq: 59920,
+    raw: "JADEITE",
+  },
+  {
+    freq: 59927,
+    raw: "PROLINE",
+  },
+];
+
 export {
   three,
   four,
@@ -250851,4 +250874,11 @@ export {
   thirteen,
   fourteen,
   fifteen,
+  sixteen,
+  seventeen,
+  eighteen,
+  nineteen,
+  twenty,
+  twentyone,
+  twentytwo,
 };

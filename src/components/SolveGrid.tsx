@@ -11,7 +11,7 @@ import type { CellType } from "../models/Cell.model";
 import styled from "styled-components";
 
 // components
-import SolveCell from "./SolveCell";
+
 import ErrorPage from "./ErrorPage";
 import SolveCellTest from "./SolveCellTest";
 

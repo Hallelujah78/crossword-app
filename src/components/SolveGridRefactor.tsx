@@ -11,7 +11,7 @@ import type { CellType } from "../models/Cell.model";
 import styled from "styled-components";
 
 // components
-import SolveCell from "./SolveCell";
+
 import ErrorPage from "./ErrorPage";
 import SolveCellTest from "./SolveCellTest";
 
@@ -42,11 +42,12 @@ import Loading from "./Loading";
 import PoweredBy from "./PoweredBy";
 
 const SolveGridRefactor: React.FC = () => {
-  const [gridState, setGridState] = useState<CellType[]>(() =>
-    localStorage.getItem("solver")
-      ? getLocalStorage("solver")?.grid
-      : initializeGrid(JSON.parse(JSON.stringify(initialGrid)))
-  );
+  const [gridState, setGridState] = useState<CellType[]>(() => {
+    const gridStateStore = getLocalStorage("solver")?.grid;
+    return gridStateStore
+      ? gridStateStore
+      : initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
+  });
   const [clueList, setClueList] = useState<Clue[]>(() =>
     localStorage.getItem("solver")
       ? getLocalStorage("solver")?.clues

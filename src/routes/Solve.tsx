@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SolveGrid from "../components/SolveGrid";
+
 import SolveGridRefactor from "../components/SolveGridRefactor";
 
 const Solve: React.FC = () => {
