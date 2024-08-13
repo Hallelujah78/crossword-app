@@ -48,7 +48,7 @@ import { FaCircleInfo } from "react-icons/fa6";
 
 const Grid: React.FC = () => {
   const [puzzleName, setPuzzleName] = useState<string>("");
-  const [isModified, setIsModified] = useState<boolean | undefined>(() => {
+  const [isModified, setIsModified] = useState<boolean>(() => {
     const modifiedState = getLocalStorage("editor")?.isModified;
     return modifiedState ? modifiedState : false;
   });

@@ -409,9 +409,8 @@ export const arrayToRegularExp = (answer: string[]) => {
   const regExp = answer.map((char) => {
     if (char === "") {
       return "[A-Z]";
-    } else {
-      return char;
     }
+    return char;
   });
   return new RegExp(regExp.join(""));
 };
@@ -489,11 +488,13 @@ const setClueAnswers = (
     for (const index of letterIndex) {
       const tempAnswer = [...clue.answer];
       tempAnswer[index] = "";
-      cluesToSwap.push(
-        ...clue.intersection!.filter((item) => {
-          return item.myIndex === index;
-        })
-      );
+      if (clue.intersection) {
+        cluesToSwap.push(
+          ...clue.intersection.filter((item) => {
+            return item.myIndex === index;
+          })
+        );
+      }
 
       patterns.push(tempAnswer);
     }
@@ -1209,11 +1210,12 @@ export const resetSelectedCells = (grid: CellType[]) => {
 };
 
 export const setSelection = (grid: CellType[], clue: Clue) => {
-  clue.indices.forEach((index) => {
-    grid.find((gridItem) => {
+  for (const index of clue.indices) {
+    const gridItem = grid.find((gridItem) => {
       return gridItem.id === index;
-    })!.selected = true;
-  });
+    });
+    if (gridItem) gridItem.selected = true;
+  }
 };
 
 export const setClueNumbersOnClues = (

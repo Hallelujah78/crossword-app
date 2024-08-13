@@ -48,18 +48,16 @@ const SolveGridRefactor: React.FC = () => {
       ? gridStateStore
       : initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
   });
-  const [clueList, setClueList] = useState<Clue[]>(() =>
-    localStorage.getItem("solver")
-      ? getLocalStorage("solver")?.clues
-      : initializeApp(gridState)
-  );
+  const [clueList, setClueList] = useState<Clue[]>(() => {
+    const clueState = getLocalStorage("editor")?.clues;
+    return clueState ? clueState : initializeApp(gridState);
+  });
   const [removeEmpty, _setRemoveEmpty] = useState<boolean>(false);
 
-  const [selectedClue, setSelectedClue] = useState<string>(() =>
-    localStorage.getItem("solver")
-      ? getLocalStorage("solver")?.clueSelection
-      : ""
-  );
+  const [selectedClue, setSelectedClue] = useState<string>(() => {
+    const selectedClueStorage = getLocalStorage("solver")?.clueSelection;
+    return selectedClueStorage ? selectedClueStorage : "";
+  });
   const [puzzles, _setPuzzles] = useState<Storage | Puzzles>(() =>
     localStorage.getItem("puzzles")
       ? (getLocalStorage("puzzles") as Puzzles)
@@ -238,15 +236,15 @@ const SolveGridRefactor: React.FC = () => {
 
   const handleKeyDown = (val: string) => {
     if (val === "Backspace") {
-      handleDelete(val);
+      handleDelete();
     }
     if (val && "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(val.toUpperCase())) {
       handleAlpha(val);
     }
-    if (val === "Tab") {
-      handleTabPress(val);
-      return;
-    }
+    // if (val === "Tab") {
+    //   handleTabPress(val);
+    //   return;
+    // }
     if (
       val === "ArrowUp" ||
       val === "ArrowDown" ||
@@ -257,7 +255,7 @@ const SolveGridRefactor: React.FC = () => {
     }
   };
 
-  const handleDelete = (val: string) => {
+  const handleDelete = () => {
     if (!selectedCell) {
       return;
     }
@@ -503,8 +501,8 @@ const SolveGridRefactor: React.FC = () => {
         // response is not okay, and we already know that there's a body and the status is not 500 => we can use the response's body to provide information to the user
         setError(data.error);
       }
-    } catch (error) {
-      setError(error);
+    } catch (error: unknown) {
+      setError(error as Error);
     }
     setIsLoading(false);
   }

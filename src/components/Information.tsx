@@ -4,6 +4,9 @@ import {
   useState,
   type ComponentPropsWithoutRef,
   type MutableRefObject,
+  type FC,
+  type ReactNode,
+  isValidElement,
 } from "react";
 
 // third party
@@ -24,6 +27,7 @@ import type { Steps } from "../models/Steps.model";
 //
 
 // models
+import type { EmptyProps } from "../models/EmptyProps.model";
 
 // assets
 
@@ -47,6 +51,14 @@ const Information: React.FC<InformationProps> = ({
     setCurrStep(0);
     close();
   };
+
+  const renderedContent = steps[currStep].content;
+
+  function isFunctionContent(
+    content: ReactNode | FC | FC<EmptyProps> | null | undefined
+  ): content is FC | FC<EmptyProps> {
+    return typeof content === "function";
+  }
 
   const renderStep = () => {
     const currStepId = steps[currStep].id;
@@ -95,9 +107,11 @@ const Information: React.FC<InformationProps> = ({
       <div className="modal">
         <div className="info-container">
           <h1>{steps[currStep].title}</h1>
-          {typeof steps[currStep].content === "function"
-            ? steps[currStep].content({})
-            : steps[currStep].content}
+          {renderedContent && isFunctionContent(renderedContent)
+            ? renderedContent({})
+            : isValidElement(renderedContent)
+            ? renderedContent
+            : null}
         </div>
         <div className="button-container">
           {steps[currStep].buttons.map((button) => {

@@ -220316,814 +220316,6 @@ const twentytwo: Answer[] = [
 
 const seven: Answer[] = [
   {
-    freq: 66,
-    raw: "BECAUSE",
-  },
-  {
-    freq: 88,
-    raw: "THROUGH",
-  },
-  {
-    freq: 113,
-    raw: "BETWEEN",
-  },
-  {
-    freq: 118,
-    raw: "ANOTHER",
-  },
-  {
-    freq: 129,
-    raw: "STUDENT",
-  },
-  {
-    freq: 138,
-    raw: "COUNTRY",
-  },
-  {
-    freq: 143,
-    raw: "PROBLEM",
-  },
-  {
-    freq: 152,
-    raw: "AGAINST",
-  },
-  {
-    freq: 161,
-    raw: "COMPANY",
-  },
-  {
-    freq: 166,
-    raw: "PROGRAM",
-  },
-  {
-    freq: 183,
-    raw: "BELIEVE",
-  },
-  {
-    freq: 189,
-    raw: "WITHOUT",
-  },
-  {
-    freq: 193,
-    raw: "MILLION",
-  },
-  {
-    freq: 233,
-    raw: "PROVIDE",
-  },
-  {
-    freq: 234,
-    raw: "SERVICE",
-  },
-  {
-    freq: 255,
-    raw: "HOWEVER",
-  },
-  {
-    freq: 263,
-    raw: "INCLUDE",
-  },
-  {
-    freq: 281,
-    raw: "SEVERAL",
-  },
-  {
-    freq: 286,
-    raw: "NOTHING",
-  },
-  {
-    freq: 292,
-    raw: "WHETHER",
-  },
-  {
-    freq: 305,
-    raw: "ALREADY",
-  },
-  {
-    freq: 321,
-    raw: "HISTORY",
-  },
-  {
-    freq: 328,
-    raw: "MORNING",
-  },
-  {
-    freq: 338,
-    raw: "HIMSELF",
-  },
-  {
-    freq: 342,
-    raw: "TEACHER",
-  },
-  {
-    freq: 362,
-    raw: "PROCESS",
-  },
-  {
-    freq: 385,
-    raw: "COLLEGE",
-  },
-  {
-    freq: 389,
-    raw: "SOMEONE",
-  },
-  {
-    freq: 400,
-    raw: "SUGGEST",
-  },
-  {
-    freq: 402,
-    raw: "CONTROL",
-  },
-  {
-    freq: 405,
-    raw: "PERHAPS",
-  },
-  {
-    freq: 416,
-    raw: "REQUIRE",
-  },
-  {
-    freq: 439,
-    raw: "FINALLY",
-  },
-  {
-    freq: 449,
-    raw: "EXPLAIN",
-  },
-  {
-    freq: 453,
-    raw: "DEVELOP",
-  },
-  {
-    freq: 462,
-    raw: "FEDERAL",
-  },
-  {
-    freq: 466,
-    raw: "RECEIVE",
-  },
-  {
-    freq: 476,
-    raw: "SOCIETY",
-  },
-  {
-    freq: 477,
-    raw: "BECAUSE",
-  },
-  {
-    freq: 489,
-    raw: "SPECIAL",
-  },
-  {
-    freq: 493,
-    raw: "SUPPORT",
-  },
-  {
-    freq: 503,
-    raw: "PROJECT",
-  },
-  {
-    freq: 511,
-    raw: "PRODUCE",
-  },
-  {
-    freq: 531,
-    raw: "PICTURE",
-  },
-  {
-    freq: 538,
-    raw: "PRODUCT",
-  },
-  {
-    freq: 541,
-    raw: "PATIENT",
-  },
-  {
-    freq: 546,
-    raw: "CERTAIN",
-  },
-  {
-    freq: 551,
-    raw: "SUPPORT",
-  },
-  {
-    freq: 574,
-    raw: "CENTURY",
-  },
-  {
-    freq: 580,
-    raw: "CULTURE",
-  },
-  {
-    freq: 581,
-    raw: "BILLION",
-  },
-  {
-    freq: 583,
-    raw: "BROTHER",
-  },
-  {
-    freq: 585,
-    raw: "REALIZE",
-  },
-  {
-    freq: 590,
-    raw: "HUNDRED",
-  },
-  {
-    freq: 606,
-    raw: "HUSBAND",
-  },
-  {
-    freq: 614,
-    raw: "ECONOMY",
-  },
-  {
-    freq: 615,
-    raw: "MEDICAL",
-  },
-  {
-    freq: 621,
-    raw: "CURRENT",
-  },
-  {
-    freq: 625,
-    raw: "INVOLVE",
-  },
-  {
-    freq: 626,
-    raw: "DEFENSE",
-  },
-  {
-    freq: 639,
-    raw: "SUBJECT",
-  },
-  {
-    freq: 640,
-    raw: "OFFICER",
-  },
-  {
-    freq: 641,
-    raw: "PRIVATE",
-  },
-  {
-    freq: 648,
-    raw: "QUICKLY",
-  },
-  {
-    freq: 658,
-    raw: "FOREIGN",
-  },
-  {
-    freq: 683,
-    raw: "NATURAL",
-  },
-  {
-    freq: 685,
-    raw: "CONCERN",
-  },
-  {
-    freq: 688,
-    raw: "SIMILAR",
-  },
-  {
-    freq: 692,
-    raw: "USUALLY",
-  },
-  {
-    freq: 699,
-    raw: "ARTICLE",
-  },
-  {
-    freq: 710,
-    raw: "DESPITE",
-  },
-  {
-    freq: 711,
-    raw: "CENTRAL",
-  },
-  {
-    freq: 716,
-    raw: "EXACTLY",
-  },
-  {
-    freq: 717,
-    raw: "PROTECT",
-  },
-  {
-    freq: 723,
-    raw: "SERIOUS",
-  },
-  {
-    freq: 728,
-    raw: "THOUGHT",
-  },
-  {
-    freq: 732,
-    raw: "QUALITY",
-  },
-  {
-    freq: 740,
-    raw: "MEETING",
-  },
-  {
-    freq: 742,
-    raw: "PREPARE",
-  },
-  {
-    freq: 743,
-    raw: "DISEASE",
-  },
-  {
-    freq: 745,
-    raw: "SUCCESS",
-  },
-  {
-    freq: 751,
-    raw: "ABILITY",
-  },
-  {
-    freq: 760,
-    raw: "HERSELF",
-  },
-  {
-    freq: 772,
-    raw: "GENERAL",
-  },
-  {
-    freq: 773,
-    raw: "FEELING",
-  },
-  {
-    freq: 775,
-    raw: "MESSAGE",
-  },
-  {
-    freq: 778,
-    raw: "OUTSIDE",
-  },
-  {
-    freq: 781,
-    raw: "BENEFIT",
-  },
-  {
-    freq: 784,
-    raw: "FORWARD",
-  },
-  {
-    freq: 786,
-    raw: "PRESENT",
-  },
-  {
-    freq: 787,
-    raw: "SECTION",
-  },
-  {
-    freq: 798,
-    raw: "COMPARE",
-  },
-  {
-    freq: 808,
-    raw: "STATION",
-  },
-  {
-    freq: 813,
-    raw: "CLEARLY",
-  },
-  {
-    freq: 814,
-    raw: "DISCUSS",
-  },
-  {
-    freq: 819,
-    raw: "EXAMPLE",
-  },
-  {
-    freq: 826,
-    raw: "VARIOUS",
-  },
-  {
-    freq: 844,
-    raw: "MANAGER",
-  },
-  {
-    freq: 849,
-    raw: "NETWORK",
-  },
-  {
-    freq: 856,
-    raw: "SCIENCE",
-  },
-  {
-    freq: 876,
-    raw: "IMAGINE",
-  },
-  {
-    freq: 877,
-    raw: "TONIGHT",
-  },
-  {
-    freq: 886,
-    raw: "RESPOND",
-  },
-  {
-    freq: 890,
-    raw: "POPULAR",
-  },
-  {
-    freq: 897,
-    raw: "CONTAIN",
-  },
-  {
-    freq: 901,
-    raw: "CONTROL",
-  },
-  {
-    freq: 907,
-    raw: "MEASURE",
-  },
-  {
-    freq: 919,
-    raw: "PERFORM",
-  },
-  {
-    freq: 927,
-    raw: "EVENING",
-  },
-  {
-    freq: 937,
-    raw: "MENTION",
-  },
-  {
-    freq: 947,
-    raw: "TROUBLE",
-  },
-  {
-    freq: 960,
-    raw: "INSTEAD",
-  },
-  {
-    freq: 961,
-    raw: "IMPROVE",
-  },
-  {
-    freq: 969,
-    raw: "SOLDIER",
-  },
-  {
-    freq: 970,
-    raw: "REFLECT",
-  },
-  {
-    freq: 980,
-    raw: "PURPOSE",
-  },
-  {
-    freq: 981,
-    raw: "SURFACE",
-  },
-  {
-    freq: 983,
-    raw: "PATTERN",
-  },
-  {
-    freq: 988,
-    raw: "MACHINE",
-  },
-  {
-    freq: 994,
-    raw: "ADDRESS",
-  },
-  {
-    freq: 998,
-    raw: "REALITY",
-  },
-  {
-    freq: 1014,
-    raw: "PARTNER",
-  },
-  {
-    freq: 1017,
-    raw: "KITCHEN",
-  },
-  {
-    freq: 1027,
-    raw: "CAPITAL",
-  },
-  {
-    freq: 1031,
-    raw: "INSTEAD",
-  },
-  {
-    freq: 1037,
-    raw: "ACCOUNT",
-  },
-  {
-    freq: 1045,
-    raw: "WESTERN",
-  },
-  {
-    freq: 1049,
-    raw: "PREVENT",
-  },
-  {
-    freq: 1050,
-    raw: "CITIZEN",
-  },
-  {
-    freq: 1061,
-    raw: "MISSION",
-  },
-  {
-    freq: 1081,
-    raw: "PUBLISH",
-  },
-  {
-    freq: 1085,
-    raw: "RELEASE",
-  },
-  {
-    freq: 1089,
-    raw: "OPINION",
-  },
-  {
-    freq: 1095,
-    raw: "VERSION",
-  },
-  {
-    freq: 1106,
-    raw: "SPECIES",
-  },
-  {
-    freq: 1113,
-    raw: "FREEDOM",
-  },
-  {
-    freq: 1117,
-    raw: "ACHIEVE",
-  },
-  {
-    freq: 1123,
-    raw: "CONCEPT",
-  },
-  {
-    freq: 1125,
-    raw: "PERFECT",
-  },
-  {
-    freq: 1127,
-    raw: "CONDUCT",
-  },
-  {
-    freq: 1130,
-    raw: "EXAMINE",
-  },
-  {
-    freq: 1136,
-    raw: "VARIETY",
-  },
-  {
-    freq: 1141,
-    raw: "NUCLEAR",
-  },
-  {
-    freq: 1147,
-    raw: "REPLACE",
-  },
-  {
-    freq: 1148,
-    raw: "BRITISH",
-  },
-  {
-    freq: 1155,
-    raw: "FEATURE",
-  },
-  {
-    freq: 1157,
-    raw: "WEEKEND",
-  },
-  {
-    freq: 1167,
-    raw: "AFRICAN",
-  },
-  {
-    freq: 1176,
-    raw: "THROUGH",
-  },
-  {
-    freq: 1178,
-    raw: "ELEMENT",
-  },
-  {
-    freq: 1182,
-    raw: "CHINESE",
-  },
-  {
-    freq: 1192,
-    raw: "ATTEMPT",
-  },
-  {
-    freq: 1211,
-    raw: "VILLAGE",
-  },
-  {
-    freq: 1238,
-    raw: "EXPRESS",
-  },
-  {
-    freq: 1240,
-    raw: "WILLING",
-  },
-  {
-    freq: 1254,
-    raw: "DELIVER",
-  },
-  {
-    freq: 1259,
-    raw: "VEHICLE",
-  },
-  {
-    freq: 1260,
-    raw: "OBSERVE",
-  },
-  {
-    freq: 1265,
-    raw: "AVERAGE",
-  },
-  {
-    freq: 1275,
-    raw: "OPERATE",
-  },
-  {
-    freq: 1284,
-    raw: "COLLECT",
-  },
-  {
-    freq: 1294,
-    raw: "PROMOTE",
-  },
-  {
-    freq: 1296,
-    raw: "PRESENT",
-  },
-  {
-    freq: 1308,
-    raw: "SURVIVE",
-  },
-  {
-    freq: 1326,
-    raw: "FAILURE",
-  },
-  {
-    freq: 1329,
-    raw: "COMMENT",
-  },
-  {
-    freq: 1336,
-    raw: "REGULAR",
-  },
-  {
-    freq: 1343,
-    raw: "MEASURE",
-  },
-  {
-    freq: 1346,
-    raw: "ANYBODY",
-  },
-  {
-    freq: 1367,
-    raw: "QUARTER",
-  },
-  {
-    freq: 1379,
-    raw: "GROWING",
-  },
-  {
-    freq: 1384,
-    raw: "DESTROY",
-  },
-  {
-    freq: 1393,
-    raw: "CONTEXT",
-  },
-  {
-    freq: 1396,
-    raw: "MISTAKE",
-  },
-  {
-    freq: 1400,
-    raw: "CLOTHES",
-  },
-  {
-    freq: 1404,
-    raw: "PROMISE",
-  },
-  {
-    freq: 1413,
-    raw: "AVERAGE",
-  },
-  {
-    freq: 1414,
-    raw: "COMBINE",
-  },
-  {
-    freq: 1429,
-    raw: "VICTORY",
-  },
-  {
-    freq: 1434,
-    raw: "HEALTHY",
-  },
-  {
-    freq: 1443,
-    raw: "FINDING",
-  },
-  {
-    freq: 1447,
-    raw: "CONTACT",
-  },
-  {
-    freq: 1448,
-    raw: "JUSTICE",
-  },
-  {
-    freq: 1470,
-    raw: "EASTERN",
-  },
-  {
-    freq: 1471,
-    raw: "PRIMARY",
-  },
-  {
-    freq: 1490,
-    raw: "PLASTIC",
-  },
-  {
-    freq: 1495,
-    raw: "WRITING",
-  },
-  {
-    freq: 1502,
-    raw: "THEATER",
-  },
-  {
-    freq: 1505,
-    raw: "CHICKEN",
-  },
-  {
-    freq: 1511,
-    raw: "SESSION",
-  },
-  {
-    freq: 1512,
-    raw: "WELCOME",
-  },
-  {
-    freq: 1521,
-    raw: "RESPECT",
-  },
-  {
-    freq: 1529,
-    raw: "RUSSIAN",
-  },
-  {
-    freq: 1547,
-    raw: "STRANGE",
-  },
-  {
-    freq: 1548,
-    raw: "READING",
-  },
-  {
-    freq: 1561,
-    raw: "EXPLORE",
-  },
-  {
-    freq: 1565,
-    raw: "COMPLEX",
-  },
-  {
-    freq: 1567,
-    raw: "ATHLETE",
-  },
-  {
-    freq: 1575,
-    raw: "MEANING",
-  },
-  {
-    freq: 1577,
-    raw: "MARRIED",
-  },
-  {
-    freq: 1580,
-    raw: "PREDICT",
-  },
-  {
-    freq: 1581,
-    raw: "WEATHER",
-  },
-  {
     freq: 1585,
     raw: "SUPREME",
   },
@@ -250722,6 +249914,762 @@ const seven: Answer[] = [
     raw: "SCRYING",
   },
   {
+    freq: 1580,
+    raw: "PREDICT",
+  },
+  {
+    freq: 66,
+    raw: "BECAUSE",
+  },
+  {
+    freq: 88,
+    raw: "THROUGH",
+  },
+  {
+    freq: 113,
+    raw: "BETWEEN",
+  },
+  {
+    freq: 118,
+    raw: "ANOTHER",
+  },
+  {
+    freq: 129,
+    raw: "STUDENT",
+  },
+  {
+    freq: 138,
+    raw: "COUNTRY",
+  },
+  {
+    freq: 143,
+    raw: "PROBLEM",
+  },
+  {
+    freq: 152,
+    raw: "AGAINST",
+  },
+  {
+    freq: 161,
+    raw: "COMPANY",
+  },
+  {
+    freq: 166,
+    raw: "PROGRAM",
+  },
+  {
+    freq: 183,
+    raw: "BELIEVE",
+  },
+  {
+    freq: 189,
+    raw: "WITHOUT",
+  },
+  {
+    freq: 193,
+    raw: "MILLION",
+  },
+  {
+    freq: 233,
+    raw: "PROVIDE",
+  },
+  {
+    freq: 234,
+    raw: "SERVICE",
+  },
+  {
+    freq: 255,
+    raw: "HOWEVER",
+  },
+  {
+    freq: 263,
+    raw: "INCLUDE",
+  },
+  {
+    freq: 281,
+    raw: "SEVERAL",
+  },
+  {
+    freq: 286,
+    raw: "NOTHING",
+  },
+  {
+    freq: 292,
+    raw: "WHETHER",
+  },
+  {
+    freq: 305,
+    raw: "ALREADY",
+  },
+  {
+    freq: 321,
+    raw: "HISTORY",
+  },
+  {
+    freq: 328,
+    raw: "MORNING",
+  },
+  {
+    freq: 338,
+    raw: "HIMSELF",
+  },
+  {
+    freq: 342,
+    raw: "TEACHER",
+  },
+  {
+    freq: 362,
+    raw: "PROCESS",
+  },
+  {
+    freq: 385,
+    raw: "COLLEGE",
+  },
+  {
+    freq: 389,
+    raw: "SOMEONE",
+  },
+  {
+    freq: 400,
+    raw: "SUGGEST",
+  },
+  {
+    freq: 402,
+    raw: "CONTROL",
+  },
+  {
+    freq: 405,
+    raw: "PERHAPS",
+  },
+  {
+    freq: 416,
+    raw: "REQUIRE",
+  },
+  {
+    freq: 439,
+    raw: "FINALLY",
+  },
+  {
+    freq: 449,
+    raw: "EXPLAIN",
+  },
+  {
+    freq: 453,
+    raw: "DEVELOP",
+  },
+  {
+    freq: 462,
+    raw: "FEDERAL",
+  },
+  {
+    freq: 466,
+    raw: "RECEIVE",
+  },
+  {
+    freq: 476,
+    raw: "SOCIETY",
+  },
+  {
+    freq: 477,
+    raw: "BECAUSE",
+  },
+  {
+    freq: 489,
+    raw: "SPECIAL",
+  },
+  {
+    freq: 493,
+    raw: "SUPPORT",
+  },
+  {
+    freq: 503,
+    raw: "PROJECT",
+  },
+  {
+    freq: 511,
+    raw: "PRODUCE",
+  },
+  {
+    freq: 531,
+    raw: "PICTURE",
+  },
+  {
+    freq: 538,
+    raw: "PRODUCT",
+  },
+  {
+    freq: 541,
+    raw: "PATIENT",
+  },
+  {
+    freq: 546,
+    raw: "CERTAIN",
+  },
+  {
+    freq: 551,
+    raw: "SUPPORT",
+  },
+  {
+    freq: 574,
+    raw: "CENTURY",
+  },
+  {
+    freq: 580,
+    raw: "CULTURE",
+  },
+  {
+    freq: 581,
+    raw: "BILLION",
+  },
+  {
+    freq: 583,
+    raw: "BROTHER",
+  },
+  {
+    freq: 585,
+    raw: "REALIZE",
+  },
+  {
+    freq: 590,
+    raw: "HUNDRED",
+  },
+  {
+    freq: 606,
+    raw: "HUSBAND",
+  },
+  {
+    freq: 614,
+    raw: "ECONOMY",
+  },
+  {
+    freq: 615,
+    raw: "MEDICAL",
+  },
+  {
+    freq: 621,
+    raw: "CURRENT",
+  },
+  {
+    freq: 625,
+    raw: "INVOLVE",
+  },
+  {
+    freq: 626,
+    raw: "DEFENSE",
+  },
+  {
+    freq: 639,
+    raw: "SUBJECT",
+  },
+  {
+    freq: 640,
+    raw: "OFFICER",
+  },
+  {
+    freq: 641,
+    raw: "PRIVATE",
+  },
+  {
+    freq: 648,
+    raw: "QUICKLY",
+  },
+  {
+    freq: 658,
+    raw: "FOREIGN",
+  },
+  {
+    freq: 683,
+    raw: "NATURAL",
+  },
+  {
+    freq: 685,
+    raw: "CONCERN",
+  },
+  {
+    freq: 688,
+    raw: "SIMILAR",
+  },
+  {
+    freq: 692,
+    raw: "USUALLY",
+  },
+  {
+    freq: 699,
+    raw: "ARTICLE",
+  },
+  {
+    freq: 710,
+    raw: "DESPITE",
+  },
+  {
+    freq: 711,
+    raw: "CENTRAL",
+  },
+  {
+    freq: 716,
+    raw: "EXACTLY",
+  },
+  {
+    freq: 717,
+    raw: "PROTECT",
+  },
+  {
+    freq: 723,
+    raw: "SERIOUS",
+  },
+  {
+    freq: 728,
+    raw: "THOUGHT",
+  },
+  {
+    freq: 732,
+    raw: "QUALITY",
+  },
+  {
+    freq: 740,
+    raw: "MEETING",
+  },
+  {
+    freq: 742,
+    raw: "PREPARE",
+  },
+  {
+    freq: 743,
+    raw: "DISEASE",
+  },
+  {
+    freq: 745,
+    raw: "SUCCESS",
+  },
+  {
+    freq: 751,
+    raw: "ABILITY",
+  },
+  {
+    freq: 760,
+    raw: "HERSELF",
+  },
+  {
+    freq: 772,
+    raw: "GENERAL",
+  },
+  {
+    freq: 773,
+    raw: "FEELING",
+  },
+  {
+    freq: 775,
+    raw: "MESSAGE",
+  },
+  {
+    freq: 778,
+    raw: "OUTSIDE",
+  },
+  {
+    freq: 781,
+    raw: "BENEFIT",
+  },
+  {
+    freq: 784,
+    raw: "FORWARD",
+  },
+  {
+    freq: 786,
+    raw: "PRESENT",
+  },
+  {
+    freq: 787,
+    raw: "SECTION",
+  },
+  {
+    freq: 798,
+    raw: "COMPARE",
+  },
+  {
+    freq: 808,
+    raw: "STATION",
+  },
+  {
+    freq: 813,
+    raw: "CLEARLY",
+  },
+  {
+    freq: 814,
+    raw: "DISCUSS",
+  },
+  {
+    freq: 819,
+    raw: "EXAMPLE",
+  },
+  {
+    freq: 826,
+    raw: "VARIOUS",
+  },
+  {
+    freq: 844,
+    raw: "MANAGER",
+  },
+  {
+    freq: 849,
+    raw: "NETWORK",
+  },
+  {
+    freq: 856,
+    raw: "SCIENCE",
+  },
+  {
+    freq: 876,
+    raw: "IMAGINE",
+  },
+  {
+    freq: 877,
+    raw: "TONIGHT",
+  },
+  {
+    freq: 886,
+    raw: "RESPOND",
+  },
+  {
+    freq: 890,
+    raw: "POPULAR",
+  },
+  {
+    freq: 897,
+    raw: "CONTAIN",
+  },
+  {
+    freq: 901,
+    raw: "CONTROL",
+  },
+  {
+    freq: 907,
+    raw: "MEASURE",
+  },
+  {
+    freq: 919,
+    raw: "PERFORM",
+  },
+  {
+    freq: 927,
+    raw: "EVENING",
+  },
+  {
+    freq: 937,
+    raw: "MENTION",
+  },
+  {
+    freq: 947,
+    raw: "TROUBLE",
+  },
+  {
+    freq: 960,
+    raw: "INSTEAD",
+  },
+  {
+    freq: 961,
+    raw: "IMPROVE",
+  },
+  {
+    freq: 969,
+    raw: "SOLDIER",
+  },
+  {
+    freq: 970,
+    raw: "REFLECT",
+  },
+  {
+    freq: 980,
+    raw: "PURPOSE",
+  },
+  {
+    freq: 981,
+    raw: "SURFACE",
+  },
+  {
+    freq: 983,
+    raw: "PATTERN",
+  },
+  {
+    freq: 988,
+    raw: "MACHINE",
+  },
+  {
+    freq: 994,
+    raw: "ADDRESS",
+  },
+  {
+    freq: 998,
+    raw: "REALITY",
+  },
+  {
+    freq: 1014,
+    raw: "PARTNER",
+  },
+  {
+    freq: 1017,
+    raw: "KITCHEN",
+  },
+  {
+    freq: 1027,
+    raw: "CAPITAL",
+  },
+  {
+    freq: 1031,
+    raw: "INSTEAD",
+  },
+  {
+    freq: 1037,
+    raw: "ACCOUNT",
+  },
+  {
+    freq: 1045,
+    raw: "WESTERN",
+  },
+  {
+    freq: 1049,
+    raw: "PREVENT",
+  },
+  {
+    freq: 1050,
+    raw: "CITIZEN",
+  },
+  {
+    freq: 1061,
+    raw: "MISSION",
+  },
+  {
+    freq: 1081,
+    raw: "PUBLISH",
+  },
+  {
+    freq: 1085,
+    raw: "RELEASE",
+  },
+  {
+    freq: 1089,
+    raw: "OPINION",
+  },
+  {
+    freq: 1095,
+    raw: "VERSION",
+  },
+  {
+    freq: 1106,
+    raw: "SPECIES",
+  },
+  {
+    freq: 1113,
+    raw: "FREEDOM",
+  },
+  {
+    freq: 1117,
+    raw: "ACHIEVE",
+  },
+  {
+    freq: 1123,
+    raw: "CONCEPT",
+  },
+  {
+    freq: 1125,
+    raw: "PERFECT",
+  },
+  {
+    freq: 1127,
+    raw: "CONDUCT",
+  },
+  {
+    freq: 1130,
+    raw: "EXAMINE",
+  },
+  {
+    freq: 1136,
+    raw: "VARIETY",
+  },
+  {
+    freq: 1141,
+    raw: "NUCLEAR",
+  },
+  {
+    freq: 1147,
+    raw: "REPLACE",
+  },
+  {
+    freq: 1148,
+    raw: "BRITISH",
+  },
+  {
+    freq: 1155,
+    raw: "FEATURE",
+  },
+  {
+    freq: 1157,
+    raw: "WEEKEND",
+  },
+  {
+    freq: 1167,
+    raw: "AFRICAN",
+  },
+  {
+    freq: 1176,
+    raw: "THROUGH",
+  },
+  {
+    freq: 1178,
+    raw: "ELEMENT",
+  },
+  {
+    freq: 1182,
+    raw: "CHINESE",
+  },
+  {
+    freq: 1192,
+    raw: "ATTEMPT",
+  },
+  {
+    freq: 1211,
+    raw: "VILLAGE",
+  },
+  {
+    freq: 1238,
+    raw: "EXPRESS",
+  },
+  {
+    freq: 1240,
+    raw: "WILLING",
+  },
+  {
+    freq: 1254,
+    raw: "DELIVER",
+  },
+  {
+    freq: 1259,
+    raw: "VEHICLE",
+  },
+  {
+    freq: 1260,
+    raw: "OBSERVE",
+  },
+  {
+    freq: 1265,
+    raw: "AVERAGE",
+  },
+  {
+    freq: 1275,
+    raw: "OPERATE",
+  },
+  {
+    freq: 1284,
+    raw: "COLLECT",
+  },
+  {
+    freq: 1294,
+    raw: "PROMOTE",
+  },
+  {
+    freq: 1296,
+    raw: "PRESENT",
+  },
+  {
+    freq: 1308,
+    raw: "SURVIVE",
+  },
+  {
+    freq: 1326,
+    raw: "FAILURE",
+  },
+  {
+    freq: 1329,
+    raw: "COMMENT",
+  },
+  {
+    freq: 1336,
+    raw: "REGULAR",
+  },
+  {
+    freq: 1343,
+    raw: "MEASURE",
+  },
+  {
+    freq: 1346,
+    raw: "ANYBODY",
+  },
+  {
+    freq: 1367,
+    raw: "QUARTER",
+  },
+  {
+    freq: 1379,
+    raw: "GROWING",
+  },
+  {
+    freq: 1384,
+    raw: "DESTROY",
+  },
+  {
+    freq: 1393,
+    raw: "CONTEXT",
+  },
+  {
+    freq: 1396,
+    raw: "MISTAKE",
+  },
+  {
+    freq: 1400,
+    raw: "CLOTHES",
+  },
+  {
+    freq: 1404,
+    raw: "PROMISE",
+  },
+  {
+    freq: 1413,
+    raw: "AVERAGE",
+  },
+  {
+    freq: 1414,
+    raw: "COMBINE",
+  },
+  {
+    freq: 1429,
+    raw: "VICTORY",
+  },
+  {
+    freq: 1434,
+    raw: "HEALTHY",
+  },
+  {
+    freq: 1443,
+    raw: "FINDING",
+  },
+  {
+    freq: 1447,
+    raw: "CONTACT",
+  },
+  {
+    freq: 1448,
+    raw: "JUSTICE",
+  },
+  {
+    freq: 1470,
+    raw: "EASTERN",
+  },
+  {
+    freq: 1471,
+    raw: "PRIMARY",
+  },
+  {
+    freq: 1490,
+    raw: "PLASTIC",
+  },
+  {
+    freq: 1495,
+    raw: "WRITING",
+  },
+  {
+    freq: 1502,
+    raw: "THEATER",
+  },
+  {
     freq: 59572,
     raw: "STATIVE",
   },
@@ -250857,6 +250805,54 @@ const seven: Answer[] = [
   {
     freq: 59927,
     raw: "PROLINE",
+  },
+  {
+    freq: 1505,
+    raw: "CHICKEN",
+  },
+  {
+    freq: 1511,
+    raw: "SESSION",
+  },
+  {
+    freq: 1512,
+    raw: "WELCOME",
+  },
+  {
+    freq: 1521,
+    raw: "RESPECT",
+  },
+  {
+    freq: 1529,
+    raw: "RUSSIAN",
+  },
+  {
+    freq: 1547,
+    raw: "STRANGE",
+  },
+  {
+    freq: 1548,
+    raw: "READING",
+  },
+  {
+    freq: 1561,
+    raw: "EXPLORE",
+  },
+  {
+    freq: 1565,
+    raw: "COMPLEX",
+  },
+  {
+    freq: 1567,
+    raw: "ATHLETE",
+  },
+  {
+    freq: 1575,
+    raw: "MEANING",
+  },
+  {
+    freq: 1577,
+    raw: "MARRIED",
   },
 ];
 
