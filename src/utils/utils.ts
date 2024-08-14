@@ -954,7 +954,7 @@ export const createUniqueLetterList = (
   if (sharedLetter.clueIndex === undefined) {
     throw new Error("error in utils at line 943, index is undefined");
   }
-  const uniqueLetters: { index: number | undefined; letters: string[] } = {
+  const uniqueLetters: { index: number; letters: string[] } = {
     index: sharedLetter.clueIndex,
     letters: [],
   };
@@ -1129,10 +1129,11 @@ export const fillEmptyAnswers = (
       );
       allUniqueLetters.push(uniqueLetters);
     }
-
-    allUniqueLetters.sort((a, b) => {
-      return a.index - b.index;
-    });
+    if (allUniqueLetters.length > 1) {
+      allUniqueLetters.sort((a, b) => {
+        return a?.index - b?.index;
+      });
+    }
     const allCombos = generateCombinations(allUniqueLetters);
     // at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue
 
