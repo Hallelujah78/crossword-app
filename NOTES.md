@@ -2321,3 +2321,14 @@ const updatedGrid = grid.map((gridItem) =>
   - when you move to the previous cell, content is deleted when the cell gains focus
 - desired behaviour: pressing backspace clears the contents of a cell, pressing it again focuses the previous cell, pressing it again clears the content of the cell etc
 - fix arrow keys (easy fix)
+
+
+## 14/8 issues on deploy to Netlify
+- I updated code around initializing state when the app first loads
+  - this update was simply meant to remove errors relating to TypeScript
+  - local state is initialized from local storage if it exists, otherwise it is set from file or initialized to some default values
+  - deployed on Netlify, the app is not loading the 'solver' data from local storage even though it is in local storage
+- further: key strokes for alpha keys (to input letters into the crossword grid) are not behaving appropriately
+  - typing too quickly (at a regular pace) causes previous cells to be updated after the focus has swithced to a new cell
+    - this is new behaviour since we 'fixed' SolveGridRefactor (I think)
+  - this may simply be related to the issue around state
