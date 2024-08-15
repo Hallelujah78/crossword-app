@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useModal = (openState: boolean) => {
+const useModal = (openState: boolean | (() => boolean)) => {
   const [isVisible, setIsVisible] = useState(openState);
 
   const show = () => {

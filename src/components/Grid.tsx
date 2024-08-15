@@ -254,6 +254,7 @@ const Grid: React.FC = () => {
       setClueList,
       removeEmpty
     );
+    setIsModified(JSON.stringify(initialGrid) !== JSON.stringify(gridState));
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -466,7 +467,7 @@ const Grid: React.FC = () => {
         )}
       </div>
 
-      {isVisible && localStorage.getItem("editor") && (
+      {isVisible && !localStorage.getItem("editor") && (
         <Information
           myRefs={stepRefs}
           steps={steps}

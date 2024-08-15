@@ -41,7 +41,7 @@ import type { Puzzle, Puzzles } from "../models/Puzzles.model";
 import Loading from "./Loading";
 import PoweredBy from "./PoweredBy";
 
-const SolveGridRefactor: React.FC = () => {
+const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() => {
     const gridStateStore = getLocalStorage("solver")?.grid;
     return gridStateStore
@@ -241,10 +241,6 @@ const SolveGridRefactor: React.FC = () => {
     if (val && "ABCDEFGHIJKLMNOPQRSTUVWXYZ".includes(val.toUpperCase())) {
       handleAlpha(val);
     }
-    // if (val === "Tab") {
-    //   handleTabPress(val);
-    //   return;
-    // }
     if (
       val === "ArrowUp" ||
       val === "ArrowDown" ||
@@ -536,6 +532,7 @@ const SolveGridRefactor: React.FC = () => {
       }
       return;
     }
+    // removeEmpty is true => we remove empty cells
     populateClues(
       clues,
       AllAnswers,
@@ -791,7 +788,7 @@ const SolveGridRefactor: React.FC = () => {
     </Wrapper>
   );
 };
-export default SolveGridRefactor;
+export default SolveGrid;
 
 // *******************************
 // *******************************
@@ -952,6 +949,9 @@ const Wrapper = styled.div`
     .no-clues {
       width: 100%;
       margin-top: 1rem;
+      div.clue-item {
+        max-width: 90vw;
+      }
     }
     .no-clues {
       display: block;

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-import SolveGridRefactor from "../components/SolveGridRefactor";
+import SolveGrid from "../components/SolveGrid";
 
 const Solve: React.FC = () => {
   return (
     <Wrapper>
-      <SolveGridRefactor />
+      <SolveGrid />
     </Wrapper>
   );
 };

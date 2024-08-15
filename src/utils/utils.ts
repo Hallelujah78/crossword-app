@@ -326,16 +326,15 @@ export const populateClues = (
   });
   // gridState
   if (removeEmpty) {
-    emptyCells.forEach((cell) => {
+    for (const cell of emptyCells) {
       cell.isVoid = true;
-      removeClue(clues, cell.id!);
-
-      updateSurroundingCells(gridState, cell.id!);
-      gridState[gridState.length - 1 - cell.id!].isVoid = true;
-      gridState[gridState.length - 1 - cell.id!].letter = "";
-      removeClue(clues, gridState.length - 1 - cell.id!);
-      updateSurroundingCells(gridState, gridState.length - 1 - cell.id!);
-    });
+      removeClue(clues, cell.id);
+      updateSurroundingCells(gridState, cell.id);
+      gridState[gridState.length - 1 - cell.id].isVoid = true;
+      gridState[gridState.length - 1 - cell.id].letter = "";
+      removeClue(clues, gridState.length - 1 - cell.id);
+      updateSurroundingCells(gridState, gridState.length - 1 - cell.id);
+    }
   } else {
     // removeEmpty is false, and so fillGrid is true
   }
