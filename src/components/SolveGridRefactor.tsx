@@ -49,7 +49,7 @@ const SolveGridRefactor: React.FC = () => {
       : initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
   });
   const [clueList, setClueList] = useState<Clue[]>(() => {
-    const clueState = getLocalStorage("editor")?.clues;
+    const clueState = getLocalStorage("solver")?.clues;
     return clueState ? clueState : initializeApp(gridState);
   });
   const [removeEmpty, _setRemoveEmpty] = useState<boolean>(false);
