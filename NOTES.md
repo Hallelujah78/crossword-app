@@ -2332,3 +2332,35 @@ const updatedGrid = grid.map((gridItem) =>
   - typing too quickly (at a regular pace) causes previous cells to be updated after the focus has swithced to a new cell
     - this is new behaviour since we 'fixed' SolveGridRefactor (I think)
   - this may simply be related to the issue around state
+**RESOLVED**
+
+# 17/8/24 Project is deployed, what now?
+## Item 1
+- there is an issue related to a particular grid shape in the create route:
+
+![alt text](image.png)
+- issues:
+  - even though 'Force Fill Grid' is checked, we end up with empty cells
+  - processing can take some time => requires a spinner
+- this is possibly due to the following (which may not be the case)
+  - I think we have different implementations for generating answers for SolveGrid and Grid
+    - one may attempt to backtrack, while the other simply resets everything and starts again
+
+## Item 2
+- 'AI Generate Clues!' requires a spinner
+- tell user that clues have been generated (since we're not displaying the clues)
+  - should we display the clues?
+
+## Item 3
+- styles for tablet screens
+- styles (eg button height for reset answers and reset grid & answers) is not consistent
+  - reset answers may not require two lines on some monitors but reset grid & answers always requires wrapping, so the buttons are different heights
+
+
+## Item 4
+**RESOLVED**
+- on mobile in SolveGrid, we click on a cell in the grid and the corresponding clue is displayed above the grid meaning the user doesn't have to scroll down constantly to see the clue
+  - when the text of the clue is long, the max width of the container is causing an issue with how the grid is rendered
+- potential cause: there was no width or max-width on the .selected-clue div, which wraps all of the content that appears for clues above the grid.
+- added max-width and width of 100%, added max-height: fit-content in case it needs to wrap to 3 lines for very big clues
+**RESOLVED**

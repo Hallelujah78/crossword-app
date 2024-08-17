@@ -923,10 +923,14 @@ const Wrapper = styled.div`
       }
     }
     .selected-clue {
-      margin: 0.5rem 0 0rem 0;
+      margin: 0.5rem auto 0rem auto;
       grid-template-columns: 10% 75% 15%;
       display: grid;
       min-height: 2rem;
+      max-height: fit-content;
+      width: 100%;
+      max-width: 100%;
+
       div {
         display: grid;
         place-content: center;
