@@ -819,6 +819,7 @@ const Wrapper = styled.div`
         font-size: calc(0.65rem + 0.390625vw) !important;
         padding: 0.35rem !important;
         margin: 0.45rem 0.3rem 0.45rem 0.3rem !important;
+        min-width: 8vw;
       }
     }
   }

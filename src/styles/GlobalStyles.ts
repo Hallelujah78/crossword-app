@@ -26,7 +26,6 @@ user-select: none;
 
 button {
     background-color: var(--primary-400);
-    width: 8vw;
     height: fit-content;
     border: none;
     padding: 0.25rem 1rem;

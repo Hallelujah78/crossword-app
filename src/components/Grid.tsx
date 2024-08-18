@@ -301,7 +301,7 @@ const Grid: React.FC = () => {
     <Wrapper>
       <div className="control-container">
         <button
-          className="step4"
+          className="step4 generate-ans"
           ref={(el) => {
             if (el) stepRefs.current.push(el);
           }}
@@ -387,7 +387,7 @@ const Grid: React.FC = () => {
         </div>
         <br />
         <button
-          className="step7"
+          className="step7 generate-clues"
           ref={(el) => {
             if (el) stepRefs.current.push(el);
           }}
@@ -416,7 +416,7 @@ const Grid: React.FC = () => {
             placeholder="puzzleName"
           />
           <button
-            className="step8"
+            className="step8 save-crossword"
             ref={(el) => {
               if (el) stepRefs.current.push(el);
             }}
@@ -570,6 +570,19 @@ const Wrapper = styled.div`
     }
     label {
       color: white;
+    }
+    .reset {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      button {
+        min-height: 2.5rem;
+        width: fit-content !important;
+      }
+    }
+    .generate-ans,
+    .generate-clues,
+    .save-crossword {
+      padding: 0.6rem !important;
     }
   }
 
