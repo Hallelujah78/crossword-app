@@ -2336,6 +2336,41 @@ const updatedGrid = grid.map((gridItem) =>
 
 # 17/8/24 Project is deployed, what now?
 ## Item 1
+**RESOLVED**
+- there is an issue related to a particular grid shape in the create route:
+
+![alt text](image.png)
+- issues:
+  - even though 'Force Fill Grid' is checked, we end up with empty cells
+  - processing can take some time => requires a spinner
+- this is possibly due to the following (which may not be the case)
+  - I think we have different implementations for generating answers for SolveGrid and Grid
+    - one may attempt to backtrack, while the other simply resets everything and starts again
+**RESOLVED**
+
+## Item 2
+- 'AI Generate Clues!' requires a spinner
+- tell user that clues have been generated (since we're not displaying the clues)
+  - should we display the clues?
+
+## Item 3
+**RESOLVED**
+- styles for tablet screens
+- styles (eg button height for reset answers and reset grid & answers) is not consistent
+  - reset answers may not require two lines on some monitors but reset grid & answers always requires wrapping, so the buttons are different heights
+**RESOLVED**
+
+## Item 4
+**RESOLVED**
+- on mobile in SolveGrid, we click on a cell in the grid and the corresponding clue is displayed above the grid meaning the user doesn't have to scroll down constantly to see the clue
+  - when the text of the clue is long, the max width of the container is causing an issue with how the grid is rendered
+- potential cause: there was no width or max-width on the .selected-clue div, which wraps all of the content that appears for clues above the grid.
+- added max-width and width of 100%, added max-height: fit-content in case it needs to wrap to 3 lines for very big clues
+**RESOLVED**
+
+
+# 19/8/24
+## Item 1 (from 17/8 above)
 - there is an issue related to a particular grid shape in the create route:
 
 ![alt text](image.png)
@@ -2346,21 +2381,189 @@ const updatedGrid = grid.map((gridItem) =>
   - I think we have different implementations for generating answers for SolveGrid and Grid
     - one may attempt to backtrack, while the other simply resets everything and starts again
 
+- we do indeed use two different funcs
+- in Grid, we have the (confusingly named) `generateClues`
+- in SolveGrid we have `generateAnswers`
+
+## generateClues walkthrough
+- **STEP 1**: deep copy the gridState and clueList state
+- **STEP 2**: filter all cells that are not void and DO NOT have value in the `letter` prop and place in `hasEmpty` array
+  - letter here is the letter of the generated answer
+- **STEP 3**: `IF` we want to force fill the grid AND there are still empty cells (hasEmpty.length > 0), do the following:
+  - **STEP 3 A**: `WHILE` there are still empty cells (hasEmpty.length > 0)
+    - reset all the answers: `resetAllAnswers`
+      - this resets everything relating to answers in gridState and clueList while retaining the grid structure
+    - `populateClues`:  iterates over every clue
+
+## Error when we fail to generate an answer for all clues on the grid:
+**RESOLVED**
+```js
+Uncaught TypeError: Cannot read properties of undefined (reading 'clueIndex')
+    at createUniqueLetterList (utils.ts:955:20)
+    at fillEmptyAnswers (utils.ts:1120:29)
+    at populateClues (utils.ts:342:5)
+    at generateClues (Grid.tsx:232:9)
+    at onClick (Grid.tsx:310:26)
+```
+
+- this is the function: 
+
+```js
+export const createUniqueLetterList = (
+  sharedLetter: SharedLetter,
+  matches: Answer[]
+) => {
+  if (sharedLetter.clueIndex === undefined) {
+    throw new Error("error in utils at line 943, index is undefined");
+  }
+  const uniqueLetters: { index: number; letters: string[] } = {
+    index: sharedLetter.clueIndex,
+    letters: [],
+  };
+
+  for (const match of matches) {
+    const word = match.word ? match.word : match.raw;
+    if (
+      !uniqueLetters.letters.includes(word[sharedLetter.rClueIndex as number])
+    ) {
+      uniqueLetters.letters.push(word[sharedLetter.rClueIndex as number]);
+    }
+  }
+  return uniqueLetters;
+};
+```
+
+- SharedLetter interface: 
+```js
+export interface SharedLetter {
+  rClueIndex: number | undefined;
+  clueIndex: number | undefined;
+  letter: string | undefined;
+}
+```
+
+- we have a `getLetter` function that creates a sharedLetter
+
+```js
+export const getLetter = (rClue: Clue, currentClue: Clue) => {
+  const sharedLetter: SharedLetter = {
+    rClueIndex: undefined,
+    letter: undefined,
+    clueIndex: undefined,
+  }
+...
+};
+```
+- rClue - this is the clue that intersects with our current clue
+  - the current clue, as far as I can remember, is the clue we are trying to replace or have replaced, and so we are trying to find a value for rClue that fits with our current clue
+
+- getLetter:
+  - take rClue.intersection and set `intersection` variable to be the item in rClue.intersection where currentClue.id === rClue.intersection.item.id
+
+- a clue.intersection looks like:
+
+```js
+[
+  {
+    "id": "0DOWN",
+    "myIndex": 0,
+    "yourIndex": 0
+  },
+  {
+    "id": "2DOWN",
+    "myIndex": 2,
+    "yourIndex": 0
+  },
+  {
+    "id": "4DOWN",
+    "myIndex": 4,
+    "yourIndex": 0
+  },
+  {
+    "id": "6DOWN",
+    "myIndex": 6,
+    "yourIndex": 0
+  },
+  {
+    "id": "8DOWN",
+    "myIndex": 8,
+    "yourIndex": 0
+  },
+  {
+    "id": "10DOWN",
+    "myIndex": 10,
+    "yourIndex": 0
+  },
+  {
+    "id": "12DOWN",
+    "myIndex": 12,
+    "yourIndex": 0
+  }
+]
+
+```
+
+- intersection for 4 Down: 
+
+```js
+[
+  {
+    "id": "0ACROSS",
+    "myIndex": 0,
+    "yourIndex": 6,
+    "letter": "C"
+  },
+  {
+    "id": "32ACROSS",
+    "myIndex": 2,
+    "yourIndex": 0
+  },
+  {
+    "id": "52ACROSS",
+    "myIndex": 4,
+    "yourIndex": 6,
+    "letter": "X"
+  }
+]
+```
+- also from `getLetter`:
+if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
+
+![alt text](image-1.png)
+
+- our error is actually that `sharedLetter` is undefined because we're trying to read the clueIndex prop of sharedLetter which is undefined
+
+- sharedLetter can be undefined because `getLetter` returns SharedLetter or undefined due to conditionally returning:
+
+```js
+  if (sharedLetter.letter) {
+    return sharedLetter;
+  }
+```
+- I believe the intersection of 4 Down and 9 Across is the cause of this error
+![alt text](image-2.png)
+- getLetter returns undefined instead of a SharedLetter type
+
+- we call `createUniqueLetterList` which expects sharedLetter to be of type SharedLetter, but we have passed in undefined because there is no shared letter where 4 Down instersects with 9 Across
+
+## The Fix:
+- changed the getLetter code to return a sharedLetter if sharedLetter.letter !== undefined
+- ran 3 tests on the old test: `if(sharedletter.letter)`
+  - 1: failed on run 22
+  - 2: failed on run 3
+  - 3: failed on run 24
+  - average: fails approx every 17 runs
+- ran 50 times with the fixed code and it never failed
+**RESOLVED**
+
+## item for 20/8/24
+
 ## Item 2
 - 'AI Generate Clues!' requires a spinner
 - tell user that clues have been generated (since we're not displaying the clues)
   - should we display the clues?
 
-## Item 3
-- styles for tablet screens
-- styles (eg button height for reset answers and reset grid & answers) is not consistent
-  - reset answers may not require two lines on some monitors but reset grid & answers always requires wrapping, so the buttons are different heights
+## New Item:
+- code does not work for American style crosswords, like this style:
 
-
-## Item 4
-**RESOLVED**
-- on mobile in SolveGrid, we click on a cell in the grid and the corresponding clue is displayed above the grid meaning the user doesn't have to scroll down constantly to see the clue
-  - when the text of the clue is long, the max width of the container is causing an issue with how the grid is rendered
-- potential cause: there was no width or max-width on the .selected-clue div, which wraps all of the content that appears for clues above the grid.
-- added max-width and width of 100%, added max-height: fit-content in case it needs to wrap to 3 lines for very big clues
-**RESOLVED**
+![alt text](image-3.png)

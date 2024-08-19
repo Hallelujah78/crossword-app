@@ -14,6 +14,7 @@ import * as AllAnswers from "../state/answers2";
 import type { AllAnswersType } from "../state/answers2";
 
 import { gridSideLength } from "../state/grid";
+import type { Intersection } from "../models/Intersection.model";
 
 export const getCellAbove = (grid: CellType[], index: number) => {
   if (grid[index - Math.sqrt(grid.length)]) {
@@ -593,12 +594,11 @@ const setClueAnswers = (
               answer.word.charAt(sharedLetter.rClueIndex as number) !==
               sharedLetter.letter
             );
-          } else {
-            return (
-              answer.raw.charAt(sharedLetter.rClueIndex as number) !==
-              sharedLetter.letter
-            );
           }
+          return (
+            answer.raw.charAt(sharedLetter.rClueIndex as number) !==
+            sharedLetter.letter
+          );
         });
       }
 
@@ -697,6 +697,7 @@ const setClueAnswers = (
               gridState[rClue.indices[i]].letter = rClue.answer[i];
             }
           }
+        } else {
         }
         // we need an else here if there are no candidate answers
       }
@@ -829,11 +830,12 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
     letter: undefined,
     clueIndex: undefined,
   };
-
-  const intersection = rClue.intersection!.find((item) => {
-    return item.id === currentClue.id;
-  });
-
+  let intersection: Intersection | undefined;
+  if (rClue.intersection) {
+    intersection = rClue.intersection.find((item) => {
+      return item.id === currentClue.id;
+    });
+  }
   if (intersection) {
     sharedLetter.rClueIndex = intersection.myIndex;
     sharedLetter.clueIndex = intersection.yourIndex;
@@ -843,7 +845,7 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
     sharedLetter.letter = rClue.answer[sharedLetter.rClueIndex];
   }
 
-  if (sharedLetter.letter) {
+  if (sharedLetter.letter !== undefined) {
     return sharedLetter;
   }
 };
@@ -950,8 +952,13 @@ export const createUniqueLetterList = (
   sharedLetter: SharedLetter,
   matches: Answer[]
 ) => {
-  if (sharedLetter.clueIndex === undefined) {
-    throw new Error("error in utils at line 943, index is undefined");
+  if (
+    sharedLetter.clueIndex === undefined ||
+    sharedLetter.rClueIndex === undefined
+  ) {
+    throw new Error(
+      "error in createUniqueLetterList: a property of sharedLetter is undefined!"
+    );
   }
   const uniqueLetters: { index: number; letters: string[] } = {
     index: sharedLetter.clueIndex,
@@ -1057,12 +1064,7 @@ export const updateGridState = (clue: Clue, gridState: CellType[]) => {
 };
 
 // retains the grid structure but resets letters and clue answers
-export const resetAllAnswers = (
-  clueList: Clue[],
-  gridState: CellType[]
-  // setGridState: Dispatch<SetStateAction<CellType[]>>,
-  // setClueList: Dispatch<SetStateAction<Clue[]>>
-) => {
+export const resetAllAnswers = (clueList: Clue[], gridState: CellType[]) => {
   const clues = [...clueList];
   const grid = [...gridState];
 
@@ -1088,8 +1090,6 @@ export const resetAllAnswers = (
     }
   }
   return { grid, clues };
-  // setGridState(grid);
-  // setClueList(clues);
 };
 
 export const fillEmptyAnswers = (
