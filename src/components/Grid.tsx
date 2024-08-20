@@ -47,6 +47,7 @@ import useModal from "../hooks/useModal";
 import { FaCircleInfo } from "react-icons/fa6";
 
 const Grid: React.FC = () => {
+  const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
   const [puzzleName, setPuzzleName] = useState<string>("");
   const [isModified, setIsModified] = useState<boolean>(() => {
     const modifiedState = getLocalStorage("editor")?.isModified;
@@ -244,6 +245,7 @@ const Grid: React.FC = () => {
           }
         });
       }
+
       return;
     }
     populateClues(
@@ -307,10 +309,19 @@ const Grid: React.FC = () => {
           }}
           type="button"
           disabled={!isValid || !clueList[0].answer.includes("")}
-          onClick={() => generateClues()}
+          onClick={async () => {
+            setIsGeneratingAnswers(true);
+
+            // Use setTimeout to allow the state update to be processed before generating clues
+            setTimeout(() => {
+              generateClues();
+              setIsGeneratingAnswers(false);
+            }, 40);
+          }}
         >
-          Generate Answers
+          {!isGeneratingAnswers ? "Generate Answers" : "Please wait!"}
         </button>
+
         <br />
         <div className="checkbox-group">
           <label htmlFor="disable">Disable Warnings</label>

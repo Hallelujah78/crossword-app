@@ -2563,7 +2563,16 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - tell user that clues have been generated (since we're not displaying the clues)
   - should we display the clues?
 
-## New Item:
+## New Item 1:
 - code does not work for American style crosswords, like this style:
 
 ![alt text](image-3.png)
+- should inform user of this fact
+
+
+## New Item: 2
+- checking stage, once answers have been generated, check in code that each generated answer is a valid word in our word lists, if not, inform user of this fact
+
+## New Item: 3
+- related to american style crosswords
+- sometimes the generate answers code will run for a very long time and the app will hang, we need to halt execution after, say, 15 seconds and inform the user that it is not possible to generate answers for this grid
