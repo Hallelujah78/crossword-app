@@ -24,6 +24,13 @@ box-sizing: border-box !important;
 user-select: none; 
 }
 
+/* input:disabled::placeholder{
+  
+  color: lightgray;
+  font-weight: 400;
+  } */
+
+
 button {
     background-color: var(--primary-400);
     height: fit-content;

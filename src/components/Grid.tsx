@@ -45,6 +45,7 @@ import {
 // hooks
 import useModal from "../hooks/useModal";
 import { FaCircleInfo } from "react-icons/fa6";
+import LoadingSmall from "./LoadingSmall.tsx";
 
 const Grid: React.FC = () => {
   const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
@@ -260,7 +261,7 @@ const Grid: React.FC = () => {
   };
 
   const handleClick = (e: React.MouseEvent) => {
-    if (!e.currentTarget.id) {
+    if (!e.currentTarget.id || isGeneratingAnswers) {
       return;
     }
 
@@ -303,29 +304,47 @@ const Grid: React.FC = () => {
     <Wrapper>
       <div className="control-container">
         <button
+          style={{
+            backgroundColor: `${
+              isGeneratingAnswers
+                ? "red"
+                : !isValid || !clueList[0].answer.includes("")
+                ? "var(--primary-100) "
+                : "var(--primary-400)"
+            }`,
+          }}
           className="step4 generate-ans"
           ref={(el) => {
             if (el) stepRefs.current.push(el);
           }}
           type="button"
           disabled={!isValid || !clueList[0].answer.includes("")}
-          onClick={async () => {
+          onClick={() => {
             setIsGeneratingAnswers(true);
 
-            // Use setTimeout to allow the state update to be processed before generating clues
             setTimeout(() => {
               generateClues();
               setIsGeneratingAnswers(false);
-            }, 40);
+            }, 300);
           }}
         >
-          {!isGeneratingAnswers ? "Generate Answers" : "Please wait!"}
+          {!isGeneratingAnswers ? (
+            <div>
+              <p className="button-text">Generate Answers</p>
+            </div>
+          ) : (
+            <div>
+              <p className="button-text">Please wait...</p>
+              <LoadingSmall />
+            </div>
+          )}
         </button>
 
         <br />
         <div className="checkbox-group">
           <label htmlFor="disable">Disable Warnings</label>
           <input
+            disabled={isGeneratingAnswers}
             ref={(el) => {
               if (el) stepRefs.current.push(el);
             }}
@@ -344,6 +363,7 @@ const Grid: React.FC = () => {
         <div className="checkbox-group">
           <label htmlFor="fill_grid">Force Fill Grid</label>
           <input
+            disabled={isGeneratingAnswers}
             className="step5"
             ref={(el) => el && stepRefs.current.push(el)}
             checked={fillGrid}
@@ -365,7 +385,9 @@ const Grid: React.FC = () => {
               if (el) stepRefs.current.push(el);
             }}
             disabled={
-              clueList[0].answer.includes("") || clueList[0].clue !== ""
+              clueList[0].answer.includes("") ||
+              clueList[0].clue !== "" ||
+              isGeneratingAnswers
             }
             type="button"
             onClick={() => {
@@ -380,7 +402,7 @@ const Grid: React.FC = () => {
             Reset Answers
           </button>
           <button
-            disabled={!isModified}
+            disabled={!isModified || isGeneratingAnswers}
             type="button"
             onClick={() => {
               const newGrid = initializeGrid(
@@ -416,6 +438,11 @@ const Grid: React.FC = () => {
 
         <form className="save-container">
           <input
+            disabled={
+              clueList[0].answer.includes("") ||
+              clueList[0].clue === "" ||
+              isGeneratingAnswers
+            }
             required
             type="text"
             value={puzzleName}
@@ -588,12 +615,23 @@ const Wrapper = styled.div`
       button {
         min-height: 2.5rem;
         width: fit-content !important;
+        min-width: 95%;
       }
     }
     .generate-ans,
     .generate-clues,
     .save-crossword {
+      max-height: 2.4rem;
+      min-height: 2.4rem;
       padding: 0.6rem !important;
+      div {
+        display: flex inline;
+        p {
+          padding: 0;
+          margin-right: 0.75rem;
+          line-height: 1.4rem;
+        }
+      }
     }
   }
 
@@ -611,6 +649,11 @@ const Wrapper = styled.div`
       width: 9rem;
       text-transform: capitalize;
       border-radius: 3px;
+      &:disabled::placeholder {
+        color: lightgray;
+        text-align: center;
+        font-size: 0.75rem;
+      }
     }
   }
   @media (max-width: 600px) {
@@ -627,6 +670,16 @@ const Wrapper = styled.div`
       label {
       }
       label {
+      }
+      .generate-ans {
+        min-width: 39vw !important;
+        div {
+          display: flex inline;
+          gap: 0.75rem;
+          p {
+            margin-right: 0rem !important;
+          }
+        }
       }
     }
     button {
