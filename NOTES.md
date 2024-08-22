@@ -2576,3 +2576,23 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 ## New Item: 3
 - related to american style crosswords
 - sometimes the generate answers code will run for a very long time and the app will hang, we need to halt execution after, say, 15 seconds and inform the user that it is not possible to generate answers for this grid
+
+
+## 22/8/2024
+- we have two different definitions of the getClues function, one in SolveGrid.tsx and one in Grid.tsx.
+- we want to add loading state to Grid to let the user know we're fetching the clues from OpenAI
+- we need to standardize the function so it works in both components, and then move it to utils
+
+### SolveGrid version of getClues
+- async
+- takes an array: Clue[] as arg
+- calls state setters:
+  - setIsLoading
+  - setError
+  - setClues
+
+- we created a useClueFetch hook and used it in SolveGrid.tsx. This is working-ish.
+## issues that need resolving
+  - it is not resetting the grid
+    - if the grid has a different shape, eg we've selected a puzzle from the dropdown that has a different lattice pattern, our clues are fetched but the old grid remains on the screen
+- I am occasionally getting JSON errors on the responses

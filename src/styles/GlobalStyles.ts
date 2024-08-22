@@ -24,11 +24,7 @@ box-sizing: border-box !important;
 user-select: none; 
 }
 
-/* input:disabled::placeholder{
-  
-  color: lightgray;
-  font-weight: 400;
-  } */
+
 
 
 button {

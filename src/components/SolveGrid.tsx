@@ -40,6 +40,7 @@ import {
 import type { Puzzle, Puzzles } from "../models/Puzzles.model";
 import Loading from "./Loading";
 import PoweredBy from "./PoweredBy";
+import useClueFetch from "../hooks/useClueFetch";
 
 const SolveGrid: React.FC = () => {
   const [gridState, setGridState] = useState<CellType[]>(() => {
@@ -69,10 +70,11 @@ const SolveGrid: React.FC = () => {
       ? getLocalStorage("solver")?.cellSelection
       : undefined
   );
-  const [error, setError] = useState<Error | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState<Error | null>(null);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const cellRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const { isLoading, error, getClues, newClues } = useClueFetch();
 
   useEffect(() => {
     setLocalStorage("solver", {
@@ -446,62 +448,62 @@ const SolveGrid: React.FC = () => {
     }
   };
 
-  async function getClues(clues: Clue[]) {
-    type ReqClue = {
-      id: string;
-      word: string;
-      clue: string;
-    };
-    setIsLoading(true);
-    const requestArray: ReqClue[] = [];
+  // async function getClues(clues: Clue[]) {
+  //   type ReqClue = {
+  //     id: string;
+  //     word: string;
+  //     clue: string;
+  //   };
+  //   setIsLoading(true);
+  //   const requestArray: ReqClue[] = [];
 
-    for (const clue of clues) {
-      const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
-      requestArray.push(reqClue);
-    }
+  //   for (const clue of clues) {
+  //     const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
+  //     requestArray.push(reqClue);
+  //   }
 
-    const apiURL = "/.netlify/functions/getClues";
+  //   const apiURL = "/.netlify/functions/getClues";
 
-    try {
-      const response = await fetch(apiURL, {
-        method: "POST",
-        headers: { accept: "application/json" },
-        body: JSON.stringify(requestArray),
-      });
+  //   try {
+  //     const response = await fetch(apiURL, {
+  //       method: "POST",
+  //       headers: { accept: "application/json" },
+  //       body: JSON.stringify(requestArray),
+  //     });
 
-      if (!response.ok && response.status === 500 && !response.bodyUsed) {
-        throw new Error(
-          `${response.status}: ${response.statusText}. This may indicate that the request took longer than 10 seconds and timed out. This is not uncommon with OpenAI API requests. Please try again!`
-        );
-      }
+  //     if (!response.ok && response.status === 500 && !response.bodyUsed) {
+  //       throw new Error(
+  //         `${response.status}: ${response.statusText}. This may indicate that the request took longer than 10 seconds and timed out. This is not uncommon with OpenAI API requests. Please try again!`
+  //       );
+  //     }
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      if (response.ok) {
-        for (const clue of clues) {
-          const id = clue.id;
-          const clueResp = data.find((clueObj: Clue) => {
-            return clueObj?.id === id;
-          });
-          if (clueResp.clue && clueResp.clue !== "") {
-            clue.clue = clueResp.clue;
-          } else {
-            throw new Error(
-              "The clues received from the AI are not in the correct format. Try generating the clues again!"
-            );
-          }
-        }
+  //     if (response.ok) {
+  //       for (const clue of clues) {
+  //         const id = clue.id;
+  //         const clueResp = data.find((clueObj: Clue) => {
+  //           return clueObj?.id === id;
+  //         });
+  //         if (clueResp.clue && clueResp.clue !== "") {
+  //           clue.clue = clueResp.clue;
+  //         } else {
+  //           throw new Error(
+  //             "The clues received from the AI are not in the correct format. Try generating the clues again!"
+  //           );
+  //         }
+  //       }
 
-        setClueList(clues);
-      } else {
-        // response is not okay, and we already know that there's a body and the status is not 500 => we can use the response's body to provide information to the user
-        setError(data.error);
-      }
-    } catch (error: unknown) {
-      setError(error as Error);
-    }
-    setIsLoading(false);
-  }
+  //       setClueList(clues);
+  //     } else {
+  //       // response is not okay, and we already know that there's a body and the status is not 500 => we can use the response's body to provide information to the user
+  //       setError(data.error);
+  //     }
+  //   } catch (error: unknown) {
+  //     setError(error as Error);
+  //   }
+  //   setIsLoading(false);
+  // }
 
   const generateAnswers = (grid: CellType[], clues: Clue[]) => {
     let hasEmpty = grid.filter((cell) => {
@@ -661,7 +663,7 @@ const SolveGrid: React.FC = () => {
         <br />
         <button
           type="button"
-          onClick={() => {
+          onClick={async () => {
             setSelectedPuzzle("-");
             const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
               clueList,
@@ -670,7 +672,11 @@ const SolveGrid: React.FC = () => {
             generateAnswers(resetGrid, resetClues);
             setSelectedCell(undefined);
             setSelectedClue("");
-            getClues(resetClues);
+            await getClues(resetClues);
+            if (newClues !== undefined) {
+              console.log("clues are not undefined!");
+              setClueList(newClues as Clue[]);
+            }
           }}
         >
           New Puzzle
