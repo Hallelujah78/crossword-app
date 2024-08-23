@@ -36,7 +36,7 @@ import {
   getCluesFromCell,
   getLocalStorage,
   setLocalStorage,
-} from "../utils/utils";
+} from "../utils/utilsRefactor";
 import type { Puzzle, Puzzles } from "../models/Puzzles.model";
 import Loading from "./Loading";
 import PoweredBy from "./PoweredBy";
@@ -85,6 +85,12 @@ const SolveGrid: React.FC = () => {
     });
   }, [gridState, clueList, selectedClue, selectedCell]);
 
+  useEffect(() => {
+    if (newClues?.[0].id) {
+      setClueList(newClues as Clue[]);
+    }
+  }, [newClues]);
+
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const tempPuzzles = JSON.parse(JSON.stringify(puzzles));
     const selectedVal = e.target.value;
@@ -92,9 +98,7 @@ const SolveGrid: React.FC = () => {
       // reset the state
       setSelectedCell(undefined);
       setSelectedClue("");
-
       const resetGrid = initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
-
       const clues = initializeApp(resetGrid);
       setGridState(resetGrid);
       setClueList(clues);
@@ -425,7 +429,9 @@ const SolveGrid: React.FC = () => {
   };
 
   const renderSelectedClue = () => {
-    const currSelectedClue = clueList.find((clue) => clue.id === selectedClue);
+    let currSelectedClue;
+    if (clueList && selectedClue)
+      currSelectedClue = clueList.find((clue) => clue.id === selectedClue);
 
     if (currSelectedClue?.clue) {
       return (
@@ -511,31 +517,29 @@ const SolveGrid: React.FC = () => {
         return cell;
       }
     });
+    let newState = { grid, clues };
     if (!removeEmpty && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
-        const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
-          clues,
-          grid
-        );
-        populateClues(
-          resetClues,
+        newState = resetAllAnswers(clues, grid);
+        newState = populateClues(
+          newState.clues,
           AllAnswers,
-          resetGrid,
+          newState.grid,
           setGridState,
           setClueList,
           removeEmpty
         );
-        const newGrid = [...gridState];
-        hasEmpty = newGrid.filter((cell) => {
+        // const newGrid = [...gridState];
+        hasEmpty = newState.grid.filter((cell) => {
           if (!cell.isVoid && !cell.letter) {
             return cell;
           }
         });
       }
-      return;
+      return newState;
     }
     // removeEmpty is true => we remove empty cells
-    populateClues(
+    newState = populateClues(
       clues,
       AllAnswers,
       grid,
@@ -543,6 +547,7 @@ const SolveGrid: React.FC = () => {
       setClueList,
       removeEmpty
     );
+    return newState;
   };
 
   const handleCellClick = (event: React.MouseEvent) => {
@@ -665,18 +670,16 @@ const SolveGrid: React.FC = () => {
           type="button"
           onClick={async () => {
             setSelectedPuzzle("-");
-            const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
-              clueList,
-              gridState
-            );
-            generateAnswers(resetGrid, resetClues);
             setSelectedCell(undefined);
             setSelectedClue("");
-            await getClues(resetClues);
-            if (newClues !== undefined) {
-              console.log("clues are not undefined!");
-              setClueList(newClues as Clue[]);
-            }
+            const resetGrid = initializeGrid(
+              JSON.parse(JSON.stringify(initialGrid))
+            );
+            let newState = resetAllAnswers(clueList, resetGrid);
+            newState = generateAnswers(newState.grid, newState.clues);
+            await getClues(newState.clues);
+            // setClueList(newState.clues);
+            setGridState(newState.grid);
           }}
         >
           New Puzzle
