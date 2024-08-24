@@ -429,7 +429,7 @@ const SolveGrid: React.FC = () => {
   };
 
   const renderSelectedClue = () => {
-    let currSelectedClue;
+    let currSelectedClue: Clue;
     if (clueList && selectedClue)
       currSelectedClue = clueList.find((clue) => clue.id === selectedClue);
 
@@ -525,8 +525,7 @@ const SolveGrid: React.FC = () => {
           newState.clues,
           AllAnswers,
           newState.grid,
-          setGridState,
-          setClueList,
+
           removeEmpty
         );
         // const newGrid = [...gridState];
@@ -539,14 +538,7 @@ const SolveGrid: React.FC = () => {
       return newState;
     }
     // removeEmpty is true => we remove empty cells
-    newState = populateClues(
-      clues,
-      AllAnswers,
-      grid,
-      setGridState,
-      setClueList,
-      removeEmpty
-    );
+    newState = populateClues(clues, AllAnswers, grid, removeEmpty);
     return newState;
   };
 
@@ -669,17 +661,22 @@ const SolveGrid: React.FC = () => {
         <button
           type="button"
           onClick={async () => {
+            let newState: { clues: Clue[]; grid: CellType[] } = {
+              clues: [],
+              grid: [],
+            };
             setSelectedPuzzle("-");
             setSelectedCell(undefined);
             setSelectedClue("");
-            const resetGrid = initializeGrid(
+            newState.grid = initializeGrid(
               JSON.parse(JSON.stringify(initialGrid))
             );
-            let newState = resetAllAnswers(clueList, resetGrid);
+            // if you're resetting the grid, resetAllAnswers won't work!
+            newState.clues = initializeApp(newState.grid);
+
             newState = generateAnswers(newState.grid, newState.clues);
-            await getClues(newState.clues);
-            // setClueList(newState.clues);
             setGridState(newState.grid);
+            await getClues(newState.clues);
           }}
         >
           New Puzzle

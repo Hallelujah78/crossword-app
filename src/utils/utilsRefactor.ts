@@ -257,8 +257,6 @@ export const populateClues = (
     thirteen: Answer[];
   },
   grid: CellType[],
-  setGridState: Dispatch<SetStateAction<CellType[]>>,
-  setClueList: Dispatch<SetStateAction<Clue[]>>,
   removeEmpty: boolean
 ) => {
   // copy the React state values
