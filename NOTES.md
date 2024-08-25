@@ -2617,5 +2617,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - item to be addressed tomorrow: in the SolveGrid.tsx, the grid is not being reset.
 - if we select FETCHPUZZ (which has a non-standard grid shape) and click "New Puzzle", the answers/clues that are generated and retrieved are not for the 'base' grid shape. The app is otherwise working. If we select '-' from the dropdown, we get the 'base' grid shape. If we then create a new puzzle with 'New Puzzle' the clues and grid are correct.
 **POSSIBLY RESOLVED**: needed to initializeApp (creating the clues from scratch) instead of resetting answers (since the grid is being reset)
+ 
 - fillEmptyAnswers which is called by populateClues expects access to state setters
   - refactor to return state instead
+**RESOLVED**

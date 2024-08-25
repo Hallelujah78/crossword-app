@@ -1,6 +1,3 @@
-// react
-import type { Dispatch, SetStateAction } from "react";
-
 // models
 import type { Storage } from "../models/LocalStorage.model";
 import type { CellType } from "../models/Cell.model";
@@ -260,10 +257,9 @@ export const populateClues = (
   removeEmpty: boolean
 ) => {
   // copy the React state values
-  const clues = [...cluesState];
-  const gridState = [...grid];
+  const newState = { clues: [...cluesState], grid: [...grid] };
 
-  for (const clue of clues) {
+  for (const clue of newState.clues) {
     // let answer: string;
     let possibleAnswers: Answer[] = [];
     const randVal = Math.random();
@@ -271,54 +267,120 @@ export const populateClues = (
     switch (clue.length) {
       case 13:
         possibleAnswers = AllAnswers.thirteen;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 12:
         possibleAnswers = AllAnswers.twelve;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 11:
         possibleAnswers = AllAnswers.eleven;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 10:
         possibleAnswers = AllAnswers.ten;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 9:
         possibleAnswers = AllAnswers.nine;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 8:
         possibleAnswers = AllAnswers.eight;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 7:
         possibleAnswers = AllAnswers.seven;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 6:
         possibleAnswers = AllAnswers.six;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 5:
         possibleAnswers = AllAnswers.five;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 4:
         possibleAnswers = AllAnswers.four;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       case 3:
         possibleAnswers = AllAnswers.three;
-        setClueAnswers(clues, clue, possibleAnswers, randVal, gridState);
+        setClueAnswers(
+          newState.clues,
+          clue,
+          possibleAnswers,
+          randVal,
+          newState.grid
+        );
         break;
       default:
         break;
     }
   }
 
-  const emptyCells = gridState.filter((cell) => {
+  const emptyCells = newState.grid.filter((cell) => {
     if (cell.isVoid !== true) {
       return cell.letter === undefined || cell.letter === "";
     }
@@ -327,25 +389,31 @@ export const populateClues = (
   if (removeEmpty) {
     for (const cell of emptyCells) {
       cell.isVoid = true;
-      removeClue(clues, cell.id);
-      updateSurroundingCells(gridState, cell.id);
-      gridState[gridState.length - 1 - cell.id].isVoid = true;
-      gridState[gridState.length - 1 - cell.id].letter = "";
-      removeClue(clues, gridState.length - 1 - cell.id);
-      updateSurroundingCells(gridState, gridState.length - 1 - cell.id);
+      removeClue(newState.clues, cell.id);
+      updateSurroundingCells(newState.grid, cell.id);
+      newState.grid[newState.grid.length - 1 - cell.id].isVoid = true;
+      newState.grid[newState.grid.length - 1 - cell.id].letter = "";
+      removeClue(newState.clues, newState.grid.length - 1 - cell.id);
+      updateSurroundingCells(newState.grid, newState.grid.length - 1 - cell.id);
     }
   } else {
     // removeEmpty is false, and so fillGrid is true
   }
   if (emptyCells) {
-    fillEmptyAnswers(clues, gridState, setGridState, setClueList);
+    const updatedState = fillEmptyAnswers(newState.clues, newState.grid);
+    if (updatedState?.clues) {
+      newState.clues = updatedState.clues;
+    }
+    if (updatedState?.grid) {
+      newState.grid = updatedState.grid;
+    }
   }
-  setClueNumbersOnClues(clues, gridState);
-  setClueNumbers(gridState);
+  setClueNumbersOnClues(newState.clues, newState.grid);
+  setClueNumbers(newState.grid);
   // return clueList and gridState
   // setClueList(clues);
   // setGridState(gridState);
-  return { clues, grid: gridState };
+  return newState;
 };
 
 export const sortCluesDescendingLength = (clues: Clue[]) => {
@@ -1092,12 +1160,7 @@ export const resetAllAnswers = (clueList: Clue[], gridState: CellType[]) => {
   return { grid, clues };
 };
 
-export const fillEmptyAnswers = (
-  clueList: Clue[],
-  gridState: CellType[],
-  setGridState: Dispatch<SetStateAction<CellType[]>>,
-  setClueList: Dispatch<SetStateAction<Clue[]>>
-) => {
+export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
   const clueListCopy = [...clueList];
   const gridStateCopy = [...gridState];
   const incompletes = getIncompleteAnswers(clueListCopy);
@@ -1139,7 +1202,7 @@ export const fillEmptyAnswers = (
     // create the patterns
     const patterns: RegExp[] = [];
     for (const combo of allCombos) {
-      let patternHolder = new Array(incomplete.answer.length).fill("");
+      const patternHolder = new Array(incomplete.answer.length).fill("");
 
       const indices = Array.from(
         allUniqueLetters,
@@ -1191,8 +1254,9 @@ export const fillEmptyAnswers = (
           }
         }
         // update the clueList React state
-        setClueList(clueListCopy);
-        setGridState(gridStateCopy);
+        // setClueList(clueListCopy);
+        // setGridState(gridStateCopy);
+        return { clues: clueListCopy, grid: gridStateCopy };
         // update the grid state
       } else {
       }

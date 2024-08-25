@@ -429,7 +429,7 @@ const SolveGrid: React.FC = () => {
   };
 
   const renderSelectedClue = () => {
-    let currSelectedClue: Clue;
+    let currSelectedClue: Clue | undefined;
     if (clueList && selectedClue)
       currSelectedClue = clueList.find((clue) => clue.id === selectedClue);
 
