@@ -2621,3 +2621,106 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - fillEmptyAnswers which is called by populateClues expects access to state setters
   - refactor to return state instead
 **RESOLVED**
+
+## 26/8/24
+- whack-a-mole issue of the day:
+  - when 'force fill grid' is false, when we generate answers we are occasionally ending up with an invalid grid
+
+![alt text](image-4.png)
+
+- add a loading spinner to "AI Generate Clues"
+
+
+### force fill grid issue
+- looking at the 6th item in the Grid:
+
+```js
+{
+    "isVoid": false,
+    "id": 6,
+    "top": false,
+    "right": false,
+    "bottom": false,
+    "left": false,
+    "clueNumber": "4",
+    "isValid": true,
+    "selected": false,
+    "answer": "",
+    "letter": "D",
+    "backgroundColor": ""
+}
+```
+
+- there are no console errors
+- there is no clue with a clueNumber prop of 4
+- the clue with the clueNumber value of 16 which should relate to 16 across, holds the answer for 15 across which has length 4 and the answer AWAY
+- 18 down has the correct clueNumber
+
+- there's 18 clues in clueList and 18 clues rendered on the grid
+
+
+- what is happening?
+  - we are editing the grid to this shape:
+
+![alt text](image-5.png)
+
+- through non-exhaustive manual generation, editing the grid in other ways doesn't seem to create this issue
+
+- we then click 'Generate Answers' with 'Force Fill Grid' unchecked
+
+- looking at consecutive grids, it doesn't seem to be an issue where the grid is not being reset fully
+![alt text](image-16.png)
+![alt text](image-17.png)
+
+- the E at grid[162] could be a hold over from the previous state
+
+- looking at 2 more, we see that it is not previous state being carried forward
+![alt text](image-18.png)
+![alt text](image-19.png)
+
+- clicking the 'Generate Answers' button calls `generateClues()` 
+- in generateClues:
+  - we get all the cells that are not void and do not have a letter prop set to a value and store them in `hasEmpty`
+  - `if (fillGrid && hasEmpty.length > 0)`
+    - we can ignore this since the issue is when fillGrid is false or removeEmpty is true
+
+- the branch that removes empty cells simply calls populateClues
+- populateClues
+  - this has an if(removeEmpty)
+- it appears we can also generate invalid grids
+
+![alt text](image-6.png)
+
+- there is specific code responsible for removing empty cells as follows:
+
+
+- when the grid is in a particular config prior to removing the empty cells, removing the empty cells will lead to our issue. This is the config:
+![alt text](image-7.png)
+
+- all the blanks on the bottom row need to be removed
+- this will cause the corresponding cells on the top row to be removed
+  - the clue for 21 across needs to be removed from clues
+  - the clue for 1 across needs to be removed from clues
+  - 4 down will remain but the O of 4 down will remain as an island
+  - similarly, the G of 15 Down is left as an island in this instance
+- other situations where the grid is put into an invalid state will also need to be addressed
+
+## To Do 26/08/2024
+
+- fix issue related to invalid grid after removing empty cells, see this code in populateClues in utils.ts. Remember, populateClues has been refactored in utilsRefactor.ts, so you will have to merge these functions at the end!
+
+```js
+ if (removeEmpty) {
+    for (const cell of emptyCells) {
+      cell.isVoid = true;
+      removeClue(clues, cell.id);
+      updateSurroundingCells(gridState, cell.id);
+      gridState[gridState.length - 1 - cell.id].isVoid = true;
+      gridState[gridState.length - 1 - cell.id].letter = "";
+      removeClue(clues, gridState.length - 1 - cell.id);
+      updateSurroundingCells(gridState, gridState.length - 1 - cell.id);
+    }
+    // fix issues here
+    console.log(validateGrid(clues, gridState));
+ }
+```

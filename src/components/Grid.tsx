@@ -18,7 +18,7 @@ import Information from "./Information";
 // data/state
 import { initialGrid } from "../state/grid";
 import * as AllAnswers from "../state/answers2";
-import backgroundColors from "../state/backgroundColors";
+
 import steps from "../state/walkthroughSteps";
 import invalidGridSteps from "../state/invalidGridSteps.ts";
 
@@ -37,8 +37,7 @@ import {
   resetAllAnswers,
   getLocalStorage,
   setLocalStorage,
-  mergeSubarrays,
-  setAllVoidEdgeInvalid,
+  validateGrid,
   isGridValid,
 } from "../utils/utils";
 
@@ -113,58 +112,6 @@ const Grid: React.FC = () => {
     setLocalStorage("puzzles", { puzzles });
   };
 
-  const validateGrid = (clues: Clue[], grid: CellType[]) => {
-    setIsValid(true);
-    // reset isValid to true and backgroundColor to ""
-    for (const cell of grid) {
-      cell.isValid = true;
-      cell.backgroundColor = "";
-    }
-
-    const shortAnswers = clues.filter((clue) => clue.length < 3);
-    const islandCell = grid.filter(
-      (cell) =>
-        !cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left
-    );
-
-    // short answers
-    for (const clue of shortAnswers) {
-      for (const index of clue.indices) {
-        grid[index].isValid = false;
-      }
-    }
-
-    // island cell - a type of short answer
-    for (const cell of islandCell) {
-      grid[cell.id].isValid = false;
-    }
-
-    // entire side is voids
-    setAllVoidEdgeInvalid(grid);
-
-    // are all light cells connected?
-    const allLights = [];
-    for (const clue of clues) {
-      allLights.push(clue.indices);
-    }
-    const mergedLights = mergeSubarrays(allLights);
-
-    if (mergedLights.length > 1) {
-      for (const [index, lights] of mergedLights.entries()) {
-        for (const num of lights) {
-          grid[num].backgroundColor = backgroundColors[index];
-        }
-      }
-    }
-
-    for (const cell of grid) {
-      if (cell.backgroundColor || !cell.isValid) {
-        setIsValid(false);
-        break;
-      }
-    }
-  };
-
   async function getClues() {
     if (clueList === undefined) return;
     const clues = [...clueList];
@@ -225,7 +172,7 @@ const Grid: React.FC = () => {
         return cell;
       }
     });
-    if (!removeEmpty && hasEmpty.length > 0) {
+    if (fillGrid && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
         const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
           clueList,
@@ -246,17 +193,16 @@ const Grid: React.FC = () => {
           }
         });
       }
-
-      return;
+    } else {
+      populateClues(
+        clues,
+        AllAnswers,
+        grid,
+        setGridState,
+        setClueList,
+        removeEmpty
+      );
     }
-    populateClues(
-      clues,
-      AllAnswers,
-      grid,
-      setGridState,
-      setClueList,
-      removeEmpty
-    );
     setIsModified(JSON.stringify(initialGrid) !== JSON.stringify(gridState));
   };
 
@@ -292,8 +238,9 @@ const Grid: React.FC = () => {
         setCluesThatIntersect(clue, acrossClues);
       } else setCluesThatIntersect(clue, downClues);
     }
-
-    validateGrid(clues, tempGrid);
+    setIsValid(true);
+    const valid = validateGrid(clues, tempGrid);
+    setIsValid(valid);
     sortCluesDescendingLength(clues);
     setClueList(clues);
     setGridState(tempGrid);

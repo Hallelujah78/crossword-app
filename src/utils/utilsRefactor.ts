@@ -9,6 +9,7 @@ import type { Puzzles } from "../models/Puzzles.model";
 // state
 import * as AllAnswers from "../state/answers2";
 import type { AllAnswersType } from "../state/answers2";
+import backgroundColors from "../state/backgroundColors";
 
 import { gridSideLength } from "../state/grid";
 import type { Intersection } from "../models/Intersection.model";
@@ -1629,4 +1630,59 @@ export const isLetter = (letter: string) => {
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".includes(letter) &&
     letter.length === 1
   );
+};
+
+export const validateGrid = (clues: Clue[], grid: CellType[]) => {
+  // setIsValid(true);
+  let valid = true;
+  // reset isValid to true and backgroundColor to ""
+  for (const cell of grid) {
+    cell.isValid = true;
+    cell.backgroundColor = "";
+  }
+
+  const shortAnswers = clues.filter((clue) => clue.length < 3);
+  const islandCell = grid.filter(
+    (cell) =>
+      !cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left
+  );
+
+  // short answers
+  for (const clue of shortAnswers) {
+    for (const index of clue.indices) {
+      grid[index].isValid = false;
+    }
+  }
+
+  // island cell - a type of short answer
+  for (const cell of islandCell) {
+    grid[cell.id].isValid = false;
+  }
+
+  // entire side is voids
+  setAllVoidEdgeInvalid(grid);
+
+  // are all light cells connected?
+  const allLights = [];
+  for (const clue of clues) {
+    allLights.push(clue.indices);
+  }
+  const mergedLights = mergeSubarrays(allLights);
+
+  if (mergedLights.length > 1) {
+    for (const [index, lights] of mergedLights.entries()) {
+      for (const num of lights) {
+        grid[num].backgroundColor = backgroundColors[index];
+      }
+    }
+  }
+
+  for (const cell of grid) {
+    if (cell.backgroundColor || !cell.isValid) {
+      // setIsValid(false);
+      valid = false;
+      break;
+    }
+  }
+  return valid;
 };
