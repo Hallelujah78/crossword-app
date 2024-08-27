@@ -525,10 +525,9 @@ const SolveGrid: React.FC = () => {
           newState.clues,
           AllAnswers,
           newState.grid,
-
           removeEmpty
         );
-        // const newGrid = [...gridState];
+
         hasEmpty = newState.grid.filter((cell) => {
           if (!cell.isVoid && !cell.letter) {
             return cell;

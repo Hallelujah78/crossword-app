@@ -258,7 +258,11 @@ export const populateClues = (
   removeEmpty: boolean
 ) => {
   // copy the React state values
-  const newState = { clues: [...cluesState], grid: [...grid] };
+
+  const newState = {
+    clues: JSON.parse(JSON.stringify(cluesState)),
+    grid: JSON.parse(JSON.stringify(grid)),
+  };
 
   for (const clue of newState.clues) {
     // let answer: string;
@@ -398,7 +402,11 @@ export const populateClues = (
       updateSurroundingCells(newState.grid, newState.grid.length - 1 - cell.id);
     }
   } else {
-    // removeEmpty is false, and so fillGrid is true
+    let valid = validateGrid(newState.clues, newState.grid);
+    if (!valid) {
+      resetIslandCell(newState.grid);
+      valid = valid = validateGrid(newState.clues, newState.grid);
+    }
   }
   if (emptyCells) {
     const updatedState = fillEmptyAnswers(newState.clues, newState.grid);
@@ -1685,4 +1693,20 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
     }
   }
   return valid;
+};
+
+export const resetIslandCell = (grid: CellType[]) => {
+  // update grid in place
+  // do we really want to deep copy grid in every function?
+  const islandCell = grid.filter(
+    (cell) =>
+      !cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left
+  );
+  for (const cell of islandCell) {
+    grid[cell.id].isVoid = true;
+    grid[cell.id].letter = "";
+    grid[cell.id].clueNumber = "";
+    grid[cell.id].answer = "";
+    updateSurroundingCells(grid, grid.length - 1 - cell.id);
+  }
 };

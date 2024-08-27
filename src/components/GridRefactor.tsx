@@ -39,14 +39,14 @@ import {
   setLocalStorage,
   validateGrid,
   isGridValid,
-} from "../utils/utils";
+} from "../utils/utilsRefactor.ts";
 
 // hooks
 import useModal from "../hooks/useModal";
 import { FaCircleInfo } from "react-icons/fa6";
 import LoadingSmall from "./LoadingSmall.tsx";
 
-const Grid: React.FC = () => {
+const GridRefactor: React.FC = () => {
   const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
   const [puzzleName, setPuzzleName] = useState<string>("");
   const [isModified, setIsModified] = useState<boolean>(() => {
@@ -167,58 +167,57 @@ const Grid: React.FC = () => {
     const grid: CellType[] = JSON.parse(JSON.stringify(gridState));
     const clues: Clue[] = JSON.parse(JSON.stringify(clueList));
 
-    let hasEmpty = grid.filter((cell) => {
+    let newState = { grid, clues };
+    console.log("newState: ", newState.grid[0].id);
+
+    let hasEmpty = newState.grid.filter((cell) => {
       if (!cell.isVoid && !cell.letter) {
         return cell;
       }
     });
     if (fillGrid && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
-        const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
-          clueList,
-          gridState
-        );
-        populateClues(
-          resetClues,
+        newState = resetAllAnswers(clueList, gridState);
+        newState = populateClues(
+          newState.clues,
           AllAnswers,
-          resetGrid,
-          setGridState,
-          setClueList,
+          newState.grid,
           removeEmpty
         );
-        const newGrid = [...gridState];
-        hasEmpty = newGrid.filter((cell) => {
+
+        hasEmpty = newState.grid.filter((cell) => {
           if (!cell.isVoid && !cell.letter) {
             return cell;
           }
         });
       }
     } else {
-      populateClues(
-        clues,
+      newState = populateClues(
+        newState.clues,
         AllAnswers,
-        grid,
-        setGridState,
-        setClueList,
+        newState.grid,
         removeEmpty
       );
-      const valid = validateGrid(clues, grid);
+      const valid = validateGrid(newState.clues, newState.grid);
       while (!valid) {
-        const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
-          clueList,
-          gridState
+        newState = resetAllAnswers(
+          JSON.parse(JSON.stringify(clueList)),
+          JSON.parse(JSON.stringify(gridState))
         );
-        populateClues(
-          resetClues,
+        newState = populateClues(
+          newState.clues,
           AllAnswers,
-          resetGrid,
-          setGridState,
-          setClueList,
+          newState.grid,
           removeEmpty
         );
+        console.log("newState: ", newState.grid[0].answer);
       }
+      console.log("newState: ", newState.grid[0].answer);
+      return newState;
     }
     setIsModified(JSON.stringify(initialGrid) !== JSON.stringify(gridState));
+    console.log("newState: ", newState.grid[0].answer);
+    return newState;
   };
 
   const handleClick = (e: React.MouseEvent) => {
@@ -270,7 +269,7 @@ const Grid: React.FC = () => {
             backgroundColor: `${
               isGeneratingAnswers
                 ? "red"
-                : !isValid || !clueList[0].answer.includes("")
+                : !isValid || !clueList[0]?.answer.includes("")
                 ? "var(--primary-100) "
                 : "var(--primary-400)"
             }`,
@@ -280,14 +279,20 @@ const Grid: React.FC = () => {
             if (el) stepRefs.current.push(el);
           }}
           type="button"
-          disabled={!isValid || !clueList[0].answer.includes("")}
+          disabled={!isValid || !clueList[0]?.answer.includes("")}
           onClick={() => {
             setIsGeneratingAnswers(true);
-
+            let newState: { clues: Clue[]; grid: CellType[] } = {
+              clues: [],
+              grid: [],
+            };
             setTimeout(() => {
-              generateClues();
+              newState = generateClues();
               setIsGeneratingAnswers(false);
-            }, 300);
+            }, 500);
+
+            setGridState(newState?.grid);
+            setClueList(newState?.clues);
           }}
         >
           {!isGeneratingAnswers ? (
@@ -347,8 +352,8 @@ const Grid: React.FC = () => {
               if (el) stepRefs.current.push(el);
             }}
             disabled={
-              clueList[0].answer.includes("") ||
-              clueList[0].clue !== "" ||
+              clueList[0]?.answer.includes("") ||
+              clueList[0]?.clue !== "" ||
               isGeneratingAnswers
             }
             type="button"
@@ -388,8 +393,8 @@ const Grid: React.FC = () => {
           }}
           disabled={
             !isValid ||
-            clueList[0].clue !== "" ||
-            clueList[0].answer.includes("")
+            clueList[0]?.clue !== "" ||
+            clueList[0]?.answer.includes("")
           }
           type="button"
           onClick={getClues}
@@ -401,8 +406,8 @@ const Grid: React.FC = () => {
         <form className="save-container">
           <input
             disabled={
-              clueList[0].answer.includes("") ||
-              clueList[0].clue === "" ||
+              clueList[0]?.answer.includes("") ||
+              clueList[0]?.clue === "" ||
               isGeneratingAnswers
             }
             required
@@ -421,9 +426,9 @@ const Grid: React.FC = () => {
               if (el) stepRefs.current.push(el);
             }}
             disabled={
-              clueList[0].answer.includes("") ||
+              clueList[0]?.answer.includes("") ||
               puzzleName.length < 3 ||
-              clueList[0].clue === ""
+              clueList[0]?.clue === ""
             }
             type="submit"
             onClick={(e) => {
@@ -453,7 +458,7 @@ const Grid: React.FC = () => {
           return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
         })}
 
-        {clueList[0].answer.includes("") ? null : (
+        {clueList[0]?.answer.includes("") ? null : (
           <div className="prevent-click"> </div>
         )}
         {!isValid && !hideWarn && (
@@ -486,7 +491,7 @@ const Grid: React.FC = () => {
     </Wrapper>
   );
 };
-export default Grid;
+export default GridRefactor;
 
 const pulse = keyframes`
   0% {
