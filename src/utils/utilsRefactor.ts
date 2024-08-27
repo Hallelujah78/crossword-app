@@ -401,14 +401,12 @@ export const populateClues = (
       removeClue(newState.clues, newState.grid.length - 1 - cell.id);
       updateSurroundingCells(newState.grid, newState.grid.length - 1 - cell.id);
     }
-  } else {
     let valid = validateGrid(newState.clues, newState.grid);
     if (!valid) {
       resetIslandCell(newState.grid);
-      valid = valid = validateGrid(newState.clues, newState.grid);
+      valid = validateGrid(newState.clues, newState.grid);
     }
-  }
-  if (emptyCells) {
+  } else if (emptyCells) {
     const updatedState = fillEmptyAnswers(newState.clues, newState.grid);
     if (updatedState?.clues) {
       newState.clues = updatedState.clues;
