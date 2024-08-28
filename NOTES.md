@@ -2724,3 +2724,18 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
     console.log(validateGrid(clues, gridState));
  }
 ```
+
+## 27/8/24
+- we can still have an invalid grid after we deal with island cells in populateClues where fill grid is false
+
+![alt text](image-8.png)
+
+- we made progress but now in Grid (create route) no grid is being returned! Probably a simple logic error.
+
+## 28/8/24
+- test passes: a valid newState.grid is being returned from generateClues when Force Fill Grid is checked
+- fixed issue where there was no grid being displayed when Force Fill Grid was checked
+- **ISSUE**: Force Fill Grid is unchecked, we toggle top 4 cells to be lights, click generate clues and we get an infinite loop
+**RESOLVED** - the while loop checks valid which holds a boolean to indicate if the grid is valid or not. I wasn't updating this valid prop inside the while loop!
+
+**ISSUE**: saving a puzzle you create causes the "welcome to gridmaster" modal to appear, this has to do with local storage and testing the existence of local storage

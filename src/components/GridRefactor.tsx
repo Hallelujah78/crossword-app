@@ -168,13 +168,13 @@ const GridRefactor: React.FC = () => {
     const clues: Clue[] = JSON.parse(JSON.stringify(clueList));
 
     let newState = { grid, clues };
-    console.log("newState: ", newState.grid[0].id);
 
     let hasEmpty = newState.grid.filter((cell) => {
       if (!cell.isVoid && !cell.letter) {
         return cell;
       }
     });
+
     if (fillGrid && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
         newState = resetAllAnswers(clueList, gridState);
@@ -191,32 +191,40 @@ const GridRefactor: React.FC = () => {
           }
         });
       }
+      console.assert(
+        newState.grid.filter((cell) => {
+          cell.letter === "" ||
+            cell.letter === undefined ||
+            cell.letter === null;
+        }).length === 0
+      );
     } else {
+      // fillgrid is false OR hasEmpty is empty
+      // this else is essentially the "don't force fill" section
+      // in other words, remove the empty cells, and if the grid winds up being invalid, iterate over it until it is not
       newState = populateClues(
         newState.clues,
         AllAnswers,
         newState.grid,
         removeEmpty
       );
-      const valid = validateGrid(newState.clues, newState.grid);
+      let valid = validateGrid(newState.clues, newState.grid);
+
       while (!valid) {
-        newState = resetAllAnswers(
-          JSON.parse(JSON.stringify(clueList)),
-          JSON.parse(JSON.stringify(gridState))
-        );
+        newState.grid = JSON.parse(JSON.stringify(gridState));
+        newState.clues = JSON.parse(JSON.stringify(clueList));
         newState = populateClues(
           newState.clues,
           AllAnswers,
           newState.grid,
           removeEmpty
         );
-        console.log("newState: ", newState.grid[0].answer);
+        valid = validateGrid(newState.clues, newState.grid);
       }
-      console.log("newState: ", newState.grid[0].answer);
-      return newState;
     }
-    setIsModified(JSON.stringify(initialGrid) !== JSON.stringify(gridState));
-    console.log("newState: ", newState.grid[0].answer);
+    setIsModified(
+      JSON.stringify(initialGrid) !== JSON.stringify(newState.grid)
+    );
     return newState;
   };
 
@@ -288,11 +296,10 @@ const GridRefactor: React.FC = () => {
             };
             setTimeout(() => {
               newState = generateClues();
+              setGridState(newState.grid);
+              setClueList(newState.clues);
               setIsGeneratingAnswers(false);
-            }, 500);
-
-            setGridState(newState?.grid);
-            setClueList(newState?.clues);
+            }, 200);
           }}
         >
           {!isGeneratingAnswers ? (
