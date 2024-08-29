@@ -260,8 +260,8 @@ export const populateClues = (
   // copy the React state values
 
   const newState = {
-    clues: JSON.parse(JSON.stringify(cluesState)),
-    grid: JSON.parse(JSON.stringify(grid)),
+    clues: JSON.parse(JSON.stringify(cluesState)) as Clue[],
+    grid: JSON.parse(JSON.stringify(grid)) as CellType[],
   };
 
   for (const clue of newState.clues) {
