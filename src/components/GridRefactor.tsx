@@ -48,6 +48,7 @@ import LoadingSmall from "./LoadingSmall.tsx";
 
 const GridRefactor: React.FC = () => {
   const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
+  const [isFetchingClues, setIsFetchingClues] = useState(false);
   const [puzzleName, setPuzzleName] = useState<string>("");
   const [isModified, setIsModified] = useState<boolean>(() => {
     const modifiedState = getLocalStorage("editor")?.isModified;
@@ -394,6 +395,17 @@ const GridRefactor: React.FC = () => {
         </div>
         <br />
         <button
+          style={{
+            backgroundColor: `${
+              isFetchingClues
+                ? "red"
+                : !isValid ||
+                  clueList[0]?.clue !== "" ||
+                  clueList[0]?.answer.includes("")
+                ? "var(--primary-100)"
+                : "var(--primary-400)"
+            }`,
+          }}
           className="step7 generate-clues"
           ref={(el) => {
             if (el) stepRefs.current.push(el);
@@ -404,9 +416,22 @@ const GridRefactor: React.FC = () => {
             clueList[0]?.answer.includes("")
           }
           type="button"
-          onClick={getClues}
+          onClick={async () => {
+            setIsFetchingClues(true);
+            await getClues();
+            setIsFetchingClues(false);
+          }}
         >
-          AI Generate Clues!
+          {!isFetchingClues ? (
+            <div>
+              <p className="button-text">Fetch Clues from OpenAI</p>
+            </div>
+          ) : (
+            <div>
+              <p className="button-text">Fetching clues...</p>
+              <LoadingSmall />
+            </div>
+          )}
         </button>
         <br />
 
