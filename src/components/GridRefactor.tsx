@@ -109,7 +109,7 @@ const GridRefactor: React.FC = () => {
       grid: gridState as CellType[],
       clues: clueList as Clue[],
     });
-    localStorage.removeItem("editor");
+
     setLocalStorage("puzzles", { puzzles });
   };
 
@@ -377,7 +377,12 @@ const GridRefactor: React.FC = () => {
             Reset Answers
           </button>
           <button
-            disabled={!isModified || isGeneratingAnswers}
+            disabled={
+              !isModified ||
+              isGeneratingAnswers ||
+              // clueList[0]?.answer.includes("") ||
+              clueList[0]?.clue !== ""
+            }
             type="button"
             onClick={() => {
               const newGrid = initializeGrid(

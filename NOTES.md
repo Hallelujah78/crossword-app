@@ -2739,3 +2739,9 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 **RESOLVED** - the while loop checks valid which holds a boolean to indicate if the grid is valid or not. I wasn't updating this valid prop inside the while loop!
 
 **ISSUE**: saving a puzzle you create causes the "welcome to gridmaster" modal to appear, this has to do with local storage and testing the existence of local storage
+  - this is due to `localStorage.removeItem("editor");` being called in the save handler!
+  - best thing to do is actually reset the React state which will cause the local storage to be updated with our useEffect
+  - just deleted the removeItem code, I was already resetting state in the onClick handler for the save crossword button
+**RESOLVED**
+
+**ISSUE**: The "Reset Grid & Answers" button has incorrect coloring regarding its disabled/enabled state
