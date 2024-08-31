@@ -454,63 +454,6 @@ const SolveGrid: React.FC = () => {
     }
   };
 
-  // async function getClues(clues: Clue[]) {
-  //   type ReqClue = {
-  //     id: string;
-  //     word: string;
-  //     clue: string;
-  //   };
-  //   setIsLoading(true);
-  //   const requestArray: ReqClue[] = [];
-
-  //   for (const clue of clues) {
-  //     const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
-  //     requestArray.push(reqClue);
-  //   }
-
-  //   const apiURL = "/.netlify/functions/getClues";
-
-  //   try {
-  //     const response = await fetch(apiURL, {
-  //       method: "POST",
-  //       headers: { accept: "application/json" },
-  //       body: JSON.stringify(requestArray),
-  //     });
-
-  //     if (!response.ok && response.status === 500 && !response.bodyUsed) {
-  //       throw new Error(
-  //         `${response.status}: ${response.statusText}. This may indicate that the request took longer than 10 seconds and timed out. This is not uncommon with OpenAI API requests. Please try again!`
-  //       );
-  //     }
-
-  //     const data = await response.json();
-
-  //     if (response.ok) {
-  //       for (const clue of clues) {
-  //         const id = clue.id;
-  //         const clueResp = data.find((clueObj: Clue) => {
-  //           return clueObj?.id === id;
-  //         });
-  //         if (clueResp.clue && clueResp.clue !== "") {
-  //           clue.clue = clueResp.clue;
-  //         } else {
-  //           throw new Error(
-  //             "The clues received from the AI are not in the correct format. Try generating the clues again!"
-  //           );
-  //         }
-  //       }
-
-  //       setClueList(clues);
-  //     } else {
-  //       // response is not okay, and we already know that there's a body and the status is not 500 => we can use the response's body to provide information to the user
-  //       setError(data.error);
-  //     }
-  //   } catch (error: unknown) {
-  //     setError(error as Error);
-  //   }
-  //   setIsLoading(false);
-  // }
-
   const generateAnswers = (grid: CellType[], clues: Clue[]) => {
     let hasEmpty = grid.filter((cell) => {
       if (!cell.isVoid && !cell.letter) {
@@ -670,7 +613,6 @@ const SolveGrid: React.FC = () => {
             newState.grid = initializeGrid(
               JSON.parse(JSON.stringify(initialGrid))
             );
-            // if you're resetting the grid, resetAllAnswers won't work!
             newState.clues = initializeApp(newState.grid);
 
             newState = generateAnswers(newState.grid, newState.clues);
@@ -811,10 +753,12 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 0.8fr 2fr 2fr;
   .grid-button-container {
+    max-width: 100%;
+    width: 100% !important;
     .grid-container {
-      grid-template-columns: repeat(13, 1fr);
       display: grid;
-      width: auto;
+      grid-template-columns: repeat(13, 1fr);
+      max-width: 100% !important;
       margin-top: 1rem;
     }
     .button-container {
@@ -934,8 +878,8 @@ const Wrapper = styled.div`
       display: grid;
       min-height: 2rem;
       max-height: fit-content;
-      width: 100%;
-      max-width: 100%;
+      width: 95%;
+      max-width: 95%;
 
       div {
         display: grid;
@@ -954,13 +898,16 @@ const Wrapper = styled.div`
 
     .grid-container {
       margin: auto;
+      max-width: 100% !important;
+      width: 100% !important;
     }
     .clue-container,
     .no-clues {
-      width: 100%;
+      width: 90%;
+      max-width: 90%;
       margin-top: 1rem;
       div.clue-item {
-        max-width: 90vw;
+        max-width: 99%;
       }
     }
     .no-clues {
