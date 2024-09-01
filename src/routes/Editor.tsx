@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 // components
 
-import GridRefactor from "../components/GridRefactor";
+import Grid from "../components/Grid";
 
 const Editor: React.FC = () => {
   return (
     <Wrapper>
-      <GridRefactor />
+      <Grid />
     </Wrapper>
   );
 };

@@ -1,34 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // models
 import type { CellProps } from "../models/CellProps.model";
+import { isLetter } from "../utils/utils";
 
 const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
-  ({ cell, handleCellClick, handleKeyDown }, ref) => {
+  ({ cell, handleCellClick, handleKeyDown, handleTabKeyPress }, ref) => {
     const { isVoid, id, clueNumber, selected, answer } = cell;
+
+    const [cellValue, setCellValue] = useState("");
+
+    useEffect(() => {
+      // when the local input state changes, update the global state
+      if (handleKeyDown && answer !== cellValue && isLetter(cellValue)) {
+        handleKeyDown(cellValue.toUpperCase());
+      }
+    }, [cellValue]);
+
+    useEffect(() => {
+      if (answer !== undefined && answer !== cellValue) {
+        setCellValue(answer);
+      }
+    }, [answer]);
 
     return (
       <Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
         <div className="letter-container">
           {isVoid ? null : (
             <input
-              onKeyDown={(e) => {
-                if (e.key === "Unidentified") {
-                } else {
-                  return handleKeyDown ? handleKeyDown(e) : () => {};
+              onInput={(e: React.FormEvent<HTMLInputElement>) => {
+                const element = e.target as HTMLInputElement;
+
+                if (element.value.length <= 1 && isLetter(element.value)) {
+                  setCellValue(element.value);
+                } else if (element.value.length > 1) {
+                  const lastChar = element.value.slice(-1);
+                  if (isLetter(lastChar)) setCellValue(lastChar);
                 }
               }}
-              onChange={() => {}}
-              value={answer}
+              onKeyDown={(e) => {
+                if (handleKeyDown) {
+                  if (
+                    e.key === "Backspace" ||
+                    e.key === "ArrowDown" ||
+                    e.key === "ArrowUp" ||
+                    e.key === "ArrowLeft" ||
+                    e.key === "ArrowRight"
+                  ) {
+                    e.preventDefault();
+                    handleKeyDown(e.key);
+                  }
+                  if (e.key === "Tab" && handleTabKeyPress) {
+                    e.preventDefault();
+                    // must have access to e.key due to shiftKey
+                    handleTabKeyPress(e);
+                  }
+                }
+              }}
+              value={cellValue}
               ref={ref}
               spellCheck={false}
               autoComplete="off"
               id={id.toString()}
               onClick={(event) => {
+                const element = event.target as HTMLInputElement;
+                element.setSelectionRange(1, 1);
                 handleCellClick ? handleCellClick(event) : () => {};
               }}
-              maxLength={1}
               type="text"
               style={{ background: selected ? "#fff7b2  " : "white" }}
             />
@@ -79,7 +118,7 @@ const Wrapper = styled.div<{ id: number | undefined }>`
     }
   }
   @media (max-width: 600px) {
-    height: calc(95vw / 13);
-    width: calc(95vw / 13);
+    width: calc(100vw / 13);
+    height: calc(100vw / 13);
   }
 `;

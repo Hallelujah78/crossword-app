@@ -2745,3 +2745,10 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 **RESOLVED**
 
 **ISSUE**: The "Reset Grid & Answers" button has incorrect coloring regarding its disabled/enabled state
+
+## 1/9/2024 To Do
+- verify that all words in a grid are valid words in our word list, otherwise it is invalid
+- notify user when clues are fetched on create route
+- layout for tablet-sized screens
+- Grid.tsx is still using its own version of getClues - refactor to use useClueFetch
+- deal with all TS warnings in utils.ts

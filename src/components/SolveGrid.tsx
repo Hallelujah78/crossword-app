@@ -13,7 +13,7 @@ import styled from "styled-components";
 // components
 
 import ErrorPage from "./ErrorPage";
-import SolveCellTest from "./SolveCellTest";
+import SolveCell from "./SolveCell";
 
 // data
 import { initialGrid } from "../state/grid";
@@ -36,7 +36,7 @@ import {
   getCluesFromCell,
   getLocalStorage,
   setLocalStorage,
-} from "../utils/utilsRefactor";
+} from "../utils/utils";
 import type { Puzzle, Puzzles } from "../models/Puzzles.model";
 import Loading from "./Loading";
 import PoweredBy from "./PoweredBy";
@@ -630,7 +630,7 @@ const SolveGrid: React.FC = () => {
         <div className="grid-container">
           {gridState?.map((cell: CellType, index: number) => {
             return (
-              <SolveCellTest
+              <SolveCell
                 handleKeyDown={handleKeyDown}
                 key={cell.id}
                 cell={cell}
