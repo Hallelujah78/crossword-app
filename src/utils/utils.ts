@@ -499,11 +499,12 @@ const setClueAnswers = (
 ) => {
   // if an answer has some letters but is not complete, create a regexp, and get all words that match that pattern
   let regExp: RegExp;
+  let candidateAnswers = possibleAnswers;
 
   if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
     regExp = arrayToRegularExp(clue.answer) as RegExp;
 
-    possibleAnswers = getMatches(
+    candidateAnswers = getMatches(
       possibleAnswers,
       regExp,
       clue.answer.join(""),
@@ -512,9 +513,9 @@ const setClueAnswers = (
   }
 
   // at this point possibleAnswers is all words N letters long, a filtered array of words N letters long, or possibly empty
-  if (possibleAnswers.length !== 0) {
+  if (candidateAnswers.length !== 0) {
     const clueAnswer =
-      possibleAnswers[Math.floor(randVal * possibleAnswers.length)];
+      candidateAnswers[Math.floor(randVal * candidateAnswers.length)];
 
     clue.answer = [
       ...(clueAnswer.word !== undefined && clueAnswer.word !== null

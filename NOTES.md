@@ -2752,3 +2752,4 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - layout for tablet-sized screens
 - Grid.tsx is still using its own version of getClues - refactor to use useClueFetch
 - deal with all TS warnings in utils.ts
+- move my notes for Coursera's AI For Everyone to my portfolio
