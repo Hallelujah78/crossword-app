@@ -586,14 +586,16 @@ const setClueAnswers = (
     // myIndex prop of the intersection object with the matching ID (this is not good code)
     // lastly, for each intersection object, we take the id and find the Clue in clues that matches that ID
     // and push it into a replaceClues array.
-    let intersectingClueIndex;
+    let intersectingClueIndex: number | undefined;
     for (const intersectClue of cluesToSwap) {
       const clueId = intersectClue.id;
-      intersectingClueIndex = clue.intersection!.find((item) => {
-        return clueId === item.id;
-      })!.myIndex!;
-
-      intersectClue.letter = clue.answer[intersectingClueIndex];
+      if (clue.intersection) {
+        intersectingClueIndex = clue.intersection.find((item) => {
+          return clueId === item.id;
+        })?.myIndex;
+      }
+      if (intersectingClueIndex)
+        intersectClue.letter = clue.answer[intersectingClueIndex];
 
       replaceClues.push(
         clues.find((item) => {
@@ -615,24 +617,25 @@ const setClueAnswers = (
     // we convert the tempAnswer to a regular expression and push it to a replaceCluePattern array
     const replaceCluePattern: RegExp[] = [];
 
-    replaceClues.forEach((rClue: Clue | undefined) => {
+    // replaceClues.forEach((rClue: Clue | undefined) =>
+    for (const rClue of replaceClues) {
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
-      const myTempAnswer = [...rClue!.answer];
+      const myTempAnswer = [...rClue.answer];
 
-      for (const intersectObj of rClue!.intersection!) {
+      for (const intersectObj of rClue.intersection) {
         myIndices.push(intersectObj.myIndex);
         const irClue = clues.find((item) => {
           return item.id === intersectObj.id;
         });
-        intersectingClues.push(irClue!);
+        intersectingClues.push(irClue);
       }
 
       intersectingClues.forEach((item) => {
         let irClue;
 
         if (item.answer.includes("")) {
-          irClue = rClue!.intersection!.find((intersectObj) => {
+          irClue = rClue.intersection.find((intersectObj) => {
             return intersectObj.id === item.id;
           });
         }
@@ -647,8 +650,8 @@ const setClueAnswers = (
         }
       }
 
-      replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
-    });
+      replaceCluePattern.push(arrayToRegularExp(myTempAnswer));
+    }
 
     //------------------------------------------------
 
@@ -659,7 +662,7 @@ const setClueAnswers = (
       let candidateAnswers = getMatches(
         wordList,
         replaceCluePattern[index],
-        rClue!.answer.join(""),
+        rClue.answer.join(""),
         clues
       );
 
@@ -750,7 +753,7 @@ const setClueAnswers = (
             item.letter = clue.answer[item.myIndex];
             const clueToUpdate = clues.find((clue) => {
               return clue.id === item.id;
-            })!;
+            });
 
             clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
           });
@@ -761,7 +764,7 @@ const setClueAnswers = (
               item.letter = rClue.answer[item.myIndex];
               const clueToUpdate = clues.find((clue) => {
                 return clue.id === item.id;
-              })!;
+              });
               clueToUpdate.answer[item.yourIndex] = rClue.answer[item.myIndex];
             });
           }
@@ -953,24 +956,22 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
     return clues;
   }
 
-  let indicesToRemove: number[] = [];
+  const indicesToRemove: number[] = [];
   if (cluesToRemove !== undefined) {
     for (const clueToRemove of cluesToRemove) {
       const removeId = clueToRemove.id;
       indicesToRemove.push(clues.indexOf(clueToRemove));
 
-      for (const intersectObj of clueToRemove.intersection!) {
+      for (const intersectObj of clueToRemove.intersection) {
         let index;
         // get the intersectingClue
         // get the index in the intersectingClue.intersection of: item.id === removeId
         const intersectingClue = clues.find((clueItem) => {
           return clueItem.id === intersectObj.id;
         });
-        index = intersectingClue?.intersection!.findIndex(
-          (intersectingItem) => {
-            return intersectingItem.id === removeId;
-          }
-        );
+        index = intersectingClue?.intersection.findIndex((intersectingItem) => {
+          return intersectingItem.id === removeId;
+        });
         if (index !== undefined) {
           intersectingClue?.intersection?.splice(index, 1);
         }
@@ -1035,7 +1036,7 @@ export const createUniqueLetterList = (
     sharedLetter.rClueIndex === undefined
   ) {
     throw new Error(
-      "error in createUniqueLetterList: a property of sharedLetter is undefined!"
+      "error in createUniqueLetterList: a property of sharedLetter is undefined"
     );
   }
   const uniqueLetters: { index: number; letters: string[] } = {
@@ -1103,7 +1104,7 @@ export const updateIntersectingClues = (clue: Clue, clues: Clue[]) => {
     item.letter = clue.answer[item.myIndex];
     const clueToUpdate = clues.find((clue) => {
       return clue.id === item.id;
-    })!;
+    });
     const oldLetter = clueToUpdate.answer[item.yourIndex];
     const newLetter = clue.answer[item.myIndex];
     clueToUpdate.answer[item.yourIndex] = newLetter;
@@ -1300,7 +1301,7 @@ export const setClueNumbersOnClues = (
     const indexOfStartAnswer = clue.indices[0];
     if (gridState[indexOfStartAnswer].clueNumber) {
     }
-    clue.clueNumber = +gridState[indexOfStartAnswer].clueNumber!;
+    clue.clueNumber = +gridState[indexOfStartAnswer].clueNumber;
   }
 };
 
