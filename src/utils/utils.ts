@@ -621,8 +621,10 @@ const setClueAnswers = (
     for (const rClue of replaceClues) {
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
-      const myTempAnswer = [...rClue.answer];
-
+      let myTempAnswer: string[];
+      if (rClue?.answer) {
+        myTempAnswer = [...rClue.answer];
+      }
       for (const intersectObj of rClue.intersection) {
         myIndices.push(intersectObj.myIndex);
         const irClue = clues.find((item) => {
@@ -631,18 +633,21 @@ const setClueAnswers = (
         intersectingClues.push(irClue);
       }
 
-      intersectingClues.forEach((item) => {
-        let irClue;
+      for (const item of intersectingClues) {
+        let irClue: Intersection | undefined;
 
         if (item.answer.includes("")) {
-          irClue = rClue.intersection.find((intersectObj) => {
-            return intersectObj.id === item.id;
-          });
+          if (rClue?.intersection) {
+            irClue = rClue?.intersection.find((intersectObj) => {
+              return intersectObj.id === item.id;
+            });
+          }
         }
         if (irClue) {
           myTempAnswer[irClue.myIndex] = "";
         }
-      });
+      }
+      //---------------
 
       for (let i = 0; i < myTempAnswer.length; ++i) {
         if (!myIndices.includes(i)) {
