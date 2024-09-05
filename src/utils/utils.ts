@@ -617,20 +617,20 @@ const setClueAnswers = (
     // we convert the tempAnswer to a regular expression and push it to a replaceCluePattern array
     const replaceCluePattern: RegExp[] = [];
 
-    // replaceClues.forEach((rClue: Clue | undefined) =>
     for (const rClue of replaceClues) {
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
       let myTempAnswer: string[];
-      if (rClue?.answer) {
+      if (rClue?.intersection && rClue?.answer) {
         myTempAnswer = [...rClue.answer];
-      }
-      for (const intersectObj of rClue.intersection) {
-        myIndices.push(intersectObj.myIndex);
-        const irClue = clues.find((item) => {
-          return item.id === intersectObj.id;
-        });
-        intersectingClues.push(irClue);
+
+        for (const intersectObj of rClue.intersection) {
+          myIndices.push(intersectObj.myIndex);
+          const irClue = clues.find((item) => {
+            return item.id === intersectObj.id;
+          });
+          if (irClue) intersectingClues.push(irClue);
+        }
       }
 
       for (const item of intersectingClues) {
