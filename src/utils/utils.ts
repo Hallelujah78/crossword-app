@@ -620,7 +620,7 @@ const setClueAnswers = (
     for (const rClue of replaceClues) {
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
-      let myTempAnswer: string[];
+      let myTempAnswer: string[] = [];
       if (rClue?.intersection && rClue?.answer) {
         myTempAnswer = [...rClue.answer];
 
@@ -654,8 +654,11 @@ const setClueAnswers = (
           myTempAnswer[i] = "";
         }
       }
-
-      replaceCluePattern.push(arrayToRegularExp(myTempAnswer));
+      // arrayToRegularExp returns undefined if myTempAnswer DOES NOT include empty strings
+      // this implies that the answer is full
+      // this also means that we are pushing undefined values to replaceCluePatterns
+      const pattern = arrayToRegularExp(myTempAnswer);
+      if (pattern) replaceCluePattern.push(pattern);
     }
 
     //------------------------------------------------
