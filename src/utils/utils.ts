@@ -757,14 +757,19 @@ const setClueAnswers = (
           }
 
           // ****************** update intersecting clues below this
-          clue.intersection?.forEach((item) => {
-            item.letter = clue.answer[item.myIndex];
-            const clueToUpdate = clues.find((clue) => {
-              return clue.id === item.id;
-            });
+          // clue.intersection?.forEach((item) =>
+          let clueToUpdate: Clue | undefined;
+          if (clue.intersection) {
+            for (const item of clue.intersection) {
+              item.letter = clue.answer[item.myIndex];
+              clueToUpdate = clues.find((clue) => {
+                return clue.id === item.id;
+              });
 
-            clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
-          });
+              if (clueToUpdate !== undefined)
+                clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+            }
+          }
           // ****************** update intersecting clues above this
           // updating rclue intersection?
           if (rClue) {
