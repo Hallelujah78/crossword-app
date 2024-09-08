@@ -666,14 +666,15 @@ const setClueAnswers = (
     for (const [index, rClue] of replaceClues.entries()) {
       const length = rClue?.length as AnswerLength;
       const wordList = getWordList(length, AllAnswers);
-
-      let candidateAnswers = getMatches(
-        wordList,
-        replaceCluePattern[index],
-        rClue.answer.join(""),
-        clues
-      );
-
+      let candidateAnswers: Answer[] = [];
+      if (rClue) {
+        candidateAnswers = getMatches(
+          wordList,
+          replaceCluePattern[index],
+          rClue.answer.join(""),
+          clues
+        );
+      }
       const sharedLetter = getLetter(rClue as Clue, clue);
 
       if (sharedLetter && sharedLetter.rClueIndex !== undefined) {
@@ -772,14 +773,17 @@ const setClueAnswers = (
           }
           // ****************** update intersecting clues above this
           // updating rclue intersection?
-          if (rClue) {
-            rClue.intersection?.forEach((item) => {
+          if (rClue && rClue.intersection !== undefined) {
+            // rClue.intersection?.forEach((item) =>
+            for (const item of rClue.intersection) {
               item.letter = rClue.answer[item.myIndex];
               const clueToUpdate = clues.find((clue) => {
                 return clue.id === item.id;
               });
-              clueToUpdate.answer[item.yourIndex] = rClue.answer[item.myIndex];
-            });
+              if (clueToUpdate)
+                clueToUpdate.answer[item.yourIndex] =
+                  rClue.answer[item.myIndex];
+            }
           }
 
           // update the grid state with the letters
