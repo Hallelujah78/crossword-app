@@ -855,10 +855,9 @@ export const getMatches = (
       !currentAnswers.includes(answer.word)
     ) {
       return answer.word.match(regExp);
-    } else if (
-      answer.raw !== currentAnswer &&
-      !currentAnswers.includes(answer.raw)
-    ) {
+    }
+
+    if (answer.raw !== currentAnswer && !currentAnswers.includes(answer.raw)) {
       return answer.raw.match(regExp);
     }
   });
@@ -886,7 +885,8 @@ export const getAllMatches = (
   const candidateAnswers = possibleAnswers.filter((answer) => {
     if (answer.word !== undefined && !currentAnswers.includes(answer.word)) {
       return answer.word.match(regExp);
-    } else if (!currentAnswers.includes(answer.raw)) {
+    }
+    if (!currentAnswers.includes(answer.raw)) {
       return answer.raw.match(regExp);
     }
   });
@@ -979,18 +979,25 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
       const removeId = clueToRemove.id;
       indicesToRemove.push(clues.indexOf(clueToRemove));
 
-      for (const intersectObj of clueToRemove.intersection) {
-        let index;
-        // get the intersectingClue
-        // get the index in the intersectingClue.intersection of: item.id === removeId
-        const intersectingClue = clues.find((clueItem) => {
-          return clueItem.id === intersectObj.id;
-        });
-        index = intersectingClue?.intersection.findIndex((intersectingItem) => {
-          return intersectingItem.id === removeId;
-        });
-        if (index !== undefined) {
-          intersectingClue?.intersection?.splice(index, 1);
+      if (
+        clueToRemove !== undefined &&
+        clueToRemove.intersection !== undefined
+      ) {
+        for (const intersectObj of clueToRemove.intersection) {
+          let index: number | undefined;
+          // get the intersectingClue
+          // get the index in the intersectingClue.intersection of: item.id === removeId
+          const intersectingClue = clues.find((clueItem) => {
+            return clueItem.id === intersectObj.id;
+          });
+          index = intersectingClue?.intersection?.findIndex(
+            (intersectingItem) => {
+              return intersectingItem.id === removeId;
+            }
+          );
+          if (index !== undefined) {
+            intersectingClue?.intersection?.splice(index, 1);
+          }
         }
       }
     }
@@ -1030,11 +1037,14 @@ export const resetIntersectClue = (iClue: Clue, currClueId: string) => {
   const tempAnswer = [...iClue.answer];
 
   const sharedIndices: number[] = [];
-  iClue.intersection?.forEach((item) => {
-    if (item.id !== currClueId) {
-      sharedIndices.push(item.myIndex);
+
+  if (iClue.intersection !== undefined) {
+    for (const item of iClue.intersection) {
+      if (item.id !== currClueId) {
+        sharedIndices.push(item.myIndex);
+      }
     }
-  });
+  }
 
   for (const [index, _letter] of iClue.answer.entries()) {
     if (!sharedIndices.includes(index)) {
