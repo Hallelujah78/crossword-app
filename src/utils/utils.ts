@@ -1127,21 +1127,30 @@ export const setClueAnswer = (candidateAnswers: Answer[], clue: Clue) => {
 export const updateIntersectingClues = (clue: Clue, clues: Clue[]) => {
   // we'll return clues that have been updated, maybe
   const cluesToUpdate: Clue[] = [];
-  clue.intersection?.forEach((item) => {
-    item.letter = clue.answer[item.myIndex];
-    const clueToUpdate = clues.find((clue) => {
-      return clue.id === item.id;
-    });
-    const oldLetter = clueToUpdate.answer[item.yourIndex];
-    const newLetter = clue.answer[item.myIndex];
-    clueToUpdate.answer[item.yourIndex] = newLetter;
+  let oldLetter = "";
+  let newLetter = "";
 
-    // if the shared letter has updated, then we need to replace the answer for the updated clue
-    if (oldLetter !== newLetter) {
-      // we don't need the index? just reset all unshared letters, pattern, match and set
-      cluesToUpdate.push(clueToUpdate);
+  // clue.intersection?.forEach((item) =>
+  if (clue.intersection) {
+    for (const item of clue.intersection) {
+      item.letter = clue.answer[item.myIndex];
+      const clueToUpdate = clues.find((clue) => {
+        return clue.id === item.id;
+      });
+
+      if (clueToUpdate) {
+        oldLetter = clueToUpdate.answer[item.yourIndex];
+        newLetter = clue.answer[item.myIndex];
+        clueToUpdate.answer[item.yourIndex] = newLetter;
+
+        // if the shared letter has updated, then we need to replace the answer for the updated clue
+        if (oldLetter !== newLetter) {
+          // we don't need the index? just reset all unshared letters, pattern, match and set
+          cluesToUpdate.push(clueToUpdate);
+        }
+      }
     }
-  });
+  }
   return cluesToUpdate;
 };
 
