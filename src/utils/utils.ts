@@ -406,7 +406,7 @@ export const populateClues = (
       resetIslandCell(newState.grid);
       valid = validateGrid(newState.clues, newState.grid);
     }
-  } else if (emptyCells) {
+  } else if (emptyCells && emptyCells.length > 0) {
     const updatedState = fillEmptyAnswers(newState.clues, newState.grid);
     if (updatedState?.clues) {
       newState.clues = updatedState.clues;
@@ -417,9 +417,7 @@ export const populateClues = (
   }
   setClueNumbersOnClues(newState.clues, newState.grid);
   setClueNumbers(newState.grid);
-  // return clueList and gridState
-  // setClueList(clues);
-  // setGridState(gridState);
+
   return newState;
 };
 
@@ -1159,9 +1157,11 @@ export const resetClue = (clue: Clue) => {
   const tempAnswer = [...clue.answer];
   const sharedIndices: number[] = [];
 
-  clue.intersection?.forEach((item) => {
-    sharedIndices.push(item.myIndex);
-  });
+  if (clue.intersection) {
+    for (const item of clue.intersection) {
+      sharedIndices.push(item.myIndex);
+    }
+  }
 
   for (const [index, _letter] of clue.answer.entries()) {
     if (!sharedIndices.includes(index)) {
@@ -1192,7 +1192,7 @@ export const resetAllAnswers = (clueList: Clue[], gridState: CellType[]) => {
     if (clue.intersection) {
       for (const intersectObj of clue.intersection) {
         if (intersectObj.letter) {
-          delete intersectObj.letter;
+          intersectObj.letter = "";
         }
       }
     }
@@ -1267,13 +1267,14 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 
     for (const pattern of patterns) {
       let finishLoop = false;
-      // once we set a clue answer and update the intersecting clues, we need to berak out of this loop
+      // once we set a clue answer and update the intersecting clues, we need to break out of this loop
       const matchingWords = getAllMatches(
         wordList,
         pattern,
         incomplete.answer.join(""),
         clueListCopy
       );
+
       if (matchingWords.length > 0) {
         finishLoop = true;
         // set the answer and break
@@ -1300,18 +1301,13 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
           } else {
           }
         }
-        // update the clueList React state
-        // setClueList(clueListCopy);
-        // setGridState(gridStateCopy);
-        return { clues: clueListCopy, grid: gridStateCopy };
-        // update the grid state
-      } else {
       }
       if (finishLoop) {
         break;
       }
     }
   }
+  return { clues: clueListCopy, grid: gridStateCopy };
 };
 
 export const resetSelectedCells = (grid: CellType[]) => {

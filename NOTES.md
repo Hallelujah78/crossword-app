@@ -2754,3 +2754,22 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - deal with all TS warnings in utils.ts
 - move my notes for Coursera's AI For Everyone to my portfolio
 - time out long running answer generation
+
+- populateClues anomaly
+  - if removeEmpty is false (in other words Force Fill Grid is checked/true) and emptyCells exists and has length greater than zero, we call fillEmptyAnswers
+  - console logging reveals fillEmptyAnswers is called many times
+  fillEmptyAnswers:
+    - get an array of Clues where the answers are incomplete/partially filled
+    - get the clues that intersect with the partially filled answers
+    - for every clue that intersects with the partially filled clue
+      - reset the answer and generate new regular expression patterns to find alternative answers that might fit
+    - if(matchingWords.length > 0) we return from this statement
+      - if finishLoop is true will only be evaluated if matchingWords.length is equal to zero
+      - however, finishLoop is only ever set to true inside matchingWords.length > 0!
+- it might more sense to:
+  - perform our updates
+  - update finishLoop to true
+  - return outside of any loops
+
+- it appears we want to break out of the "pattern of patterns" loop which will bring us back to the "incomplete of incompletes" loop
+  - 
