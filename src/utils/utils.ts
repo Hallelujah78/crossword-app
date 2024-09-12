@@ -1331,9 +1331,9 @@ export const setClueNumbersOnClues = (
 ) => {
   for (const clue of clueList) {
     const indexOfStartAnswer = clue.indices[0];
-    if (gridState[indexOfStartAnswer].clueNumber) {
-    }
-    clue.clueNumber = +gridState[indexOfStartAnswer].clueNumber;
+
+    const clueNum = gridState[indexOfStartAnswer].clueNumber;
+    if (clueNum) clue.clueNumber = +clueNum;
   }
 };
 
@@ -1588,6 +1588,8 @@ export const getContiguousLights = (grid: CellType[], index: number) => {
 };
 
 export function mergeSubarrays(arrays: number[][]) {
+  let arraysCopy = [...arrays];
+
   function mergeTwoArrays(arr1: number[], arr2: number[]) {
     return [...new Set([...arr1, ...arr2])];
   }
@@ -1599,9 +1601,9 @@ export function mergeSubarrays(arrays: number[][]) {
   // This array will store the result
   const result = [];
 
-  while (arrays.length > 0) {
-    let first = arrays[0];
-    let rest = arrays.slice(1); //copies array from pos 1 inclusive
+  while (arraysCopy.length > 0) {
+    let first = arraysCopy[0];
+    let rest = arraysCopy.slice(1); //copies array from pos 1 inclusive
 
     // on iteration 2
     // - arrays contains the arrays that had no intersection with the initial value of first
@@ -1629,7 +1631,7 @@ export function mergeSubarrays(arrays: number[][]) {
     }
 
     result.push(first); // all of the merged arrays so far
-    arrays = rest; // rest and array now contains only unmerged arrays
+    arraysCopy = rest; // rest and array now contains only unmerged arrays
   }
 
   return result;
