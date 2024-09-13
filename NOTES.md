@@ -2751,7 +2751,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - notify user when clues are fetched on create route
 - layout for tablet-sized screens
 - Grid.tsx is still using its own version of getClues - refactor to use useClueFetch
-- deal with all TS warnings in utils.ts
+- deal with all TS warnings in utils.ts - **DONE**
 - move my notes for Coursera's AI For Everyone to my portfolio
 - time out long running answer generation
 
