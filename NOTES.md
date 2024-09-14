@@ -2752,8 +2752,9 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - layout for tablet-sized screens
 - Grid.tsx is still using its own version of getClues - refactor to use useClueFetch
 - deal with all TS warnings in utils.ts - **DONE**
-- move my notes for Coursera's AI For Everyone to my portfolio
+- move my notes for Coursera's AI For Everyone to my portfolio - **DONE**
 - time out long running answer generation
+- update README.md
 
 - populateClues anomaly
   - if removeEmpty is false (in other words Force Fill Grid is checked/true) and emptyCells exists and has length greater than zero, we call fillEmptyAnswers
@@ -2772,4 +2773,41 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
   - return outside of any loops
 
 - it appears we want to break out of the "pattern of patterns" loop which will bring us back to the "incomplete of incompletes" loop
-  - 
+**RESOLVED**
+
+
+## 14/9/2024
+- verify that all words in a grid are valid words in our word list, otherwise it is invalid
+- notify user when clues are fetched on create route
+- layout for tablet-sized screens
+- Grid.tsx is still using its own version of getClues - refactor to use useClueFetch
+- time out long running answer generation
+- update README.md
+- hyphens and spaces should be reflected on the grid with dashes and dark borders between words
+
+- verify the words are valid words
+  - each clue in clues has two props
+    - `answer` is an array containing the answer minus hypens or spaces
+    - `raw` includes spaces and hyphens
+- our answer may not be a valid word where we create a crossword like this:
+
+![alt text](image-9.png)
+
+- note that the clue 5 Down in state has the following values for `answer` and `raw` respectively: "CONFLICTUWT" and "CONFLICTUAL"
+- the `raw` value is not being updated
+- when we request a clue from OpenAI we use the `answer` prop and it is still able to come up with a clue for us:
+
+![alt text](image-10.png)
+
+- it even manages to come up with a good clue for the incomprehensible (to me) DBCHOTOMIZE:
+
+![alt text](image-11.png)
+
+- if our words aren't words, we never request the clue
+- do we care that our `answer` prop and `raw` don't match?
+  - probably not, in fact it will provide an easy method to check if our word is a word WITHOUT having to iterate over our word list
+- our code can't handle grids like this:
+
+![alt text](image-12.png)
+- we should make these grid configs invalid as well
+until we can come up with code to fix this

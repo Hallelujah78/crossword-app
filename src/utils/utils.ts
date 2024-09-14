@@ -1677,13 +1677,15 @@ export const isLetter = (letter: string) => {
 };
 
 export const validateGrid = (clues: Clue[], grid: CellType[]) => {
-  // setIsValid(true);
   let valid = true;
+
   // reset isValid to true and backgroundColor to ""
   for (const cell of grid) {
     cell.isValid = true;
     cell.backgroundColor = "";
   }
+
+  valid = findBlockOfCells(grid);
 
   const shortAnswers = clues.filter((clue) => clue.length < 3);
   const islandCell = grid.filter(
@@ -1745,4 +1747,25 @@ export const resetIslandCell = (grid: CellType[]) => {
     grid[cell.id].answer = "";
     updateSurroundingCells(grid, grid.length - 1 - cell.id);
   }
+};
+
+const findBlockOfCells = (grid: CellType[]) => {
+  let isValid = true;
+  for (let i = 0; i < grid.length; i++) {
+    if (
+      !grid[i].isVoid &&
+      grid[i].right &&
+      grid[i].bottom &&
+      grid[i + 1].bottom
+    ) {
+      grid[i].isValid = false;
+      grid[i + 1].isValid = false;
+      const cellBelow = getCellBelow(grid, i);
+      const cellBelowRight = getCellDownRight(i, grid);
+      if (cellBelow) cellBelow.isValid = false;
+      if (cellBelowRight) cellBelowRight.isValid = false;
+      isValid = false;
+    }
+  }
+  return isValid;
 };
