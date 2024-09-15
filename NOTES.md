@@ -2810,4 +2810,4 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 
 ![alt text](image-12.png)
 - we should make these grid configs invalid as well
-until we can come up with code to fix this
+until we can come up with code to fix this (if we want to fix it)

@@ -4,6 +4,7 @@ import type { ReactNode, FC } from "react";
 import TooShort from "../components/InvalidSteps/TooShort";
 import Island from "../components/InvalidSteps/Island";
 import Voids from "../components/InvalidSteps/Voids";
+import Blocks from "../components/InvalidSteps/Blocks";
 
 export type InvalidSteps = {
   id: string;
@@ -59,9 +60,28 @@ const invalidGridSteps: InvalidSteps = [
         text: "Back",
         buttonType: "back",
       },
+      {
+        text: "Next",
+        buttonType: "next",
+      },
     ],
     title: "Invalid Grid: Disconnected Answers",
     content: Voids,
+  },
+  {
+    id: "step4",
+    buttons: [
+      {
+        text: "Exit",
+        buttonType: "cancel",
+      },
+      {
+        text: "Back",
+        buttonType: "back",
+      },
+    ],
+    title: "Invalid Grid: Answer Blocks",
+    content: Blocks,
   },
 ];
 
