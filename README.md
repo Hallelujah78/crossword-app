@@ -5,7 +5,7 @@
     <br/>
     <br/>
     <br />
-    React + TypeScript + Vite + Cypress Starter
+    GridMaster: create and solve crosswords
     <br />
     <br />
     <br />
@@ -15,9 +15,9 @@
   <header>
   <h1>What?</h1>
   </header>
-  <p align="left">A starter project for quickly bootstrapping a React app with TypeScript and Cypress using Vite.<p>
+  <p align="left">A web app that allows the user to edit a crossword grid, generate answers programmatically, fetch clues for those answers from OpenAI, save and then solve their crossword.<p>
   <h1>Why?</h1>
-  <p align="left">Reduces the friction/mental load when it comes to creating new projects.</p>
+  <p align="left">Simply a fun challenge to see if I could generate crosswords programmatically. I discounted the idea of programmaically creating the grid early on. It occurred to me that AI could be used to create the clues, and so that was probably the initial idea that attracted me to the project.</p>
   </section>
 </div>
 <h1 align="center">Could This Be Useful to You?</h1>
@@ -27,7 +27,11 @@
   
   - clone it
   - `npm i`
-  - `npm run dev`
+  - `npm run ndev`
+
+- this app uses serverless functions on Netlify. Accessing the app locally with Vite on, for example: localhost:5173/, you will not be able to fetch clues from OpenAI.
+- you must access the app locally through the Netlify development server, eg, localhost:8888
+- similarly, to access the app on your local network from another device: http://your_dev_machine_ip:8888
 
 <h1 align="center">Help!</h1>
 <p>Feel free to contact me with questions!</p>
@@ -35,21 +39,12 @@
 <h1 align="center">Contributors</h1>
 <p>Just lil old me.</p>
 <h1 align="center">Learnings</h1>
-<p></p>
+<p>First use of Anthropic and OpenAI APIs. First use of serverless functions.</p>
 
-- There are some custom Cypress commands in cypress/support/commands.ts as a reference for how and where to add custom commands.
+
 
 ## Todo
 
 ## Before Installing Deps
 
-- Delete anything you don't want from the deps in package.json
-- the deps/dev deps include:
-  - styled-components
-  - framer-motion
-  - react-icons
-  - react-toastify
-  - styled-components
-  - styled-reset
-  - cypress
-  - netlify-cli
+
