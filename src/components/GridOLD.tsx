@@ -18,10 +18,9 @@ import Information from "./Information.tsx";
 // data/state
 import { initialGrid } from "../state/grid.ts";
 import * as AllAnswers from "../state/answers2.ts";
+
 import steps from "../state/walkthroughSteps.ts";
 import invalidGridSteps from "../state/invalidGridSteps.ts";
-
-// hooks
 
 // utils
 import {
@@ -46,7 +45,6 @@ import {
 import useModal from "../hooks/useModal.ts";
 import { FaCircleInfo } from "react-icons/fa6";
 import LoadingSmall from "./LoadingSmall.tsx";
-import useClueFetch from "../hooks/useClueFetch.ts";
 
 const Grid: React.FC = () => {
   const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
@@ -88,7 +86,6 @@ const Grid: React.FC = () => {
 
   const linkRef = useOutletContext() as MutableRefObject<HTMLElement>;
   const stepRefs = useRef<HTMLElement[]>([]);
-  const { getClues, newClues } = useClueFetch();
 
   useEffect(() => {
     setLocalStorage("editor", {
@@ -101,12 +98,6 @@ const Grid: React.FC = () => {
       stepRefs.current.push(linkRef.current);
     }
   }, [gridState, clueList, isModified, linkRef, hideWarn]);
-
-  useEffect(() => {
-    if (newClues?.[0].id) {
-      setClueList(newClues as Clue[]);
-    }
-  }, [newClues]);
 
   const saveHandler = () => {
     let puzzles: Puzzles = [];
@@ -122,56 +113,56 @@ const Grid: React.FC = () => {
     setLocalStorage("puzzles", { puzzles });
   };
 
-  // async function getClues() {
-  //   if (clueList === undefined) return;
-  //   const clues = [...clueList];
-  //   type ReqClue = {
-  //     id: string;
-  //     word: string;
-  //     clue: string;
-  //   };
-  //   const requestArray: ReqClue[] = [];
+  async function getClues() {
+    if (clueList === undefined) return;
+    const clues = [...clueList];
+    type ReqClue = {
+      id: string;
+      word: string;
+      clue: string;
+    };
+    const requestArray: ReqClue[] = [];
 
-  //   for (const clue of clues) {
-  //     const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
-  //     requestArray.push(reqClue);
-  //   }
+    for (const clue of clues) {
+      const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
+      requestArray.push(reqClue);
+    }
 
-  //   const apiURL = "/.netlify/functions/getClues";
+    const apiURL = "/.netlify/functions/getClues";
 
-  //   try {
-  //     const response = await fetch(apiURL, {
-  //       method: "POST",
-  //       headers: { accept: "application/json" },
-  //       body: JSON.stringify(requestArray),
-  //     });
-  //     const data = (await response.json()) as ReqClue;
+    try {
+      const response = await fetch(apiURL, {
+        method: "POST",
+        headers: { accept: "application/json" },
+        body: JSON.stringify(requestArray),
+      });
+      const data = (await response.json()) as ReqClue;
 
-  //     // verify the data is as expected
-  //     if (Array.isArray(data)) {
-  //       for (const clue of clues) {
-  //         const id = clue.id;
-  //         const clueResp = data.find((clueObj) => {
-  //           return clueObj?.id === id;
-  //         });
-  //         if (clueResp.clue && clueResp.clue !== "") {
-  //           clue.clue = clueResp.clue;
-  //         } else {
-  //           throw new Error(
-  //             "The clues received from the AI are not in the correct format. Try generating the clues again!"
-  //           );
-  //         }
-  //       }
-  //       setClueList(clues);
-  //     } else {
-  //       throw new Error(
-  //         "The clues received from the AI are not in the correct format. Try generating the clues again!"
-  //       );
-  //     }
-  //   } catch (error) {
-  //     alert(error);
-  //   }
-  // }
+      // verify the data is as expected
+      if (Array.isArray(data)) {
+        for (const clue of clues) {
+          const id = clue.id;
+          const clueResp = data.find((clueObj) => {
+            return clueObj?.id === id;
+          });
+          if (clueResp.clue && clueResp.clue !== "") {
+            clue.clue = clueResp.clue;
+          } else {
+            throw new Error(
+              "The clues received from the AI are not in the correct format. Try generating the clues again!"
+            );
+          }
+        }
+        setClueList(clues);
+      } else {
+        throw new Error(
+          "The clues received from the AI are not in the correct format. Try generating the clues again!"
+        );
+      }
+    } catch (error) {
+      alert(error);
+    }
+  }
 
   const generateClues = () => {
     const grid: CellType[] = JSON.parse(JSON.stringify(gridState));
@@ -432,7 +423,7 @@ const Grid: React.FC = () => {
           type="button"
           onClick={async () => {
             setIsFetchingClues(true);
-            await getClues(clueList);
+            await getClues();
             setIsFetchingClues(false);
           }}
         >

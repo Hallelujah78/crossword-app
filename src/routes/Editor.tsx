@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // components
 
-import Grid from "../components/Grid";
+import Grid from "../components/GridOLD";
 
 const Editor: React.FC = () => {
   return (
