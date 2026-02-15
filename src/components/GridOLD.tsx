@@ -1,5 +1,5 @@
 // react
-import { useState, useEffect, useRef, type MutableRefObject } from "react";
+import { useState, useEffect, useRef, type RefObject } from "react";
 
 // models
 import type { CellType } from "../models/Cell.model.ts";
@@ -19,8 +19,8 @@ import Information from "./Information.tsx";
 import { initialGrid } from "../state/grid.ts";
 import * as AllAnswers from "../state/answers2.ts";
 
-import steps from "../state/walkthroughSteps.ts";
-import invalidGridSteps from "../state/invalidGridSteps.ts";
+import steps from "../state/walkthroughSteps.tsx";
+import invalidGridSteps from "../state/invalidGridSteps.tsx";
 
 // utils
 import {
@@ -84,7 +84,7 @@ const Grid: React.FC = () => {
       : false;
   });
 
-  const linkRef = useOutletContext() as MutableRefObject<HTMLElement>;
+  const linkRef = useOutletContext() as RefObject<HTMLElement>;
   const stepRefs = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
@@ -170,11 +170,8 @@ const Grid: React.FC = () => {
 
     let newState = { grid, clues };
 
-    let hasEmpty = newState.grid.filter((cell) => {
-      if (!cell.isVoid && !cell.letter) {
-        return cell;
-      }
-    });
+    let hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter
+    );
 
     if (fillGrid && hasEmpty.length > 0) {
       while (hasEmpty.length > 0) {
@@ -186,18 +183,15 @@ const Grid: React.FC = () => {
           removeEmpty
         );
 
-        hasEmpty = newState.grid.filter((cell) => {
-          if (!cell.isVoid && !cell.letter) {
-            return cell;
-          }
-        });
+        hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter
+        );
       }
       console.assert(
-        newState.grid.filter((cell) => {
+        newState.grid.filter((cell) => 
           cell.letter === "" ||
             cell.letter === undefined ||
-            cell.letter === null;
-        }).length === 0
+            cell.letter === null
+        ).length === 0
       );
     } else {
       // fillgrid is false OR hasEmpty is empty
@@ -340,7 +334,8 @@ const Grid: React.FC = () => {
           <input
             disabled={isGeneratingAnswers}
             className="step5"
-            ref={(el) => el && stepRefs.current.push(el)}
+            ref={(el) => {
+              if(el) stepRefs.current.push(el)}}
             checked={fillGrid}
             onChange={() => {
               setRemoveEmpty((prev) => !prev);

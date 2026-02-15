@@ -1,4 +1,4 @@
-import type { ReactNode, FC } from "react";
+import type { ReactNode } from "react";
 
 // components
 import TooShort from "../components/InvalidSteps/TooShort";
@@ -10,7 +10,7 @@ export type InvalidSteps = {
   id: string;
   buttons: { text: string; buttonType: string; func?: () => void }[];
   title: string;
-  content: ReactNode | FC;
+  content: ReactNode;
 }[];
 
 const invalidGridSteps: InvalidSteps = [
@@ -28,7 +28,7 @@ const invalidGridSteps: InvalidSteps = [
       },
     ],
     title: "Invalid Grid: Answer Too Short",
-    content: TooShort,
+    content: <TooShort/>,
   },
   {
     id: "step2",
@@ -47,7 +47,7 @@ const invalidGridSteps: InvalidSteps = [
       },
     ],
     title: "Invalid Grid: Disconnected Answers",
-    content: Island,
+    content: <Island/>,
   },
   {
     id: "step3",
@@ -66,7 +66,7 @@ const invalidGridSteps: InvalidSteps = [
       },
     ],
     title: "Invalid Grid: Disconnected Answers",
-    content: Voids,
+    content: <Voids/>,
   },
   {
     id: "step4",
@@ -81,7 +81,7 @@ const invalidGridSteps: InvalidSteps = [
       },
     ],
     title: "Invalid Grid: Answer Blocks",
-    content: Blocks,
+    content: <Blocks/>,
   },
 ];
 

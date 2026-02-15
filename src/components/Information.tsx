@@ -3,10 +3,7 @@ import {
   useRef,
   useState,
   type ComponentPropsWithoutRef,
-  type MutableRefObject,
-  type FC,
-  type ReactNode,
-  isValidElement,
+  type RefObject,
 } from "react";
 
 // third party
@@ -27,12 +24,12 @@ import type { Steps } from "../models/Steps.model";
 //
 
 // models
-import type { EmptyProps } from "../models/EmptyProps.model";
+// import type { EmptyProps } from "../models/EmptyProps.model";
 
 // assets
 
 interface InformationProps extends ComponentPropsWithoutRef<"div"> {
-  myRefs: MutableRefObject<HTMLElement[]>;
+  myRefs: RefObject<HTMLElement[]>;
   close: () => void;
   steps: Steps;
   isVisible: boolean;
@@ -54,11 +51,11 @@ const Information: React.FC<InformationProps> = ({
 
   const renderedContent = steps[currStep].content;
 
-  function isFunctionContent(
-    content: ReactNode | FC | FC<EmptyProps> | null | undefined
-  ): content is FC | FC<EmptyProps> {
-    return typeof content === "function";
-  }
+  // function isFunctionContent(
+  //   content: ReactNode | FC | FC<EmptyProps> | null | undefined
+  // ): content is FC | FC<EmptyProps> {
+  //   return typeof content === "function";
+  // }
 
   const renderStep = () => {
     const currStepId = steps[currStep].id;
@@ -107,11 +104,7 @@ const Information: React.FC<InformationProps> = ({
       <div className="modal">
         <div className="info-container">
           <h1>{steps[currStep].title}</h1>
-          {renderedContent && isFunctionContent(renderedContent)
-            ? renderedContent({})
-            : isValidElement(renderedContent)
-            ? renderedContent
-            : null}
+          {renderedContent}
         </div>
         <div className="button-container">
           {steps[currStep].buttons.map((button) => {

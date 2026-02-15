@@ -301,3 +301,33 @@ This version is simpler and more intuitive as it avoids the complexities of the 
     - this works for most things (arrow keys, backspace), but for tab we need to know if shift is down, so we'll have to add back our event
         - when handleKeyDown is invoked by onKeyDown AND e.key is "Tab", we pass the event
         - the easiest way to do this might be to simply pass in the handleTabKeyPress to our component
+
+## Upgrading Packages - Fixing TypeScript Errors
+
+Instead of relying on ChatGPT to fix every error, let's try to fix one ourselves.
+
+```console
+src/components/Information.tsx:110:11 - error TS2322: Type 'string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<...> | null | undefined' is not assignable to type 'ReactNode'.
+```
+- relates to conditionally rendered item in:
+
+```javascript
+ {renderedContent && isFunctionContent(renderedContent)
+            ? renderedContent({})
+            : isValidElement(renderedContent)
+            ? renderedContent
+            : null}
+```
+
+- renderedContent is `const renderedContent = steps[currStep].content;`
+- renderedContent is of type: ` ReactNode | FC<EmptyProps> | FC`
+
+- if renderedContent is not falsy AND it is a function
+- then invoke renderedContent
+- else use isValidElement from React to check if is valid element
+- if isValidElement
+- then return renderedContent (render it)
+- else return null
+- `steps` are `walkthroughSteps.ts` imported into GridOLD.tsx which renders Information.tsx
+
+Ended up using ChatGPT. Issue was my walkthroughSteps. Updated so instead of invoking Paragraph with args `content: Paragraph({"some text"}), I pass the component `<Paragraph text="..."/>`. Then we render simply as {renderedContent} without checking if it is a function or using isValidElement.
