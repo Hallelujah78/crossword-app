@@ -1,42 +1,40 @@
 // react
 import { useRef } from "react";
-
+import { NavLink, Outlet } from "react-router-dom";
 // libs
 import styled from "styled-components";
-import { NavLink, Outlet } from "react-router-dom";
-import PoweredBy from "../components/PoweredBy";
-
 // assets
 import logo from "/android-chrome-192x192.png";
+import PoweredBy from "../components/PoweredBy";
 
 const Root: React.FC = () => {
-  const linkRef = useRef<HTMLAnchorElement>(null);
-  return (
-    <Wrapper>
-      <div className="nav-container">
-        <nav>
-          <div className="logo-container">
-            <img
-              className="logo"
-              src={logo}
-              alt="a logo contianing GM in white letters on a blue background"
-            />
-          </div>
-          <PoweredBy />
-          <h1 className="title">GridMaster</h1>
-          <div className="link-container">
-            <NavLink to={"/"}>Create</NavLink>
-            <NavLink ref={linkRef} className="step9" to={"solver"}>
-              Solve
-            </NavLink>
-          </div>
-        </nav>
-      </div>
-      <section>
-        <Outlet context={linkRef} />
-      </section>
-    </Wrapper>
-  );
+	const linkRef = useRef<HTMLAnchorElement>(null);
+	return (
+		<Wrapper>
+			<div className="nav-container">
+				<nav>
+					<div className="logo-container">
+						<img
+							className="logo"
+							src={logo}
+							alt="a logo contianing GM in white letters on a blue background"
+						/>
+					</div>
+					<PoweredBy />
+					<h1 className="title">GridMaster</h1>
+					<div className="link-container">
+						<NavLink to={"/"}>Create</NavLink>
+						<NavLink ref={linkRef} className="step9" to={"solver"}>
+							Solve
+						</NavLink>
+					</div>
+				</nav>
+			</div>
+			<section>
+				<Outlet context={linkRef} />
+			</section>
+		</Wrapper>
+	);
 };
 
 export default Root;

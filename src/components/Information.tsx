@@ -1,128 +1,110 @@
 // react
 import {
-  useRef,
-  useState,
-  type ComponentPropsWithoutRef,
-  type RefObject,
+	type ComponentPropsWithoutRef,
+	type RefObject,
+	useRef,
+	useState,
 } from "react";
 
-// third party
 
 import styled from "styled-components";
 import Button from "../components/Button";
-// utils
 
-// data
-
-// components
-
-// state
-
-// hooks
 import useTrapFocus from "../hooks/useTrapFocus";
 import type { Steps } from "../models/Steps.model";
-//
 
-// models
-// import type { EmptyProps } from "../models/EmptyProps.model";
 
-// assets
 
 interface InformationProps extends ComponentPropsWithoutRef<"div"> {
-  myRefs: RefObject<HTMLElement[]>;
-  close: () => void;
-  steps: Steps;
-  isVisible: boolean;
+	myRefs: RefObject<HTMLElement[]>;
+	close: () => void;
+	steps: Steps;
+	isVisible: boolean;
 }
 
 const Information: React.FC<InformationProps> = ({
-  myRefs,
-  close,
-  steps,
+	myRefs,
+	close,
+	steps,
 }: InformationProps) => {
-  const [currStep, setCurrStep] = useState(0);
-  const selfRef = useRef<HTMLDivElement>(null);
-  useTrapFocus(selfRef);
+	const [currStep, setCurrStep] = useState(0);
+	const selfRef = useRef<HTMLDivElement>(null);
+	useTrapFocus(selfRef);
 
-  const closeInfo = () => {
-    setCurrStep(0);
-    close();
-  };
+	const closeInfo = () => {
+		setCurrStep(0);
+		close();
+	};
 
-  const renderedContent = steps[currStep].content;
+	const renderedContent = steps[currStep].content;
 
-  // function isFunctionContent(
-  //   content: ReactNode | FC | FC<EmptyProps> | null | undefined
-  // ): content is FC | FC<EmptyProps> {
-  //   return typeof content === "function";
-  // }
 
-  const renderStep = () => {
-    const currStepId = steps[currStep].id;
+	const renderStep = () => {
+		const currStepId = steps[currStep].id;
 
-    const currEl = myRefs.current.find((el) => {
-      return el.classList.contains(currStepId);
-    });
+		const currEl = myRefs.current.find((el) => {
+			return el.classList.contains(currStepId);
+		});
 
-    let top = 0;
-    let left = 0;
-    let height = 0;
-    let width = 0;
-    const side = steps[currStep].attach;
-    if (currEl) {
-      top = currEl.getBoundingClientRect().top;
-      height = currEl.getBoundingClientRect().height;
-      width = currEl.getBoundingClientRect().width;
-      left = currEl.getBoundingClientRect().left;
-    }
+		let top = 0;
+		let left = 0;
+		let height = 0;
+		let width = 0;
+		const side = steps[currStep].attach;
+		if (currEl) {
+			top = currEl.getBoundingClientRect().top;
+			height = currEl.getBoundingClientRect().height;
+			width = currEl.getBoundingClientRect().width;
+			left = currEl.getBoundingClientRect().left;
+		}
 
-    const { component: Arrow } = steps[currStep];
-    if (Arrow) {
-      return (
-        <Arrow
-          top={top}
-          left={left}
-          height={height}
-          width={width}
-          side={side}
-        />
-      );
-    }
-  };
+		const { component: Arrow } = steps[currStep];
+		if (Arrow) {
+			return (
+				<Arrow
+					top={top}
+					left={left}
+					height={height}
+					width={width}
+					side={side}
+				/>
+			);
+		}
+	};
 
-  const updateCurrStep = (index: 1 | -1) => {
-    if (
-      (index === -1 && currStep > 0) ||
-      (index === 1 && currStep < steps.length - 1)
-    ) {
-      setCurrStep((prev) => prev + index);
-    }
-  };
+	const updateCurrStep = (index: 1 | -1) => {
+		if (
+			(index === -1 && currStep > 0) ||
+			(index === 1 && currStep < steps.length - 1)
+		) {
+			setCurrStep((prev) => prev + index);
+		}
+	};
 
-  return (
-    <Wrapper ref={selfRef} data-testid="information">
-      <div className="modal">
-        <div className="info-container">
-          <h1>{steps[currStep].title}</h1>
-          {renderedContent}
-        </div>
-        <div className="button-container">
-          {steps[currStep].buttons.map((button) => {
-            return (
-              <Button
-                key={button.buttonType}
-                {...button}
-                close={closeInfo}
-                updateCurrStep={updateCurrStep}
-              />
-            );
-          })}
-        </div>
-      </div>
+	return (
+		<Wrapper ref={selfRef} data-testid="information">
+			<div className="modal">
+				<div className="info-container">
+					<h1>{steps[currStep].title}</h1>
+					{renderedContent}
+				</div>
+				<div className="button-container">
+					{steps[currStep].buttons.map((button) => {
+						return (
+							<Button
+								key={button.buttonType}
+								{...button}
+								close={closeInfo}
+								updateCurrStep={updateCurrStep}
+							/>
+						);
+					})}
+				</div>
+			</div>
 
-      {renderStep()}
-    </Wrapper>
-  );
+			{renderStep()}
+		</Wrapper>
+	);
 };
 export default Information;
 

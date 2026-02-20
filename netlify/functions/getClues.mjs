@@ -1,4 +1,7 @@
-const dotenv = require("dotenv").config();
+import dotenv from "dotenv";
+
+dotenv.config();
+
 import OpenAI from "openai";
 
 exports.handler = async (event) => {

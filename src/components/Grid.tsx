@@ -1,537 +1,472 @@
 // react
-import { useState, useEffect, useRef, type RefObject } from "react";
+import { type RefObject, useEffect, useRef, useState } from "react";
 
+// libs
+import { FaCircleInfo } from "react-icons/fa6";
+import { useOutletContext } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+import type Clue from "../classes/Clue.ts";
+// hooks
+import useClueFetch from "../hooks/useClueFetch.ts";
+import useModal from "../hooks/useModal.ts";
 // models
 import type { CellType } from "../models/Cell.model.ts";
 import { Direction } from "../models/Direction.model.ts";
 import type { Puzzles } from "../models/Puzzles.model.ts";
-import type Clue from "../classes/Clue.ts";
 
-// libs
-import styled, { keyframes } from "styled-components";
-import { useOutletContext } from "react-router-dom";
-
+// data/state
+import * as AllAnswers from "../state/answers2.ts";
+import { initialGrid } from "../state/grid.ts";
+import invalidGridSteps from "../state/invalidGridSteps.ts";
+import steps from "../state/walkthroughSteps.ts";
+// utils
+import {
+	createClues,
+	getAcrossClues,
+	getDownClues,
+	getLocalStorage,
+	initializeApp,
+	initializeGrid,
+	isGridValid,
+	populateClues,
+	resetAllAnswers,
+	setClueNumbers,
+	setCluesThatIntersect,
+	setLocalStorage,
+	sortCluesDescendingLength,
+	updateSurroundingCells,
+	validateGrid,
+} from "../utils/utils.ts";
 // components
 import Cell from "./Cell.tsx";
 import Information from "./Information.tsx";
-
-// data/state
-import { initialGrid } from "../state/grid.ts";
-import * as AllAnswers from "../state/answers2.ts";
-import steps from "../state/walkthroughSteps.ts";
-import invalidGridSteps from "../state/invalidGridSteps.ts";
-
-// hooks
-
-// utils
-import {
-  initializeGrid,
-  setClueNumbers,
-  updateSurroundingCells,
-  createClues,
-  populateClues,
-  getAcrossClues,
-  getDownClues,
-  setCluesThatIntersect,
-  sortCluesDescendingLength,
-  initializeApp,
-  resetAllAnswers,
-  getLocalStorage,
-  setLocalStorage,
-  validateGrid,
-  isGridValid,
-} from "../utils/utils.ts";
-
-// hooks
-import useModal from "../hooks/useModal.ts";
-import { FaCircleInfo } from "react-icons/fa6";
 import LoadingSmall from "./LoadingSmall.tsx";
-import useClueFetch from "../hooks/useClueFetch.ts";
 
 const Grid: React.FC = () => {
-  const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
-  const [isFetchingClues, setIsFetchingClues] = useState(false);
-  const [puzzleName, setPuzzleName] = useState<string>("");
-  const [isModified, setIsModified] = useState<boolean>(() => {
-    const modifiedState = getLocalStorage("editor")?.isModified;
-    return modifiedState ? modifiedState : false;
-  });
-  const [gridState, setGridState] = useState<CellType[]>(() => {
-    const storage = getLocalStorage("editor")?.grid;
-    return storage
-      ? storage
-      : initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
-  });
-  const [clueList, setClueList] = useState<Clue[]>(() => {
-    const clueState = getLocalStorage("editor")?.clues;
-    return clueState ? clueState : initializeApp(gridState);
-  });
-  const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
-  const [fillGrid, setFillGrid] = useState<boolean>(true);
-  const [isValid, setIsValid] = useState<boolean>(() => {
-    return localStorage.getItem("editor")
-      ? isGridValid(gridState as CellType[])
-      : true;
-  });
-  const { isVisible, close } = useModal(true);
-  const {
-    isVisible: isModalVisible,
-    show: showModal,
-    close: closeModal,
-  } = useModal(false);
+	const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
+	const [isFetchingClues, setIsFetchingClues] = useState(false);
+	const [puzzleName, setPuzzleName] = useState<string>("");
+	const [isModified, setIsModified] = useState<boolean>(() => {
+		const modifiedState = getLocalStorage("editor")?.isModified;
+		return modifiedState ? modifiedState : false;
+	});
+	const [gridState, setGridState] = useState<CellType[]>(() => {
+		const storage = getLocalStorage("editor")?.grid;
+		return storage
+			? storage
+			: initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
+	});
+	const [clueList, setClueList] = useState<Clue[]>(() => {
+		const clueState = getLocalStorage("editor")?.clues;
+		return clueState ? clueState : initializeApp(gridState);
+	});
+	const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
+	const [fillGrid, setFillGrid] = useState<boolean>(true);
+	const [isValid, setIsValid] = useState<boolean>(() => {
+		return localStorage.getItem("editor")
+			? isGridValid(gridState as CellType[])
+			: true;
+	});
+	const { isVisible, close } = useModal(true);
+	const {
+		isVisible: isModalVisible,
+		show: showModal,
+		close: closeModal,
+	} = useModal(false);
 
-  const [hideWarn, sethideWarn] = useState<boolean | undefined>(() => {
-    return localStorage.getItem("editor")
-      ? getLocalStorage("editor")?.warn
-      : false;
-  });
+	const [hideWarn, sethideWarn] = useState<boolean | undefined>(() => {
+		return localStorage.getItem("editor")
+			? getLocalStorage("editor")?.warn
+			: false;
+	});
 
-  const linkRef = useOutletContext() as RefObject<HTMLElement>;
-  const stepRefs = useRef<HTMLElement[]>([]);
-  const { getClues, newClues } = useClueFetch();
+	const linkRef = useOutletContext() as RefObject<HTMLElement>;
+	const stepRefs = useRef<HTMLElement[]>([]);
+	const { getClues, newClues } = useClueFetch();
 
-  useEffect(() => {
-    setLocalStorage("editor", {
-      grid: gridState,
-      clues: clueList,
-      isModified,
-      warn: hideWarn,
-    });
-    if (linkRef) {
-      stepRefs.current.push(linkRef.current);
-    }
-  }, [gridState, clueList, isModified, linkRef, hideWarn]);
+	useEffect(() => {
+		setLocalStorage("editor", {
+			grid: gridState,
+			clues: clueList,
+			isModified,
+			warn: hideWarn,
+		});
+		if (linkRef) {
+			stepRefs.current.push(linkRef.current);
+		}
+	}, [gridState, clueList, isModified, linkRef, hideWarn]);
 
-  useEffect(() => {
-    if (newClues?.[0].id) {
-      setClueList(newClues as Clue[]);
-    }
-  }, [newClues]);
+	useEffect(() => {
+		if (newClues?.[0].id) {
+			setClueList(newClues as Clue[]);
+		}
+	}, [newClues]);
 
-  const saveHandler = () => {
-    let puzzles: Puzzles = [];
-    if (localStorage.getItem("puzzles")) {
-      puzzles = getLocalStorage("puzzles") as Puzzles;
-    }
-    puzzles.push({
-      name: puzzleName,
-      grid: gridState as CellType[],
-      clues: clueList as Clue[],
-    });
+	const saveHandler = () => {
+		let puzzles: Puzzles = [];
+		if (localStorage.getItem("puzzles")) {
+			puzzles = getLocalStorage("puzzles") as Puzzles;
+		}
+		puzzles.push({
+			name: puzzleName,
+			grid: gridState as CellType[],
+			clues: clueList as Clue[],
+		});
 
-    setLocalStorage("puzzles", { puzzles });
-  };
+		setLocalStorage("puzzles", { puzzles });
+	};
 
-  // async function getClues() {
-  //   if (clueList === undefined) return;
-  //   const clues = [...clueList];
-  //   type ReqClue = {
-  //     id: string;
-  //     word: string;
-  //     clue: string;
-  //   };
-  //   const requestArray: ReqClue[] = [];
+	const generateClues = () => {
+		const grid: CellType[] = JSON.parse(JSON.stringify(gridState));
+		const clues: Clue[] = JSON.parse(JSON.stringify(clueList));
 
-  //   for (const clue of clues) {
-  //     const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
-  //     requestArray.push(reqClue);
-  //   }
+		let newState = { grid, clues };
 
-  //   const apiURL = "/.netlify/functions/getClues";
+		let hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
 
-  //   try {
-  //     const response = await fetch(apiURL, {
-  //       method: "POST",
-  //       headers: { accept: "application/json" },
-  //       body: JSON.stringify(requestArray),
-  //     });
-  //     const data = (await response.json()) as ReqClue;
+		if (fillGrid && hasEmpty.length > 0) {
+			while (hasEmpty.length > 0) {
+				newState = resetAllAnswers(clueList, gridState);
+				newState = populateClues(
+					newState.clues,
+					AllAnswers,
+					newState.grid,
+					removeEmpty,
+				);
 
-  //     // verify the data is as expected
-  //     if (Array.isArray(data)) {
-  //       for (const clue of clues) {
-  //         const id = clue.id;
-  //         const clueResp = data.find((clueObj) => {
-  //           return clueObj?.id === id;
-  //         });
-  //         if (clueResp.clue && clueResp.clue !== "") {
-  //           clue.clue = clueResp.clue;
-  //         } else {
-  //           throw new Error(
-  //             "The clues received from the AI are not in the correct format. Try generating the clues again!"
-  //           );
-  //         }
-  //       }
-  //       setClueList(clues);
-  //     } else {
-  //       throw new Error(
-  //         "The clues received from the AI are not in the correct format. Try generating the clues again!"
-  //       );
-  //     }
-  //   } catch (error) {
-  //     alert(error);
-  //   }
-  // }
+				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
+			}
 
-  const generateClues = () => {
-    const grid: CellType[] = JSON.parse(JSON.stringify(gridState));
-    const clues: Clue[] = JSON.parse(JSON.stringify(clueList));
+		} else {
+			// fillgrid is false OR hasEmpty is empty
+			// this else is essentially the "don't force fill" section
+			// in other words, remove the empty cells, and if the grid winds up being invalid, iterate over it until it is not
+			newState = populateClues(
+				newState.clues,
+				AllAnswers,
+				newState.grid,
+				removeEmpty,
+			);
+			let valid = validateGrid(newState.clues, newState.grid);
 
-    let newState = { grid, clues };
+			while (!valid) {
+				newState.grid = JSON.parse(JSON.stringify(gridState));
+				newState.clues = JSON.parse(JSON.stringify(clueList));
+				newState = populateClues(
+					newState.clues,
+					AllAnswers,
+					newState.grid,
+					removeEmpty,
+				);
+				valid = validateGrid(newState.clues, newState.grid);
+			}
+		}
+		setIsModified(
+			JSON.stringify(initialGrid) !== JSON.stringify(newState.grid),
+		);
+		return newState;
+	};
 
-    let hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter 
-    );
+	const handleClick = (e: React.MouseEvent) => {
+		if (!e.currentTarget.id || isGeneratingAnswers) {
+			return;
+		}
 
-    if (fillGrid && hasEmpty.length > 0) {
-      while (hasEmpty.length > 0) {
-        newState = resetAllAnswers(clueList, gridState);
-        newState = populateClues(
-          newState.clues,
-          AllAnswers,
-          newState.grid,
-          removeEmpty
-        );
+		const targetIndex = +e.currentTarget.id;
 
-        hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
-      }
+		const symmetricalIndex = gridState.length - 1 - targetIndex;
+		const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
 
-      // console.assert(
-      //   newState.grid.filter((cell) => {
-      //     cell.letter === "" ||
-      //       cell.letter === undefined ||
-      //       cell.letter === null;
-      //   }).length === 0
-      // );
-    } else {
-      // fillgrid is false OR hasEmpty is empty
-      // this else is essentially the "don't force fill" section
-      // in other words, remove the empty cells, and if the grid winds up being invalid, iterate over it until it is not
-      newState = populateClues(
-        newState.clues,
-        AllAnswers,
-        newState.grid,
-        removeEmpty
-      );
-      let valid = validateGrid(newState.clues, newState.grid);
+		// toggle the cell background
+		tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
+		// update the top, bottom, left and right props of surrounding cells
+		updateSurroundingCells(tempGrid, targetIndex);
 
-      while (!valid) {
-        newState.grid = JSON.parse(JSON.stringify(gridState));
-        newState.clues = JSON.parse(JSON.stringify(clueList));
-        newState = populateClues(
-          newState.clues,
-          AllAnswers,
-          newState.grid,
-          removeEmpty
-        );
-        valid = validateGrid(newState.clues, newState.grid);
-      }
-    }
-    setIsModified(
-      JSON.stringify(initialGrid) !== JSON.stringify(newState.grid)
-    );
-    return newState;
-  };
+		//
+		if (targetIndex !== (tempGrid.length - 1) / 2) {
+			tempGrid[symmetricalIndex].isVoid = !tempGrid[symmetricalIndex].isVoid;
+			// update the top, bottom, left and right props of surrounding cells
+			updateSurroundingCells(tempGrid, symmetricalIndex);
+		}
+		setClueNumbers(tempGrid);
 
-  const handleClick = (e: React.MouseEvent) => {
-    if (!e.currentTarget.id || isGeneratingAnswers) {
-      return;
-    }
+		const clues = createClues(tempGrid);
 
-    const targetIndex = +e.currentTarget.id;
+		const acrossClues = getAcrossClues(clues);
+		const downClues = getDownClues(clues);
+		for (const clue of clues) {
+			if (clue.direction === Direction.DOWN) {
+				setCluesThatIntersect(clue, acrossClues);
+			} else setCluesThatIntersect(clue, downClues);
+		}
+		setIsValid(true);
+		const valid = validateGrid(clues, tempGrid);
+		setIsValid(valid);
+		sortCluesDescendingLength(clues);
+		setClueList(clues);
+		setGridState(tempGrid);
+		setIsModified(true);
+	};
 
-    const symmetricalIndex = gridState.length - 1 - targetIndex;
-    const tempGrid = JSON.parse(JSON.stringify(gridState)) as CellType[];
+	return (
+		<Wrapper>
+			<div className="control-container">
+				<button
+					style={{
+						backgroundColor: `${
+							isGeneratingAnswers
+								? "red"
+								: !isValid || !clueList[0]?.answer.includes("")
+									? "var(--primary-100) "
+									: "var(--primary-400)"
+						}`,
+					}}
+					className="step4 generate-ans"
+					ref={(el) => {
+						if (el) stepRefs.current.push(el);
+					}}
+					type="button"
+					disabled={!isValid || !clueList[0]?.answer.includes("")}
+					onClick={() => {
+						setIsGeneratingAnswers(true);
+						let newState: { clues: Clue[]; grid: CellType[] } = {
+							clues: [],
+							grid: [],
+						};
+						setTimeout(() => {
+							newState = generateClues();
+							setGridState(newState.grid);
+							setClueList(newState.clues);
+							setIsGeneratingAnswers(false);
+						}, 200);
+					}}
+				>
+					{!isGeneratingAnswers ? (
+						<div>
+							<p className="button-text">Generate Answers</p>
+						</div>
+					) : (
+						<div>
+							<p className="button-text">Please wait...</p>
+							<LoadingSmall />
+						</div>
+					)}
+				</button>
 
-    // toggle the cell background
-    tempGrid[targetIndex].isVoid = !tempGrid[targetIndex].isVoid;
-    // update the top, bottom, left and right props of surrounding cells
-    updateSurroundingCells(tempGrid, targetIndex);
+				<br />
+				<div className="checkbox-group">
+					<label htmlFor="disable">Disable Warnings</label>
+					<input
+						disabled={isGeneratingAnswers}
+						ref={(el) => {
+							if (el) stepRefs.current.push(el);
+						}}
+						checked={hideWarn}
+						className="step4-5"
+						onChange={() => {
+							sethideWarn((prev) => !prev);
+						}}
+						id="disable"
+						name="disable"
+						type="checkbox"
+					/>
+				</div>
 
-    //
-    if (targetIndex !== (tempGrid.length - 1) / 2) {
-      tempGrid[symmetricalIndex].isVoid = !tempGrid[symmetricalIndex].isVoid;
-      // update the top, bottom, left and right props of surrounding cells
-      updateSurroundingCells(tempGrid, symmetricalIndex);
-    }
-    setClueNumbers(tempGrid);
+				<br />
+				<div className="checkbox-group">
+					<label htmlFor="fill_grid">Force Fill Grid</label>
+					<input
+						disabled={isGeneratingAnswers}
+						className="step5"
+						ref={(el) => {
+							if (el) stepRefs.current.push(el);
+						}}
+						checked={fillGrid}
+						onChange={() => {
+							setRemoveEmpty((prev) => !prev);
+							setFillGrid((prev) => !prev);
+						}}
+						type="checkbox"
+						name="fill_grid"
+						id="fill_grid"
+					/>
+				</div>
 
-    const clues = createClues(tempGrid);
+				<br />
+				<div className="reset">
+					<button
+						className="step6"
+						ref={(el) => {
+							if (el) stepRefs.current.push(el);
+						}}
+						disabled={
+							clueList[0]?.answer.includes("") ||
+							clueList[0]?.clue !== "" ||
+							isGeneratingAnswers
+						}
+						type="button"
+						onClick={() => {
+							const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
+								clueList,
+								gridState,
+							);
+							setGridState(resetGrid);
+							setClueList(resetClues);
+						}}
+					>
+						Reset Answers
+					</button>
+					<button
+						disabled={
+							!isModified ||
+							isGeneratingAnswers ||
+					
+							clueList[0]?.clue !== ""
+						}
+						type="button"
+						onClick={() => {
+							const newGrid = initializeGrid(
+								JSON.parse(JSON.stringify(initialGrid)),
+							);
+							const newClues = initializeApp(newGrid);
+							setGridState(newGrid);
+							setClueList(newClues);
+							setIsModified(false);
+							setIsValid(true);
+						}}
+					>
+						Reset Grid & Answers
+					</button>
+				</div>
+				<br />
+				<button
+					style={{
+						backgroundColor: `${
+							isFetchingClues
+								? "red"
+								: !isValid ||
+										clueList[0]?.clue !== "" ||
+										clueList[0]?.answer.includes("")
+									? "var(--primary-100)"
+									: "var(--primary-400)"
+						}`,
+					}}
+					className="step7 generate-clues"
+					ref={(el) => {
+						if (el) stepRefs.current.push(el);
+					}}
+					disabled={
+						!isValid ||
+						clueList[0]?.clue !== "" ||
+						clueList[0]?.answer.includes("")
+					}
+					type="button"
+					onClick={async () => {
+						setIsFetchingClues(true);
+						await getClues(clueList);
+						setIsFetchingClues(false);
+					}}
+				>
+					{!isFetchingClues ? (
+						<div>
+							<p className="button-text">Fetch Clues from OpenAI</p>
+						</div>
+					) : (
+						<div>
+							<p className="button-text">Fetching clues...</p>
+							<LoadingSmall />
+						</div>
+					)}
+				</button>
+				<br />
 
-    const acrossClues = getAcrossClues(clues);
-    const downClues = getDownClues(clues);
-    for (const clue of clues) {
-      if (clue.direction === Direction.DOWN) {
-        setCluesThatIntersect(clue, acrossClues);
-      } else setCluesThatIntersect(clue, downClues);
-    }
-    setIsValid(true);
-    const valid = validateGrid(clues, tempGrid);
-    setIsValid(valid);
-    sortCluesDescendingLength(clues);
-    setClueList(clues);
-    setGridState(tempGrid);
-    setIsModified(true);
-  };
+				<form className="save-container">
+					<input
+						disabled={
+							clueList[0]?.answer.includes("") ||
+							clueList[0]?.clue === "" ||
+							isGeneratingAnswers
+						}
+						required
+						type="text"
+						value={puzzleName}
+						onChange={(e) => {
+							setPuzzleName(e.target.value.toUpperCase());
+						}}
+						minLength={3}
+						maxLength={9}
+						placeholder="puzzleName"
+					/>
+					<button
+						className="step8 save-crossword"
+						ref={(el) => {
+							if (el) stepRefs.current.push(el);
+						}}
+						disabled={
+							clueList[0]?.answer.includes("") ||
+							puzzleName.length < 3 ||
+							clueList[0]?.clue === ""
+						}
+						type="submit"
+						onClick={(e) => {
+							e.preventDefault();
+							saveHandler();
+							const resetGrid = initializeGrid(
+								JSON.parse(JSON.stringify(initialGrid)),
+							);
+							const resetClues = initializeApp(resetGrid);
+							setGridState(resetGrid);
+							setClueList(resetClues);
+							setIsModified(false);
+							setPuzzleName("");
+						}}
+					>
+						Save Crossword
+					</button>
+				</form>
+			</div>
+			<div
+				className="grid-container step2"
+				ref={(el) => {
+					if (el) stepRefs.current.push(el);
+				}}
+			>
+				{gridState.map((cell) => {
+					return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
+				})}
 
-  return (
-    <Wrapper>
-      <div className="control-container">
-        <button
-          style={{
-            backgroundColor: `${
-              isGeneratingAnswers
-                ? "red"
-                : !isValid || !clueList[0]?.answer.includes("")
-                ? "var(--primary-100) "
-                : "var(--primary-400)"
-            }`,
-          }}
-          className="step4 generate-ans"
-          ref={(el) => {
-            if (el) stepRefs.current.push(el);
-          }}
-          type="button"
-          disabled={!isValid || !clueList[0]?.answer.includes("")}
-          onClick={() => {
-            setIsGeneratingAnswers(true);
-            let newState: { clues: Clue[]; grid: CellType[] } = {
-              clues: [],
-              grid: [],
-            };
-            setTimeout(() => {
-              newState = generateClues();
-              setGridState(newState.grid);
-              setClueList(newState.clues);
-              setIsGeneratingAnswers(false);
-            }, 200);
-          }}
-        >
-          {!isGeneratingAnswers ? (
-            <div>
-              <p className="button-text">Generate Answers</p>
-            </div>
-          ) : (
-            <div>
-              <p className="button-text">Please wait...</p>
-              <LoadingSmall />
-            </div>
-          )}
-        </button>
+				{clueList[0]?.answer.includes("") ? null : (
+					<div className="prevent-click"> </div>
+				)}
+				{!isValid && !hideWarn && (
+					<div className="invalid-grid">
+						<p>Invalid Grid!</p>
 
-        <br />
-        <div className="checkbox-group">
-          <label htmlFor="disable">Disable Warnings</label>
-          <input
-            disabled={isGeneratingAnswers}
-            ref={(el) => {
-              if (el) stepRefs.current.push(el);
-            }}
-            checked={hideWarn}
-            className="step4-5"
-            onChange={() => {
-              sethideWarn((prev) => !prev);
-            }}
-            id="disable"
-            name="disable"
-            type="checkbox"
-          />
-        </div>
+						<button onClick={showModal} className="info-button" type="button">
+							<FaCircleInfo className="info-icon" />
+						</button>
+					</div>
+				)}
+			</div>
 
-        <br />
-        <div className="checkbox-group">
-          <label htmlFor="fill_grid">Force Fill Grid</label>
-          <input
-            disabled={isGeneratingAnswers}
-            className="step5"
-            ref={(el) =>  {
-              if (el) stepRefs.current.push(el);
-            }}
-            checked={fillGrid}
-            onChange={() => {
-              setRemoveEmpty((prev) => !prev);
-              setFillGrid((prev) => !prev);
-            }}
-            type="checkbox"
-            name="fill_grid"
-            id="fill_grid"
-          />
-        </div>
-
-        <br />
-        <div className="reset">
-          <button
-            className="step6"
-            ref={(el) => {
-              if (el) stepRefs.current.push(el);
-            }}
-            disabled={
-              clueList[0]?.answer.includes("") ||
-              clueList[0]?.clue !== "" ||
-              isGeneratingAnswers
-            }
-            type="button"
-            onClick={() => {
-              const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
-                clueList,
-                gridState
-              );
-              setGridState(resetGrid);
-              setClueList(resetClues);
-            }}
-          >
-            Reset Answers
-          </button>
-          <button
-            disabled={
-              !isModified ||
-              isGeneratingAnswers ||
-              // clueList[0]?.answer.includes("") ||
-              clueList[0]?.clue !== ""
-            }
-            type="button"
-            onClick={() => {
-              const newGrid = initializeGrid(
-                JSON.parse(JSON.stringify(initialGrid))
-              );
-              const newClues = initializeApp(newGrid);
-              setGridState(newGrid);
-              setClueList(newClues);
-              setIsModified(false);
-              setIsValid(true);
-            }}
-          >
-            Reset Grid & Answers
-          </button>
-        </div>
-        <br />
-        <button
-          style={{
-            backgroundColor: `${
-              isFetchingClues
-                ? "red"
-                : !isValid ||
-                  clueList[0]?.clue !== "" ||
-                  clueList[0]?.answer.includes("")
-                ? "var(--primary-100)"
-                : "var(--primary-400)"
-            }`,
-          }}
-          className="step7 generate-clues"
-          ref={(el) => {
-            if (el) stepRefs.current.push(el);
-          }}
-          disabled={
-            !isValid ||
-            clueList[0]?.clue !== "" ||
-            clueList[0]?.answer.includes("")
-          }
-          type="button"
-          onClick={async () => {
-            setIsFetchingClues(true);
-            await getClues(clueList);
-            setIsFetchingClues(false);
-          }}
-        >
-          {!isFetchingClues ? (
-            <div>
-              <p className="button-text">Fetch Clues from OpenAI</p>
-            </div>
-          ) : (
-            <div>
-              <p className="button-text">Fetching clues...</p>
-              <LoadingSmall />
-            </div>
-          )}
-        </button>
-        <br />
-
-        <form className="save-container">
-          <input
-            disabled={
-              clueList[0]?.answer.includes("") ||
-              clueList[0]?.clue === "" ||
-              isGeneratingAnswers
-            }
-            required
-            type="text"
-            value={puzzleName}
-            onChange={(e) => {
-              setPuzzleName(e.target.value.toUpperCase());
-            }}
-            minLength={3}
-            maxLength={9}
-            placeholder="puzzleName"
-          />
-          <button
-            className="step8 save-crossword"
-            ref={(el) => {
-              if (el) stepRefs.current.push(el);
-            }}
-            disabled={
-              clueList[0]?.answer.includes("") ||
-              puzzleName.length < 3 ||
-              clueList[0]?.clue === ""
-            }
-            type="submit"
-            onClick={(e) => {
-              e.preventDefault();
-              saveHandler();
-              const resetGrid = initializeGrid(
-                JSON.parse(JSON.stringify(initialGrid))
-              );
-              const resetClues = initializeApp(resetGrid);
-              setGridState(resetGrid);
-              setClueList(resetClues);
-              setIsModified(false);
-              setPuzzleName("");
-            }}
-          >
-            Save Crossword
-          </button>
-        </form>
-      </div>
-      <div
-        className="grid-container step2"
-        ref={(el) => {
-          if (el) stepRefs.current.push(el);
-        }}
-      >
-        {gridState.map((cell) => {
-          return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
-        })}
-
-        {clueList[0]?.answer.includes("") ? null : (
-          <div className="prevent-click"> </div>
-        )}
-        {!isValid && !hideWarn && (
-          <div className="invalid-grid">
-            <p>Invalid Grid!</p>
-
-            <button onClick={showModal} className="info-button" type="button">
-              <FaCircleInfo className="info-icon" />
-            </button>
-          </div>
-        )}
-      </div>
-
-      {isVisible && !localStorage.getItem("editor") && (
-        <Information
-          myRefs={stepRefs}
-          steps={steps}
-          close={close}
-          isVisible={isVisible}
-        />
-      )}
-      {isModalVisible && (
-        <Information
-          myRefs={stepRefs} // optional
-          steps={invalidGridSteps}
-          close={closeModal}
-          isVisible={isVisible}
-        />
-      )}
-    </Wrapper>
-  );
+			{isVisible && !localStorage.getItem("editor") && (
+				<Information
+					myRefs={stepRefs}
+					steps={steps}
+					close={close}
+					isVisible={isVisible}
+				/>
+			)}
+			{isModalVisible && (
+				<Information
+					myRefs={stepRefs} // optional
+					steps={invalidGridSteps}
+					close={closeModal}
+					isVisible={isVisible}
+				/>
+			)}
+		</Wrapper>
+	);
 };
 export default Grid;
 

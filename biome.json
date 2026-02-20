@@ -5,5 +5,14 @@
   },
   "linter": {
     "rules": {}
+  },
+  
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   }
+
 }

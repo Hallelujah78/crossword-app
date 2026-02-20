@@ -1,77 +1,77 @@
-import {
-  TbArrowBigLeftFilled,
-  TbArrowBigRightFilled,
-  TbArrowBigUpFilled,
-  TbArrowBigDownFilled,
-} from "react-icons/tb";
 import type { IconType } from "react-icons";
+import {
+	TbArrowBigDownFilled,
+	TbArrowBigLeftFilled,
+	TbArrowBigRightFilled,
+	TbArrowBigUpFilled,
+} from "react-icons/tb";
 
 import styled, { keyframes } from "styled-components";
 import { Side } from "../models/Side.model";
 
 export interface PositionProps {
-  top?: number;
-  left?: number;
-  right?: number;
-  bottom?: number;
-  height: number;
-  width: number;
-  side?: Side;
+	top?: number;
+	left?: number;
+	right?: number;
+	bottom?: number;
+	height: number;
+	width: number;
+	side?: Side;
 }
 
 const Arrow: React.FC<PositionProps> = ({ top, left, height, width, side }) => {
-  if (!top) {
-    top = 0;
-  }
-  if (!left) {
-    left = 0;
-  }
-  let xval = 0;
-  let yval = 0;
-  let transformx = "0%";
-  let transformy = "0%";
-  let Component: IconType = TbArrowBigLeftFilled;
-  switch (side) {
-    case Side.BOTTOM:
-      Component = TbArrowBigUpFilled;
-      xval = left ? left + width / 2 : 0;
-      transformx = "-50%";
-      yval = top + height;
-      break;
-    case Side.TOP:
-      Component = TbArrowBigDownFilled;
-      xval = left ? left + width / 2 : 0;
-      transformx = "-50%";
-      yval = top;
-      transformy = "-100%";
-      break;
-    case Side.RIGHT:
-      Component = TbArrowBigLeftFilled;
-      xval = left ? left + width : 0;
-      yval = top + height / 2;
-      transformy = "-50%";
-      break;
-    case Side.LEFT:
-      Component = TbArrowBigRightFilled;
-      xval = left ? left : 0;
-      transformx = "-100%";
-      yval = top + height / 2;
-      transformy = "-50%";
-      break;
-    default:
-      Component = TbArrowBigLeftFilled;
-  }
+	if (!top) {
+		top = 0;
+	}
+	if (!left) {
+		left = 0;
+	}
+	let xval = 0;
+	let yval = 0;
+	let transformx = "0%";
+	let transformy = "0%";
+	let Component: IconType = TbArrowBigLeftFilled;
+	switch (side) {
+		case Side.BOTTOM:
+			Component = TbArrowBigUpFilled;
+			xval = left ? left + width / 2 : 0;
+			transformx = "-50%";
+			yval = top + height;
+			break;
+		case Side.TOP:
+			Component = TbArrowBigDownFilled;
+			xval = left ? left + width / 2 : 0;
+			transformx = "-50%";
+			yval = top;
+			transformy = "-100%";
+			break;
+		case Side.RIGHT:
+			Component = TbArrowBigLeftFilled;
+			xval = left ? left + width : 0;
+			yval = top + height / 2;
+			transformy = "-50%";
+			break;
+		case Side.LEFT:
+			Component = TbArrowBigRightFilled;
+			xval = left ? left : 0;
+			transformx = "-100%";
+			yval = top + height / 2;
+			transformy = "-50%";
+			break;
+		default:
+			Component = TbArrowBigLeftFilled;
+	}
 
-  return (
-    <Wrapper
-      $xval={xval}
-      $yval={yval}
-      $transformx={transformx}
-      $transformy={transformy}
-    >
-      <Component id="myArrow" />
-    </Wrapper>
-  );
+	return (
+		<Wrapper
+			$xval={xval}
+			$yval={yval}
+			$transformx={transformx}
+			$transformy={transformy}
+		>
+			<Component id="myArrow" />
+		</Wrapper>
+	);
 };
 
 export default Arrow;
@@ -85,10 +85,10 @@ const boxShadow = keyframes`
 `;
 
 const Wrapper = styled.div<{
-  $xval: number;
-  $yval: number;
-  $transformx: string;
-  $transformy: string;
+	$xval: number;
+	$yval: number;
+	$transformx: string;
+	$transformy: string;
 }>`
   z-index: 99999;
   position: absolute;

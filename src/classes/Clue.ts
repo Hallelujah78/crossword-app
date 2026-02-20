@@ -1,5 +1,6 @@
 import type { Direction } from "../models/Direction.model";
 
+
 export default class Clue {
   constructor(
     public clueNumber: number,

@@ -4,6 +4,7 @@ const useTrapFocus = (elementRef: React.RefObject<HTMLElement | null>) => {
   const [firstEl, setFirstEl] = useState<HTMLElement | null>(null);
   const [lastEl, setLastEl] = useState<HTMLElement | null>(null);
 
+  // Get all the focussable elements and focus the first one
   const setFocussable = () => {
     let focussableEls: NodeListOf<HTMLElement>;
     if (elementRef.current) {
@@ -17,18 +18,21 @@ const useTrapFocus = (elementRef: React.RefObject<HTMLElement | null>) => {
     }
   };
 
+  // Handle wrapping to the first or last focussable element if the shift key is/isn't pressed
   const handleTabPress = (event: KeyboardEvent) => {
     const isTabPressed = event.key === "Tab" || event.code === "Tab";
 
     if (!isTabPressed) return;
+    // If tab is pressed with shift held down, tab backwards
     if (event.shiftKey) {
-      // if activeel is firstel, set activeel to lastel
+      // If first element is focussed, focus the last element
       if (document.activeElement === firstEl) {
         event.preventDefault();
 
         lastEl?.focus();
       }
     } else {
+       // If the last focussable element is focussed, wrap to the first
       if (document.activeElement === lastEl) {
         event.preventDefault();
         firstEl?.focus();
@@ -36,6 +40,7 @@ const useTrapFocus = (elementRef: React.RefObject<HTMLElement | null>) => {
     }
   };
 
+  // 
   useEffect(() => {
     const currentRefElement = elementRef.current;
     setFocussable();

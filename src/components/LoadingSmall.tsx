@@ -1,12 +1,13 @@
 import styled, { keyframes } from "styled-components";
+
 const LoadingSmall: React.FC = () => {
-  return (
-    <Wrapper>
-      <div className="loading-container">
-        <div className="loading" />
-      </div>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<div className="loading-container">
+				<div className="loading" />
+			</div>
+		</Wrapper>
+	);
 };
 export default LoadingSmall;
 
