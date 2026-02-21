@@ -178,14 +178,7 @@ const Grid: React.FC = () => {
 
 				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
 			}
-			console.assert(
-				newState.grid.filter(
-					(cell) =>
-						cell.letter === "" ||
-						cell.letter === undefined ||
-						cell.letter === null,
-				).length === 0,
-			);
+			
 		} else {
 			// fillgrid is false OR hasEmpty is empty
 			// this else is essentially the "don't force fill" section
