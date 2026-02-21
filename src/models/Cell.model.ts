@@ -1,8 +1,8 @@
 export type CellType = {
-  isVoid: boolean;
-  id: number;
+  isVoid: boolean; // is the cell a void
+  id: number; // index of the cell in the grid
   clueNumber?: string;
-  top: boolean;
+  top: boolean; // true if cell above is 
   right: boolean;
   bottom: boolean;
   left: boolean;

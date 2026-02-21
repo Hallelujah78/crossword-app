@@ -42,3 +42,32 @@ type Answer = {
     word?: string // for values that contain hyphens, this is the word without hyphens
 };
 ```
+
+- the initial grid that we load lives at `state/grid.ts`
+- it is an array of `CellType` type objects:
+```js
+export type CellType = {
+  isVoid: boolean; // is the cell a void (black)
+  id: number;
+  clueNumber?: string;
+  top: boolean;
+  right: boolean;
+  bottom: boolean;
+  left: boolean;
+  letter?: string;
+  selected: boolean;
+  answer?: string;
+  isValid?: boolean;
+  backgroundColor?: string;
+};
+```
+- the props in each `CellType` as found in `state/grid.ts` are default values
+- when the app loads, we actually call `initializeGrid` and this sets values:
+    - id is set to the index of the cell in the grid
+    - letter set to empty string
+    - answer set to empty string
+- the `isVoid` prop is correctly set in `state/grid.ts`
+    - isVoid is true if cell is void, false if it is light
+- top, bottom, left, right
+    - false if cell in that diretion is void
+    - true if cell in that direction is light
