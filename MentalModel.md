@@ -30,6 +30,12 @@
 - the user is presented with the default initial empty grid that they can edit or generate answers for
 - if there are saved puzzles (for the solve route), they are loaded from local storage and can be selected from the dropdown menu on the solve route
 
+## Routes
+- We have the following routes:
+- Editor - rendered on `/` and renders `Editor.tsx` which renders `Grid` component from `GridOLD.tsx`
+- Root - common to entire app
+- Solve - rendered on `/solver` and renders `Solve.tsx` which renders `SolveGrid`
+
 ## State
 - the answers used to generate the words for our crossword live in `state/answers2.ts` as a number of named arrays that consist of Answer type objects. The name of the array reflects the length of the words it contains. The `five` Answer array consts of words that are 5 letters long. I believe I split the 60,000 words into separate arrays to make finding words of a particular length more efficient. When populating the grid with answers, words are picked randomly using a regular expression based on their length.
 
@@ -62,12 +68,50 @@ export type CellType = {
 };
 ```
 - the props in each `CellType` as found in `state/grid.ts` are default values
-- when the app loads, we actually call `initializeGrid` and this sets values:
+- grid.ts only contains 9 props on file
+    - when initialized and interacted with by the user, it contains 12 props 
+
+- when the app loads, we actually call `initializeGrid` and this sets values in each cell that makes up the grid:
     - id is set to the index of the cell in the grid
     - letter set to empty string
     - answer set to empty string
-- the `isVoid` prop is correctly set in `state/grid.ts`
+- the initialiezd grid state is stored locally in `GridOLD` in `gridState`
+- the `isVoid` prop is correctly set in `state/grid.ts` before `initializeGrid` is run
     - isVoid is true if cell is void, false if it is light
-- top, bottom, left, right
-    - false if cell in that diretion is void
+- top, bottom, left, right - set by `initializeGrid`
+    - false if cell in that direction is void
     - true if cell in that direction is light
+- `clueNumber` is set for each cell in `initializeGrid`
+    - this is the small number displayed in the top-left of a cell and represents the down and across clues, eg 4 Down, 3 Across, etc.
+- we also have a local state (local to GridOLD) for clues called `clueList`
+    - after grid is initialized, the clues state is either loaded from local storage or created with `initializeApp`
+- initializeApp does the following:
+    - create a deep copy of the grid state (array consisting of CellType objects) to avoid mutation
+    - calls `createClues` which returns an array containing instances of the `Clue` class
+    - sets the `intersection` prop for each instance of Clue
+        - intersection is an array of `Intersection` type objects
+    - returns an array of Clues, sorted in descending order by length
+    - the `Intersection` type:
+```js
+    id: string; // ID of the intersecting clue
+    myIndex: number; // positional index in this Clue
+    yourIndex: number; // positional index in the intersecting Clue
+    letter?: string | undefined; // left undefined on app initialization
+```
+- the Clue class:
+```js
+ public clueNumber: number,
+    public id: string,
+    public length: number, // the length of the clue
+    public direction: Direction, // across or down
+    public indices: number[], // indices of the cells that compose the clue
+    public answer: string[],
+    public raw: string[],
+    public clue: string,
+    public intersection?: {
+      id: string;
+      myIndex: number;
+      yourIndex: number;
+      letter?: string;
+    }[]
+```

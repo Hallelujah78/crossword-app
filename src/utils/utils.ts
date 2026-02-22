@@ -124,8 +124,9 @@ export const initializeGrid = (grid: CellType[]) => {
 		item.id = index;
 		item.answer = "";
 		item.letter = "";
-		// is the square above a cell and not void?
+		// If cell above current cell exists and is void
 		if (getCellAbove(grid, index)?.isVoid) {
+			// set top prop to false
 			item.top = false; // false indicates it is a void
 		}
 		// if the square to the right of the current square is a void OR the current square is on the right side of the grid (thus it has nothing to its right), then set the "right" property to false.
@@ -159,6 +160,7 @@ export const initializeGrid = (grid: CellType[]) => {
 		return item;
 	}); // end of map
 	setClueNumbers(newGrid);
+	console.log(newGrid);
 	return newGrid;
 };
 

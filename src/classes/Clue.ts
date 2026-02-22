@@ -1,4 +1,5 @@
 import type { Direction } from "../models/Direction.model";
+import type { Intersection } from "../models/Intersection.model";
 
 
 export default class Clue {
@@ -11,11 +12,6 @@ export default class Clue {
     public answer: string[],
     public raw: string[],
     public clue: string,
-    public intersection?: {
-      id: string;
-      myIndex: number;
-      yourIndex: number;
-      letter?: string;
-    }[]
+    public intersection?: Intersection[]
   ) {}
 }
