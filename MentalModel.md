@@ -14,8 +14,8 @@
     - When the clues have been fetched from OpenAI, the user may give their puzzle a name and save it (local storage)
 - The Solve route
     - Here the user can 
-        - create a new puzzle with the click of a button
-        - load a saved puzzle from local storage
+        - create a new puzzle (clues and answers) with the click of a button
+        - load a saved puzzle (created earlier) from local storage
     - Once a puzzle has been created or loaded the clues are displayed to the user
     - user can fill in letters on the crossword grid
     - there are buttons to check, reveal and clear individual answers
@@ -68,7 +68,7 @@ export type CellType = {
 };
 ```
 - the props in each `CellType` as found in `state/grid.ts` are default values
-- grid.ts only contains 9 props on file
+- a CellType in grid.ts only contains 9 props on file
     - when initialized and interacted with by the user, it contains 12 props 
 
 - when the app loads, we actually call `initializeGrid` and this sets values in each cell that makes up the grid:
@@ -90,6 +90,7 @@ export type CellType = {
     - calls `createClues` which returns an array containing instances of the `Clue` class
     - sets the `intersection` prop for each instance of Clue
         - intersection is an array of `Intersection` type objects
+        - `intersection` represents information about the clues that intersect with the current clue instance
     - returns an array of Clues, sorted in descending order by length
     - the `Intersection` type:
 ```js
