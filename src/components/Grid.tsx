@@ -17,8 +17,8 @@ import type { Puzzles } from "../models/Puzzles.model.ts";
 // data/state
 import * as AllAnswers from "../state/answers2.ts";
 import { initialGrid } from "../state/grid.ts";
-import invalidGridSteps from "../state/invalidGridSteps.ts";
-import steps from "../state/walkthroughSteps.ts";
+import invalidGridSteps from "../state/invalidGridSteps.tsx";
+import steps from "../state/walkthroughSteps.tsx";
 // utils
 import {
 	createClues,
@@ -44,7 +44,7 @@ import LoadingSmall from "./LoadingSmall.tsx";
 
 const Grid: React.FC = () => {
 	const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
-	const [isFetchingClues, setIsFetchingClues] = useState(false);
+	// const [isFetchingClues, setIsFetchingClues] = useState(false);
 	const [puzzleName, setPuzzleName] = useState<string>("");
 	const [isModified, setIsModified] = useState<boolean>(() => {
 		const modifiedState = getLocalStorage("editor")?.isModified;
@@ -82,7 +82,7 @@ const Grid: React.FC = () => {
 
 	const linkRef = useOutletContext() as RefObject<HTMLElement>;
 	const stepRefs = useRef<HTMLElement[]>([]);
-	const { getClues, newClues } = useClueFetch();
+	const { isLoading, getClues, newClues } = useClueFetch();
 
 	useEffect(() => {
 		setLocalStorage("editor", {
@@ -342,7 +342,7 @@ const Grid: React.FC = () => {
 				<button
 					style={{
 						backgroundColor: `${
-							isFetchingClues
+							isLoading
 								? "red"
 								: !isValid ||
 										clueList[0]?.clue !== "" ||
@@ -362,12 +362,12 @@ const Grid: React.FC = () => {
 					}
 					type="button"
 					onClick={async () => {
-						setIsFetchingClues(true);
+						// setIsFetchingClues(true);
 						await getClues(clueList);
-						setIsFetchingClues(false);
+						// setIsFetchingClues(false);
 					}}
 				>
-					{!isFetchingClues ? (
+					{!isLoading ? (
 						<div>
 							<p className="button-text">Fetch Clues from OpenAI</p>
 						</div>
