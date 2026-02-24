@@ -2815,7 +2815,7 @@ until we can come up with code to fix this (if we want to fix it)
 ## 24/2/2026
 
 - verify that all words in a grid are valid words in our word list, otherwise it is invalid
-- notify user when clues are fetched on create route
+- ~~notify user when clues are fetched on create route~~ DONE
 - layout for tablet-sized screens
 - time out long running answer generation
 - update README.md
