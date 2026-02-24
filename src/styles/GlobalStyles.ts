@@ -51,6 +51,10 @@ button {
         width: 25vw !important;
       }
     }
+ .toast-style {
+    padding-right: 4.5rem;
+  }
+
 `;
 
 export default GlobalStyle;

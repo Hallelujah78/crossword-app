@@ -1,9 +1,9 @@
 // react
 import { type RefObject, useEffect, useRef, useState } from "react";
-
 // libs
 import { FaCircleInfo } from "react-icons/fa6";
 import { useOutletContext } from "react-router-dom";
+import { toast } from "react-toastify";
 import styled, { keyframes } from "styled-components";
 import type Clue from "../classes/Clue.ts";
 // hooks
@@ -99,6 +99,12 @@ const Grid: React.FC = () => {
 	useEffect(() => {
 		if (newClues?.[0].id) {
 			setClueList(newClues as Clue[]);
+			toast(
+			"Clues have been fetched. Enter a name for your puzzle and save it!",
+			{
+				className: "toast-style",
+			},
+		);
 		}
 	}, [newClues]);
 
@@ -136,7 +142,6 @@ const Grid: React.FC = () => {
 
 				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
 			}
-
 		} else {
 			// fillgrid is false OR hasEmpty is empty
 			// this else is essentially the "don't force fill" section
@@ -217,7 +222,7 @@ const Grid: React.FC = () => {
 							isGeneratingAnswers
 								? "red"
 								: !isValid || !clueList[0]?.answer.includes("")
-									? "var(--primary-100) "
+									? "var(--primary-100)"
 									: "var(--primary-400)"
 						}`,
 					}}
@@ -318,10 +323,7 @@ const Grid: React.FC = () => {
 					</button>
 					<button
 						disabled={
-							!isModified ||
-							isGeneratingAnswers ||
-					
-							clueList[0]?.clue !== ""
+							!isModified || isGeneratingAnswers || clueList[0]?.clue !== ""
 						}
 						type="button"
 						onClick={() => {
