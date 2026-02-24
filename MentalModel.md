@@ -116,3 +116,14 @@ export type CellType = {
       letter?: string;
     }[]
 ```
+
+- other state includes
+    - invalidGridSteps.tsx: contains information to display when the grid is in an invalid state and the user clicks a more info button
+    - walkthroughSteps.tsx: contains components and information to show to the user on first load - a custom Shepherd.js or Intro.js that I built.
+    - example_ai_response.ts: contains an example response from the OpenAI API that was useful in development
+
+## API calls
+- the app uses the OpenAI API to generate clues for answers that the app generates locally.
+- on the `Create` route, the user can click `Fetch Clues from OpenAI` to perform the API call
+- on the `Solve` route, the `New Puzzle` button will request clues from the API once the answers have been generated locally
+- The app has no backend, so we use Netlify Serverless Functions to hide the API key from the client
