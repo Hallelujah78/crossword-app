@@ -127,3 +127,21 @@ export type CellType = {
 - on the `Create` route, the user can click `Fetch Clues from OpenAI` to perform the API call
 - on the `Solve` route, the `New Puzzle` button will request clues from the API once the answers have been generated locally
 - The app has no backend, so we use Netlify Serverless Functions to hide the API key from the client
+- the API URL:
+```js
+const apiURL = "/.netlify/functions/getClues";
+```
+- API requests are made using the `hooks/useClueFetch` hook. The hook holds and exposes the clues returned by the API, as well as error and loading states and it exposes an async `getClues` function that can be called in components that use the hook.
+- the request:
+```js
+ const response = await fetch(apiURL, {
+        method: "POST",
+        headers: { accept: "application/json" },
+        body: JSON.stringify(requestArray),
+      });
+```
+- `requestArray` has the following format:
+```js
+[{"id":"10DOWN","word":"HAIRDRESSING","clue":""},{"id":"12DOWN","word":"SATISFACTION","clue":""},{"id":"13DOWN","word":"ORGANIZATION","clue":""},{"id":"15DOWN","word":"GRACIOUSNESS","clue":""},{"id":"4ACROSS","word":"GUNRIGHTS","clue":""},{"id":"156ACROSS","word":"NOSTALGIA","clue":""},{"id":"4DOWN","word":"GUNMAKER","clue":""},{"id":"52ACROSS","word":"ARCHAISM","clue":""},{"id":"73DOWN","word":"DEMENTIA","clue":""},{"id":"109ACROSS","word":"SUPERSET","clue":""},{"id":"32ACROSS","word":"CHEMIST","clue":""},{"id":"130ACROSS","word":"ICEPICK","clue":""},{"id":"6DOWN","word":"NOCOST","clue":""},{"id":"78ACROSS","word":"ISOMER","clue":""},{"id":"85ACROSS","word":"OEDEMA","clue":""},{"id":"97DOWN","word":"MUSKEG","clue":""},{"id":"26ACROSS","word":"RERUN","clue":""},{"id":"138ACROSS","word":"TONDO","clue":""},{"id":"8DOWN","word":"IDEA","clue":""},{"id":"61ACROSS","word":"ODDS","clue":""},{"id":"104ACROSS","word":"ARSE","clue":""},{"id":"121DOWN","word":"VITA","clue":""}]
+```
+- For each clue, we send an object. The `word` is the word we want to generate a clue for. The clue field is blank and we prompt the OpenAI API to send the response back with the clue field filled in for the corresponding word. The ID means we can relate the response back to our crossword structure.
