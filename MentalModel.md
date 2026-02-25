@@ -1,26 +1,35 @@
 # Revisting GridMaster - unfamiliar code
 - https://chatgpt.com/c/6999b6b5-b9c4-832b-82da-034afd8c177b
 ## Core Features
-- Two pages, Create and Solve
-- The Create page/route
-    - Create allows a user to edit a crossword grid
-    - There is a "disable warnings" check box
-        - if enabled, if the user creates an invalid grid while editing the crossword grid, a warning will be displayed. The user can click for more information on types of invalid grid.
-        - if disabled, no warnings are displayed BUT the cells in the grid display a red border to indicate the grid is not a valid crossword grid
-    - When the grid is valid, the user can generate answers that fit into the grid
-    - The answers may be reset while retaining the edited grid
-    - The grid AND answers may be reset
-    - When the user is happy with the grid and answers, they may ask OpenAI to generate clues for the generated answers
-    - When the clues have been fetched from OpenAI, the user may give their puzzle a name and save it (local storage)
-- The Solve route
-    - Here the user can 
-        - create a new puzzle (clues and answers) with the click of a button
-        - load a saved puzzle (created earlier) from local storage
-    - Once a puzzle has been created or loaded the clues are displayed to the user
-    - user can fill in letters on the crossword grid
-    - there are buttons to check, reveal and clear individual answers
-    - there are buttons to check, reveal and clear the entire grid
-    - the user's progress is not saved in some circumstances but it is in others (needs to be fixed)
+### Application Structure
+
+- Two routes/pages: Create and Solve
+- Local storage persistence
+- OpenAI clue generation integration
+
+### Grid Engine
+
+- Crossword grid editor
+- Grid validation system
+- Invalid grid detection
+- Visual invalid-state indicators
+- Answer generation algorithm
+- Grid + answer reset functionality
+
+### Puzzle Management
+- Puzzle naming
+- Puzzle saving to local storage
+- Puzzle loading from local storage
+- New puzzle generation
+
+### Solving Engine
+- Interactive letter entry
+- Answer checking logic
+- Answer reveal logic
+- Grid clearing logic
+- Partial progress persistence (buggy)
+
+---
 
 ## What Happens on First Load?
 - on first load the user is taken to the Create route
@@ -145,3 +154,26 @@ const apiURL = "/.netlify/functions/getClues";
 [{"id":"10DOWN","word":"HAIRDRESSING","clue":""},{"id":"12DOWN","word":"SATISFACTION","clue":""},{"id":"13DOWN","word":"ORGANIZATION","clue":""},{"id":"15DOWN","word":"GRACIOUSNESS","clue":""},{"id":"4ACROSS","word":"GUNRIGHTS","clue":""},{"id":"156ACROSS","word":"NOSTALGIA","clue":""},{"id":"4DOWN","word":"GUNMAKER","clue":""},{"id":"52ACROSS","word":"ARCHAISM","clue":""},{"id":"73DOWN","word":"DEMENTIA","clue":""},{"id":"109ACROSS","word":"SUPERSET","clue":""},{"id":"32ACROSS","word":"CHEMIST","clue":""},{"id":"130ACROSS","word":"ICEPICK","clue":""},{"id":"6DOWN","word":"NOCOST","clue":""},{"id":"78ACROSS","word":"ISOMER","clue":""},{"id":"85ACROSS","word":"OEDEMA","clue":""},{"id":"97DOWN","word":"MUSKEG","clue":""},{"id":"26ACROSS","word":"RERUN","clue":""},{"id":"138ACROSS","word":"TONDO","clue":""},{"id":"8DOWN","word":"IDEA","clue":""},{"id":"61ACROSS","word":"ODDS","clue":""},{"id":"104ACROSS","word":"ARSE","clue":""},{"id":"121DOWN","word":"VITA","clue":""}]
 ```
 - For each clue, we send an object. The `word` is the word we want to generate a clue for. The clue field is blank and we prompt the OpenAI API to send the response back with the clue field filled in for the corresponding word. The ID means we can relate the response back to our crossword structure.
+
+## Main User Interactions
+### Create Flow
+
+- User edits crossword grid.
+- User optionally disables warnings.
+- User fixes grid until valid.
+- User generates answers.
+- User resets answers (optional).
+- User resets entire grid (optional).
+- User requests AI-generated clues.
+- User names and saves puzzle.
+
+### Solve Flow
+
+- User creates a new puzzle OR loads a saved one.
+- User reads clues.
+- User fills in letters.
+- User checks individual answers.
+- User reveals answers.
+- User clears answers.
+- User checks/reveals/clears entire grid.
+- User progress may persist (inconsistently).
