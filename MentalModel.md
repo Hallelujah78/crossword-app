@@ -177,3 +177,31 @@ const apiURL = "/.netlify/functions/getClues";
 - User clears answers.
 - User checks/reveals/clears entire grid.
 - User progress may persist (inconsistently).
+
+## Entry Points
+- `main.tsx` is the main entry point for the app
+
+main.tsx
+ └── RouterProvider
+      └── Root.tsx
+            ├── PoweredBy.tsx
+            ├── Editor.tsx
+            │   └── Grid.tsx
+            │       ├── Information.tsx
+            │       │     ├──Button.tsx 
+            │       │     ├── Blocks.tsx
+            │       │     ├── Island.tsx
+            │       │     ├── TooShort.tsx
+            │       │     ├── Voids.tsx
+            │       │     ├── Arrow.tsx
+            │       │     └── Paragraph.tsx
+            │       │
+            │       ├── LoadingSmall.tsx
+            │       └── Cell.tsx
+            │
+            └── Solve.tsx
+                └── SolveGrid.tsx
+                    ├── ErrorPage.tsx
+                    ├── Loading.tsx
+                    ├── PoweredBy.tsx
+                    └── SolveCell.tsx

@@ -44,7 +44,6 @@ import LoadingSmall from "./LoadingSmall.tsx";
 
 const Grid: React.FC = () => {
 	const [isGeneratingAnswers, setIsGeneratingAnswers] = useState(false);
-	// const [isFetchingClues, setIsFetchingClues] = useState(false);
 	const [puzzleName, setPuzzleName] = useState<string>("");
 	const [isModified, setIsModified] = useState<boolean>(() => {
 		const modifiedState = getLocalStorage("editor")?.isModified;
