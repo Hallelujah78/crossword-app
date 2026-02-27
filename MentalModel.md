@@ -1,5 +1,6 @@
 # Revisting GridMaster - unfamiliar code
 - https://chatgpt.com/c/6999b6b5-b9c4-832b-82da-034afd8c177b
+- sorting out utils.ts - search for Phase 3 Taming the 1700-line utils.ts in above
 ## Core Features
 ### Application Structure
 
@@ -179,7 +180,7 @@ const apiURL = "/.netlify/functions/getClues";
 - User progress may persist (inconsistently).
 
 ## Entry Points
-- `main.tsx` is the main entry point for the app
+- `main.tsx` is the entry point for the app
 
 main.tsx
  └── RouterProvider
@@ -205,3 +206,6 @@ main.tsx
                     ├── Loading.tsx
                     ├── PoweredBy.tsx
                     └── SolveCell.tsx
+
+## Utils.ts
+### Classifying functions

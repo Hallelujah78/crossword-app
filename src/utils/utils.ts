@@ -13,17 +13,24 @@ import * as AllAnswers from "../state/answers2";
 import backgroundColors from "../state/backgroundColors";
 import { gridSideLength } from "../state/grid";
 
+// grid navigation
+// used
 export const getCellAbove = (grid: CellType[], index: number) => {
 	if (grid[index - Math.sqrt(grid.length)]) {
 		return grid[index - Math.sqrt(grid.length)];
 	}
 };
+
+// grid navigation
+// used
 export const getCellBelow = (grid: CellType[], index: number) => {
 	if (grid[index + Math.sqrt(grid.length)]) {
 		return grid[index + Math.sqrt(grid.length)];
 	}
 };
 
+// grid navigation
+// used
 export const findRightEdge = (grid: CellType[]) => {
 	const rightIndices: number[] = [];
 	const gridLength: number = grid.length; // 169
@@ -38,6 +45,8 @@ export const findRightEdge = (grid: CellType[]) => {
 	return rightIndices;
 };
 
+// grid navigation
+// used
 export const findLeftEdge = (grid: CellType[]) => {
 	const leftIndices: number[] = [];
 	const gridLength: number = grid.length; // 169
@@ -48,6 +57,8 @@ export const findLeftEdge = (grid: CellType[]) => {
 	return leftIndices;
 };
 
+// grid navigation
+// used
 export const findTopEdge = (grid: CellType[]) => {
 	const topIndices: number[] = [];
 	const sideLength = Math.sqrt(grid.length); // 13
@@ -57,6 +68,9 @@ export const findTopEdge = (grid: CellType[]) => {
 	return topIndices;
 };
 
+
+// grid navigation
+// used
 export const findBottomEdge = (grid: CellType[]) => {
 	const bottomIndices: number[] = [];
 	const gridLength: number = grid.length; // 169
@@ -67,6 +81,9 @@ export const findBottomEdge = (grid: CellType[]) => {
 	return bottomIndices;
 };
 
+
+// crossword domain
+// used
 export const setClueNumbers = (grid: CellType[]) => {
 	let currentClueNum = 0;
 	for (const item of grid) {
@@ -83,6 +100,8 @@ export const setClueNumbers = (grid: CellType[]) => {
 	}
 };
 
+// crossword domain - grid structure
+// used
 export const updateSurroundingCells = (grid: CellType[], index: number) => {
 	const cellAbove = getCellAbove(grid, index);
 	const cellBelow = getCellBelow(grid, index);
@@ -105,20 +124,34 @@ export const updateSurroundingCells = (grid: CellType[], index: number) => {
 	}
 };
 
+// grid navigation
+// used
 export const isLeftEdge = (grid: CellType[], index: number) => {
 	return findLeftEdge(grid).includes(index);
 };
+
+// grid navigation
+// used
 export const isRightEdge = (grid: CellType[], index: number) => {
 	return findRightEdge(grid).includes(index);
 };
 
+// grid navigation
+// used
 export const isTopEdge = (grid: CellType[], index: number) => {
 	return findTopEdge(grid).includes(index);
 };
+
+// grid navigation
+// used
 export const isBottomEdge = (grid: CellType[], index: number) => {
 	return findBottomEdge(grid).includes(index);
 };
 
+
+// Initialize some props on the grid such as id, answer, letter and set the top,bottom,left, and right props to false if the cell in that direction is a void
+// grid structure
+// used
 export const initializeGrid = (grid: CellType[]) => {
 	const newGrid = grid.map((item, index) => {
 		item.id = index;
@@ -160,10 +193,13 @@ export const initializeGrid = (grid: CellType[]) => {
 		return item;
 	}); // end of map
 	setClueNumbers(newGrid);
-	console.log(newGrid);
 	return newGrid;
 };
 
+
+// Create Clue instances
+// domain logic, clues.ts
+// used
 export const createClues = (grid: CellType[]) => {
 	const clues: Clue[] = [];
 	const clueIndices = getClueIndices(grid);
@@ -232,6 +268,10 @@ export const createClues = (grid: CellType[]) => {
 	return clues;
 };
 
+// Takes an array of CellType objects. Iterates over the array and if the item has its
+// clueNumber prop set (not empty string) then we push the index of the cell to a local array. Returns an array of numbers representing the indices where clues start.
+// domain - clues.ts
+// used
 export const getClueIndices = (grid: CellType[]) => {
 	const clueIndices: number[] = [];
 	grid.forEach((item, index) => {
@@ -240,6 +280,9 @@ export const getClueIndices = (grid: CellType[]) => {
 	return clueIndices;
 };
 
+
+// puzzle generation/fill layer - deserves its own file
+// used
 export const populateClues = (
 	cluesState: Clue[],
 	AllAnswers: {
@@ -258,21 +301,26 @@ export const populateClues = (
 	grid: CellType[],
 	removeEmpty: boolean,
 ) => {
-	// copy the React state values
-
+	// Deep copy the React state values
 	const newState = {
 		clues: JSON.parse(JSON.stringify(cluesState)) as Clue[],
 		grid: JSON.parse(JSON.stringify(grid)) as CellType[],
 	};
 
+	// Iterate over the clues
 	for (const clue of newState.clues) {
-		// let answer: string;
+
+		// Declare variable to store possible answers we can use
 		let possibleAnswers: Answer[] = [];
+		// Generate a random value between 0 and 1
 		const randVal = Math.random();
 
+		// Switch to deal with clues of different length
 		switch (clue.length) {
 			case 13:
+				// Possible answers are all answers of a given length
 				possibleAnswers = AllAnswers.thirteen;
+				// Long complex function
 				setClueAnswers(
 					newState.clues,
 					clue,
@@ -386,39 +434,67 @@ export const populateClues = (
 		}
 	}
 
+	// At this point we may have successfully filled in all clues. Every cell may have its letter prop set to the letter of the answer we have generated.
+
+	// There may be empty cells after answers are populated. Get these empty cells.
 	const emptyCells = newState.grid.filter((cell) => !cell.isVoid 
   && (cell.letter === undefined || cell.letter === "")
 		);
+
 	// gridState
-	if (removeEmpty) {
+	if (removeEmpty) { // removeEmpty is a UI/state flag
+		// For every empty cell (no letter prop)
 		for (const cell of emptyCells) {
+			// Set the cell to void 
 			cell.isVoid = true;
+			// Remove the clue
 			removeClue(newState.clues, cell.id);
+			// Update the surrounding cells
 			updateSurroundingCells(newState.grid, cell.id);
+
+			// Maintain rotational symmetry of the grid
+			// Set cell to void
 			newState.grid[newState.grid.length - 1 - cell.id].isVoid = true;
+			// Set the letter to empty string
 			newState.grid[newState.grid.length - 1 - cell.id].letter = "";
+			// Remove the clue
 			removeClue(newState.clues, newState.grid.length - 1 - cell.id);
+			// Update surrounding cells
 			updateSurroundingCells(newState.grid, newState.grid.length - 1 - cell.id);
 		}
+		// Check if grid is valid
 		let valid = validateGrid(newState.clues, newState.grid);
+		// If grid not valid
 		if (!valid) {
+			// Reset island cell (not sure what this means)
 			resetIslandCell(newState.grid);
+			// Validate grid again
 			valid = validateGrid(newState.clues, newState.grid);
 		}
-	} else if (emptyCells && emptyCells.length > 0) {
+	} 
+	// remove empty is false, if there are empty cells
+	else if (emptyCells && emptyCells.length > 0) {
+		// Try to fill the empty cells
 		const updatedState = fillEmptyAnswers(newState.clues, newState.grid);
 		if (updatedState?.clues) {
+			// Use the clues
 			newState.clues = updatedState.clues;
 		}
 		if (updatedState?.grid) {
+			// Use the grid
 			newState.grid = updatedState.grid;
 		}
 	}
+	// Set the clue numbers on the clues
 	setClueNumbersOnClues(newState.clues, newState.grid);
+	// Set the clues numbers on the cells in the grid
 	setClueNumbers(newState.grid);
-
+	// Return the new state with the updated clues and grid
 	return newState;
 };
+
+
+
 
 export const sortCluesDescendingLength = (clues: Clue[]) => {
 	return clues.sort((a: Clue, b: Clue) => {

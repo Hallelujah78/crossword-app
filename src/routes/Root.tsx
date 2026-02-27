@@ -44,7 +44,6 @@ const Wrapper = styled.div`
   background-color: #1c1d1f;
   width: 100%;
   min-width: 100% !important;
-  /* height: 100%; */
 
   .nav-container {
     width: 100%;
@@ -72,7 +71,6 @@ const Wrapper = styled.div`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* min-height: calc(100vh - var(--nav-height)); */
     height: auto;
     display: grid;
     width: 100%;
