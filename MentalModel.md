@@ -209,3 +209,40 @@ main.tsx
 
 ## Utils.ts
 ### Classifying functions
+- Grid Navigation
+    - getCellAbove
+    - getCellBelow
+    - findRightEdge
+    - findLeftEdge
+    - findTopEdge
+    - findBottomEdge
+    - isLeftEdge
+    - isRightEdge
+    - isTopEdge
+    - isBottomEdge
+- Grid Structure
+    - initializeApp
+- Crossword Construction
+    - generator.ts
+        - createAnswersRegex
+- Crossword Rules
+    - setClueNumbers
+- Crossword Structure
+    - updateSurroundingCells
+- Clues
+    - createClues
+    - getClueIndices
+    - populateClues - answer generation, affects grid and clues
+    - sortCluesDescendingLength
+    - getAcrossClues
+    - getDownClues
+        - relationships.ts
+            - setCluesThatIntersect
+    - setClueAnswers - needs work/research
+
+- Data 
+    - Answers
+        - normalize.ts
+            - removeChars
+            - separateByLength
+

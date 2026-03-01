@@ -1,7 +1,10 @@
 // models
 
 import Clue from "../classes/Clue";
+import type { AllAnswerKey } from "../models/AllAnswerKey.model";
 import type Answer from "../models/Answer.model";
+import type { AnswerLength } from "../models/AnswerLength.model";
+import { AnswerMapping } from "../models/answerLength";
 import type { CellType } from "../models/Cell.model";
 import { Direction } from "../models/Direction.model";
 import type { Intersection } from "../models/Intersection.model";
@@ -68,7 +71,6 @@ export const findTopEdge = (grid: CellType[]) => {
 	return topIndices;
 };
 
-
 // grid navigation
 // used
 export const findBottomEdge = (grid: CellType[]) => {
@@ -81,8 +83,7 @@ export const findBottomEdge = (grid: CellType[]) => {
 	return bottomIndices;
 };
 
-
-// crossword domain
+// crossword domain, so crossword/crosswordRules.ts?
 // used
 export const setClueNumbers = (grid: CellType[]) => {
 	let currentClueNum = 0;
@@ -148,7 +149,6 @@ export const isBottomEdge = (grid: CellType[], index: number) => {
 	return findBottomEdge(grid).includes(index);
 };
 
-
 // Initialize some props on the grid such as id, answer, letter and set the top,bottom,left, and right props to false if the cell in that direction is a void
 // grid structure
 // used
@@ -195,7 +195,6 @@ export const initializeGrid = (grid: CellType[]) => {
 	setClueNumbers(newGrid);
 	return newGrid;
 };
-
 
 // Create Clue instances
 // domain logic, clues.ts
@@ -280,7 +279,6 @@ export const getClueIndices = (grid: CellType[]) => {
 	return clueIndices;
 };
 
-
 // puzzle generation/fill layer - deserves its own file
 // used
 export const populateClues = (
@@ -309,7 +307,6 @@ export const populateClues = (
 
 	// Iterate over the clues
 	for (const clue of newState.clues) {
-
 		// Declare variable to store possible answers we can use
 		let possibleAnswers: Answer[] = [];
 		// Generate a random value between 0 and 1
@@ -437,15 +434,16 @@ export const populateClues = (
 	// At this point we may have successfully filled in all clues. Every cell may have its letter prop set to the letter of the answer we have generated.
 
 	// There may be empty cells after answers are populated. Get these empty cells.
-	const emptyCells = newState.grid.filter((cell) => !cell.isVoid 
-  && (cell.letter === undefined || cell.letter === "")
-		);
+	const emptyCells = newState.grid.filter(
+		(cell) => !cell.isVoid && (cell.letter === undefined || cell.letter === ""),
+	);
 
 	// gridState
-	if (removeEmpty) { // removeEmpty is a UI/state flag
+	if (removeEmpty) {
+		// removeEmpty is a UI/state flag
 		// For every empty cell (no letter prop)
 		for (const cell of emptyCells) {
-			// Set the cell to void 
+			// Set the cell to void
 			cell.isVoid = true;
 			// Remove the clue
 			removeClue(newState.clues, cell.id);
@@ -471,7 +469,7 @@ export const populateClues = (
 			// Validate grid again
 			valid = validateGrid(newState.clues, newState.grid);
 		}
-	} 
+	}
 	// remove empty is false, if there are empty cells
 	else if (emptyCells && emptyCells.length > 0) {
 		// Try to fill the empty cells
@@ -493,15 +491,17 @@ export const populateClues = (
 	return newState;
 };
 
-
-
-
+// clues.ts
+// used
 export const sortCluesDescendingLength = (clues: Clue[]) => {
 	return clues.sort((a: Clue, b: Clue) => {
 		return b.length - a.length;
 	});
 };
 
+// Used for data normalization but not used in the application.
+// data/answers/normalize.ts or data/normalizeAnswers.ts
+// unused
 export const removeChars = (answers: Answer[]) => {
 	for (const answer of answers) {
 		if (answer.raw.includes("-") || answer.raw.includes("'")) {
@@ -511,6 +511,10 @@ export const removeChars = (answers: Answer[]) => {
 	}
 };
 
+// Takes a large array of Answers with different word lengths and a wordLengh param.
+// Returns an array of Answer objects containing only Answers of the given wordLength.
+// data/answers/normalize.ts or data/normalizeAnswers.ts
+// unused
 export const separateByLength = (answers: Answer[], wordLength: number) => {
 	const filteredAnswers = answers.filter((answer) => {
 		return answer.length === wordLength;
@@ -518,25 +522,31 @@ export const separateByLength = (answers: Answer[], wordLength: number) => {
 	return filteredAnswers;
 };
 
+// clues.ts
+// used
 export const getAcrossClues = (clues: Clue[]) => {
 	return clues.filter((clue) => {
 		return clue.direction === Direction.ACROSS;
 	});
 };
 
+// clues.ts
+// used
 export const getDownClues = (clues: Clue[]) => {
 	return clues.filter((clue) => {
 		return clue.direction === Direction.DOWN;
 	});
 };
 
+// clues.ts or clue/relationships.ts
+// used
 export const setCluesThatIntersect = (currClue: Clue, clues: Clue[]) => {
 	const { indices } = currClue;
 	const intersection = [];
+	// iterate over every clue
 	for (const clue of clues) {
-		// iterate over every clue
+		// iterate over each index of currClue
 		for (const index of indices) {
-			// for each clue, iterate over the index
 			if (clue.indices.includes(index)) {
 				intersection.push({
 					id: clue.id,
@@ -549,7 +559,9 @@ export const setCluesThatIntersect = (currClue: Clue, clues: Clue[]) => {
 	currClue.intersection = intersection;
 };
 
-export const arrayToRegularExp = (answer: string[]) => {
+// crossword/generator.ts
+// used
+export const createAnswerRegex = (answer: string[]) => {
 	if (!answer.includes("")) {
 		return;
 	}
@@ -563,6 +575,7 @@ export const arrayToRegularExp = (answer: string[]) => {
 	return new RegExp(regExp.join(""));
 };
 
+// used exclusively in populateClues
 const setClueAnswers = (
 	clues: Clue[],
 	clue: Clue,
@@ -575,7 +588,7 @@ const setClueAnswers = (
 	let candidateAnswers = possibleAnswers;
 
 	if (clue.answer.includes("") && clue.answer.join("").length !== 0) {
-		regExp = arrayToRegularExp(clue.answer) as RegExp;
+		regExp = createAnswerRegex(clue.answer) as RegExp;
 
 		candidateAnswers = getMatches(
 			possibleAnswers,
@@ -727,10 +740,10 @@ const setClueAnswers = (
 					myTempAnswer[i] = "";
 				}
 			}
-			// arrayToRegularExp returns undefined if myTempAnswer DOES NOT include empty strings
+			// createAnswerRegex returns undefined if myTempAnswer DOES NOT include empty strings
 			// this implies that the answer is full
 			// this also means that we are pushing undefined values to replaceCluePatterns
-			const pattern = arrayToRegularExp(myTempAnswer);
+			const pattern = createAnswerRegex(myTempAnswer);
 			if (pattern) replaceCluePattern.push(pattern);
 		}
 
@@ -800,7 +813,7 @@ const setClueAnswers = (
 					candidateAnswer = [...clue.answer];
 					candidateAnswer[sharedLetter.clueIndex] =
 						word[sharedLetter.rClueIndex];
-					regExp = arrayToRegularExp(candidateAnswer);
+					regExp = createAnswerRegex(candidateAnswer);
 				}
 
 				const wordList = getWordList(
@@ -877,22 +890,22 @@ const setClueAnswers = (
 };
 // end of setClueAnswers
 
-const AnswerMapping = {
-	3: "three",
-	4: "four",
-	5: "five",
-	6: "six",
-	7: "seven",
-	8: "eight",
-	9: "nine",
-	10: "ten",
-	11: "eleven",
-	12: "twelve",
-	13: "thirteen",
-} as const;
+// const AnswerMapping = {
+// 	3: "three",
+// 	4: "four",
+// 	5: "five",
+// 	6: "six",
+// 	7: "seven",
+// 	8: "eight",
+// 	9: "nine",
+// 	10: "ten",
+// 	11: "eleven",
+// 	12: "twelve",
+// 	13: "thirteen",
+// } as const;
 
-export type AnswerLength = keyof typeof AnswerMapping;
-export type AllAnswerKey = keyof typeof AllAnswers;
+// export type AnswerLength = keyof typeof AnswerMapping;
+// export type AllAnswerKey = keyof typeof AllAnswers;
 
 export const getWordList: (
 	answerLength: AnswerLength,
@@ -922,8 +935,8 @@ export const getMatches = (
 	}
 
 	const candidateAnswers = possibleAnswers.filter((answer) => {
-    // answer.word can be undefined, excludes hyphens
-    // answer.word is only included if answer.raw contains hyphens
+		// answer.word can be undefined, excludes hyphens
+		// answer.word is only included if answer.raw contains hyphens
 		if (
 			answer.word !== undefined && // omit words where answer.word is undefined
 			answer.word !== currentAnswer && // omit currentAnswer from results
@@ -932,11 +945,11 @@ export const getMatches = (
 			return answer.word.match(regExp); // return true if answer.word matches regExp
 		}
 
-    // answer.raw includes hyphens
+		// answer.raw includes hyphens
 		if (answer.raw !== currentAnswer && !currentAnswers.includes(answer.raw)) {
 			return answer.raw.match(regExp);
 		}
-    return false;
+		return false;
 	});
 	return candidateAnswers;
 };
@@ -966,11 +979,10 @@ export const getAllMatches = (
 		if (!currentAnswers.includes(answer.raw)) {
 			return answer.raw.match(regExp);
 		}
-		return false
+		return false;
 	});
 	return candidateAnswers;
 };
-
 
 export interface SharedLetter {
 	rClueIndex: number | undefined;
@@ -1278,7 +1290,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 
 		for (const clue of intersecting) {
 			const resetAnswer = resetIntersectClue(clue, incomplete.id);
-			const pattern = arrayToRegularExp(resetAnswer);
+			const pattern = createAnswerRegex(resetAnswer);
 			const wordList = getWordList(
 				resetAnswer.length as AnswerLength,
 				AllAnswers,
@@ -1319,7 +1331,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 				patternHolder[indices[index]] = letter;
 			}
 			// at this point patternHolder can be converted to a regexp and pushed to an array of patterns for matching
-			patterns.push(arrayToRegularExp(patternHolder) as RegExp);
+			patterns.push(createAnswerRegex(patternHolder) as RegExp);
 		}
 		const wordList = getWordList(incomplete.length as AnswerLength, AllAnswers);
 
@@ -1344,7 +1356,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 				// we will have to replace intersecting clue answers where the intersecting letter has been updated
 				for (const clue of cluesToUpdate) {
 					const resetAnswer = resetClue(clue);
-					const pattern = arrayToRegularExp(resetAnswer);
+					const pattern = createAnswerRegex(resetAnswer);
 					const wordList = getWordList(clue.length as AnswerLength, AllAnswers);
 					const matches = getMatches(
 						wordList,

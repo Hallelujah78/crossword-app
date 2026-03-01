@@ -764,7 +764,7 @@ setClueAnsewrs(){
   - yourIndex - the index of the letter in the intersecting clue that intersects with the current clue
 - returns void
 
-#### arrayToRegularExp
+#### createAnswerRegex
 - takes an answer, which is a array of strings
 - if the answer array is incomplete (does contain empty strings), then we create a RegExp
 - returns undefined or an instance of RegExp
@@ -1077,7 +1077,7 @@ let intersectingClueIndex;
       }
       // console.log("myanswer: ", myTempAnswer);
 
-      replaceCluePattern.push(arrayToRegularExp(myTempAnswer)!);
+      replaceCluePattern.push(createAnswerRegex(myTempAnswer)!);
     });
 ```
 
