@@ -10,6 +10,7 @@ import { Direction } from "../models/Direction.model";
 import type { Intersection } from "../models/Intersection.model";
 import type { Storage } from "../models/LocalStorage.model";
 import type { Puzzles } from "../models/Puzzles.model";
+import type { SharedLetter } from "../models/SharedLetter.model";
 import type { AllAnswersType } from "../state/answers2";
 // state
 import * as AllAnswers from "../state/answers2";
@@ -907,6 +908,8 @@ const setClueAnswers = (
 // export type AnswerLength = keyof typeof AnswerMapping;
 // export type AllAnswerKey = keyof typeof AllAnswers;
 
+// Returns an array of Answer objects where the length of each word is answerLength
+// used
 export const getWordList: (
 	answerLength: AnswerLength,
 	AllAnswers: AllAnswersType,
@@ -915,7 +918,12 @@ export const getWordList: (
 	return AllAnswers[allAnswerKey];
 };
 
-// getMatches exludes the current answer
+// getMatches exludes the current answer.
+// possibleAnswers: Array of Answer objects that match the length of currentAnswer.
+// regExp: a RegExp pattern that we match against
+// currentAnswer: The current answer we have.
+// clues: an array of Clue instances that make up the crossword
+// used
 export const getMatches = (
 	possibleAnswers: Answer[],
 	regExp: RegExp | undefined,
@@ -923,14 +931,20 @@ export const getMatches = (
 	clues: Clue[],
 ) => {
 	if (!regExp) {
+		// No regexp, so can't match
 		return [];
 	}
+	// Store completed generated answers
 	const currentAnswers: string[] = [];
 
+	// For each clue in clues param
 	for (const clue of clues) {
-		const currentAnswer = clue.answer;
-		if (!currentAnswer.includes("")) {
-			currentAnswers.push(currentAnswer.join(""));
+		// Get the answer for the clue
+		const completedAnswer = clue.answer;
+		// If completedAnswer doesn't include an empty string, it is complete
+		if (!completedAnswer.includes("")) {
+			// Join the current answer array and add it to currentAnswers array
+			currentAnswers.push(completedAnswer.join(""));
 		}
 	}
 
@@ -954,6 +968,8 @@ export const getMatches = (
 	return candidateAnswers;
 };
 
+// Get candidate answers for a clue. Exclude words already used but include the current answer we pass in.
+// used
 export const getAllMatches = (
 	possibleAnswers: Answer[],
 	regExp: RegExp | undefined,
@@ -963,11 +979,17 @@ export const getAllMatches = (
 	if (!regExp) {
 		return [];
 	}
+
+	// Store complete clue answers
 	const currentAnswers: string[] = [];
 
+	// For each clue
 	for (const clue of clues) {
+		// Get the clue answer
 		const clueAnswer = clue.answer;
+		// If clue answer is complete (contains no empty strings) and clueAnswer is not our currentAnswer
 		if (!clueAnswer.includes("") && clueAnswer.join("") !== currentAnswer) {
+			// Store our clue answer in the currentAnswers array
 			currentAnswers.push(clueAnswer.join(""));
 		}
 	}
@@ -983,12 +1005,6 @@ export const getAllMatches = (
 	});
 	return candidateAnswers;
 };
-
-export interface SharedLetter {
-	rClueIndex: number | undefined;
-	clueIndex: number | undefined;
-	letter: string | undefined;
-}
 
 export const getLetter = (rClue: Clue, currentClue: Clue) => {
 	const sharedLetter: SharedLetter = {

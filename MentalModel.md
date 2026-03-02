@@ -225,6 +225,8 @@ main.tsx
 - Crossword Construction
     - generator.ts
         - createAnswersRegex
+        - getMatches()
+        - getAllMatches()
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure
@@ -238,11 +240,13 @@ main.tsx
     - getDownClues
         - relationships.ts
             - setCluesThatIntersect
-    - setClueAnswers - needs work/research
+    - setClueAnswers - needs work/research, very long function
 
 - Data 
     - Answers
         - normalize.ts
             - removeChars
             - separateByLength
+        - lookup.ts
+            - getWordList()
 
