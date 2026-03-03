@@ -1,4 +1,3 @@
-
 import { type RefObject, useEffect, useRef, useState } from "react";
 import { FaCircleInfo } from "react-icons/fa6";
 import { useOutletContext } from "react-router-dom";
@@ -17,13 +16,12 @@ import { initialGrid } from "../state/grid.ts";
 import invalidGridSteps from "../state/invalidGridSteps.tsx";
 import steps from "../state/walkthroughSteps.tsx";
 
-
 import {
 	createClues,
+	createCluesFromGrid,
 	getAcrossClues,
 	getDownClues,
 	getLocalStorage,
-	initializeApp,
 	initializeGrid,
 	isGridValid,
 	populateClues,
@@ -56,7 +54,7 @@ const Grid: React.FC = () => {
 	});
 	const [clueList, setClueList] = useState<Clue[]>(() => {
 		const clueState = getLocalStorage("editor")?.clues;
-		return clueState ? clueState : initializeApp(gridState);
+		return clueState ? clueState : createCluesFromGrid(gridState);
 	});
 	const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
 	const [fillGrid, setFillGrid] = useState<boolean>(true);
@@ -178,7 +176,6 @@ const Grid: React.FC = () => {
 
 				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
 			}
-			
 		} else {
 			// fillgrid is false OR hasEmpty is empty
 			// this else is essentially the "don't force fill" section
@@ -360,16 +357,14 @@ const Grid: React.FC = () => {
 					</button>
 					<button
 						disabled={
-							!isModified ||
-							isGeneratingAnswers ||
-							clueList[0]?.clue !== ""
+							!isModified || isGeneratingAnswers || clueList[0]?.clue !== ""
 						}
 						type="button"
 						onClick={() => {
 							const newGrid = initializeGrid(
 								JSON.parse(JSON.stringify(initialGrid)),
 							);
-							const newClues = initializeApp(newGrid);
+							const newClues = createCluesFromGrid(newGrid);
 							setGridState(newGrid);
 							setClueList(newClues);
 							setIsModified(false);
@@ -455,7 +450,7 @@ const Grid: React.FC = () => {
 							const resetGrid = initializeGrid(
 								JSON.parse(JSON.stringify(initialGrid)),
 							);
-							const resetClues = initializeApp(resetGrid);
+							const resetClues = createCluesFromGrid(resetGrid);
 							setGridState(resetGrid);
 							setClueList(resetClues);
 							setIsModified(false);

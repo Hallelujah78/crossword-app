@@ -1006,6 +1006,8 @@ export const getAllMatches = (
 	return candidateAnswers;
 };
 
+// Takes two clues. Attempts to set props on a sharedLetter object if both clues intersect. Returns sharedLetter or undefined.
+// used
 export const getLetter = (rClue: Clue, currentClue: Clue) => {
 	const sharedLetter: SharedLetter = {
 		rClueIndex: undefined,
@@ -1013,17 +1015,23 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
 		clueIndex: undefined,
 	};
 	let intersection: Intersection | undefined;
+	// If the clue to be replaced has an intersection prop
 	if (rClue.intersection) {
+		// Set intersection to be the info relating to current clue
 		intersection = rClue.intersection.find((item) => {
 			return item.id === currentClue.id;
 		});
 	}
+	// If intersection was set above
 	if (intersection) {
+		// Set the index props on shared letter for rClue and clue
 		sharedLetter.rClueIndex = intersection.myIndex;
 		sharedLetter.clueIndex = intersection.yourIndex;
 	}
 
+	// If rClueIndex was set above
 	if (sharedLetter.rClueIndex !== undefined) {
+		// Set the letter prop on sharedLetter
 		sharedLetter.letter = rClue.answer[sharedLetter.rClueIndex];
 	}
 
@@ -1032,7 +1040,7 @@ export const getLetter = (rClue: Clue, currentClue: Clue) => {
 	}
 };
 
-export const initializeApp = (grid: CellType[]) => {
+export const createCluesFromGrid = (grid: CellType[]) => {
 	const tempGrid = JSON.parse(JSON.stringify(grid)) as CellType[];
 
 	const clues = createClues(tempGrid);

@@ -19,12 +19,12 @@ import { initialGrid } from "../state/grid";
 
 // utils
 import {
+	createCluesFromGrid,
 	getCellAbove,
 	getCellBelow,
 	getCluesFromCell,
 	getLocalStorage,
 	getWordLength,
-	initializeApp,
 	initializeGrid,
 	isLeftEdge,
 	isRightEdge,
@@ -48,7 +48,7 @@ const SolveGrid: React.FC = () => {
 	});
 	const [clueList, setClueList] = useState<Clue[]>(() => {
 		const clueState = getLocalStorage("solver")?.clues;
-		return clueState ? clueState : initializeApp(gridState);
+		return clueState ? clueState : createCluesFromGrid(gridState);
 	});
 	const [removeEmpty, _setRemoveEmpty] = useState<boolean>(false);
 
@@ -96,7 +96,7 @@ const SolveGrid: React.FC = () => {
 			setSelectedCell(undefined);
 			setSelectedClue("");
 			const resetGrid = initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
-			const clues = initializeApp(resetGrid);
+			const clues = createCluesFromGrid(resetGrid);
 			setGridState(resetGrid);
 			setClueList(clues);
 			setSelectedPuzzle("-");
@@ -612,7 +612,7 @@ const SolveGrid: React.FC = () => {
 						newState.grid = initializeGrid(
 							JSON.parse(JSON.stringify(initialGrid)),
 						);
-						newState.clues = initializeApp(newState.grid);
+						newState.clues = createCluesFromGrid(newState.grid);
 
 						newState = generateAnswers(newState.grid, newState.clues);
 						setGridState(newState.grid);

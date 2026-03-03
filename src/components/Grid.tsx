@@ -22,10 +22,10 @@ import steps from "../state/walkthroughSteps.tsx";
 // utils
 import {
 	createClues,
+	createCluesFromGrid,
 	getAcrossClues,
 	getDownClues,
 	getLocalStorage,
-	initializeApp,
 	initializeGrid,
 	isGridValid,
 	populateClues,
@@ -57,7 +57,7 @@ const Grid: React.FC = () => {
 	});
 	const [clueList, setClueList] = useState<Clue[]>(() => {
 		const clueState = getLocalStorage("editor")?.clues;
-		return clueState ? clueState : initializeApp(gridState);
+		return clueState ? clueState : createCluesFromGrid(gridState);
 	});
 	const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
 	const [fillGrid, setFillGrid] = useState<boolean>(true);
@@ -99,11 +99,11 @@ const Grid: React.FC = () => {
 		if (newClues?.[0].id) {
 			setClueList(newClues as Clue[]);
 			toast(
-			"Clues have been fetched. Enter a name for your puzzle and save it!",
-			{
-				className: "toast-style",
-			},
-		);
+				"Clues have been fetched. Enter a name for your puzzle and save it!",
+				{
+					className: "toast-style",
+				},
+			);
 		}
 	}, [newClues]);
 
@@ -329,7 +329,7 @@ const Grid: React.FC = () => {
 							const newGrid = initializeGrid(
 								JSON.parse(JSON.stringify(initialGrid)),
 							);
-							const newClues = initializeApp(newGrid);
+							const newClues = createCluesFromGrid(newGrid);
 							setGridState(newGrid);
 							setClueList(newClues);
 							setIsModified(false);
@@ -415,7 +415,7 @@ const Grid: React.FC = () => {
 							const resetGrid = initializeGrid(
 								JSON.parse(JSON.stringify(initialGrid)),
 							);
-							const resetClues = initializeApp(resetGrid);
+							const resetClues = createCluesFromGrid(resetGrid);
 							setGridState(resetGrid);
 							setClueList(resetClues);
 							setIsModified(false);

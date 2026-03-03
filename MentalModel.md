@@ -94,8 +94,8 @@ export type CellType = {
 - `clueNumber` is set for each cell in `initializeGrid`
     - this is the small number displayed in the top-left of a cell and represents the down and across clues, eg 4 Down, 3 Across, etc.
 - we also have a local state (local to GridOLD) for clues called `clueList`
-    - after grid is initialized, the clues state is either loaded from local storage or created with `initializeApp`
-- initializeApp does the following:
+    - after grid is initialized, the clues state is either loaded from local storage or created with `createCluesFromGrid`
+- createCluesFromGrid does the following:
     - create a deep copy of the grid state (array consisting of CellType objects) to avoid mutation
     - calls `createClues` which returns an array containing instances of the `Clue` class
     - sets the `intersection` prop for each instance of Clue
@@ -219,18 +219,18 @@ main.tsx
     - isLeftEdge
     - isRightEdge
     - isTopEdge
-    - isBottomEdge
-- Grid Structure
-    - initializeApp
+    - isBottomEdge   
 - Crossword Construction
     - generator.ts
         - createAnswersRegex
         - getMatches()
         - getAllMatches()
+        - getLetter()
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure
     - updateSurroundingCells
+    - createCluesFromGrid
 - Clues
     - createClues
     - getClueIndices

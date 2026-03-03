@@ -1119,13 +1119,13 @@ At this point, our generation code is complete. Now, we decide what options we g
           - note: initializeGrid does nothing with the clues array and state is not set, so it does nothing?
           - ~~remove createClues call~~ DONE
       - it returns the newGrid
-- after the first render, a useEffect calls `initializeApp(gridState, setClueList, setGridState)` which does the following:
+- after the first render, a useEffect calls `createCluesFromGrid(gridState, setClueList, setGridState)` which does the following:
   - it makes a deep copy of the gridState React state variable
   - it calls setClueNumbers
     - this has already been called in initializeGrid
     - this is probably not doing anything and is duplicaton
       - we built the app iteratively, so at some point these duplicate calls may have made sense
-    - ~~remove setClueNumbers call from initializeApp~~ DONE
+    - ~~remove setClueNumbers call from createCluesFromGrid~~ DONE
   - it calls createClues(grid) which returns an array of Clue objects
   - it calls getAcrossClues and getDownClues, which gets a ref to clues with a direction prop set to across and down respectively
   - it uses these down and across clue vars to set the intersection prop on each clue by calling setCluesThatIntersect
@@ -1133,9 +1133,9 @@ At this point, our generation code is complete. Now, we decide what options we g
   - it sets the clueList React state by calling setClueList(clues)
   - it sets the gridState React state by calling setGridState(tempGrid);
     - as far as I can tell, the gridState is not mutated here, so this call should be unnecessary
-    - ~~remove setGridState call from initializeApp~~ DONE
-    - ~~remove 'setGridState' from list of args/params that initializeApp is called with~~ DONE
-- once initializeGrid and initializeApp are called:
+    - ~~remove setGridState call from createCluesFromGrid~~ DONE
+    - ~~remove 'setGridState' from list of args/params that createCluesFromGrid is called with~~ DONE
+- once initializeGrid and createCluesFromGrid are called:
   - the clue.answer prop is an array of empty strings ['', '', '', '']
   - the objects in the clue.intersection prop array do not have a letter prop (optional)
     - need to look at how we are using this as it is not set on all clues
@@ -1688,7 +1688,7 @@ onChange={(e) => {
 - the user gets bored with this puzzle and presses the "Generate Puzzle" button
 - now we don't care about the app state as it will be recreated from scratch
   - we get the starting grid (from `/data.grid.ts`) and call `initializeGrid(grid)`
-  - we take the return value from that and call `initializeApp(gridState)`
+  - we take the return value from that and call `createCluesFromGrid(gridState)`
   - selectedPuzzle is set to ""
   - selectedCell is undefined
   - selectedClue is ""
@@ -2616,7 +2616,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 # 23/8/24
 - item to be addressed tomorrow: in the SolveGrid.tsx, the grid is not being reset.
 - if we select FETCHPUZZ (which has a non-standard grid shape) and click "New Puzzle", the answers/clues that are generated and retrieved are not for the 'base' grid shape. The app is otherwise working. If we select '-' from the dropdown, we get the 'base' grid shape. If we then create a new puzzle with 'New Puzzle' the clues and grid are correct.
-**POSSIBLY RESOLVED**: needed to initializeApp (creating the clues from scratch) instead of resetting answers (since the grid is being reset)
+**POSSIBLY RESOLVED**: needed to createCluesFromGrid (creating the clues from scratch) instead of resetting answers (since the grid is being reset)
  
 - fillEmptyAnswers which is called by populateClues expects access to state setters
   - refactor to return state instead
