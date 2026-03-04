@@ -231,7 +231,9 @@ main.tsx
 - Crossword Structure
     - updateSurroundingCells
     - createCluesFromGrid
+    
 - Clues
+    - removeClue()
     - createClues
     - getClueIndices
     - populateClues - answer generation, affects grid and clues
@@ -240,6 +242,7 @@ main.tsx
     - getDownClues
         - relationships.ts
             - setCluesThatIntersect
+            - getCluesThatIntersect
     - setClueAnswers - needs work/research, very long function
 
 - Data 

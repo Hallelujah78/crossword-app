@@ -1057,24 +1057,32 @@ export const createCluesFromGrid = (grid: CellType[]) => {
 	return clues;
 };
 
+
+// Takes an array of Clue instances and attempts to remove the clue(s) with the given index. Each clue that intersects with this clue will have an object that denotes the intersection in its `intersection` prop - this also needs to be removed. Returns the updated array of Clue instances.
+// used
 const removeClue = (clues: Clue[], index: number): Clue[] => {
 	const cluesToRemove = clues.filter((clue) => {
 		return clue.indices.includes(index);
 	});
+	// If cluesToRemove is undefined or has length zero
 	if (!cluesToRemove || cluesToRemove.length === 0) {
+		// Return clues early
 		return clues;
 	}
 
 	const indicesToRemove: number[] = [];
 	if (cluesToRemove !== undefined) {
 		for (const clueToRemove of cluesToRemove) {
+			// Get the id of each clue to be removed
 			const removeId = clueToRemove.id;
+			// Get position in Clues of clueToRemove
 			indicesToRemove.push(clues.indexOf(clueToRemove));
 
 			if (
 				clueToRemove !== undefined &&
 				clueToRemove.intersection !== undefined
 			) {
+				// For each object in the intersection prop of the clue to be removed
 				for (const intersectObj of clueToRemove.intersection) {
 					let index: number | undefined;
 					// get the intersectingClue
@@ -1082,12 +1090,14 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
 					const intersectingClue = clues.find((clueItem) => {
 						return clueItem.id === intersectObj.id;
 					});
+					// Get the index of the object in the intersection prop of our intersecting clue
 					index = intersectingClue?.intersection?.findIndex(
 						(intersectingItem) => {
 							return intersectingItem.id === removeId;
 						},
 					);
 					if (index !== undefined) {
+						// Remove the object that relates to the clue we are removing from the intersectingClue's intersection prop
 						intersectingClue?.intersection?.splice(index, 1);
 					}
 				}
@@ -1095,15 +1105,22 @@ const removeClue = (clues: Clue[], index: number): Clue[] => {
 		}
 	}
 	if (indicesToRemove.length > 0) {
+		// Sort indicesToRemove in descending order to avoid removing incorrect elements
+		indicesToRemove.sort((a,b) => b - a)
 		for (const index of indicesToRemove) {
+			// Remove the clue to be removed from clues
 			clues.splice(index, 1);
 		}
 	}
 	return clues;
 };
 
+// Takes a Clue instance and an array of Clue instances. Returns an array of Clue instances that intersect with our Clue instance.
+// used
 export const getIntersectingClues = (clue: Clue, clues: Clue[]) => {
+	// Get the intersection prop of clue
 	const intersection = clue?.intersection;
+	// Declare var to store Clue instances that intersect with Clue
 	const intersectingClues: Clue[] = [];
 	if (intersection) {
 		for (const intersectObject of intersection) {
@@ -1111,6 +1128,7 @@ export const getIntersectingClues = (clue: Clue, clues: Clue[]) => {
 				return clue.id === intersectObject.id;
 			});
 			if (intersectingClue) {
+				// Add intersecting clue to array
 				intersectingClues.push(intersectingClue);
 			}
 		}
@@ -1118,6 +1136,7 @@ export const getIntersectingClues = (clue: Clue, clues: Clue[]) => {
 	return intersectingClues;
 };
 
+// you are here
 export const getIncompleteAnswers = (clues: Clue[]) => {
 	const incomplete = clues.filter((clue) => {
 		return clue.answer.includes("");
