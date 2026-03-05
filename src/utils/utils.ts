@@ -1136,7 +1136,8 @@ export const getIntersectingClues = (clue: Clue, clues: Clue[]) => {
 	return intersectingClues;
 };
 
-// you are here
+// Takes an array of Clue instances and filters them, only returning those that are incomplete - i.e. we haven't generated a complete answer. 
+// used
 export const getIncompleteAnswers = (clues: Clue[]) => {
 	const incomplete = clues.filter((clue) => {
 		return clue.answer.includes("");
@@ -1144,21 +1145,41 @@ export const getIncompleteAnswers = (clues: Clue[]) => {
 	return incomplete;
 };
 
-export const resetIntersectClue = (iClue: Clue, currClueId: string) => {
+// Resets letters in an intersecting clue when a connected clue is being regenerated.
+//
+// Creates a copy of the intersecting clue's answer array and clears letters that
+// are no longer constrained by other clues.
+//
+// Letters that intersect with clues OTHER than `currClueId` are preserved.
+// Letters that intersect only with `currClueId` (the clue being replaced)
+// are cleared, along with any non-intersecting letters.
+//
+// Returns the updated answer array without mutating the original clue.
+// used
+export const resetIntersectingClueLetters = (iClue: Clue, currClueId: string) => {
+	// Copy the intersecting clue's answer prop to avoid mutation
 	const tempAnswer = [...iClue.answer];
-
+	
+	// Store indices where iClue.answer intersects with other clues
 	const sharedIndices: number[] = [];
 
+	// If the intersecting Clue has a defined intersection prop
 	if (iClue.intersection !== undefined) {
+		// Iterate over intersection objects
 		for (const item of iClue.intersection) {
+			// Exclude Clue with id currClueId
 			if (item.id !== currClueId) {
+				// Push the position of the intersecting letter to sharedIndices
 				sharedIndices.push(item.myIndex);
 			}
 		}
 	}
 
+	// For each entry in the iClue answer array
 	for (const [index, _letter] of iClue.answer.entries()) {
+		// If entry is not shared with other clues
 		if (!sharedIndices.includes(index)) {
+			// Set the entry to an empty string
 			tempAnswer[index] = "";
 		}
 	}
@@ -1332,7 +1353,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 		const intersecting = getIntersectingClues(incomplete, clueListCopy);
 
 		for (const clue of intersecting) {
-			const resetAnswer = resetIntersectClue(clue, incomplete.id);
+			const resetAnswer = resetIntersectingClueLetters(clue, incomplete.id);
 			const pattern = createAnswerRegex(resetAnswer);
 			const wordList = getWordList(
 				resetAnswer.length as AnswerLength,

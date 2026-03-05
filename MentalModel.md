@@ -226,6 +226,7 @@ main.tsx
         - getMatches()
         - getAllMatches()
         - getLetter()
+        - resetIntersectingClueLetters()
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure
@@ -242,7 +243,8 @@ main.tsx
     - getDownClues
         - relationships.ts
             - setCluesThatIntersect
-            - getCluesThatIntersect
+            - getIntersectingClues
+            - getIncompleteAnswers
     - setClueAnswers - needs work/research, very long function
 
 - Data 
