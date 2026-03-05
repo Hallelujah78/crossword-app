@@ -2399,7 +2399,7 @@ const updatedGrid = grid.map((gridItem) =>
 **RESOLVED**
 ```js
 Uncaught TypeError: Cannot read properties of undefined (reading 'clueIndex')
-    at createUniqueLetterList (utils.ts:955:20)
+    at getUniqueIntersectingLetters (utils.ts:955:20)
     at fillEmptyAnswers (utils.ts:1120:29)
     at populateClues (utils.ts:342:5)
     at generateClues (Grid.tsx:232:9)
@@ -2409,7 +2409,7 @@ Uncaught TypeError: Cannot read properties of undefined (reading 'clueIndex')
 - this is the function: 
 
 ```js
-export const createUniqueLetterList = (
+export const getUniqueIntersectingLetters = (
   sharedLetter: SharedLetter,
   matches: Answer[]
 ) => {
@@ -2544,7 +2544,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 ![alt text](image-2.png)
 - getLetter returns undefined instead of a SharedLetter type
 
-- we call `createUniqueLetterList` which expects sharedLetter to be of type SharedLetter, but we have passed in undefined because there is no shared letter where 4 Down instersects with 9 Across
+- we call `getUniqueIntersectingLetters` which expects sharedLetter to be of type SharedLetter, but we have passed in undefined because there is no shared letter where 4 Down instersects with 9 Across
 
 ## The Fix:
 - changed the getLetter code to return a sharedLetter if sharedLetter.letter !== undefined

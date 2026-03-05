@@ -1186,34 +1186,55 @@ export const resetIntersectingClueLetters = (iClue: Clue, currClueId: string) =>
 	return tempAnswer;
 };
 
-export const createUniqueLetterList = (
+
+// Given a shared letter between two intersecting clues and a list of
+// candidate answers for one of the clues, determine which letters
+// could appear in the shared grid cell.
+//
+// Extracts the letter at `rClueIndex` from each candidate answer and
+// returns the unique set of letters that could occupy that position.
+// The returned object contains the index of the shared position in
+// the other clue (`clueIndex`) and the list of possible letters.
+// used
+export const getUniqueIntersectingLetters = (
 	sharedLetter: SharedLetter,
 	matches: Answer[],
 ) => {
+	// If either of the clue indices on sharedLetter are undefined
 	if (
 		sharedLetter.clueIndex === undefined ||
 		sharedLetter.rClueIndex === undefined
 	) {
+		// throw an error
 		throw new Error(
-			"error in createUniqueLetterList: a property of sharedLetter is undefined",
+			"error in getUniqueIntersectingLetters: a property of sharedLetter is undefined",
 		);
 	}
+	// Create a temp object we can return. Store the clue's index and an array of letters.
 	const uniqueLetters: { index: number; letters: string[] } = {
 		index: sharedLetter.clueIndex,
 		letters: [],
 	};
 
+	// For each item in matches
 	for (const match of matches) {
+		// Set word to match.word if word truthy, otherwise set to match.raw
 		const word = match.word ? match.word : match.raw;
+		
 		if (
+			// Exclude letters already in uniqueLetters
 			!uniqueLetters.letters.includes(word[sharedLetter.rClueIndex as number])
 		) {
+			// Add the letter that appears at rClueIndex in word
 			uniqueLetters.letters.push(word[sharedLetter.rClueIndex as number]);
 		}
 	}
 	return uniqueLetters;
 };
 
+
+// used
+// you are here
 export function generateCombinations(
 	options: { index: number | undefined; letters: string[] }[],
 	currentIndex = 0,
@@ -1366,7 +1387,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 				clueListCopy,
 			);
 			const sharedLetter = getLetter(clue, incomplete);
-			const uniqueLetters = createUniqueLetterList(
+			const uniqueLetters = getUniqueIntersectingLetters(
 				sharedLetter as SharedLetter,
 				matches,
 			);

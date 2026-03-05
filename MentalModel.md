@@ -227,6 +227,7 @@ main.tsx
         - getAllMatches()
         - getLetter()
         - resetIntersectingClueLetters()
+        - getUniqueIntersectingLetters()
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure
