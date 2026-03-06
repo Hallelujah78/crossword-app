@@ -256,3 +256,39 @@ main.tsx
         - lookup.ts
             - getWordList()
 
+## Design Issues
+- parameter and variable names are confusing
+    - this is because of the data structures I used when creating the app
+    - there is a confusion between Answers and Clues in particular
+        - I should have designed it using something like:
+            - Entry - a collection of cells 
+            - Cell - a single cell in the grid
+            - Answer - the answer that relates to an entry and Clue
+            - Clue - the hint text for a particular entry
+            - Grid - a collection of cells tha make up the crossword
+            - Crossword - stores all of the above and provides methods
+        - this confusion makes determining what some functions actually do difficult
+        - it makes it difficult to think/reason about the code, even creating a comment to clearly state what the code does can be difficult
+- I am storing values that can be derived
+    - this makes updating Cells, Clues, Answers, the Grid unnecessarily complicated
+- I didn't sufficiently plan the app in terms of diagrams
+    - I reasoned about how it might work by writing my thoughts down
+    - these thoughts were "spread out" and so it was hard to see the greater picture
+- state such as our basic starting grid is missing properties and we have to initialize these with code when our app starts
+    - this is due to the "design as you go" approach that I took
+    - partially due to having a word list in a particular format
+- more extensive use of classes would have
+    - helped identify flaws in the design early
+    - avoided the creation of a 1700 line utils.ts file that later had to be split out
+    - made it easier to think about what methods I needed
+    - simplified the design process
+    - simplified thinking about what the code does or should do
+- I am using arrays where key/value pairs would often be significantly easier to use
+    - this is a gut feeling
+- some functions are not pure, they mutate params
+    - harder to test
+    - hidden mutation
+- duplicate functions where an extra param in one function with an extra boolean param would have sufficied, example:
+    - getItems(currentItem) - exclude current item
+    - getAllItems(currentItem) - include currentItem
+    - versus: getItems(currentItem, includeCurrent: Boolean) - or someting similar

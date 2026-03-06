@@ -1008,6 +1008,7 @@ export const getAllMatches = (
 
 // Takes two clues. Attempts to set props on a sharedLetter object if both clues intersect. Returns sharedLetter or undefined.
 // used
+// runs
 export const getLetter = (rClue: Clue, currentClue: Clue) => {
 	const sharedLetter: SharedLetter = {
 		rClueIndex: undefined,
