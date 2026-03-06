@@ -1233,7 +1233,7 @@ export const getUniqueIntersectingLetters = (
 	return uniqueLetters;
 };
 
-
+// Recursively generates letter combinations
 // used
 // you are here
 export function generateCombinations(
@@ -1264,6 +1264,7 @@ export function generateCombinations(
 		// Add the combinations generated for the next index to the result
 		combinations.push(...nextCombinations);
 	}
+	console.log(combinations);
 	return combinations;
 }
 
@@ -1363,42 +1364,57 @@ export const resetAllAnswers = (clueList: Clue[], gridState: CellType[]) => {
 	return { grid, clues };
 };
 
+// used
+// runs
 export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 	const clueListCopy = [...clueList];
 	const gridStateCopy = [...gridState];
+	// Get the clues that have incomplete answers
 	const incompletes = getIncompleteAnswers(clueListCopy);
 
-	// start of incompletes iteration
+	// For each clue with an incomplete answer
 	for (const incomplete of incompletes) {
 		const allUniqueLetters = [];
 
+		// Get clues that intersect with the Clue with incomplete answer
 		const intersecting = getIntersectingClues(incomplete, clueListCopy);
 
+		// For each clue that intersects with our Clue with incomplete answer
 		for (const clue of intersecting) {
+			// Preserve letters that intersect with clues other than the clue referenced by incomplete.id
 			const resetAnswer = resetIntersectingClueLetters(clue, incomplete.id);
+			// Create a pattern to match against candidate answers
 			const pattern = createAnswerRegex(resetAnswer);
+			// Get the candidate answers
 			const wordList = getWordList(
 				resetAnswer.length as AnswerLength,
 				AllAnswers,
 			);
+			// Get candidate answers that match the Regex pattern
 			const matches = getAllMatches(
 				wordList,
 				pattern,
 				clue.answer.join(""),
 				clueListCopy,
 			);
+			// Get the shared letter between intersecting clue and incomplete clue, includes index of letter in both clues
 			const sharedLetter = getLetter(clue, incomplete);
+			// Given available answers (matches), generate list of unique letters that could appear at a given index in a given clue
 			const uniqueLetters = getUniqueIntersectingLetters(
 				sharedLetter as SharedLetter,
 				matches,
 			);
+			// Add uniqueLetters {index, letters[]} to allUniqueLetters array
 			allUniqueLetters.push(uniqueLetters);
-		}
+			// allUniqueLetters represents all letters that could appear at intersecting indices of a clue
+		} // end of loop to generate allUniqueLetters
 		if (allUniqueLetters.length > 1) {
+			// Sort allUniqueLetters by ascending index
 			allUniqueLetters.sort((a, b) => {
 				return a?.index - b?.index;
 			});
 		}
+		// Given allUniqueLetters, recursively generate all possible combinations of letters
 		const allCombos = generateCombinations(allUniqueLetters);
 		// at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue
 
@@ -1462,7 +1478,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 				break;
 			}
 		}
-	}
+	} // end of loop iterating over a Clue with incomplete answer
 	return { clues: clueListCopy, grid: gridStateCopy };
 };
 
