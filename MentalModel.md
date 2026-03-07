@@ -231,6 +231,7 @@ main.tsx
         - generateIntersectionLetterCombinations()
         - applyCandidateAnswerToClue() **MUTATES**
         - propagateIntersectionLetters() **MUTATES**
+        - resetClueLetters()
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure

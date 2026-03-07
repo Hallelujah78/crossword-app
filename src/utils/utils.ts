@@ -1347,26 +1347,40 @@ export const propagateIntersectionLetters = (clue: Clue, clues: Clue[]) => {
 	return cluesToUpdate;
 };
 
-// reset a clue's non-intersecting letters to empty strings
-export const resetClue = (clue: Clue) => {
+
+// Clears letters in a clue that are not constrained by intersections.
+// Letters that belong to crossing clues are preserved.
+// Returns a new answer array without mutating the original clue.
+// used 
+export const resetClueLetters = (clue: Clue) => {
+	// Copy the given clue's answer
 	const tempAnswer = [...clue.answer];
+	// Store indices that intersect
 	const sharedIndices: number[] = [];
 
+	// If clue has intersection prop
 	if (clue.intersection) {
+		// Iterate over each item in intersection
 		for (const item of clue.intersection) {
+			// Add the myIndex value to the shared indices array
 			sharedIndices.push(item.myIndex);
 		}
 	}
 
+	// Iterate over the clue's answer prop
 	for (const [index, _letter] of clue.answer.entries()) {
+		// If the position in answer does not intersect
 		if (!sharedIndices.includes(index)) {
+			// Set the position in temp answer to an empty string
 			tempAnswer[index] = "";
 		}
 	}
+	// Return the Clue's answer with non-intersecting positions set to an empty string
 	return tempAnswer;
 };
 
 // update the grid state with the clue answer we just set
+// you are here
 export const updateGridState = (clue: Clue, gridState: CellType[]) => {
 	for (let i = 0; i < clue.length; i++) {
 		gridState[clue.indices[i]].letter = clue.answer[i];
@@ -1495,7 +1509,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 				const cluesToUpdate = propagateIntersectionLetters(incomplete, clueListCopy);
 				// we will have to replace intersecting clue answers where the intersecting letter has been updated
 				for (const clue of cluesToUpdate) {
-					const resetAnswer = resetClue(clue);
+					const resetAnswer = resetClueLetters(clue);
 					const pattern = createAnswerRegex(resetAnswer);
 					const wordList = getWordList(clue.length as AnswerLength, AllAnswers);
 					const matches = getMatches(
