@@ -1233,10 +1233,19 @@ export const getUniqueIntersectingLetters = (
 	return uniqueLetters;
 };
 
-// Recursively generates letter combinations
+// Recursively generates all possible combinations of letters based on
+// allowed letters at specific clue positions.
+//
+// `options` contains objects describing constrained positions in a clue.
+// Each object includes:
+//   - `index`: the position in the clue
+//   - `letters`: the set of letters that can appear at that position.
+//
+// The function returns all possible combinations of these letters,
+// representing every possible assignment of letters to the constrained
+// positions.
 // used
-// you are here
-export function generateCombinations(
+export function generateIntersectionLetterCombinations(
 	options: { index: number | undefined; letters: string[] }[],
 	currentIndex = 0,
 	currentCombination: string[] = [],
@@ -1247,7 +1256,7 @@ export function generateCombinations(
 	}
 
 	const currentOptions = options[currentIndex].letters;
-	const combinations = [];
+	const combinations: string[][] = [];
 
 	// Iterate over each option for the current index
 	for (const option of currentOptions) {
@@ -1256,7 +1265,7 @@ export function generateCombinations(
 		// Set the current option at the current index
 		newCombination[currentIndex] = option;
 		// Recursively generate combinations for the next index
-		const nextCombinations = generateCombinations(
+		const nextCombinations = generateIntersectionLetterCombinations(
 			options,
 			currentIndex + 1,
 			newCombination,
@@ -1264,11 +1273,20 @@ export function generateCombinations(
 		// Add the combinations generated for the next index to the result
 		combinations.push(...nextCombinations);
 	}
-	console.log(combinations);
 	return combinations;
 }
 
-export const setClueAnswer = (candidateAnswers: Answer[], clue: Clue) => {
+// Takes an array of candidate answers and assigns the first candidate
+// to the given clue.
+//
+// If the candidate has a `word` property, the clue's `answer` is set to
+// that value. Otherwise the `raw` value is used.
+//
+// The clue's `raw` property is always set from the candidate's `raw` value.
+//
+// NOTE: This function only uses the first candidate answer in the array.
+
+export const applyCandidateAnswerToClue = (candidateAnswers: Answer[], clue: Clue) => {
 	if (candidateAnswers.length > 0) {
 		if (candidateAnswers[0].word) {
 			clue.answer = [...candidateAnswers[0].word];
@@ -1415,7 +1433,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 			});
 		}
 		// Given allUniqueLetters, recursively generate all possible combinations of letters
-		const allCombos = generateCombinations(allUniqueLetters);
+		const allCombos = generateIntersectionLetterCombinations(allUniqueLetters);
 		// at this point we've generated all letter combinations that might be used to find an answer for the incomplete clue
 
 		// create the patterns
@@ -1450,7 +1468,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 			if (matchingWords.length > 0) {
 				finishLoop = true;
 				// set the answer and break
-				setClueAnswer(matchingWords, incomplete);
+				applyCandidateAnswerToClue(matchingWords, incomplete);
 				updateGridState(incomplete, gridStateCopy);
 
 				// update intersecting clues
@@ -1468,7 +1486,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 					);
 					if (matches.length > 0) {
 						// set the answer and break
-						setClueAnswer(matches, clue);
+						applyCandidateAnswerToClue(matches, clue);
 						updateGridState(clue, gridStateCopy);
 					} else {
 					}

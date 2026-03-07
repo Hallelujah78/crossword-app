@@ -228,6 +228,8 @@ main.tsx
         - getLetter()
         - resetIntersectingClueLetters()
         - getUniqueIntersectingLetters()
+        - generateIntersectionLetterCombinations()
+        - applyCandidateAnswerToClue() **MUTATES**
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure
@@ -257,6 +259,8 @@ main.tsx
             - getWordList()
 
 ## Design Issues
+- function names are too generic
+    - makes it difficult to understand what the function does
 - parameter and variable names are confusing
     - this is because of the data structures I used when creating the app
     - there is a confusion between Answers and Clues in particular
@@ -288,7 +292,7 @@ main.tsx
 - some functions are not pure, they mutate params
     - harder to test
     - hidden mutation
-- duplicate functions where an extra param in one function with an extra boolean param would have sufficied, example:
+- duplicate functions where an extra param in one function with an extra param would have sufficied, example:
     - getItems(currentItem) - exclude current item
     - getAllItems(currentItem) - include currentItem
     - versus: getItems(currentItem, includeCurrent: Boolean) - or someting similar
