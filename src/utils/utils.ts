@@ -1297,33 +1297,53 @@ export const applyCandidateAnswerToClue = (candidateAnswers: Answer[], clue: Clu
 	}
 };
 
-export const updateIntersectingClues = (clue: Clue, clues: Clue[]) => {
+
+// Propagates letters from a clue to all clues that intersect with it.
+//
+// For each intersection:
+// - The shared letter from the current clue is copied into the
+//   intersecting clue's answer at the appropriate position.
+// - If this changes the intersecting clue's letter, that clue is
+//   returned so its candidate answers can be recomputed.
+//
+// Returns an array of intersecting clues whose letters were updated.
+// propagateIntersectionLetters
+// used
+export const propagateIntersectionLetters = (clue: Clue, clues: Clue[]) => {
 	// we'll return clues that have been updated, maybe
 	const cluesToUpdate: Clue[] = [];
 	let oldLetter = "";
 	let newLetter = "";
 
-	// clue.intersection?.forEach((item) =>
+	// If clue has an intersection prop
 	if (clue.intersection) {
+		// Iterate over each item in the intersection prop array
 		for (const item of clue.intersection) {
+			// Set item letter to the letter in clue's answer at appropriate index 
 			item.letter = clue.answer[item.myIndex];
+			// Get a reference to the intersecting clue we must update
 			const clueToUpdate = clues.find((clue) => {
 				return clue.id === item.id;
 			});
 
+			// If there is a clue to be updated
 			if (clueToUpdate) {
+				// Get a ref to the current value of letter in intersecting clue's answer at appropriate index
 				oldLetter = clueToUpdate.answer[item.yourIndex];
+				// Get a ref to the current value of letter in clue's answer at appropriate index
 				newLetter = clue.answer[item.myIndex];
+				// Update the intersecting clue's answer prop with the new letter at appropriate index
 				clueToUpdate.answer[item.yourIndex] = newLetter;
 
 				// if the shared letter has updated, then we need to replace the answer for the updated clue
 				if (oldLetter !== newLetter) {
-					// we don't need the index? just reset all unshared letters, pattern, match and set
+					// Add clue to update to return array
 					cluesToUpdate.push(clueToUpdate);
 				}
 			}
 		}
 	}
+	// Return clues to update array
 	return cluesToUpdate;
 };
 
@@ -1472,7 +1492,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 				updateGridState(incomplete, gridStateCopy);
 
 				// update intersecting clues
-				const cluesToUpdate = updateIntersectingClues(incomplete, clueListCopy);
+				const cluesToUpdate = propagateIntersectionLetters(incomplete, clueListCopy);
 				// we will have to replace intersecting clue answers where the intersecting letter has been updated
 				for (const clue of cluesToUpdate) {
 					const resetAnswer = resetClue(clue);

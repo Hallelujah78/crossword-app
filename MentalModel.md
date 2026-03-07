@@ -230,6 +230,7 @@ main.tsx
         - getUniqueIntersectingLetters()
         - generateIntersectionLetterCombinations()
         - applyCandidateAnswerToClue() **MUTATES**
+        - propagateIntersectionLetters() **MUTATES**
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure
