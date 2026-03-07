@@ -298,3 +298,12 @@ main.tsx
     - getItems(currentItem) - exclude current item
     - getAllItems(currentItem) - include currentItem
     - versus: getItems(currentItem, includeCurrent: Boolean) - or someting similar
+
+## Interesting Points from AI Chats
+- my idea to fill long answers first is good - filling the most constrained answer
+- my intuition to skip backtracking and simply regenerate from the start is justifiable
+    - pro crossword fillers
+        - fill most constrained first
+        - limit backtracking depth
+        - restart if stuck
+- my intuition that a larger word list makes automatic answer generation easier is correct
