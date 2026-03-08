@@ -1307,7 +1307,6 @@ export const applyCandidateAnswerToClue = (candidateAnswers: Answer[], clue: Clu
 //   returned so its candidate answers can be recomputed.
 //
 // Returns an array of intersecting clues whose letters were updated.
-// propagateIntersectionLetters
 // used
 export const propagateIntersectionLetters = (clue: Clue, clues: Clue[]) => {
 	// we'll return clues that have been updated, maybe
@@ -1379,9 +1378,14 @@ export const resetClueLetters = (clue: Clue) => {
 	return tempAnswer;
 };
 
-// update the grid state with the clue answer we just set
-// you are here
-export const updateGridState = (clue: Clue, gridState: CellType[]) => {
+// Writes a clue's answer letters into the corresponding cells of the grid.
+// Each letter in `clue.answer` is copied into the grid cell referenced by
+// the matching index in `clue.indices`.
+//
+// Mutates `gridState`.
+// updateGridState
+// used
+export const writeClueToGrid = (clue: Clue, gridState: CellType[]) => {
 	for (let i = 0; i < clue.length; i++) {
 		gridState[clue.indices[i]].letter = clue.answer[i];
 	}
@@ -1503,7 +1507,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 				finishLoop = true;
 				// set the answer and break
 				applyCandidateAnswerToClue(matchingWords, incomplete);
-				updateGridState(incomplete, gridStateCopy);
+				writeClueToGrid(incomplete, gridStateCopy);
 
 				// update intersecting clues
 				const cluesToUpdate = propagateIntersectionLetters(incomplete, clueListCopy);
@@ -1521,7 +1525,7 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 					if (matches.length > 0) {
 						// set the answer and break
 						applyCandidateAnswerToClue(matches, clue);
-						updateGridState(clue, gridStateCopy);
+						writeClueToGrid(clue, gridStateCopy);
 					} else {
 					}
 				}

@@ -232,6 +232,7 @@ main.tsx
         - applyCandidateAnswerToClue() **MUTATES**
         - propagateIntersectionLetters() **MUTATES**
         - resetClueLetters()
+        - writeClueToGrid() **MUTATES**
 - Crossword Rules
     - setClueNumbers
 - Crossword Structure
