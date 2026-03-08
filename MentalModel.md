@@ -42,9 +42,9 @@
 
 ## Routes
 - We have the following routes:
-- Editor - rendered on `/` and renders `Editor.tsx` which renders `Grid` component from `GridOLD.tsx`
+- Editor - rendered on `/` and renders `Editor.tsx` which renders `Grid.tsx` component
 - Root - common to entire app
-- Solve - rendered on `/solver` and renders `Solve.tsx` which renders `SolveGrid`
+- Solve - rendered on `/solver` and renders `Solve.tsx` which renders `SolveGrid.tsx`
 
 ## State
 - the answers used to generate the words for our crossword live in `state/answers2.ts` as a number of named arrays that consist of Answer type objects. The name of the array reflects the length of the words it contains. The `five` Answer array consts of words that are 5 letters long. I believe I split the 60,000 words into separate arrays to make finding words of a particular length more efficient. When populating the grid with answers, words are picked randomly using a regular expression based on their length.
@@ -85,7 +85,7 @@ export type CellType = {
     - id is set to the index of the cell in the grid
     - letter set to empty string
     - answer set to empty string
-- the initialiezd grid state is stored locally in `GridOLD` in `gridState`
+- the initialized grid state is stored locally in `GridOLD` in `gridState`
 - the `isVoid` prop is correctly set in `state/grid.ts` before `initializeGrid` is run
     - isVoid is true if cell is void, false if it is light
 - top, bottom, left, right - set by `initializeGrid`
@@ -154,7 +154,7 @@ const apiURL = "/.netlify/functions/getClues";
 ```js
 [{"id":"10DOWN","word":"HAIRDRESSING","clue":""},{"id":"12DOWN","word":"SATISFACTION","clue":""},{"id":"13DOWN","word":"ORGANIZATION","clue":""},{"id":"15DOWN","word":"GRACIOUSNESS","clue":""},{"id":"4ACROSS","word":"GUNRIGHTS","clue":""},{"id":"156ACROSS","word":"NOSTALGIA","clue":""},{"id":"4DOWN","word":"GUNMAKER","clue":""},{"id":"52ACROSS","word":"ARCHAISM","clue":""},{"id":"73DOWN","word":"DEMENTIA","clue":""},{"id":"109ACROSS","word":"SUPERSET","clue":""},{"id":"32ACROSS","word":"CHEMIST","clue":""},{"id":"130ACROSS","word":"ICEPICK","clue":""},{"id":"6DOWN","word":"NOCOST","clue":""},{"id":"78ACROSS","word":"ISOMER","clue":""},{"id":"85ACROSS","word":"OEDEMA","clue":""},{"id":"97DOWN","word":"MUSKEG","clue":""},{"id":"26ACROSS","word":"RERUN","clue":""},{"id":"138ACROSS","word":"TONDO","clue":""},{"id":"8DOWN","word":"IDEA","clue":""},{"id":"61ACROSS","word":"ODDS","clue":""},{"id":"104ACROSS","word":"ARSE","clue":""},{"id":"121DOWN","word":"VITA","clue":""}]
 ```
-- For each clue, we send an object. The `word` is the word we want to generate a clue for. The clue field is blank and we prompt the OpenAI API to send the response back with the clue field filled in for the corresponding word. The ID means we can relate the response back to our crossword structure.
+- For each clue, we send an object. The `word` is the word we want to generate a clue for. The clue field is blank and we prompt the OpenAI API to send the response back with the clue field filled in for the corresponding word. The ID allows me to relate the response back to our crossword structure.
 
 ## Main User Interactions
 ### Create Flow
@@ -264,7 +264,7 @@ main.tsx
 ## Design Issues
 - function names are too generic
     - makes it difficult to understand what the function does
-- parameter and variable names are confusing
+- parameter, variable and property names are confusing
     - this is because of the data structures I used when creating the app
     - there is a confusion between Answers and Clues in particular
         - I should have designed it using something like:
@@ -299,6 +299,14 @@ main.tsx
     - getItems(currentItem) - exclude current item
     - getAllItems(currentItem) - include currentItem
     - versus: getItems(currentItem, includeCurrent: Boolean) - or someting similar
+- Sacrificed readability and separation of concerns for unnecessary optimization
+    - cf `resetPuzzleAnswers`
+        - resets the generated answers
+        - resets the user letter input including what cell is selected
+        - convenient to lump together since it avoids looping over the same data multiple times - optimization is pointless with small dataset
+        - better to split into
+            - restGeneratedAnswers
+            - resetUserInput or even resetUserAnswers and resetCellSelection
 
 ## Interesting Points from AI Chats
 - my idea to fill long answers first is good - filling the most constrained answer

@@ -1149,7 +1149,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     - set the letter prop in clue.intersection to "" if it exists
 
 ## To Do
-- ~~using populateClues and resetAllAnswers, write some logic to repeatedly call populateClues until there are no incomplete answers~~ DONE
+- ~~using populateClues and resetPuzzleAnswers, write some logic to repeatedly call populateClues until there are no incomplete answers~~ DONE
 
 
 ## The Solve/Solving Grid
@@ -1627,7 +1627,7 @@ puzzles: [{
   - generating a random puzzle should not associate that puzzle with the puzzleName in state
 - this has to be an issue with getting old values because of how I am updating state
 - it's possible I'm confusing the displayed letter with the answer
-  - examine resetAllAnswers
+  - examine resetPuzzleAnswers
     - in the solver - for each cell we have an answer prop and a letter prop
       - when generating a new random puzzle in solver, we must start from scratch
         - intialize the grid, initialize the app, then generate
@@ -1655,7 +1655,7 @@ onChange={(e) => {
             );
           }}
 ```
-- okay, so we're not setting state multiple times - I thought I was calling resetAllAnswers in here which does set state
+- okay, so we're not setting state multiple times - I thought I was calling resetPuzzleAnswers in here which does set state
 - refactored the code in the onChange to use variables to store e.target.value and the selected puzzle
 - I don't think this was the issue
 
@@ -1663,7 +1663,7 @@ onChange={(e) => {
 
 ```js
  onClick={() =>
-            resetAllAnswers(clueList, gridState, setGridState, setClueList)
+            resetPuzzleAnswers(clueList, gridState, setGridState, setClueList)
           }
 ```
 - what does reset answers do?
@@ -1706,7 +1706,7 @@ onChange={(e) => {
   - these functions should instead return an object {clues, grid}
 - prime example for why this should be the case is:
   - the generateClues function in SolveGrid
-    - calls resetAllAnswers, which calls setClueList and setGridState
+    - calls resetPuzzleAnswers, which calls setClueList and setGridState
     - calls populateClues, which calls setClueList and setGridState
     - we can't update the state multiple times in the same function call
     - well, we can, but it is not necessary
@@ -2391,7 +2391,7 @@ const updatedGrid = grid.map((gridItem) =>
   - letter here is the letter of the generated answer
 - **STEP 3**: `IF` we want to force fill the grid AND there are still empty cells (hasEmpty.length > 0), do the following:
   - **STEP 3 A**: `WHILE` there are still empty cells (hasEmpty.length > 0)
-    - reset all the answers: `resetAllAnswers`
+    - reset all the answers: `resetPuzzleAnswers`
       - this resets everything relating to answers in gridState and clueList while retaining the grid structure
     - `populateClues`:  iterates over every clue
 

@@ -25,7 +25,7 @@ import {
 	initializeGrid,
 	isGridValid,
 	populateClues,
-	resetAllAnswers,
+	resetPuzzleAnswers,
 	setClueNumbers,
 	setCluesThatIntersect,
 	setLocalStorage,
@@ -166,7 +166,7 @@ const Grid: React.FC = () => {
 
 		if (fillGrid && hasEmpty.length > 0) {
 			while (hasEmpty.length > 0) {
-				newState = resetAllAnswers(clueList, gridState);
+				newState = resetPuzzleAnswers(clueList, gridState);
 				newState = populateClues(
 					newState.clues,
 					AllAnswers,
@@ -345,7 +345,7 @@ const Grid: React.FC = () => {
 						}
 						type="button"
 						onClick={() => {
-							const { grid: resetGrid, clues: resetClues } = resetAllAnswers(
+							const { grid: resetGrid, clues: resetClues } = resetPuzzleAnswers(
 								clueList,
 								gridState,
 							);

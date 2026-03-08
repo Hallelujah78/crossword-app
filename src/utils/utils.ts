@@ -1383,7 +1383,6 @@ export const resetClueLetters = (clue: Clue) => {
 // the matching index in `clue.indices`.
 //
 // Mutates `gridState`.
-// updateGridState
 // used
 export const writeClueToGrid = (clue: Clue, gridState: CellType[]) => {
 	for (let i = 0; i < clue.length; i++) {
@@ -1391,32 +1390,59 @@ export const writeClueToGrid = (clue: Clue, gridState: CellType[]) => {
 	}
 };
 
-// retains the grid structure but resets letters and clue answers
-export const resetAllAnswers = (clueList: Clue[], gridState: CellType[]) => {
+
+// Resets all generated solutions and user-entered answers while preserving
+// the crossword structure (grid layout, clue definitions, and intersections).
+//
+// Performs the following:
+//   - Creates shallow copies of the clues and grid arrays
+//   - Clears all generated answers in clues
+//   - Clears stored raw answers
+//   - Clears intersection letters
+//   - Clears all user-entered cell answers
+//   - Clears solution letters stored in cells
+//   - Resets cell selection state
+//
+// Returns updated `clues` and `grid` arrays.
+// used
+export const resetPuzzleAnswers = (clueList: Clue[], gridState: CellType[]) => {
 	const clues = [...clueList];
 	const grid = [...gridState];
 
+	// For each Clue in clues
 	for (const clue of clues) {
-		// reset the answer and intersection
+		// Create an array of empty strings we can use to reset the `answer` prop
 		const emptyAnswer = new Array(clue.answer.length).fill("");
+		// Set the `answer` prop to an array of empty strings
 		clue.answer = emptyAnswer;
-		clue.raw = [""];
+		// Set `clue.raw` to an array with one empty string
+		clue.raw = [""]; // Should this also be set to empty answer?
 
+		// If `clue.intersecton` is defined
 		if (clue.intersection) {
+			// For each object in the `intersection` array
 			for (const intersectObj of clue.intersection) {
+				// If the letter prop exists/isn't already falsy (empty string)
 				if (intersectObj.letter) {
+					// Set the `letter` prop to empty string
 					intersectObj.letter = "";
 				}
 			}
 		}
 	}
+	// For each Cell in the grid
 	for (const cell of grid) {
+		// Reset the answer the user has input
 		cell.answer = "";
+		// Set all cells to not be selected
 		cell.selected = false;
+		// If Cell has a `letter` set (not undefined and not empty string)
 		if (cell.letter) {
+			// Set the cell's `letter` prop to an empty string
 			cell.letter = ""; // this was deleting cell.letter
 		}
 	}
+	// Return the updated grid and clues
 	return { grid, clues };
 };
 

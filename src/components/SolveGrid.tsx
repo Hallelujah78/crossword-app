@@ -29,7 +29,7 @@ import {
 	isLeftEdge,
 	isRightEdge,
 	populateClues,
-	resetAllAnswers,
+	resetPuzzleAnswers,
 	resetSelectedCells,
 	setLocalStorage,
 	setSelection,
@@ -462,7 +462,7 @@ const SolveGrid: React.FC = () => {
 		let newState = { grid, clues };
 		if (!removeEmpty && hasEmpty.length > 0) {
 			while (hasEmpty.length > 0) {
-				newState = resetAllAnswers(clues, grid);
+				newState = resetPuzzleAnswers(clues, grid);
 				newState = populateClues(
 					newState.clues,
 					AllAnswers,
