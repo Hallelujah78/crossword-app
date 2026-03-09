@@ -2400,7 +2400,7 @@ const updatedGrid = grid.map((gridItem) =>
 ```js
 Uncaught TypeError: Cannot read properties of undefined (reading 'clueIndex')
     at getUniqueIntersectingLetters (utils.ts:955:20)
-    at fillEmptyAnswers (utils.ts:1120:29)
+    at resolveIncompleteClues(utils.ts:1120:29)
     at populateClues (utils.ts:342:5)
     at generateClues (Grid.tsx:232:9)
     at onClick (Grid.tsx:310:26)
@@ -2618,7 +2618,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - if we select FETCHPUZZ (which has a non-standard grid shape) and click "New Puzzle", the answers/clues that are generated and retrieved are not for the 'base' grid shape. The app is otherwise working. If we select '-' from the dropdown, we get the 'base' grid shape. If we then create a new puzzle with 'New Puzzle' the clues and grid are correct.
 **POSSIBLY RESOLVED**: needed to createCluesFromGrid (creating the clues from scratch) instead of resetting answers (since the grid is being reset)
  
-- fillEmptyAnswers which is called by populateClues expects access to state setters
+- resolveIncompleteClues which is called by populateClues expects access to state setters
   - refactor to return state instead
 **RESOLVED**
 
@@ -2757,9 +2757,9 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 - update README.md
 
 - populateClues anomaly
-  - if removeEmpty is false (in other words Force Fill Grid is checked/true) and emptyCells exists and has length greater than zero, we call fillEmptyAnswers
-  - console logging reveals fillEmptyAnswers is called many times
-  fillEmptyAnswers:
+  - if removeEmpty is false (in other words Force Fill Grid is checked/true) and emptyCells exists and has length greater than zero, we call resolveIncompleteClues
+  - console logging reveals resolveIncompleteClues is called many times
+  resolveIncompleteClues:
     - get an array of Clues where the answers are incomplete/partially filled
     - get the clues that intersect with the partially filled answers
     - for every clue that intersects with the partially filled clue
