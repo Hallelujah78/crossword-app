@@ -7,22 +7,22 @@ import { isLetter } from "../utils/utils";
 
 const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
 	({ cell, handleCellClick, handleKeyDown, handleTabKeyPress }, ref) => {
-		const { isVoid, id, clueNumber, selected, answer } = cell;
+		const { isVoid, id, clueNumber, selected, guess } = cell;
 
 		const [cellValue, setCellValue] = useState("");
 
 		useEffect(() => {
 			// when the local input state changes, update the global state
-			if (handleKeyDown && answer !== cellValue && isLetter(cellValue)) {
+			if (handleKeyDown && guess !== cellValue && isLetter(cellValue)) {
 				handleKeyDown(cellValue.toUpperCase());
 			}
 		}, [cellValue]);
 
 		useEffect(() => {
-			if (answer !== undefined && answer !== cellValue) {
-				setCellValue(answer);
+			if (guess !== undefined && guess !== cellValue) {
+				setCellValue(guess);
 			}
-		}, [answer]);
+		}, [guess, cellValue]);
 
 		return (
 			<Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>

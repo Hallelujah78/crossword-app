@@ -9,7 +9,7 @@ export default class Clue {
     public length: number,
     public direction: Direction,
     public indices: number[],
-    public answer: string[],
+    public solution: string[],
     public raw: string[],
     public clue: string,
     public intersection?: Intersection[]

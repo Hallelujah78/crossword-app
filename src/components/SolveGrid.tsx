@@ -127,8 +127,8 @@ const SolveGrid: React.FC = () => {
 			}
 			for (const index of currSelectedClue.indices) {
 				const cell = grid[index];
-				if (cell.answer !== cell.letter) {
-					cell.answer = "";
+				if (cell.guess !== cell.solution) {
+					cell.guess = "";
 				}
 			}
 			setGridState(grid);
@@ -139,7 +139,7 @@ const SolveGrid: React.FC = () => {
 			}
 			for (const index of currSelectedClue.indices) {
 				const cell = grid[index];
-				cell.answer = cell.letter;
+				cell.guess = cell.solution;
 			}
 			setGridState(grid);
 		}
@@ -149,7 +149,7 @@ const SolveGrid: React.FC = () => {
 			}
 			for (const index of currSelectedClue.indices) {
 				const cell = grid[index];
-				cell.answer = "";
+				cell.guess = "";
 			}
 			setGridState(grid);
 		}
@@ -157,8 +157,8 @@ const SolveGrid: React.FC = () => {
 			for (const clue of clues) {
 				for (const index of clue.indices) {
 					const cell = grid[index];
-					if (cell.answer !== cell.letter) {
-						cell.answer = "";
+					if (cell.guess !== cell.solution) {
+						cell.guess = "";
 					}
 				}
 			}
@@ -168,7 +168,7 @@ const SolveGrid: React.FC = () => {
 			for (const clue of clues) {
 				for (const index of clue.indices) {
 					const cell = grid[index];
-					cell.answer = cell.letter;
+					cell.guess = cell.solution;
 				}
 			}
 			setGridState(grid);
@@ -177,7 +177,7 @@ const SolveGrid: React.FC = () => {
 			for (const clue of clues) {
 				for (const index of clue.indices) {
 					const cell = grid[index];
-					cell.answer = "";
+					cell.guess = "";
 				}
 			}
 			setGridState(grid);
@@ -190,7 +190,7 @@ const SolveGrid: React.FC = () => {
 
 		const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
 		let targetCell: CellType | undefined = selectedCell
-			? { ...selectedCell, answer: val }
+			? { ...selectedCell, guess: val }
 			: undefined;
 
 		if (currSelectedClue && currSelectedClue.direction === 1 && selectedCell) {
@@ -213,7 +213,7 @@ const SolveGrid: React.FC = () => {
 			gridItem.id === selectedCell?.id
 				? {
 						...gridItem,
-						answer: val,
+						guess: val,
 					}
 				: gridItem,
 		);
@@ -221,7 +221,7 @@ const SolveGrid: React.FC = () => {
 		setGridState(updatedGrid);
 	};
 
-	const handleClueClick = (e: React.MouseEvent<HTMLDivElement>) => {
+	const handleClueClick = (e: React.MouseEvent<HTMLButtonElement>) => {
 		const grid = JSON.parse(JSON.stringify(gridState));
 		const clues = JSON.parse(JSON.stringify(clueList));
 		const target = e.currentTarget;
@@ -262,18 +262,18 @@ const SolveGrid: React.FC = () => {
 		const grid = [...gridState];
 		const clues = [...clueList];
 
-		// if cell has answer, set answer to ""
-		if (selectedCell.answer) {
-			selectedCell.answer = "";
+		// if cell has guess, set guess to ""
+		if (selectedCell.guess) {
+			selectedCell.guess = "";
 			setSelectedCell((prev) => prev);
 			const updatedGrid = grid.map((gridItem) =>
 				gridItem.id === selectedCell.id
-					? { ...gridItem, answer: "" }
+					? { ...gridItem, guess: "" }
 					: gridItem,
 			);
 			setGridState(updatedGrid);
 		} else {
-			// if cell has no answer, set focus to previous cell (if there is one)
+			// if cell has no guess, set focus to previous cell (if there is one)
 			const currSelectedClue = clues.find((clue) => clue.id === selectedClue);
 
 			// 0 is across and 1 is down
@@ -304,7 +304,7 @@ const SolveGrid: React.FC = () => {
 		if (selectedClue === "" || e?.key !== "Tab") {
 			return;
 		}
-		// event.preventDefault();
+		
 		const currentSelectedClue = selectedClue;
 		const clues = [...clueList];
 		const grid = [...gridState];
@@ -357,7 +357,7 @@ const SolveGrid: React.FC = () => {
 		const currentSelectedClue = clues.find((clue) => {
 			return clue.id === selectedClue;
 		});
-		const cellId = selectedCell.id; // number
+		const cellId = selectedCell.id;
 		let targetCell: CellType | undefined;
 
 		if (val === "ArrowDown") {
@@ -402,7 +402,8 @@ const SolveGrid: React.FC = () => {
 		return cluesToRender.map((clue) => {
 			const isSelected = clue.id === selectedClue;
 			return (
-				<div
+				<button
+					type="button"
 					className="clue-item"
 					id={clue.id}
 					onClick={(e) => handleClueClick(e)}
@@ -422,7 +423,7 @@ const SolveGrid: React.FC = () => {
 							{clue.clue} <span>{getWordLength(clue)}</span>
 						</p>
 					</div>
-				</div>
+				</button>
 			);
 		});
 	};
@@ -454,11 +455,7 @@ const SolveGrid: React.FC = () => {
 	};
 
 	const generateAnswers = (grid: CellType[], clues: Clue[]) => {
-		let hasEmpty = grid.filter((cell) => {
-			if (!cell.isVoid && !cell.letter) {
-				return cell;
-			}
-		});
+		let hasEmpty = grid.filter((cell) => !cell.isVoid && !cell.solution);
 		let newState = { grid, clues };
 		if (!removeEmpty && hasEmpty.length > 0) {
 			while (hasEmpty.length > 0) {
@@ -470,11 +467,7 @@ const SolveGrid: React.FC = () => {
 					removeEmpty,
 				);
 
-				hasEmpty = newState.grid.filter((cell) => {
-					if (!cell.isVoid && !cell.letter) {
-						return cell;
-					}
-				});
+				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.solution);
 			}
 			return newState;
 		}
@@ -677,7 +670,7 @@ const SolveGrid: React.FC = () => {
 					</div>
 					<div className="all-clues">
 						<button
-							disabled={clueList[0].answer.includes("")}
+							disabled={clueList[0].solution.includes("")}
 							type="button"
 							id="check-all"
 							onClick={(e) => {
@@ -687,7 +680,7 @@ const SolveGrid: React.FC = () => {
 							Check All
 						</button>
 						<button
-							disabled={clueList[0].answer.includes("")}
+							disabled={clueList[0].solution.includes("")}
 							type="button"
 							id="reveal-all"
 							onClick={(e) => {
@@ -697,7 +690,7 @@ const SolveGrid: React.FC = () => {
 							Reveal All
 						</button>
 						<button
-							disabled={clueList[0].answer.includes("")}
+							disabled={clueList[0].solution.includes("")}
 							type="button"
 							id="clear-all"
 							onClick={(e) => {
@@ -814,14 +807,15 @@ const Wrapper = styled.div`
       height: 1.75rem;
     }
 
-    div.clue-item {
+    button.clue-item {
+		all: unset;
+	width: 100%;
       font-size: clamp(1rem, 1vw, 1.25rem);
       border-radius: 0.2rem;
       margin: 0.55rem 0 0.55rem 0;
       padding: 0 0.9rem 0 0.9rem;
       color: darkgray;
-      display: grid;
-      grid-template-columns: 10% 90%;
+      display: flex;
       gap: 0.5rem;
 
       &:hover {

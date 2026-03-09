@@ -228,10 +228,10 @@ const findRightEdge = () =>{
 ## Populating our Clue objects with answers
 
 - at this point we have the Clue class, instances of which have the following props:
-  - answer: the answer that fits in the crossword grid for a given clue
+  - solution: the answer that fits in the crossword grid for a given clue
   - clue: the clue that will be shown to the crossword solver
   - direction: whether the clue is across (0) or down (1)
-  - the indices for each cell that comprises a letter in the answer
+  - the indices for each cell that comprises a letter in the solution
     - since we had to iterate across or down to get the clue length, it made some sense to store the index of each letter
     - this will be useful when it comes to a few things
     - cross referencing if an index in a clue is also part of another clue
@@ -334,7 +334,7 @@ const findRightEdge = () =>{
 
 ### Clue
 
-- a clue has an answer prop, which is a string of letters we can use to populate a cell
+- a clue has an `solution` prop, which is a string of letters we can use to populate a cell
 - a clue has an array of indices
 
 - to populate a cell with its letter (this is for crossword construction, not solving)
@@ -369,7 +369,7 @@ const findRightEdge = () =>{
         143,
         156
     ],
-    "answer": "PREFIGURATION",
+    "solution": "PREFIGURATION",
     "clue": ""
 }
 ```
@@ -506,7 +506,7 @@ getCluesThatIntersect(oneAcross, cluesDown);
 - example: 6DOWN (which is the clue 3 down) - 6 is the index of the cell at the start of the clue
   - L _ O _ O _
   - intersection 3across (length 10), 32across (length 7), 52across (length 8)
-  - how do we choose which answer to replace in the hopes of finding an answer to fit in 6down?
+  - how do we choose which solution to replace in the hopes of finding an answer to fit in 6down?
   - we might use something like:
     - the shortest answer
     - the answer that intersects with the fewest other clues
@@ -595,20 +595,20 @@ Clue {
   intersection: {
     10DOWN: { myIndex: 0, yourIndex: 6}
   },
-  answer: ['B', 'O', 'B'],
+  solution: ['B', 'O', 'B'],
 }
 ```
 - assume we need to get myIndex and we have a group of clues we are iterating over:
 ```js
 for(const rClue of replaceClues){
-const sharedLetter = rClue.answer[rClue.intersection[clue.id].myIndex]
+const sharedLetter = rClue.solution[rClue.intersection[clue.id].myIndex]
 }
 ```
 - compare that to:
 ```js
 for(const rClue of replaceClues){
  const sharedLetter =
-        rClue.answer[
+        rClue.solution[
           rClue.intersection.find((item) => {
             return item.id === clue.id;
           })?.myIndex
@@ -639,8 +639,8 @@ setClueAnsewrs(){
   }
 
   if(candidate answers has answers in it){
-    pick a random word from the candidate answers and set the clue.answer;
-    for(each clue that intersects with our clue.answer){
+    pick a random word from the candidate answers and set the clue.solution;
+    for(each clue that intersects with our clue.solution){
       get the Clue instance that matches the ID of the object in clue.intersection;
       update the shared letter in the answers of each intersecting clue; 
     }
@@ -933,7 +933,7 @@ let intersectingClueIndex;
         return clueId === item.id;
       })!.myIndex!;
 
-      intersectClue.letter = clue.answer[intersectingClueIndex];
+      intersectClue.letter = clue.solution[intersectingClueIndex];
 
       replaceClues.push(
         clues.find((item) => {
@@ -946,12 +946,12 @@ let intersectingClueIndex;
 - and here:
 ```js
   clue.intersection?.forEach((item) => {
-            item.letter = clue.answer[item.myIndex];
+            item.letter = clue.solution[item.myIndex];
             const clueToUpdate = clues.find((clue) => {
               return clue.id === item.id;
             })!;
 
-            clueToUpdate.answer[item.yourIndex] = clue.answer[item.myIndex];
+            clueToUpdate.solution[item.yourIndex] = clue.solution[item.myIndex];
           });
 ```
 - I've searched through notes and utils file and we don't appear to be using the letter prop for anything! We set it and update it in a couple of places, but we aren't reading it or making use of it.
@@ -1025,7 +1025,7 @@ let intersectingClueIndex;
         return clueId === item.id;
       })!.myIndex!;
 
-      intersectClue.letter = clue.answer[intersectingClueIndex];
+      intersectClue.letter = clue.solution[intersectingClueIndex];
 
       replaceClues.push(
         clues.find((item) => {
@@ -1046,7 +1046,7 @@ let intersectingClueIndex;
     replaceClues.forEach((rClue: Clue | undefined) => {
       const intersectingClues: Clue[] = [];
       const myIndices: number[] = [];
-      const myTempAnswer = [...rClue!.answer];
+      const myTempAnswer = [...rClue!.solution];
 
       for (const intersectObj of rClue!.intersection!) {
         myIndices.push(intersectObj.myIndex);
@@ -1060,7 +1060,7 @@ let intersectingClueIndex;
 
         // console.log(item.answer.includes(""));
 
-        if (item.answer.includes("")) {
+        if (item.solution.includes("")) {
           irClue = rClue!.intersection!.find((intersectObj) => {
             return intersectObj.id === item.id;
           });
@@ -1136,7 +1136,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     - ~~remove setGridState call from createCluesFromGrid~~ DONE
     - ~~remove 'setGridState' from list of args/params that createCluesFromGrid is called with~~ DONE
 - once initializeGrid and createCluesFromGrid are called:
-  - the clue.answer prop is an array of empty strings ['', '', '', '']
+  - the clue.solution prop is an array of empty strings ['', '', '', '']
   - the objects in the clue.intersection prop array do not have a letter prop (optional)
     - need to look at how we are using this as it is not set on all clues
     - think it relates to replacing intersecting clues
@@ -1145,7 +1145,7 @@ At this point, our generation code is complete. Now, we decide what options we g
   - each Cell in gridState does not have a letter prop (optional). This is set when we populate clues.
   - to reset our grid and clue state we can try:
     - reset the letter prop in grid (set it to ""?)
-    - reset the answer in Clue
+    - reset the `solution` in Clue
     - set the letter prop in clue.intersection to "" if it exists
 
 ## To Do
@@ -1217,7 +1217,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     "bottom": true,
     "left": false,
     "clueNumber": "1",
-    "letter": "I"
+    "solution": "I"
   },
   {
     "isVoid": false,
@@ -1227,7 +1227,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     "bottom": false,
     "left": true,
     "clueNumber": "",
-    "letter": "N"
+    "solution": "N"
   },
   {
     "isVoid": false,
@@ -1237,7 +1237,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     "bottom": true,
     "left": true,
     "clueNumber": "2",
-    "letter": "T"
+    "solution": "T"
   },
   {
     "isVoid": false,
@@ -1247,7 +1247,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     "bottom": false,
     "left": true,
     "clueNumber": "",
-    "letter": "E"
+    "solution": "E"
   },
   {
     "isVoid": false,
@@ -1257,7 +1257,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     "bottom": true,
     "left": true,
     "clueNumber": "3",
-    "letter": "R"
+    "solution": "R"
   },
   {
     "isVoid": false,
@@ -1267,7 +1267,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     "bottom": false,
     "left": true,
     "clueNumber": "",
-    "letter": "A"
+    "solution": "A"
   }
  ]
 ```
@@ -1293,7 +1293,7 @@ At this point, our generation code is complete. Now, we decide what options we g
     140,
     153
   ],
-  "answer": [
+  "solution": [
     "R",
     "E",
     "F",
@@ -1392,7 +1392,7 @@ At this point, our generation code is complete. Now, we decide what options we g
 ```js
 for (const answer of uniqueAnswers) {
 /// a bunch of code
-rclue.answer = [...answer];
+rclue.solution = [...answer];
 // some more code here
 }
 ```
@@ -1552,7 +1552,7 @@ export default SingleLetterInput;
   - user is presented with the default empty grid 
   - they can edit the grid by toggling cells
   - ~~once 'Generate Answers' has been clicked, it should not be possible to toggle cells~~ DONE
-    - ~~we can disable toggling cells based on: `clueList[0].answer.includes("")`~~ DONE
+    - ~~we can disable toggling cells based on: `clueList[0].solution.includes("")`~~ DONE
 - ~~generate answers becomes grayed out/disabled once answers have been generated~~ DONE
 - create a timer for the AI generate clues button
 - ~~add a save button that saves the grid, answers, and generated clues in local storage~~ DONE
@@ -2242,12 +2242,12 @@ stepRefs.querySelector('#step1')
 ```js
 ...
 let targetCell: CellType | undefined = selectedCell
-      ? { ...selectedCell, answer: e.key }
+      ? { ...selectedCell, guess: e.key }
       : undefined;
 ...
 const updatedGrid = grid.map((gridItem) =>
       gridItem.id === selectedCell?.id
-        ? { ...gridItem, answer: e.key.toUpperCase() }
+        ? { ...gridItem, guess: e.key.toUpperCase() }
         : gridItem
     );
 ```
@@ -2387,8 +2387,8 @@ const updatedGrid = grid.map((gridItem) =>
 
 ## generateClues walkthrough
 - **STEP 1**: deep copy the gridState and clueList state
-- **STEP 2**: filter all cells that are not void and DO NOT have value in the `letter` prop and place in `hasEmpty` array
-  - letter here is the letter of the generated answer
+- **STEP 2**: filter all cells that are not void and DO NOT have value in the `solution` prop and place in `hasEmpty` array
+  - `solution` here is the letter of the generated answer
 - **STEP 3**: `IF` we want to force fill the grid AND there are still empty cells (hasEmpty.length > 0), do the following:
   - **STEP 3 A**: `WHILE` there are still empty cells (hasEmpty.length > 0)
     - reset all the answers: `resetPuzzleAnswers`
@@ -2645,8 +2645,8 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
     "clueNumber": "4",
     "isValid": true,
     "selected": false,
-    "answer": "",
-    "letter": "D",
+    "guess": "",
+    "solution": "D",
     "backgroundColor": ""
 }
 ```
@@ -2680,7 +2680,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 
 - clicking the 'Generate Answers' button calls `generateClues()` 
 - in generateClues:
-  - we get all the cells that are not void and do not have a letter prop set to a value and store them in `hasEmpty`
+  - we get all the cells that are not void and do not have a `solution` prop set to a value and store them in `hasEmpty`
   - `if (fillGrid && hasEmpty.length > 0)`
     - we can ignore this since the issue is when fillGrid is false or removeEmpty is true
 
@@ -2716,7 +2716,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
       removeClue(clues, cell.id);
       updateSurroundingCells(gridState, cell.id);
       gridState[gridState.length - 1 - cell.id].isVoid = true;
-      gridState[gridState.length - 1 - cell.id].letter = "";
+      gridState[gridState.length - 1 - cell.id].solution = "";
       removeClue(clues, gridState.length - 1 - cell.id);
       updateSurroundingCells(gridState, gridState.length - 1 - cell.id);
     }
@@ -2787,15 +2787,15 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 
 - verify the words are valid words
   - each clue in clues has two props
-    - `answer` is an array containing the answer minus hypens or spaces
+    - `solution` is an array containing the answer minus hypens or spaces
     - `raw` includes spaces and hyphens
 - our answer may not be a valid word where we create a crossword like this:
 
 ![alt text](image-9.png)
 
-- note that the clue 5 Down in state has the following values for `answer` and `raw` respectively: "CONFLICTUWT" and "CONFLICTUAL"
+- note that the clue 5 Down in state has the following values for `solution` and `raw` respectively: "CONFLICTUWT" and "CONFLICTUAL"
 - the `raw` value is not being updated
-- when we request a clue from OpenAI we use the `answer` prop and it is still able to come up with a clue for us:
+- when we request a clue from OpenAI we use the `solution` prop and it is still able to come up with a clue for us:
 
 ![alt text](image-10.png)
 
@@ -2804,7 +2804,7 @@ if intersection then `sharedLetter.clueIndex = intersection.yourIndex;`
 ![alt text](image-11.png)
 
 - if our words aren't words, we never request the clue
-- do we care that our `answer` prop and `raw` don't match?
+- do we care that our `solution` prop and `raw` don't match?
   - probably not, in fact it will provide an easy method to check if our word is a word WITHOUT having to iterate over our word list
 - our code can't handle grids like this:
 
@@ -2823,15 +2823,15 @@ until we can come up with code to fix this (if we want to fix it)
 
 - verify the words are valid words
   - each clue in clues has two props
-    - `answer` is an array containing the answer minus hypens or spaces
+    - `solution` is an array containing the answer minus hypens or spaces
     - `raw` includes spaces and hyphens
 - our answer may not be a valid word where we create a crossword like this:
 
 ![alt text](image-9.png)
 
-- note that the clue 5 Down in state has the following values for `answer` and `raw` respectively: "CONFLICTUWT" and "CONFLICTUAL"
+- note that the clue 5 Down in state has the following values for `solution` and `raw` respectively: "CONFLICTUWT" and "CONFLICTUAL"
 - the `raw` value is not being updated
-- when we request a clue from OpenAI we use the `answer` prop and it is still able to come up with a clue for us:
+- when we request a clue from OpenAI we use the `solution` prop and it is still able to come up with a clue for us:
 
 ![alt text](image-10.png)
 
@@ -2840,7 +2840,7 @@ until we can come up with code to fix this (if we want to fix it)
 ![alt text](image-11.png)
 
 - if our words aren't words, we never request the clue
-- do we care that our `answer` prop and `raw` don't match?
+- do we care that our `solution` prop and `raw` don't match?
   - probably not, in fact it will provide an easy method to check if our word is a word WITHOUT having to iterate over our word list
 - our code can't handle grids like this:
 

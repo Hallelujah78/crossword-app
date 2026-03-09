@@ -116,7 +116,7 @@ const Grid: React.FC = () => {
 		const requestArray: ReqClue[] = [];
 
 		for (const clue of clues) {
-			const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
+			const reqClue = { id: clue.id, word: clue.solution.join(""), clue: "" };
 			requestArray.push(reqClue);
 		}
 
@@ -162,7 +162,7 @@ const Grid: React.FC = () => {
 
 		let newState = { grid, clues };
 
-		let hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
+		let hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.solution);
 
 		if (fillGrid && hasEmpty.length > 0) {
 			while (hasEmpty.length > 0) {
@@ -174,7 +174,7 @@ const Grid: React.FC = () => {
 					removeEmpty,
 				);
 
-				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.letter);
+				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.solution);
 			}
 		} else {
 			// fillgrid is false OR hasEmpty is empty
@@ -255,7 +255,7 @@ const Grid: React.FC = () => {
 						backgroundColor: `${
 							isGeneratingAnswers
 								? "red"
-								: !isValid || !clueList[0]?.answer.includes("")
+								: !isValid || !clueList[0]?.solution.includes("")
 									? "var(--primary-100) "
 									: "var(--primary-400)"
 						}`,
@@ -265,7 +265,7 @@ const Grid: React.FC = () => {
 						if (el) stepRefs.current.push(el);
 					}}
 					type="button"
-					disabled={!isValid || !clueList[0]?.answer.includes("")}
+					disabled={!isValid || !clueList[0]?.solution.includes("")}
 					onClick={() => {
 						setIsGeneratingAnswers(true);
 						let newState: { clues: Clue[]; grid: CellType[] } = {
@@ -339,7 +339,7 @@ const Grid: React.FC = () => {
 							if (el) stepRefs.current.push(el);
 						}}
 						disabled={
-							clueList[0]?.answer.includes("") ||
+							clueList[0]?.solution.includes("") ||
 							clueList[0]?.clue !== "" ||
 							isGeneratingAnswers
 						}
@@ -382,7 +382,7 @@ const Grid: React.FC = () => {
 								? "red"
 								: !isValid ||
 										clueList[0]?.clue !== "" ||
-										clueList[0]?.answer.includes("")
+										clueList[0]?.solution.includes("")
 									? "var(--primary-100)"
 									: "var(--primary-400)"
 						}`,
@@ -394,7 +394,7 @@ const Grid: React.FC = () => {
 					disabled={
 						!isValid ||
 						clueList[0]?.clue !== "" ||
-						clueList[0]?.answer.includes("")
+						clueList[0]?.solution.includes("")
 					}
 					type="button"
 					onClick={async () => {
@@ -419,7 +419,7 @@ const Grid: React.FC = () => {
 				<form className="save-container">
 					<input
 						disabled={
-							clueList[0]?.answer.includes("") ||
+							clueList[0]?.solution.includes("") ||
 							clueList[0]?.clue === "" ||
 							isGeneratingAnswers
 						}
@@ -439,7 +439,7 @@ const Grid: React.FC = () => {
 							if (el) stepRefs.current.push(el);
 						}}
 						disabled={
-							clueList[0]?.answer.includes("") ||
+							clueList[0]?.solution.includes("") ||
 							puzzleName.length < 3 ||
 							clueList[0]?.clue === ""
 						}
@@ -471,7 +471,7 @@ const Grid: React.FC = () => {
 					return <Cell key={cell.id} cell={cell} handleClick={handleClick} />;
 				})}
 
-				{clueList[0]?.answer.includes("") ? null : (
+				{clueList[0]?.solution.includes("") ? null : (
 					<div className="prevent-click"> </div>
 				)}
 				{!isValid && !hideWarn && (

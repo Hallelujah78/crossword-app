@@ -24,9 +24,9 @@
 - New puzzle generation
 
 ### Solving Engine
-- Interactive letter entry
-- Answer checking logic
-- Answer reveal logic
+- Interactive guess entry
+- Guess checking logic
+- Solution reveal logic
 - Grid clearing logic
 - Partial progress persistence (buggy)
 
@@ -47,7 +47,7 @@
 - Solve - rendered on `/solver` and renders `Solve.tsx` which renders `SolveGrid.tsx`
 
 ## State
-- the answers used to generate the words for our crossword live in `state/answers2.ts` as a number of named arrays that consist of Answer type objects. The name of the array reflects the length of the words it contains. The `five` Answer array consts of words that are 5 letters long. I believe I split the 60,000 words into separate arrays to make finding words of a particular length more efficient. When populating the grid with answers, words are picked randomly using a regular expression based on their length.
+- the answers used to generate the words for our crossword live in `state/answers2.ts` as a number of named arrays that consist of Answer type objects. The name of the array reflects the length of the words it contains. The `five` Answer array consts of words that are 5 letters long. I believe I split the 60,000 words into separate arrays to make finding words of a particular length more efficient. When populating the grid with solutions, words are picked randomly using a regular expression based on their length.
 
 The Answer type:
 ```js
@@ -70,9 +70,9 @@ export type CellType = {
   right: boolean;
   bottom: boolean;
   left: boolean;
-  letter?: string;
+  solution?: string;
   selected: boolean;
-  answer?: string;
+  guess?: string;
   isValid?: boolean;
   backgroundColor?: string;
 };
@@ -83,8 +83,8 @@ export type CellType = {
 
 - when the app loads, we actually call `initializeGrid` and this sets values in each cell that makes up the grid:
     - id is set to the index of the cell in the grid
-    - letter set to empty string
-    - answer set to empty string
+    - `solution` set to empty string
+    - `guess` set to empty string
 - the initialized grid state is stored locally in `GridOLD` in `gridState`
 - the `isVoid` prop is correctly set in `state/grid.ts` before `initializeGrid` is run
     - isVoid is true if cell is void, false if it is light
@@ -116,7 +116,7 @@ export type CellType = {
     public length: number, // the length of the clue
     public direction: Direction, // across or down
     public indices: number[], // indices of the cells that compose the clue
-    public answer: string[],
+    public solution: string[],
     public raw: string[],
     public clue: string,
     public intersection?: {
@@ -133,9 +133,9 @@ export type CellType = {
     - example_ai_response.ts: contains an example response from the OpenAI API that was useful in development
 
 ## API calls
-- the app uses the OpenAI API to generate clues for answers that the app generates locally.
+- the app uses the OpenAI API to generate clues for solutions that the app generates locally.
 - on the `Create` route, the user can click `Fetch Clues from OpenAI` to perform the API call
-- on the `Solve` route, the `New Puzzle` button will request clues from the API once the answers have been generated locally
+- on the `Solve` route, the `New Puzzle` button will request clues from the API once the solutions have been generated locally
 - The app has no backend, so we use Netlify Serverless Functions to hide the API key from the client
 - the API URL:
 ```js
@@ -162,8 +162,8 @@ const apiURL = "/.netlify/functions/getClues";
 - User edits crossword grid.
 - User optionally disables warnings.
 - User fixes grid until valid.
-- User generates answers.
-- User resets answers (optional).
+- User generates solutions.
+- User resets solutions (optional).
 - User resets entire grid (optional).
 - User requests AI-generated clues.
 - User names and saves puzzle.
@@ -172,10 +172,10 @@ const apiURL = "/.netlify/functions/getClues";
 
 - User creates a new puzzle OR loads a saved one.
 - User reads clues.
-- User fills in letters.
-- User checks individual answers.
-- User reveals answers.
-- User clears answers.
+- User fills in guesses.
+- User checks individual guesses.
+- User reveals solutions.
+- User clears solutions.
 - User checks/reveals/clears entire grid.
 - User progress may persist (inconsistently).
 
@@ -244,7 +244,7 @@ main.tsx
     - removeClue()
     - createClues
     - getClueIndices
-    - populateClues - answer generation, affects grid and clues
+    - populateClues - solution generation, affects grid and clues
     - sortCluesDescendingLength
     - getAcrossClues
     - getDownClues
@@ -302,18 +302,18 @@ main.tsx
     - versus: getItems(currentItem, includeCurrent: Boolean) - or someting similar
 - Sacrificed readability and separation of concerns for unnecessary optimization
     - cf `resetPuzzleAnswers`
-        - resets the generated answers
-        - resets the user letter input including what cell is selected
+        - resets the generated solutions
+        - resets the user guesses including what cell is selected
         - convenient to lump together since it avoids looping over the same data multiple times - optimization is pointless with small dataset
         - better to split into
             - restGeneratedAnswers
             - resetUserInput or even resetUserAnswers and resetCellSelection
 
 ## Interesting Points from AI Chats
-- my idea to fill long answers first is good - filling the most constrained answer
+- my idea to fill longer solutions first is good - filling the most constrained solution
 - my intuition to skip backtracking and simply regenerate from the start is justifiable
     - pro crossword fillers
         - fill most constrained first
         - limit backtracking depth
         - restart if stuck
-- my intuition that a larger word list makes automatic answer generation easier is correct
+- my intuition that a larger word list makes automatic solution generation easier is correct

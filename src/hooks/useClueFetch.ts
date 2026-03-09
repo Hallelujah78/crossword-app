@@ -19,7 +19,7 @@ const useClueFetch = () => {
     const requestArray: ReqClue[] = [];
 
     for (const clue of clues) {
-      const reqClue = { id: clue.id, word: clue.answer.join(""), clue: "" };
+      const reqClue = { id: clue.id, word: clue.solution.join(""), clue: "" };
       requestArray.push(reqClue);
     }
 
