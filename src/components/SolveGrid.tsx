@@ -491,11 +491,10 @@ const SolveGrid: React.FC = () => {
 		let currentClueSelection: Clue;
 		let containingClues: Clue[];
 		let cellItem: CellType | undefined;
-		const prevClueSelection = clues.find((clue) => {
-			if (selectedClue) {
-				return clue.id === selectedClue;
-			}
-		});
+		const prevClueSelection = clues.find((clue) => 
+			selectedClue && clue.id === selectedClue
+			
+		);
 
 		if (target?.id) {
 			id = +target.id;

@@ -474,7 +474,7 @@ export const populateClues = (
 	// remove empty is false, if there are empty cells
 	else if (emptyCells && emptyCells.length > 0) {
 		// Try to fill the empty cells
-		const updatedState = fillEmptyAnswers(newState.clues, newState.grid);
+		const updatedState = resolveIncompleteClues(newState.clues, newState.grid);
 		if (updatedState?.clues) {
 			// Use the clues
 			newState.clues = updatedState.clues;
@@ -1446,9 +1446,33 @@ export const resetPuzzleAnswers = (clueList: Clue[], gridState: CellType[]) => {
 	return { grid, clues };
 };
 
+
+// Attempts to resolve clues with incomplete solutions using intersection
+// constraints from other clues in the grid.
+//
+// Takes an array of `Clue` instances and the crossword `gridState`.
+// Returns updated copies of both.
+//
+// High-level process:
+//   - Copy the clue and grid state to avoid mutating the originals
+//   - Identify clues with incomplete solutions
+//   - For each incomplete clue:
+//       - Examine intersecting clues
+//       - Determine all letters that could appear at each intersecting index
+//       - Generate all possible combinations of those letters
+//       - Convert each combination into a regex pattern
+//       - Search the dictionary for matching candidate words
+//       - If a valid candidate is found:
+//           - Apply it to the clue
+//           - Write the letters to the grid
+//           - Propagate the updated letters to intersecting clues
+//           - Attempt to resolve affected intersecting clues
+//
+// Used during crossword construction to progressively fill unresolved clues
+// using constraints imposed by intersecting answers.
 // used
 // runs
-export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
+export const resolveIncompleteClues = (clueList: Clue[], gridState: CellType[]) => {
 	const clueListCopy = [...clueList];
 	const gridStateCopy = [...gridState];
 	// Get the clues that have incomplete answers
@@ -1564,6 +1588,8 @@ export const fillEmptyAnswers = (clueList: Clue[], gridState: CellType[]) => {
 	return { clues: clueListCopy, grid: gridStateCopy };
 };
 
+
+// used
 export const resetSelectedCells = (grid: CellType[]) => {
 	for (const gridItem of grid) {
 		gridItem.selected = false;
