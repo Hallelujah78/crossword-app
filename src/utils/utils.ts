@@ -485,7 +485,7 @@ export const populateClues = (
 		}
 	}
 	// Set the clue numbers on the clues
-	setClueNumbersOnClues(newState.clues, newState.grid);
+	updateClueNumbersFromGrid(newState.clues, newState.grid);
 	// Set the clues numbers on the cells in the grid
 	setClueNumbers(newState.grid);
 	// Return the new state with the updated clues and grid
@@ -1615,8 +1615,21 @@ export const selectCellsForClue = (grid: CellType[], clue: Clue) => {
 };
 
 
-// you are here
-export const setClueNumbersOnClues = (
+// Propagates clue numbers from the grid cells to the corresponding Clue instances.
+//
+// Takes an array of `Clue` instances and an array of `CellType` objects.
+// Mutates the `Clue` instances by setting their `clueNumber` property.
+//
+// Process:
+//   - For each clue, take the first cell index in `clue.indices`
+//   - Read the `clueNumber` from that cell in the grid
+//   - Set the clue's `clueNumber` property accordingly
+//
+// Use case:
+//   - During grid editing by the user
+//   - During construction/reset of the puzzle when empty cells are removed
+// used
+export const updateClueNumbersFromGrid = (
 	clueList: Clue[],
 	gridState: CellType[],
 ) => {
@@ -1627,6 +1640,8 @@ export const setClueNumbersOnClues = (
 		if (clueNum) clue.clueNumber = +clueNum;
 	}
 };
+
+
 
 export const getWordLength = (clue: Clue) => {
 	const { solution: answer, raw } = clue;

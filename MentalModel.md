@@ -264,6 +264,8 @@ main.tsx
 - User Interface
     - clearCellSelection()
     - selectCellsForClue()
+- Unused
+    - updateClueNumbersFromGrid() **UNUSED**
 
 ## Design Issues
 - function names are too generic
