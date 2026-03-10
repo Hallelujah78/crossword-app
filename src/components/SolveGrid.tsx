@@ -31,8 +31,8 @@ import {
 	isRightEdge,
 	populateClues,
 	resetPuzzleAnswers,
+	selectCellsForClue,
 	setLocalStorage,
-	setSelection,
 } from "../utils/utils";
 import ErrorPage from "./ErrorPage";
 import Loading from "./Loading";
@@ -229,7 +229,7 @@ const SolveGrid: React.FC = () => {
 
 		if (target && currSelectedClue) {
 			clearCellSelection(grid);
-			setSelection(grid, currSelectedClue);
+			selectCellsForClue(grid, currSelectedClue);
 			setSelectedCell(grid[currSelectedClue.indices[0]]);
 			cellRefs.current[currSelectedClue.indices[0]]?.focus();
 			setSelectedClue(currSelectedClue.id);
@@ -335,7 +335,7 @@ const SolveGrid: React.FC = () => {
 		// get the first element of the indices prop of the selected clue
 		cellRefs.current[focusCell]?.focus(); // this works
 		clearCellSelection(grid);
-		setSelection(grid, clues[index]);
+		selectCellsForClue(grid, clues[index]);
 		setSelectedClue(clues[index].id);
 		setSelectedCell(newSelectedCell);
 	};
@@ -380,7 +380,7 @@ const SolveGrid: React.FC = () => {
 				);
 				clearCellSelection(grid);
 				setSelectedClue(clues[index].id);
-				setSelection(grid, clues[index]);
+				selectCellsForClue(grid, clues[index]);
 			}
 
 			setSelectedCell(targetCell);
@@ -503,7 +503,7 @@ const SolveGrid: React.FC = () => {
 
 				currentClueSelection = containingClues[0];
 				setSelectedCell(cellItem);
-				setSelection(grid, currentClueSelection);
+				selectCellsForClue(grid, currentClueSelection);
 				setSelectedClue(currentClueSelection.id);
 				setGridState(grid);
 			}
@@ -518,7 +518,7 @@ const SolveGrid: React.FC = () => {
 					);
 					if (currentClueSelection) {
 						setSelectedCell(cellItem);
-						setSelection(grid, currentClueSelection);
+						selectCellsForClue(grid, currentClueSelection);
 						setSelectedClue(currentClueSelection.id);
 						setGridState(grid);
 					}
@@ -535,7 +535,7 @@ const SolveGrid: React.FC = () => {
 					clearCellSelection(grid);
 					setSelectedCell(cellItem);
 					if (currentClueSelection) {
-						setSelection(grid, currentClueSelection);
+						selectCellsForClue(grid, currentClueSelection);
 						setSelectedClue(currentClueSelection.id);
 					}
 
@@ -547,7 +547,7 @@ const SolveGrid: React.FC = () => {
 					});
 					setSelectedCell(cellItem);
 					if (currentClueSelection) {
-						setSelection(grid, currentClueSelection);
+						selectCellsForClue(grid, currentClueSelection);
 						setSelectedClue(currentClueSelection.id);
 					}
 					setGridState(grid);

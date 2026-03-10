@@ -1603,15 +1603,19 @@ export const clearCellSelection = (grid: CellType[]) => {
 	}
 };
 
-export const setSelection = (grid: CellType[], clue: Clue) => {
+// Selects all grid cells that belong to the given clue.
+//
+// Takes the crossword `grid` and a `Clue`.
+// Mutates the corresponding cells by setting `selected = true`.
+// used
+export const selectCellsForClue = (grid: CellType[], clue: Clue) => {
 	for (const index of clue.indices) {
-		const gridItem = grid.find((gridItem) => {
-			return gridItem.id === index;
-		});
-		if (gridItem) gridItem.selected = true;
+		grid[index].selected = true;
 	}
 };
 
+
+// you are here
 export const setClueNumbersOnClues = (
 	clueList: Clue[],
 	gridState: CellType[],

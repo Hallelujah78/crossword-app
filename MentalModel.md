@@ -263,6 +263,7 @@ main.tsx
             - getWordList()
 - User Interface
     - clearCellSelection()
+    - selectCellsForClue()
 
 ## Design Issues
 - function names are too generic
