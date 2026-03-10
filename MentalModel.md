@@ -261,6 +261,8 @@ main.tsx
             - separateByLength
         - lookup.ts
             - getWordList()
+- User Interface
+    - clearCellSelection()
 
 ## Design Issues
 - function names are too generic

@@ -1589,8 +1589,15 @@ export const resolveIncompleteClues = (clueList: Clue[], gridState: CellType[]) 
 };
 
 
+// Deselects all of the cells in the crossword grid.
+// 
+// Takes an array of `CellType` objects.
+//
+// Sets the `selected` prop to `false` for all `CellType` objects in the `grid`. 
+// Mutates grid cells by clearing selection state.
+//
 // used
-export const resetSelectedCells = (grid: CellType[]) => {
+export const clearCellSelection = (grid: CellType[]) => {
 	for (const gridItem of grid) {
 		gridItem.selected = false;
 	}

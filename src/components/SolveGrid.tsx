@@ -19,6 +19,7 @@ import { initialGrid } from "../state/grid";
 
 // utils
 import {
+	clearCellSelection,
 	createCluesFromGrid,
 	getCellAbove,
 	getCellBelow,
@@ -30,7 +31,6 @@ import {
 	isRightEdge,
 	populateClues,
 	resetPuzzleAnswers,
-	resetSelectedCells,
 	setLocalStorage,
 	setSelection,
 } from "../utils/utils";
@@ -228,7 +228,7 @@ const SolveGrid: React.FC = () => {
 		const currSelectedClue = clues.find((clue: Clue) => clue.id === target.id);
 
 		if (target && currSelectedClue) {
-			resetSelectedCells(grid);
+			clearCellSelection(grid);
 			setSelection(grid, currSelectedClue);
 			setSelectedCell(grid[currSelectedClue.indices[0]]);
 			cellRefs.current[currSelectedClue.indices[0]]?.focus();
@@ -267,9 +267,7 @@ const SolveGrid: React.FC = () => {
 			selectedCell.guess = "";
 			setSelectedCell((prev) => prev);
 			const updatedGrid = grid.map((gridItem) =>
-				gridItem.id === selectedCell.id
-					? { ...gridItem, guess: "" }
-					: gridItem,
+				gridItem.id === selectedCell.id ? { ...gridItem, guess: "" } : gridItem,
 			);
 			setGridState(updatedGrid);
 		} else {
@@ -304,7 +302,7 @@ const SolveGrid: React.FC = () => {
 		if (selectedClue === "" || e?.key !== "Tab") {
 			return;
 		}
-		
+
 		const currentSelectedClue = selectedClue;
 		const clues = [...clueList];
 		const grid = [...gridState];
@@ -336,7 +334,7 @@ const SolveGrid: React.FC = () => {
 		const newSelectedCell = grid[focusCell];
 		// get the first element of the indices prop of the selected clue
 		cellRefs.current[focusCell]?.focus(); // this works
-		resetSelectedCells(grid);
+		clearCellSelection(grid);
 		setSelection(grid, clues[index]);
 		setSelectedClue(clues[index].id);
 		setSelectedCell(newSelectedCell);
@@ -380,7 +378,7 @@ const SolveGrid: React.FC = () => {
 				const index = clues.findIndex(
 					(clue: Clue) => clue.id === myClues[0].id,
 				);
-				resetSelectedCells(grid);
+				clearCellSelection(grid);
 				setSelectedClue(clues[index].id);
 				setSelection(grid, clues[index]);
 			}
@@ -467,7 +465,9 @@ const SolveGrid: React.FC = () => {
 					removeEmpty,
 				);
 
-				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.solution);
+				hasEmpty = newState.grid.filter(
+					(cell) => !cell.isVoid && !cell.solution,
+				);
 			}
 			return newState;
 		}
@@ -484,9 +484,8 @@ const SolveGrid: React.FC = () => {
 		let currentClueSelection: Clue;
 		let containingClues: Clue[];
 		let cellItem: CellType | undefined;
-		const prevClueSelection = clues.find((clue) => 
-			selectedClue && clue.id === selectedClue
-			
+		const prevClueSelection = clues.find(
+			(clue) => selectedClue && clue.id === selectedClue,
 		);
 
 		if (target?.id) {
@@ -500,7 +499,7 @@ const SolveGrid: React.FC = () => {
 			});
 
 			if (containingClues.length === 1) {
-				resetSelectedCells(grid);
+				clearCellSelection(grid);
 
 				currentClueSelection = containingClues[0];
 				setSelectedCell(cellItem);
@@ -513,7 +512,7 @@ const SolveGrid: React.FC = () => {
 				let currentClueSelection: Clue | undefined;
 				if (!selectedClue) {
 					// there is no selection, so default to across
-					resetSelectedCells(grid);
+					clearCellSelection(grid);
 					currentClueSelection = containingClues.find(
 						(clue) => clue.direction === Direction.ACROSS,
 					);
@@ -533,7 +532,7 @@ const SolveGrid: React.FC = () => {
 					currentClueSelection = clues.find((clue) => {
 						return clue.id === selectedClue;
 					});
-					resetSelectedCells(grid);
+					clearCellSelection(grid);
 					setSelectedCell(cellItem);
 					if (currentClueSelection) {
 						setSelection(grid, currentClueSelection);
@@ -542,7 +541,7 @@ const SolveGrid: React.FC = () => {
 
 					setGridState(grid);
 				} else {
-					resetSelectedCells(grid);
+					clearCellSelection(grid);
 					currentClueSelection = containingClues.find((clue) => {
 						return selectedClue !== clue.id;
 					});
