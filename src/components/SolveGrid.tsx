@@ -21,11 +21,11 @@ import { initialGrid } from "../state/grid";
 import {
 	clearCellSelection,
 	createCluesFromGrid,
+	formatAnswerLengths,
 	getCellAbove,
 	getCellBelow,
 	getCluesFromCell,
 	getLocalStorage,
-	getWordLength,
 	initializeGrid,
 	isLeftEdge,
 	isRightEdge,
@@ -418,7 +418,7 @@ const SolveGrid: React.FC = () => {
 
 					<div className="clue-text">
 						<p>
-							{clue.clue} <span>{getWordLength(clue)}</span>
+							{clue.clue} <span>{formatAnswerLengths(clue)}</span>
 						</p>
 					</div>
 				</button>
@@ -445,7 +445,9 @@ const SolveGrid: React.FC = () => {
 						<p className="clue-text">{currSelectedClue.clue}</p>
 					</div>
 					<div>
-						<p className="answer-length">{getWordLength(currSelectedClue)}</p>
+						<p className="answer-length">
+							{formatAnswerLengths(currSelectedClue)}
+						</p>
 					</div>
 				</>
 			);

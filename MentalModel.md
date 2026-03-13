@@ -253,6 +253,7 @@ main.tsx
             - getIntersectingClues
             - getIncompleteAnswers
     - setClueAnswers - needs work/research, very long function
+    - formatAnswerLengths()
 
 - Data 
     - Answers

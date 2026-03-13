@@ -1642,42 +1642,34 @@ export const updateClueNumbersFromGrid = (
 };
 
 
+// Formats the word-length pattern for a clue's solution.
+//
+// Examples:
+//   X-RAY   → "(1-3)"
+//   ICE CREAM → "(3,5)"
+//   CAT → "(3)"
+//
+// Takes a `Clue` and derives the lengths of its constituent words,
+// preserving hyphens and commas where appropriate.
+// used
+export const formatAnswerLengths = (clue: Clue) => {
+	
+	const raw = clue.raw.join("");
 
-export const getWordLength = (clue: Clue) => {
-	const { solution: answer, raw } = clue;
+	// Replace apostrophes
+	const cleaned = raw.replace(/'/g, "");
 
-	if (raw.length === answer.length) {
-		return `(${raw.length})`;
-	}
-	// strip apostrophes
-	let strippedWord: string[] = raw;
-	if (raw.includes("'")) {
-		strippedWord = raw.filter((character) => {
-			return character !== "'";
-		});
-	}
+	const parts = cleaned
+		.split(" ") // split on space
+		.map(word =>
+			word
+			.split("-") // split each word on hyphen
+			.map( part => part.length) // map part to part length
+			.join("-") // join lengths with hyphen
+		)
 
-	const wordLengths = [];
-	let position = 0;
-	let length = 1;
-	while (position <= strippedWord.length) {
-		position = position + 1;
-		const char = strippedWord[position];
+	return `(${parts.join(",")})` // join with comma (indicating space)
 
-		if (char === " " || char === "-") {
-			wordLengths.push(length);
-			char === "-"
-				? wordLengths.push(strippedWord[position])
-				: wordLengths.push(",");
-			length = 0;
-			continue;
-		}
-		if (position === strippedWord.length) {
-			wordLengths.push(length);
-		}
-		length = length + 1;
-	}
-	return `(${wordLengths.join("")})`;
 };
 
 export const getCluesFromCell = (cell: CellType, clues: Clue[]) => {
