@@ -24,7 +24,7 @@ import {
 	formatAnswerLengths,
 	getCellAbove,
 	getCellBelow,
-	getCluesFromCell,
+	getCluesContainingCell,
 	getLocalStorage,
 	initializeGrid,
 	isLeftEdge,
@@ -374,7 +374,7 @@ const SolveGrid: React.FC = () => {
 			cellRefs.current[targetCell.id]?.focus();
 
 			if (!currentSelectedClue?.indices.includes(targetCell.id)) {
-				const myClues = getCluesFromCell(targetCell, clues);
+				const myClues = getCluesContainingCell(targetCell, clues);
 				const index = clues.findIndex(
 					(clue: Clue) => clue.id === myClues[0].id,
 				);

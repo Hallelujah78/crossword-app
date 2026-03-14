@@ -1672,7 +1672,16 @@ export const formatAnswerLengths = (clue: Clue) => {
 
 };
 
-export const getCluesFromCell = (cell: CellType, clues: Clue[]) => {
+// Returns the clues that contain the given cell.
+// 
+// Takes a 'CellType` and an array of `Clue` instances.
+// 
+// Returns an array of `Clue` instances containing 0-2 items inclusive.
+// 
+// Used during keyboard navigation to determine which clue should become active when a 
+// cell is selected.
+// used
+export const getCluesContainingCell = (cell: CellType, clues: Clue[]) => {
 	const cellId = cell.id; // index of the cell
 	const containingClues = clues.filter((clue) => {
 		return clue.indices.includes(cellId);

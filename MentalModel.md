@@ -265,6 +265,7 @@ main.tsx
 - User Interface
     - clearCellSelection()
     - selectCellsForClue()
+    - getCluesContainingCell()
 - Unused
     - updateClueNumbersFromGrid() **UNUSED**
 
