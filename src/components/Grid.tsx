@@ -30,9 +30,9 @@ import {
 	isGridValid,
 	populateClues,
 	resetPuzzleAnswers,
+	saveStateToLocalStorage,
 	setClueNumbers,
 	setCluesThatIntersect,
-	setLocalStorage,
 	sortCluesDescendingLength,
 	updateSurroundingCells,
 	validateGrid,
@@ -84,7 +84,7 @@ const Grid: React.FC = () => {
 	const { isLoading, getClues, newClues } = useClueFetch();
 
 	useEffect(() => {
-		setLocalStorage("editor", {
+		saveStateToLocalStorage("editor", {
 			grid: gridState,
 			clues: clueList,
 			isModified,
@@ -118,7 +118,7 @@ const Grid: React.FC = () => {
 			clues: clueList as Clue[],
 		});
 
-		setLocalStorage("puzzles", { puzzles });
+		saveStateToLocalStorage("puzzles", { puzzles });
 	};
 
 	const generateClues = () => {
@@ -127,7 +127,9 @@ const Grid: React.FC = () => {
 
 		let newState = { grid, clues };
 
-		let hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.solution);
+		let hasEmpty = newState.grid.filter(
+			(cell) => !cell.isVoid && !cell.solution,
+		);
 
 		if (fillGrid && hasEmpty.length > 0) {
 			while (hasEmpty.length > 0) {
@@ -139,7 +141,9 @@ const Grid: React.FC = () => {
 					removeEmpty,
 				);
 
-				hasEmpty = newState.grid.filter((cell) => !cell.isVoid && !cell.solution);
+				hasEmpty = newState.grid.filter(
+					(cell) => !cell.isVoid && !cell.solution,
+				);
 			}
 		} else {
 			// fillgrid is false OR hasEmpty is empty

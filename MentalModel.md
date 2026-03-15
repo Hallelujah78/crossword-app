@@ -268,6 +268,8 @@ main.tsx
     - getCluesContainingCell()
 - Unused
     - updateClueNumbersFromGrid() **UNUSED**
+- Persistence
+    - setStateToLocalStorage()
 
 ## Design Issues
 - function names are too generic

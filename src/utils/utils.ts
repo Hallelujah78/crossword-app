@@ -1689,7 +1689,19 @@ export const getCluesContainingCell = (cell: CellType, clues: Clue[]) => {
 	return containingClues;
 };
 
-export const setLocalStorage = (
+
+// Persist applicaton state to local storage.
+//
+// Takes a `key` representing the application mode ("solve", "editor", or "puzzles")
+// and a `Storage` object containing the current state.
+//
+// The stored structure varies depending on the key:
+//	- "solver": grid, clues, and selection state
+//	- "editor": grid, clues, and editor flags
+//	- "puzzles": saved puzzle collection
+//
+//
+export const saveStateToLocalStorage = (
 	key: "solver" | "editor" | "puzzles",
 	data: Storage,
 ) => {
@@ -1707,8 +1719,8 @@ export const setLocalStorage = (
 		dataStore = {
 			grid,
 			clues,
-			clueSelection: clueSelection ? clueSelection : "",
-			cellSelection: cellSelection ? cellSelection : undefined,
+			clueSelection: clueSelection ?? "",
+			cellSelection,
 		};
 	} else if (key === "editor") {
 		dataStore = {
@@ -1722,8 +1734,9 @@ export const setLocalStorage = (
 			dataStore = puzzles;
 		}
 	}
+	if(dataStore !== null){
 	localStorage.setItem(key, JSON.stringify(dataStore));
-};
+}};
 
 export const getLocalStorage = (
 	key: "solver" | "editor" | "puzzles",

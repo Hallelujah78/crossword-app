@@ -31,8 +31,8 @@ import {
 	isRightEdge,
 	populateClues,
 	resetPuzzleAnswers,
+	saveStateToLocalStorage,
 	selectCellsForClue,
-	setLocalStorage,
 } from "../utils/utils";
 import ErrorPage from "./ErrorPage";
 import Loading from "./Loading";
@@ -74,7 +74,7 @@ const SolveGrid: React.FC = () => {
 	const { isLoading, error, getClues, newClues } = useClueFetch();
 
 	useEffect(() => {
-		setLocalStorage("solver", {
+		saveStateToLocalStorage("solver", {
 			grid: gridState,
 			clues: clueList,
 			clueSelection: selectedClue,
