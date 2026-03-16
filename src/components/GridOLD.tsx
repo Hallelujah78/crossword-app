@@ -21,9 +21,9 @@ import {
 	createCluesFromGrid,
 	getAcrossClues,
 	getDownClues,
-	getLocalStorage,
 	initializeGrid,
 	isGridValid,
+	loadStateFromLocalStorage,
 	populateClues,
 	resetPuzzleAnswers,
 	saveStateToLocalStorage,
@@ -43,17 +43,17 @@ const Grid: React.FC = () => {
 	const [isFetchingClues, setIsFetchingClues] = useState(false);
 	const [puzzleName, setPuzzleName] = useState<string>("");
 	const [isModified, setIsModified] = useState<boolean>(() => {
-		const modifiedState = getLocalStorage("editor")?.isModified;
+		const modifiedState = loadStateFromLocalStorage("editor")?.isModified;
 		return modifiedState ? modifiedState : false;
 	});
 	const [gridState, setGridState] = useState<CellType[]>(() => {
-		const storage = getLocalStorage("editor")?.grid;
+		const storage = loadStateFromLocalStorage("editor")?.grid;
 		return storage
 			? storage
 			: initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
 	});
 	const [clueList, setClueList] = useState<Clue[]>(() => {
-		const clueState = getLocalStorage("editor")?.clues;
+		const clueState = loadStateFromLocalStorage("editor")?.clues;
 		return clueState ? clueState : createCluesFromGrid(gridState);
 	});
 	const [removeEmpty, setRemoveEmpty] = useState<boolean>(false);
@@ -72,7 +72,7 @@ const Grid: React.FC = () => {
 
 	const [hideWarn, sethideWarn] = useState<boolean | undefined>(() => {
 		return localStorage.getItem("editor")
-			? getLocalStorage("editor")?.warn
+			? loadStateFromLocalStorage("editor")?.warn
 			: false;
 	});
 
@@ -94,7 +94,7 @@ const Grid: React.FC = () => {
 	const saveHandler = () => {
 		let puzzles: Puzzles = [];
 		if (localStorage.getItem("puzzles")) {
-			puzzles = getLocalStorage("puzzles") as Puzzles;
+			puzzles = loadStateFromLocalStorage("puzzles") as Puzzles;
 		}
 		puzzles.push({
 			name: puzzleName,

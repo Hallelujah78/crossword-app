@@ -1738,14 +1738,23 @@ export const saveStateToLocalStorage = (
 	localStorage.setItem(key, JSON.stringify(dataStore));
 }};
 
-export const getLocalStorage = (
+
+// Loads application state from localStorage.
+//
+// Takes a `key` identifying the stored state ("solver", "editor", or "puzzles").
+// Returns the parsed state if it exists, otherwise returns null.
+//
+// Used
+export const loadStateFromLocalStorage = (
 	key: "solver" | "editor" | "puzzles",
 ): Storage | null => {
-	let val = null;
-	if (key === "solver" || key === "editor" || key === "puzzles") {
-		val = JSON.parse(localStorage.getItem(key) as string) as Storage;
+	
+	const data = localStorage.getItem(key);
+	
+	if(!data){ 
+		return null;
 	}
-	return val;
+	return JSON.parse(data) as Storage;
 };
 
 export const getRowOrColumn = (

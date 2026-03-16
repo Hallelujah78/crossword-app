@@ -25,10 +25,10 @@ import {
 	getCellAbove,
 	getCellBelow,
 	getCluesContainingCell,
-	getLocalStorage,
 	initializeGrid,
 	isLeftEdge,
 	isRightEdge,
+	loadStateFromLocalStorage,
 	populateClues,
 	resetPuzzleAnswers,
 	saveStateToLocalStorage,
@@ -41,30 +41,31 @@ import SolveCell from "./SolveCell";
 
 const SolveGrid: React.FC = () => {
 	const [gridState, setGridState] = useState<CellType[]>(() => {
-		const gridStateStore = getLocalStorage("solver")?.grid;
+		const gridStateStore = loadStateFromLocalStorage("solver")?.grid;
 		return gridStateStore
 			? gridStateStore
 			: initializeGrid(JSON.parse(JSON.stringify(initialGrid)));
 	});
 	const [clueList, setClueList] = useState<Clue[]>(() => {
-		const clueState = getLocalStorage("solver")?.clues;
+		const clueState = loadStateFromLocalStorage("solver")?.clues;
 		return clueState ? clueState : createCluesFromGrid(gridState);
 	});
 	const [removeEmpty, _setRemoveEmpty] = useState<boolean>(false);
 
 	const [selectedClue, setSelectedClue] = useState<string>(() => {
-		const selectedClueStorage = getLocalStorage("solver")?.clueSelection;
+		const selectedClueStorage =
+			loadStateFromLocalStorage("solver")?.clueSelection;
 		return selectedClueStorage ? selectedClueStorage : "";
 	});
 	const [puzzles, _setPuzzles] = useState<Storage | Puzzles>(() =>
 		localStorage.getItem("puzzles")
-			? (getLocalStorage("puzzles") as Puzzles)
+			? (loadStateFromLocalStorage("puzzles") as Puzzles)
 			: [],
 	);
 	const [selectedPuzzle, setSelectedPuzzle] = useState<string>("-");
 	const [selectedCell, setSelectedCell] = useState<CellType | undefined>(() =>
 		localStorage.getItem("solver")
-			? getLocalStorage("solver")?.cellSelection
+			? loadStateFromLocalStorage("solver")?.cellSelection
 			: undefined,
 	);
 	// const [error, setError] = useState<Error | null>(null);
