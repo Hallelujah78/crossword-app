@@ -270,6 +270,7 @@ main.tsx
     - updateClueNumbersFromGrid() **UNUSED**
 - Persistence
     - setStateToLocalStorage()
+    - loadStateFromLocalStorage()
 
 ## Design Issues
 - function names are too generic
