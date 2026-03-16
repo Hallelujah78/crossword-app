@@ -1757,42 +1757,41 @@ export const loadStateFromLocalStorage = (
 	return JSON.parse(data) as Storage;
 };
 
-export const getRowOrColumn = (
+
+// Returns all cells in the same row or column as the specified cell.
+//
+// Takes:
+// - `index`: index of the reference cell in the grid
+// - `direction`: Direction.ACROSS (row) or Direction.DOWN (column)
+// - `grid`: array of CellType objects
+//
+// Returns an array of cells in the same row or column.
+// unused
+export const getCellsInRowOrColumn = (
 	index: number,
 	direction: Direction.ACROSS | Direction.DOWN,
 	grid: CellType[],
 ): CellType[] => {
-	const arrayOfCells: CellType[] = [];
-	let currCellIndex = index;
-	const squareRootGridLength = Math.sqrt(grid.length);
-	if (direction === Direction.DOWN) {
+	const cells: CellType[] = [];
+	 
+	const width = Math.sqrt(grid.length);
+	const row = Math.floor(index/width);
+	const col = index % width;
+
+	if (direction === Direction.ACROSS) {
 		// get the column of cells
-		while (!isTopEdge(grid, currCellIndex + squareRootGridLength)) {
-			arrayOfCells.push(grid[currCellIndex]);
-			currCellIndex = currCellIndex - squareRootGridLength;
+		for(let c = 0; c < width; c++) {
+			cells.push(grid[row * width + c]);
 		}
-		currCellIndex = index + squareRootGridLength;
-		while (!isBottomEdge(grid, currCellIndex - squareRootGridLength)) {
-			arrayOfCells.push(grid[currCellIndex]);
-			currCellIndex = currCellIndex + squareRootGridLength;
+		
+	}
+	else {
+		for (let r = 0; r < width; r++){
+			cells.push(grid[r * width + col])
 		}
-		return arrayOfCells;
 	}
-	// get the row of cells
-	// start and end vars
-	currCellIndex = index;
-	while (!isLeftEdge(grid, currCellIndex + 1)) {
-		arrayOfCells.push(grid[currCellIndex]);
-		--currCellIndex;
-	}
-	currCellIndex = index + 1;
-	while (!isRightEdge(grid, currCellIndex - 1)) {
-		arrayOfCells.push(grid[currCellIndex]);
-		++currCellIndex;
-	}
-	// 0 - 12 - 13;
-	// 13 - 25 - 13;
-	return arrayOfCells;
+	return cells;
+
 };
 
 export const getCellUpRight = (index: number, grid: CellType[]) => {
