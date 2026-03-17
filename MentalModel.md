@@ -322,6 +322,8 @@ main.tsx
         - better to split into
             - restGeneratedAnswers
             - resetUserInput or even resetUserAnswers and resetCellSelection
+- don't use global variables to store easily derived state - eg storing grid side length
+    - makes functions difficult to reason about/test/can lead to bugs
 
 ## Interesting Points from AI Chats
 - my idea to fill longer solutions first is good - filling the most constrained solution
