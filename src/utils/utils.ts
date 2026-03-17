@@ -1758,47 +1758,21 @@ export const loadStateFromLocalStorage = (
 };
 
 
-// Returns all cells in the same row or column as the specified cell.
+
+// Returns the cell diagonally up-right from the given index. 
 //
-// Takes:
-// - `index`: index of the reference cell in the grid
-// - `direction`: Direction.ACROSS (row) or Direction.DOWN (column)
-// - `grid`: array of CellType objects
+// Takes the cell `index` and the `grid`.
 //
-// Returns an array of cells in the same row or column.
-// unused
-export const getCellsInRowOrColumn = (
-	index: number,
-	direction: Direction.ACROSS | Direction.DOWN,
-	grid: CellType[],
-): CellType[] => {
-	const cells: CellType[] = [];
-	 
-	const width = Math.sqrt(grid.length);
-	const row = Math.floor(index/width);
-	const col = index % width;
-
-	if (direction === Direction.ACROSS) {
-		// get the column of cells
-		for(let c = 0; c < width; c++) {
-			cells.push(grid[row * width + c]);
-		}
-		
-	}
-	else {
-		for (let r = 0; r < width; r++){
-			cells.push(grid[r * width + col])
-		}
-	}
-	return cells;
-
-};
-
+// Returns  the adjacent cell if it exists, otherwise `undefined`.
+//
+//
+// used in getContiguousVoids but that function is unused
 export const getCellUpRight = (index: number, grid: CellType[]) => {
-	// there is no up-right for a cell that is on the right side of the grid or on the top of the grid
+	// There is no up-right for a cell that is on the right side of the grid or on the top of the grid
 	let cell: CellType | undefined;
+	const width = Math.sqrt(grid.length)
 	if (!isTopEdge(grid, index) && !isRightEdge(grid, index)) {
-		cell = grid[index - gridSideLength + 1];
+		cell = grid[index - width + 1];
 	}
 	return cell;
 };

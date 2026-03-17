@@ -333,7 +333,7 @@ const SolveGrid: React.FC = () => {
 		}
 		const focusCell = clues[index].indices[0];
 		const newSelectedCell = grid[focusCell];
-		// get the first element of the indices prop of the selected clue
+		// Get the first element of the indices prop of the selected clue
 		cellRefs.current[focusCell]?.focus(); // this works
 		clearCellSelection(grid);
 		selectCellsForClue(grid, clues[index]);

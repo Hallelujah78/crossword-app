@@ -271,8 +271,9 @@ main.tsx
 - Persistence
     - setStateToLocalStorage()
     - loadStateFromLocalStorage()
-- Experimental
+- Experimental (unused)
     - getCellsInRowOrColumn()
+    - getCellUpRight()
 
 ## Design Issues
 - function names are too generic
