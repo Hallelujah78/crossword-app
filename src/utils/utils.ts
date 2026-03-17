@@ -1777,12 +1777,24 @@ export const getCellUpRight = (index: number, grid: CellType[]) => {
 	return cell;
 };
 
+
+// Returns the cell diagonally down-right from the given index. 
+//
+// Takes the cell `index` and the `grid`.
+//
+// Returns  the adjacent cell if it exists, otherwise `undefined`.
+//
+//
+// used grid validation (eg detecting contiguous blocks).
+//
 export const getCellDownRight = (index: number, grid: CellType[]) => {
-	let cell: CellType | undefined;
-	if (!isBottomEdge(grid, index) && !isRightEdge(grid, index)) {
-		cell = grid[index + Math.sqrt(grid.length) + 1];
+	
+	const width = Math.sqrt(grid.length);
+
+	if (isBottomEdge(grid, index) || isRightEdge(grid, index)) {
+		return undefined;
 	}
-	return cell;
+	return grid[index + width  + 1];
 };
 
 export const getCellDownLeft = (index: number, grid: CellType[]) => {

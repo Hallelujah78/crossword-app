@@ -219,7 +219,8 @@ main.tsx
     - isLeftEdge
     - isRightEdge
     - isTopEdge
-    - isBottomEdge   
+    - isBottomEdge
+    - getCellDownRight   
 - Crossword Construction
     - generator.ts
         - createAnswersRegex
