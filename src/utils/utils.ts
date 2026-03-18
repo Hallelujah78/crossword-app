@@ -1766,7 +1766,7 @@ export const loadStateFromLocalStorage = (
 // Returns  the adjacent cell if it exists, otherwise `undefined`.
 //
 //
-// used in getContiguousVoids but that function is unused
+// used in getAdjacentVoidIndices but that function is unused
 export const getCellUpRight = (index: number, grid: CellType[]) => {
 	// There is no up-right for a cell that is on the right side of the grid or on the top of the grid
 	let cell: CellType | undefined;
@@ -1804,7 +1804,7 @@ export const getCellDownRight = (index: number, grid: CellType[]) => {
 //
 // Returns  the adjacent cell if it exists, otherwise `undefined`.
 //
-// Unused - used in getContiguousVoids but that function is unused
+// Unused - used in getAdjacentVoidIndices but that function is unused
 //
 export const getCellDownLeft = (index: number, grid: CellType[]) => {
 	
@@ -1822,7 +1822,7 @@ export const getCellDownLeft = (index: number, grid: CellType[]) => {
 //
 // Returns  the adjacent cell if it exists, otherwise `undefined`.
 //
-// Unused - used in getContiguousVoids but that function is unused
+// Unused - used in getAdjacentVoidIndices but that function is unused
 //
 export const getCellUpLeft = (index: number, grid: CellType[]) => {
 	
@@ -1834,17 +1834,37 @@ export const getCellUpLeft = (index: number, grid: CellType[]) => {
 	return grid[index - width - 1];
 };
 
-export const getContiguousVoids = (grid: CellType[], index: number) => {
-	// index will be the index of a cell where isVoid is true
+
+// Return indices of adjacent void (dark) cells in any direction for the cell with 
+// the given index. 
+//
+// Takes a grid of CellType objcts and the index of a cell.
+//
+// Returns an array of numbers, each number being the index of an an adjacent void.
+//
+// Returns adjacent indices in all directions, including diagonals. Only includes immediate
+// neighbours.
+//
+// Unused - could be used in a loop to help identify an invalid grid.
+// A grid where there are contiguous voids between one side and another (including
+// the same side) would be invalid - creates islands of unconnected entries. 
+//
+//
+export const getAdjacentVoidIndices = (grid: CellType[], index: number) => {
+	// Index will be the index of a cell where isVoid is true
 	const cell = grid[index];
+	// Store indices of adjacent voids
 	const voids: number[] = [index];
+	// Get the side width
+	const width = Math.sqrt(grid.length);
+
 	// cell left
 	if (cell.left === false && !isLeftEdge(grid, index)) {
 		voids.push(index - 1);
 	}
 	// cell up
 	if (cell.top === false && !isTopEdge(grid, index)) {
-		voids.push(index - gridSideLength);
+		voids.push(index - width);
 	}
 	// cell right
 	if (cell.right === false && !isRightEdge(grid, index)) {
@@ -1852,30 +1872,37 @@ export const getContiguousVoids = (grid: CellType[], index: number) => {
 	}
 	// cell down
 	if (cell.bottom === false && !isBottomEdge(grid, index)) {
-		voids.push(index + gridSideLength);
+		voids.push(index + width);
 	}
 	// upleft
-	getCellUpLeft(index, grid)?.isVoid && voids.push(index - gridSideLength - 1);
+	getCellUpLeft(index, grid)?.isVoid && voids.push(index - width - 1);
 	// upright
-	getCellUpRight(index, grid)?.isVoid && voids.push(index - gridSideLength + 1);
+	getCellUpRight(index, grid)?.isVoid && voids.push(index - width + 1);
 	// downright
 	getCellDownRight(index, grid)?.isVoid &&
-		voids.push(index + gridSideLength + 1);
+		voids.push(index + width + 1);
 	// downleft
 	getCellDownLeft(index, grid)?.isVoid &&
-		voids.push(index + gridSideLength - 1);
+		voids.push(index + width - 1);
 	return voids;
 };
 
-export const getAllEdgeCells = (grid: CellType[]) => {
-	let allEdge = [];
-	allEdge.push(findBottomEdge(grid));
-	allEdge.push(findLeftEdge(grid));
-	allEdge.push(findRightEdge(grid));
-	allEdge.push(findTopEdge(grid));
-	allEdge = allEdge.flat();
-	allEdge = Array.from(new Set(allEdge));
-	return allEdge;
+
+// Returns the indices of all cells on the outer edges of the grid.
+//
+// Takes a grid of CellType objects.
+//
+// Combines the top, bottom, left, and right edges into a single
+// de-duplicated array of indices.
+//
+// Returns an array of unique indices.
+// unused
+export const getAllEdgeCellIndices = (grid: CellType[]) => {
+
+	const allEdges: number[] = [...findBottomEdge(grid), ...findLeftEdge(grid), ...findRightEdge(grid), ...findTopEdge(grid)];
+	
+	
+	return Array.from(new Set(allEdges));
 };
 
 export const isSubset = (arr1: number[], arr2: number[]) => {

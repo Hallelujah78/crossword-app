@@ -277,6 +277,7 @@ main.tsx
     - getCellUpRight()
     - getCellDownLeft()
     - getCellUpLeft()
+    - getAllEdgeCellIndices()
 
 ## Design Issues
 - function names are too generic
