@@ -1797,12 +1797,23 @@ export const getCellDownRight = (index: number, grid: CellType[]) => {
 	return grid[index + width  + 1];
 };
 
+
+// Returns the cell diagonally down-left from the given index. 
+//
+// Takes the cell `index` and the `grid`.
+//
+// Returns  the adjacent cell if it exists, otherwise `undefined`.
+//
+// Unused - used in getContiguousVoids but that function is unused
+//
 export const getCellDownLeft = (index: number, grid: CellType[]) => {
-	let cell: CellType | undefined;
-	if (!isBottomEdge(grid, index) && !isLeftEdge(grid, index)) {
-		cell = grid[index + gridSideLength - 1];
+	
+	const width = Math.sqrt(grid.length);
+
+	if (isBottomEdge(grid, index) || isLeftEdge(grid, index)) {
+		return undefined;
 	}
-	return cell;
+	return grid[index + width - 1];
 };
 
 export const getCellUpLeft = (index: number, grid: CellType[]) => {

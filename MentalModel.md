@@ -275,6 +275,7 @@ main.tsx
 - Experimental (unused)
     - getCellsInRowOrColumn()
     - getCellUpRight()
+    - getCellDownLeft()
 
 ## Design Issues
 - function names are too generic
