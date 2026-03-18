@@ -1905,24 +1905,6 @@ export const getAllEdgeCellIndices = (grid: CellType[]) => {
 	return Array.from(new Set(allEdges));
 };
 
-export const isSubset = (arr1: number[], arr2: number[]) => {
-	let mySet: Set<number> | number[];
-	let myArray = arr1;
-
-	if (arr1.length >= arr2.length) {
-		mySet = new Set(arr1);
-		myArray = arr2;
-	} else {
-		mySet = new Set(arr2);
-	}
-
-	for (const num of myArray) {
-		if (!mySet.has(num)) {
-			return false;
-		}
-	}
-	return true;
-};
 
 export const getContiguousLights = (grid: CellType[], index: number) => {
 	// index will be the index of a cell where isVoid is false

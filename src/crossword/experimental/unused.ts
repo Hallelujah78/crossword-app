@@ -11,7 +11,7 @@ import { Direction } from "../../models/Direction.model";
 // - `grid`: array of CellType objects
 //
 // Returns an array of cells in the same row or column.
-// unused
+// 
 export const getCellsInRowOrColumn = (
 	index: number,
 	direction: Direction.ACROSS | Direction.DOWN,
@@ -34,4 +34,32 @@ export const getCellsInRowOrColumn = (
 		}
 	}
 	return cells;
+};
+
+
+// Determine if either of the given arrays is a subset of the other.
+//
+// Takes two arrays.
+//
+// Return true if either of the given arrays is a subset of the other, otherwise return
+// false.
+//
+export const isSubset = (arr1: number[], arr2: number[]) => {
+	let mySet: Set<number> | number[];
+	let myArray = arr1;
+
+	if (arr1.length >= arr2.length) {
+		mySet = new Set(arr1);
+		myArray = arr2;
+	} else {
+		mySet = new Set(arr2);
+	}
+
+	for (const num of myArray) {
+		// return false early if a num in the array isn't in the set - can't be subset
+		if (!mySet.has(num)) {
+			return false;
+		}
+	}
+	return true;
 };

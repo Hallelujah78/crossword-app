@@ -278,6 +278,7 @@ main.tsx
     - getCellDownLeft()
     - getCellUpLeft()
     - getAllEdgeCellIndices()
+    - isSubset()
 
 ## Design Issues
 - function names are too generic
