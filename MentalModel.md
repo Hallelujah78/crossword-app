@@ -281,6 +281,8 @@ main.tsx
     - isSubset()
     - getAdjacentLightIndices()
     - getAdjacentVoidIndices()
+- utils/array
+    - mergeOverlappingArrays()
 
 ## Design Issues
 - function names are too generic

@@ -18,7 +18,7 @@
 - reluctantly, I turned to ChatGPT which gave me this:
 
 ```js
-function mergeSubarrays(arrays) {
+function mergeOverlappingArrays(arrays) {
     function mergeTwoArrays(arr1, arr2) {
         return [...new Set([...arr1, ...arr2])];
     }
@@ -64,7 +64,7 @@ const arrays = [
     [8, 9]
 ];
 
-const mergedArrays = mergeSubarrays(arrays);
+const mergedArrays = mergeOverlappingArrays(arrays);
 console.log(mergedArrays);
 
 ```
@@ -136,7 +136,7 @@ class UnionFind {
     }
 }
 
-function mergeSubarrays(arrays) {
+function mergeOverlappingArrays(arrays) {
     const uf = new UnionFind();
 
     // Step 1: Union all elements in each subarray
@@ -176,7 +176,7 @@ const arrays = [
     [8, 9]
 ];
 
-const mergedArrays = mergeSubarrays(arrays);
+const mergedArrays = mergeOverlappingArrays(arrays);
 console.log(mergedArrays);
 ```
 
@@ -185,7 +185,7 @@ console.log(mergedArrays);
    - `find`: Finds the root representative of an element.
    - `union`: Merges two sets by connecting their root representatives.
 
-2. **mergeSubarrays Function**:
+2. **mergeOverlappingArrays Function**:
    - **Step 1**: Union all elements within each subarray to ensure they are in the same set.
    - **Step 2**: Collect elements by their root parent to group connected components.
    - **Step 3**: Convert the sets of connected components back to arrays for the final result.
@@ -197,7 +197,7 @@ This approach leverages the efficiency of the union-find data structure for merg
 Certainly! Here is a more intuitive version of the JavaScript code that merges overlapping subarrays. This version uses plain arrays and objects for easier understanding and avoids the complexity of the union-find data structure.
 
 ```javascript
-function mergeSubarrays(arrays) {
+function mergeOverlappingArrays(arrays) {
     function mergeTwoArrays(arr1, arr2) {
         return [...new Set([...arr1, ...arr2])];
     }
@@ -249,7 +249,7 @@ const arrays = [
     [8, 9]
 ];
 
-const mergedArrays = mergeSubarrays(arrays);
+const mergedArrays = mergeOverlappingArrays(arrays);
 console.log(mergedArrays);
 ```
 

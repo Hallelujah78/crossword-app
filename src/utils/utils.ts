@@ -1947,13 +1947,27 @@ export const getAdjacentLightIndices = (grid: CellType[], index: number) => {
 	return lightCells;
 };
 
-export function mergeSubarrays(arrays: number[][]) {
+
+// Merges arrays that share common elements into unified groups.
+//
+// Takes an array of number arrays.
+// If two arrays share at least one element, they are merged.
+// This process continues until no overlapping arrays remain.
+//
+// Returns an array of merged arrays, where each result represents
+// a connected group of elements.
+//
+// Used in grid validation to ensure all light cells form a single
+// connected region.
+export function mergeOverlappingArrays(arrays: number[][]) {
 	let arraysCopy = [...arrays];
 
+	// Merge the two given arrays preserving only unique values.
 	function mergeTwoArrays(arr1: number[], arr2: number[]) {
 		return [...new Set([...arr1, ...arr2])];
 	}
 
+	// Returns true if the two given arrays have an element in common.
 	function hasCommonElements(arr1: number[], arr2: number[]) {
 		return arr1.some((item) => arr2.includes(item));
 	}
@@ -1962,8 +1976,8 @@ export function mergeSubarrays(arrays: number[][]) {
 	const result = [];
 
 	while (arraysCopy.length > 0) {
-		let first = arraysCopy[0];
-		let rest = arraysCopy.slice(1); //copies array from pos 1 inclusive
+		let first = arraysCopy[0]; // first sub array
+		let rest = arraysCopy.slice(1); // other subarrays excluding first
 
 		// on iteration 2
 		// - arrays contains the arrays that had no intersection with the initial value of first
@@ -1978,7 +1992,9 @@ export function mergeSubarrays(arrays: number[][]) {
 		while (lf !== first.length) {
 			lf = first.length; // this means this inner while loop runs the for loop once and then exits
 			const rest2 = [];
+			// For each array of rest
 			for (const arr of rest) {
+				// If first and array have common elements
 				if (hasCommonElements(first, arr)) {
 					// we set first to be the merging of first and arr
 					// lf !== first.length, and so the while only gets executed once
@@ -1991,7 +2007,7 @@ export function mergeSubarrays(arrays: number[][]) {
 		}
 
 		result.push(first); // all of the merged arrays so far
-		arraysCopy = rest; // rest and array now contains only unmerged arrays
+		arraysCopy = rest; // rest and arraysCopy now contains only unmerged arrays
 	}
 
 	return result;
@@ -2073,7 +2089,7 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 	for (const clue of clues) {
 		allLights.push(clue.indices);
 	}
-	const mergedLights = mergeSubarrays(allLights);
+	const mergedLights = mergeOverlappingArrays(allLights);
 
 	if (mergedLights.length > 1) {
 		for (const [index, lights] of mergedLights.entries()) {
