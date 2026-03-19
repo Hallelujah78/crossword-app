@@ -15,7 +15,7 @@ import type { AllAnswersType } from "../state/answers2";
 // state
 import * as AllAnswers from "../state/answers2";
 import backgroundColors from "../state/backgroundColors";
-import { gridSideLength } from "../state/grid";
+
 
 // grid navigation
 // used
@@ -1906,8 +1906,24 @@ export const getAllEdgeCellIndices = (grid: CellType[]) => {
 };
 
 
-export const getContiguousLights = (grid: CellType[], index: number) => {
+
+// Return indices of adjacent light cells in any direction for the cell with 
+// the given index. 
+//
+// Takes a grid of CellType objcts and the index of a cell.
+//
+// Returns an array of numbers, each number being the index of an an adjacent light cell.
+//
+// Returns adjacent indices in all directions (up, down, left, right). Only includes
+// immediate neighbours.
+//
+// Unused
+//
+//
+export const getAdjacentLightIndices = (grid: CellType[], index: number) => {
 	// index will be the index of a cell where isVoid is false
+
+	const width = Math.sqrt(grid.length);
 
 	const cell = grid[index];
 	const lightCells: number[] = [index];
@@ -1917,7 +1933,7 @@ export const getContiguousLights = (grid: CellType[], index: number) => {
 	}
 	// cell up
 	if (cell.top === false && !isTopEdge(grid, index)) {
-		lightCells.push(index - gridSideLength);
+		lightCells.push(index - width);
 	}
 	// cell right
 	if (cell.right === false && !isRightEdge(grid, index)) {
@@ -1925,7 +1941,7 @@ export const getContiguousLights = (grid: CellType[], index: number) => {
 	}
 	// cell down
 	if (cell.bottom === false && !isBottomEdge(grid, index)) {
-		lightCells.push(index + gridSideLength);
+		lightCells.push(index + width);
 	}
 
 	return lightCells;

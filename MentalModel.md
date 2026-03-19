@@ -279,6 +279,8 @@ main.tsx
     - getCellUpLeft()
     - getAllEdgeCellIndices()
     - isSubset()
+    - getAdjacentLightIndices()
+    - getAdjacentVoidIndices()
 
 ## Design Issues
 - function names are too generic
