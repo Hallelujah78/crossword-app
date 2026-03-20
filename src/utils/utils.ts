@@ -2046,15 +2046,17 @@ export const invalidateEdgesThatAreAllVoid = (grid: CellType[]) => {
 	}
 };
 
-export const isGridValid = (grid: CellType[]) => {
-	let isValid = true;
-	for (const cell of grid) {
-		if (cell.backgroundColor || !cell.isValid) {
-			isValid = false;
-			break;
-		}
-	}
-	return isValid;
+
+/**
+ * Returns true if all cells in the grid are valid and have no background color.
+ *
+ * Assumes all validation rules have already been applied to each cell.
+ * 
+ * Used
+ */
+export const areAllCellsValid = (grid: CellType[]) => {
+	
+	return grid.every(cell => cell.isValid && !cell.backgroundColor)
 };
 
 export const isLetter = (letter: string) => {

@@ -238,6 +238,7 @@ main.tsx
 - Crossword Rules
     - setClueNumbers
     - invalidateEdgesThatAreAllVoid()
+    - areAllCellsValid()
 - Crossword Structure
     - updateSurroundingCells
     - createCluesFromGrid

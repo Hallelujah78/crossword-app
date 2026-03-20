@@ -21,12 +21,12 @@ import invalidGridSteps from "../state/invalidGridSteps.tsx";
 import steps from "../state/walkthroughSteps.tsx";
 // utils
 import {
+	areAllCellsValid,
 	createClues,
 	createCluesFromGrid,
 	getAcrossClues,
 	getDownClues,
 	initializeGrid,
-	isGridValid,
 	loadStateFromLocalStorage,
 	populateClues,
 	resetPuzzleAnswers,
@@ -63,7 +63,7 @@ const Grid: React.FC = () => {
 	const [fillGrid, setFillGrid] = useState<boolean>(true);
 	const [isValid, setIsValid] = useState<boolean>(() => {
 		return localStorage.getItem("editor")
-			? isGridValid(gridState as CellType[])
+			? areAllCellsValid(gridState as CellType[])
 			: true;
 	});
 	const { isVisible, close } = useModal(true);
