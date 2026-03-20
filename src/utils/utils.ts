@@ -2059,11 +2059,16 @@ export const areAllCellsValid = (grid: CellType[]) => {
 	return grid.every(cell => cell.isValid && !cell.backgroundColor)
 };
 
+/**
+ * Checks whether a given string is a single alphabetic character (A–Z or a–z).
+ *
+ * Intended to prevent multi-character or non-alphabetic input in grid cells.
+ * Also used when syncing local input state to global state.
+ * 
+ * Used
+ */
 export const isLetter = (letter: string) => {
-	return (
-		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".includes(letter) &&
-		letter.length === 1
-	);
+	return /^[A-Za-z]$/.test(letter);
 };
 
 export const validateGrid = (clues: Clue[], grid: CellType[]) => {

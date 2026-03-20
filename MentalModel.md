@@ -285,6 +285,8 @@ main.tsx
     - getAdjacentVoidIndices()
 - utils/array
     - mergeOverlappingArrays()
+- Input Validation
+    - isLetter()
 
 ## Design Issues
 - function names are too generic
