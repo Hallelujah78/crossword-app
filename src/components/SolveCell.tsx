@@ -22,7 +22,7 @@ const SolveCell = React.forwardRef<HTMLInputElement, CellProps>(
 			if (guess !== undefined && guess !== cellValue) {
 				setCellValue(guess);
 			}
-		}, [guess, cellValue]);
+		}, [guess]);
 
 		return (
 			<Wrapper id={id} style={{ background: isVoid ? "black" : "white" }}>
