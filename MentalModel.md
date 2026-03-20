@@ -237,6 +237,7 @@ main.tsx
         - resolveIncompleteClues()
 - Crossword Rules
     - setClueNumbers
+    - invalidateEdgesThatAreAllVoid()
 - Crossword Structure
     - updateSurroundingCells
     - createCluesFromGrid

@@ -2013,21 +2013,33 @@ export function mergeOverlappingArrays(arrays: number[][]) {
 	return result;
 }
 
-// if all cells on an edge are void, set grid prop to invalid for each cell
-export const setAllVoidEdgeInvalid = (grid: CellType[]) => {
+/**
+ * Marks all cells on any edge as invalid if that edge consists entirely of void cells.
+ *
+ * Business rule: a grid is invalid if any edge is completely void.
+ *
+ * Mutates the provided grid in-place.
+ * 
+ * Used.
+ */
+export const invalidateEdgesThatAreAllVoid = (grid: CellType[]) => {
 	const allEdge = [];
 	allEdge.push(findBottomEdge(grid));
 	allEdge.push(findLeftEdge(grid));
 	allEdge.push(findRightEdge(grid));
 	allEdge.push(findTopEdge(grid));
 
+	// For each edge of the grid
 	for (const edge of allEdge) {
-		//[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+		// Filter the edge for light cells
 		const nonVoid = edge.filter((index: number) => {
 			return !grid[index].isVoid;
 		});
+		// If there are no light cells -> edge is entirely voids/dark cells
 		if (nonVoid.length === 0) {
+			// For each item in edge
 			for (const index of edge) {
+				// Set the cell to invalid
 				grid[index].isValid = false;
 			}
 		}
@@ -2082,7 +2094,7 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 	}
 
 	// entire side is voids
-	setAllVoidEdgeInvalid(grid);
+	invalidateEdgesThatAreAllVoid(grid);
 
 	// are all light cells connected?
 	const allLights = [];
