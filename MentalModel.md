@@ -239,6 +239,7 @@ main.tsx
     - setClueNumbers
     - invalidateEdgesThatAreAllVoid()
     - areAllCellsValid()
+    - resetGridValidationState()
 - Crossword Structure
     - updateSurroundingCells
     - createCluesFromGrid

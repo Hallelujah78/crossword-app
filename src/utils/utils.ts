@@ -2071,26 +2071,45 @@ export const isLetter = (letter: string) => {
 	return /^[A-Za-z]$/.test(letter);
 };
 
+
+/** 
+ * Checks whether a crossword grid is in a valid state. 
+ * 
+ * Takes clues and a grid.
+ * 
+ * Returns true if the grid is valid, false otherwise.
+ * 
+ * Resets the valid state indicators to defaults (the grid is valid). Then checks for:
+ * 	- island cells
+ * 	- short answers
+ * 	- blocks of cells
+ * 	- entire side contains voids
+ * 	- Entries or groups of entries that aren't connected to the rest of the grid
+ * Sets the cells in these invalid cells to invalid.
+ * 
+ * Used
+*/
 export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 	let valid = true;
 
-	// reset isValid to true and backgroundColor to ""
-	for (const cell of grid) {
-		cell.isValid = true;
-		cell.backgroundColor = "";
-	}
+	
+	resetGridValidationState(grid);
 
 	valid = findBlockOfCells(grid);
 
+	// Get all Clues where the length is shorter than 3
 	const shortAnswers = clues.filter((clue) => clue.length < 3);
+	// Get all light cells that are not connected to any other light cell
 	const islandCell = grid.filter(
 		(cell) =>
 			!cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left,
 	);
 
-	// short answers
+	// For each clue of shortAnswers
 	for (const clue of shortAnswers) {
+		// For each index of the indices (cells) that make up the entry
 		for (const index of clue.indices) {
+			// Set the Cell `isValid` prop to false
 			grid[index].isValid = false;
 		}
 	}
@@ -2100,7 +2119,7 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 		grid[cell.id].isValid = false;
 	}
 
-	// entire side is voids
+	// entire side contains voids - doesn't update backgroundColor
 	invalidateEdgesThatAreAllVoid(grid);
 
 	// are all light cells connected?
@@ -2120,7 +2139,6 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 
 	for (const cell of grid) {
 		if (cell.backgroundColor || !cell.isValid) {
-			// setIsValid(false);
 			valid = false;
 			break;
 		}
@@ -2164,3 +2182,18 @@ const findBlockOfCells = (grid: CellType[]) => {
 	}
 	return isValid;
 };
+
+
+/**
+ * Resets validation state for all cells in the grid.
+ *
+ * Sets each cell to a default "valid" state before applying validation rules.
+ * Mutates the grid in place.
+ */
+const resetGridValidationState = (grid: CellType[]) => {
+	// reset isValid to true and backgroundColor to ""
+	for (const cell of grid) {
+		cell.isValid = true;
+		cell.backgroundColor = "";
+	}
+}
