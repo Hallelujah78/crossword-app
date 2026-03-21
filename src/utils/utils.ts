@@ -2092,27 +2092,18 @@ export const isLetter = (letter: string) => {
 export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 	let valid = true;
 
-	
+	// Set all cells and backgroundColor to valid and "" respectively
 	resetGridValidationState(grid);
 
 	valid = findBlockOfCells(grid);
 
-	// Get all Clues where the length is shorter than 3
-	const shortAnswers = clues.filter((clue) => clue.length < 3);
+	markShortClueCellsInvalid(clues, grid);
+
 	// Get all light cells that are not connected to any other light cell
 	const islandCell = grid.filter(
 		(cell) =>
 			!cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left,
 	);
-
-	// For each clue of shortAnswers
-	for (const clue of shortAnswers) {
-		// For each index of the indices (cells) that make up the entry
-		for (const index of clue.indices) {
-			// Set the Cell `isValid` prop to false
-			grid[index].isValid = false;
-		}
-	}
 
 	// island cell - a type of short answer
 	for (const cell of islandCell) {
@@ -2196,4 +2187,25 @@ const resetGridValidationState = (grid: CellType[]) => {
 		cell.isValid = true;
 		cell.backgroundColor = "";
 	}
+}
+
+
+/**
+ * Marks all cells belonging to clues shorter than the minimum length as invalid.
+ *
+ * A clue is considered invalid if its length is less than `minSolutionLength`.
+ * Mutates the grid in place.
+ * 
+ * Used during grid validation.
+*/
+const markShortClueCellsInvalid = (clues: Clue[], grid: CellType[], minSolutionLength: number = 3 ) =>{
+
+	clues.forEach(clue => {
+
+		if(clue.length >= minSolutionLength) return;
+		
+		clue.indices.forEach(index => {
+				grid[index].isValid = false
+			})
+	})
 }

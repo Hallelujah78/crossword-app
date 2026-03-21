@@ -240,6 +240,7 @@ main.tsx
     - invalidateEdgesThatAreAllVoid()
     - areAllCellsValid()
     - resetGridValidationState()
+    - markShortClueCellsInvalid()
 - Crossword Structure
     - updateSurroundingCells
     - createCluesFromGrid
