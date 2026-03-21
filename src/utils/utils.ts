@@ -2099,16 +2099,7 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 
 	markShortClueCellsInvalid(clues, grid);
 
-	// Get all light cells that are not connected to any other light cell
-	const islandCell = grid.filter(
-		(cell) =>
-			!cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left,
-	);
-
-	// island cell - a type of short answer
-	for (const cell of islandCell) {
-		grid[cell.id].isValid = false;
-	}
+	invalidateIslandCells(grid);
 
 	// entire side contains voids - doesn't update backgroundColor
 	invalidateEdgesThatAreAllVoid(grid);
@@ -2207,5 +2198,34 @@ const markShortClueCellsInvalid = (clues: Clue[], grid: CellType[], minSolutionL
 		clue.indices.forEach(index => {
 				grid[index].isValid = false
 			})
+	})
+}
+
+
+/**
+ * Marks cells as invalid if they are isolated (not connected to any adjacent light cells).
+ *
+ * A cell is considered an island if it is a light cell with no connections
+ * in any direction.
+ * Mutates the cells in place.
+ * 
+ * Used in grid validation.
+ */
+const invalidateIslandCells = (grid: CellType[]) => {
+
+	
+	// Identify the island cells
+	grid.forEach(cell =>{
+		if(
+			!cell.isVoid && // cell is light
+			!cell.top && // cell above is void 
+			!cell.bottom && // cell below is void
+			!cell.left && // cell to left is void 
+			!cell.right // cell to right is void
+		){
+			// Cell is island
+			cell.isValid = false;
+		}
+
 	})
 }
