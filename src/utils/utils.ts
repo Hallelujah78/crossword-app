@@ -466,7 +466,7 @@ export const populateClues = (
 		// If grid not valid
 		if (!valid) {
 			// Reset island cell (not sure what this means)
-			resetIslandCell(newState.grid);
+			voidIslandCellsWithSymmetry(newState.grid);
 			// Validate grid again
 			valid = validateGrid(newState.clues, newState.grid);
 		}
@@ -2116,7 +2116,10 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 	return valid;
 };
 
-export const resetIslandCell = (grid: CellType[]) => {
+
+
+
+export const voidIslandCellsWithSymmetry = (grid: CellType[]) => {
 	// update grid in place
 	// do we really want to deep copy grid in every function?
 	const islandCell = grid.filter(
@@ -2128,7 +2131,7 @@ export const resetIslandCell = (grid: CellType[]) => {
 		grid[cell.id].solution = "";
 		grid[cell.id].clueNumber = "";
 		grid[cell.id].guess = "";
-		updateSurroundingCells(grid, grid.length - 1 - cell.id);
+		updateSurroundingCells(grid, getRotationallySymmetricIndex(grid, cell.id));
 	}
 };
 
@@ -2243,3 +2246,16 @@ const annotateDisconnectedGroupsWithColors = (clues: Clue[], grid: CellType[]) =
 	}
 	)
 }
+
+
+/**
+ * Returns the index of the cell that is rotationally symmetric (180°)
+ * to the given index in a flattened square grid.
+ *
+ * In standard crossword grids, layouts are 180° rotationally symmetric,
+ * meaning each cell has a corresponding "opposite" cell.
+ *
+ * Assumes the grid is a square represented as a 1D array in row-major order.
+ */
+const getRotationallySymmetricIndex = (grid: CellType[], index: number) =>
+  grid.length - 1 - index;

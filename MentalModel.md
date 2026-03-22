@@ -220,7 +220,8 @@ main.tsx
     - isRightEdge
     - isTopEdge
     - isBottomEdge
-    - getCellDownRight   
+    - getCellDownRight 
+    - getRotationallySymmetricIndex()
 - Crossword Construction
     - generator.ts
         - createAnswersRegex
