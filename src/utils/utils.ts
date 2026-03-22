@@ -2101,23 +2101,11 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 
 	invalidateIslandCells(grid);
 
-	// entire side contains voids - doesn't update backgroundColor
+	// Entire side contains voids - doesn't update backgroundColor
 	invalidateEdgesThatAreAllVoid(grid);
 
-	// are all light cells connected?
-	const allLights = [];
-	for (const clue of clues) {
-		allLights.push(clue.indices);
-	}
-	const mergedLights = mergeOverlappingArrays(allLights);
-
-	if (mergedLights.length > 1) {
-		for (const [index, lights] of mergedLights.entries()) {
-			for (const num of lights) {
-				grid[num].backgroundColor = backgroundColors[index];
-			}
-		}
-	}
+	// Set background color on disconnected groups of entries
+	annotateDisconnectedGroupsWithColors(clues, grid);
 
 	for (const cell of grid) {
 		if (cell.backgroundColor || !cell.isValid) {
@@ -2228,4 +2216,30 @@ const invalidateIslandCells = (grid: CellType[]) => {
 		}
 
 	})
+}
+
+
+/**
+ * Identifies disconnected groups of light cells and assigns each group a background color.
+ *
+ * Used to visually indicate invalid connectivity (a valid crossword must be fully connected).
+ * Mutates the grid in place.
+ */
+const annotateDisconnectedGroupsWithColors = (clues: Clue[], grid: CellType[]) =>{
+
+	
+	// Store indices of all light cells in the grid
+	const allLights = clues.map(clue => clue.indices);
+
+	const mergedLights = mergeOverlappingArrays(allLights);
+
+	if(mergedLights.length === 1) return;
+
+	mergedLights.forEach((group, index) =>
+	{
+		group.forEach((cellIndex)=>{
+			grid[cellIndex].backgroundColor = backgroundColors[index];
+		})
+	}
+	)
 }

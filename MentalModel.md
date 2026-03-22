@@ -272,6 +272,7 @@ main.tsx
     - clearCellSelection()
     - selectCellsForClue()
     - getCluesContainingCell()
+    - annotateDisconnectedGroupsWithColors()
 - Unused
     - updateClueNumbersFromGrid() **UNUSED**
 - Persistence
