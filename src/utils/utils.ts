@@ -445,21 +445,19 @@ export const populateClues = (
 		// For every empty cell (no letter prop)
 		for (const cell of emptyCells) {
 			// Set the cell to void
-			cell.isVoid = true;
+			voidCell(newState.grid, cell.id);
+		
 			// Remove the clue
 			removeClue(newState.clues, cell.id);
-			// Update the surrounding cells
-			updateSurroundingCells(newState.grid, cell.id);
 
 			// Maintain rotational symmetry of the grid
+			
+			// Get the symmetrical opposite cell index
+			const symmetricIndex = getRotationallySymmetricIndex(newState.grid, cell.id);
 			// Set cell to void
-			newState.grid[newState.grid.length - 1 - cell.id].isVoid = true;
-			// Set the letter to empty string
-			newState.grid[newState.grid.length - 1 - cell.id].solution = "";
+			voidCell(newState.grid, symmetricIndex);
 			// Remove the clue
-			removeClue(newState.clues, newState.grid.length - 1 - cell.id);
-			// Update surrounding cells
-			updateSurroundingCells(newState.grid, newState.grid.length - 1 - cell.id);
+			removeClue(newState.clues, symmetricIndex);
 		}
 		// Check if grid is valid
 		let valid = validateGrid(newState.clues, newState.grid);
@@ -467,6 +465,7 @@ export const populateClues = (
 		if (!valid) {
 			// Reset island cell (not sure what this means)
 			voidIslandCellsWithSymmetry(newState.grid);
+		
 			// Validate grid again
 			valid = validateGrid(newState.clues, newState.grid);
 		}
