@@ -236,6 +236,7 @@ main.tsx
         - resetClueLetters()
         - writeClueToGrid() **MUTATES**
         - resolveIncompleteClues()
+        - updateClueNumbersFromGrid()
 - Crossword Rules
     - setClueNumbers
     - invalidateEdgesThatAreAllVoid()
@@ -274,8 +275,6 @@ main.tsx
     - selectCellsForClue()
     - getCluesContainingCell()
     - annotateDisconnectedGroupsWithColors()
-- Unused
-    - updateClueNumbersFromGrid() **UNUSED**
 - Persistence
     - setStateToLocalStorage()
     - loadStateFromLocalStorage()
