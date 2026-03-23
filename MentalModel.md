@@ -238,6 +238,7 @@ main.tsx
         - resolveIncompleteClues()
         - updateClueNumbersFromGrid()
         - voidCell() **MUTATES**
+        - voidIslandCellsWithSymmetry()
 - Crossword Rules
     - setClueNumbers
     - invalidateEdgesThatAreAllVoid()

@@ -2117,7 +2117,12 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 
 
 
-
+/**
+ * Converts isolated (island) light cells into void cells, maintaining rotational symmetry.
+ *
+ * An island cell is a light cell with no adjacent light neighbours.
+ * Mutates the grid in place.
+ */
 export const voidIslandCellsWithSymmetry = (grid: CellType[]) => {
 	// update grid in place
 	// do we really want to deep copy grid in every function?
@@ -2263,9 +2268,8 @@ const getRotationallySymmetricIndex = (grid: CellType[], index: number) =>
 
 
 /**
- * Converts isolated (island) light cells into void cells, maintaining rotational symmetry.
- *
- * An island cell is a light cell with no adjacent light neighbours.
+ * Converts a light cell into a void cell.
+ * 
  * Mutates the grid in place.
  */
 const voidCell = (grid: CellType[], index: number) => {
