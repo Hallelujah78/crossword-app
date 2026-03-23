@@ -237,6 +237,7 @@ main.tsx
         - writeClueToGrid() **MUTATES**
         - resolveIncompleteClues()
         - updateClueNumbersFromGrid()
+        - voidCell() **MUTATES**
 - Crossword Rules
     - setClueNumbers
     - invalidateEdgesThatAreAllVoid()

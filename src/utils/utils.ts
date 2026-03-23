@@ -2126,13 +2126,14 @@ export const voidIslandCellsWithSymmetry = (grid: CellType[]) => {
 		(cell) =>
 			!cell.isVoid && !cell.bottom && !cell.top && !cell.right && !cell.left,
 	);
-	for (const cell of islandCell) {
-		grid[cell.id].isVoid = true;
-		grid[cell.id].solution = "";
-		grid[cell.id].clueNumber = "";
-		grid[cell.id].guess = "";
-		updateSurroundingCells(grid, getRotationallySymmetricIndex(grid, cell.id));
-	}
+
+	islandCell.forEach((cell)=>{
+		const symmetricIndex = getRotationallySymmetricIndex(grid, cell.id);
+		// Void the cell
+		voidCell(grid, cell.id)
+		// Void the rotationally symmetrical cell
+		voidCell(grid, symmetricIndex);
+	})
 };
 
 const findBlockOfCells = (grid: CellType[]) => {
@@ -2259,3 +2260,20 @@ const annotateDisconnectedGroupsWithColors = (clues: Clue[], grid: CellType[]) =
  */
 const getRotationallySymmetricIndex = (grid: CellType[], index: number) =>
   grid.length - 1 - index;
+
+
+
+/**
+ * Converts isolated (island) light cells into void cells, maintaining rotational symmetry.
+ *
+ * An island cell is a light cell with no adjacent light neighbours.
+ * Mutates the grid in place.
+ */
+const voidCell = (grid: CellType[], index: number) => {
+	const cell = grid[index];
+		grid[cell.id].isVoid = true;
+		grid[cell.id].solution = "";
+		grid[cell.id].clueNumber = "";
+		grid[cell.id].guess = "";
+		updateSurroundingCells(grid, index);
+}
