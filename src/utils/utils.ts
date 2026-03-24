@@ -2094,7 +2094,7 @@ export const validateGrid = (clues: Clue[], grid: CellType[]) => {
 	// Set all cells and backgroundColor to valid and "" respectively
 	resetGridValidationState(grid);
 
-	valid = findBlockOfCells(grid);
+	invalidate2x2LightBlocks(grid);
 
 	markShortClueCellsInvalid(clues, grid);
 
@@ -2140,25 +2140,27 @@ export const voidIslandCellsWithSymmetry = (grid: CellType[]) => {
 	})
 };
 
-const findBlockOfCells = (grid: CellType[]) => {
-	let isValid = true;
+/**
+ * Marks cells as invalid if they form a 2×2 block of light cells.
+ *
+ * A 2×2 square of light cells is considered invalid, as it makes
+ * the grid difficult to fill programmatically.
+ *
+ * Mutates the grid in place.
+ */
+const invalidate2x2LightBlocks = (grid: CellType[]) => {
 	for (let i = 0; i < grid.length; i++) {
-		if (
-			!grid[i].isVoid &&
-			grid[i].right &&
-			grid[i].bottom &&
-			grid[i + 1].bottom
-		) {
+
+		if(grid[i].isVoid || !grid[i].right || !grid[i].bottom || !grid[i + 1].bottom) continue;
+
 			grid[i].isValid = false;
 			grid[i + 1].isValid = false;
 			const cellBelow = getCellBelow(grid, i);
 			const cellBelowRight = getCellDownRight(i, grid);
 			if (cellBelow) cellBelow.isValid = false;
 			if (cellBelowRight) cellBelowRight.isValid = false;
-			isValid = false;
-		}
+			
 	}
-	return isValid;
 };
 
 

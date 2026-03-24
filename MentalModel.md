@@ -246,6 +246,7 @@ main.tsx
     - resetGridValidationState()
     - markShortClueCellsInvalid()
     - invalidateIslandCells()
+    - invalidate2x2LightBlocks()
 - Crossword Structure
     - updateSurroundingCells
     - createCluesFromGrid
