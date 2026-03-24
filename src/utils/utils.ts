@@ -2151,7 +2151,7 @@ export const voidIslandCellsWithSymmetry = (grid: CellType[]) => {
 const invalidate2x2LightBlocks = (grid: CellType[]) => {
 	for (let i = 0; i < grid.length; i++) {
 
-		if(grid[i].isVoid || !grid[i].right || !grid[i].bottom || !grid[i + 1].bottom) continue;
+		if(grid[i].isVoid || !grid[i].right || !grid[i].bottom || !grid[i + 1]?.bottom) continue;
 
 			grid[i].isValid = false;
 			grid[i + 1].isValid = false;
