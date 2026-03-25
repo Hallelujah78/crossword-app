@@ -121,7 +121,7 @@ const Grid: React.FC = () => {
 		saveStateToLocalStorage("puzzles", { puzzles });
 	};
 
-	const generateClues = () => {
+	const generateClues = async () => {
 		const grid: CellType[] = JSON.parse(JSON.stringify(gridState));
 		const clues: Clue[] = JSON.parse(JSON.stringify(clueList));
 
@@ -132,7 +132,23 @@ const Grid: React.FC = () => {
 		);
 
 		if (fillGrid && hasEmpty.length > 0) {
-			while (hasEmpty.length > 0) {
+			// Limit number of attempts to fill grid to prevent long running code
+			const max_attempts = 1500;
+			let attempts = 1;
+			// Time limit the generation of solutions as a fallback
+			const start = performance.now();
+			let elapsedTime = performance.now() - start;
+			// Periodically yield to the browser
+			let lastYield = performance.now();
+			// Attempt to fill puzzle until complete, unless max attempts reached or too much time elapses
+			while (
+				hasEmpty.length > 0 &&
+				attempts <= max_attempts &&
+				elapsedTime < 50000
+			) {
+				// Update elapsed time
+				elapsedTime = performance.now() - start;
+				// Reset puzzle guesses, solutions
 				newState = resetPuzzleAnswers(clueList, gridState);
 				newState = populateClues(
 					newState.clues,
@@ -143,6 +159,24 @@ const Grid: React.FC = () => {
 
 				hasEmpty = newState.grid.filter(
 					(cell) => !cell.isVoid && !cell.solution,
+				);
+				attempts++;
+				// Yield to the browser
+				if(performance.now() - lastYield > 16){
+					await new Promise((r)=> setTimeout(r,0));
+					lastYield = performance.now();
+				}
+			}
+			// Logic to handle failure to fill grid completely inside while loop
+			if (hasEmpty.length > 0) {
+				// Reset the puzzle
+				newState = resetPuzzleAnswers(clueList, gridState);
+				// Alert user to failure
+				toast(
+					"Failed to fill grid. Try reducing the number of longer entries in the grid slightly and trying again.",
+					{
+						className: "toast-style",
+					},
 				);
 			}
 		} else {
@@ -241,8 +275,8 @@ const Grid: React.FC = () => {
 							clues: [],
 							grid: [],
 						};
-						setTimeout(() => {
-							newState = generateClues();
+						setTimeout(async () => {
+							newState = await generateClues();
 							setGridState(newState.grid);
 							setClueList(newState.clues);
 							setIsGeneratingAnswers(false);
